@@ -44,19 +44,19 @@ set "default=0"
 
 :menu
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
-if %MenuOption% equ 0 (
+if %ERRORLEVEL% equ 0 (
     echo Você escolheu Sair.
     pause
     goto :EOF
 )
 
-if %MenuOption% equ 1 (
+if %ERRORLEVEL% equ 1 (
     cd Package_Installers\Menu_QuickWindows
     call Menu_QuickWindows.bat
     cd ..
 )
 
-if %MenuOption% equ 2 (
+if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção 2.
 
     @REM  Your commands here...
@@ -65,7 +65,7 @@ if %MenuOption% equ 2 (
     goto menu
 )
 
-if %MenuOption% equ 3 (
+if %ERRORLEVEL% equ 3 (
     echo Você selecionou a Opção 3.
 
     @REM  Your commands here...
@@ -74,7 +74,7 @@ if %MenuOption% equ 3 (
     goto menu
 )
 
-if %MenuOption% equ 4 (
+if %ERRORLEVEL% equ 4 (
     echo Você selecionou a Opção 4.
 
     @REM  Your commands here...
