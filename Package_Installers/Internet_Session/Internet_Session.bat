@@ -41,13 +41,13 @@ set "default=0"
 
 :menu
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
-if %ERRORLEVEL% equ 0 (
+if %MenuOption% equ 0 (
     echo Você escolheu Sair.
     pause
     goto :EOF
 )
 
-if %ERRORLEVEL% equ 1 (
+if %MenuOption% equ 1 (
     echo Você selecionou a Opção 1.
 
     @REM  Your commands here...
@@ -56,7 +56,7 @@ if %ERRORLEVEL% equ 1 (
     goto menu
 )
 
-if %ERRORLEVEL% equ 2 (
+if %MenuOption% equ 2 (
     echo Você selecionou a Opção 2.
 
     @REM  Your commands here...
@@ -65,7 +65,7 @@ if %ERRORLEVEL% equ 2 (
     goto menu
 )
 
-if %ERRORLEVEL% equ 3 (
+if %MenuOption% equ 3 (
     echo Você selecionou a Opção 3.
 
     @REM  Your commands here...
@@ -74,7 +74,7 @@ if %ERRORLEVEL% equ 3 (
     goto menu
 )
 
-if %ERRORLEVEL% equ 4 (
+if %MenuOption% equ 4 (
     echo Você selecionou a Opção 4.
 
     @REM  Your commands here...
@@ -83,7 +83,7 @@ if %ERRORLEVEL% equ 4 (
     goto menu
 )
 
-if %ERRORLEVEL% equ 5 (
+if %MenuOption% equ 5 (
     echo Você selecionou a Opção 5.
 
     @REM  Your commands here...
