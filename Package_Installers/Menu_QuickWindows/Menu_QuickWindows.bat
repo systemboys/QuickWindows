@@ -11,7 +11,7 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v1.0.0 2023-10-28 às 16h40, Marcos Aurélio:
+:: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, menu de instalações de programas para Windows.
 ::
 :: Licença: GPL.

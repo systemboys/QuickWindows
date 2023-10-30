@@ -4,7 +4,7 @@
 :: Menu.bat - Executa o menu com várias linhas de comandos
 :: para instalação de softwares para Windows
 ::
-:: URL: ?
+:: URL: https://github.com/systemboys/QuickWindows.git
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 ::
@@ -13,7 +13,7 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v1.0.0 2023-10-28 às 16h40, Marcos Aurélio:
+:: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, menu de instalações de programas para Windows.
 ::
 :: Licença: GPL.
