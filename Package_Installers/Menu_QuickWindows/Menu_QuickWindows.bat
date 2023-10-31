@@ -16,9 +16,6 @@
 ::
 :: Licença: GPL.
 
-:: Defina o nome do menu aqui
-set "menuName=QuickWindow"
-
 cls
 
 chcp 65001 > nul
@@ -35,10 +32,10 @@ echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Inform�
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
-set "%menuName%[0]=Voltar..."
-set "%menuName%[1]=Atualizar %menuName%"
-set "%menuName%[2]=Deletar %menuName%"
-set "%menuName%[3]=Recarregar %menuName%"
+set "menu[0]=Voltar..."
+set "menu[1]=Atualizar QuickWindows"
+set "menu[2]=Deletar QuickWindows"
+set "menu[3]=Recarregar QuickWindows"
 
 set "default=0"
 
@@ -48,14 +45,14 @@ if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call %menuName%.bat
+    call QuickWindows.bat
 )
 
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção 1.
 
-    @REM  Seus comandos aqui...
+    @REM  Your commands here...
 
     goto menu
 )
@@ -64,7 +61,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção 2.
 
-    @REM  Seus comandos aqui...
+    @REM  Your commands here...
 
     goto menu
 )
@@ -73,7 +70,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção 3.
 
-    @REM  Seus comandos aqui...
+    @REM  Your commands here...
 
     goto menu
 )
