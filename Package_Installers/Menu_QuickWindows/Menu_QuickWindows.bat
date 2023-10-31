@@ -12,7 +12,7 @@
 :: ---------------------------------------------------------------
 :: Histórico:
 :: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
-::   - Versão inicial, menu de instalações de programas para Windows.
+::   - Versão inicial, menuQW de instalações de programas para Windows.
 ::
 :: Licença: GPL.
 
@@ -32,14 +32,14 @@ echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Inform�
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
-set "menu[0]=Voltar..."
-set "menu[1]=Atualizar QuickWindows"
-set "menu[2]=Deletar QuickWindows"
-set "menu[3]=Recarregar QuickWindows"
+set "menuQW[0]=Voltar..."
+set "menuQW[1]=Atualizar QuickWindows"
+set "menuQW[2]=Deletar QuickWindows"
+set "menuQW[3]=Recarregar QuickWindows"
 
 set "default=0"
 
-:menu
+:menuQW
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
@@ -54,7 +54,7 @@ if %ERRORLEVEL% equ 1 (
 
     @REM  Your commands here...
 
-    goto menu
+    goto menuQW
 )
 
 if %ERRORLEVEL% equ 2 (
@@ -63,7 +63,7 @@ if %ERRORLEVEL% equ 2 (
 
     @REM  Your commands here...
 
-    goto menu
+    goto menuQW
 )
 
 if %ERRORLEVEL% equ 3 (
@@ -72,17 +72,17 @@ if %ERRORLEVEL% equ 3 (
 
     @REM  Your commands here...
 
-    goto menu
+    goto menuQW
 )
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menutitle = "=== Menu QuickWindows ==="
-$menuprompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menuQWtitle = "=== Menu QuickWindows ==="
+$menuQWprompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menuprompt.length + 6
-$menu = gci env: | ?{ $_.Name -match "^menu\[\d+\]$" } | %{
+$maxlen = $menuQWprompt.length + 6
+$menuQW = gci env: | ?{ $_.Name -match "^menuQW\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -91,11 +91,11 @@ $menu = gci env: | ?{ $_.Name -match "^menu\[\d+\]$" } | %{
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menu.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menuQW.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menu.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menuQW.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -104,7 +104,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menu.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menuQW.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -130,14 +130,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menu {
+function menuQW {
     $line = $ypos
-    center $menutitle
+    center $menuQWtitle
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menu[$i]; $i++) {
+    for ($i=0; $item = $menuQW[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -148,11 +148,11 @@ function menu {
     }
     center " "
     $line++
-    center $menuprompt
+    center $menuQWprompt
     1
 }
 
-while (menu) {
+while (menuQW) {
 
     [int]$key = getKey
 
@@ -162,7 +162,7 @@ while (menu) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menu.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menuQW.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
