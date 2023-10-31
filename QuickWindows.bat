@@ -20,8 +20,6 @@
 
 cls
 
-ipconfig /all
-
 chcp 65001 > nul
 
 :: Obter o ano atual
@@ -36,15 +34,15 @@ echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Inform�
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
-set "menu[0]=Sair"
-set "menu[1]=Menu QuickWindows"
-set "menu[2]=Windows"
-set "menu[3]=Internet"
-set "menu[4]=Redes"
+set "menu2[0]=Sair"
+set "menu2[1]=Menu QuickWindows"
+set "menu2[2]=Windows"
+set "menu2[3]=Internet"
+set "menu2[4]=Redes"
 
 set "default=0"
 
-:menu
+:menu2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     echo Você escolheu Sair.
@@ -64,7 +62,7 @@ if %ERRORLEVEL% equ 2 (
     @REM  Your commands here...
 
     pause
-    goto menu
+    goto menu2
 )
 
 if %ERRORLEVEL% equ 3 (
@@ -73,7 +71,7 @@ if %ERRORLEVEL% equ 3 (
     @REM  Your commands here...
 
     pause
-    goto menu
+    goto menu2
 )
 
 if %ERRORLEVEL% equ 4 (
@@ -82,7 +80,7 @@ if %ERRORLEVEL% equ 4 (
     @REM  Your commands here...
 
     pause
-    goto menu
+    goto menu2
 )
 
 goto :EOF
