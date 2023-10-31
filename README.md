@@ -118,9 +118,9 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
 set "menu_Session_1[0]=Voltar..."
-set "menu_Session_1[1]=Atualizar QuickWindows"
-set "menu_Session_1[2]=Deletar QuickWindows"
-set "menu_Session_1[3]=Recarregar QuickWindows"
+set "menu_Session_1[1]=Opção 1"
+set "menu_Session_1[2]=Opção 2"
+set "menu_Session_1[3]=Opção 3"
 
 set "default=0"
 
