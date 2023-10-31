@@ -12,13 +12,16 @@
 :: ---------------------------------------------------------------
 :: Histórico:
 :: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
-::   - Versão inicial, menuSession de instalações de programas para Windows.
+::   - Versão inicial, menu_Session_%menuName% de instalações de programas para Windows.
 ::
 :: Licença: GPL.
 
 cls
 
 chcp 65001 > nul
+
+:: Defina o nome do menu aqui
+set "menuName=QuickWindow"
 
 :: Obter o ano atual
 for /f "tokens=2 delims==" %%I in ('"wmic os get localdatetime /value"') do set datetime=%%I
@@ -32,14 +35,14 @@ echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Inform�
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
-set "menuSession[0]=Voltar..."
-set "menuSession[1]=Atualizar QuickWindows"
-set "menuSession[2]=Deletar QuickWindows"
-set "menuSession[3]=Recarregar QuickWindows"
+set "menu_Session_%menuName%[0]=Voltar..."
+set "menu_Session_%menuName%[1]=Atualizar QuickWindows"
+set "menu_Session_%menuName%[2]=Deletar QuickWindows"
+set "menu_Session_%menuName%[3]=Recarregar QuickWindows"
 
 set "default=0"
 
-:menuSession
+:menu_Session_%menuName%
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
@@ -54,7 +57,7 @@ if %ERRORLEVEL% equ 1 (
 
     @REM  Your commands here...
 
-    goto menuSession
+    goto menu_Session_%menuName%
 )
 
 if %ERRORLEVEL% equ 2 (
@@ -63,7 +66,7 @@ if %ERRORLEVEL% equ 2 (
 
     @REM  Your commands here...
 
-    goto menuSession
+    goto menu_Session_%menuName%
 )
 
 if %ERRORLEVEL% equ 3 (
@@ -72,17 +75,17 @@ if %ERRORLEVEL% equ 3 (
 
     @REM  Your commands here...
 
-    goto menuSession
+    goto menu_Session_%menuName%
 )
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menuSessiontitle = "=== Menu QuickWindows ==="
-$menuSessionprompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menu_Session_%menuName%title = "=== Menu QuickWindows ==="
+$menu_Session_%menuName%prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menuSessionprompt.length + 6
-$menuSession = gci env: | ?{ $_.Name -match "^menuSession\[\d+\]$" } | %{
+$maxlen = $menu_Session_%menuName%prompt.length + 6
+$menu_Session_%menuName% = gci env: | ?{ $_.Name -match "^menu_Session_%menuName%\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -91,11 +94,11 @@ $menuSession = gci env: | ?{ $_.Name -match "^menuSession\[\d+\]$" } | %{
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menuSession.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menu_Session_%menuName%.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menuSession.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menu_Session_%menuName%.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -104,7 +107,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menuSession.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_%menuName%.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -130,14 +133,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menuSession {
+function menu_Session_%menuName% {
     $line = $ypos
-    center $menuSessiontitle
+    center $menu_Session_%menuName%title
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menuSession[$i]; $i++) {
+    for ($i=0; $item = $menu_Session_%menuName%[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -148,11 +151,11 @@ function menuSession {
     }
     center " "
     $line++
-    center $menuSessionprompt
+    center $menu_Session_%menuName%prompt
     1
 }
 
-while (menuSession) {
+while (menu_Session_%menuName%) {
 
     [int]$key = getKey
 
@@ -162,7 +165,7 @@ while (menuSession) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menuSession.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menu_Session_%menuName%.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
