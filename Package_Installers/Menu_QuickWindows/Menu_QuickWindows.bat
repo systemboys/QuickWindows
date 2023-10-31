@@ -57,7 +57,7 @@ if %ERRORLEVEL% equ 1 (
 
     @REM  Your commands here...
 
-    goto menu_%menuName%
+    goto menu
 )
 
 if %ERRORLEVEL% equ 2 (
@@ -66,7 +66,7 @@ if %ERRORLEVEL% equ 2 (
 
     @REM  Your commands here...
 
-    goto menu_%menuName%
+    goto menu
 )
 
 if %ERRORLEVEL% equ 3 (
@@ -75,7 +75,7 @@ if %ERRORLEVEL% equ 3 (
 
     @REM  Your commands here...
 
-    goto menu_%menuName%
+    goto menu
 )
 
 goto :EOF
