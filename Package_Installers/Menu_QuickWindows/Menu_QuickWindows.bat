@@ -21,7 +21,7 @@ cls
 chcp 65001 > nul
 
 :: Defina o nome do menu aqui
-set "menuName=QuickWindow"
+set "menuName=QuickWindows"
 
 :: Obter o ano atual
 for /f "tokens=2 delims==" %%I in ('"wmic os get localdatetime /value"') do set datetime=%%I
