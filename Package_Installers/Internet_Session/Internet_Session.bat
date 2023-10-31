@@ -36,6 +36,7 @@ set "menu_Session[0]=Voltar..."
 set "menu_Session[1]=Opção 1"
 set "menu_Session[2]=Opção 2"
 set "menu_Session[3]=Opção 3"
+set "menu_Session[4]=Opção 4"
 
 set "default=0"
 
@@ -69,6 +70,15 @@ if %ERRORLEVEL% equ 2 (
 if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção 3.
+
+    @REM  Your commands here...
+
+    goto menu_Session
+)
+
+if %ERRORLEVEL% equ 4 (
+    cls
+    echo Você selecionou a Opção 4.
 
     @REM  Your commands here...
 
