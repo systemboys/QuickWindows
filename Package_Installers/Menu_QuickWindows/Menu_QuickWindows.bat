@@ -12,7 +12,7 @@
 :: ---------------------------------------------------------------
 :: Histórico:
 :: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
-::   - Versão inicial, menu_Session de instalações de programas para Windows.
+::   - Versão inicial, menu_%menuName% de instalações de programas para Windows.
 ::
 :: Licença: GPL.
 
@@ -81,11 +81,11 @@ if %ERRORLEVEL% equ 3 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Sessiontitle = "=== Menu QuickWindows ==="
-$menu_Sessionprompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menu_%menuName%title = "=== Menu QuickWindows ==="
+$menu_%menuName%prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menu_Sessionprompt.length + 6
-$menu_Session = gci env: | ?{ $_.Name -match "^menu_Session\[\d+\]$" } | %{
+$maxlen = $menu_%menuName%prompt.length + 6
+$menu_%menuName% = gci env: | ?{ $_.Name -match "^menu_%menuName%\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -94,11 +94,11 @@ $menu_Session = gci env: | ?{ $_.Name -match "^menu_Session\[\d+\]$" } | %{
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menu_Session.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menu_%menuName%.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menu_Session.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menu_%menuName%.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -107,7 +107,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menu_Session.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_%menuName%.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -133,14 +133,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menu_Session {
+function menu_%menuName% {
     $line = $ypos
-    center $menu_Sessiontitle
+    center $menu_%menuName%title
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menu_Session[$i]; $i++) {
+    for ($i=0; $item = $menu_%menuName%[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -151,11 +151,11 @@ function menu_Session {
     }
     center " "
     $line++
-    center $menu_Sessionprompt
+    center $menu_%menuName%prompt
     1
 }
 
-while (menu_Session) {
+while (menu_%menuName%) {
 
     [int]$key = getKey
 
@@ -165,7 +165,7 @@ while (menu_Session) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menu_Session.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menu_%menuName%.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
