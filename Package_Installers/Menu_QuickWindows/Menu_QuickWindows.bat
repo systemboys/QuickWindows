@@ -70,11 +70,9 @@ if %ERRORLEVEL% equ 2 (
 
 if %ERRORLEVEL% equ 3 (
     cls
-    echo Você selecionou a Opção 3.
-
-    @REM  Your commands here...
-
-    goto menu_Session_1
+    cd ..
+    cd ..
+    call QuickWindows.bat
 )
 
 goto :EOF
