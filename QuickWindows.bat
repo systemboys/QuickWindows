@@ -83,12 +83,9 @@ if %ERRORLEVEL% equ 1 (
 )
 
 if %ERRORLEVEL% equ 2 (
-    echo Você selecionou a Opção 2.
-
-    @REM  Your commands here...
-
-    pause
-    goto menu
+    cd Package_Installers\Windows_Session
+    call Windows_Session.bat
+    cd ..
 )
 
 if %ERRORLEVEL% equ 3 (
