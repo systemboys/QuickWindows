@@ -42,7 +42,7 @@ set "menu_%menuName%[3]=Recarregar QuickWindows"
 
 set "default=0"
 
-:menu_QuickWindows
+:menu_%menuName%
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
