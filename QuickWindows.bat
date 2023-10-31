@@ -34,29 +34,29 @@ echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Inform�
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
-set "menu[0]=Sair"
-set "menu[1]=Menu QuickWindows"
-set "menu[2]=Windows"
-set "menu[3]=Internet"
-set "menu[4]=Redes"
+set "menu[0000]=Sair"
+set "menu[1000]=Menu QuickWindows"
+set "menu[2000]=Windows"
+set "menu[3000]=Internet"
+set "menu[4000]=Redes"
 
 set "default=0"
 
 :menu
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
-if %ERRORLEVEL% equ 0 (
+if %ERRORLEVEL% equ 0000 (
     echo Você escolheu Sair.
     pause
     goto :EOF
 )
 
-if %ERRORLEVEL% equ 1 (
+if %ERRORLEVEL% equ 1000 (
     cd Package_Installers\Menu_QuickWindows
     call Menu_QuickWindows.bat
     cd ..
 )
 
-if %ERRORLEVEL% equ 2 (
+if %ERRORLEVEL% equ 2000 (
     echo Você selecionou a Opção 2.
 
     @REM  Your commands here...
@@ -65,7 +65,7 @@ if %ERRORLEVEL% equ 2 (
     goto menu
 )
 
-if %ERRORLEVEL% equ 3 (
+if %ERRORLEVEL% equ 3000 (
     echo Você selecionou a Opção 3.
 
     @REM  Your commands here...
@@ -74,7 +74,7 @@ if %ERRORLEVEL% equ 3 (
     goto menu
 )
 
-if %ERRORLEVEL% equ 4 (
+if %ERRORLEVEL% equ 4000 (
     echo Você selecionou a Opção 4.
 
     @REM  Your commands here...
