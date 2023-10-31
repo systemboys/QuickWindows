@@ -41,14 +41,14 @@ set "default=0"
 
 :menu
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
-if %ERRORLEVEL% equ 1.0 (
+if %ERRORLEVEL% equ "1.0" (
     cls
     cd ..
     cd ..
     call QuickWindows.bat
 )
 
-if %ERRORLEVEL% equ 1.1 (
+if %ERRORLEVEL% equ "1.1" (
     cls
     echo Você selecionou a Opção 1.
 
@@ -57,7 +57,7 @@ if %ERRORLEVEL% equ 1.1 (
     goto menu
 )
 
-if %ERRORLEVEL% equ 1.2 (
+if %ERRORLEVEL% equ "1.2" (
     cls
     echo Você selecionou a Opção 2.
 
@@ -66,7 +66,7 @@ if %ERRORLEVEL% equ 1.2 (
     goto menu
 )
 
-if %ERRORLEVEL% equ 1.3 (
+if %ERRORLEVEL% equ "1.3" (
     cls
     echo Você selecionou a Opção 3.
 
