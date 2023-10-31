@@ -48,6 +48,16 @@ echo Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 echo Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 echo Este programa tem a finadade de agilizar na instalação de softwares
 echo para Windows durante a formatação e/ou manutenção de computadores.
+echo.
+echo ░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓
+echo.
+echo ░▒▓▓▓      ░▒▓▓▓ ░▒▓▓▓
+echo ░▒▓▓▓░▒▓▓▓ ░▒▓▓▓ ░▒▓▓▓
+echo ░▒▓▓▓▓▓▓▓▓ ░▒▓▓▓ ░▒▓▓▓
+echo GLOBAL TEC Informática
+echo A Tecnologia da
+echo informação é o Futuro.
+echo www.gti1.com.br
 
 :: Opções do Menu
 set "menu[0]=Sair"
