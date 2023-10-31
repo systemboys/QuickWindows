@@ -26,17 +26,11 @@ QuickWindows: Facilite a vida no Windows com um menu interativo. Instale pacotes
    git clone https://github.com/systemboys/QuickWindows.git
    ```
 
-2. **Navegue e Execute:** Navegue até o diretório do menu e execute os comandos diretamente do terminal. É tão simples quanto isso!
+2. **Navegue e Execute:** Navegue até o diretório do menu e execute os comandos diretamente do terminal `Windows PowerShell`. É tão simples quanto isso!
 
    ```
    cd QuickWindows
-   ./QuickWindows.bat
-   ```
-
-   > Ou você pode ir direto ao ponto, execute o seuinte comando no seu terminal Linux:
-   
-   ```batch
-   cd /tmp/ && rm -rf QuickWindows && git clone https://github.com/systemboys/QuickWindows.git && cd QuickWindows && ./QuickWindows.bat
+   .\QuickWindows.bat
    ```
    
    > **( ! )** Sertifique-se de que o `Git` esteja instalado em seu Linux!
