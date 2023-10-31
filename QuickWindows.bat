@@ -24,6 +24,11 @@ cls
 
 chcp 65001 > nul
 
+:: Obtém o número da última versão do histórico do script
+for /f "tokens=2 delims= " %%a in ('findstr /r /c:":: v[0-9]*\.[0-9]*\.[0-9]*" "%~f0"') do (
+    set "lastVersion=%%a"
+)
+
 :: Obter o ano atual
 for /f "tokens=2 delims==" %%I in ('"wmic os get localdatetime /value"') do set datetime=%%I
 set "ano=%datetime:~0,4%"
@@ -34,6 +39,7 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
+echo QuickWindows !lastVersion!
 
 :: Opções do Menu
 set "menu[0]=Sair"
@@ -92,7 +98,7 @@ if %ERRORLEVEL% equ 4 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menutitle = "=== QuickWindows ==="
+$menutitle = "=== QuickWindows !lastVersion! ==="
 $menuprompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menuprompt.length + 6
