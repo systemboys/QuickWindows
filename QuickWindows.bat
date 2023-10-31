@@ -20,6 +20,8 @@
 
 cls
 
+ipconfig /all
+
 chcp 65001 > nul
 
 :: Obter o ano atual
