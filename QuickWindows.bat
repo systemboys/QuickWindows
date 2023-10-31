@@ -70,7 +70,7 @@ if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção 2.
 
     @REM  Your commands here...
-    irm https://massgrave.dev/get | iex
+    echo irm https://massgrave.dev/get | iex
 
     pause
     goto menu
