@@ -66,12 +66,16 @@ if %ERRORLEVEL% equ 2 (
 )
 
 if %ERRORLEVEL% equ 3 (
-    echo Você selecionou a Opção 3.
+    cd Package_Installers\Internet_Session
+    call Internet_Session.bat
+    cd ..
 
-    @REM  Your commands here...
+    @REM echo Você selecionou a Opção 3.
 
-    pause
-    goto menu
+    @REM @REM  Your commands here...
+
+    @REM pause
+    @REM goto menu
 )
 
 if %ERRORLEVEL% equ 4 (
