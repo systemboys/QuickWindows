@@ -115,7 +115,7 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo QuickWindows | Sessão
+echo QuickWindows / Sessão
 
 :: Opções do Menu
 set "menu_Session_1[0]=Voltar..."
