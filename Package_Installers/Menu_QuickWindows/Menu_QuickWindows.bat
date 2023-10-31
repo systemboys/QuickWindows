@@ -32,45 +32,45 @@ echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Inform�
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
-set "menu[0000]=Voltar..."
-set "menu[1001]=Atualizar QuickWindows"
-set "menu[1002]=Deletar QuickWindows"
-set "menu[1003]=Recarregar QuickWindows"
+set "%menuName%[0]=Voltar..."
+set "%menuName%[1]=Atualizar %menuName%"
+set "%menuName%[2]=Deletar %menuName%"
+set "%menuName%[3]=Recarregar %menuName%"
 
 set "default=0"
 
 :menu
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
-if %ERRORLEVEL% equ 0000 (
+if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.bat
+    call %menuName%.bat
 )
 
-if %ERRORLEVEL% equ 1001 (
+if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção 1.
 
-    @REM  Your commands here...
+    @REM  Seus comandos aqui...
 
     goto menu
 )
 
-if %ERRORLEVEL% equ 1002 (
+if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção 2.
 
-    @REM  Your commands here...
+    @REM  Seus comandos aqui...
 
     goto menu
 )
 
-if %ERRORLEVEL% equ 1003 (
+if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção 3.
 
-    @REM  Your commands here...
+    @REM  Seus comandos aqui...
 
     goto menu
 )
