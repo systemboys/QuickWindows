@@ -270,6 +270,23 @@ if %ERRORLEVEL% equ 1 (
 :: ... (restante do código)
 ```
 
+**_( i )_** Se por a caso desejar colocar apenas um comando sem sessão, altere o trecho:
+
+```batch
+:: ... (restante do código)
+
+if %ERRORLEVEL% equ 2 (
+    echo Você selecionou a Opção 2.
+
+    @REM  Your commands here...
+
+    pause
+    goto menu
+)
+
+:: ... (restante do código)
+```
+
 Dê a opção no menu:
 
 ```batch
