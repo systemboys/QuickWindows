@@ -42,6 +42,18 @@ set /a resultado=ano-2008
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows !lastVersion!
+echo ---------------------------------------------------------------
+echo Menu.bat - Executa o menu com várias linhas de comandos
+echo para instalação de softwares para Windows
+echo
+echo URL: https://github.com/systemboys/QuickWindows.git
+echo Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+echo Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+echo
+echo ---------------------------------------------------------------
+echo Este programa tem a finadade de agilizar na instalação de softwares
+echo para Windows durante a formatação e/ou manutenção de computadores.
+echo ---------------------------------------------------------------
 
 :: Opções do Menu
 set "menu[0]=Sair"
