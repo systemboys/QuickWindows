@@ -12,7 +12,7 @@
 :: ---------------------------------------------------------------
 :: Histórico:
 :: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
-::   - Versão inicial, menu_Session de instalações de programas para Windows.
+::   - Versão inicial, menu_Session_1 de instalações de programas para Windows.
 ::
 :: Licença: GPL.
 
@@ -32,14 +32,14 @@ echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Inform�
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
-set "menu_Session[0]=Voltar..."
-set "menu_Session[1]=Atualizar QuickWindows"
-set "menu_Session[2]=Deletar QuickWindows"
-set "menu_Session[3]=Recarregar QuickWindows"
+set "menu_Session_1[0]=Voltar..."
+set "menu_Session_1[1]=Atualizar QuickWindows"
+set "menu_Session_1[2]=Deletar QuickWindows"
+set "menu_Session_1[3]=Recarregar QuickWindows"
 
 set "default=0"
 
-:menu_Session
+:menu_Session_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
@@ -54,7 +54,7 @@ if %ERRORLEVEL% equ 1 (
 
     @REM  Your commands here...
 
-    goto menu_Session
+    goto menu_Session_1
 )
 
 if %ERRORLEVEL% equ 2 (
@@ -63,7 +63,7 @@ if %ERRORLEVEL% equ 2 (
 
     @REM  Your commands here...
 
-    goto menu_Session
+    goto menu_Session_1
 )
 
 if %ERRORLEVEL% equ 3 (
@@ -72,17 +72,17 @@ if %ERRORLEVEL% equ 3 (
 
     @REM  Your commands here...
 
-    goto menu_Session
+    goto menu_Session_1
 )
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Sessiontitle = "=== Menu QuickWindows ==="
-$menu_Sessionprompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menu_Session_1title = "=== Menu QuickWindows ==="
+$menu_Session_1prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menu_Sessionprompt.length + 6
-$menu_Session = gci env: | ?{ $_.Name -match "^menu_Session\[\d+\]$" } | %{
+$maxlen = $menu_Session_1prompt.length + 6
+$menu_Session_1 = gci env: | ?{ $_.Name -match "^menu_Session_1\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -91,11 +91,11 @@ $menu_Session = gci env: | ?{ $_.Name -match "^menu_Session\[\d+\]$" } | %{
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menu_Session.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menu_Session_1.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menu_Session.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menu_Session_1.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -104,7 +104,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menu_Session.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_1.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -130,14 +130,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menu_Session {
+function menu_Session_1 {
     $line = $ypos
-    center $menu_Sessiontitle
+    center $menu_Session_1title
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menu_Session[$i]; $i++) {
+    for ($i=0; $item = $menu_Session_1[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -148,11 +148,11 @@ function menu_Session {
     }
     center " "
     $line++
-    center $menu_Sessionprompt
+    center $menu_Session_1prompt
     1
 }
 
-while (menu_Session) {
+while (menu_Session_1) {
 
     [int]$key = getKey
 
@@ -162,7 +162,7 @@ while (menu_Session) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menu_Session.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menu_Session_1.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
