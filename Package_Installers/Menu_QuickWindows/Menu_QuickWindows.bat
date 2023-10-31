@@ -12,7 +12,7 @@
 :: ---------------------------------------------------------------
 :: Histórico:
 :: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
-::   - Versão inicial, menu_QuikWindows de instalações de programas para Windows.
+::   - Versão inicial, menu_QuickWindows de instalações de programas para Windows.
 ::
 :: Licença: GPL.
 
@@ -42,7 +42,7 @@ set "menu_%menuName%[3]=Recarregar QuickWindows"
 
 set "default=0"
 
-:menu_%menuName%
+:menu_QuickWindows
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
@@ -57,7 +57,7 @@ if %ERRORLEVEL% equ 1 (
 
     @REM  Your commands here...
 
-    goto menu_QuikWindows
+    goto menu_QuickWindows
 )
 
 if %ERRORLEVEL% equ 2 (
@@ -66,7 +66,7 @@ if %ERRORLEVEL% equ 2 (
 
     @REM  Your commands here...
 
-    goto menu_QuikWindows
+    goto menu_QuickWindows
 )
 
 if %ERRORLEVEL% equ 3 (
@@ -75,17 +75,17 @@ if %ERRORLEVEL% equ 3 (
 
     @REM  Your commands here...
 
-    goto menu_QuikWindows
+    goto menu_QuickWindows
 )
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_QuikWindowstitle = "=== Menu QuickWindows ==="
-$menu_QuikWindowsprompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menu_QuickWindowstitle = "=== Menu QuickWindows ==="
+$menu_QuickWindowsprompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menu_QuikWindowsprompt.length + 6
-$menu_QuikWindows = gci env: | ?{ $_.Name -match "^menu_QuikWindows\[\d+\]$" } | %{
+$maxlen = $menu_QuickWindowsprompt.length + 6
+$menu_QuickWindows = gci env: | ?{ $_.Name -match "^menu_QuickWindows\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -94,11 +94,11 @@ $menu_QuikWindows = gci env: | ?{ $_.Name -match "^menu_QuikWindows\[\d+\]$" } |
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menu_QuikWindows.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menu_QuickWindows.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menu_QuikWindows.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menu_QuickWindows.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -107,7 +107,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menu_QuikWindows.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_QuickWindows.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -133,14 +133,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menu_QuikWindows {
+function menu_QuickWindows {
     $line = $ypos
-    center $menu_QuikWindowstitle
+    center $menu_QuickWindowstitle
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menu_QuikWindows[$i]; $i++) {
+    for ($i=0; $item = $menu_QuickWindows[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -151,11 +151,11 @@ function menu_QuikWindows {
     }
     center " "
     $line++
-    center $menu_QuikWindowsprompt
+    center $menu_QuickWindowsprompt
     1
 }
 
-while (menu_QuikWindows) {
+while (menu_QuickWindows) {
 
     [int]$key = getKey
 
@@ -165,7 +165,7 @@ while (menu_QuikWindows) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menu_QuikWindows.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menu_QuickWindows.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
