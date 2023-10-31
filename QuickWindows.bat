@@ -19,6 +19,8 @@
 ::   - Correções de alguns bugs e algumas alterações na documentação "README.md".
 :: v0.0.3 2023-10-31 às 01h55, Marcos Aurélio:
 ::   - Exibição da versão do QuickWindows no terminal.
+:: v0.0.4 2023-10-31 às 02h40, Marcos Aurélio:
+::   - Adicionada a "Sessão Windows" e algumas opções.
 ::
 :: Licença: GPL.
 
