@@ -21,6 +21,8 @@
 ::   - Exibição da versão do QuickWindows no terminal.
 :: v0.0.4 2023-10-31 às 02h40, Marcos Aurélio:
 ::   - Adicionada a "Sessão Windows" e algumas opções.
+:: v0.0.5 2023-10-31 às 11h10, Marcos Aurélio:
+::   - Funcionalidade da opção que apaga o QuickWindows na Sessão "Menu QuickWindows".
 ::
 :: Licença: GPL.
 

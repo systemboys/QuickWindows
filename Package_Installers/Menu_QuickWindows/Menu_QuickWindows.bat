@@ -51,20 +51,21 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção 1.
-
-    @REM  Your commands here...
-
-    goto menu_Session_1
+    cd ..
+    cd ..
+    cd ..
+    rmdir /s /q QuickWindows
+    git clone https://github.com/systemboys/QuickWindows.git
+    cd QuickWindows
+    QuickWindows.bat
 )
 
 if %ERRORLEVEL% equ 2 (
     cls
-    echo Você selecionou a Opção 2.
-
-    @REM  Your commands here...
-
-    goto menu_Session_1
+    cd ..
+    cd ..
+    cd ..
+    rmdir /s /q QuickWindows
 )
 
 if %ERRORLEVEL% equ 3 (
