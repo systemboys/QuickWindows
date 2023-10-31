@@ -51,6 +51,7 @@ if %ERRORLEVEL% equ 0 (
 )
 
 if %ERRORLEVEL% equ 1 (
+    goto :EOF
     cd Package_Installers\Menu_QuickWindows
     call Menu_QuickWindows.bat
     cd ..
