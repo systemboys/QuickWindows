@@ -1,7 +1,7 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: Internet_Session.bat - Instalação de softwares para Windows
+:: Menu_QuickWindows.bat - Para instalação de softwares para Windows
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -12,9 +12,11 @@
 :: ---------------------------------------------------------------
 :: Histórico:
 :: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
-::   - Versão inicial, menu de instalações de programas para Windows.
+::   - Versão inicial, menu_Session de instalações de programas para Windows.
 ::
 :: Licença: GPL.
+
+cls
 
 chcp 65001 > nul
 
@@ -30,75 +32,57 @@ echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Inform�
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
-set "menu[0]=Sair"
-set "menu[1]=Opção 1"
-set "menu[2]=Opção 2"
-set "menu[3]=Opção 3"
-set "menu[4]=Opção 4"
-set "menu[5]=Opção 5"
+set "menu_Session[0]=Voltar..."
+set "menu_Session[1]=Opção 1"
+set "menu_Session[2]=Opção 2"
+set "menu_Session[3]=Opção 3"
 
 set "default=0"
 
-:menu
+:menu_Session
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
-    echo Você escolheu Sair.
-    pause
-    goto :EOF
+    cls
+    cd ..
+    cd ..
+    call QuickWindows.bat
 )
 
 if %ERRORLEVEL% equ 1 (
+    cls
     echo Você selecionou a Opção 1.
 
     @REM  Your commands here...
 
-    pause
-    goto menu
+    goto menu_Session
 )
 
 if %ERRORLEVEL% equ 2 (
+    cls
     echo Você selecionou a Opção 2.
 
     @REM  Your commands here...
 
-    pause
-    goto menu
+    goto menu_Session
 )
 
 if %ERRORLEVEL% equ 3 (
+    cls
     echo Você selecionou a Opção 3.
 
     @REM  Your commands here...
 
-    pause
-    goto menu
+    goto menu_Session
 )
 
-if %ERRORLEVEL% equ 4 (
-    echo Você selecionou a Opção 4.
-
-    @REM  Your commands here...
-
-    pause
-    goto menu
-)
-
-if %ERRORLEVEL% equ 5 (
-    echo Você selecionou a Opção 5.
-
-    @REM  Your commands here...
-
-    pause
-    goto menu
-)
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menutitle = "=== GTi_Support ==="
-$menuprompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menu_Sessiontitle = "=== Menu QuickWindows ==="
+$menu_Sessionprompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menuprompt.length + 6
-$menu = gci env: | ?{ $_.Name -match "^menu\[\d+\]$" } | %{
+$maxlen = $menu_Sessionprompt.length + 6
+$menu_Session = gci env: | ?{ $_.Name -match "^menu_Session\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -107,11 +91,11 @@ $menu = gci env: | ?{ $_.Name -match "^menu\[\d+\]$" } | %{
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menu.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menu_Session.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menu.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menu_Session.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -120,7 +104,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menu.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_Session.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -146,14 +130,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menu {
+function menu_Session {
     $line = $ypos
-    center $menutitle
+    center $menu_Sessiontitle
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menu[$i]; $i++) {
+    for ($i=0; $item = $menu_Session[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -164,11 +148,11 @@ function menu {
     }
     center " "
     $line++
-    center $menuprompt
+    center $menu_Sessionprompt
     1
 }
 
-while (menu) {
+while (menu_Session) {
 
     [int]$key = getKey
 
@@ -178,7 +162,7 @@ while (menu) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menu.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menu_Session.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
