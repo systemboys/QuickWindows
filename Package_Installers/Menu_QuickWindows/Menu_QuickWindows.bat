@@ -16,6 +16,9 @@
 ::
 :: Licença: GPL.
 
+:: Defina o nome do menu aqui
+set "menuName=QuickWindow"
+
 cls
 
 chcp 65001 > nul
