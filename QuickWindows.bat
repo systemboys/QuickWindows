@@ -98,7 +98,7 @@ if %ERRORLEVEL% equ 4 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menutitle = "=== QuickWindows !lastVersion! ==="
+$menutitle = "=== QuickWindows %lastVersion% ==="
 $menuprompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menuprompt.length + 6
