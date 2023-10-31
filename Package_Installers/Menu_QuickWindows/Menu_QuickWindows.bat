@@ -45,7 +45,7 @@ if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.bat
+    goto menu
 )
 
 if %ERRORLEVEL% equ 1 (
