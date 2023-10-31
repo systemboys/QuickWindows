@@ -11,7 +11,7 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
+:: v0.0.1 2023-10-31 às 02h38, Marcos Aurélio:
 ::   - Versão inicial, menu_Session_2 de instalações de programas para Windows.
 ::
 :: Licença: GPL.
@@ -34,9 +34,8 @@ echo QuickWindows / Sessão Windows
 
 :: Opções do Menu
 set "menu_Session_2[0]=Voltar..."
-set "menu_Session_2[1]=Opção 1"
-set "menu_Session_2[2]=Opção 2"
-set "menu_Session_2[3]=Opção 3"
+set "menu_Session_2[1]=Desligar o Windows"
+set "menu_Session_2[2]=Reiniciar o Windows"
 
 set "default=0"
 
@@ -51,29 +50,12 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção 1.
-
-    @REM  Your commands here...
-
-    goto menu_Session_2
+    shutdown -s -t 00
 )
 
 if %ERRORLEVEL% equ 2 (
     cls
-    echo Você selecionou a Opção 2.
-
-    @REM  Your commands here...
-
-    goto menu_Session_2
-)
-
-if %ERRORLEVEL% equ 3 (
-    cls
-    echo Você selecionou a Opção 3.
-
-    @REM  Your commands here...
-
-    goto menu_Session_2
+    shutdown -r -t 00
 )
 
 goto :EOF
