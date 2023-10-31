@@ -17,6 +17,8 @@
 ::   - Versão inicial, menu de instalações de programas para Windows.
 :: v0.0.2 2023-10-31 às 01h20, Marcos Aurélio:
 ::   - Correções de alguns bugs e algumas alterações na documentação "README.md".
+:: v0.0.3 2023-10-31 às 01h55, Marcos Aurélio:
+::   - Exibição da versão do QuickWindows no terminal.
 ::
 :: Licença: GPL.
 
@@ -68,6 +70,7 @@ if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção 2.
 
     @REM  Your commands here...
+    irm https://massgrave.dev/get | iex
 
     pause
     goto menu
