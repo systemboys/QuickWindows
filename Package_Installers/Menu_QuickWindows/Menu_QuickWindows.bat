@@ -20,6 +20,9 @@ cls
 
 chcp 65001 > nul
 
+:: Defina o nome do menu aqui
+set "menuName=QuickWindow"
+
 :: Obter o ano atual
 for /f "tokens=2 delims==" %%I in ('"wmic os get localdatetime /value"') do set datetime=%%I
 set "ano=%datetime:~0,4%"
@@ -32,14 +35,14 @@ echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Inform�
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
-set "menu_QquikWindows[0]=Voltar..."
-set "menu_QquikWindows[1]=Atualizar QuickWindows"
-set "menu_QquikWindows[2]=Deletar QuickWindows"
-set "menu_QquikWindows[3]=Recarregar QuickWindows"
+set "menu_%menuName%[0]=Voltar..."
+set "menu_%menuName%[1]=Atualizar QuickWindows"
+set "menu_%menuName%[2]=Deletar QuickWindows"
+set "menu_%menuName%[3]=Recarregar QuickWindows"
 
 set "default=0"
 
-:menu_QquikWindows
+:menu_%menuName%
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
