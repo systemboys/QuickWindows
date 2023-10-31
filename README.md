@@ -1,10 +1,10 @@
-# **Bem-vindo ao  QuickLinux!**
+# **Bem-vindo ao  QuickWindows!**
 
 > **( ! )** Esse menu ainda está em desenvolvimento!
 
-![Menu de instalações de pacotes Linux](./Images/QuickLinux.png?raw=true "Menu de instalações de pacotes Linux")
+![Menu de instalações de pacotes Linux](./Images/QuickWindows.png "Menu de instalações de pacotes Windows")
 
-QuickLinux: Facilite a vida no Linux com um menu interativo. Instale pacotes, atualize o sistema e execute comandos essenciais com apenas alguns cliques. Simplifique sua experiência no Linux.
+QuickWindows: Facilite a vida no Windows com um menu interativo. Instale pacotes, atualize o sistema e execute comandos essenciais com apenas alguns cliques. Simplifique sua experiência no Windows.
 
 **Recursos Principais:**
 
@@ -20,23 +20,23 @@ QuickLinux: Facilite a vida no Linux com um menu interativo. Instale pacotes, at
 
 **Como Usar:**
 
-1. **Clone o Repositório:** Clone nosso repositório do GitHub para ter acesso ao **_QuickLinux_**.
+1. **Clone o Repositório:** Clone nosso repositório do GitHub para ter acesso ao **_QuickWindows_**.
 
    ```
-   git clone https://github.com/systemboys/QuickLinux.git
+   git clone https://github.com/systemboys/QuickWindows.git
    ```
 
 2. **Navegue e Execute:** Navegue até o diretório do menu e execute os comandos diretamente do terminal. É tão simples quanto isso!
 
    ```
-   cd QuickLinux
-   ./QuickLinux.sh
+   cd QuickWindows
+   ./QuickWindows.bat
    ```
 
    > Ou você pode ir direto ao ponto, execute o seuinte comando no seu terminal Linux:
    
-   ```bash
-   cd /tmp/ && rm -rf QuickLinux && git clone https://github.com/systemboys/QuickLinux.git && cd QuickLinux && ./QuickLinux.sh
+   ```batch
+   cd /tmp/ && rm -rf QuickWindows && git clone https://github.com/systemboys/QuickWindows.git && cd QuickWindows && ./QuickWindows.bat
    ```
    
    > **( ! )** Sertifique-se de que o `Git` esteja instalado em seu Linux!
@@ -47,7 +47,7 @@ QuickLinux: Facilite a vida no Linux com um menu interativo. Instale pacotes, at
 
 Este menu é um projeto de código aberto, e encorajamos contribuições da comunidade. Sinta-se à vontade para abrir problemas, enviar solicitações de pull e ajudar a melhorar esta ferramenta para todos.
 
-Com o QuickLinux, queremos tornar a experiência de instalação de software no Linux tão simples e acessível quanto possível. Esperamos que você aproveite usar o menu tanto quanto nós gostamos de criá-lo!
+Com o QuickWindows, queremos tornar a experiência de instalação de software no Linux tão simples e acessível quanto possível. Esperamos que você aproveite usar o menu tanto quanto nós gostamos de criá-lo!
 
 *Divirta-se instalando, configurando e explorando no Linux!* 🚀🐧
 
@@ -57,44 +57,28 @@ Com o QuickLinux, queremos tornar a experiência de instalação de software no 
 
 ## Estrutura de arquivos
 
-Este Menu contêm scripts de instalação de pacotes de software dentro do diretório "/QuickLinux/". Estão armazenados vários arquivos.sh. Veja a estrutura de arquivos:
+Este Menu contêm scripts de instalação de pacotes de software dentro do diretório "/QuickWindows/". Estão armazenados vários arquivos.bat. Veja a estrutura de arquivos:
 
-```bash
-/QuickLinux
+```batch
+/QuickWindows
   ├─ /Imagens/
-  │    └─ QuickLinux.png
+  │    └─ QuickWindows.png
   ├─ /Package_Installers/
-  │    ├─ /Development_Session/
-  │    │    ├─ Development_Session.sh
-  │    │    ├─ Install_Docker_Compose.sh
-  │    │    └─ Install_Docker.sh
   │    ├─ /Internet_Session/
-  │    │    ├─ Internet_Session.sh
-  │    │    ├─ Install_Package1.sh
-  │    │    ├─ Install_Package2.sh
-  │    │    ├─ Install_Package3.sh
+  │    │    ├─ Internet_Session.bat
+  │    │    ├─ Install_Package1.bat
+  │    │    ├─ Install_Package2.bat
+  │    │    ├─ Install_Package3.bat
   │    │    └─ ...
-  │    ├─ /Linux_Session/
-  │    │    └─ Linux_Session.sh
-  │    ├─ /Menu_QuickLinux/
-  │    │    └─ Package_Installers.sh
-  │    ├─ /Network_Session/
-  │    │    ├─ Network_Session.sh
-  │    │    ├─ Install_Package1.sh
-  │    │    ├─ Install_Package2.sh
-  │    │    ├─ Install_Package3.sh
-  │    │    └─ ...
-  │    └─ /Terminal_Utilities_Session/
-  │         ├─ Terminal_Utilities_Session.sh
-  │         ├─ Install_Package1.sh
-  │         ├─ Install_Package2.sh
-  │         ├─ Install_Package3.sh
-  │         └─ ...
-  ├─ QuickLinux.sh
+  │    ├─ /Menu_QuickWindows/
+  │    │    └─ Menu_QuickWindows.bat
+  │    └─ /Menu_QuickWindows/
+  │         └─ Package_Installers.bat
+  ├─ QuickWindows.bat
   └─ README.md
 ```
 
-Dentro do diretório "Package_Installers", você pode ter vários `arquivos.sh`, cada um responsável por instalar um pacote de software específico. Isso torna a estrutura do seu projeto organizada e fácil de entender.
+Dentro do diretório "Package_Installers", você pode ter vários `arquivos.bat`, cada um responsável por instalar um pacote de software específico. Isso torna a estrutura do seu projeto organizada e fácil de entender.
 
 # Rascunho para novos itens
 
@@ -102,174 +86,202 @@ Aqui você pode editar o arquivo caso necessário, adicionando mais recursos.
 
 ## Incrementações de itens
 
-Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sessão (Ex.: `/New_Session_A/`), dentro do diretório `/Package_Installers/` e dentro do diretório de sua nova sessão crie o arquivo `.sh` (Ex.: `New_Session_A.sh`) e segue abaixo seu conteúdo:
+Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sessão (Ex.: `/New_Session_A/`), dentro do diretório `/Package_Installers/` e dentro do diretório de sua nova sessão crie o arquivo `.bat` (Ex.: `New_Session_A.bat`) e segue abaixo seu conteúdo:
 
-```bash
-#!/bin/bash
+```batch
+<# : Batch portion
+@echo off & setlocal enabledelayedexpansion
 
-# Verifica se o número de argumentos é correto
-if [ "$#" -ne 2 ]; then
-    echo "Erro: Número incorreto de argumentos."
-    exit 1
-fi
+:: Menu_QuickWindows.bat - Para instalação de softwares para Windows
+::
+:: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+:: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+::
+:: ---------------------------------------------------------------
+:: Este programa tem a finadade de agilizar na instalação de softwares
+:: para Windows durante a formatação e/ou manutenção de computadores.
+:: ---------------------------------------------------------------
+:: Histórico:
+:: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
+::   - Versão inicial, menu_Session_1 de instalações de programas para Windows.
+::
+:: Licença: GPL.
 
-# Obtém os valores dos argumentos
-fileName="$1"
-developer="$2"
+cls
 
-# Variáveis úteis
-sessionName="Nova Sessão A"
-sessionDescription="Opções de referência a Nova Sessão A."
+chcp 65001 > nul
 
-# Função para Opção A
-Option_A() {
-    # Your commands here...
-    dialog --msgbox "Seu comando A foi executado!" 8 40
+:: Obter o ano atual
+for /f "tokens=2 delims==" %%I in ('"wmic os get localdatetime /value"') do set datetime=%%I
+set "ano=%datetime:~0,4%"
+
+:: Subtrair o ano atual por 2008
+set /a resultado=ano-2008
+
+:: Mensagem de entrada do Menu com o resultado
+echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
+echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
+
+:: Opções do Menu
+set "menu_Session_1[0]=Voltar..."
+set "menu_Session_1[1]=Atualizar QuickWindows"
+set "menu_Session_1[2]=Deletar QuickWindows"
+set "menu_Session_1[3]=Recarregar QuickWindows"
+
+set "default=0"
+
+:menu_Session_1
+powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+if %ERRORLEVEL% equ 0 (
+    cls
+    cd ..
+    cd ..
+    call QuickWindows.bat
+)
+
+if %ERRORLEVEL% equ 1 (
+    cls
+    echo Você selecionou a Opção 1.
+
+    @REM  Your commands here...
+
+    goto menu_Session_1
+)
+
+if %ERRORLEVEL% equ 2 (
+    cls
+    echo Você selecionou a Opção 2.
+
+    @REM  Your commands here...
+
+    goto menu_Session_1
+)
+
+if %ERRORLEVEL% equ 3 (
+    cls
+    echo Você selecionou a Opção 3.
+
+    @REM  Your commands here...
+
+    goto menu_Session_1
+)
+
+goto :EOF
+: end batch / begin PowerShell hybrid chimera #>
+
+$menu_Session_1title = "=== Menu QuickWindows ==="
+$menu_Session_1prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+
+$maxlen = $menu_Session_1prompt.length + 6
+$menu_Session_1 = gci env: | ?{ $_.Name -match "^menu_Session_1\[\d+\]$" } | %{
+    $_.Value.trim()
+    $len = $_.Value.trim().Length + 6
+    if ($len -gt $maxlen) { $maxlen = $len }
+}
+[int]$selection = $env:default
+$h = $Host.UI.RawUI.WindowSize.Height
+$w = $Host.UI.RawUI.WindowSize.Width
+$xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
+$ypos = [math]::floor(($h - ($menu_Session_1.Length + 4)) / 3)
+
+$offY = [console]::WindowTop;
+$rect = New-Object Management.Automation.Host.Rectangle `
+    0,$offY,($w - 1),($offY+$ypos+$menu_Session_1.length+4)
+$buffer = $Host.UI.RawUI.GetBufferContents($rect)
+
+function destroy {
+    $coords = New-Object Management.Automation.Host.Coordinates 0,$offY
+    $Host.UI.RawUI.SetBufferContents($coords,$buffer)
 }
 
-# Função para Opção B
-Option_B() {
-    # Your commands here...
-    dialog --msgbox "Seu comando B foi executado!" 8 40
+function getKey {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_1.length)) -contains $x)) {
+        $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
+    }
+    $x
 }
 
-# Menu interativo usando dialog
-while true; do
-    choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
-            --title "${sessionName}" \
-            --menu "${sessionDescription}" 15 40 2 \
-            0 "Voltar..." \
-            1 "Opção A" \
-            2 "Opção B" \
-            2>&1 >/dev/tty)
+# http://goo.gl/IAmdR6
+function WriteTo-Pos ([string]$str, [int]$x = 0, [int]$y = 0,
+    [string]$bgc = [console]::BackgroundColor, [string]$fgc = [Console]::ForegroundColor) {
+    if($x -ge 0 -and $y -ge 0 -and $x -le [Console]::WindowWidth -and
+        $y -le [Console]::WindowHeight) {
+        $saveY = [console]::CursorTop
+        $offY = [console]::WindowTop       
+        [console]::setcursorposition($x,$offY+$y)
+        Write-Host $str -b $bgc -f $fgc -nonewline
+        [console]::setcursorposition(0,$saveY)
+    }
+}
 
-    # Se o usuário pressionar Cancelar, sair do loop
-    if [ $? -ne 0 ]; then
-        clear
-        cd ../..
-        ./${fileName}
-    fi
+function center([string]$what) {
+    $what = "    $what  "
+    $lpad = " " * [math]::max([math]::floor(($maxlen - $what.length) / 2), 0)
+    $rpad = " " * [math]::max(($maxlen - $what.length - $lpad.length), 0)
+    WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
+}
 
-    case $choice in
-        0)
-            clear
-            cd ../..
-            ./${fileName}
-            ;;
-        1)
-            clear
-            Option_A
-            ;;
-        2)
-            clear
-            Option_B
-            ;;
-        *)
-            dialog --msgbox "Opção inválida. Tente novamente." 8 40
-            ;;
-    esac
-done
+function menu_Session_1 {
+    $line = $ypos
+    center $menu_Session_1title
+    $line++
+    center " "
+    $line++
+
+    for ($i=0; $item = $menu_Session_1[$i]; $i++) {
+        # write-host $xpad -nonewline
+        $rtpad = " " * ($maxlen - $item.length)
+        if ($i -eq $selection) {
+            WriteTo-Pos "  > $item <$rtpad" $xpos ($line++) yellow blue
+        } else {
+            WriteTo-Pos " $i`: $item  $rtpad" $xpos ($line++) blue yellow
+        }
+    }
+    center " "
+    $line++
+    center $menu_Session_1prompt
+    1
+}
+
+while (menu_Session_1) {
+
+    [int]$key = getKey
+
+    switch ($key) {
+
+        37 {}   # left or up
+        38 { if ($selection) { $selection-- }; break }
+
+        39 {}   # right or down
+        40 { if ($selection -lt ($menu_Session_1.length - 1)) { $selection++ }; break }
+
+        # number or enter
+        default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
+    }
+}
 ```
 
 Para chamar sua nova sessão a partir do menu inicial, adicione a função que executa a mesma:
 
-```bash
-# ... (outras funções)
+```batch
+:: ... (outras funções)
 
-# Função para executar sessão Internet
-New_Session_A() {
-    cd Package_Installers/New_Session_A
-    ./New_Session_A.sh "$fileName" "$developer"
-}
+if %ERRORLEVEL% equ 1 (
+    cd Package_Installers\New_Session_A
+    call New_Session_A.bat
+    cd ..
+)
 
-# ... (restante do código)
+:: ... (restante do código)
 ```
 
 Dê a opção no menu:
 
-```bash
-# ... (outras opções)
-3 "New_Session_A" \
-# ... (restante do código)
+```batch
+:: ... (outras opções)
+set "menu[5]=Redes"
+:: ... (restante do código)
 ```
 
-Depois coloque a posição da chamada da função na **_case_**:
-
-```bash
-# ... (restante do código)
-3) # Sessão New_Session_A
-    clear
-    New_Session_A
-    ;;
-# ... (restante do código)
-```
-
-Para separar os scripts de execuções de comandos em cada opção da nova sessão, você pode criar um arquivo (`Option_A.sh`) para cada opção dentro do diretório da nova sessão `/New_Session_A/`, no arquivo `New_Session_A.sh` da sua nova função.
-
-Altere o conteúdo da função:
-
-```bash
-# Função para Opção A
-Option_A() {
-    # Your commands here...
-    dialog --msgbox "Seu comando A foi executado!" 8 40
-}
-```
-
-Para:
-
-```bash
-# Função para Opção A
-Option_A() {
-    ./Option_A.sh
-}
-```
-
-E dentro do arquivo `Option_A.sh` o seguinte conteúdo:
-
-```bash
-#!/bin/bash
-
-clear
-
-# Your commands here...
-
-dialog --msgbox "Seu comando A foi executado!" 8 40
-```
-
-Caso você queira verificar se determinado pacote está instalado e ignorar a instalação, ou avançar na instalação caso não esteja instalado, o código acima pode ser alterado para o seguinte:
-
-```bash
-#!/bin/bash
-
-clear
-
-# Variáveis úteis
-packageVersionName="filezilla" # Nome do arquivo na instalação para procurar a versão no pacote
-packageName="FileZilla" # Apenas o nome do pacote
-
-# Verificar se o está instalado
-if ! command -v ${packageVersionName} &> /dev/null; then
-    clear
-    dialog --msgbox "${packageName} não está instalado! Instalando..." 8 40
-
-    clear
-
-    sudo apt-get update
-    sudo apt-get install filezilla -y
-
-    clear
-    
-    if ! command -v ${packageVersionName} &> /dev/null; then
-        dialog --msgbox "Erro na instalação de ${packageName}!" 8 40
-    else
-        dialog --msgbox "${packageName} instalado com sucesso!" 8 40
-    fi
-else
-    clear
-    dialog --msgbox "${packageName} já está instalado! Ignorando a instalação..." 8 40
-fi
-```
-
-> **_( i )_** No exemplo acima, o pacote é o "FileZilla". O script verifica se está instalado para ignorar a instalação caso esteja, caso contrário, segue a instalação do pacote.
+> **_( i )_** A partir daqui, os comandos devem ser colocados nas condições da nova sessão, se quiser separar os arquivos (.bat) para escrever os comandos para instalação de pacotes, crie arquivos e nomei como `Install_Mozilla_Firefox.bat` dentro do mesmo diretório da nova sessão, na condição da nova sessão, mande executar o arquivo e, após a execução dos comandos no arquivo (.bat) de instalação do pacote, coloque o comando para voltar ao menu anterior.
 
