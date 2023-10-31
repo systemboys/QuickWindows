@@ -15,6 +15,8 @@
 :: Histórico:
 :: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, menu de instalações de programas para Windows.
+:: v0.0.2 2023-10-31 às 01h20, Marcos Aurélio:
+::   - Correções de alguns bugs e algumas alterações na documentação "README.md".
 ::
 :: Licença: GPL.
 
