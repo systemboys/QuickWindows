@@ -30,6 +30,8 @@
 ::   - Script para instalar o Winget via Powershell.
 :: v0.0.8 2023-10-31 às 01h10, Marcos Aurélio:
 ::   - Sessão Internet, Instalação de AnyDesk.
+:: v0.0.9 2023-11-01 às 07h40, Marcos Aurélio:
+::   - Versão inicial, Sessão de Redes para opções relacionadas à redes.
 ::
 :: Licença: GPL.
 
@@ -113,12 +115,9 @@ if %ERRORLEVEL% equ 3 (
 )
 
 if %ERRORLEVEL% equ 4 (
-    echo Você selecionou a Opção 4.
-
-    @REM  Your commands here...
-
-    pause
-    goto menu
+    cd Package_Installers\Networking_Session
+    call Networking_Session.bat
+    cd ..
 )
 
 goto :EOF

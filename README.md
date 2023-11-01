@@ -96,7 +96,7 @@ Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sess�
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: Menu_QuickWindows.bat - Para instalação de softwares para Windows
+:: menu_Session_1.bat - Para instalação de softwares para Windows
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
