@@ -14,7 +14,7 @@ if (!$anydeskInstalled) {
     # Instala o AnyDesk
     Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
 
-    # Pagar o arquivo
+    # Apagar o arquivo
     $filePath = "C:\Path\to\AnyDesk.exe"
     Remove-Item -Path $filePath -Force
 } else {
