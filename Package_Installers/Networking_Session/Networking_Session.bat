@@ -53,8 +53,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção Obter IP.
 
-    $ipAddress = (Test-Connection -ComputerName (hostname) -Count 1).IPV4Address.IPAddressToString
-    Write-Host "IP Address: $ipAddress"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ObtainIPAddress.ps1""' -Verb RunAs}"
 
     goto menu_Session_4
 )
