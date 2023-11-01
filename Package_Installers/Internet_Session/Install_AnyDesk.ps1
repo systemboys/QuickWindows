@@ -38,7 +38,7 @@ $anydeskInstalled = Get-WmiObject -Class Win32_Product | Where-Object {$_.Name -
 #     Write-Host "AnyDesk is now installed!"
 # }
 
-$filePath = "C:\Program Files (x86)\AnyDesk\AnyDesk.exe"
+$filePath = "$env:ProgramFiles(x86)\AnyDesk\AnyDesk.exe"
 if (Test-Path $filePath) {
     Write-Host "The file exists."
 } else {
