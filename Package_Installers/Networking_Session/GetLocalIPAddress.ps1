@@ -14,6 +14,7 @@
 
 $ipAddress = (Get-NetIPAddress | Where-Object {$_.InterfaceAlias -eq 'Ethernet'}).IPAddress
 Write-Host "Local IP Address: $ipAddress"
+ipconfig
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
