@@ -7,8 +7,7 @@
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 ::
 :: ---------------------------------------------------------------
-:: Este programa tem a finadade de agilizar na instalação de softwares
-:: para Windows durante a formatação e/ou manutenção de computadores.
+:: Este programa tem a finalidade de funções relacionadas à redes.
 :: ---------------------------------------------------------------
 :: Histórico:
 :: v0.0.1 2023-11-01 às 07h40, Marcos Aurélio:
@@ -34,7 +33,7 @@ echo QuickWindows / Sessão
 
 :: Opções do Menu
 set "menu_Session_4[0]=Voltar..."
-set "menu_Session_4[1]=Obter IP"
+set "menu_Session_4[1]=Obter IP público"
 set "menu_Session_4[2]=Opção 2"
 set "menu_Session_4[3]=Opção 3"
 
@@ -53,7 +52,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção Obter IP.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ObtainIPAddress.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0GetPublicIPAddress.ps1""' -Verb RunAs}"
 
     goto menu_Session_4
 )

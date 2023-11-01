@@ -5,7 +5,7 @@
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #
 # ---------------------------------------------------------------
-# Este programa tem a finadade de facilitar na instalação de
+# Este programa tem a finalidade de facilitar na instalação de
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:

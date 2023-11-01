@@ -9,7 +9,7 @@
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 ::
 :: ---------------------------------------------------------------
-:: Este programa tem a finadade de agilizar na instalação de softwares
+:: Este programa tem a finalidade de agilizar na instalação de softwares
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:

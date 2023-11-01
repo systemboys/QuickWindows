@@ -108,7 +108,7 @@ Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sess�
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 ::
 :: ---------------------------------------------------------------
-:: Este programa tem a finadade de agilizar na instalação de softwares
+:: Este programa tem a finalidade de agilizar na instalação de softwares
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
@@ -340,7 +340,7 @@ Para escrever o `arquivo.ps1` para scripts de instalação:
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #
 # ---------------------------------------------------------------
-# Este programa tem a finadade de facilitar na instalação de
+# Este programa tem a finalidade de facilitar na instalação de
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
