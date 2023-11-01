@@ -36,6 +36,7 @@ echo QuickWindows / Sessão Windows
 set "menu_Session_2[0]=Voltar..."
 set "menu_Session_2[1]=Desligar o Windows"
 set "menu_Session_2[2]=Reiniciar o Windows"
+set "menu_Session_2[3]=Atualizar Softwares"
 
 set "default=0"
 
@@ -50,18 +51,27 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cls
+    :: Desligar o Windows
     shutdown -s -t 00
 )
 
 if %ERRORLEVEL% equ 2 (
     cls
+    :: Reiniciar o Windows
     shutdown -r -t 00
+)
+
+if %ERRORLEVEL% equ 3 (
+    cls
+    :: Atualizar softwares no Windows
+    winget upgrade --all
+    goto menu_Session_2
 )
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_2title = "=== Menu QuickWindows ==="
+$menu_Session_2title = "=== QuickWindows / Windows ==="
 $menu_Session_2prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_2prompt.length + 6
