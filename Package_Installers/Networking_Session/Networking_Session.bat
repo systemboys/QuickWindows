@@ -10,8 +10,12 @@
 :: Este programa tem a finalidade de funções relacionadas à redes.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-01 às 07h40, Marcos Aurélio:
+:: v0.0.1 2023-11-01 às 15h45, Marcos Aurélio:
 ::   - Versão inicial, Sessão de Redes para opções relacionadas à redes.
+:: v0.0.2 2023-11-01 às 08h30, Marcos Aurélio:
+::   - Versão inicial, criada a opção para obter IP público na Sessão de Redes.
+:: v0.0.3 2023-11-01 às 15h45, Marcos Aurélio:
+::   - Versão inicial, criada a opção para obter IP local na Sessão de Redes.
 ::
 :: Licença: GPL.
 
@@ -34,8 +38,7 @@ echo QuickWindows / Sessão
 :: Opções do Menu
 set "menu_Session_4[0]=Voltar..."
 set "menu_Session_4[1]=Obter IP público"
-set "menu_Session_4[2]=Opção 2"
-set "menu_Session_4[3]=Opção 3"
+set "menu_Session_4[2]=Obter IP local"
 
 set "default=0"
 
@@ -50,7 +53,7 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção Obter IP.
+    echo Você selecionou a Opção Obter IP público.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0GetPublicIPAddress.ps1""' -Verb RunAs}"
 
@@ -59,18 +62,9 @@ if %ERRORLEVEL% equ 1 (
 
 if %ERRORLEVEL% equ 2 (
     cls
-    echo Você selecionou a Opção 2.
+    echo Você selecionou a Opção Obter IP local.
 
-    @REM  Your commands here...
-
-    goto menu_Session_4
-)
-
-if %ERRORLEVEL% equ 3 (
-    cls
-    echo Você selecionou a Opção 3.
-
-    @REM  Your commands here...
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0GetLocalIPAddress.ps1""' -Verb RunAs}"
 
     goto menu_Session_4
 )
