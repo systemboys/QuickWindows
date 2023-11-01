@@ -22,7 +22,7 @@ $programFiles = [Environment]::GetEnvironmentVariable("ProgramFiles(x86)")
 $directory = "$programFiles\AnyDesk"
 
 if (Test-Path $directory) {
-    Write-Host "AnyDesk is now installed!"
+    Write-Host "AnyDesk is installed!"
 } else {
     Write-Host "AnyDesk is not installed! Starting installation process."
 
