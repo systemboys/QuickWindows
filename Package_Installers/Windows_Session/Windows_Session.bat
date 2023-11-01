@@ -79,21 +79,8 @@ if %ERRORLEVEL% equ 3 (
 if %ERRORLEVEL% equ 4 (
     cls
 
-    :: Script para instalar o Winget via Powershell
-
-    :: Verifica se o Winget já está instalado
-    if (-not (Get-Command -Name winget -ErrorAction SilentlyContinue)) {
-        :: Faz o download do instalador do Winget
-        $url = "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
-        $output = "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
-        Invoke-WebRequest -Uri $url -OutFile $output
-
-        :: Instala o Winget
-        Add-AppxPackage -Path $output
-
-        :: Remove o arquivo de instalação
-        Remove-Item -Path $output
-    }
+    @echo off
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0installWinget.ps1""' -Verb RunAs}"
 
     goto menu_Session_2
 )
