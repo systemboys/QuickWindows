@@ -343,10 +343,10 @@ Para escrever o `arquivo.ps1` para scripts de instalação:
 #
 # Licença: GPL.
 
-# Verifica se o AnyDesk está instalado
-$anydeskInstalled = Get-WmiObject -Class Win32_Product | Where-Object {$_.Name -eq "AnyDesk"}
+# Verifica se o YourPackage está instalado
+$anydeskInstalled = Get-WmiObject -Class Win32_Product | Where-Object {$_.Name -eq "YourPackage"}
 
-# Se o AnyDesk não estiver instalado, faz o download e instala
+# Se o YourPackage não estiver instalado, faz o download e instala
 if (!$anydeskInstalled) {
     Write-Host "YourPackage is not installed! Starting installation process."
 
