@@ -38,11 +38,11 @@ QuickWindows: Facilite a vida no Windows com um menu interativo. Instale pacotes
    > No **_Prompt de Comandos_**
    > Há uma linha para executar o clone e ao mesmo tempo executá-lo:
    > ```batch
-   > git clone https://github.com/systemboys/QuickWindows.git & cd QuickWindows & call QuickWindows.bat
+   > cd %TEMP% && git clone https://github.com/systemboys/QuickWindows.git & cd QuickWindows & call QuickWindows.bat
    > ```
    > No **_Microsoft PowerShell_**
    > ```batch
-   > git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\ ; .\QuickWindows.bat
+   > cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\ ; .\QuickWindows.bat
    > ```
 
 3. **Explore e Instale:** Explore as categorias, escolha os pacotes que deseja instalar e siga as instruções. Em poucos instantes, você terá os programas desejados em seu sistema Linux.
