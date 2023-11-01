@@ -36,9 +36,6 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 :: Opções do Menu
 set "menu_Session_3[0]=Voltar..."
 set "menu_Session_3[1]=Instalar AnyDesk"
-set "menu_Session_3[2]=Opção 2"
-set "menu_Session_3[3]=Opção 3"
-set "menu_Session_3[4]=Opção 4"
 
 set "default=0"
 
@@ -56,33 +53,6 @@ if %ERRORLEVEL% equ 1 (
     echo Você selecionou a Opção para instalar o AnyDesk.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_AnyDesk.ps1""' -Verb RunAs}"
-
-    goto menu_Session_3
-)
-
-if %ERRORLEVEL% equ 2 (
-    cls
-    echo Você selecionou a Opção 2.
-
-    @REM  Your commands here...
-
-    goto menu_Session_3
-)
-
-if %ERRORLEVEL% equ 3 (
-    cls
-    echo Você selecionou a Opção 3.
-
-    @REM  Your commands here...
-
-    goto menu_Session_3
-)
-
-if %ERRORLEVEL% equ 4 (
-    cls
-    echo Você selecionou a Opção 4.
-
-    @REM  Your commands here...
 
     goto menu_Session_3
 )
