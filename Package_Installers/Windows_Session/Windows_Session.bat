@@ -65,6 +65,7 @@ if %ERRORLEVEL% equ 2 (
 
 if %ERRORLEVEL% equ 3 (
     cls
+
     :: Verifica se o winget já está instalado
     winget --version >nul 2>&1
     if errorlevel 1 (
@@ -73,7 +74,8 @@ if %ERRORLEVEL% equ 3 (
         powershell -Command "& { Invoke-WebRequest -Uri 'https://aka.ms/getwinget' -OutFile 'winget-installer.msi' }"
 
         :: Instala o winget
-        msiexec /i "winget-installer.msi" /quiet /qn /norestart
+        echo Instalando o Windows Package Manager (winget)...
+        msiexec /i winget-installer.msi /quiet /qn /norestart
 
         :: Remove o instalador
         del "winget-installer.msi"
@@ -82,6 +84,7 @@ if %ERRORLEVEL% equ 3 (
     :: Atualizar softwares no Windows
     echo Atualizando softwares no Windows...
     winget upgrade --all
+
     goto menu_Session_2
 )
 
