@@ -18,22 +18,30 @@
 $anydeskInstalled = Get-WmiObject -Class Win32_Product | Where-Object {$_.Name -eq "AnyDesk"}
 
 # Se o AnyDesk não estiver instalado, faz o download e instala
-if (!$anydeskInstalled) {
-    Write-Host "AnyDesk is not installed! Starting installation process."
+# if (!$anydeskInstalled) {
+#     Write-Host "AnyDesk is not installed! Starting installation process."
 
-    # Link do download e o diretório Temp
-    $downloadUrl = "https://download.anydesk.com/AnyDesk.exe"
-    $downloadPath = "$env:temp\AnyDesk.exe"
+#     # Link do download e o diretório Temp
+#     $downloadUrl = "https://download.anydesk.com/AnyDesk.exe"
+#     $downloadPath = "$env:temp\AnyDesk.exe"
     
-    # Faz o download do AnyDesk
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+#     # Faz o download do AnyDesk
+#     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
     
-    # Instala o AnyDesk
-    Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
+#     # Instala o AnyDesk
+#     Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
 
-    # Apagar o arquivo
-    $filePath = "C:\Path\to\AnyDesk.exe"
-    Remove-Item -Path $filePath -Force
+#     # Apagar o arquivo
+#     $filePath = "C:\Path\to\AnyDesk.exe"
+#     Remove-Item -Path $filePath -Force
+# } else {
+#     Write-Host "AnyDesk is now installed!"
+# }
+
+$filePath = "$env:ProgramFiles(x86)\AnyDesk\AnyDesk.exe"
+if (Test-Path $filePath) {
+    Write-Host "The file exists."
 } else {
-    Write-Host "AnyDesk is now installed!"
+    Write-Host "The file does not exist."
 }
+
