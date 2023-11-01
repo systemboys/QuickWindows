@@ -34,7 +34,7 @@ echo QuickWindows / Sessão
 
 :: Opções do Menu
 set "menu_Session_4[0]=Voltar..."
-set "menu_Session_4[1]=Opção 1"
+set "menu_Session_4[1]=Obter IP"
 set "menu_Session_4[2]=Opção 2"
 set "menu_Session_4[3]=Opção 3"
 
@@ -51,9 +51,10 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção 1.
+    echo Você selecionou a Opção Obter IP.
 
-    @REM  Your commands here...
+    $ipAddress = (Test-Connection -ComputerName (hostname) -Count 1).IPV4Address.IPAddressToString
+    Write-Host "IP Address: $ipAddress"
 
     goto menu_Session_4
 )

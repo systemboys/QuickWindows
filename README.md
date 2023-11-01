@@ -33,7 +33,7 @@ QuickWindows: Facilite a vida no Windows com um menu interativo. Instale pacotes
    .\QuickWindows.bat
    ```
    
-   > **( ! )** Sertifique-se de que o `Git` esteja instalado em seu Linux!
+   > **_( ! )_** Sertifique-se de que o `Git` esteja instalado em seu Linux!
 
    > No **_Prompt de Comandos_**
    > Há uma linha para executar o clone e ao mesmo tempo executá-lo:
@@ -65,21 +65,27 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 
 ```batch
 /QuickWindows
-  ├─ /Imagens/
-  │    └─ QuickWindows.png
-  ├─ /Package_Installers/
-  │    ├─ /Internet_Session/
-  │    │    ├─ Internet_Session.bat
-  │    │    ├─ Install_Package1.bat
-  │    │    ├─ Install_Package2.bat
-  │    │    ├─ Install_Package3.bat
-  │    │    └─ ...
-  │    ├─ /Menu_QuickWindows/
-  │    │    └─ Menu_QuickWindows.bat
-  │    └─ /Menu_QuickWindows/
-  │         └─ Package_Installers.bat
-  ├─ QuickWindows.bat
-  └─ README.md
+├─ /Imagens/
+│  └─ QuickWindows.png
+├─ /Package_Installers/
+│  ├─ /Internet_Session/
+│  │  ├─ Internet_Session.bat
+│  │  ├─ Install_Package1.bat
+│  │  ├─ Install_Package2.bat
+│  │  ├─ Install_Package3.bat
+│  │  └─ ...
+│  ├─ /Menu_QuickWindows/
+│  │    └─ Menu_QuickWindows.bat
+│  ├─ /Networking_Session/
+│  │  ├─ Networking_Session.bat
+│  │  ├─ Install_Package3.bat
+│  │  └─ ...
+│  └─ /Windows_Session/
+│     ├─ Windows_Session.bat
+│     ├─ Install_Package1.bat
+│     └─ ...
+├─ QuickWindows.bat
+└─ README.md
 ```
 
 Dentro do diretório "Package_Installers", você pode ter vários `arquivos.bat`, cada um responsável por instalar um pacote de software específico. Isso torna a estrutura do seu projeto organizada e fácil de entender.
