@@ -334,6 +334,7 @@ $anydeskInstalled = Get-WmiObject -Class Win32_Product | Where-Object {$_.Name -
 if (!$anydeskInstalled) {
     Write-Host "YourPackage is not installed! Starting installation process."
 
+    # Link do download e o diretório Temp
     $downloadUrl = "https://download.youpackage.com/YourPackage.exe"
     $downloadPath = "$env:temp\YourPackage.exe"
     
