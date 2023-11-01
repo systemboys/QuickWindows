@@ -6,7 +6,7 @@ if (!$anydeskInstalled) {
     Write-Host "AnyDesk não está instalado! Iniciando processo de instalação."
 
     $downloadUrl = "https://download.anydesk.com/AnyDesk.exe"
-    $downloadPath = "C:\Windows\Temp\AnyDesk.exe"
+    $downloadPath = "$env:temp\AnyDesk.exe"
     
     # Faz o download do AnyDesk
     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
