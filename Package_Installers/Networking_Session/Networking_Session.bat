@@ -41,7 +41,7 @@ echo QuickWindows / Sessão
 set "menu_Session_4[0]=Voltar..."
 set "menu_Session_4[1]=Obter IP público"
 set "menu_Session_4[2]=Obter IP local"
-set "menu_Session_4[3]=Obter a rota de IP até a Google.com"
+set "menu_Session_4[3]=Obter a rota de IP até a Google.com (beta)"
 
 set "default=0"
 
