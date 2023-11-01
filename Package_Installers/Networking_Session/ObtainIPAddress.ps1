@@ -1,4 +1,3 @@
-$ipAddress = (Test-Connection -ComputerName (hostname) -Count 1).IPV4Address.IPAddressToString
-Write-Host "IP Address: $ipAddress"
-
+$ipAddress = Invoke-RestMethod -Uri "https://api.ipify.org?format=json" | Select-Object -ExpandProperty ip
+Write-Host "Public IP Address: $ipAddress"
 Start-Sleep -Seconds 10
