@@ -349,15 +349,17 @@ Para escrever o `arquivo.ps1` para scripts de instalação:
 #
 # Licença: GPL.
 
-# Verifica se o YourPackage está instalado
-$anydeskInstalled = Get-WmiObject -Class Win32_Product | Where-Object {$_.Name -eq "YourPackage"}
-
 # Se o YourPackage não estiver instalado, faz o download e instala
-if (!$anydeskInstalled) {
+$programFiles = [Environment]::GetEnvironmentVariable("ProgramFiles(x86)")
+$directory = "$programFiles\YourPackage"
+
+if (Test-Path $directory) {
+    Write-Host "YourPackage is installed!"
+} else {
     Write-Host "YourPackage is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://download.youpackage.com/YourPackage.exe"
+    $downloadUrl = "https://download.anydesk.com/YourPackage.exe"
     $downloadPath = "$env:temp\YourPackage.exe"
     
     # Faz o download do YourPackage
@@ -369,9 +371,10 @@ if (!$anydeskInstalled) {
     # Apagar o arquivo
     $filePath = "C:\Path\to\YourPackage.exe"
     Remove-Item -Path $filePath -Force
-} else {
-    Write-Host "YourPackage is now installed!"
 }
+
+Write-Host "Press any key to continue..."
+$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
 ```
 

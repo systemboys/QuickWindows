@@ -16,9 +16,6 @@
 #
 # Licença: GPL.
 
-# Verifica se o AnyDesk está instalado
-$anydeskInstalled = Get-WmiObject -Class Win32_Product | Where-Object {$_.Name -eq "AnyDesk"}
-
 # Se o AnyDesk não estiver instalado, faz o download e instala
 $programFiles = [Environment]::GetEnvironmentVariable("ProgramFiles(x86)")
 $directory = "$programFiles\AnyDesk"
