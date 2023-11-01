@@ -60,21 +60,7 @@ if %ERRORLEVEL% equ 1 (
     ) else (
         echo O AnyDesk não está instalado! Iniciando o download e a instalação.
         
-        :: Define o local para baixar o arquivo de instalação
-        set "downloadUrl=https://download.anydesk.com/AnyDesk.exe"
-        set "installerPath=%TEMP%\AnyDesk.exe"
-        
-        :: Baixa o arquivo de instalação
-        bitsadmin /transfer "AnyDeskDownload" %downloadUrl% %installerPath%
-        
-        :: Verifica se o download foi bem-sucedido
-        if not exist "%installerPath%" (
-            echo Falha ao baixar o arquivo de instalação do AnyDesk.
-            exit /b 1
-        )
-        
-        :: Instala o AnyDesk
-        start "" "%installerPath%"
+        PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_AnyDesk.ps1""' -Verb RunAs}"
         
         :: Aguarda um momento antes de sair
         timeout /t 5 /nobreak >nul
