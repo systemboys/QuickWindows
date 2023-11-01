@@ -33,7 +33,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
 set "menu_Session_3[0]=Voltar..."
-set "menu_Session_3[1]=Opção 1"
+set "menu_Session_3[1]=Instalar AnyDesk"
 set "menu_Session_3[2]=Opção 2"
 set "menu_Session_3[3]=Opção 3"
 set "menu_Session_3[4]=Opção 4"
@@ -51,9 +51,40 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção 1.
+    echo Você selecionou a Opção para instalar o AnyDesk.
 
-    @REM  Your commands here...
+    :: Verifica se o AnyDesk está instalado
+    reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk" >nul 2>&1
+    if %errorlevel% equ 0 (
+        echo O AnyDesk já está instalado!
+    ) else (
+        echo O AnyDesk não está instalado! Iniciando o download e a instalação.
+        
+        :: Define o local para baixar o arquivo de instalação
+        set "downloadUrl=https://download.anydesk.com/AnyDesk.exe"
+        set "installerPath=%TEMP%\AnyDesk.exe"
+        
+        :: Baixa o arquivo de instalação
+        bitsadmin /transfer "AnyDeskDownload" %downloadUrl% %installerPath%
+        
+        :: Verifica se o download foi bem-sucedido
+        if not exist "%installerPath%" (
+            echo Falha ao baixar o arquivo de instalação do AnyDesk.
+            exit /b 1
+        )
+        
+        :: Instala o AnyDesk
+        start "" "%installerPath%"
+        
+        :: Aguarda um momento antes de sair
+        timeout /t 5 /nobreak >nul
+        
+        echo O AnyDesk foi instalado com sucesso!
+    )
+
+    :: Limpa variáveis e finaliza
+    set "downloadUrl="
+    set "installerPath="
 
     goto menu_Session_3
 )
