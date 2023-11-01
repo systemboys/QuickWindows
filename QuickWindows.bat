@@ -26,6 +26,8 @@
 ::   - Versão inicial, menu_Session_2 de instalações de programas para Windows.
 :: v0.0.6 2023-10-31 às 22h40, Marcos Aurélio:
 ::   - Código PowerShell para atualizar softwares do Windows usando o comando winget.
+:: v0.0.7 2023-10-31 às 23h55, Marcos Aurélio:
+::   - Script para instalar o Winget via Powershell.
 ::
 :: Licença: GPL.
 

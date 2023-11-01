@@ -15,6 +15,8 @@
 ::   - Versão inicial, menu_Session_2 de instalações de programas para Windows.
 :: v0.0.2 2023-10-31 às 22h40, Marcos Aurélio:
 ::   - Código PowerShell para atualizar softwares do Windows usando o comando winget.
+:: v0.0.3 2023-10-31 às 23h55, Marcos Aurélio:
+::   - Script para instalar o Winget via Powershell.
 ::
 :: Licença: GPL.
 
@@ -77,16 +79,21 @@ if %ERRORLEVEL% equ 3 (
 if %ERRORLEVEL% equ 4 (
     cls
 
-    :: Baixa o instalador do winget
-    echo Baixando e instalando o Windows Package Manager (winget)...
-    powershell -Command "& { Invoke-WebRequest -Uri 'https://aka.ms/getwinget' -OutFile 'winget-installer.msi' }"
+    :: Script para instalar o Winget via Powershell
 
-    :: Instala o winget
-    echo Instalando o Windows Package Manager (winget)...
-    msiexec /i winget-installer.msi /quiet /qn /norestart
+    :: Verifica se o Winget já está instalado
+    if (-not (Get-Command -Name winget -ErrorAction SilentlyContinue)) {
+        :: Faz o download do instalador do Winget
+        $url = "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+        $output = "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+        Invoke-WebRequest -Uri $url -OutFile $output
 
-    :: Remove o instalador
-    del "winget-installer.msi"
+        :: Instala o Winget
+        Add-AppxPackage -Path $output
+
+        :: Remove o arquivo de instalação
+        Remove-Item -Path $output
+    }
 
     goto menu_Session_2
 )
