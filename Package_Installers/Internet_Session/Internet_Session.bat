@@ -53,24 +53,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o AnyDesk.
 
-    :: Verifica se o AnyDesk está instalado
-    reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk" >nul 2>&1
-    if %errorlevel% equ 0 (
-        echo O AnyDesk já está instalado!
-    ) else (
-        echo O AnyDesk não está instalado! Iniciando o download e a instalação.
-        
-        PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_AnyDesk.ps1""' -Verb RunAs}"
-        
-        :: Aguarda um momento antes de sair
-        timeout /t 5 /nobreak >nul
-        
-        echo O AnyDesk foi instalado com sucesso!
-    )
-
-    :: Limpa variáveis e finaliza
-    set "downloadUrl="
-    set "installerPath="
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_AnyDesk.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
