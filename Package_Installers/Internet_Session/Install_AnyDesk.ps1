@@ -3,7 +3,7 @@ $anydeskInstalled = Get-WmiObject -Class Win32_Product | Where-Object {$_.Name -
 
 # Se o AnyDesk não estiver instalado, faz o download e instala
 if (!$anydeskInstalled) {
-    Write-Host "AnyDesk não está instalado! Iniciando processo de instalação."
+    Write-Host "AnyDesk is not installed! Starting installation process."
 
     $downloadUrl = "https://download.anydesk.com/AnyDesk.exe"
     $downloadPath = "$env:temp\AnyDesk.exe"
@@ -13,6 +13,10 @@ if (!$anydeskInstalled) {
     
     # Instala o AnyDesk
     Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
+
+    # Pagar o arquivo
+    $filePath = "C:\Path\to\AnyDesk.exe"
+    Remove-Item -Path $filePath -Force
 } else {
-    Write-Host "AnyDesk já está instalado!"
+    Write-Host "AnyDesk is now installed!"
 }
