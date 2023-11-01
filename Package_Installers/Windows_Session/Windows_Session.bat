@@ -39,6 +39,7 @@ set "menu_Session_2[0]=Voltar..."
 set "menu_Session_2[1]=Desligar o Windows"
 set "menu_Session_2[2]=Reiniciar o Windows"
 set "menu_Session_2[3]=Atualizar Softwares"
+set "menu_Session_2[4]=Instalar Winget"
 
 set "default=0"
 
@@ -66,24 +67,26 @@ if %ERRORLEVEL% equ 2 (
 if %ERRORLEVEL% equ 3 (
     cls
 
-    :: Verifica se o winget já está instalado
-    winget --version >nul 2>&1
-    if errorlevel 1 (
-        :: Baixa o instalador do winget
-        echo Baixando e instalando o Windows Package Manager (winget)...
-        powershell -Command "& { Invoke-WebRequest -Uri 'https://aka.ms/getwinget' -OutFile 'winget-installer.msi' }"
-
-        :: Instala o winget
-        echo Instalando o Windows Package Manager (winget)...
-        msiexec /i winget-installer.msi /quiet /qn /norestart
-
-        :: Remove o instalador
-        del "winget-installer.msi"
-    )
-
     :: Atualizar softwares no Windows
     echo Atualizando softwares no Windows...
     winget upgrade --all
+
+    goto menu_Session_2
+)
+
+if %ERRORLEVEL% equ 4 (
+    cls
+
+    :: Baixa o instalador do winget
+    echo Baixando e instalando o Windows Package Manager (winget)...
+    powershell -Command "& { Invoke-WebRequest -Uri 'https://aka.ms/getwinget' -OutFile 'winget-installer.msi' }"
+
+    :: Instala o winget
+    echo Instalando o Windows Package Manager (winget)...
+    msiexec /i winget-installer.msi /quiet /qn /norestart
+
+    :: Remove o instalador
+    del "winget-installer.msi"
 
     goto menu_Session_2
 )
