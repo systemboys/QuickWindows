@@ -297,6 +297,23 @@ if %ERRORLEVEL% equ 2 (
 :: ... (restante do código)
 ```
 
+Pode executar um `arquivo.ps1` para scripts de instalação:
+
+```batch
+:: ... (restante do código)
+
+if %ERRORLEVEL% equ 1 (
+    cls
+    echo Você selecionou a Opção para instalar o Your_Package.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Your_Package.ps1""' -Verb RunAs}"
+
+    goto menu_Session_3
+)
+
+:: ... (restante do código)
+```
+
 Dê a opção no menu:
 
 ```batch
@@ -306,4 +323,34 @@ set "menu[5]=Redes"
 ```
 
 > **_( i )_** A partir daqui, os comandos devem ser colocados nas condições da nova sessão, se quiser separar os arquivos (.bat) para escrever os comandos para instalação de pacotes, crie arquivos e nomei como `Install_Mozilla_Firefox.bat` dentro do mesmo diretório da nova sessão, na condição da nova sessão, mande executar o arquivo e, após a execução dos comandos no arquivo (.bat) de instalação do pacote, coloque o comando para voltar ao menu anterior.
+
+Para escrever o `arquivo.ps1` para scripts de instalação:
+
+```powershell
+# Verifica se o AnyDesk está instalado
+$anydeskInstalled = Get-WmiObject -Class Win32_Product | Where-Object {$_.Name -eq "AnyDesk"}
+
+# Se o AnyDesk não estiver instalado, faz o download e instala
+if (!$anydeskInstalled) {
+    Write-Host "YourPackage is not installed! Starting installation process."
+
+    $downloadUrl = "https://download.youpackage.com/YourPackage.exe"
+    $downloadPath = "$env:temp\YourPackage.exe"
+    
+    # Faz o download do YourPackage
+    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    
+    # Instala o YourPackage
+    Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
+
+    # Apagar o arquivo
+    $filePath = "C:\Path\to\YourPackage.exe"
+    Remove-Item -Path $filePath -Force
+} else {
+    Write-Host "YourPackage is now installed!"
+}
+
+```
+
+> **_( i )_** Neste arquivo você pode escrever os comandos para instalação de pacotes e outros comandos.
 
