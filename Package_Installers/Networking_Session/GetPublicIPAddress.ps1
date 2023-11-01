@@ -1,4 +1,4 @@
-# Menu_QuickWindows.bat - Para instalação de softwares para Windows
+# Menu_QuickWindows.bat - Para obter o IP público
 #
 # Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 # Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"

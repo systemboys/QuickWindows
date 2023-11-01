@@ -13,9 +13,11 @@
 :: v0.0.1 2023-11-01 às 15h45, Marcos Aurélio:
 ::   - Versão inicial, Sessão de Redes para opções relacionadas à redes.
 :: v0.0.2 2023-11-01 às 08h30, Marcos Aurélio:
-::   - Versão inicial, criada a opção para obter IP público na Sessão de Redes.
+::   - Criada a opção para obter IP público na Sessão de Redes.
 :: v0.0.3 2023-11-01 às 15h45, Marcos Aurélio:
-::   - Versão inicial, criada a opção para obter IP local na Sessão de Redes.
+::   - Criada a opção para obter IP local na Sessão de Redes.
+:: v0.0.4 2023-11-01 às 16h05, Marcos Aurélio:
+::   - Criada a opção para obter a rota de IP até a Google.com.
 ::
 :: Licença: GPL.
 
@@ -39,6 +41,7 @@ echo QuickWindows / Sessão
 set "menu_Session_4[0]=Voltar..."
 set "menu_Session_4[1]=Obter IP público"
 set "menu_Session_4[2]=Obter IP local"
+set "menu_Session_4[3]=Obter a rota de IP até a Google.com"
 
 set "default=0"
 
@@ -65,6 +68,15 @@ if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção Obter IP local.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0GetLocalIPAddress.ps1""' -Verb RunAs}"
+
+    goto menu_Session_4
+)
+
+if %ERRORLEVEL% equ 3 (
+    cls
+    echo Você selecionou a Opção Obter IP local.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0GetConnectionIPRoute.ps1""' -Verb RunAs}"
 
     goto menu_Session_4
 )

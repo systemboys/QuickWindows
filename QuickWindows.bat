@@ -32,6 +32,12 @@
 ::   - Sessão Internet, Instalação de AnyDesk.
 :: v0.0.9 2023-11-01 às 07h40, Marcos Aurélio:
 ::   - Versão inicial, Sessão de Redes para opções relacionadas à redes.
+:: v0.1.0 2023-11-01 às 07h40, Marcos Aurélio:
+::   - Criada a opção para obter IP público na Sessão de Redes.
+:: v0.1.1 2023-11-01 às 07h40, Marcos Aurélio:
+::   - Criada a opção para obter IP local na Sessão de Redes.
+:: v0.1.2 2023-11-01 às 16h05, Marcos Aurélio:
+::   - Criada a opção para obter a rota de IP até a Google.com.
 ::
 :: Licença: GPL.
 
