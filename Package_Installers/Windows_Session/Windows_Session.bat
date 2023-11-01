@@ -65,19 +65,22 @@ if %ERRORLEVEL% equ 2 (
 
 if %ERRORLEVEL% equ 3 (
     cls
-    :: Atualizar softwares no Windows
     :: Verifica se o winget já está instalado
-    if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+    winget --version >nul 2>&1
+    if errorlevel 1 (
         :: Baixa o instalador do winget
-        $installerPath = "$env:TEMP\winget_installer.msi"
-        Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -OutFile $installerPath
+        echo Baixando e instalando o Windows Package Manager (winget)...
+        powershell -Command "& { Invoke-WebRequest -Uri 'https://aka.ms/getwinget' -OutFile 'winget-installer.msi' }"
 
         :: Instala o winget
-        Start-Process -FilePath "msiexec.exe" -ArgumentList "/i $installerPath /quiet" -Wait
+        msiexec /i "winget-installer.msi" /quiet /qn /norestart
 
         :: Remove o instalador
-        Remove-Item -Path $installerPath
-    }
+        del "winget-installer.msi"
+    )
+
+    :: Atualizar softwares no Windows
+    echo Atualizando softwares no Windows...
     winget upgrade --all
     goto menu_Session_2
 )
