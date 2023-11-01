@@ -297,7 +297,7 @@ if %ERRORLEVEL% equ 2 (
 :: ... (restante do código)
 ```
 
-Pode executar um `arquivo.ps1` para scripts de instalação:
+Pode executar um `arquivo.ps1` para scripts de instalação via PowerShell:
 
 ```batch
 :: ... (restante do código)
