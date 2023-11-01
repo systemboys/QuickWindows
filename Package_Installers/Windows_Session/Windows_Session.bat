@@ -80,7 +80,7 @@ if %ERRORLEVEL% equ 4 (
     cls
 
     @echo off
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0installWinget.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Winget.ps1""' -Verb RunAs}"
 
     goto menu_Session_2
 )
