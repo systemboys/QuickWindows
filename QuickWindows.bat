@@ -23,6 +23,9 @@
 ::   - Adicionada a "Sessão Windows" e algumas opções.
 :: v0.0.5 2023-10-31 às 11h10, Marcos Aurélio:
 ::   - Funcionalidade das opções que Atualiza, Deleta e Recarrega o QuickWindows na Sessão "Menu QuickWindows".
+::   - Versão inicial, menu_Session_2 de instalações de programas para Windows.
+:: v0.0.6 2023-10-31 às 22h40, Marcos Aurélio:
+::   - Código PowerShell para atualizar softwares do Windows usando o comando winget.
 ::
 :: Licença: GPL.
 
