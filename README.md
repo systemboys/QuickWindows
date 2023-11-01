@@ -327,6 +327,22 @@ if %ERRORLEVEL% equ 1 (
 Para escrever o `arquivo.ps1` para scripts de instalação:
 
 ```powershell
+# Install_YourPackage.ps1 - Executa o script de instalação de YourPackage.
+#
+# URL: https://github.com/github_user/project_on_github.git
+# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+#
+# ---------------------------------------------------------------
+# Este programa tem a finadade de facilitar na instalação de
+# pacotes para Windows.
+# ---------------------------------------------------------------
+# Histórico:
+# v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:
+#   - Versão inicial, Instalação de YourPackage.
+#
+# Licença: GPL.
+
 # Verifica se o AnyDesk está instalado
 $anydeskInstalled = Get-WmiObject -Class Win32_Product | Where-Object {$_.Name -eq "AnyDesk"}
 

@@ -28,6 +28,8 @@
 ::   - Código PowerShell para atualizar softwares do Windows usando o comando winget.
 :: v0.0.7 2023-10-31 às 23h55, Marcos Aurélio:
 ::   - Script para instalar o Winget via Powershell.
+:: v0.0.8 2023-10-31 às 01h10, Marcos Aurélio:
+::   - Sessão Internet, Instalação de AnyDesk.
 ::
 :: Licença: GPL.
 

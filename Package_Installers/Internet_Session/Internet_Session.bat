@@ -13,6 +13,8 @@
 :: Histórico:
 :: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, menu_Session_3 de instalações de programas para Windows.
+:: v0.0.2 2023-10-31 às 01h10, Marcos Aurélio:
+::   - Sessão Internet, Instalação de AnyDesk.
 ::
 :: Licença: GPL.
 
