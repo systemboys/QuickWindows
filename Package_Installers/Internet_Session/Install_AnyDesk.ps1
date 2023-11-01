@@ -11,6 +11,8 @@
 # Histórico:
 # v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:
 #   - Versão inicial, Instalação de AnyDesk.
+# v0.0.2 2023-11-01 às 16h54, Marcos Aurélio:
+#   - Correção da verificação da existência do AnyDesk no Windows.
 #
 # Licença: GPL.
 

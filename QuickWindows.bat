@@ -38,6 +38,9 @@
 ::   - Criada a opção para obter IP local na Sessão de Redes.
 :: v0.1.2 2023-11-01 às 16h05, Marcos Aurélio:
 ::   - Criada a opção para obter a rota de IP até a Google.com.
+:: v0.1.3 2023-11-01 às 16h54, Marcos Aurélio:
+::   - Correção da verificação da existência do AnyDesk no Windows na opção Internet
+::     da sessão Internet.
 ::
 :: Licença: GPL.
 
