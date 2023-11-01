@@ -11,4 +11,6 @@ if (!$anydeskInstalled) {
     
     # Instala o AnyDesk
     Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
+} else {
+    Write-Host "AnyDesk já está instalado."
 }
