@@ -45,3 +45,6 @@ if (Test-Path $filePath) {
     Write-Host "The file does not exist."
 }
 
+Write-Host "Press any key to continue..."
+$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+
