@@ -297,6 +297,16 @@ if %ERRORLEVEL% equ 2 (
 :: ... (restante do código)
 ```
 
+Dê a opção no menu:
+
+```batch
+:: ... (outras opções)
+set "menu[5]=Redes"
+:: ... (restante do código)
+```
+
+> **_( i )_** A partir daqui, os comandos devem ser colocados nas condições da nova sessão, se quiser separar os arquivos (.bat) para escrever os comandos para instalação de pacotes, crie arquivos e nomei como `Install_Mozilla_Firefox.bat` dentro do mesmo diretório da nova sessão, na condição da nova sessão, mande executar o arquivo e, após a execução dos comandos no arquivo (.bat) de instalação do pacote, coloque o comando para voltar ao menu anterior.
+
 Pode executar um `arquivo.ps1` para scripts de instalação via PowerShell:
 
 ```batch
@@ -313,16 +323,6 @@ if %ERRORLEVEL% equ 1 (
 
 :: ... (restante do código)
 ```
-
-Dê a opção no menu:
-
-```batch
-:: ... (outras opções)
-set "menu[5]=Redes"
-:: ... (restante do código)
-```
-
-> **_( i )_** A partir daqui, os comandos devem ser colocados nas condições da nova sessão, se quiser separar os arquivos (.bat) para escrever os comandos para instalação de pacotes, crie arquivos e nomei como `Install_Mozilla_Firefox.bat` dentro do mesmo diretório da nova sessão, na condição da nova sessão, mande executar o arquivo e, após a execução dos comandos no arquivo (.bat) de instalação do pacote, coloque o comando para voltar ao menu anterior.
 
 Para escrever o `arquivo.ps1` para scripts de instalação:
 
