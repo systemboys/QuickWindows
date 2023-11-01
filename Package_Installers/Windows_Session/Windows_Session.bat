@@ -68,14 +68,14 @@ if %ERRORLEVEL% equ 3 (
     :: Atualizar softwares no Windows
     :: Verifica se o winget já está instalado
     if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
-        # Baixa o instalador do winget
+        :: Baixa o instalador do winget
         $installerPath = "$env:TEMP\winget_installer.msi"
         Invoke-WebRequest -Uri "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" -OutFile $installerPath
 
-        # Instala o winget
+        :: Instala o winget
         Start-Process -FilePath "msiexec.exe" -ArgumentList "/i $installerPath /quiet" -Wait
 
-        # Remove o instalador
+        :: Remove o instalador
         Remove-Item -Path $installerPath
     }
     winget upgrade --all
