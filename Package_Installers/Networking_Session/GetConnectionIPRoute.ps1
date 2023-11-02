@@ -24,3 +24,6 @@
 
 $command = Read-Host "Enter a command to be executed in PowerShell"
 Invoke-Expression $command
+
+Write-Host "Press any key to continue..."
+$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
