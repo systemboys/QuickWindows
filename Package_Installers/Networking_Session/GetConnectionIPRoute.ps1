@@ -12,11 +12,15 @@
 #
 # Licença: GPL.
 
-$ipRoute = Test-NetConnection -ComputerName google.com -TraceRoute
-$ipRoute.Hops | ForEach-Object {
-    Write-Output $_.IPAddress
-}
+# $ipRoute = Test-NetConnection -ComputerName google.com -TraceRoute
+# $ipRoute.Hops | ForEach-Object {
+#     Write-Output $_.IPAddress
+# }
 
-Write-Host "Press any key to continue..."
-$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+# Write-Host "Press any key to continue..."
+# $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
+# ---
+
+$command = Read-Host "Enter a command to be executed in PowerShell"
+Invoke-Expression $command
