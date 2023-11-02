@@ -126,10 +126,10 @@ if %ERRORLEVEL% equ 4 (
 )
 
 if %ERRORLEVEL% equ 5 (
-    cd Package_Installers
     cls
     echo Você selecionou a Opção para Execução de Comandos no PowerShell.
 
+    cd Package_Installers
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0RunPowerShellCommands.ps1""' -Verb RunAs}"
 
     goto menu
