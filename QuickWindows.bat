@@ -43,7 +43,7 @@
 ::     da sessão Internet.
 :: v0.1.4 2023-11-01 às 22h50, Marcos Aurélio:
 ::   - Execução Interativa de Comandos no PowerShell
-:: v0.0.5 2023-11-01 às 23h45, Marcos Aurélio:
+:: v0.1.5 2023-11-01 às 23h45, Marcos Aurélio:
 ::   - Script PowerShell que ao informar um domínio de um site, ele
 ::     retornará com a rota da conexão na sessão QuickWindows / Redes.
 ::
