@@ -1,7 +1,7 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: Menu_QuickWindows.bat - Para instalação de softwares para Windows
+:: Networking_Session.bat - Para sessão de opções relacionadas a Redes
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"

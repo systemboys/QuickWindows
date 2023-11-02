@@ -1,12 +1,11 @@
 # Install_AnyDesk.ps1 - Executa o script de instalação de AnyDesk.
 #
-# URL: https://github.com/github_user/project_on_github.git
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #
 # ---------------------------------------------------------------
-# Este programa tem a finalidade de facilitar na instalação de
-# pacotes para Windows.
+# Este programa tem a finalidade de facilitar na instalação do
+# AnyDesk para Windows.
 # ---------------------------------------------------------------
 # Histórico:
 # v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:

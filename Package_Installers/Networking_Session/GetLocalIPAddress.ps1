@@ -1,4 +1,4 @@
-# Menu_QuickWindows.bat - Para obter IP local na Sessão de Redes
+# GetLocalIPAddress.ps1 - Para obter rota de domínio
 #
 # Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 # Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -8,7 +8,8 @@
 # ---------------------------------------------------------------
 # Histórico:
 # v0.0.1 2023-11-01 às 15h45, Marcos Aurélio:
-#   - Versão inicial, criada a opção para obter IP local na Sessão de Redes.
+#   - Versão inicial, opção para obter a rota de determinado
+#     domínio na Sessão de Redes.
 #
 # Licença: GPL.
 

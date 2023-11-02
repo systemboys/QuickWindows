@@ -1,4 +1,4 @@
-# Menu_QuickWindows.bat - Para obter o IP público
+# GetPublicIPAddress.ps1 - Para obter o IP público
 #
 # Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 # Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
