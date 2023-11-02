@@ -41,6 +41,8 @@
 :: v0.1.3 2023-11-01 às 16h54, Marcos Aurélio:
 ::   - Correção da verificação da existência do AnyDesk no Windows na opção Internet
 ::     da sessão Internet.
+:: v0.1.4 2023-11-01 às 22h50, Marcos Aurélio:
+::   - Execução Interativa de Comandos no PowerShell
 ::
 :: Licença: GPL.
 
@@ -87,6 +89,7 @@ set "menu[1]=Menu QuickWindows"
 set "menu[2]=Windows"
 set "menu[3]=Internet"
 set "menu[4]=Redes"
+set "menu[5]=Execução de Comandos no PowerShell"
 
 set "default=0"
 
@@ -114,19 +117,22 @@ if %ERRORLEVEL% equ 3 (
     cd Package_Installers\Internet_Session
     call Internet_Session.bat
     cd ..
-
-    @REM echo Você selecionou a Opção 3.
-
-    @REM @REM  Your commands here...
-
-    @REM pause
-    @REM goto menu
 )
 
 if %ERRORLEVEL% equ 4 (
     cd Package_Installers\Networking_Session
     call Networking_Session.bat
     cd ..
+)
+
+if %ERRORLEVEL% equ 5 (
+    cd Package_Installers
+    cls
+    echo Você selecionou a Opção para Execução de Comandos no PowerShell.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0RunPowerShellCommands.ps1""' -Verb RunAs}"
+
+    goto menu
 )
 
 goto :EOF
