@@ -12,10 +12,10 @@
 #
 # Licença: GPL.
 
-$ipRoute = Test-NetConnection -ComputerName google.com -TraceRoute
-$ipRoute.Hops | ForEach-Object {
-    Write-Output $_.IPAddress
-}
+$domain = Read-Host "Enter the domain of the website"
+$ip = [System.Net.Dns]::GetHostAddresses($domain) | Select-Object -ExpandProperty IPAddressToString
+$traceroute = Test-NetConnection -TraceRoute -ComputerName $ip
+$traceroute | Select-Object -ExpandProperty TraceRoute
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
