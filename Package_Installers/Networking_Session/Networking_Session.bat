@@ -17,11 +17,8 @@
 :: v0.0.3 2023-11-01 às 15h45, Marcos Aurélio:
 ::   - Criada a opção para obter IP local na Sessão de Redes.
 :: v0.0.4 2023-11-01 às 16h05, Marcos Aurélio:
-::   - Criada a opção para o Script powershell que ao informar um domínio
+::   - Criada a opção para o Script PowerShell que ao informar um domínio
 ::     de um site, ele retornará com a rota da conexão.
-:: v0.0.5 2023-11-01 às 23h45, Marcos Aurélio:
-::   - Script PowerShell que ao informar um domínio de um site, ele
-::     retornará com a rota da conexão na sessão QuickWindows / Redes.
 ::
 :: Licença: GPL.
 

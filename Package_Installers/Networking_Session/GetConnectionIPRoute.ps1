@@ -8,7 +8,10 @@
 # ---------------------------------------------------------------
 # Histórico:
 # v0.0.1 2023-11-01 às 16h05, Marcos Aurélio:
-#   - Versão inicial, criada a opção para obter a rota de IP até a Google.com.
+#   - Versão inicial, criada a opção para obter a rota de IP até um determinado domínio.
+# v0.0.2 2023-11-01 às 23h45, Marcos Aurélio:
+#   - Script PowerShell que ao informar um domínio de um site, ele
+#     retornará com a rota da conexão na sessão QuickWindows / Redes.
 #
 # Licença: GPL.
 
