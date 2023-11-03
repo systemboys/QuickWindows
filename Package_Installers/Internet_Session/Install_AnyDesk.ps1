@@ -12,6 +12,9 @@
 #   - Versão inicial, Instalação de AnyDesk.
 # v0.0.2 2023-11-01 às 16h54, Marcos Aurélio:
 #   - Correção da verificação da existência do AnyDesk no Windows.
+# v0.0.2 2023-11-01 às 22h55, Marcos Aurélio:
+#   - Correção na linha de comando que apaga o arquivo de instalação
+#     do AnyDesk baixado.
 #
 # Licença: GPL.
 
@@ -35,7 +38,7 @@ if (Test-Path $directory) {
     Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
 
     # Apagar o arquivo
-    $filePath = "C:\Path\to\AnyDesk.exe"
+    $filePath = "$env:temp\AnyDesk.exe"
     Remove-Item -Path $filePath -Force
 }
 

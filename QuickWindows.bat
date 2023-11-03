@@ -46,6 +46,9 @@
 :: v0.1.5 2023-11-01 às 23h45, Marcos Aurélio:
 ::   - Script PowerShell que ao informar um domínio de um site, ele
 ::     retornará com a rota da conexão na sessão QuickWindows / Redes.
+:: v0.1.6 2023-11-01 às 22h55, Marcos Aurélio:
+::   - Correção na linha de comando que apaga o arquivo de instalação
+::     do AnyDesk baixado.
 ::
 :: Licença: GPL.
 
