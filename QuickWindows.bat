@@ -57,7 +57,7 @@
 
 cls
 
-@REM chcp 65001 > nul
+:: chcp 65001 > nul
 
 :: Obtém o número da última versão do histórico do script
 for /f "tokens=2 delims= " %%a in ('findstr /r /c:":: v[0-9]*\.[0-9]*\.[0-9]*" "%~f0"') do (
