@@ -49,12 +49,15 @@
 :: v0.1.6 2023-11-01 às 22h55, Marcos Aurélio:
 ::   - Correção na linha de comando que apaga o arquivo de instalação
 ::     do AnyDesk baixado.
+:: v0.1.7 2023-11-02 às 16h10, Marcos Aurélio:
+::   - Comentada a linha com o comando "chcp 65001 > nul", até o momento
+::     da alteração, não estava sendo útil.
 ::
 :: Licença: GPL.
 
 cls
 
-chcp 65001 > nul
+@REM chcp 65001 > nul
 
 :: Obtém o número da última versão do histórico do script
 for /f "tokens=2 delims= " %%a in ('findstr /r /c:":: v[0-9]*\.[0-9]*\.[0-9]*" "%~f0"') do (
