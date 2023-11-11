@@ -16,6 +16,8 @@
 ::   - Código PowerShell para atualizar softwares do Windows usando o comando winget.
 :: v0.0.3 2023-10-31 às 23h55, Marcos Aurélio:
 ::   - Script para instalar o Winget via Powershell.
+:: v0.0.4 2023-11-11 às 19h10, Marcos Aurélio:
+::   - Versão inicial, atualizar o PowerShell.
 ::
 :: Licença: GPL.
 
