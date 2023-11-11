@@ -49,6 +49,8 @@
 :: v0.1.6 2023-11-01 às 22h55, Marcos Aurélio:
 ::   - Correção na linha de comando que apaga o arquivo de instalação
 ::     do AnyDesk baixado.
+:: v0.1.7 2023-11-11 às 19h10, Marcos Aurélio:
+::   - Versão inicial, atualizar o PowerShell na sessão "Windows".
 ::
 :: Licença: GPL.
 
