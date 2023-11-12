@@ -64,7 +64,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para instalar o Microsoft Edge.
 
-    Start-Process "https://www.microsoft.com/pt-br/edge"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Microsoft_Edge.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
