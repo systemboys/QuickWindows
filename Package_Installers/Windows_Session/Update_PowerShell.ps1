@@ -35,6 +35,8 @@ Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath
 # Remover o script de instalação temporário
 Remove-Item $installerPath -Force
 
+# /Script para atualizar o PowerShell para a versão mais recente
+
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
