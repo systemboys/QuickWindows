@@ -14,7 +14,7 @@
 
 # Executar as atualizações do Windows
 Install-Module PSWindowsUpdate -Force
-Get-WindowsUpdate -AcceptAll -Install -AutoReboot
+Get-WindowsUpdate -AcceptAll -Install
 
 # Atualizar softwares no Windows.
 winget upgrade --all
