@@ -23,8 +23,7 @@ if (Test-Path $directory) {
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/ChromeSetup.exe"
-    $downloadsPath = [System.IO.Path]::Combine($userProfile, 'Downloads')
-    $downloadPath = "$downloadsPath\ChromeSetup.exe"
+    $downloadPath = "$env:temp\ChromeSetup.exe"
     
     # Faz o download do Google Chrome
     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
