@@ -41,7 +41,7 @@ echo QuickWindows / Sessão Windows
 set "menu_Session_2[0]=Voltar..."
 set "menu_Session_2[1]=Desligar o Windows"
 set "menu_Session_2[2]=Reiniciar o Windows"
-set "menu_Session_2[3]=Atualizar Softwares"
+set "menu_Session_2[3]=Atualizar Windows e Softwares"
 set "menu_Session_2[4]=Atualizar o PowerShell"
 
 set "default=0"
