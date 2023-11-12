@@ -55,6 +55,9 @@
 ::   - Opção para instalar o Microsoft Edge na sessão "Internet".
 :: v0.1.9 2023-11-11 às 23h50, Marcos Aurélio:
 ::   - Opção para Instalação o Google Chrome na sessão "Internet".
+:: v0.2.0 2023-11-12 às 11h00, Marcos Aurélio:
+::   - Correção, foi reescrito o script para baixar e executar o instalador
+::     do Microsoft Edge na sessão "Internet".
 ::
 :: Licença: GPL.
 
