@@ -71,9 +71,7 @@ if %ERRORLEVEL% equ 2 (
 if %ERRORLEVEL% equ 3 (
     cls
 
-    :: Atualizar softwares no Windows
-    echo Atualizando softwares no Windows...
-    winget upgrade --all
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0UpdatingSoftwareInWindows.ps1""' -Verb RunAs}"
 
     goto menu_Session_2
 )
