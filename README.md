@@ -33,7 +33,7 @@ QuickWindows: Facilite a vida no Windows com um menu interativo. Instale pacotes
    .\QuickWindows.bat
    ```
    
-   > **_( ! )_** Sertifique-se de que o `Git` esteja instalado em seu Linux!
+   > **_( ! )_** Sertifique-se de que o [`Git`](https://git-scm.com/download/win "Página de download do Git") esteja instalado em seu Linux!
 
    > No **_Prompt de Comandos_**
    > Há uma linha para executar o clone e ao mesmo tempo executá-lo:
