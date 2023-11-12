@@ -39,6 +39,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 set "menu_Session_3[0]=Voltar..."
 set "menu_Session_3[1]=Instalar AnyDesk"
 set "menu_Session_3[2]=Instalar Microsoft Edge"
+set "menu_Session_3[3]=Instalar Google Chrome"
 
 set "default=0"
 
@@ -65,6 +66,15 @@ if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção para instalar o Microsoft Edge.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Microsoft_Edge.ps1""' -Verb RunAs}"
+
+    goto menu_Session_3
+)
+
+if %ERRORLEVEL% equ 3 (
+    cls
+    echo Você selecionou a Opção para instalar o Google_Chrome.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Google_Chrome.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
