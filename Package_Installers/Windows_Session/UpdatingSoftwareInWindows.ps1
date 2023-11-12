@@ -12,15 +12,9 @@
 #
 # Licença: GPL.
 
-# Se o YourPackage não estiver instalado, faz o download e instala
-$winget = Get-Command winget -ErrorAction SilentlyContinue
-
-if ($winget -eq $null) {
-    $url = "https://github.com/microsoft/winget-cli/releases/download/v1.3.2691/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
-    $output = "C:\Temp\winget.msixbundle"
-    Invoke-WebRequest -Uri $url -OutFile $output
-    Add-AppxPackage -Path $output
-}
+# Executar as atualizações do Windows
+Install-Module PSWindowsUpdate -Force
+Get-WindowsUpdate -AcceptAll -Install -AutoReboot
 
 # Atualizar softwares no Windows.
 winget upgrade --all
