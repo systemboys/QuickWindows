@@ -330,6 +330,8 @@ if %ERRORLEVEL% equ 1 (
 :: ... (restante do código)
 ```
 
+> **_( ! )_** Cuidado com a linha `goto menu_Session_3`, confira nas `:: Opções do Menu`!
+
 Para escrever o `arquivo.ps1` para scripts de instalação:
 
 ```powershell
