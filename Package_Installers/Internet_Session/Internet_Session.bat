@@ -17,6 +17,8 @@
 ::   - Sessão Internet, Instalação de AnyDesk.
 :: v0.0.3 2023-11-11 às 23h36, Marcos Aurélio:
 ::   - Opção para instalar o Microsoft Edge.
+:: v0.0.3 2023-11-11 às 23h50, Marcos Aurélio:
+::   - Opção para Instalação o Google Chrome.
 ::
 :: Licença: GPL.
 
