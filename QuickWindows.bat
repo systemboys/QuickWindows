@@ -51,6 +51,8 @@
 ::     do AnyDesk baixado.
 :: v0.1.7 2023-11-11 às 19h10, Marcos Aurélio:
 ::   - Versão inicial, atualizar o PowerShell na sessão "Windows".
+:: v0.1.8 2023-11-11 às 23h36, Marcos Aurélio:
+::   - Opção para instalar o Microsoft Edge na sessão Internet.
 ::
 :: Licença: GPL.
 

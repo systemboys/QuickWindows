@@ -1,7 +1,7 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: Internet_Session.bat - Para instalação de softwares para Windows
+:: Internet_Session.bat - Para instalação de softwares para Windows.
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -15,6 +15,8 @@
 ::   - Versão inicial, menu_Session_3 de instalações de programas para Windows.
 :: v0.0.2 2023-10-31 às 01h10, Marcos Aurélio:
 ::   - Sessão Internet, Instalação de AnyDesk.
+:: v0.0.3 2023-11-11 às 23h36, Marcos Aurélio:
+::   - Opção para instalar o Microsoft Edge.
 ::
 :: Licença: GPL.
 
@@ -36,6 +38,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 :: Opções do Menu
 set "menu_Session_3[0]=Voltar..."
 set "menu_Session_3[1]=Instalar AnyDesk"
+set "menu_Session_3[2]=Instalar Microsoft Edge"
 
 set "default=0"
 
@@ -53,6 +56,15 @@ if %ERRORLEVEL% equ 1 (
     echo Você selecionou a Opção para instalar o AnyDesk.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_AnyDesk.ps1""' -Verb RunAs}"
+
+    goto menu_Session_3
+)
+
+if %ERRORLEVEL% equ 2 (
+    cls
+    echo Você selecionou a Opção para instalar o Microsoft Edge.
+
+    Start-Process "https://www.microsoft.com/pt-br/edge"
 
     goto menu_Session_3
 )
