@@ -42,8 +42,7 @@ set "menu_Session_2[0]=Voltar..."
 set "menu_Session_2[1]=Desligar o Windows"
 set "menu_Session_2[2]=Reiniciar o Windows"
 set "menu_Session_2[3]=Atualizar Softwares"
-set "menu_Session_2[4]=Instalar Winget"
-set "menu_Session_2[5]=Atualizar o PowerShell"
+set "menu_Session_2[4]=Atualizar o PowerShell"
 
 set "default=0"
 
@@ -70,6 +69,7 @@ if %ERRORLEVEL% equ 2 (
 
 if %ERRORLEVEL% equ 3 (
     cls
+    echo Você selecionou a Opção para atualizar softwares no Windows.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0UpdatingSoftwareInWindows.ps1""' -Verb RunAs}"
 
@@ -78,14 +78,7 @@ if %ERRORLEVEL% equ 3 (
 
 if %ERRORLEVEL% equ 4 (
     cls
-
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Winget.ps1""' -Verb RunAs}"
-
-    goto menu_Session_2
-)
-
-if %ERRORLEVEL% equ 5 (
-    cls
+    echo Você selecionou a Opção para atualizar o Microsoft PowerShell.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Update_PowerShell.ps1""' -Verb RunAs}"
 
