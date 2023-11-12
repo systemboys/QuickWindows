@@ -28,8 +28,9 @@ if (Test-Path $directory) {
     # Faz o download do Google Chrome
     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
     
-    # Instala o Google Chrome
-    Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
+    # Executar o instala do Google Chrome
+    # Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
+    Start-Process -FilePath "$downloadPath"
 
     # Apagar o arquivo
     Remove-Item -Path $downloadPath -Force
