@@ -19,6 +19,30 @@ if ($installed -eq $null) {
     $url = "https://dl.google.com/earth/client/advanced/current/GoogleEarthProWin.exe"
     $output = "$temporaryDirectory\GoogleEarthProWin.exe"
     Invoke-WebRequest -Uri $url -OutFile $output
+
+    # Define o tamanho do arquivo para a barra de progresso
+    $fileSize = (Invoke-WebRequest -Uri $url).Headers.'Content-Length'
+    $fileSizeInMB = [math]::Round($fileSize / 1MB, 2)
+
+    # Cria a barra de progresso personalizada
+    Write-Progress -Activity "Baixando Google Earth Pro" -Status "0% concluído" -PercentComplete 0
+    $downloadedBytes = 0
+    $webClient = New-Object System.Net.WebClient
+    $webClient.DownloadFileCompleted += { Write-Progress -Activity "Baixando Google Earth Pro" -Status "100% concluído" -PercentComplete 100 }
+    $webClient.DownloadProgressChanged += { 
+        $downloadedBytes = $_.BytesReceived
+        $percentComplete = [math]::Round(($downloadedBytes / $fileSize) * 100, 2)
+        $status = "$percentComplete% concluído"
+        Write-Progress -Activity "Baixando Google Earth Pro" -Status $status -PercentComplete $percentComplete
+    }
+    $webClient.DownloadFileAsync($url, $output)
+
+    # Aguarda o download ser concluído
+    while ($webClient.IsBusy) {
+        Start-Sleep -Seconds 1
+    }
+
+    # Instala o Google Earth Pro
     Start-Process -FilePath $output -ArgumentList "/S /v/qn"
     Remove-Item $output
 } else {

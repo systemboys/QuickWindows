@@ -58,6 +58,8 @@
 :: v0.2.0 2023-11-12 às 11h00, Marcos Aurélio:
 ::   - Correção, foi reescrito o script para baixar e executar o instalador
 ::     do Microsoft Edge na sessão "Internet".
+:: v0.2.1 2023-11-12 às 15h20, Marcos Aurélio:
+::   - Opção para instalar o Google Earth Pro na sessão "Internet".
 ::
 :: Licença: GPL.
 
