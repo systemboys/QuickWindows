@@ -74,7 +74,7 @@ if %ERRORLEVEL% equ 2 (
 
 if %ERRORLEVEL% equ 3 (
     cls
-    echo Você selecionou a Opção para instalar o Google_Chrome.
+    echo Você selecionou a Opção para instalar o Google Chrome.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Google_Chrome.ps1""' -Verb RunAs}"
 
