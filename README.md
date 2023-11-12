@@ -366,7 +366,7 @@ if (Test-Path $directory) {
     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
     
     # Instala o YourPackage
-    Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
+    Start-Process -FilePath "$downloadPath" -Wait
 
     # Apagar o arquivo
     Remove-Item -Path $downloadPath -Force
