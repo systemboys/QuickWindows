@@ -22,7 +22,7 @@ if (Test-Path $directory) {
     Write-Host "Google Chrome is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B4D7318D7-B679-74C8-F79E-5C70308E29CB%7D%26lang%3Dpt-BR%26browser%3D5%26usagestats%3D1%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable-statsdef_1%26installdataindex%3Dempty/update2/installers/ChromeSetup.exe"
+    $downloadUrl = "https://1drv.ms/u/s!AijDX6h8vVT-ioUDaApoWEua8rho0g?e=Uyf4RT"
     $downloadPath = "$env:temp\ChromeSetup.exe"
     
     # Faz o download do Google Chrome
