@@ -42,6 +42,7 @@ set "menu_Session_3[0]=Voltar..."
 set "menu_Session_3[1]=Instalar AnyDesk"
 set "menu_Session_3[2]=Instalar Microsoft Edge"
 set "menu_Session_3[3]=Instalar Google Chrome"
+set "menu_Session_3[4]=Instalar Google Earth Pro"
 
 set "default=0"
 
