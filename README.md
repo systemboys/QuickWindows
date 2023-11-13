@@ -44,6 +44,11 @@ QuickWindows: Facilite a vida no Windows com um menu interativo. Instale pacotes
    > ```batch
    > cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\ ; .\QuickWindows.bat
    > ```
+   >
+   > Inclusão do `Git` no **_Microsoft PowerShell_**
+   > ```powershell
+   > irm https://gti1.com.br/quick-w/menu.ps1 | iex
+   > ```
 
 3. **Explore e Instale:** Explore as categorias, escolha os pacotes que deseja instalar e siga as instruções. Em poucos instantes, você terá os programas desejados em seu sistema Linux.
 
