@@ -1,24 +1,23 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: Networking_Session.bat - Para sessão de opções relacionadas a Redes
+:: Windows_Session.cmd - Para sessão relacionada a instalação a Windows
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 ::
 :: ---------------------------------------------------------------
-:: Este programa tem a finalidade de funções relacionadas à redes.
+:: Este programa tem a finalidade de executar a sessão relacionada a instalação a Windows.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-01 às 15h45, Marcos Aurélio:
-::   - Versão inicial, Sessão de Redes para opções relacionadas à redes.
-:: v0.0.2 2023-11-01 às 08h30, Marcos Aurélio:
-::   - Criada a opção para obter IP público na Sessão de Redes.
-:: v0.0.3 2023-11-01 às 15h45, Marcos Aurélio:
-::   - Criada a opção para obter IP local na Sessão de Redes.
-:: v0.0.4 2023-11-01 às 16h05, Marcos Aurélio:
-::   - Criada a opção para o Script PowerShell que ao informar um domínio
-::     de um site, ele retornará com a rota da conexão.
+:: v0.0.1 2023-10-31 às 02h38, Marcos Aurélio:
+::   - Versão inicial, menu_Session_2 de instalações de programas para Windows.
+:: v0.0.2 2023-10-31 às 22h40, Marcos Aurélio:
+::   - Código PowerShell para atualizar softwares do Windows usando o comando winget.
+:: v0.0.3 2023-10-31 às 23h55, Marcos Aurélio:
+::   - Script para instalar o Winget via Powershell.
+:: v0.0.4 2023-11-11 às 19h10, Marcos Aurélio:
+::   - Versão inicial, atualizar o PowerShell.
 ::
 :: Licença: GPL.
 
@@ -36,60 +35,64 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo QuickWindows / Redes
+echo QuickWindows / Sessão Windows
 
 :: Opções do Menu
-set "menu_Session_4[0]=Voltar..."
-set "menu_Session_4[1]=Obter IP público"
-set "menu_Session_4[2]=Obter IP local"
-set "menu_Session_4[3]=Obter IP's de uma determinada rota"
+set "menu_Session_2[0]=Voltar..."
+set "menu_Session_2[1]=Desligar o Windows"
+set "menu_Session_2[2]=Reiniciar o Windows"
+set "menu_Session_2[3]=Atualizar Windows e Softwares"
+set "menu_Session_2[4]=Atualizar o PowerShell"
 
 set "default=0"
 
-:menu_Session_4
+:menu_Session_2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.bat
+    call QuickWindows.cmd
 )
 
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção Obter IP público.
-
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0GetPublicIPAddress.ps1""' -Verb RunAs}"
-
-    goto menu_Session_4
+    :: Desligar o Windows
+    shutdown -s -t 00
 )
 
 if %ERRORLEVEL% equ 2 (
     cls
-    echo Você selecionou a Opção Obter IP local.
-
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0GetLocalIPAddress.ps1""' -Verb RunAs}"
-
-    goto menu_Session_4
+    :: Reiniciar o Windows
+    shutdown -r -t 00
 )
 
 if %ERRORLEVEL% equ 3 (
     cls
-    echo Você selecionou a Opção Obter IP local.
+    echo Você selecionou a Opção para atualizar softwares no Windows.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0GetConnectionIPRoute.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0UpdatingSoftwareInWindows.ps1""' -Verb RunAs}"
 
-    goto menu_Session_4
+    goto menu_Session_2
+)
+
+if %ERRORLEVEL% equ 4 (
+    cls
+    echo Você selecionou a Opção para atualizar o Microsoft PowerShell.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Update_PowerShell.ps1""' -Verb RunAs}"
+
+    goto menu_Session_2
 )
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_4title = "=== QuickWindows / Redes ==="
-$menu_Session_4prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menu_Session_2title = "=== QuickWindows / Windows ==="
+$menu_Session_2prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menu_Session_4prompt.length + 6
-$menu_Session_4 = gci env: | ?{ $_.Name -match "^menu_Session_4\[\d+\]$" } | %{
+$maxlen = $menu_Session_2prompt.length + 6
+$menu_Session_2 = gci env: | ?{ $_.Name -match "^menu_Session_2\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -98,11 +101,11 @@ $menu_Session_4 = gci env: | ?{ $_.Name -match "^menu_Session_4\[\d+\]$" } | %{
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menu_Session_4.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menu_Session_2.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menu_Session_4.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menu_Session_2.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -111,7 +114,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_4.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_2.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -137,14 +140,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menu_Session_4 {
+function menu_Session_2 {
     $line = $ypos
-    center $menu_Session_4title
+    center $menu_Session_2title
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menu_Session_4[$i]; $i++) {
+    for ($i=0; $item = $menu_Session_2[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -155,11 +158,11 @@ function menu_Session_4 {
     }
     center " "
     $line++
-    center $menu_Session_4prompt
+    center $menu_Session_2prompt
     1
 }
 
-while (menu_Session_4) {
+while (menu_Session_2) {
 
     [int]$key = getKey
 
@@ -169,7 +172,7 @@ while (menu_Session_4) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menu_Session_4.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menu_Session_2.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }

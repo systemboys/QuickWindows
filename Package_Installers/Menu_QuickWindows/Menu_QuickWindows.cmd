@@ -1,7 +1,7 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: Menu_QuickWindows.bat - Para instalação de softwares para Windows
+:: Menu_QuickWindows.cmd - Para instalação de softwares para Windows
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -46,7 +46,7 @@ if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.bat
+    call QuickWindows.cmd
 )
 
 if %ERRORLEVEL% equ 1 (
@@ -57,7 +57,7 @@ if %ERRORLEVEL% equ 1 (
     rmdir /s /q QuickWindows
     git clone https://github.com/systemboys/QuickWindows.git
     cd QuickWindows
-    QuickWindows.bat
+    QuickWindows.cmd
 )
 
 if %ERRORLEVEL% equ 2 (
@@ -72,7 +72,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     cd ..
     cd ..
-    call QuickWindows.bat
+    call QuickWindows.cmd
 )
 
 goto :EOF

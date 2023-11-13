@@ -1,7 +1,7 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: Internet_Session.bat - Para instalação de softwares para Windows.
+:: Internet_Session.cmd - Para instalação de softwares para Windows.
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -52,7 +52,7 @@ if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.bat
+    call QuickWindows.cmd
 )
 
 if %ERRORLEVEL% equ 1 (

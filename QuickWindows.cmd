@@ -1,7 +1,7 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: QuickWindows.bat - Executa o menu com várias linhas de comandos
+:: QuickWindows.cmd - Executa o menu com várias linhas de comandos
 :: para instalação de softwares para Windows
 ::
 :: URL: https://github.com/systemboys/QuickWindows.git
@@ -60,6 +60,8 @@
 ::     do Microsoft Edge na sessão "Internet".
 :: v0.2.1 2023-11-12 às 15h20, Marcos Aurélio:
 ::   - Opção para instalar o Google Earth Pro na sessão "Internet".
+:: v0.2.2 2023-11-13 às 18h10, Marcos Aurélio:
+::   - Renomeadas as extensões dos "arquivos.bat" para "arquivos.cmd".
 ::
 :: Licença: GPL.
 
@@ -82,7 +84,7 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática - QuickWindows !lastVersion!
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo Menu.bat - Executa o menu com várias linhas de comandos para instalação de softwares para Windows
+echo QuickWindows.cmd - Executa o menu com várias linhas de comandos para instalação de softwares para Windows
 echo URL: https://github.com/systemboys/QuickWindows.git
 echo Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 echo Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -120,25 +122,25 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cd Package_Installers\Menu_QuickWindows
-    call Menu_QuickWindows.bat
+    call Menu_QuickWindows.cmd
     cd ..
 )
 
 if %ERRORLEVEL% equ 2 (
     cd Package_Installers\Windows_Session
-    call Windows_Session.bat
+    call Windows_Session.cmd
     cd ..
 )
 
 if %ERRORLEVEL% equ 3 (
     cd Package_Installers\Internet_Session
-    call Internet_Session.bat
+    call Internet_Session.cmd
     cd ..
 )
 
 if %ERRORLEVEL% equ 4 (
     cd Package_Installers\Networking_Session
-    call Networking_Session.bat
+    call Networking_Session.cmd
     cd ..
 )
 
