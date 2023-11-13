@@ -30,7 +30,7 @@ QuickWindows: Facilite a vida no Windows com um menu interativo. Instale pacotes
 
    ```
    cd QuickWindows
-   .\QuickWindows.bat
+   .\QuickWindows.cmd
    ```
    
    > **_( ! )_** Sertifique-se de que o [`Git`](https://git-scm.com/download/win "Página de download do Git") esteja instalado em seu Linux!
@@ -38,11 +38,11 @@ QuickWindows: Facilite a vida no Windows com um menu interativo. Instale pacotes
    > No **_Prompt de Comandos_**
    > Há uma linha para executar o clone e ao mesmo tempo executá-lo:
    > ```batch
-   > cd %TEMP% && git clone https://github.com/systemboys/QuickWindows.git & cd QuickWindows & call QuickWindows.bat
+   > cd %TEMP% && git clone https://github.com/systemboys/QuickWindows.git & cd QuickWindows & call QuickWindows.cmd
    > ```
    > No **_Microsoft PowerShell_**
    > ```batch
-   > cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\ ; .\QuickWindows.bat
+   > cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\ ; .\QuickWindows.cmd
    > ```
    >
    > Inclusão do `Git` no **_Microsoft PowerShell_**
@@ -66,7 +66,7 @@ Com o QuickWindows, queremos tornar a experiência de instalação de software n
 
 ## Estrutura de arquivos
 
-Este Menu contêm scripts de instalação de pacotes de software dentro do diretório "/QuickWindows/". Estão armazenados vários arquivos.bat. Veja a estrutura de arquivos:
+Este Menu contêm scripts de instalação de pacotes de software dentro do diretório "/QuickWindows/". Estão armazenados vários arquivos.cmd. Veja a estrutura de arquivos:
 
 ```batch
 /QuickWindows
@@ -74,26 +74,26 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  └─ QuickWindows.png
 ├─ /Package_Installers/
 │  ├─ /Internet_Session/
-│  │  ├─ Internet_Session.bat
-│  │  ├─ Install_Package1.bat
-│  │  ├─ Install_Package2.bat
-│  │  ├─ Install_Package3.bat
+│  │  ├─ Internet_Session.cmd
+│  │  ├─ Install_Package1.ps1
+│  │  ├─ Install_Package2.ps1
+│  │  ├─ Install_Package3.ps1
 │  │  └─ ...
 │  ├─ /Menu_QuickWindows/
-│  │    └─ Menu_QuickWindows.bat
+│  │    └─ Menu_QuickWindows.cmd
 │  ├─ /Networking_Session/
-│  │  ├─ Networking_Session.bat
-│  │  ├─ Install_Package3.bat
+│  │  ├─ Networking_Session.cmd
+│  │  ├─ Install_Package3.ps1
 │  │  └─ ...
 │  └─ /Windows_Session/
-│     ├─ Windows_Session.bat
-│     ├─ Install_Package1.bat
+│     ├─ Windows_Session.cmd
+│     ├─ Install_Package1.ps1
 │     └─ ...
-├─ QuickWindows.bat
+├─ QuickWindows.cmd
 └─ README.md
 ```
 
-Dentro do diretório "Package_Installers", você pode ter vários `arquivos.bat`, cada um responsável por instalar um pacote de software específico. Isso torna a estrutura do seu projeto organizada e fácil de entender.
+Dentro do diretório "Package_Installers", você pode ter vários `arquivos.cmd`, cada um responsável por instalar um pacote de software específico. Isso torna a estrutura do seu projeto organizada e fácil de entender.
 
 # Rascunho para novos itens
 
@@ -101,13 +101,13 @@ Aqui você pode editar o arquivo caso necessário, adicionando mais recursos.
 
 ## Incrementações de itens
 
-Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sessão (Ex.: `/New_Session_A/`), dentro do diretório `/Package_Installers/` e dentro do diretório de sua nova sessão crie o arquivo `.bat` (Ex.: `New_Session_A.bat`) e segue abaixo seu conteúdo:
+Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sessão (Ex.: `/New_Session_A/`), dentro do diretório `/Package_Installers/` e dentro do diretório de sua nova sessão crie o arquivo `.cmd` (Ex.: `New_Session_A.cmd`) e segue abaixo seu conteúdo:
 
 ```batch
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: menu_Session_1.bat - Para instalação de softwares para Windows
+:: menu_Session_1.cmd - Para instalação de softwares para Windows
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -152,7 +152,7 @@ if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.bat
+    call QuickWindows.cmd
 )
 
 if %ERRORLEVEL% equ 1 (
@@ -284,7 +284,7 @@ Para chamar sua nova sessão a partir do menu inicial, adicione a função que e
 
 if %ERRORLEVEL% equ 1 (
     cd Package_Installers\New_Session_A
-    call New_Session_A.bat
+    call New_Session_A.cmd
     cd ..
 )
 
@@ -316,7 +316,7 @@ set "menu[5]=Redes"
 :: ... (restante do código)
 ```
 
-> **_( i )_** A partir daqui, os comandos devem ser colocados nas condições da nova sessão, se quiser separar os arquivos (.bat) para escrever os comandos para instalação de pacotes, crie arquivos e nomei como `Install_Mozilla_Firefox.bat` dentro do mesmo diretório da nova sessão, na condição da nova sessão, mande executar o arquivo e, após a execução dos comandos no arquivo (.bat) de instalação do pacote, coloque o comando para voltar ao menu anterior.
+> **_( i )_** A partir daqui, os comandos devem ser colocados nas condições da nova sessão, se quiser separar os arquivos (.cmd) para escrever os comandos para instalação de pacotes, crie arquivos e nomei como `Install_Mozilla_Firefox.cmd` dentro do mesmo diretório da nova sessão, na condição da nova sessão, mande executar o arquivo e, após a execução dos comandos no arquivo (.cmd) de instalação do pacote, coloque o comando para voltar ao menu anterior.
 
 Pode executar um `arquivo.ps1` para scripts de instalação via PowerShell:
 
