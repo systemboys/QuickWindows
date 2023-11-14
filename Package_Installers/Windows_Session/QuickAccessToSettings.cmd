@@ -33,9 +33,9 @@ echo QuickWindows / Access Settings
 
 :: Opções do Menu
 set "menu_Session_2_1[0]=Voltar..."
-set "menu_Session_2_1[1]=Painel de Controle - Control"
-set "menu_Session_2_1[2]=Editor de Registro - RegEdit"
-set "menu_Session_2_1[3]=Configurações do Sistema - MSConfig"
+set "menu_Session_2_1[1]=Painel de Controle (Control)"
+set "menu_Session_2_1[2]=Editor de Registro (RegEdit)"
+set "menu_Session_2_1[3]=Configurações do Sistema (MSConfig)"
 
 set "default=0"
 
@@ -48,7 +48,7 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção Painel de Controle (Control).
+    echo Você selecionou a Opção Painel de Controle - Control.
 
     control
 
@@ -57,7 +57,7 @@ if %ERRORLEVEL% equ 1 (
 
 if %ERRORLEVEL% equ 2 (
     cls
-    echo Você selecionou a Opção Editor de Registro.
+    echo Você selecionou a Opção Editor de Registro - RegEdit.
 
     regedit
 
@@ -66,7 +66,7 @@ if %ERRORLEVEL% equ 2 (
 
 if %ERRORLEVEL% equ 3 (
     cls
-    echo Você selecionou a Opção Configurações do Sistema (MSConfig).
+    echo Você selecionou a Opção Configurações do Sistema - MSConfig.
 
     msconfig
 
