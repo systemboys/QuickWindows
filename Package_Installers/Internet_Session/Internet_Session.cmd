@@ -14,15 +14,17 @@
 :: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, menu_Session_3 de instalações de programas para Windows.
 :: v0.0.2 2023-10-31 às 01h10, Marcos Aurélio:
-::   - Sessão Internet, Instalação de AnyDesk.
+::   - Sessão Internet, Instalação de "AnyDesk".
 :: v0.0.3 2023-11-11 às 23h36, Marcos Aurélio:
-::   - Opção para instalar o Microsoft Edge.
+::   - Opção para instalar o "Microsoft Edge".
 :: v0.0.3 2023-11-11 às 23h50, Marcos Aurélio:
-::   - Opção para instalar o Google Chrome.
+::   - Opção para instalar o "Google Chrome".
 :: v0.0.4 2023-11-13 às 21h10, Marcos Aurélio:
-::   - Opção para instalar o Skype.
+::   - Opção para instalar o "Skype".
 :: v0.0.5 2023-11-13 às 22h15, Marcos Aurélio:
-::   - Opção para instalar o navetador Opera.
+::   - Opção para instalar o navetador "Opera".
+:: v0.0.6 2023-11-13 às 22h50, Marcos Aurélio:
+::   - Opção para instalar o navetador "Mozilla Firefox".
 ::
 :: Licença: GPL.
 
@@ -49,6 +51,7 @@ set "menu_Session_3[3]=Instalar Google Chrome"
 set "menu_Session_3[4]=Instalar Google Earth Pro"
 set "menu_Session_3[5]=Instalar Skype"
 set "menu_Session_3[6]=Instalar Opera"
+set "menu_Session_3[7]=Instalar Mozilla Firefox"
 
 set "default=0"
 
@@ -111,6 +114,15 @@ if %ERRORLEVEL% equ 6 (
     echo Você selecionou a Opção para instalar o Opera.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Opera.ps1""' -Verb RunAs}"
+
+    goto menu_Session_3
+)
+
+if %ERRORLEVEL% equ 7 (
+    cls
+    echo Você selecionou a Opção para instalar o Your_Package.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Mozilla_Firefox.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )

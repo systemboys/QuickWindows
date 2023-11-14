@@ -15,8 +15,8 @@
 # Licença: GPL.
 
 # Se o Opera não estiver instalado, faz o download e instala
-$programFiles = [Environment]::GetEnvironmentVariable("ProgramFiles(x86)")
-$directory = "$programFiles\Opera"
+$programFiles = $env:UserProfile
+$directory = "$programFiles\AppData\Local\Programs\Opera"
 
 if (Test-Path $directory) {
     Write-Host "Opera is installed!"
