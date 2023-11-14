@@ -36,6 +36,9 @@ set "menu_Session_2_1[0]=Voltar..."
 set "menu_Session_2_1[1]=Painel de Controle (Control)"
 set "menu_Session_2_1[2]=Editor de Registro (RegEdit)"
 set "menu_Session_2_1[3]=Configurações do Sistema (MSConfig)"
+set "menu_Session_2_1[4]=Serviços (Services.msc)"
+set "menu_Session_2_1[5]=Gerenciador de Dispositivos (DevMgmt.msc)"
+set "menu_Session_2_1[6]=Gerenciamento de Discos (DiskMgmt.msc)"
 
 set "default=0"
 
@@ -69,6 +72,33 @@ if %ERRORLEVEL% equ 3 (
     echo Você selecionou a Opção Configurações do Sistema - MSConfig.
 
     msconfig
+
+    goto menu_Session_2_1
+)
+
+if %ERRORLEVEL% equ 4 (
+    cls
+    echo Você selecionou a Opção Serviços - Services.msc.
+
+    services.msc
+
+    goto menu_Session_2_1
+)
+
+if %ERRORLEVEL% equ 5 (
+    cls
+    echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
+
+    devmgmt.msc
+
+    goto menu_Session_2_1
+)
+
+if %ERRORLEVEL% equ 6 (
+    cls
+    echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
+
+    diskmgmt.msc
 
     goto menu_Session_2_1
 )
