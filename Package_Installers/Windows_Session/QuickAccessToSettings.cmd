@@ -39,11 +39,9 @@ set "menu_Session_2_1[3]=Configurações do Sistema (MSConfig)"
 set "menu_Session_2_1[4]=Serviços (Services.msc)"
 set "menu_Session_2_1[5]=Gerenciador de Dispositivos (DevMgmt.msc)"
 set "menu_Session_2_1[6]=Gerenciamento de Discos (DiskMgmt.msc)"
-set "menu_Session_2_1[7]=Editar Configurações do Plano"
-set "menu_Session_2_1[8]=Explorador de arquivos do Windows"
-set "menu_Session_2_1[9]=Configurações - Tela (tipo, ajustes de resolução de tela)"
-set "menu_Session_2_1[10]=Sobre o Windows (WinVer)"
-set "menu_Session_2_1[11]=Configurações avançadas do sistema (Propriedades do Sistema)"
+set "menu_Session_2_1[7]=Explorador de arquivos do Windows"
+set "menu_Session_2_1[8]=Configurações - Tela (tipo, ajustes de resolução de tela)"
+set "menu_Session_2_1[9]=Configurações avançadas do sistema (Propriedades do Sistema)"
 
 set "default=0"
 
@@ -110,15 +108,6 @@ if %ERRORLEVEL% equ 6 (
 
 if %ERRORLEVEL% equ 7 (
     cls
-    echo Você selecionou a Opção Editar Configurações do Plan.
-
-    powercfg.cpl
-
-    goto menu_Session_2_1
-)
-
-if %ERRORLEVEL% equ 8 (
-    cls
     echo Você selecionou a Opção Explorador de arquivos do Window.
 
     explorer
@@ -126,7 +115,7 @@ if %ERRORLEVEL% equ 8 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 9 (
+if %ERRORLEVEL% equ 8 (
     cls
     echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
 
@@ -135,16 +124,7 @@ if %ERRORLEVEL% equ 9 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 10 (
-    cls
-    echo Você selecionou a Opção Sobre o Windows - WinVer.
-
-    winver
-
-    goto menu_Session_2_1
-)
-
-if %ERRORLEVEL% equ 11 (
+if %ERRORLEVEL% equ 9 (
     cls
     echo Você selecionou a Opção Configurações avançadas do sistema - Propriedades do Sistema.
 
@@ -216,12 +196,12 @@ function menu_Session_2_1 {
     $line++
 
     for ($i=0; $item = $menu_Session_2_1[$i]; $i++) {
-        $index = "{0:d2}" -f $i  # Formata o índice para sempre ter dois dígitos
+        # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
-            WriteTo-Pos " [$index] > $item <$rtpad" $xpos ($line++) yellow blue
+            WriteTo-Pos "  > $item <$rtpad" $xpos ($line++) yellow blue
         } else {
-            WriteTo-Pos " [$index]: $item  $rtpad" $xpos ($line++) blue yellow
+            WriteTo-Pos " $i`: $item  $rtpad" $xpos ($line++) blue yellow
         }
     }
     center " "
@@ -246,3 +226,4 @@ while (menu_Session_2_1) {
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
     }
 }
+
