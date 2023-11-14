@@ -24,7 +24,7 @@ if (Test-Path $directory) {
     Write-Host "Opera is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://net.geo.opera.com/opera/stable/windows?utm_source=%28direct%29&utm_medium=doc&utm_campaign=%28direct%29&http_referrer=missing&utm_site=opera_com&utm_lastpage=opera.com%2F&dl_token=66151060"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/OperaSetup.exe"
     $downloadPath = "$env:temp\OperaSetup.exe"
     
     # Faz o download do Opera
