@@ -78,7 +78,7 @@ if %ERRORLEVEL% equ 3 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_2_1title = "=== QuickWindows / New Session ==="
+$menu_Session_2_1title = "=== QuickWindows / Windows / Acesso rápido à Configurações ==="
 $menu_Session_2_1prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_2_1prompt.length + 6
