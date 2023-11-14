@@ -39,115 +39,99 @@ set "menu_Session_2_1[3]=Configurações do Sistema (MSConfig)"
 set "menu_Session_2_1[4]=Serviços (Services.msc)"
 set "menu_Session_2_1[5]=Gerenciador de Dispositivos (DevMgmt.msc)"
 set "menu_Session_2_1[6]=Gerenciamento de Discos (DiskMgmt.msc)"
-set "menu_Session_2_1[7]=Editar Configurações do Plano"
-set "menu_Session_2_1[8]=Explorador de arquivos do Windows"
-set "menu_Session_2_1[9]=Configurações - Tela (tipo, ajustes de resolução de tela)"
-set "menu_Session_2_1[10]=Sobre o Windows (WinVer)"
-set "menu_Session_2_1[11]=Configurações avançadas do sistema (Propriedades do Sistema)"
+set "menu_Session_2_1[7]=Explorador de arquivos do Windows"
+set "menu_Session_2_1[8]=Configurações - Tela (tipo, ajustes de resolução de tela)"
+set "menu_Session_2_1[9]=Configurações avançadas do sistema (Propriedades do Sistema)"
 
 set "default=0"
 
 :menu_Session_2_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+if %ERRORLEVEL% equ 0 (
+    cls
+    call Windows_Session.cmd
+)
 
-@REM ----------------
+if %ERRORLEVEL% equ 1 (
+    cls
+    echo Você selecionou a Opção Painel de Controle - Control.
 
-switch (%ERRORLEVEL%) {
-    '0' {
-        cls
-        call Windows_Session.cmd
-    }
-    '1' {
-        cls
-        echo Você selecionou a Opção Painel de Controle - Control.
+    control
 
-        control
+    goto menu_Session_2_1
+)
 
-        goto menu_Session_2_1
-    }
-    '2' {
-        cls
-        echo Você selecionou a Opção Editor de Registro - RegEdit.
+if %ERRORLEVEL% equ 2 (
+    cls
+    echo Você selecionou a Opção Editor de Registro - RegEdit.
 
-        regedit
+    regedit
 
-        goto menu_Session_2_1
-    }
-    '3' {
-        cls
-        echo Você selecionou a Opção Configurações do Sistema - MSConfig.
+    goto menu_Session_2_1
+)
 
-        msconfig
+if %ERRORLEVEL% equ 3 (
+    cls
+    echo Você selecionou a Opção Configurações do Sistema - MSConfig.
 
-        goto menu_Session_2_1
-    }
-    '4' {
-        cls
-        echo Você selecionou a Opção Serviços - Services.msc.
+    msconfig
 
-        services.msc
+    goto menu_Session_2_1
+)
 
-        goto menu_Session_2_1
-    }
-    '5' {
-        cls
-        echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
+if %ERRORLEVEL% equ 4 (
+    cls
+    echo Você selecionou a Opção Serviços - Services.msc.
 
-        devmgmt.msc
+    services.msc
 
-        goto menu_Session_2_1
-    }
-    '6' {
-        cls
-        echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
+    goto menu_Session_2_1
+)
 
-        diskmgmt.msc
+if %ERRORLEVEL% equ 5 (
+    cls
+    echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
 
-        goto menu_Session_2_1
-    }
-    '7' {
-        cls
-        echo Você selecionou a Opção Editar Configurações do Plan.
+    devmgmt.msc
 
-        powercfg.cpl
+    goto menu_Session_2_1
+)
 
-        goto menu_Session_2_1
-    }
-    '8' {
-        cls
-        echo Você selecionou a Opção Explorador de arquivos do Window.
+if %ERRORLEVEL% equ 6 (
+    cls
+    echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
 
-        explorer
+    diskmgmt.msc
 
-        goto menu_Session_2_1
-    }
-    '9' {
-        cls
-        echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
+    goto menu_Session_2_1
+)
 
-        desk.cpl
+if %ERRORLEVEL% equ 7 (
+    cls
+    echo Você selecionou a Opção Explorador de arquivos do Window.
 
-        goto menu_Session_2_1
-    }
-    '10' {
-        cls
-        echo Você selecionou a Opção Sobre o Windows - WinVer.
+    explorer
 
-        winver
+    goto menu_Session_2_1
+)
 
-        goto menu_Session_2_1
-    }
-    '11' {
-        cls
-        echo Você selecionou a Opção Configurações avançadas do sistema - Propriedades do Sistema.
+if %ERRORLEVEL% equ 8 (
+    cls
+    echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
 
-        sysdm.cpl
+    desk.cpl
 
-        goto menu_Session_2_1
-    }
-}
+    goto menu_Session_2_1
+)
 
-@REM ----------------
+if %ERRORLEVEL% equ 9 (
+    cls
+    echo Você selecionou a Opção Configurações avançadas do sistema - Propriedades do Sistema.
+
+    sysdm.cpl
+
+    goto menu_Session_2_1
+)
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
