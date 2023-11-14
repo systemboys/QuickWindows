@@ -44,8 +44,7 @@ powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
-    cd ..
-    call QuickWindows.cmd
+    call Windows_Session.cmd
 )
 
 if %ERRORLEVEL% equ 1 (
@@ -78,7 +77,7 @@ if %ERRORLEVEL% equ 3 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_2_1title = "=== QuickWindows / Windows / Acesso rápido à Configurações ==="
+$menu_Session_2_1title = "=== QuickWindows / Windows / Access Settings ==="
 $menu_Session_2_1prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_2_1prompt.length + 6
