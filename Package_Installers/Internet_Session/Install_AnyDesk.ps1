@@ -19,7 +19,7 @@
 # Licença: GPL.
 
 # Se o AnyDesk não estiver instalado, faz o download e instala
-$programFiles = [Environment]::GetEnvironmentVariable("ProgramFiles(x86)")
+$programFiles = "$env:SystemDrive\Program Files (x86)"
 $directory = "$programFiles\AnyDesk"
 
 if (Test-Path $directory) {
