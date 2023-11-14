@@ -67,7 +67,9 @@
 :: v0.2.4 2023-11-13 às 22h15, Marcos Aurélio:
 ::   - Opção para instalar o navetador "Opera" na sessão "Internet".
 :: v0.2.5 2023-11-13 às 22h50, Marcos Aurélio:
-::   - Opção para instalar o navetador "Mozilla Firefox" na sessão "Windows".
+::   - Opção para instalar o navetador "Mozilla Firefox" na sessão "Internet".
+:: v0.2.6 2023-11-13 às 23h40, Marcos Aurélio:
+::   - Opção para instalar o visualizador "Real VNC Viewer" na sessão "Internet".
 ::
 :: Licença: GPL.
 

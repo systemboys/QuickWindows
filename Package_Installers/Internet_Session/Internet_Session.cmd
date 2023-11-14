@@ -25,6 +25,8 @@
 ::   - Opção para instalar o navetador "Opera".
 :: v0.0.6 2023-11-13 às 22h50, Marcos Aurélio:
 ::   - Opção para instalar o navetador "Mozilla Firefox".
+:: v0.0.7 2023-11-13 às 23h40, Marcos Aurélio:
+::   - Opção para instalar o visualizador "Real VNC Viewer".
 ::
 :: Licença: GPL.
 
@@ -52,6 +54,7 @@ set "menu_Session_3[4]=Instalar Google Earth Pro"
 set "menu_Session_3[5]=Instalar Skype"
 set "menu_Session_3[6]=Instalar Opera"
 set "menu_Session_3[7]=Instalar Mozilla Firefox"
+set "menu_Session_3[8]=Instalar Real VNC Viewer"
 
 set "default=0"
 
@@ -123,6 +126,15 @@ if %ERRORLEVEL% equ 7 (
     echo Você selecionou a Opção para instalar o Mozilla Firefox.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Mozilla_Firefox.ps1""' -Verb RunAs}"
+
+    goto menu_Session_3
+)
+
+if %ERRORLEVEL% equ 8 (
+    cls
+    echo Você selecionou a Opção para instalar o Real VNC Viewer.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_RealVNCViewer.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
