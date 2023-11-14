@@ -14,7 +14,7 @@
 
 # Se o Real VNC Viewer não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files"
-$directory = "$programFiles\Real VNC Viewer"
+$directory = "$programFiles\RealVNC\VNC Viewer"
 
 if (Test-Path $directory) {
     Write-Host "Real VNC Viewer is installed!"
