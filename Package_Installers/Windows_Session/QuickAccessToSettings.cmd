@@ -49,12 +49,12 @@ set "default=0"
 
 :menu_Session_2_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
-if %ERRORLEVEL% equ 0 (
+if %ERRORLEVEL% equ "0" (
     cls
     call Windows_Session.cmd
 )
 
-if %ERRORLEVEL% equ 1 (
+if %ERRORLEVEL% equ "1" (
     cls
     echo Você selecionou a Opção Painel de Controle - Control.
 
@@ -63,22 +63,16 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 2 (
+if %ERRORLEVEL% equ "2" (
     cls
     echo Você selecionou a Opção Editor de Registro - RegEdit.
 
     regedit
 
-    if $lastexitcode -eq 0 (
-        echo Comando executado com sucesso.
-    ) else (
-        echo Ocorreu um erro durante a execução do comando.
-    )
-
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 3 (
+if %ERRORLEVEL% equ "3" (
     cls
     echo Você selecionou a Opção Configurações do Sistema - MSConfig.
 
@@ -87,7 +81,7 @@ if %ERRORLEVEL% equ 3 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 4 (
+if %ERRORLEVEL% equ "4" (
     cls
     echo Você selecionou a Opção Serviços - Services.msc.
 
@@ -96,7 +90,7 @@ if %ERRORLEVEL% equ 4 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 5 (
+if %ERRORLEVEL% equ "5" (
     cls
     echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
 
@@ -105,7 +99,7 @@ if %ERRORLEVEL% equ 5 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 6 (
+if %ERRORLEVEL% equ "6" (
     cls
     echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
 
@@ -114,7 +108,7 @@ if %ERRORLEVEL% equ 6 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 7 (
+if %ERRORLEVEL% equ "7" (
     cls
     echo Você selecionou a Opção Editar Configurações do Plan.
 
@@ -123,7 +117,7 @@ if %ERRORLEVEL% equ 7 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 8 (
+if %ERRORLEVEL% equ "8" (
     cls
     echo Você selecionou a Opção Explorador de arquivos do Window.
 
@@ -132,7 +126,7 @@ if %ERRORLEVEL% equ 8 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 9 (
+if %ERRORLEVEL% equ "9" (
     cls
     echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
 
@@ -141,7 +135,7 @@ if %ERRORLEVEL% equ 9 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 10 (
+if %ERRORLEVEL% equ "10" (
     cls
     echo Você selecionou a Opção Sobre o Windows - WinVer.
 
@@ -150,7 +144,7 @@ if %ERRORLEVEL% equ 10 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 11 (
+if %ERRORLEVEL% equ "11" (
     cls
     echo Você selecionou a Opção Configurações avançadas do sistema - Propriedades do Sistema.
 
