@@ -21,6 +21,8 @@
 ::   - Opção para Instalar o Google Chrome.
 :: v0.0.4 2023-11-13 às 21h10, Marcos Aurélio:
 ::   - Opção para Instalar o Skype.
+:: v0.0.5 2023-11-13 às 22h15, Marcos Aurélio:
+::   - Opção para Instalar o navetador Opera.
 ::
 :: Licença: GPL.
 
@@ -46,6 +48,7 @@ set "menu_Session_3[2]=Instalar Microsoft Edge"
 set "menu_Session_3[3]=Instalar Google Chrome"
 set "menu_Session_3[4]=Instalar Google Earth Pro"
 set "menu_Session_3[5]=Instalar Skype"
+set "menu_Session_3[6]=Instalar Opera"
 
 set "default=0"
 
@@ -96,9 +99,18 @@ if %ERRORLEVEL% equ 4 (
 
 if %ERRORLEVEL% equ 5 (
     cls
-    echo Você selecionou a Opção para instalar o Your_Package.
+    echo Você selecionou a Opção para instalar o Skype.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Skype.ps1""' -Verb RunAs}"
+
+    goto menu_Session_3
+)
+
+if %ERRORLEVEL% equ 6 (
+    cls
+    echo Você selecionou a Opção para instalar o Opera.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Opera.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
