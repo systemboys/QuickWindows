@@ -29,11 +29,11 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo QuickWindows / Sessão
+echo QuickWindows / Access Settings
 
 :: Opções do Menu
 set "menu_Session_2_1[0]=Voltar..."
-set "menu_Session_2_1[1]=Opção 1"
+set "menu_Session_2_1[1]=Painel de controle do Windows"
 set "menu_Session_2_1[2]=Opção 2"
 set "menu_Session_2_1[3]=Opção 3"
 
@@ -48,9 +48,9 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção 1.
+    echo Você selecionou a Opção Painel de controle do Windows.
 
-    @REM  Your commands here...
+    control
 
     goto menu_Session_2_1
 )
