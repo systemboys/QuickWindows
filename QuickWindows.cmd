@@ -62,6 +62,8 @@
 ::   - Opção para instalar o Google Earth Pro na sessão "Internet".
 :: v0.2.2 2023-11-13 às 18h10, Marcos Aurélio:
 ::   - Renomeadas as extensões dos "arquivos.bat" para "arquivos.cmd".
+:: v0.2.3 2023-11-13 às 21h10, Marcos Aurélio:
+::   - Opção para Instalar o Skype na sessão "Internet".
 ::
 :: Licença: GPL.
 
