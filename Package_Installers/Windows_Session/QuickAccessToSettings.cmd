@@ -32,16 +32,16 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Access Settings
 
 :: Opções do Menu
-set "menu_Session_2_1[00]=Voltar..."
-set "menu_Session_2_1[01]=Painel de Controle (Control)"
-set "menu_Session_2_1[02]=Editor de Registro (RegEdit)"
-set "menu_Session_2_1[03]=Configurações do Sistema (MSConfig)"
-set "menu_Session_2_1[04]=Serviços (Services.msc)"
-set "menu_Session_2_1[05]=Gerenciador de Dispositivos (DevMgmt.msc)"
-set "menu_Session_2_1[06]=Gerenciamento de Discos (DiskMgmt.msc)"
-set "menu_Session_2_1[07]=Editar Configurações do Plano"
-set "menu_Session_2_1[08]=Explorador de arquivos do Windows"
-set "menu_Session_2_1[09]=Configurações - Tela (tipo, ajustes de resolução de tela)"
+set "menu_Session_2_1[_0]=Voltar..."
+set "menu_Session_2_1[_1]=Painel de Controle (Control)"
+set "menu_Session_2_1[_2]=Editor de Registro (RegEdit)"
+set "menu_Session_2_1[_3]=Configurações do Sistema (MSConfig)"
+set "menu_Session_2_1[_4]=Serviços (Services.msc)"
+set "menu_Session_2_1[_5]=Gerenciador de Dispositivos (DevMgmt.msc)"
+set "menu_Session_2_1[_6]=Gerenciamento de Discos (DiskMgmt.msc)"
+set "menu_Session_2_1[_7]=Editar Configurações do Plano"
+set "menu_Session_2_1[_8]=Explorador de arquivos do Windows"
+set "menu_Session_2_1[_9]=Configurações - Tela (tipo, ajustes de resolução de tela)"
 set "menu_Session_2_1[10]=Sobre o Windows (WinVer)"
 set "menu_Session_2_1[11]=Configurações avançadas do sistema (Propriedades do Sistema)"
 
@@ -49,12 +49,12 @@ set "default=0"
 
 :menu_Session_2_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
-if %ERRORLEVEL% equ 00 (
+if %ERRORLEVEL% equ _0 (
     cls
     call Windows_Session.cmd
 )
 
-if %ERRORLEVEL% equ 01 (
+if %ERRORLEVEL% equ _1 (
     cls
     echo Você selecionou a Opção Painel de Controle - Control.
 
@@ -63,7 +63,7 @@ if %ERRORLEVEL% equ 01 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 02 (
+if %ERRORLEVEL% equ _2 (
     cls
     echo Você selecionou a Opção Editor de Registro - RegEdit.
 
@@ -72,7 +72,7 @@ if %ERRORLEVEL% equ 02 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 03 (
+if %ERRORLEVEL% equ _3 (
     cls
     echo Você selecionou a Opção Configurações do Sistema - MSConfig.
 
@@ -81,7 +81,7 @@ if %ERRORLEVEL% equ 03 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 04 (
+if %ERRORLEVEL% equ _4 (
     cls
     echo Você selecionou a Opção Serviços - Services.msc.
 
@@ -90,7 +90,7 @@ if %ERRORLEVEL% equ 04 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 05 (
+if %ERRORLEVEL% equ _5 (
     cls
     echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
 
@@ -99,7 +99,7 @@ if %ERRORLEVEL% equ 05 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 06 (
+if %ERRORLEVEL% equ _6 (
     cls
     echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
 
@@ -108,7 +108,7 @@ if %ERRORLEVEL% equ 06 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 07 (
+if %ERRORLEVEL% equ _7 (
     cls
     echo Você selecionou a Opção Editar Configurações do Plan.
 
@@ -117,7 +117,7 @@ if %ERRORLEVEL% equ 07 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 08 (
+if %ERRORLEVEL% equ _8 (
     cls
     echo Você selecionou a Opção Explorador de arquivos do Window.
 
@@ -126,7 +126,7 @@ if %ERRORLEVEL% equ 08 (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ 09 (
+if %ERRORLEVEL% equ _9 (
     cls
     echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
 
