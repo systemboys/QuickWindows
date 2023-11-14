@@ -32,18 +32,18 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Access Settings
 
 :: Opções do Menu
-set "menu_Session_2_1[0]=Voltar..."
-set "menu_Session_2_1[1]=Painel de Controle (Control)"
-set "menu_Session_2_1[2]=Editor de Registro (RegEdit)"
-set "menu_Session_2_1[3]=Configurações do Sistema (MSConfig)"
-set "menu_Session_2_1[4]=Serviços (Services.msc)"
-set "menu_Session_2_1[5]=Gerenciador de Dispositivos (DevMgmt.msc)"
-set "menu_Session_2_1[6]=Gerenciamento de Discos (DiskMgmt.msc)"
-set "menu_Session_2_1[7]=Editar Configurações do Plano"
-set "menu_Session_2_1[8]=Explorador de arquivos do Windows"
-set "menu_Session_2_1[9]=Configurações - Tela (tipo, ajustes de resolução de tela)"
-set "menu_Session_2_1[10]=Sobre o Windows (WinVer)"
-set "menu_Session_2_1[11]=Configurações avançadas do sistema (Propriedades do Sistema)"
+set "menu_Session_2_1['0']=Voltar..."
+set "menu_Session_2_1['1']=Painel de Controle (Control)"
+set "menu_Session_2_1['2']=Editor de Registro (RegEdit)"
+set "menu_Session_2_1['3']=Configurações do Sistema (MSConfig)"
+set "menu_Session_2_1['4']=Serviços (Services.msc)"
+set "menu_Session_2_1['5']=Gerenciador de Dispositivos (DevMgmt.msc)"
+set "menu_Session_2_1['6']=Gerenciamento de Discos (DiskMgmt.msc)"
+set "menu_Session_2_1['7']=Editar Configurações do Plano"
+set "menu_Session_2_1['8']=Explorador de arquivos do Windows"
+set "menu_Session_2_1['9']=Configurações - Tela (tipo, ajustes de resolução de tela)"
+set "menu_Session_2_1['10']=Sobre o Windows (WinVer)"
+set "menu_Session_2_1['11']=Configurações avançadas do sistema (Propriedades do Sistema)"
 
 set "default=0"
 
