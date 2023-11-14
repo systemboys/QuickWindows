@@ -1,25 +1,17 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: Windows_Session.cmd - Para sessão relacionada a instalação a Windows
+:: QuickAccessToSettings.cmd - Para executar algumas funcionalidades do Windows.
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 ::
 :: ---------------------------------------------------------------
-:: Este programa tem a finalidade de executar a sessão relacionada a instalação a Windows.
+:: Este programa tem a finalidade de dar acesso rápido a algumas funcionalidades do Windows.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-10-31 às 02h38, Marcos Aurélio:
-::   - Versão inicial, menu_Session_2 de instalações de programas para Windows.
-:: v0.0.2 2023-10-31 às 22h40, Marcos Aurélio:
-::   - Código PowerShell para atualizar softwares do Windows usando o comando winget.
-:: v0.0.3 2023-10-31 às 23h55, Marcos Aurélio:
-::   - Script para instalar o Winget via Powershell.
-:: v0.0.4 2023-11-11 às 19h10, Marcos Aurélio:
-::   - Versão inicial, atualizar o PowerShell.
-:: v0.0.4 2023-11-14 às 00h15, Marcos Aurélio:
-::   - Opção para Menu de sessão a acesso rápido a algumas funcionalidades do Windows.
+:: v0.0.1 2023-11-14 às 00h15, Marcos Aurélio:
+::   - Versão inicial, Menu de sessão a acesso rápido a algumas funcionalidades do Windows.
 ::
 :: Licença: GPL.
 
@@ -37,19 +29,17 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo QuickWindows / Sessão Windows
+echo QuickWindows / Sessão
 
 :: Opções do Menu
-set "menu_Session_2[0]=Voltar..."
-set "menu_Session_2[1]=Desligar o Windows"
-set "menu_Session_2[2]=Reiniciar o Windows"
-set "menu_Session_2[3]=Atualizar Windows e Softwares"
-set "menu_Session_2[4]=Atualizar o PowerShell"
-set "menu_Session_2[5]=Acesso rápido à Configurações"
+set "menu_Session_2_1[0]=Voltar..."
+set "menu_Session_2_1[1]=Opção 1"
+set "menu_Session_2_1[2]=Opção 2"
+set "menu_Session_2_1[3]=Opção 3"
 
 set "default=0"
 
-:menu_Session_2
+:menu_Session_2_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
@@ -60,48 +50,39 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cls
-    :: Desligar o Windows
-    shutdown -s -t 00
+    echo Você selecionou a Opção 1.
+
+    @REM  Your commands here...
+
+    goto menu_Session_2_1
 )
 
 if %ERRORLEVEL% equ 2 (
     cls
-    :: Reiniciar o Windows
-    shutdown -r -t 00
+    echo Você selecionou a Opção 2.
+
+    @REM  Your commands here...
+
+    goto menu_Session_2_1
 )
 
 if %ERRORLEVEL% equ 3 (
     cls
-    echo Você selecionou a Opção para atualizar softwares no Windows.
+    echo Você selecionou a Opção 3.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0UpdatingSoftwareInWindows.ps1""' -Verb RunAs}"
+    @REM  Your commands here...
 
-    goto menu_Session_2
-)
-
-if %ERRORLEVEL% equ 4 (
-    cls
-    echo Você selecionou a Opção para atualizar o Microsoft PowerShell.
-
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Update_PowerShell.ps1""' -Verb RunAs}"
-
-    goto menu_Session_2
-)
-
-if %ERRORLEVEL% equ 5 (
-    cd Package_Installers\Windows_Session
-    call QuickAccessToSettings.cmd
-    cd ..
+    goto menu_Session_2_1
 )
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_2title = "=== QuickWindows / Windows ==="
-$menu_Session_2prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menu_Session_2_1title = "=== QuickWindows / New Session ==="
+$menu_Session_2_1prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menu_Session_2prompt.length + 6
-$menu_Session_2 = gci env: | ?{ $_.Name -match "^menu_Session_2\[\d+\]$" } | %{
+$maxlen = $menu_Session_2_1prompt.length + 6
+$menu_Session_2_1 = gci env: | ?{ $_.Name -match "^menu_Session_2_1\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -110,11 +91,11 @@ $menu_Session_2 = gci env: | ?{ $_.Name -match "^menu_Session_2\[\d+\]$" } | %{
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menu_Session_2.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menu_Session_2_1.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menu_Session_2.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menu_Session_2_1.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -123,7 +104,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_2.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_2_1.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -149,14 +130,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menu_Session_2 {
+function menu_Session_2_1 {
     $line = $ypos
-    center $menu_Session_2title
+    center $menu_Session_2_1title
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menu_Session_2[$i]; $i++) {
+    for ($i=0; $item = $menu_Session_2_1[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -167,11 +148,11 @@ function menu_Session_2 {
     }
     center " "
     $line++
-    center $menu_Session_2prompt
+    center $menu_Session_2_1prompt
     1
 }
 
-while (menu_Session_2) {
+while (menu_Session_2_1) {
 
     [int]$key = getKey
 
@@ -181,9 +162,10 @@ while (menu_Session_2) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menu_Session_2.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menu_Session_2_1.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
     }
 }
+

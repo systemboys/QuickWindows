@@ -70,6 +70,8 @@
 ::   - Opção para instalar o navetador "Mozilla Firefox" na sessão "Internet".
 :: v0.2.6 2023-11-13 às 23h40, Marcos Aurélio:
 ::   - Opção para instalar o visualizador "Real VNC Viewer" na sessão "Internet".
+:: v0.2.7 2023-11-14 às 00h15, Marcos Aurélio:
+::   - Opção para Menu de sessão a acesso rápido a algumas funcionalidades do Windows na sessão "Windows".
 ::
 :: Licença: GPL.
 
