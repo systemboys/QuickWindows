@@ -196,12 +196,12 @@ function menu_Session_2_1 {
     $line++
 
     for ($i=0; $item = $menu_Session_2_1[$i]; $i++) {
-        # write-host $xpad -nonewline
+        $index = "{0:d2}" -f $i  # Formata o índice para sempre ter dois dígitos
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
-            WriteTo-Pos "  > $item <$rtpad" $xpos ($line++) yellow blue
+            WriteTo-Pos " [$index] > $item <$rtpad" $xpos ($line++) yellow blue
         } else {
-            WriteTo-Pos " $i`: $item  $rtpad" $xpos ($line++) blue yellow
+            WriteTo-Pos " [$index]: $item  $rtpad" $xpos ($line++) blue yellow
         }
     }
     center " "
