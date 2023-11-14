@@ -42,19 +42,19 @@ set "menu_Session_2_1[6]=Gerenciamento de Discos (DiskMgmt.msc)"
 set "menu_Session_2_1[7]=Editar Configurações do Plano"
 set "menu_Session_2_1[8]=Explorador de arquivos do Windows"
 set "menu_Session_2_1[9]=Configurações - Tela (tipo, ajustes de resolução de tela)"
-set "menu_Session_2_1[10]=Sobre o Windows (WinVer)"
-set "menu_Session_2_1[11]=Configurações avançadas do sistema (Propriedades do Sistema)"
+@REM set "menu_Session_2_1[10]=Sobre o Windows (WinVer)"
+@REM set "menu_Session_2_1[11]=Configurações avançadas do sistema (Propriedades do Sistema)"
 
 set "default=0"
 
 :menu_Session_2_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
-if %ERRORLEVEL% equ "0" (
+if %ERRORLEVEL% equ 0 (
     cls
     call Windows_Session.cmd
 )
 
-if %ERRORLEVEL% equ "1" (
+if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção Painel de Controle - Control.
 
@@ -63,7 +63,7 @@ if %ERRORLEVEL% equ "1" (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ "2" (
+if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção Editor de Registro - RegEdit.
 
@@ -72,7 +72,7 @@ if %ERRORLEVEL% equ "2" (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ "3" (
+if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção Configurações do Sistema - MSConfig.
 
@@ -81,7 +81,7 @@ if %ERRORLEVEL% equ "3" (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ "4" (
+if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção Serviços - Services.msc.
 
@@ -90,7 +90,7 @@ if %ERRORLEVEL% equ "4" (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ "5" (
+if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
 
@@ -99,7 +99,7 @@ if %ERRORLEVEL% equ "5" (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ "6" (
+if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
 
@@ -108,7 +108,7 @@ if %ERRORLEVEL% equ "6" (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ "7" (
+if %ERRORLEVEL% equ 7 (
     cls
     echo Você selecionou a Opção Editar Configurações do Plan.
 
@@ -117,7 +117,7 @@ if %ERRORLEVEL% equ "7" (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ "8" (
+if %ERRORLEVEL% equ 8 (
     cls
     echo Você selecionou a Opção Explorador de arquivos do Window.
 
@@ -126,7 +126,7 @@ if %ERRORLEVEL% equ "8" (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ "9" (
+if %ERRORLEVEL% equ 9 (
     cls
     echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
 
@@ -135,23 +135,23 @@ if %ERRORLEVEL% equ "9" (
     goto menu_Session_2_1
 )
 
-if %ERRORLEVEL% equ "10" (
-    cls
-    echo Você selecionou a Opção Sobre o Windows - WinVer.
+@REM if %ERRORLEVEL% equ 10 (
+@REM     cls
+@REM     echo Você selecionou a Opção Sobre o Windows - WinVer.
 
-    winver
+@REM     winver
 
-    goto menu_Session_2_1
-)
+@REM     goto menu_Session_2_1
+@REM )
 
-if %ERRORLEVEL% equ "11" (
-    cls
-    echo Você selecionou a Opção Configurações avançadas do sistema - Propriedades do Sistema.
+@REM if %ERRORLEVEL% equ 11 (
+@REM     cls
+@REM     echo Você selecionou a Opção Configurações avançadas do sistema - Propriedades do Sistema.
 
-    sysdm.cpl
+@REM     sysdm.cpl
 
-    goto menu_Session_2_1
-)
+@REM     goto menu_Session_2_1
+@REM )
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
