@@ -49,109 +49,105 @@ set "default=0"
 
 :menu_Session_2_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
-if %ERRORLEVEL% equ 0 (
-    cls
-    call Windows_Session.cmd
-)
 
-if %ERRORLEVEL% equ 1 (
-    cls
-    echo Você selecionou a Opção Painel de Controle - Control.
+@REM ----------------
 
-    control
+switch (%ERRORLEVEL%) {
+    '0' {
+        cls
+        call Windows_Session.cmd
+    }
+    '1' {
+        cls
+        echo Você selecionou a Opção Painel de Controle - Control.
 
-    goto menu_Session_2_1
-)
+        control
 
-if %ERRORLEVEL% equ 2 (
-    cls
-    echo Você selecionou a Opção Editor de Registro - RegEdit.
+        goto menu_Session_2_1
+    }
+    '2' {
+        cls
+        echo Você selecionou a Opção Editor de Registro - RegEdit.
 
-    regedit
+        regedit
 
-    goto menu_Session_2_1
-)
+        goto menu_Session_2_1
+    }
+    '3' {
+        cls
+        echo Você selecionou a Opção Configurações do Sistema - MSConfig.
 
-if %ERRORLEVEL% equ 3 (
-    cls
-    echo Você selecionou a Opção Configurações do Sistema - MSConfig.
+        msconfig
 
-    msconfig
+        goto menu_Session_2_1
+    }
+    '4' {
+        cls
+        echo Você selecionou a Opção Serviços - Services.msc.
 
-    goto menu_Session_2_1
-)
+        services.msc
 
-if %ERRORLEVEL% equ 4 (
-    cls
-    echo Você selecionou a Opção Serviços - Services.msc.
+        goto menu_Session_2_1
+    }
+    '5' {
+        cls
+        echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
 
-    services.msc
+        devmgmt.msc
 
-    goto menu_Session_2_1
-)
+        goto menu_Session_2_1
+    }
+    '6' {
+        cls
+        echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
 
-if %ERRORLEVEL% equ 5 (
-    cls
-    echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
+        diskmgmt.msc
 
-    devmgmt.msc
+        goto menu_Session_2_1
+    }
+    '7' {
+        cls
+        echo Você selecionou a Opção Editar Configurações do Plan.
 
-    goto menu_Session_2_1
-)
+        powercfg.cpl
 
-if %ERRORLEVEL% equ 6 (
-    cls
-    echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
+        goto menu_Session_2_1
+    }
+    '8' {
+        cls
+        echo Você selecionou a Opção Explorador de arquivos do Window.
 
-    diskmgmt.msc
+        explorer
 
-    goto menu_Session_2_1
-)
+        goto menu_Session_2_1
+    }
+    '9' {
+        cls
+        echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
 
-if %ERRORLEVEL% equ 7 (
-    cls
-    echo Você selecionou a Opção Editar Configurações do Plan.
+        desk.cpl
 
-    powercfg.cpl
+        goto menu_Session_2_1
+    }
+    '10' {
+        cls
+        echo Você selecionou a Opção Sobre o Windows - WinVer.
 
-    goto menu_Session_2_1
-)
+        winver
 
-if %ERRORLEVEL% equ 8 (
-    cls
-    echo Você selecionou a Opção Explorador de arquivos do Window.
+        goto menu_Session_2_1
+    }
+    '11' {
+        cls
+        echo Você selecionou a Opção Configurações avançadas do sistema - Propriedades do Sistema.
 
-    explorer
+        sysdm.cpl
 
-    goto menu_Session_2_1
-)
+        goto menu_Session_2_1
+    }
+}
 
-if %ERRORLEVEL% equ 9 (
-    cls
-    echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
-
-    desk.cpl
-
-    goto menu_Session_2_1
-)
-
-@REM if %ERRORLEVEL% equ 10 (
-@REM     cls
-@REM     echo Você selecionou a Opção Sobre o Windows - WinVer.
-
-@REM     winver
-
-@REM     goto menu_Session_2_1
-@REM )
-
-@REM if %ERRORLEVEL% equ 11 (
-@REM     cls
-@REM     echo Você selecionou a Opção Configurações avançadas do sistema - Propriedades do Sistema.
-
-@REM     sysdm.cpl
-
-@REM     goto menu_Session_2_1
-@REM )
+@REM ----------------
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
