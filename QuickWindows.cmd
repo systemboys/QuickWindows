@@ -50,20 +50,22 @@
 ::   - Correção na linha de comando que apaga o arquivo de instalação
 ::     do AnyDesk baixado.
 :: v0.1.7 2023-11-11 às 19h10, Marcos Aurélio:
-::   - Versão inicial, atualizar o PowerShell na sessão "Windows".
+::   - Versão inicial, atualizar o "PowerShell" na sessão "Windows".
 :: v0.1.8 2023-11-11 às 23h36, Marcos Aurélio:
-::   - Opção para instalar o Microsoft Edge na sessão "Internet".
+::   - Opção para instalar o "Microsoft Edge" na sessão "Internet".
 :: v0.1.9 2023-11-11 às 23h50, Marcos Aurélio:
-::   - Opção para Instalação o Google Chrome na sessão "Internet".
+::   - Opção para Instalação o "Google Chrome" na sessão "Internet".
 :: v0.2.0 2023-11-12 às 11h00, Marcos Aurélio:
 ::   - Correção, foi reescrito o script para baixar e executar o instalador
-::     do Microsoft Edge na sessão "Internet".
+::     do "Microsoft Edge" na sessão "Internet".
 :: v0.2.1 2023-11-12 às 15h20, Marcos Aurélio:
-::   - Opção para instalar o Google Earth Pro na sessão "Internet".
+::   - Opção para instalar o "Google Earth Pro" na sessão "Internet".
 :: v0.2.2 2023-11-13 às 18h10, Marcos Aurélio:
 ::   - Renomeadas as extensões dos "arquivos.bat" para "arquivos.cmd".
 :: v0.2.3 2023-11-13 às 21h10, Marcos Aurélio:
-::   - Opção para Instalar o Skype na sessão "Internet".
+::   - Opção para Instalar o "Skype" na sessão "Internet".
+:: v0.2.4 2023-11-13 às 22h15, Marcos Aurélio:
+::   - Opção para instalar o navetador "Opera" na sessão "Internet".
 ::
 :: Licença: GPL.
 

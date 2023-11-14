@@ -18,11 +18,11 @@
 :: v0.0.3 2023-11-11 às 23h36, Marcos Aurélio:
 ::   - Opção para instalar o Microsoft Edge.
 :: v0.0.3 2023-11-11 às 23h50, Marcos Aurélio:
-::   - Opção para Instalar o Google Chrome.
+::   - Opção para instalar o Google Chrome.
 :: v0.0.4 2023-11-13 às 21h10, Marcos Aurélio:
-::   - Opção para Instalar o Skype.
+::   - Opção para instalar o Skype.
 :: v0.0.5 2023-11-13 às 22h15, Marcos Aurélio:
-::   - Opção para Instalar o navetador Opera.
+::   - Opção para instalar o navetador Opera.
 ::
 :: Licença: GPL.
 
