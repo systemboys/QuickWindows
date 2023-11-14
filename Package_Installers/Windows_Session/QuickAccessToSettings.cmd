@@ -49,6 +49,8 @@ set "default=0"
 
 :menu_Session_2_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+set choice=!ERRORLEVEL!
+set /a choice=choice
 if !choice! equ 0 (
     cls
     call Windows_Session.cmd
