@@ -120,7 +120,7 @@ if %ERRORLEVEL% equ 6 (
 
 if %ERRORLEVEL% equ 7 (
     cls
-    echo Você selecionou a Opção para instalar o Your_Package.
+    echo Você selecionou a Opção para instalar o Mozilla Firefox.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Mozilla_Firefox.ps1""' -Verb RunAs}"
 
