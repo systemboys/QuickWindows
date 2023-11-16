@@ -18,13 +18,33 @@
 #
 # Licença: GPL.
 
+# ------------------------------
+# No arquivo QuickWindows.ps1
+param($functionNumber)
+
+# Importa as funções do arquivo Menu_QuickWindows.ps1
+Import-Module ./globalFunctions.ps1
+
+# Cria o nome da função baseado no número passado como argumento
+$functionName = "function_" + $functionNumber
+
+# Executa a função
+& $functionName
+# ------------------------------
+
+# Adjusting PowerShell window dimensions
+$width = "120"
+$height = "30"
+$size = New-Object System.Management.Automation.Host.Size($width, $height)
+$host.UI.RawUI.WindowSize = $size
+
 # Useful variables
-# Import-Module .\outputVariables.ps1
+Import-Module .\globalVariables.ps1
 $fileName = $MyInvocation.MyCommand.Name # This variable must be in this file
 $header = "text1"
-$current_year = Get-Date -Format yyyy
-$time_on_market = ($current_year - 2008)
-$footer = " © $currentYear GLOBAL TEC Informática ® - GTi, $time_on_market anos no mercado de Informática
+$currentYear = Get-Date -Format yyyy
+$timeOnMarket = ($currentYear - 2008)
+$footer = " © $currentYear GLOBAL TEC Informática ® - GTi, $timeOnMarket anos no mercado de Informática
      Website: https://gti1.com.br | Email: systemboys@hotmail.com
             Author: Marcos Aurélio - Engenheiro de Software"
 
@@ -114,44 +134,14 @@ while ($menu_active) {
                 clear
                 $selection = $List[$cursorY]
                 $ID = $cursorY
-                #Write-Host "Você selecionou a opção $selection"
-                switch ($ID) {
-                    0 {
-                        clear
-                        exit
-                    }
-                    1 {
-                        Write-Host "Running commands for $selection"
-                        # Start of commands here...
-                        # Command 1...
-                        # Command 2...
-                        # Command 3...
-                        # End of commands here...
-                        Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-                        & .\$fileName
-                    }
-                    2 {
-                        Write-Host "Running commands for $selection"
-                        # Start of commands here...
-                        # Command 1...
-                        # Command 2...
-                        # Command 3...
-                        # End of commands here...
-                        Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-                        & .\$fileName
-                    }
-                    3 {
-                        Write-Host "Running commands for $selection"
-                        # Start of commands here...
-                        # Command 1...
-                        # Command 2...
-                        # Command 3...
-                        # End of commands here...
-                        Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-                        & .\$fileName
-                    }
-                    default {& .\$fileName}
+                function function_0() {
+                    cd ..
+                    clear
+                    exit
                 }
+                # ------------------------------
+                .\QuickWindows.ps1 -functionNumber $ID
+                # ------------------------------
                 $menu_active = $false
             }
         }
