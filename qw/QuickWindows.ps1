@@ -18,19 +18,11 @@
 #
 # Licença: GPL.
 
-# ------------------------------
-# No arquivo QuickWindows.ps1
-param($functionNumber)
+# Importar variáveis do arquivo inclusionFunctions.ps1.ps1
+. .\inclusionFunctions.ps1
 
-# Importa as funções do arquivo Menu_QuickWindows.ps1
-Import-Module ./globalFunctions.ps1
-
-# Cria o nome da função baseado no número passado como argumento
-$functionName = "function_" + $functionNumber
-
-# Executa a função
-& $functionName
-# ------------------------------
+# My functions
+. .\globalFunctions.ps1
 
 # Adjusting PowerShell window dimensions
 $width = "120"
@@ -39,14 +31,12 @@ $size = New-Object System.Management.Automation.Host.Size($width, $height)
 $host.UI.RawUI.WindowSize = $size
 
 # Useful variables
-Import-Module .\globalVariables.ps1
 $fileName = $MyInvocation.MyCommand.Name # This variable must be in this file
-$header = "text1"
-$currentYear = Get-Date -Format yyyy
-$timeOnMarket = ($currentYear - 2008)
-$footer = " © $currentYear GLOBAL TEC Informática ® - GTi, $timeOnMarket anos no mercado de Informática
-     Website: https://gti1.com.br | Email: systemboys@hotmail.com
-            Author: Marcos Aurélio - Engenheiro de Software"
+# If there is an argument, set the variable to the value of that argument
+$defaultSelection = 0
+if ($args) {
+    $defaultSelection = $args[0]
+}
 
 # Colors
 $Host.UI.RawUI.BackgroundColor = "Black" # Background
@@ -68,10 +58,10 @@ $ymin = 3
 
 # Write Menu
 Clear-Host
+# headerContent
 Write-Host "                    ╓─────────────────────────────┐"
 Write-Host " ╓──────────────────╢░▒▓ QuackQindows | Início ▓▒░├──────────────────┐"
 Write-Host "╓╨──────────────────╜                             └──────────────────┴┐"
-Write-Host
 
 # Menu Options
 [Console]::SetCursorPosition(0, $ymin)
@@ -88,11 +78,10 @@ Write-Host " ║ Use as setas ↓ e ↑ para navegar e Enter ◄┘ para fazer u
 Write-Host " ╚═══════════════════════════════════════════════════════════════════╛"
 
 # Footer
-Write-Host $footer
+footerContent
  
 # Highlights the selected line
 function Write-Highlighted {
- 
     [Console]::SetCursorPosition(1 + $xmin, $cursorY + $ymin)
     Write-Host -BackgroundColor Yellow -ForegroundColor Black -NoNewline
     Write-Host $List[$cursorY] -BackgroundColor DarkGreen -ForegroundColor White
@@ -106,7 +95,7 @@ function Write-Normal {
 }
  
 # highlight first item by default
-$cursorY = 0
+$cursorY = $defaultSelection
 Write-Highlighted
  
 $selection = ""
@@ -134,15 +123,8 @@ while ($menu_active) {
                 clear
                 $selection = $List[$cursorY]
                 $ID = $cursorY
-                function function_0() {
-                    cd ..
-                    clear
-                    exit
-                }
-                # ------------------------------
-                .\QuickWindows.ps1 -functionNumber $ID
-                # ------------------------------
                 $menu_active = $false
+                Invoke-Command -ScriptBlock (Get-Command "commandExecution_$ID").ScriptBlock
             }
         }
         Write-Highlighted
