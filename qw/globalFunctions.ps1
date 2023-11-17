@@ -21,9 +21,6 @@ function commandExecution_1() {
     Invoke-Command -ScriptBlock $scriptBlock -ArgumentList $selection
 
     # End of commands here...
-    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-    $defaultSelection = 1
-    & .\QuickWindows.ps1 $defaultSelection
 }
 function commandExecution_2() {
     Write-Host "Running commands for $selection"

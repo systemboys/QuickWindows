@@ -14,21 +14,22 @@
 # Licença: GPL.
 
 # Functions of choices after Enter
-function commandExecutionMenuQW_0() {
+function commandExecution_0() {
     clear
     exit
 }
-function commandExecutionMenuQW_1() {
+function commandExecution_1() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
-    $scriptPath = Join-Path -Path $PSScriptRoot -ChildPath "file\path\file.ps1"
-    Start-Process -FilePath "PowerShell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`"" -Verb RunAs
+    # Command 1...
+    # Command 2...
+    # Command 3...
     # End of commands here...
     Read-Host -Prompt "Commands executed successfully, press Enter to return!"
     $defaultSelection = 1
     & .\QuickWindows.ps1 $defaultSelection
 }
-function commandExecutionMenuQW_2() {
+function commandExecution_2() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
     # Command 1...
@@ -39,7 +40,7 @@ function commandExecutionMenuQW_2() {
     $defaultSelection = 2
     & .\QuickWindows.ps1 $defaultSelection
 }
-function commandExecutionMenuQW_3() {
+function commandExecution_3() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
     # Command 1...
