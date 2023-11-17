@@ -58,9 +58,9 @@ $ymin = 3
 
 # Write Menu
 Clear-Host
-Write-Host "                    ╓─────────────────────────────┐"
-Write-Host " ╓──────────────────╢░▒▓ QuackQindows | Início ▓▒░├──────────────────┐"
-Write-Host "╓╨──────────────────╜                             └──────────────────┴┐"
+Write-Host "                    ┌─────────────────────────────┐"
+Write-Host " ┌──────────────────┤░▒▓ QuackQindows | Início ▓▒░├──────────────────┐"
+Write-Host "┌┴──────────────────┘                             └──────────────────┴┐"
 
 # Menu Options
 [Console]::SetCursorPosition(0, $ymin)
@@ -68,13 +68,13 @@ foreach ($name in $List) {
     for ($i = 0; $i -lt $xmin; $i++) {
         Write-Host -NoNewline
     }
-    Write-Host "║ ►"$name" ◄ │"
+    Write-Host "│ ►"$name" ◄ │"
 }
 
 # End of menu
-Write-Host "╚╦═══════════════════════════════════════════════════════════════════╤╛"
-Write-Host " ║ Use as setas ↓ e ↑ para navegar e Enter ◄┘ para fazer uma seleção │"
-Write-Host " ╚═══════════════════════════════════════════════════════════════════╛"
+Write-Host "└┬───────────────────────────────────────────────────────────────────┬┘"
+Write-Host " │ Use as setas ↓ e ↑ para navegar e Enter ◄┘ para fazer uma seleção │"
+Write-Host " └───────────────────────────────────────────────────────────────────┘"
 
 # Footer
 footerContent
