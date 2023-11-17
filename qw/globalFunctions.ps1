@@ -35,3 +35,4 @@ function commandExecution_3() {
     $defaultSelection = 3
     & .\QuickWindows.ps1 $defaultSelection
 }
+
