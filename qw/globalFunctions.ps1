@@ -6,7 +6,8 @@ function commandExecution_0() {
 function commandExecution_1() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
-    & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
+    cd .\Package_Installers\Menu_QuickWindows
+    & .\Menu_QuickWindows.ps1
     # End of commands here...
     Read-Host -Prompt "Commands executed successfully, press Enter to return!"
     $defaultSelection = 1
