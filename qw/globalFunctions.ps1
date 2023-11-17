@@ -9,18 +9,12 @@ function commandExecution_1() {
 
     cd Package_Installers
     cd Menu_QuickWindows
-
-    $scriptBlock = {
-        param($selection)
-        & ".\Menu_QuickWindows.ps1"
-        Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-        $defaultSelection = 1
-        & ".\QuickWindows.ps1" $defaultSelection
-    }
-
-    Invoke-Command -ScriptBlock $scriptBlock -ArgumentList $selection
+    & .\Menu_QuickWindows.ps1
 
     # End of commands here...
+    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
+    $defaultSelection = 1
+    & .\QuickWindows.ps1 $defaultSelection
 }
 function commandExecution_2() {
     Write-Host "Running commands for $selection"
