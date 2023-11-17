@@ -300,8 +300,7 @@ function commandExecution_0() {
 function commandExecution_1() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
-    $scriptPath = Join-Path -Path $PSScriptRoot -ChildPath "file\path\file.ps1"
-    Start-Process -FilePath "PowerShell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`"" -Verb RunAs
+    & .\dir1\dir2\file.ps1
     # End of commands here...
     Read-Host -Prompt "Commands executed successfully, press Enter to return!"
     $defaultSelection = 1
