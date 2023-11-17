@@ -15,6 +15,12 @@
 #
 # Licença: GPL.
 
+# Adjusting PowerShell window dimensions
+$width = "120"
+$height = "30"
+$size = New-Object System.Management.Automation.Host.Size($width, $height)
+$host.UI.RawUI.WindowSize = $size
+
 $domain = Read-Host "Enter the domain of the website"
 $ip = [System.Net.Dns]::GetHostAddresses($domain) | Select-Object -ExpandProperty IPAddressToString
 $traceroute = Test-NetConnection -TraceRoute -ComputerName $ip

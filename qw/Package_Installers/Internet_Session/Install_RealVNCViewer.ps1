@@ -12,6 +12,12 @@
 #
 # Licença: GPL.
 
+# Adjusting PowerShell window dimensions
+$width = "120"
+$height = "30"
+$size = New-Object System.Management.Automation.Host.Size($width, $height)
+$host.UI.RawUI.WindowSize = $size
+
 # Se o Real VNC Viewer não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\RealVNC\VNC Viewer"

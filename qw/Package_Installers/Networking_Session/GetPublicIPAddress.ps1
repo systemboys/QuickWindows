@@ -12,6 +12,12 @@
 #
 # Licença: GPL.
 
+# Adjusting PowerShell window dimensions
+$width = "120"
+$height = "30"
+$size = New-Object System.Management.Automation.Host.Size($width, $height)
+$host.UI.RawUI.WindowSize = $size
+
 $ipAddress = Invoke-RestMethod -Uri "https://api.ipify.org?format=json" | Select-Object -ExpandProperty ip
 Write-Host "Public IP Address: $ipAddress"
 Write-Host "Press any key to continue..."

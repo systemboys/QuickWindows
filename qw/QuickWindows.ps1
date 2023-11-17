@@ -1,7 +1,5 @@
 ﻿<# Title: PowerShell Menu QuickWindows | Author: Marcos Aurélio | Date: November 14, 2023 | Website: https://gti1.com.br/ #>
 
-#!/bin/bash
-
 # QuickWindows.ps1 - Executa o menu com várias linhas de comandos
 # para instalação de softwares para Windows
 #

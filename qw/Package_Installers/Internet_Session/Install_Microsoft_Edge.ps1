@@ -14,6 +14,12 @@
 #
 # Licença: GPL.
 
+# Adjusting PowerShell window dimensions
+$width = "120"
+$height = "30"
+$size = New-Object System.Management.Automation.Host.Size($width, $height)
+$host.UI.RawUI.WindowSize = $size
+
 # Se o Microsoft Edge não estiver instalado, faz o download e instala
 $programFiles = [Environment]::GetEnvironmentVariable("ProgramFiles(x86)")
 $directory = "$programFiles\Microsoft\Edge\Application"

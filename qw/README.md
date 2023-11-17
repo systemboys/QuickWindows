@@ -106,8 +106,6 @@ Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sess�
 ```batch
 <# Title: PowerShell Menu QuickWindows | Author: Marcos Aurélio | Date: November 14, 2023 | Website: https://gti1.com.br/ #>
 
-#!/bin/bash
-
 # QuickWindows.ps1 - Executa o menu com várias linhas de comandos
 # para instalação de softwares para Windows
 #
@@ -237,65 +235,89 @@ while ($menu_active) {
 }
 ```
 
-Para chamar sua nova sessão a partir do menu inicial, adicione a função que executa a mesma:
+Para adicionar mais opções, edite o trecho seguinte no script:
 
 ```batch
-:: ... (outras funções)
-
-if %ERRORLEVEL% equ 1 (
-    cd Package_Installers\New_Session_A
-    call New_Session_A.ps1
-    cd ..
-)
-
-:: ... (restante do código)
+# Sample list data to populate menu:
+# Set $List to any array to populate the menu with custom options
+$List =
+"Sair...                                                     ",
+"Opção 1                                                     ",
+"Opção 2                                                     ",
+"Opção 3                                                     "
 ```
 
-**_( i )_** Se por a caso desejar colocar apenas um comando sem sessão, altere o trecho:
+**_( ! )_** Obedeça os espaços para manter o layout do menu, ajuste até dá o tamanho da linha.
 
-```batch
-:: ... (restante do código)
+As funções executadas pelas opções selecionadas, estão no arquivo `globalFunctions.ps1`:
 
-if %ERRORLEVEL% equ 2 (
-    echo Você selecionou a Opção 2.
-
-    @REM  Your commands here...
-
-    pause
-    goto menu
-)
-
-:: ... (restante do código)
+```powershell
+...
+# My functions
+. .\globalFunctions.ps1
+...
 ```
 
-Dê a opção no menu:
+**_( i )_** Para cada menu, crie seu próprio arquivo de funções!
 
-```batch
-:: ... (outras opções)
-set "menu[5]=Redes"
-:: ... (restante do código)
+Segue abaixo as conteúdo do arquivo com as `funções`:
+
+**_globalFunctions.ps1_**
+
+```powershell
+# globalFunctions.ps1 - Executa o menu com várias linhas de comandos
+# para instalação de softwares para Windows
+#
+# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+#
+# ---------------------------------------------------------------
+# Este programa tem a finalidade de ...
+# ---------------------------------------------------------------
+# Histórico:
+# v0.0.1 2023-11-14 às 18h02, Marcos Aurélio:
+#   - Versão inicial, Menu Interativo para instalações de softwares e configurações do Windows.
+#
+# Licença: GPL.
+
+# Functions of choices after Enter
+function commandExecution_0() {
+    clear
+    exit
+}
+function commandExecution_1() {
+    Write-Host "Running commands for $selection"
+    # Start of commands here...
+    $scriptPath = Join-Path -Path $PSScriptRoot -ChildPath "file\path\file.ps1"
+    Start-Process -FilePath "PowerShell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`"" -Verb RunAs
+    # End of commands here...
+    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
+    $defaultSelection = 1
+    & .\QuickWindows.ps1 $defaultSelection
+}
+function commandExecution_2() {
+    Write-Host "Running commands for $selection"
+    # Start of commands here...
+    # Command 1...
+    # Command 2...
+    # Command 3...
+    # End of commands here...
+    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
+    $defaultSelection = 2
+    & .\QuickWindows.ps1 $defaultSelection
+}
+function commandExecution_3() {
+    Write-Host "Running commands for $selection"
+    # Start of commands here...
+    # Command 1...
+    # Command 2...
+    # Command 3...
+    # End of commands here...
+    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
+    $defaultSelection = 3
+    & .\QuickWindows.ps1 $defaultSelection
+}
 ```
-
-> **_( i )_** A partir daqui, os comandos devem ser colocados nas condições da nova sessão, se quiser separar os arquivos (.ps1) para escrever os comandos para instalação de pacotes, crie arquivos e nomei como `Install_Mozilla_Firefox.ps1` dentro do mesmo diretório da nova sessão, na condição da nova sessão, mande executar o arquivo e, após a execução dos comandos no arquivo (.ps1) de instalação do pacote, coloque o comando para voltar ao menu anterior.
-
-Pode executar um `arquivo.ps1` para scripts de instalação via PowerShell:
-
-```batch
-:: ... (restante do código)
-
-if %ERRORLEVEL% equ 1 (
-    cls
-    echo Você selecionou a Opção para instalar o Your_Package.
-
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Your_Package.ps1""' -Verb RunAs}"
-
-    goto menu_Session_3
-)
-
-:: ... (restante do código)
-```
-
-> **_( ! )_** Cuidado com a linha `goto menu_Session_3`, confira nas `:: Opções do Menu`!
 
 Para escrever o `arquivo.ps1` para scripts de instalação:
 
@@ -341,7 +363,6 @@ if (Test-Path $directory) {
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-
 ```
 
 > **_( i )_** Neste arquivo você pode escrever os comandos para instalação de pacotes e outros comandos.

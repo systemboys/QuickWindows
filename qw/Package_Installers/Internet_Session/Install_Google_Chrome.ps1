@@ -12,6 +12,12 @@
 #
 # Licença: GPL.
 
+# Adjusting PowerShell window dimensions
+$width = "120"
+$height = "30"
+$size = New-Object System.Management.Automation.Host.Size($width, $height)
+$host.UI.RawUI.WindowSize = $size
+
 # Se o Google Chrome não estiver instalado, faz o download e instala
 $programFiles = $env:ProgramFiles
 $directory = "$programFiles\Google\Chrome"
