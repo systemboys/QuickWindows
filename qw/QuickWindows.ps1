@@ -58,7 +58,6 @@ $ymin = 3
 
 # Write Menu
 Clear-Host
-# headerContent
 Write-Host "                    ╓─────────────────────────────┐"
 Write-Host " ╓──────────────────╢░▒▓ QuackQindows | Início ▓▒░├──────────────────┐"
 Write-Host "╓╨──────────────────╜                             └──────────────────┴┐"
@@ -106,13 +105,13 @@ while ($menu_active) {
         [Console]::SetCursorPosition(1, $cursorY)
         Write-Normal
         switch ($x.VirtualKeyCode) { 
-            # Up key
+            # Down key
             38 {
                 if ($cursorY -gt 0) {
                     $cursorY = $cursorY - 1
                 }
             }
-             # Down key
+            # Up key
             40 {
                 if ($cursorY -lt $List.Length - 1) {
                     $cursorY = $cursorY + 1
