@@ -74,6 +74,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  └─ QuickWindows.png
 ├─ /Package_Installers/
 │  ├─ /Internet_Session/
+│  │  ├─ globalFunctions.ps1
 │  │  ├─ Internet_Session.ps1
 │  │  ├─ Install_Package1.ps1
 │  │  ├─ Install_Package2.ps1
@@ -82,13 +83,17 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  ├─ /Menu_QuickWindows/
 │  │    └─ Menu_QuickWindows.ps1
 │  ├─ /Networking_Session/
+│  │  ├─ globalFunctions.ps1
 │  │  ├─ Networking_Session.ps1
 │  │  ├─ Install_Package3.ps1
 │  │  └─ ...
 │  └─ /Windows_Session/
+│     ├─ globalFunctions.ps1
 │     ├─ Windows_Session.ps1
 │     ├─ Install_Package1.ps1
 │     └─ ...
+├─ globalFunctions.ps1
+├─ inclusionFunctions.ps1
 ├─ QuickWindows.ps1
 └─ README.md
 ```
@@ -122,7 +127,7 @@ Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sess�
 #
 # Licença: GPL.
 
-# Importar variáveis do arquivo inclusionFunctions.ps1.ps1
+# Import global variables from the file 
 . .\inclusionFunctions.ps1
 
 # My functions
@@ -248,6 +253,13 @@ $List =
 ```
 
 **_( ! )_** Obedeça os espaços para manter o layout do menu, ajuste até dá o tamanho da linha.
+
+Se for uma sessão, sertifique-se de orientar a chamada do arquivo que é único no diretório raiz. Observe que há dois pontos separados (. .\in..), o primeiro ponto é a importação, o segundo é do destino do diretório e é onde você modificará de acordo com o local da sua nova sessão (`. ..\..\in..`):
+
+```powershell
+# Import global variables from the file 
+. .\inclusionFunctions.ps1
+```
 
 As funções executadas pelas opções selecionadas, estão no arquivo `globalFunctions.ps1`:
 

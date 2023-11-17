@@ -16,7 +16,7 @@
 #
 # Licença: GPL.
 
-# Importar variáveis do arquivo inclusionFunctions.ps1.ps1
+# Import global variables from the file
 . .\inclusionFunctions.ps1
 
 # My functions
