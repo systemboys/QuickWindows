@@ -7,10 +7,9 @@ function commandExecution_1() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
 
-    # $scriptPath = Join-Path -Path $PSScriptRoot -ChildPath "Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1"
-    # Invoke-Command -ScriptBlock { & $using:scriptPath }
-
-    Invoke-Command -ScriptBlock { & "Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1" }
+    cd Package_Installers
+    cd Menu_QuickWindows
+    $ .\Menu_QuickWindows.ps1
 
     # End of commands here...
     Read-Host -Prompt "Commands executed successfully, press Enter to return!"
