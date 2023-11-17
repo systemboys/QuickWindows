@@ -9,16 +9,16 @@
 # ---------------------------------------------------------------
 # Histórico:
 # v0.0.1 2023-11-14 às 18h02, Marcos Aurélio:
-#   - Versão inicial, Menu Interativo para instalações de softwares e configurações do Windows.
+#   - Versão inicial, função que executa as ações das opções selecionadas no menu.
 #
 # Licença: GPL.
 
 # Functions of choices after Enter
-function commandExecution_0() {
+function commandExecutionMenuQW_0() {
     clear
     exit
 }
-function commandExecution_1() {
+function commandExecutionMenuQW_1() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
     $scriptPath = Join-Path -Path $PSScriptRoot -ChildPath "file\path\file.ps1"
@@ -28,7 +28,7 @@ function commandExecution_1() {
     $defaultSelection = 1
     & .\QuickWindows.ps1 $defaultSelection
 }
-function commandExecution_2() {
+function commandExecutionMenuQW_2() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
     # Command 1...
@@ -39,7 +39,7 @@ function commandExecution_2() {
     $defaultSelection = 2
     & .\QuickWindows.ps1 $defaultSelection
 }
-function commandExecution_3() {
+function commandExecutionMenuQW_3() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
     # Command 1...

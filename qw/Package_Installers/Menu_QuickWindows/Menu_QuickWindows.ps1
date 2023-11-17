@@ -121,7 +121,7 @@ while ($menu_active) {
                 $selection = $List[$cursorY]
                 $ID = $cursorY
                 $menu_active = $false
-                Invoke-Command -ScriptBlock (Get-Command "commandExecution_$ID").ScriptBlock
+                Invoke-Command -ScriptBlock (Get-Command "commandExecutionMenuQW_$ID").ScriptBlock
             }
         }
         Write-Highlighted
