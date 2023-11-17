@@ -9,7 +9,7 @@ function commandExecution_1() {
 
     cd Package_Installers
     cd Menu_QuickWindows
-    $ .\Menu_QuickWindows.ps1
+    & .\Menu_QuickWindows.ps1
 
     # End of commands here...
     Read-Host -Prompt "Commands executed successfully, press Enter to return!"
