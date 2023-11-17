@@ -96,8 +96,8 @@ $cursorY = $defaultSelection
 Write-Highlighted
  
 $selection = ""
-$menu_active = $true
-while ($menu_active) {
+$menu2_active = $true
+while ($menu2_active) {
     if ([console]::KeyAvailable) {
         $x = $Host.UI.RawUI.ReadKey()
         [Console]::SetCursorPosition(1, $cursorY)
@@ -120,7 +120,7 @@ while ($menu_active) {
                 clear
                 $selection = $List[$cursorY]
                 $ID = $cursorY
-                $menu_active = $false
+                $menu2_active = $false
                 Invoke-Command -ScriptBlock (Get-Command "commandExecution_$ID").ScriptBlock
             }
         }
