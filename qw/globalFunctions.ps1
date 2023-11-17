@@ -6,7 +6,7 @@ function commandExecution_0() {
 function commandExecution_1() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
-    $scriptPath = "Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1"
+    $scriptPath = ".\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1"
     Invoke-Expression -Command "& '$scriptPath'"
     # End of commands here...
     Read-Host -Prompt "Commands executed successfully, press Enter to return!"
