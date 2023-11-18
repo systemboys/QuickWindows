@@ -121,7 +121,7 @@ while ($menu_active) {
                 $selection = $List[$cursorY]
                 $ID = $cursorY
                 $menu_active = $false
-                & "commandExecution_$ID"
+                & "commandExecution_$ID" # Direct call of corresponding function
             }
         }
         Write-Highlighted
