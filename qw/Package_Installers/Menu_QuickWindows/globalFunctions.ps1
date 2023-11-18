@@ -18,6 +18,7 @@ function commandExecution_0() {
     clear
     exit
 }
+
 function commandExecution_1() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
@@ -29,6 +30,7 @@ function commandExecution_1() {
     $defaultSelection = 1
     & .\QuickWindows.ps1 $defaultSelection
 }
+
 function commandExecution_2() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
@@ -40,6 +42,7 @@ function commandExecution_2() {
     $defaultSelection = 2
     & .\QuickWindows.ps1 $defaultSelection
 }
+
 function commandExecution_3() {
     Write-Host "Running commands for $selection"
     # Start of commands here...

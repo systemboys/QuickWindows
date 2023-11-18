@@ -108,7 +108,7 @@ Aqui você pode editar o arquivo caso necessário, adicionando mais recursos.
 
 Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sessão (Ex.: `/New_Session_A/`), dentro do diretório `/Package_Installers/` e dentro do diretório de sua nova sessão crie o arquivo `.ps1` (Ex.: `New_Session_A.ps1`) e segue abaixo seu conteúdo:
 
-```batch
+```powershell
 <# Title: PowerShell Menu QuickWindows | Author: Marcos Aurélio | Date: November 14, 2023 | Website: https://gti1.com.br/ #>
 
 # QuickWindows.ps1 - Executa o menu com várias linhas de comandos
@@ -232,7 +232,7 @@ while ($menu_active) {
                 $selection = $List[$cursorY]
                 $ID = $cursorY
                 $menu_active = $false
-                Invoke-Command -ScriptBlock (Get-Command "commandExecution_$ID").ScriptBlock
+                & "commandExecution_$ID" # Direct call of corresponding function
             }
         }
         Write-Highlighted
@@ -277,6 +277,8 @@ Segue abaixo as conteúdo do arquivo com as `funções`:
 **_globalFunctions.ps1_**
 
 ```powershell
+<# Title: PowerShell Menu QuickWindows | Author: Marcos Aurélio | Date: November 14, 2023 | Website: https://gti1.com.br/ #>
+
 # globalFunctions.ps1 - Executa o menu com várias linhas de comandos
 # para instalação de softwares para Windows
 #
@@ -333,6 +335,8 @@ function commandExecution_3() {
 Para escrever o `arquivo.ps1` para scripts de instalação:
 
 ```powershell
+<# Title: PowerShell Menu QuickWindows | Author: Marcos Aurélio | Date: November 10, 2023 | Website: https://gti1.com.br/ #>
+
 # Install_YourPackage.ps1 - Executa o script de instalação de YourPackage.
 #
 # URL: https://github.com/github_user/project_on_github.git
