@@ -81,45 +81,7 @@
 . .\inclusionFunctions.ps1
 
 # My functions
-# Functions of choices after Enter
-function commandExecution_0() {
-    clear
-    exit
-}
-
-function commandExecution_1() {
-    Write-Host "Running commands for $selection"
-    # Start of commands here...
-    & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
-    # End of commands here...
-    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-    $defaultSelection = 1
-    & .\QuickWindows.ps1 $defaultSelection
-}
-
-function commandExecution_2() {
-    Write-Host "Running commands for $selection"
-    # Start of commands here...
-    # Command 1...
-    # Command 2...
-    # Command 3...
-    # End of commands here...
-    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-    $defaultSelection = 2
-    & .\QuickWindows.ps1 $defaultSelection
-}
-
-function commandExecution_3() {
-    Write-Host "Running commands for $selection"
-    # Start of commands here...
-    # Command 1...
-    # Command 2...
-    # Command 3...
-    # End of commands here...
-    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-    $defaultSelection = 3
-    & .\QuickWindows.ps1 $defaultSelection
-}
+. .\globalFunctions.ps1
 
 # Adjusting PowerShell window dimensions
 $width = "120"
@@ -222,7 +184,7 @@ while ($menu_active) {
                 $selection = $List[$cursorY]
                 $ID = $cursorY
                 $menu_active = $false
-                & "commandExecution_$ID"
+                & "commandExecution_$ID" # Direct call of corresponding function
             }
         }
         Write-Highlighted
