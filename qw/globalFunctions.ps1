@@ -15,12 +15,13 @@
 #
 # Licença: GPL.
 
-# Functions of choices after Enter
+# Option display: 0. Sair...
 function commandExecution_0() {
     clear
     exit
 }
 
+# Option display: 1. Menu QuickWindows
 function commandExecution_1() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
@@ -31,6 +32,7 @@ function commandExecution_1() {
     & .\QuickWindows.ps1 $defaultSelection
 }
 
+# Option display: 2. Windows
 function commandExecution_2() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
@@ -43,6 +45,7 @@ function commandExecution_2() {
     & .\QuickWindows.ps1 $defaultSelection
 }
 
+# Option display: 3. Interneet
 function commandExecution_3() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
@@ -52,6 +55,32 @@ function commandExecution_3() {
     # End of commands here...
     Read-Host -Prompt "Commands executed successfully, press Enter to return!"
     $defaultSelection = 3
+    & .\QuickWindows.ps1 $defaultSelection
+}
+
+# Option display: 4. Redes
+function commandExecution_4() {
+    Write-Host "Running commands for $selection"
+    # Start of commands here...
+    # Command 1...
+    # Command 2...
+    # Command 3...
+    # End of commands here...
+    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
+    $defaultSelection = 4
+    & .\QuickWindows.ps1 $defaultSelection
+}
+
+# Option display: 5. Execução de Comandos no PowerShell
+function commandExecution_5() {
+    Write-Host "Running commands for $selection"
+    # Start of commands here...
+    # Command 1...
+    # Command 2...
+    # Command 3...
+    # End of commands here...
+    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
+    $defaultSelection = 5
     & .\QuickWindows.ps1 $defaultSelection
 }
 
