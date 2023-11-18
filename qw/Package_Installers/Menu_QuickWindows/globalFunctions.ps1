@@ -13,12 +13,13 @@
 #
 # Licença: GPL.
 
-# Functions of choices after Enter
+# Option display: 0. Sair...
 function commandExecution_0() {
     clear
     exit
 }
 
+# Option display: 1. Opção 1
 function commandExecution_1() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
@@ -31,6 +32,7 @@ function commandExecution_1() {
     & .\QuickWindows.ps1 $defaultSelection
 }
 
+# Option display: 2. Opção 2
 function commandExecution_2() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
@@ -43,6 +45,7 @@ function commandExecution_2() {
     & .\QuickWindows.ps1 $defaultSelection
 }
 
+# Option display: 3. Opção 3
 function commandExecution_3() {
     Write-Host "Running commands for $selection"
     # Start of commands here...
