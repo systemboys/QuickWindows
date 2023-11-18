@@ -15,8 +15,8 @@
 
 # Option display: 0. Sair...
 function commandExecution_0() {
-    clear
-    exit
+    $defaultSelection = 1
+    & ..\..\QuickWindows.ps1 $defaultSelection
 }
 
 # Option display: 1. Opção 1
