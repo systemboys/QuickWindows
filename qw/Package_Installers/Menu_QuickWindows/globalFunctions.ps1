@@ -29,7 +29,7 @@ function commandExecution_1() {
     # End of commands here...
     Read-Host -Prompt "Commands executed successfully, press Enter to return!"
     $defaultSelection = 1
-    & .\QuickWindows.ps1 $defaultSelection
+    & .\Menu_QuickWindows.ps1 $defaultSelection
 }
 
 # Option display: 2. Opção 2
@@ -42,7 +42,7 @@ function commandExecution_2() {
     # End of commands here...
     Read-Host -Prompt "Commands executed successfully, press Enter to return!"
     $defaultSelection = 2
-    & .\QuickWindows.ps1 $defaultSelection
+    & .\Menu_QuickWindows.ps1 $defaultSelection
 }
 
 # Option display: 3. Opção 3
@@ -55,6 +55,6 @@ function commandExecution_3() {
     # End of commands here...
     Read-Host -Prompt "Commands executed successfully, press Enter to return!"
     $defaultSelection = 3
-    & .\QuickWindows.ps1 $defaultSelection
+    & .\Menu_QuickWindows.ps1 $defaultSelection
 }
 
