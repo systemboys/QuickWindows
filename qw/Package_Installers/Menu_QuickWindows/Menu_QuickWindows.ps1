@@ -56,9 +56,9 @@ $ymin = 3
 
 # Write Menu
 Clear-Host
-Write-Host "                    ┌─────────────────────────────┐"
-Write-Host " ┌──────────────────┤░▒▓ QuackQindows | Início ▓▒░├──────────────────┐"
-Write-Host "┌┴──────────────────┘                             └──────────────────┴┐"
+Write-Host "               ┌────────────────────────────────────────┐"
+Write-Host " ┌─────────────┤░▒▓ QuackQindows | Menu Quickwindows ▓▒░├────────────┐"
+Write-Host "┌┴─────────────┘                                        └────────────┴┐"
 
 # Menu Options
 [Console]::SetCursorPosition(0, $ymin)
@@ -121,7 +121,7 @@ while ($menu_active) {
                 $selection = $List[$cursorY]
                 $ID = $cursorY
                 $menu_active = $false
-                Invoke-Command -ScriptBlock (Get-Command "commandExecution_$ID").ScriptBlock
+                & "commandExecution_$ID"
             }
         }
         Write-Highlighted
