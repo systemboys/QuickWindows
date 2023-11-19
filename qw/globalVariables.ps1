@@ -1,4 +1,20 @@
-﻿# Definition of variables
+﻿<#
+globalVariables.ps1 - Exporta as variáveis para outros arquivos.
+
+Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+
+---------------------------------------------------------------
+Este programa tem a finalidade de exportar variáveis para outros arquivos.
+---------------------------------------------------------------
+Histórico:
+v0.0.1 2023-11-19 às 17h40, Marcos Aurélio:
+  - Versão inicial, variáveis globais.
+
+Licença: GPL.
+#>
+
+# Definition of variables
 $currentYear = Get-Date -Format yyyy
 $timeOnMarket = ($currentYear - 2008)
 
@@ -9,14 +25,7 @@ $header = "                    ┌───────────────�
  ┌──────────────────┤░▒▓ QuackWindows | Início ▓▒░├──────────────────┐
 ┌┴──────────────────┘                             └──────────────────┴┐"
 $leftSideEdge = "│"
-
-# Populate menuItems with example entries
-$menuItems = [System.Collections.Generic.List[string]]::new()
-$menuItems.Add(" ..\Sair                                                    ")
-$menuItems.Add(" Opção 1                                                    ")
-$menuItems.Add(" Opção 2                                                    ")
-$menuItems.Add(" Opção 3                                                    ")
-
+# The menu options are posted here from the "menuOptions".ps1 file
 $rightSideEdge = "│"
 $footer = "└┬───────────────────────────────────────────────────────────────────┬┘
  │ (C) $currentYear GLOBAL TEC Informática (R) - GTi                         │

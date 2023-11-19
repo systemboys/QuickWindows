@@ -1,5 +1,5 @@
 ﻿<#
-QuickWindows.ps1 Executa o menu com várias linhas de comandos
+QuickWindows.ps1 - Executa o menu com várias linhas de comandos
 para instalação de softwares para Windows
 
 URL: https://github.com/systemboys/QuickWindows.git
@@ -89,6 +89,9 @@ $Host.UI.RawUI.ForegroundColor = "Green" # Font
 
 # Globla Variables
 . ./globalVariables.ps1
+
+# Option Menu
+. ./menuOptions.ps1
 
 # Region FUNCTIONS
 
