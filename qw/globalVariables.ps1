@@ -8,6 +8,16 @@ $hint   = " (i) Use as setas ↓ e ↑ ou números, Enter ◄┘ Executa e ESC s
 $header = "                    ┌─────────────────────────────┐
  ┌──────────────────┤░▒▓ QuackWindows | Início ▓▒░├──────────────────┐
 ┌┴──────────────────┘                             └──────────────────┴┐"
+$leftSideEdge = "│"
+
+# Populate menuItems with example entries
+$menuItems = [System.Collections.Generic.List[string]]::new()
+$menuItems.Add(" ..\Sair                                                    ")
+$menuItems.Add(" Opção 1                                                    ")
+$menuItems.Add(" Opção 2                                                    ")
+$menuItems.Add(" Opção 3                                                    ")
+
+$rightSideEdge = "│"
 $footer = "└┬───────────────────────────────────────────────────────────────────┬┘
  │ (C) $currentYear GLOBAL TEC Informática (R) - GTi                         │
  │ A $timeOnMarket anos no mercado de informática.                              │

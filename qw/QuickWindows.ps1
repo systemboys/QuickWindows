@@ -90,13 +90,6 @@ $Host.UI.RawUI.ForegroundColor = "Green" # Font
 # Globla Variables
 . ./globalVariables.ps1
 
-# Populate menuItems with example entries
-$menuItems = [System.Collections.Generic.List[string]]::new()
-$menuItems.Add(" ..\Sair                                                    ")
-$menuItems.Add(" Opção 1                                                    ")
-$menuItems.Add(" Opção 2                                                    ")
-$menuItems.Add(" Opção 3                                                    ")
-
 # Region FUNCTIONS
 
 # Function used to simply revert console colors
@@ -142,13 +135,13 @@ function New-Menu {
         [System.Console]::WriteLine($header)
         # Show all entries
         for ($i = 0; $i -lt $menuItems.Count; $i++) {
-            [System.Console]::Write("│ [$i] ► ")                    # Add identity number to each entry, it's not highlighted for selection but it's in the same line
+            [System.Console]::Write("$leftSideEdge ► [$i] ")                    # Add identity number to each entry, it's not highlighted for selection but it's in the same line
             if ($selectIndex -eq $i) {
                 Reverse-Colors                                      # In case this is the selected entry, reverse color just for it to make the selection visible
-                [System.Console]::WriteLine($menuItems[$i] + "◄ │")
+                [System.Console]::WriteLine($menuItems[$i] + "◄ $rightSideEdge")
                 Reverse-Colors      
             } else {
-                [System.Console]::WriteLine($menuItems[$i] + "◄ │") # In case this is not-selected entry, just show it
+                [System.Console]::WriteLine($menuItems[$i] + "◄ $rightSideEdge") # In case this is not-selected entry, just show it
             }
         }
         [System.Console]::WriteLine($footer)
