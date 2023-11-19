@@ -92,8 +92,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │     ├─ Windows_Session.ps1
 │     ├─ Install_Package1.ps1
 │     └─ ...
-├─ globalFunctions.ps1
-├─ inclusionFunctions.ps1
+├─ globalVariables.ps1
 ├─ QuickWindows.ps1
 └─ README.md
 ```
