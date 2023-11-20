@@ -8,7 +8,7 @@ Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 Este programa tem a finalidade de exportar variáveis para outros arquivos.
 ---------------------------------------------------------------
 Histórico:
-v0.0.1 2023-11-19 às 17h40, Marcos Aurélio:
+v0.0.1 2023-11-19 às 23h01, Marcos Aurélio:
   - Versão inicial, variáveis globais.
 
 Licença: GPL.
@@ -16,10 +16,7 @@ Licença: GPL.
 
 # Populate menuItems with example entries
 $menuItems = [System.Collections.Generic.List[string]]::new()
-$menuItems.Add("..\Sair                                                     ")
-$menuItems.Add("Menu QuickWindows                                           ")
-$menuItems.Add("Windows                                                     ")
-$menuItems.Add("Internet                                                    ")
-$menuItems.Add("Redes                                                       ")
-$menuItems.Add("Executar Comandos no PowerShell                             ")
-
+$menuItems.Add("..\Exit                                                     ")
+$menuItems.Add("Option 1                                                    ")
+$menuItems.Add("Option 2                                                    ")
+$menuItems.Add("Option 3                                                    ")

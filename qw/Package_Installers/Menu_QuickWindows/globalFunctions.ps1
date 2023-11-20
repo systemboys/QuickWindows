@@ -1,60 +1,67 @@
-# globalFunctions.ps1 - Executa o menu com várias linhas de comandos
-# para instalação de softwares para Windows
-#
-# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
-# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
-#
-# ---------------------------------------------------------------
-# Este programa tem a finalidade de ...
-# ---------------------------------------------------------------
-# Histórico:
-# v0.0.1 2023-11-14 às 18h02, Marcos Aurélio:
-#   - Versão inicial, função que executa as ações das opções selecionadas no menu.
-#
-# Licença: GPL.
+<#
+optionFunctions.ps1 - Exporta as variáveis para outros arquivos.
 
-# Option display: 0. Sair...
-function commandExecution_0() {
-    $defaultSelection = 1
-    & ..\..\QuickWindows.ps1 $defaultSelection
+Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+
+---------------------------------------------------------------
+Este programa tem a finalidade de exportar variáveis para outros arquivos.
+---------------------------------------------------------------
+Histórico:
+v0.0.1 2023-11-19 às 23h01, Marcos Aurélio:
+  - Versão inicial, variáveis globais.
+
+Licença: GPL.
+#>
+
+# Menu Option 0
+function menuOption_0() {
+    clear
+    Write-Host "You have exited the menu..."
+    exit
 }
 
-# Option display: 1. Opção 1
-function commandExecution_1() {
-    Write-Host "Running commands for $selection"
-    # Start of commands here...
+# Menu Option 1
+function menuOption_1() {
+    Write-Host " Function 1 executed successfully..."
+
+    # Start your commands here
     # Command 1...
     # Command 2...
     # Command 3...
-    # End of commands here...
-    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-    $defaultSelection = 1
-    & .\Menu_QuickWindows.ps1 $defaultSelection
+    # End your commands here
+
+    # Press a key to continue...
+    Write-Host " Press any key to continue..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 }
 
-# Option display: 2. Opção 2
-function commandExecution_2() {
-    Write-Host "Running commands for $selection"
-    # Start of commands here...
+# Menu Option 2
+function menuOption_2() {
+    Write-Host " Function 2 executed successfully..."
+
+    # Start your commands here
     # Command 1...
     # Command 2...
     # Command 3...
-    # End of commands here...
-    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-    $defaultSelection = 2
-    & .\Menu_QuickWindows.ps1 $defaultSelection
+    # End your commands here
+
+    # Press a key to continue...
+    Write-Host " Press any key to continue..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 }
 
-# Option display: 3. Opção 3
-function commandExecution_3() {
-    Write-Host "Running commands for $selection"
-    # Start of commands here...
+# Menu Option 3
+function menuOption_3() {
+    Write-Host " Function 3 executed successfully..."
+
+    # Start your commands here
     # Command 1...
     # Command 2...
     # Command 3...
-    # End of commands here...
-    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-    $defaultSelection = 3
-    & .\Menu_QuickWindows.ps1 $defaultSelection
-}
+    # End your commands here
 
+    # Press a key to continue...
+    Write-Host " Press any key to continue..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+}
