@@ -16,8 +16,10 @@ Licença: GPL.
 
 # Populate menuItems with example entries
 $menuItems = [System.Collections.Generic.List[string]]::new()
-$menuItems.Add("..\Exit                                                     ")
-$menuItems.Add("Option 1                                                    ")
-$menuItems.Add("Option 2                                                    ")
-$menuItems.Add("Option 3                                                    ")
+$menuItems.Add("..\Sair                                                     ")
+$menuItems.Add("Menu QuickWindows                                           ")
+$menuItems.Add("Windows                                                     ")
+$menuItems.Add("Internet                                                    ")
+$menuItems.Add("Redes                                                       ")
+$menuItems.Add("Execução de Comandos no PowerShell                          ")
 
