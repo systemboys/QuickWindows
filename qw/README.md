@@ -455,8 +455,7 @@ No caso, a estrutura ficaria da seguinte forma:
 
 Observe que no diretório `/nova_sessao/` não existe o arquivo `globalVariables.ps1`, porque a nova sessão pode usar o arquivo que está fora do diretório `/nova_sessao`.
 
-[(&larr;) Voltar](https://github.com/systemboys/GTi_Laboratory#laborat%C3%B3rio-gti "Voltar ao Sumário") | 
-[(&uarr;) Subir](#sum%C3%A1rio "Subir para o topo")
+[(&uarr;) Subir](#estrutura-de-arquivos "Subir para o topo")
 
 ---
 
