@@ -30,7 +30,7 @@ $rightSideEdge = "│"
 $footer = "└┬─────────────────────────────────────────────────────────────┬─┬─┬─┬┘
  │ (C) $currentYear GLOBAL TEC Informática (R) - GTi                     - ┼ ┤
  │ A $timeOnMarket anos no mercado de informática.                            - ┤
- │ A Tecnologia da Informção é o Futuro.                           - ┤
+ │ A Tecnologia da Informção é o Futuro.                             ┤
  │ Website: https://gti1.com.br | Email: systemboys@hotmail.com    - ┤
  │ Author: Marcos Aurélio - Engenheiro de Software               - ┼ ┤
  └─────────────────────────────────────────────────────────────┴─┴─┴─┘"
