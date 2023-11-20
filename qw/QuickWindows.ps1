@@ -91,13 +91,13 @@ $Host.UI.RawUI.BackgroundColor = "Black" # Background
 $Host.UI.RawUI.ForegroundColor = "Green" # Font
 
 # Optoin Functions
-. ".\optionFunctions.ps1"
+. .\optionFunctions.ps1
 
 # Globla Variables
-. ".\globalVariables.ps1"
+. .\globalVariables.ps1
 
 # Option Menu
-. ".\menuOptions.ps1"
+. .\menuOptions.ps1
 
 # Region FUNCTIONS
 
