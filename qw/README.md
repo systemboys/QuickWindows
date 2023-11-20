@@ -105,32 +105,30 @@ Aqui você pode editar o arquivo caso necessário, adicionando mais recursos.
 
 ## Incrementações de itens
 
-Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sessão (Ex.: `/New_Session_A/`), dentro do diretório `/Package_Installers/` e dentro do diretório de sua nova sessão crie o arquivo `.ps1` (Ex.: `New_Session_A.ps1`) e segue abaixo seu conteúdo:
+A princípio, crie o arquivo principal.
 
+***MenuInterativo.ps1***
 ```powershell
-<# Title: PowerShell Menu QuickWindows | Author: Marcos Aurélio | Date: November 14, 2023 | Website: https://gti1.com.br/ #>
+<#
+MenuInterativo.ps1 - Executa o menu com opções personalizadas.
 
-# QuickWindows.ps1 - Executa o menu com várias linhas de comandos
-# para instalação de softwares para Windows
-#
-# URL: https://github.com/systemboys/QuickWindows.git
-# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
-# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
-#
-# ---------------------------------------------------------------
-# Este programa tem a finalidade de ...
-# ---------------------------------------------------------------
-# Histórico:
-# v0.0.1 2023-11-14 às 18h02, Marcos Aurélio:
-#   - Versão inicial, Menu Interativo para instalações de softwares e configurações do Windows.
-#
-# Licença: GPL.
+URL: https://github.com/systemboys/QuickWindows.git
+Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 
-# Import global variables from the file 
-. .\inclusionFunctions.ps1
+---------------------------------------------------------------
+Este programa tem a finalidade de disponibilizar opções personalizadas
+para serem selecionadas com uso de setas direcionais.
+---------------------------------------------------------------
+Histórico:
+v0.0.1 2023-11-19 às 23h01, Marcos Aurélio:
+  - Versão inicial, começo do script...
 
-# My functions
-. .\globalFunctions.ps1
+Licença: GPL.
+#>
+
+# Get the name of the current script file
+$currentFileName = $MyInvocation.MyCommand.Name
 
 # Adjusting PowerShell window dimensions
 $width = "120"
@@ -138,252 +136,327 @@ $height = "30"
 $size = New-Object System.Management.Automation.Host.Size($width, $height)
 $host.UI.RawUI.WindowSize = $size
 
-# Useful variables
-$fileName = $MyInvocation.MyCommand.Name # This variable must be in this file
-# If there is an argument, set the variable to the value of that argument
-$defaultSelection = 0
-if ($args) {
-    $defaultSelection = $args[0]
-}
-
 # Colors
 $Host.UI.RawUI.BackgroundColor = "Black" # Background
 $Host.UI.RawUI.ForegroundColor = "Green" # Font
- 
-# Sample list data to populate menu:
-# Set $List to any array to populate the menu with custom options
-$List =
-"Sair...                                                     ",
-"Opção 1                                                     ",
-"Opção 2                                                     ",
-"Opção 3                                                     "
 
-$List = for ($i = 0; $i -lt $List.Length; $i++) { "$($i). $($List[$i])" }
+# Optoin Functions
+. .\optionFunctions.ps1
 
-# menu offset to allow space to write a message above the menu
-$xmin = 3
-$ymin = 3
+# Globla Variables
+. .\globalVariables.ps1
 
-# Write Menu
-Clear-Host
-Write-Host "                    ┌─────────────────────────────┐"
-Write-Host " ┌──────────────────┤░▒▓ QuackQindows | Início ▓▒░├──────────────────┐"
-Write-Host "┌┴──────────────────┘                             └──────────────────┴┐"
+# Option Menu
+. .\menuOptions.ps1
 
-# Menu Options
-[Console]::SetCursorPosition(0, $ymin)
-foreach ($name in $List) {
-    for ($i = 0; $i -lt $xmin; $i++) {
-        Write-Host -NoNewline
-    }
-    Write-Host "│ ►"$name" ◄ │"
+# Region FUNCTIONS
+
+# Function used to simply revert console colors
+function Reverse-Colors {
+    $bColor = [System.Console]::BackgroundColor
+    $fColor = [System.Console]::ForegroundColor
+    [System.Console]::BackgroundColor = $fColor
+    [System.Console]::ForegroundColor = $bColor    
 }
 
-# End of menu
-Write-Host "└┬───────────────────────────────────────────────────────────────────┬┘"
-Write-Host " │ Use as setas ↓ e ↑ para navegar e Enter ◄┘ para fazer uma seleção │"
-Write-Host " └───────────────────────────────────────────────────────────────────┘"
+# Main function showing the menu
+function New-Menu {
+    param(
+        [parameter(Mandatory=$true)][System.Collections.Generic.List[string]]$menuItems, # Contains all menu items
+        [string]$title       = $title,                                                   # The title for the menu
+        [string]$hint        = $hint,                                                    # Hint to be displayed above menu entries
+        [string]$footer      = $footer,                                                  # Menu footer
+        [ValidateSet("green","yellow","red","black","white")]                            # You might add more colors allowed by console
+        [string]$titleColor  = 'Yellow'                                                  # Color of the title
+    )
+    
+    # Prepare variables with function wide scope
+    $invalidChoice = $false                     # Initialize the flag indicating whether an ivalid key was pressed
+    $selectIndex   = 0                          # Initialize the variable storing the selection index (by default the first entry)
+    $outChar       = 'a'                        # Initialize the variable storing the Enter or Esc value
 
-# Footer
-footerContent
- 
-# Highlights the selected line
-function Write-Highlighted {
-    [Console]::SetCursorPosition(1 + $xmin, $cursorY + $ymin)
-    Write-Host -BackgroundColor Yellow -ForegroundColor Black -NoNewline
-    Write-Host $List[$cursorY] -BackgroundColor DarkGreen -ForegroundColor White
-    [Console]::SetCursorPosition(0, $cursorY + $ymin)     
-}
+    # Prepare the cosnole
+    [System.Console]::CursorVisible = $false    # Hide the cursor, we don't need it
+    [Console]::Clear()                          # Clear everything before showing the menu
 
-# Undoes highlight
-function Write-Normal {
-    [Console]::SetCursorPosition(1 + $xmin, $cursorY + $ymin)
-    Write-Host $List[$cursorY]  
-}
- 
-# highlight first item by default
-$cursorY = $defaultSelection
-Write-Highlighted
- 
-$selection = ""
-$menu_active = $true
-while ($menu_active) {
-    if ([console]::KeyAvailable) {
-        $x = $Host.UI.RawUI.ReadKey()
-        [Console]::SetCursorPosition(1, $cursorY)
-        Write-Normal
-        switch ($x.VirtualKeyCode) { 
-            # Down key
-            38 {
-                if ($cursorY -gt 0) {
-                    $cursorY = $cursorY - 1
-                }
-            }
-            # Up key
-            40 {
-                if ($cursorY -lt $List.Length - 1) {
-                    $cursorY = $cursorY + 1
-                }
-            }
-            # Enter key
-            13 {
-                clear
-                $selection = $List[$cursorY]
-                $ID = $cursorY
-                $menu_active = $false
-                & "commandExecution_$ID" # Direct call of corresponding function
+    # Main loop showing all the entries and handling the interaction with user
+    # End the loop only when Enter or Escape is pressed
+    while (([System.Int16]$inputChar.Key -ne [System.ConsoleKey]::Enter) -and ([System.Int16]$inputChar.Key -ne [System.ConsoleKey]::Escape)) {
+        
+        # Show title and hint
+        [System.Console]::CursorTop = 0                     # Start from top and then overwrite all lines; it's used instead of Clear to avoid blinking
+        $tempColor = [System.Console]::ForegroundColor      # Keep the default font color 
+        [System.Console]::ForegroundColor = $titleColor     # Set the color for title according to value of parameter
+        [System.Console]::WriteLine("$title`n")             # The title for the menu
+        [System.Console]::ForegroundColor = $tempColor      # Revert back to default font color
+        
+        [System.Console]::WriteLine($hint)
+        [System.Console]::WriteLine($header)
+        # Show all entries
+        for ($i = 0; $i -lt $menuItems.Count; $i++) {
+            [System.Console]::Write("$leftSideEdge ► [$i] ")                    # Add identity number to each entry, it's not highlighted for selection but it's in the same line
+            if ($selectIndex -eq $i) {
+                Reverse-Colors                                      # In case this is the selected entry, reverse color just for it to make the selection visible
+                [System.Console]::WriteLine($menuItems[$i] + "◄ $rightSideEdge")
+                Reverse-Colors      
+            } else {
+                [System.Console]::WriteLine($menuItems[$i] + "◄ $rightSideEdge") # In case this is not-selected entry, just show it
             }
         }
-        Write-Highlighted
+        [System.Console]::WriteLine($footer)
+
+        # In case of invalid key, show the message
+        if ($invalidChoice) {
+            [System.Console]::WriteLine("Invalid button! Try again...")
+        } else {
+            [System.Console]::Write([System.String]::new(' ',[System.Console]::WindowWidth)) # In case the valid key was used after invalid, clean-up this line
+            [System.Console]::SetCursorPosition(0,[System.Console]::CursorTop)               # Set the cursor back to first column so it's properly back to 1st column, 1st row in next iteration of the loop
+        }
+        $invalidChoice = $false                                                              # Reset the invalid key flag
+
+        # Read the key from user
+        $inputChar=[System.Console]::ReadKey($true)
+
+        # Try to convert it to number
+        try {
+            $number = [System.Int32]::Parse($inputChar.KeyChar)
+        }
+        catch{
+            $number = -1                                                                     # In case it's not a valid number, set to always invalid -1
+        }
+        
+        # Hanlde arrows
+        if ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::DownArrow){
+            if ($selectIndex -lt $menuItems.Count -1) {                                       # Avoid selection out of range
+                $selectIndex++
+            }
+        } elseif ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::UpArrow){
+            if ($selectIndex -gt 0){                                                         # Avoid selection out of range
+                $selectIndex--
+            }
+        } elseif ($number -ge 0 -and $number -lt $menuItems.Count){                          # If it's valid number within the range
+            # Handle double-digit numbers
+            $timestamp = Get-Date       
+            while (![System.Console]::KeyAvailable -and ((get-date) - $timestamp).TotalMilliseconds -lt 500){
+                Start-Sleep -Milliseconds 250                                               # Give the user 500 miliseconds to type in the 2nd digit, check after 250 to improve responsivness
+            }
+            if ([System.Console]::KeyAvailable) {                                            # If user typed a key, read it in next line
+                $secondChar = [System.Console]::ReadKey($true).KeyChar
+                $fullChar   = "$($inputChar.KeyChar)$($secondChar)"                         # Join both keys
+                try {
+                    # Set selection
+                    $number = [System.Int32]::Parse($fullChar)                              # Set the selection accordingly or raise flag for invalid key
+                    if ($number -ge 0 -and $number -lt $menuItems.Count) {
+                        $selectIndex   = $number
+                    } else {
+                        $invalidChoice = $true
+                    }                
+                }
+                catch {
+                    $invalidChoice = $true
+                }
+            } else {
+                # Set selection
+                $selectIndex = $number                                                       # Set selection for single digit number
+            }
+        } else {
+            $invalidChoice = $true                                                           # Key not recognized, raise the flag
+        }
+        $outChar = $inputChar                                                                # Assign the key value to variable with scope outside the loop
+    }
+
+    # Hanlde the result, just show the selected entry if Enter was pressed; do nothing if Escape was pressed
+    if ($outChar.Key -eq [System.ConsoleKey]::Enter) {
+        [Console]::WriteLine(" You selected $($menuItems[$selectIndex])")
+        Invoke-Command -ScriptBlock (Get-Command "menuOption_$selectIndex").ScriptBlock
     }
 }
+
+# Endregion FUNCTIONS
+
+# Region MAIN SCRIPT
+
+# Show the menu
+do {
+    New-Menu $menuItems
+} while ($outChar.Key -ne [System.ConsoleKey]::Escape)
+
+#endregion MAIN SCRIPT
 ```
 
-Para adicionar mais opções, edite o trecho seguinte no script:
+Crie outro arquivo para colocar as opções do menu.
 
-```batch
-# Sample list data to populate menu:
-# Set $List to any array to populate the menu with custom options
-$List =
-"Sair...                                                     ",
-"Opção 1                                                     ",
-"Opção 2                                                     ",
-"Opção 3                                                     "
-```
-
-**_( ! )_** Obedeça os espaços para manter o layout do menu, ajuste até dá o tamanho da linha.
-
-Se for uma sessão, sertifique-se de orientar a chamada do arquivo que é único no diretório raiz. Observe que há dois pontos separados (. .\in..), o primeiro ponto é a importação, o segundo é do destino do diretório e é onde você modificará de acordo com o local da sua nova sessão (`. ..\..\in..`):
-
+***menuOptions.ps1***
 ```powershell
-# Import global variables from the file 
-. .\inclusionFunctions.ps1
+<#
+menuOptions.ps1 - Exporta as variáveis para outros arquivos.
+
+Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+
+---------------------------------------------------------------
+Este programa tem a finalidade de exportar variáveis para outros arquivos.
+---------------------------------------------------------------
+Histórico:
+v0.0.1 2023-11-19 às 23h01, Marcos Aurélio:
+  - Versão inicial, variáveis globais.
+
+Licença: GPL.
+#>
+
+# Populate menuItems with example entries
+$menuItems = [System.Collections.Generic.List[string]]::new()
+$menuItems.Add("..\Exit                                                     ")
+$menuItems.Add("Option 1                                                    ")
+$menuItems.Add("Option 2                                                    ")
+$menuItems.Add("Option 3                                                    ")
 ```
 
-As funções executadas pelas opções selecionadas, estão no arquivo `globalFunctions.ps1`:
+Crie outro arquivo para colocar as variáveis globais, onde estão o layout do menu como informações, moldura etc.
 
+***globalVariables.ps1***
 ```powershell
-...
-# My functions
-. .\globalFunctions.ps1
-...
+<#
+globalVariables.ps1 - Exporta as variáveis para outros arquivos.
+
+Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+
+---------------------------------------------------------------
+Este programa tem a finalidade de exportar variáveis para outros arquivos.
+---------------------------------------------------------------
+Histórico:
+v0.0.1 2023-11-19 às 23h01, Marcos Aurélio:
+  - Versão inicial, variáveis globais.
+
+Licença: GPL.
+#>
+
+# Definition of variables
+$currentYear = Get-Date -Format yyyy
+$timeOnMarket = ($currentYear - 2008)
+
+# Display
+$title  = " QuickWindows v0.2.8"
+$hint   = " (i) Use as setas ↓ e ↑ ou números, Enter ◄┘ Executa e ESC sai!`n"
+$header = "                     ┌───────────────────────────┐
+ ┌───────────────────┤░▒▓ QuackWindows | Home ▓▒░├───────────────────┐
+┌┴───────────────────┘                           └───────────────────┴┐"
+$leftSideEdge = "│"
+# The menu options are posted here from the "menuOptions".ps1 file
+$rightSideEdge = "│"
+$footer = "└┬─────────────────────────────────────────────────────────────┬─┬─┬─┬┘
+ │ (C) $currentYear GLOBAL TEC Informática (R) - GTi                     - ┼ ┤
+ │ A $timeOnMarket anos no mercado de informática.                            - ┤
+ │ A Tecnologia da Informção é o Futuro.                             ┤
+ │ Website: https://gti1.com.br | Email: systemboys@hotmail.com    - ┤
+ │ Author: Marcos Aurélio - Engenheiro de Software               - ┼ ┤
+ └─────────────────────────────────────────────────────────────┴─┴─┴─┘"
 ```
 
-**_( i )_** Para cada menu, crie seu próprio arquivo de funções!
+Crie outro arquivo para colocar as funções que serão executadas após selecionar as opções.
 
-Segue abaixo as conteúdo do arquivo com as `funções`:
-
-**_globalFunctions.ps1_**
-
+***optionFunctions.ps1***
 ```powershell
-<# Title: PowerShell Menu QuickWindows | Author: Marcos Aurélio | Date: November 14, 2023 | Website: https://gti1.com.br/ #>
+<#
+optionFunctions.ps1 - Exporta as variáveis para outros arquivos.
 
-# globalFunctions.ps1 - Executa o menu com várias linhas de comandos
-# para instalação de softwares para Windows
-#
-# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
-# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
-#
-# ---------------------------------------------------------------
-# Este programa tem a finalidade de ...
-# ---------------------------------------------------------------
-# Histórico:
-# v0.0.1 2023-11-14 às 18h02, Marcos Aurélio:
-#   - Versão inicial, Menu Interativo para instalações de softwares e configurações do Windows.
-#
-# Licença: GPL.
+Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
+Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 
-# Option display: 0. Sair...
-function commandExecution_0() {
+---------------------------------------------------------------
+Este programa tem a finalidade de exportar variáveis para outros arquivos.
+---------------------------------------------------------------
+Histórico:
+v0.0.1 2023-11-19 às 23h01, Marcos Aurélio:
+  - Versão inicial, variáveis globais.
+
+Licença: GPL.
+#>
+
+# Menu Option 0
+function menuOption_0() {
     clear
+    Write-Host "You have exited the menu..."
     exit
 }
 
-# Option display: 1. Opção 1
-function commandExecution_1() {
-    Write-Host "Running commands for $selection"
-    # Start of commands here...
-    & .\dir1\dir2\file.ps1
-    # End of commands here...
-    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-    $defaultSelection = 1
-    & .\QuickWindows.ps1 $defaultSelection
-}
+# Menu Option 1
+function menuOption_1() {
+    Write-Host " Function 1 executed successfully..."
 
-# Option display: 2. Opção 2
-function commandExecution_2() {
-    Write-Host "Running commands for $selection"
-    # Start of commands here...
-    # Run PS1 file in new PowerShell window
-    $scriptPath = Join-Path -Path $PSScriptRoot -ChildPath "file\path\file.ps1"
-    Start-Process -FilePath "PowerShell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`"" -Verb RunAs
-    # End of commands here...
-    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-    $defaultSelection = 2
-    & .\QuickWindows.ps1 $defaultSelection
-}
-
-# Option display: 3. Opção 3
-function commandExecution_3() {
-    Write-Host "Running commands for $selection"
-    # Start of commands here...
+    # Start your commands here
     # Command 1...
     # Command 2...
     # Command 3...
-    # End of commands here...
-    Read-Host -Prompt "Commands executed successfully, press Enter to return!"
-    $defaultSelection = 3
-    & .\QuickWindows.ps1 $defaultSelection
+    # End your commands here
+
+    # Press a key to continue...
+    Write-Host " Press any key to continue..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+}
+
+# Menu Option 2
+function menuOption_2() {
+    Write-Host " Function 2 executed successfully..."
+
+    # Start your commands here
+    # Command 1...
+    # Command 2...
+    # Command 3...
+    # End your commands here
+
+    # Press a key to continue...
+    Write-Host " Press any key to continue..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+}
+
+# Menu Option 3
+function menuOption_3() {
+    Write-Host " Function 3 executed successfully..."
+
+    # Start your commands here
+    # Command 1...
+    # Command 2...
+    # Command 3...
+    # End your commands here
+
+    # Press a key to continue...
+    Write-Host " Press any key to continue..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 }
 ```
 
-Para escrever o `arquivo.ps1` para scripts de instalação:
+A estrutura deve ficar da seguinte forma:
 
-```powershell
-<# Title: PowerShell Menu QuickWindows | Author: Marcos Aurélio | Date: November 10, 2023 | Website: https://gti1.com.br/ #>
-
-# Install_YourPackage.ps1 - Executa o script de instalação de YourPackage.
-#
-# URL: https://github.com/github_user/project_on_github.git
-# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
-# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
-#
-# ---------------------------------------------------------------
-# Este programa tem a finalidade de facilitar na instalação de
-# pacotes para Windows.
-# ---------------------------------------------------------------
-# Histórico:
-# v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:
-#   - Versão inicial, Instalação de YourPackage.
-#
-# Licença: GPL.
-
-# Se o YourPackage não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files"
-$directory = "$programFiles\YourPackage"
-
-if (Test-Path $directory) {
-    Write-Host "YourPackage is installed!"
-} else {
-    Write-Host "YourPackage is not installed! Starting installation process."
-
-    # Link do download e o diretório Temp
-    $downloadUrl = "https://download.anydesk.com/YourPackage.exe"
-    $downloadPath = "$env:temp\YourPackage.exe"
-    
-    # Faz o download do YourPackage
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
-    
-    # Instala o YourPackage
-    Start-Process -FilePath "$downloadPath" -Wait
-
-    # Apagar o arquivo
-    Remove-Item -Path $downloadPath -Force
-}
-
-Write-Host "Press any key to continue..."
-$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+```te
+/MenuInterativo/
+├─ globalVariables.ps1
+├─ menuOptions.ps1
+├─ optionFunctions.ps1
+└─ QuickWindows.ps1
 ```
 
-> **_( i )_** Neste arquivo você pode escrever os comandos para instalação de pacotes e outros comandos.
+Se quiser adicionar sessões para abrir em algumas opções, basta repetir o processo dentro de um subdiretório onde estão os arquivos `.ps1`. Obs.: Você pode usar nas sessões as mesmas variáveis do arquivo `globalVariables.ps1` para manter o mesmo cabeçalho e rodapé. No trecho que importa o arquivo das variáveis globais, use dois pontos para chegar até o arquivo `. ..\globalVariables.ps1`, mas observe que o primeiro ponto é da importação do arquivo.
+
+No caso, a estrutura ficaria da seguinte forma:
+
+```tex
+/MenuInterativo/
+├─ /nova_sessao/
+│  ├─ menuOptions.ps1
+│  ├─ optionFunctions.ps1
+│  └─ QuickWindows.ps1
+├─ globalVariables.ps1
+├─ menuOptions.ps1
+├─ optionFunctions.ps1
+└─ QuickWindows.ps1
+```
+
+Observe que no diretório `/nova_sessao/` não existe o arquivo `globalVariables.ps1`, porque a nova sessão pode usar o arquivo que está fora do diretório `/nova_sessao`.
+
+[(&larr;) Voltar](https://github.com/systemboys/GTi_Laboratory#laborat%C3%B3rio-gti "Voltar ao Sumário") | 
+[(&uarr;) Subir](#sum%C3%A1rio "Subir para o topo")
+
+---
 
