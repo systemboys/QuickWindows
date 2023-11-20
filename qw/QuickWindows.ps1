@@ -77,6 +77,9 @@ v0.2.8 2023-11-14 às 18h02, Marcos Aurélio:
 Licença: GPL.
 #>
 
+# Get the name of the current script file
+$currentFileName = $MyInvocation.MyCommand.Name
+
 # Adjusting PowerShell window dimensions
 $width = "120"
 $height = "30"
@@ -87,11 +90,14 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = "Black" # Background
 $Host.UI.RawUI.ForegroundColor = "Green" # Font
 
+# Optoin Functions
+. .\optionFunctions.ps1
+
 # Globla Variables
-. ./globalVariables.ps1
+. .\globalVariables.ps1
 
 # Option Menu
-. ./menuOptions.ps1
+. .\menuOptions.ps1
 
 # Region FUNCTIONS
 
@@ -162,7 +168,7 @@ function New-Menu {
         $inputChar=[System.Console]::ReadKey($true)
 
         # Try to convert it to number
-        try{
+        try {
             $number = [System.Int32]::Parse($inputChar.KeyChar)
         }
         catch{
@@ -187,7 +193,7 @@ function New-Menu {
             if ([System.Console]::KeyAvailable) {                                            # If user typed a key, read it in next line
                 $secondChar = [System.Console]::ReadKey($true).KeyChar
                 $fullChar   = "$($inputChar.KeyChar)$($secondChar)"                         # Join both keys
-                try{
+                try {
                     # Set selection
                     $number = [System.Int32]::Parse($fullChar)                              # Set the selection accordingly or raise flag for invalid key
                     if ($number -ge 0 -and $number -lt $menuItems.Count) {
@@ -212,9 +218,7 @@ function New-Menu {
     # Hanlde the result, just show the selected entry if Enter was pressed; do nothing if Escape was pressed
     if ($outChar.Key -eq [System.ConsoleKey]::Enter) {
         [Console]::WriteLine(" You selected $($menuItems[$selectIndex])")
-        # Press a key to continue...
-        Write-Host " Press any key to continue..."
-        $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+        Invoke-Command -ScriptBlock (Get-Command "menuOption_$selectIndex").ScriptBlock
     }
 }
 
@@ -223,7 +227,9 @@ function New-Menu {
 # Region MAIN SCRIPT
 
 # Show the menu
-New-Menu $menuItems
+do {
+    New-Menu $menuItems
+} while ($outChar.Key -ne [System.ConsoleKey]::Escape)
 
 #endregion MAIN SCRIPT
 

@@ -16,8 +16,8 @@ Licença: GPL.
 
 # Populate menuItems with example entries
 $menuItems = [System.Collections.Generic.List[string]]::new()
-$menuItems.Add(" ..\Sair                                                    ")
-$menuItems.Add("Opção 1                                                     ")
-$menuItems.Add("Opção 2                                                     ")
-$menuItems.Add("Opção 3                                                     ")
+$menuItems.Add("..\Exit                                                     ")
+$menuItems.Add("Option 1                                                    ")
+$menuItems.Add("Option 2                                                    ")
+$menuItems.Add("Option 3                                                    ")
 
