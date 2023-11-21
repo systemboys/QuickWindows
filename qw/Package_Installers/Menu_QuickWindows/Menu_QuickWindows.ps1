@@ -33,7 +33,6 @@ $Host.UI.RawUI.ForegroundColor = "Green" # Font
 . .\optionFunctions.ps1
 
 # Globla Variables
-Set-Location $PSScriptRoot
 . .\globalVariables.ps1
 
 # Option Menu
