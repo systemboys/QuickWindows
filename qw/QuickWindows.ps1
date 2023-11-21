@@ -77,6 +77,8 @@ v0.2.8 2023-11-14 às 18h02, Marcos Aurélio:
 Licença: GPL.
 #>
 
+chcp 65001 > nul
+
 # Get the name of the current script file
 $currentFileName = $MyInvocation.MyCommand.Name
 
