@@ -176,18 +176,18 @@ function New-Menu {
         }
         
         # Hanlde arrows
-        if ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::DownArrow){
+        if ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::DownArrow) {
             if ($selectIndex -lt $menuItems.Count -1) {                                       # Avoid selection out of range
                 $selectIndex++
             }
-        } elseif ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::UpArrow){
-            if ($selectIndex -gt 0){                                                         # Avoid selection out of range
+        } elseif ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::UpArrow) {
+            if ($selectIndex -gt 0) {                                                         # Avoid selection out of range
                 $selectIndex--
             }
-        } elseif ($number -ge 0 -and $number -lt $menuItems.Count){                          # If it's valid number within the range
+        } elseif ($number -ge 0 -and $number -lt $menuItems.Count) {                          # If it's valid number within the range
             # Handle double-digit numbers
             $timestamp = Get-Date       
-            while (![System.Console]::KeyAvailable -and ((get-date) - $timestamp).TotalMilliseconds -lt 500){
+            while (![System.Console]::KeyAvailable -and ((get-date) - $timestamp).TotalMilliseconds -lt 500) {
                 Start-Sleep -Milliseconds 250                                               # Give the user 500 miliseconds to type in the 2nd digit, check after 250 to improve responsivness
             }
             if ([System.Console]::KeyAvailable) {                                            # If user typed a key, read it in next line
