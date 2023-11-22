@@ -95,6 +95,7 @@ $Host.UI.RawUI.ForegroundColor = "Green" # Font
 
 # Globla Variables
 . .\globalVariables.ps1
+. .\sessionGlobalVariables.ps1
 
 # Option Menu
 . .\menuOptions.ps1
@@ -142,6 +143,7 @@ function New-Menu {
         
         [System.Console]::WriteLine($hint)
         [System.Console]::WriteLine($header)
+        [System.Console]::WriteLine($sessionName)
         # Show all entries
         for ($i = 0; $i -lt $menuItems.Count; $i++) {
             [System.Console]::Write("$leftSideEdge ► [$i] ")                    # Add identity number to each entry, it's not highlighted for selection but it's in the same line
