@@ -1,3 +1,3 @@
 # Nome da sessão
 
-$sessionName = "kssssssssssssdddddddd"
+$sessionName = "├─────────────────────────────────────────────────────────────────────┤"
