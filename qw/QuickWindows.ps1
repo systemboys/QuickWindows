@@ -143,6 +143,7 @@ function New-Menu {
         
         [System.Console]::WriteLine($hint)        # Hint to be displayed above menu entries
         [System.Console]::WriteLine($header)      # Menu header
+        [System.Console]::WriteLine($sessionName) # Session name
         # Show all entries
         for ($i = 0; $i -lt $menuItems.Count; $i++) {
             [System.Console]::Write("$leftSideEdge ► [$i] ") # Add identity number to each entry, it's not highlighted for selection but it's in the same line
