@@ -122,33 +122,33 @@ function New-Menu {
     )
     
     # Prepare variables with function wide scope
-    $invalidChoice = $false                     # Initialize the flag indicating whether an ivalid key was pressed
-    $selectIndex   = 0                          # Initialize the variable storing the selection index (by default the first entry)
-    $outChar       = 'a'                        # Initialize the variable storing the Enter or Esc value
+    $invalidChoice = $false # Initialize the flag indicating whether an ivalid key was pressed
+    $selectIndex   = 0      # Initialize the variable storing the selection index (by default the first entry)
+    $outChar       = 'a'    # Initialize the variable storing the Enter or Esc value
 
     # Prepare the cosnole
-    [System.Console]::CursorVisible = $false    # Hide the cursor, we don't need it
-    [Console]::Clear()                          # Clear everything before showing the menu
+    [System.Console]::CursorVisible = $false # Hide the cursor, we don't need it
+    [Console]::Clear()                       # Clear everything before showing the menu
 
     # Main loop showing all the entries and handling the interaction with user
     # End the loop only when Enter or Escape is pressed
     while (([System.Int16]$inputChar.Key -ne [System.ConsoleKey]::Enter) -and ([System.Int16]$inputChar.Key -ne [System.ConsoleKey]::Escape)) {
         
         # Show title and hint
-        [System.Console]::CursorTop = 0                     # Start from top and then overwrite all lines; it's used instead of Clear to avoid blinking
-        $tempColor = [System.Console]::ForegroundColor      # Keep the default font color 
-        [System.Console]::ForegroundColor = $titleColor     # Set the color for title according to value of parameter
-        [System.Console]::WriteLine("$title`n")             # The title for the menu
-        [System.Console]::ForegroundColor = $tempColor      # Revert back to default font color
+        [System.Console]::CursorTop = 0                 # Start from top and then overwrite all lines; it's used instead of Clear to avoid blinking
+        $tempColor = [System.Console]::ForegroundColor  # Keep the default font color 
+        [System.Console]::ForegroundColor = $titleColor # Set the color for title according to value of parameter
+        [System.Console]::WriteLine("$title`n")         # The title for the menu
+        [System.Console]::ForegroundColor = $tempColor  # Revert back to default font color
         
-        [System.Console]::WriteLine($hint)
-        [System.Console]::WriteLine($header)
-        [System.Console]::WriteLine($sessionName)
+        [System.Console]::WriteLine($hint)        # Hint to be displayed above menu entries
+        [System.Console]::WriteLine($header)      # Menu header
+        [System.Console]::WriteLine($sessionName) # Session name
         # Show all entries
         for ($i = 0; $i -lt $menuItems.Count; $i++) {
-            [System.Console]::Write("$leftSideEdge ► [$i] ")                    # Add identity number to each entry, it's not highlighted for selection but it's in the same line
+            [System.Console]::Write("$leftSideEdge ► [$i] ") # Add identity number to each entry, it's not highlighted for selection but it's in the same line
             if ($selectIndex -eq $i) {
-                Reverse-Colors                                      # In case this is the selected entry, reverse color just for it to make the selection visible
+                Reverse-Colors                               # In case this is the selected entry, reverse color just for it to make the selection visible
                 [System.Console]::WriteLine($menuItems[$i] + "◄ $rightSideEdge")
                 Reverse-Colors      
             } else {
@@ -174,7 +174,7 @@ function New-Menu {
             $number = [System.Int32]::Parse($inputChar.KeyChar)
         }
         catch{
-            $number = -1                                                                     # In case it's not a valid number, set to always invalid -1
+            $number = -1                                                                      # In case it's not a valid number, set to always invalid -1
         }
         
         # Hanlde arrows
@@ -192,7 +192,7 @@ function New-Menu {
             while (![System.Console]::KeyAvailable -and ((get-date) - $timestamp).TotalMilliseconds -lt 500) {
                 Start-Sleep -Milliseconds 250                                               # Give the user 500 miliseconds to type in the 2nd digit, check after 250 to improve responsivness
             }
-            if ([System.Console]::KeyAvailable) {                                            # If user typed a key, read it in next line
+            if ([System.Console]::KeyAvailable) {                                           # If user typed a key, read it in next line
                 $secondChar = [System.Console]::ReadKey($true).KeyChar
                 $fullChar   = "$($inputChar.KeyChar)$($secondChar)"                         # Join both keys
                 try {
