@@ -143,16 +143,15 @@ function New-Menu {
         
         [System.Console]::WriteLine($hint)        # Hint to be displayed above menu entries
         [System.Console]::WriteLine($header)      # Menu header
-        [System.Console]::WriteLine($sessionName) # Session name
         # Show all entries
         for ($i = 0; $i -lt $menuItems.Count; $i++) {
             [System.Console]::Write("$leftSideEdge ► [$i] ") # Add identity number to each entry, it's not highlighted for selection but it's in the same line
             if ($selectIndex -eq $i) {
                 Reverse-Colors                               # In case this is the selected entry, reverse color just for it to make the selection visible
-                [System.Console]::WriteLine($menuItems[$i]) + "◄ $rightSideEdge"
+                [System.Console]::WriteLine($menuItems[$i] + "◄ $rightSideEdge")
                 Reverse-Colors      
             } else {
-                [System.Console]::WriteLine($menuItems[$i]) + "◄ $rightSideEdge" # In case this is not-selected entry, just show it
+                [System.Console]::WriteLine($menuItems[$i] + "◄ $rightSideEdge") # In case this is not-selected entry, just show it
             }
         }
         [System.Console]::WriteLine($footer)
