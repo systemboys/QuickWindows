@@ -22,5 +22,5 @@ $menuItems.Add("Windows                                                     ")
 $menuItems.Add("Internet                                                    ")
 $menuItems.Add("Redes                                                       ")
 $menuItems.Add("Executar Comandos no PowerShell                             ")
-$menuItems.Add("Utilitários para Windows                                    ")
+$menuItems.Add("Utilitarios para Windows                                    ")
 
