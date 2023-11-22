@@ -13,6 +13,8 @@ v0.0.1 2023-11-19 às 17h40, Marcos Aurélio:
 
 Licença: GPL.
 #>
+# Globla Variables
+. .\sessionGlobalVariables.ps1
 
 # Definition of variables
 $currentYear = Get-Date -Format yyyy
@@ -24,6 +26,7 @@ $hint   = " (i) Use as setas ↓ e ↑ ou números, Enter ◄┘ Executa e ESC s
 $header = "                     ┌───────────────────────────┐
  ┌───────────────────┤░▒▓ QuackWindows | Home ▓▒░├───────────────────┐
 ┌┴───────────────────┘                           └───────────────────┴┐"
+$sessionName
 $leftSideEdge = "│"
 # The menu options are posted here from the "menuOptions".ps1 file
 $rightSideEdge = "│"

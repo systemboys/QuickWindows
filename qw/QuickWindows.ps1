@@ -95,7 +95,6 @@ $Host.UI.RawUI.ForegroundColor = "Green" # Font
 
 # Globla Variables
 . .\globalVariables.ps1
-. .\sessionGlobalVariables.ps1
 
 # Option Menu
 . .\menuOptions.ps1
