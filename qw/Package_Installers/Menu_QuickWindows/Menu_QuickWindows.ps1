@@ -86,7 +86,12 @@ function menuOption_3() {
 . ..\..\globalVariables.ps1
 
 # Option Menu
-. .\menuOptions.ps1
+# Populate menuItems with example entries
+$menuItems = [System.Collections.Generic.List[string]]::new()
+$menuItems.Add("..\Exit                                                     ")
+$menuItems.Add("Option 1                                                    ")
+$menuItems.Add("Option 2                                                    ")
+$menuItems.Add("Option 3                                                    ")
 
 # Region FUNCTIONS
 
