@@ -91,13 +91,69 @@ $Host.UI.RawUI.BackgroundColor = "Black" # Background
 $Host.UI.RawUI.ForegroundColor = "Green" # Font
 
 # Optoin Functions
-. .\optionFunctions.ps1
+# Menu Option 0
+function menuOption_0() {
+  clear
+  Write-Host "You have exited the menu..."
+  exit
+}
+
+# Menu Option "Menu QuickWindows"
+function menuOption_1() {
+  Write-Host " Function 1 executed successfully..."
+
+  # Start your commands here
+  & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
+  # End your commands here
+
+  # Press a key to continue...
+  Write-Host " Press any key to continue..."
+  $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+}
+
+# Menu Option 2
+function menuOption_2() {
+  Write-Host " Function 2 executed successfully..."
+
+  # Start your commands here
+  # Command 1...
+  # Command 2...
+  # Command 3...
+  # End your commands here
+
+  # Press a key to continue...
+  Write-Host " Press any key to continue..."
+  $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+}
+
+# Menu Option 3
+function menuOption_3() {
+  Write-Host " Function 3 executed successfully..."
+
+  # Start your commands here
+  # Command 1...
+  # Command 2...
+  # Command 3...
+  # End your commands here
+
+  # Press a key to continue...
+  Write-Host " Press any key to continue..."
+  $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+}
 
 # Globla Variables
 . .\globalVariables.ps1
 
 # Option Menu
-. .\menuOptions.ps1
+# Populate menuItems with example entries
+$menuItems = [System.Collections.Generic.List[string]]::new()
+$menuItems.Add("..\Sair                                                     ")
+$menuItems.Add("Menu QuickWindows                                           ")
+$menuItems.Add("Windows                                                     ")
+$menuItems.Add("Internet                                                    ")
+$menuItems.Add("Redes                                                       ")
+$menuItems.Add("Executar Comandos no PowerShell                             ")
+$menuItems.Add("Utilitarios para Windows                                    ")
 
 # Region FUNCTIONS
 
