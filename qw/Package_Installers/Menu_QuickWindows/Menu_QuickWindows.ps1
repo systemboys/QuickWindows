@@ -20,14 +20,14 @@ Licença: GPL.
 $currentFileName = $MyInvocation.MyCommand.Name
 
 # Adjusting PowerShell window dimensions
-$width = "120"
-$height = "30"
-$size = New-Object System.Management.Automation.Host.Size($width, $height)
-$host.UI.RawUI.WindowSize = $size
+# $width = "120"
+# $height = "30"
+# $size = New-Object System.Management.Automation.Host.Size($width, $height)
+# $host.UI.RawUI.WindowSize = $size
 
 # Colors
-$Host.UI.RawUI.BackgroundColor = "Black" # Background
-$Host.UI.RawUI.ForegroundColor = "Green" # Font
+# $Host.UI.RawUI.BackgroundColor = "Black" # Background
+# $Host.UI.RawUI.ForegroundColor = "Green" # Font
 
 # Optoin Functions
 # Menu Option 0
