@@ -35,7 +35,7 @@ function menuOption_0() {
     clear
     Write-Host "You have exited the menu..."
     cd .. ; cd ..
-    .\QuickWindows.ps1
+    & .\QuickWindows.ps1
 }
 
 # Menu Option 1
