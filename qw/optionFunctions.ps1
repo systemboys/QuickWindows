@@ -29,7 +29,8 @@ function menuOption_1() {
     # & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
 
 # ------------------------
-. "Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1"
+$scriptContent = Get-Content -Path "Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1" -Raw
+Invoke-Expression $scriptContent
 # ------------------------
 
     # End your commands here
