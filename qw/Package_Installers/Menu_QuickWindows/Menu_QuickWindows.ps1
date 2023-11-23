@@ -1,5 +1,5 @@
 <#
-MenuInterativo.ps1 - Executa o menu com opções personalizadas.
+Menu_QuickWindows.ps1 - Executa o menu com opções personalizadas.
 
 URL: https://github.com/systemboys/QuickWindows.git
 Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -20,78 +20,23 @@ Licença: GPL.
 $currentFileName = $MyInvocation.MyCommand.Name
 
 # Adjusting PowerShell window dimensions
-# $width = "120"
-# $height = "30"
-# $size = New-Object System.Management.Automation.Host.Size($width, $height)
-# $host.UI.RawUI.WindowSize = $size
+$width = "120"
+$height = "30"
+$size = New-Object System.Management.Automation.Host.Size($width, $height)
+$host.UI.RawUI.WindowSize = $size
 
 # Colors
-# $Host.UI.RawUI.BackgroundColor = "Black" # Background
-# $Host.UI.RawUI.ForegroundColor = "Green" # Font
+$Host.UI.RawUI.BackgroundColor = "Black" # Background
+$Host.UI.RawUI.ForegroundColor = "Green" # Font
 
 # Optoin Functions
-# Menu Option 0
-function menuOption_0() {
-    clear
-    Write-Host "You have exited the menu..."
-    cd .. ; cd .. ; & .\QuickWindows.ps1
-}
-
-# Menu Option 1
-function menuOption_1() {
-    Write-Host " Function 1 executed successfully..."
-
-    # Start your commands here
-    # Command 1...
-    # Command 2...
-    # Command 3...
-    # End your commands here
-
-    # Press a key to continue...
-    Write-Host " Press any key to continue..."
-    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-}
-
-# Menu Option 2
-function menuOption_2() {
-    Write-Host " Function 2 executed successfully..."
-
-    # Start your commands here
-    # Command 1...
-    # Command 2...
-    # Command 3...
-    # End your commands here
-
-    # Press a key to continue...
-    Write-Host " Press any key to continue..."
-    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-}
-
-# Menu Option 3
-function menuOption_3() {
-    Write-Host " Function 3 executed successfully..."
-
-    # Start your commands here
-    # Command 1...
-    # Command 2...
-    # Command 3...
-    # End your commands here
-
-    # Press a key to continue...
-    Write-Host " Press any key to continue..."
-    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-}
+. .\optionFunctions.ps1
 
 # Globla Variables
 . ..\..\globalVariables.ps1
 
 # Option Menu
-# Populate menuItems with example entries
-$menuItems = [System.Collections.Generic.List[string]]::new()
-$menuItems.Add("..\Exit                                                     ")
-$menuItems.Add("Option 1                                                    ")
-$menuItems.Add("Option 2                                                    ")
-$menuItems.Add("Option 3                                                    ")
+. .\menuOptions.ps1
 
 # Region FUNCTIONS
 
@@ -138,13 +83,13 @@ function New-Menu {
         [System.Console]::WriteLine($header)
         # Show all entries
         for ($i = 0; $i -lt $menuItems.Count; $i++) {
-            [System.Console]::Write("$leftSideEdge > [$i] ")                    # Add identity number to each entry, it's not highlighted for selection but it's in the same line
+            [System.Console]::Write("$leftSideEdge ► [$i] ")                    # Add identity number to each entry, it's not highlighted for selection but it's in the same line
             if ($selectIndex -eq $i) {
                 Reverse-Colors                                      # In case this is the selected entry, reverse color just for it to make the selection visible
-                [System.Console]::WriteLine($menuItems[$i] + "< $rightSideEdge")
+                [System.Console]::WriteLine($menuItems[$i] + "◄ $rightSideEdge")
                 Reverse-Colors      
             } else {
-                [System.Console]::WriteLine($menuItems[$i] + "< $rightSideEdge") # In case this is not-selected entry, just show it
+                [System.Console]::WriteLine($menuItems[$i] + "◄ $rightSideEdge") # In case this is not-selected entry, just show it
             }
         }
         [System.Console]::WriteLine($footer)
@@ -170,18 +115,18 @@ function New-Menu {
         }
         
         # Hanlde arrows
-        if ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::DownArrow){
+        if ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::DownArrow) {
             if ($selectIndex -lt $menuItems.Count -1) {                                       # Avoid selection out of range
                 $selectIndex++
             }
-        } elseif ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::UpArrow){
+        } elseif ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::UpArrow) {
             if ($selectIndex -gt 0){                                                         # Avoid selection out of range
                 $selectIndex--
             }
-        } elseif ($number -ge 0 -and $number -lt $menuItems.Count){                          # If it's valid number within the range
+        } elseif ($number -ge 0 -and $number -lt $menuItems.Count) {                          # If it's valid number within the range
             # Handle double-digit numbers
             $timestamp = Get-Date       
-            while (![System.Console]::KeyAvailable -and ((get-date) - $timestamp).TotalMilliseconds -lt 500){
+            while (![System.Console]::KeyAvailable -and ((get-date) - $timestamp).TotalMilliseconds -lt 500) {
                 Start-Sleep -Milliseconds 250                                               # Give the user 500 miliseconds to type in the 2nd digit, check after 250 to improve responsivness
             }
             if ([System.Console]::KeyAvailable) {                                            # If user typed a key, read it in next line
