@@ -83,13 +83,13 @@ function New-Menu {
         [System.Console]::WriteLine($header)
         # Show all entries
         for ($i = 0; $i -lt $menuItems.Count; $i++) {
-            [System.Console]::Write("$leftSideEdge > [$i] ")                    # Add identity number to each entry, it's not highlighted for selection but it's in the same line
+            [System.Console]::Write("$leftSideEdge ► [$i] ")                    # Add identity number to each entry, it's not highlighted for selection but it's in the same line
             if ($selectIndex -eq $i) {
                 Reverse-Colors                                      # In case this is the selected entry, reverse color just for it to make the selection visible
-                [System.Console]::WriteLine($menuItems[$i] + "< $rightSideEdge")
+                [System.Console]::WriteLine($menuItems[$i] + "◄ $rightSideEdge")
                 Reverse-Colors      
             } else {
-                [System.Console]::WriteLine($menuItems[$i] + "< $rightSideEdge") # In case this is not-selected entry, just show it
+                [System.Console]::WriteLine($menuItems[$i] + "◄ $rightSideEdge") # In case this is not-selected entry, just show it
             }
         }
         [System.Console]::WriteLine($footer)
@@ -115,18 +115,18 @@ function New-Menu {
         }
         
         # Hanlde arrows
-        if ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::DownArrow) {
+        if ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::DownArrow){
             if ($selectIndex -lt $menuItems.Count -1) {                                       # Avoid selection out of range
                 $selectIndex++
             }
-        } elseif ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::UpArrow) {
+        } elseif ([System.Int16]$inputChar.Key -eq [System.ConsoleKey]::UpArrow){
             if ($selectIndex -gt 0){                                                         # Avoid selection out of range
                 $selectIndex--
             }
-        } elseif ($number -ge 0 -and $number -lt $menuItems.Count) {                          # If it's valid number within the range
+        } elseif ($number -ge 0 -and $number -lt $menuItems.Count){                          # If it's valid number within the range
             # Handle double-digit numbers
             $timestamp = Get-Date       
-            while (![System.Console]::KeyAvailable -and ((get-date) - $timestamp).TotalMilliseconds -lt 500) {
+            while (![System.Console]::KeyAvailable -and ((get-date) - $timestamp).TotalMilliseconds -lt 500){
                 Start-Sleep -Milliseconds 250                                               # Give the user 500 miliseconds to type in the 2nd digit, check after 250 to improve responsivness
             }
             if ([System.Console]::KeyAvailable) {                                            # If user typed a key, read it in next line
