@@ -26,7 +26,12 @@ function menuOption_1() {
     Write-Host " Function 1 executed successfully..."
 
     # Start your commands here
-    & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
+    # & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
+
+# ------------------------
+. "Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1"
+# ------------------------
+
     # End your commands here
 
     # Press a key to continue...
