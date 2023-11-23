@@ -34,8 +34,7 @@ $Host.UI.RawUI.ForegroundColor = "Green" # Font
 function menuOption_0() {
     clear
     Write-Host "You have exited the menu..."
-    cd .. ; cd ..
-    & .\QuickWindows.ps1
+    cd .. ; cd .. ; & .\QuickWindows.ps1
 }
 
 # Menu Option 1
