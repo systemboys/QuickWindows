@@ -157,7 +157,7 @@ function New-Menu {
     # Hanlde the result, just show the selected entry if Enter was pressed; do nothing if Escape was pressed
     if ($outChar.Key -eq [System.ConsoleKey]::Enter) {
         [Console]::WriteLine(" You selected $($menuItems[$selectIndex])")
-        Invoke-Command -ScriptBlock (Get-Command "menuOption_$selectIndex").ScriptBlock
+        menuOption_$selectIndex
     }
 }
 
