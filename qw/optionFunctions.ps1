@@ -29,13 +29,13 @@ function menuOption_1() {
     # & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
     # --------------------------
     # Caminho para o novo script .ps1
-    $newScriptPath = ".\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1"
+    $newScriptPath = ".\\Package_Installers\\Menu_QuickWindows\\Menu_QuickWindows.ps1"
 
     # Inicia o novo script em um novo processo PowerShell
     Start-Process -FilePath "powershell.exe" -ArgumentList "-File `"$newScriptPath`""
 
     # Encerra o script atual
-    exit
+    # exit
     # --------------------------
     # End your commands here
 
