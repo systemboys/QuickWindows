@@ -26,8 +26,11 @@ function menuOption_1() {
     Write-Host " Function 1 executed successfully..."
 
     # Start your commands here
-    & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
-    exit
+    # & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
+    # ---------------------
+    Invoke-Command { & "powershell.exe" } -NoNewScope # PowerShell 5
+    Invoke-Command { & "pwsh.exe" } -NoNewScope # PowerShell 7    
+    # ---------------------
     # End your commands here
 
     # Press a key to continue...
