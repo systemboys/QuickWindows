@@ -28,7 +28,7 @@ function menuOption_1() {
     # Start your commands here
     # & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
     # ---------------------
-    $command = {& .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1}
+    $command = {& .\QuickWindows.ps1}
     Invoke-Command -ScriptBlock $command -NoNewScope # PowerShell 5
     Invoke-Command -ScriptBlock $command -NoNewScope # PowerShell 7    
     # ---------------------
