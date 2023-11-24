@@ -31,11 +31,7 @@ function menuOption_1() {
     # Caminho para o novo script .ps1
     $newScriptPath = ".\\Package_Installers\\Menu_QuickWindows\\Menu_QuickWindows.ps1"
 
-    # Inicia o novo script em um novo processo PowerShell
-    Start-Process -FilePath "powershell.exe" -ArgumentList "-File `"$newScriptPath`""
-
-    # Encerra o script atual
-    # exit
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0$newScriptPath""' -Verb RunAs}"
     # --------------------------
     # End your commands here
 
