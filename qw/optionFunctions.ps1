@@ -29,7 +29,6 @@ function menuOption_1() {
     # & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
     # --------------------------------
     Start-Process -FilePath "powershell.exe" -ArgumentList "-File `".\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1`""
-    exit
     # --------------------------------
     # End your commands here
 

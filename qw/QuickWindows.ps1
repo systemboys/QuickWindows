@@ -219,6 +219,7 @@ function New-Menu {
     if ($outChar.Key -eq [System.ConsoleKey]::Enter) {
         [Console]::WriteLine(" You selected $($menuItems[$selectIndex])")
         Invoke-Command -ScriptBlock (Get-Command "menuOption_$selectIndex").ScriptBlock
+        exit
     }
 }
 
