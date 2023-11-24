@@ -28,8 +28,6 @@ function menuOption_1() {
     # Start your commands here
     # & .\Package_Installers\Menu_QuickWindows\Menu_QuickWindows.ps1
     # ---------------------
-    # file1.ps1
-    Write-Host "Executando file1.ps1"
     # Encerra a sessão atual do PowerShell
     exit
     # Inicia uma nova sessão do PowerShell e executa o file2.ps1
