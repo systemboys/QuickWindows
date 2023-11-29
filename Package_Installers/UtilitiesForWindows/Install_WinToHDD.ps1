@@ -15,7 +15,7 @@
 # Licença: GPL.
 
 # Se o WinToHDD não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files"
+$programFiles = "$env:SystemDrive\Program Files\Hasleo"
 $directory = "$programFiles\WinToHDD"
 
 if (Test-Path $directory) {
