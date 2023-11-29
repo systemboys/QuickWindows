@@ -34,7 +34,7 @@ echo QuickWindows / Leitores de PDF
 
 :: Opções do Menu
 set "menu_Session_6_3[0]=Voltar..."
-set "menu_Session_6_3[1]=Acrobat Reader DC Win10"
+set "menu_Session_6_3[1]=Acrobat Reader DC"
 
 set "default=0"
 
