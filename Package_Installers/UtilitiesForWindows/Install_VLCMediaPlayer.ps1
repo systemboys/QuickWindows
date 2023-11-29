@@ -15,8 +15,8 @@
 # Licença: GPL.
 
 # Se o VLCMediaPlayer não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files"
-$directory = "$programFiles\VLCMediaPlayer"
+$programFiles = "$env:SystemDrive\Program Files (x86)\VideoLAN"
+$directory = "$programFiles\VLC"
 
 if (Test-Path $directory) {
     Write-Host "VLC Media Player is installed!"
