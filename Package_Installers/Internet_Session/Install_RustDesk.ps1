@@ -14,7 +14,7 @@
 # Licença: GPL.
 
 # Se o RustDesk não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files (x86)"
+$programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\RustDesk"
 
 if (Test-Path $directory) {
