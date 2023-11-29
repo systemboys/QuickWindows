@@ -54,31 +54,8 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd
 )
 
-if %ERRORLEVEL% equ 1 (
-    cls
-    echo Você selecionou a Opção 1.
-
-    @REM  Your commands here...
-
-    goto menu_Session_1
-)
-
-if %ERRORLEVEL% equ 2 (
-    cls
-    echo Você selecionou a Opção 2.
-
-    @REM  Your commands here...
-
-    goto menu_Session_1
-)
-
-if %ERRORLEVEL% equ 3 (
-    cls
-    echo Você selecionou a Opção 3.
-
-    @REM  Your commands here...
-
-    goto menu_Session_1
+if %ERRORLEVEL% equ 8 (
+    call SystemRestoreTools.cmd
 )
 
 goto :EOF
