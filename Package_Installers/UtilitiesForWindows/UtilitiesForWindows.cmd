@@ -33,19 +33,19 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Utilitários para Windows
 
 :: Opções do Menu
-set "menu_Session_1[0]=Voltar..."
-set "menu_Session_1[1]=Instalar Revo Unistaller"
-set "menu_Session_1[2]=Compactadores"
-set "menu_Session_1[3]=Leitores de PDF"
-set "menu_Session_1[4]=Players Multimídia"
-set "menu_Session_1[5]=Software de congelamento do sistema"
-set "menu_Session_1[6]=Backup e Restauração"
-set "menu_Session_1[7]=Software de gerenciamento de partições"
-set "menu_Session_1[8]=Ferramentas de restauração do sistema"
+set "menu_Session_6[0]=Voltar..."
+set "menu_Session_6[1]=Instalar Revo Unistaller"
+set "menu_Session_6[2]=Compactadores"
+set "menu_Session_6[3]=Leitores de PDF"
+set "menu_Session_6[4]=Players Multimídia"
+set "menu_Session_6[5]=Software de congelamento do sistema"
+set "menu_Session_6[6]=Backup e Restauração"
+set "menu_Session_6[7]=Software de gerenciamento de partições"
+set "menu_Session_6[8]=Ferramentas de restauração do sistema"
 
 set "default=0"
 
-:menu_Session_1
+:menu_Session_6
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
@@ -61,11 +61,11 @@ if %ERRORLEVEL% equ 8 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_1title = "=== QuickWindows / New Session ==="
-$menu_Session_1prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menu_Session_6title = "=== QuickWindows / New Session ==="
+$menu_Session_6prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menu_Session_1prompt.length + 6
-$menu_Session_1 = gci env: | ?{ $_.Name -match "^menu_Session_1\[\d+\]$" } | %{
+$maxlen = $menu_Session_6prompt.length + 6
+$menu_Session_6 = gci env: | ?{ $_.Name -match "^menu_Session_6\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -74,11 +74,11 @@ $menu_Session_1 = gci env: | ?{ $_.Name -match "^menu_Session_1\[\d+\]$" } | %{
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menu_Session_1.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menu_Session_6.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menu_Session_1.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menu_Session_6.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -87,7 +87,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_1.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_6.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -113,14 +113,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menu_Session_1 {
+function menu_Session_6 {
     $line = $ypos
-    center $menu_Session_1title
+    center $menu_Session_6title
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menu_Session_1[$i]; $i++) {
+    for ($i=0; $item = $menu_Session_6[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -131,11 +131,11 @@ function menu_Session_1 {
     }
     center " "
     $line++
-    center $menu_Session_1prompt
+    center $menu_Session_6prompt
     1
 }
 
-while (menu_Session_1) {
+while (menu_Session_6) {
 
     [int]$key = getKey
 
@@ -145,7 +145,7 @@ while (menu_Session_1) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menu_Session_1.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menu_Session_6.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
