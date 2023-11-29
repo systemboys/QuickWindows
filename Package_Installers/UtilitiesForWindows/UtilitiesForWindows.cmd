@@ -34,7 +34,7 @@ echo QuickWindows / Utilitários para Windows
 
 :: Opções do Menu
 set "menu_Session_6[0]=Voltar..."
-set "menu_Session_6[1]=Instalar Revo Unistaller"
+set "menu_Session_6[1]=Instalar Revo Uninstaller"
 set "menu_Session_6[2]=Compactadores"
 set "menu_Session_6[3]=Leitores de PDF"
 set "menu_Session_6[4]=Players Multimídia"
@@ -56,7 +56,7 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção para instalar o Revo Unistaller.
+    echo Você selecionou a Opção para instalar o Revo Uninstaller.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Your_Package.ps1""' -Verb RunAs}"
 

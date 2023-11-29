@@ -1,4 +1,4 @@
-# Install_Revo_Unistaller.ps1 - Executa o script de instalação de Revo Unistaller.
+# Install_Revo_Uninstaller.ps1 - Executa o script de instalação de Revo Uninstaller.
 #
 # URL: https://github.com/github_user/project_on_github.git
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
@@ -10,27 +10,27 @@
 # ---------------------------------------------------------------
 # Histórico:
 # v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:
-#   - Versão inicial, Instalação de Revo Unistaller.
+#   - Versão inicial, Instalação de Revo Uninstaller.
 #
 # Licença: GPL.
 
-# Se o Revo Unistaller não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files"
-$directory = "$programFiles\Revo Unistaller"
+# Se o Revo Uninstaller não estiver instalado, faz o download e instala
+$programFiles = "$env:SystemDrive\Program Files\VS Revo Group"
+$directory = "$programFiles\Revo Uninstaller"
 
 if (Test-Path $directory) {
-    Write-Host "Revo Unistaller is installed!"
+    Write-Host "Revo Uninstaller is installed!"
 } else {
-    Write-Host "Revo Unistaller is not installed! Starting installation process."
+    Write-Host "Revo Uninstaller is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/Revo_Unistaller_Setup.exe"
-    $downloadPath = "$env:temp\Revo_Unistaller_Setup"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/Revo_Uninstaller_Setup.exe"
+    $downloadPath = "$env:temp\Revo_Uninstaller_Setup"
     
-    # Faz o download do Revo Unistaller
+    # Faz o download do Revo Uninstaller
     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
     
-    # Instala o Revo Unistaller
+    # Instala o Revo Uninstaller
     Start-Process -FilePath "$downloadPath" -Wait
 
     # Apagar o arquivo
