@@ -126,7 +126,7 @@ set "menu[5]=Execução de Comandos no PowerShell"
 set "menu[6]=Utilitários para Windows"
 set "menu[7]=Office software"
 
-set "default=0"
+set "default=%1%"
 
 :menu
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
