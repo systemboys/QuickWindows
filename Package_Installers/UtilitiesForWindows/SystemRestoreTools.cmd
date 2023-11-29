@@ -57,7 +57,7 @@ if %ERRORLEVEL% equ 1 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_6_8title = "=== QuickWindows / Utilitarios para Windows / Ferramentas de restauracao do sistema ==="
+$menu_Session_6_8title = "=== ../ Ferramentas de restauracao do sistema ==="
 $menu_Session_6_8prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_6_8prompt.length + 6
