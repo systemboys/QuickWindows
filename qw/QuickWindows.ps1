@@ -77,6 +77,8 @@ v0.2.8 2023-11-14 às 18h02, Marcos Aurélio:
 Licença: GPL.
 #>
 
+# -*- coding: UTF-8 -*-
+
 # Adjusting PowerShell window dimensions
 $width = "120"
 $height = "30"
