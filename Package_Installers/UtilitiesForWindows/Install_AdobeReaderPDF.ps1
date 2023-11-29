@@ -15,8 +15,8 @@
 # Licença: GPL.
 
 # Se o Adobe Reader não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files"
-$directory = "$programFiles\Adobe Reader"
+$programFiles = "$env:SystemDrive\Program Files\Adobe\Acrobat DC"
+$directory = "$programFiles\Acrobat"
 
 if (Test-Path $directory) {
     Write-Host "Adobe Reader is installed!"
