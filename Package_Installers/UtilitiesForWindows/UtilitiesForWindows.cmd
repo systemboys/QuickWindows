@@ -35,9 +35,9 @@ echo QuickWindows / Utilitários para Windows
 :: Opções do Menu
 set "menu_Session_6[0]=Voltar..."
 set "menu_Session_6[1]=Instalar Revo Uninstaller"
-set "menu_Session_6[2]=Compactadores"
-set "menu_Session_6[3]=Leitores de PDF"
-set "menu_Session_6[4]=Players Multimídia"
+set "menu_Session_6[2]=Compactadores..."
+set "menu_Session_6[3]=Leitores de PDF..."
+set "menu_Session_6[4]=Players Multimídia..."
 set "menu_Session_6[5]=Software de congelamento do sistema"
 set "menu_Session_6[6]=Backup e Restauração"
 set "menu_Session_6[7]=Software de gerenciamento de partições"
