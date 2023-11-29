@@ -58,6 +58,10 @@ if %ERRORLEVEL% equ 2 (
     call Compactors.cmd
 )
 
+if %ERRORLEVEL% equ 3 (
+    call PDFReaders.cmd
+)
+
 if %ERRORLEVEL% equ 8 (
     call SystemRestoreTools.cmd
 )
