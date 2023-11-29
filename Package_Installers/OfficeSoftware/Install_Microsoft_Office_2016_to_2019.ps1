@@ -24,8 +24,8 @@ if (Test-Path $directory) {
     Write-Host "Microsoft Office is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://mega.nz/file/Ls4CFTwD#ZCJwoJMr0bY175T27cxv7OaUuGd38591ONG_YwbYy80"
-    $downloadPath = "$env:temp\Microsoft_Office.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/Microsoft_Office_2016-2019.exe"
+    $downloadPath = "$env:temp\Microsoft_Office_2016-2019.exe"
     
     # Faz o download do Microsoft Office
     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
