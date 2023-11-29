@@ -49,7 +49,7 @@ set "default=0"
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
-    call Windows_Session.cmd
+    call Windows_Session.cmd 5
 )
 
 if %ERRORLEVEL% equ 1 (
