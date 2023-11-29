@@ -77,8 +77,6 @@ v0.2.8 2023-11-14 às 18h02, Marcos Aurélio:
 Licença: GPL.
 #>
 
-# -*- coding: UTF-8 -*-
-
 # Adjusting PowerShell window dimensions
 $width = "120"
 $height = "30"
@@ -141,16 +139,16 @@ function menuOption_3() {
     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 }
 
-$menutitle = "`\u250c                     ┌───────────────────────────┐                      
+$menutitle = "                     ┌───────────────────────────┐                      
  ┌───────────────────┤░▒▓ QuackWindows | Home ▓▒░├────────────────────┐ 
-┌┴───────────────────┘                           └────────────────────┴┐`\u2510"
-$menuprompt = "`\u250c└┬──────────────────────────────────────────────────────────────┬─┬─┬─┬┘
+┌┴───────────────────┘                           └────────────────────┴┐"
+$menuprompt = "└┬──────────────────────────────────────────────────────────────┬─┬─┬─┬┘
  │ (C) $currentYear GLOBAL TEC Informática (R) - GTi                      - ┼ ┤ 
  │ A $timeOnMarket anos no mercado de informática.                             - ┤ 
  │ A Tecnologia da Informção é o Futuro.                              ┤ 
  │ Website: https://gti1.com.br | Email: systemboys@hotmail.com     - ┤ 
  │ Author: Marcos Aurélio - Engenheiro de Software                - ┼ ┤ 
- └──────────────────────────────────────────────────────────────┴─┴─┴─┘ `\u2510"
+ └──────────────────────────────────────────────────────────────┴─┴─┴─┘ "
 $backgroundHeader = "DarkGreen"
 $backgroundFooter = "DarkGreen"
 $backgroundMenu = "DarkMagenta"

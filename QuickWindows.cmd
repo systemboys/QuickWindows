@@ -119,6 +119,7 @@ set "menu[2]=Windows"
 set "menu[3]=Internet"
 set "menu[4]=Redes"
 set "menu[5]=Execução de Comandos no PowerShell"
+set "menu[6]=Utilitários para Windows"
 
 set "default=0"
 
@@ -161,6 +162,12 @@ if %ERRORLEVEL% equ 5 (
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Package_Installers\RunPowerShellCommands.ps1""' -Verb RunAs}"
 
     goto menu
+)
+
+if %ERRORLEVEL% equ 6 (
+    cd Package_Installers\UtilitiesForWindows
+    call UtilitiesForWindows.cmd
+    cd ..
 )
 
 goto :EOF
