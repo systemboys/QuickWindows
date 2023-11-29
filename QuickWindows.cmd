@@ -122,6 +122,7 @@ set "menu[3]=Internet"
 set "menu[4]=Redes"
 set "menu[5]=Execução de Comandos no PowerShell"
 set "menu[6]=Utilitários para Windows"
+set "menu[7]=Office software"
 
 set "default=0"
 
@@ -169,6 +170,12 @@ if %ERRORLEVEL% equ 5 (
 if %ERRORLEVEL% equ 6 (
     cd Package_Installers\UtilitiesForWindows
     call UtilitiesForWindows.cmd
+    cd ..
+)
+
+if %ERRORLEVEL% equ 7 (
+    cd Package_Installers\OfficeSoftware
+    call OfficeSoftware.cmd
     cd ..
 )
 
