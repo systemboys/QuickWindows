@@ -36,7 +36,7 @@ echo QuickWindows / Softwares para Escritório
 set "menu_Session_7[0]=Voltar..."
 set "menu_Session_7[1]=Microsoft Office 2016 a 2019"
 
-set "default=0"
+set "default=%1"
 
 :menu_Session_7
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
@@ -44,7 +44,7 @@ if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.cmd
+    call QuickWindows.cmd 7
 )
 
 if %ERRORLEVEL% equ 1 (

@@ -58,7 +58,7 @@ set "menu_Session_3[6]=Navegador Opera"
 set "menu_Session_3[7]=Navegador Mozilla Firefox"
 set "menu_Session_3[8]=Visualizador Real VNC Viewer"
 
-set "default=0"
+set "default=%1"
 
 :menu_Session_3
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
@@ -66,11 +66,11 @@ if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.cmd
+    call QuickWindows.cmd 3
 )
 
 if %ERRORLEVEL% equ 1 (
-    call Session_RemoteAccessSoftware.cmd
+    call Session_RemoteAccessSoftware.cmd 0
 )
 
 if %ERRORLEVEL% equ 2 (

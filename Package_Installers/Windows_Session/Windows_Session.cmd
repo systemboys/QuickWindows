@@ -45,9 +45,9 @@ set "menu_Session_2[1]=Desligar o Windows"
 set "menu_Session_2[2]=Reiniciar o Windows"
 set "menu_Session_2[3]=Atualizar Windows e Softwares"
 set "menu_Session_2[4]=Atualizar o PowerShell"
-set "menu_Session_2[5]=Acesso rápido à Configurações"
+set "menu_Session_2[5]=Acesso rápido à Configurações..."
 
-set "default=0"
+set "default=%1"
 
 :menu_Session_2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
@@ -55,7 +55,7 @@ if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.cmd
+    call QuickWindows.cmd 2
 )
 
 if %ERRORLEVEL% equ 1 (
@@ -90,7 +90,7 @@ if %ERRORLEVEL% equ 4 (
 
 if %ERRORLEVEL% equ 5 (
     cd Package_Installers\Windows_Session
-    call QuickAccessToSettings.cmd
+    call QuickAccessToSettings.cmd 0
     cd ..
 )
 

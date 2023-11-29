@@ -38,7 +38,7 @@ set "menu_Session_1[1]=Atualizar QuickWindows"
 set "menu_Session_1[2]=Deletar QuickWindows"
 set "menu_Session_1[3]=Recarregar QuickWindows"
 
-set "default=0"
+set "default=%1%"
 
 :menu_Session_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"

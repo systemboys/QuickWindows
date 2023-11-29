@@ -44,7 +44,7 @@ set "menu_Session_4[1]=Obter IP público"
 set "menu_Session_4[2]=Obter IP local"
 set "menu_Session_4[3]=Obter IP's de uma determinada rota"
 
-set "default=0"
+set "default=%1"
 
 :menu_Session_4
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
@@ -52,7 +52,7 @@ if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.cmd
+    call QuickWindows.cmd 4
 )
 
 if %ERRORLEVEL% equ 1 (

@@ -118,13 +118,13 @@ echo └────────────────────────
 
 :: Opções do Menu
 set "menu[0]=Sair"
-set "menu[1]=Menu QuickWindows"
-set "menu[2]=Windows"
-set "menu[3]=Internet"
-set "menu[4]=Redes"
+set "menu[1]=Menu QuickWindows..."
+set "menu[2]=Windows..."
+set "menu[3]=Internet..."
+set "menu[4]=Redes..."
 set "menu[5]=Execução de Comandos no PowerShell"
-set "menu[6]=Utilitários para Windows"
-set "menu[7]=Office software"
+set "menu[6]=Utilitários para Windows..."
+set "menu[7]=Office software..."
 
 set "default=%1%"
 
@@ -138,25 +138,25 @@ if %ERRORLEVEL% equ 0 (
 
 if %ERRORLEVEL% equ 1 (
     cd Package_Installers\Menu_QuickWindows
-    call Menu_QuickWindows.cmd
+    call Menu_QuickWindows.cmd 0
     cd ..
 )
 
 if %ERRORLEVEL% equ 2 (
     cd Package_Installers\Windows_Session
-    call Windows_Session.cmd
+    call Windows_Session.cmd 0
     cd ..
 )
 
 if %ERRORLEVEL% equ 3 (
     cd Package_Installers\Internet_Session
-    call Internet_Session.cmd
+    call Internet_Session.cmd 0
     cd ..
 )
 
 if %ERRORLEVEL% equ 4 (
     cd Package_Installers\Networking_Session
-    call Networking_Session.cmd
+    call Networking_Session.cmd 0
     cd ..
 )
 
@@ -177,7 +177,7 @@ if %ERRORLEVEL% equ 6 (
 
 if %ERRORLEVEL% equ 7 (
     cd Package_Installers\OfficeSoftware
-    call OfficeSoftware.cmd
+    call OfficeSoftware.cmd 0
     cd ..
 )
 
