@@ -73,7 +73,7 @@
 :: v0.2.7 2023-11-14 às 00h15, Marcos Aurélio:
 ::   - Opção para Menu de sessão a acesso rápido a algumas funcionalidades do Windows na sessão "Windows".
 :: v0.2.8 2023-11-29 às 10h40, Marcos Aurélio:
-::   - Versão inicial, sessão para "Utilitários para Windows" e Instalação de WinToHDD.
+::   - Sessão para "Utilitários para Windows" onde foram adicionados instaladores diversos.
 ::
 :: Licença: GPL.
 
