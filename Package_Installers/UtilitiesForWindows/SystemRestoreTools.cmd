@@ -51,7 +51,7 @@ if %ERRORLEVEL% equ 1 (
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_WinToHDD.ps1""' -Verb RunAs}"
 
-    goto menu_Session_3
+    goto menu_Session_6_8
 )
 
 goto :EOF
