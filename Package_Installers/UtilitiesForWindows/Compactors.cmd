@@ -1,7 +1,7 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: UtilitiesForWindows.cmd - Para instalação de softwares para Windows
+:: Compactors.cmd - Para instalação de softwares para Windows
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -11,8 +11,8 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-29 às 10h40, Marcos Aurélio:
-::   - Versão inicial, sessão para "Utilitários para Windows" e Instalação de WinToHDD.
+:: v0.0.1 2023-11-29 às 13h30, Marcos Aurélio:
+::   - Versão inicial, sessão "Compactadores" para Windows.
 ::
 :: Licença: GPL.
 
@@ -30,46 +30,38 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo QuickWindows / Utilitários para Windows
+echo QuickWindows / Utilitários para Windows / Compactadores
 
 :: Opções do Menu
-set "menu_Session_6[0]=Voltar..."
-set "menu_Session_6[1]=Instalar Revo Unistaller"
-set "menu_Session_6[2]=Compactadores"
-set "menu_Session_6[3]=Leitores de PDF"
-set "menu_Session_6[4]=Players Multimídia"
-set "menu_Session_6[5]=Software de congelamento do sistema"
-set "menu_Session_6[6]=Backup e Restauração"
-set "menu_Session_6[7]=Software de gerenciamento de partições"
-set "menu_Session_6[8]=Ferramentas de restauração do sistema"
+set "menu_Session_6_2[0]=Voltar..."
+set "menu_Session_6_2[1]=WinRAR"
 
 set "default=0"
 
-:menu_Session_6
+:menu_Session_6_2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
-    cd ..
-    cd ..
-    call QuickWindows.cmd
+    call UtilitiesForWindows.cmd
 )
 
-if %ERRORLEVEL% equ 2(
-    call Compactors.cmd
-)
+if %ERRORLEVEL% equ 1 (
+    cls
+    echo Você selecionou a Opção para instalar o WinRAR.
 
-if %ERRORLEVEL% equ 8 (
-    call SystemRestoreTools.cmd
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_WinRAR.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_2
 )
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_6title = "=== QuickWindows / Utilitarios para Windows ==="
-$menu_Session_6prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menu_Session_6_2title = "=== / Utilitarios para Windows / Compactadores ==="
+$menu_Session_6_2prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menu_Session_6prompt.length + 6
-$menu_Session_6 = gci env: | ?{ $_.Name -match "^menu_Session_6\[\d+\]$" } | %{
+$maxlen = $menu_Session_6_2prompt.length + 6
+$menu_Session_6_2 = gci env: | ?{ $_.Name -match "^menu_Session_6_2\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -78,11 +70,11 @@ $menu_Session_6 = gci env: | ?{ $_.Name -match "^menu_Session_6\[\d+\]$" } | %{
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menu_Session_6.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menu_Session_6_2.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menu_Session_6.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menu_Session_6_2.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -91,7 +83,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_6.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_6_2.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -117,14 +109,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menu_Session_6 {
+function menu_Session_6_2 {
     $line = $ypos
-    center $menu_Session_6title
+    center $menu_Session_6_2title
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menu_Session_6[$i]; $i++) {
+    for ($i=0; $item = $menu_Session_6_2[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -135,11 +127,11 @@ function menu_Session_6 {
     }
     center " "
     $line++
-    center $menu_Session_6prompt
+    center $menu_Session_6_2prompt
     1
 }
 
-while (menu_Session_6) {
+while (menu_Session_6_2) {
 
     [int]$key = getKey
 
@@ -149,7 +141,7 @@ while (menu_Session_6) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menu_Session_6.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menu_Session_6_2.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
