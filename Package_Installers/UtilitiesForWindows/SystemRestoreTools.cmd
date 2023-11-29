@@ -42,7 +42,7 @@ set "default=0"
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
-    call SystemRestoreTools.cmd
+    call UtilitiesForWindows.cmd
 )
 
 if %ERRORLEVEL% equ 1 (
