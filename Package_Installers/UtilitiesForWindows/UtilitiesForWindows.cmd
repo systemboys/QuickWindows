@@ -43,7 +43,7 @@ set "menu_Session_6[6]=Backup e Restauração"
 set "menu_Session_6[7]=Software de gerenciamento de partições"
 set "menu_Session_6[8]=Ferramentas de restauração do sistema"
 
-set "default=0"
+set "default=%1%"
 
 :menu_Session_6
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
