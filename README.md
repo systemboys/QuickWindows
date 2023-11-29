@@ -144,7 +144,7 @@ set "menu_Session_1[1]=Opção 1"
 set "menu_Session_1[2]=Opção 2"
 set "menu_Session_1[3]=Opção 3"
 
-set "default=0"
+set "default=%1"
 
 :menu_Session_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
@@ -277,6 +277,8 @@ while (menu_Session_1) {
 }
 ```
 
+> ***( i )*** Nas opções, de forma que fique bem organizadas, quando for uma opção para acessar uma sessão, após o nome, adicione três pontos (Opção 1...), para indicar que é uma sessão.
+
 Para chamar sua nova sessão a partir do menu inicial, adicione a função que executa a mesma:
 
 ```batch
@@ -284,7 +286,7 @@ Para chamar sua nova sessão a partir do menu inicial, adicione a função que e
 
 if %ERRORLEVEL% equ 1 (
     cd Package_Installers\New_Session_A
-    call New_Session_A.cmd
+    call New_Session_A.cmd 0
     cd ..
 )
 
