@@ -54,7 +54,7 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd
 )
 
-if %ERRORLEVEL% equ 2(
+if %ERRORLEVEL% equ 2 (
     call Compactors.cmd
 )
 
