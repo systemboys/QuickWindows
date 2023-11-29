@@ -11,8 +11,8 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-29 às 10h30, Marcos Aurélio:
-::   - Versão inicial, sessão para "Utilitários para Windows".
+:: v0.0.1 2023-11-29 às 10h40, Marcos Aurélio:
+::   - Versão inicial, sessão para "Utilitários para Windows" e Instalação de WinToHDD.
 ::
 :: Licença: GPL.
 

@@ -1,7 +1,7 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: menu_Session_6_8.cmd - Para instalação de softwares para Windows
+:: SystemRestoreTools.cmd - Para instalação de softwares para Windows
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -11,8 +11,8 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
-::   - Versão inicial, menu_Session_6_8 de instalações de programas para Windows.
+:: v0.0.1 2023-11-29 às 10h50, Marcos Aurélio:
+::   - Versão inicial, Instalação de WinToHDD.
 ::
 :: Licença: GPL.
 
