@@ -1,7 +1,7 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: UtilitiesForWindows.cmd - Para instalação de softwares para Windows
+:: menu_Session_1.cmd - Para instalação de softwares para Windows
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -11,8 +11,8 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-29 às 10h30, Marcos Aurélio:
-::   - Versão inicial, sessão para "Utilitários para Windows".
+:: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
+::   - Versão inicial, menu_Session_1 de instalações de programas para Windows.
 ::
 :: Licença: GPL.
 
@@ -30,18 +30,11 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo QuickWindows / Utilitários para Windows
+echo QuickWindows / Utilitários para Windows / Ferramentas de restauração do sistema
 
 :: Opções do Menu
 set "menu_Session_1[0]=Voltar..."
-set "menu_Session_1[1]=Instalar Revo Unistaller"
-set "menu_Session_1[2]=Compactadores"
-set "menu_Session_1[3]=Leitores de PDF"
-set "menu_Session_1[4]=Players Multimídia"
-set "menu_Session_1[5]=Software de congelamento do sistema"
-set "menu_Session_1[6]=Backup e Restauração"
-set "menu_Session_1[7]=Software de gerenciamento de partições"
-set "menu_Session_1[8]=Ferramentas de restauração do sistema"
+set "menu_Session_1[1]=WinToHDD"
 
 set "default=0"
 
@@ -49,36 +42,16 @@ set "default=0"
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
-    cd ..
-    cd ..
-    call QuickWindows.cmd
+    call SystemRestoreTools.cmd
 )
 
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção 1.
+    echo Você selecionou a Opção para instalar o WinToHDD.
 
-    @REM  Your commands here...
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_WinToHDD.ps1""' -Verb RunAs}"
 
-    goto menu_Session_1
-)
-
-if %ERRORLEVEL% equ 2 (
-    cls
-    echo Você selecionou a Opção 2.
-
-    @REM  Your commands here...
-
-    goto menu_Session_1
-)
-
-if %ERRORLEVEL% equ 3 (
-    cls
-    echo Você selecionou a Opção 3.
-
-    @REM  Your commands here...
-
-    goto menu_Session_1
+    goto menu_Session_3
 )
 
 goto :EOF
@@ -174,4 +147,3 @@ while (menu_Session_1) {
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
     }
 }
-
