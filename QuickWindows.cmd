@@ -74,6 +74,8 @@
 ::   - Opção para Menu de sessão a acesso rápido a algumas funcionalidades do Windows na sessão "Windows".
 :: v0.2.8 2023-11-29 às 10h40, Marcos Aurélio:
 ::   - Sessão para "Utilitários para Windows" onde foram adicionados instaladores diversos.
+:: v0.2.9 2023-11-29 às 17h08, Marcos Aurélio:
+::   - A opção "Instalar AnyDesk" na sessão "Internet" foi mudada para "Softwares de Acesso Remoto".
 ::
 :: Licença: GPL.
 

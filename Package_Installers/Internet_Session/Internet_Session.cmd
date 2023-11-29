@@ -27,6 +27,8 @@
 ::   - Opção para instalar o navetador "Mozilla Firefox".
 :: v0.0.7 2023-11-13 às 23h40, Marcos Aurélio:
 ::   - Opção para instalar o visualizador "Real VNC Viewer".
+:: v0.0.8 2023-11-13 às 17h07, Marcos Aurélio:
+::   - A opção "AnyDesk" foi mudada para "Softwares de Acesso Remoto".
 ::
 :: Licença: GPL.
 
@@ -47,14 +49,14 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
 set "menu_Session_3[0]=Voltar..."
-set "menu_Session_3[1]=Instalar AnyDesk"
-set "menu_Session_3[2]=Instalar Microsoft Edge"
-set "menu_Session_3[3]=Instalar Google Chrome"
-set "menu_Session_3[4]=Instalar Google Earth Pro"
-set "menu_Session_3[5]=Instalar Skype"
-set "menu_Session_3[6]=Instalar Opera"
-set "menu_Session_3[7]=Instalar Mozilla Firefox"
-set "menu_Session_3[8]=Instalar Real VNC Viewer"
+set "menu_Session_3[1]=Acesso Remoto"
+set "menu_Session_3[2]=Microsoft Edge"
+set "menu_Session_3[3]=Google Chrome"
+set "menu_Session_3[4]=Google Earth Pro"
+set "menu_Session_3[5]=Skype"
+set "menu_Session_3[6]=Opera"
+set "menu_Session_3[7]=Mozilla Firefox"
+set "menu_Session_3[8]=Real VNC Viewer"
 
 set "default=0"
 
@@ -68,12 +70,7 @@ if %ERRORLEVEL% equ 0 (
 )
 
 if %ERRORLEVEL% equ 1 (
-    cls
-    echo Você selecionou a Opção para instalar o AnyDesk.
-
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_AnyDesk.ps1""' -Verb RunAs}"
-
-    goto menu_Session_3
+    call Session_RemoteAccessSoftware.cmd
 )
 
 if %ERRORLEVEL% equ 2 (

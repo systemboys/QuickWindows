@@ -9,7 +9,7 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:
+# v0.0.1 2023-11-29 às 16h30, Marcos Aurélio:
 #   - Versão inicial, Instalação de Revo Uninstaller.
 #
 # Licença: GPL.
