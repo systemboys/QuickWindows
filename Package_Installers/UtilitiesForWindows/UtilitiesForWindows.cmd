@@ -54,6 +54,15 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd
 )
 
+if %ERRORLEVEL% equ 1 (
+    cls
+    echo Você selecionou a Opção para instalar o Revo Unistaller.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Your_Package.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6
+)
+
 if %ERRORLEVEL% equ 2 (
     call Compactors.cmd
 )
