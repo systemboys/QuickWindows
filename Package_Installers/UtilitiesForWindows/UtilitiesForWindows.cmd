@@ -51,7 +51,7 @@ if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.cmd
+    call QuickWindows.cmd 6
 )
 
 if %ERRORLEVEL% equ 1 (

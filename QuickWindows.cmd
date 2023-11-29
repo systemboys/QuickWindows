@@ -171,7 +171,7 @@ if %ERRORLEVEL% equ 5 (
 
 if %ERRORLEVEL% equ 6 (
     cd Package_Installers\UtilitiesForWindows
-    call UtilitiesForWindows.cmd
+    call UtilitiesForWindows.cmd 0
     cd ..
 )
 
