@@ -49,14 +49,14 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
 set "menu_Session_3[0]=Voltar..."
-set "menu_Session_3[1]=Acesso Remoto"
-set "menu_Session_3[2]=Microsoft Edge"
-set "menu_Session_3[3]=Google Chrome"
-set "menu_Session_3[4]=Google Earth Pro"
-set "menu_Session_3[5]=Skype"
-set "menu_Session_3[6]=Opera"
-set "menu_Session_3[7]=Mozilla Firefox"
-set "menu_Session_3[8]=Real VNC Viewer"
+set "menu_Session_3[1]=Acesso Remoto..."
+set "menu_Session_3[2]=Navegador Microsoft Edge"
+set "menu_Session_3[3]=Navegador Google Chrome"
+set "menu_Session_3[4]=Navegador Google Earth Pro"
+set "menu_Session_3[5]=Comunicador Skype"
+set "menu_Session_3[6]=Navegador Opera"
+set "menu_Session_3[7]=Navegador Mozilla Firefox"
+set "menu_Session_3[8]=Visualizador Real VNC Viewer"
 
 set "default=0"
 
