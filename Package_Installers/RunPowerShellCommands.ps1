@@ -16,6 +16,10 @@
 #
 # Licença: GPL.
 
+# Alterar a cor de fundo do PowerShell
+$Host.UI.RawUI.BackgroundColor = "Black"
+$Host.UI.RawUI.ForegroundColor = "White"
+
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size(30, 7)
 
