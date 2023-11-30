@@ -29,7 +29,7 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo QuickWindows / Access Settings
+echo QuickWindows / Access Settings [Page 2]
 
 :: Opções do Menu
 set "menu_Session_2_1_p2[0]=Voltar..."
@@ -76,7 +76,7 @@ if %ERRORLEVEL% equ 3 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_2_1_p2title = "=== QuickWindows / Windows / Access Settings ==="
+$menu_Session_2_1_p2title = "=== QuickWindows / Windows / Access Settings [Page 2] ==="
 $menu_Session_2_1_p2prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_2_1_p2prompt.length + 6
