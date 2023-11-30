@@ -70,7 +70,7 @@ if %ERRORLEVEL% equ 3 (
 
     winver
 
-    goto menu_Session_2_1
+    goto menu_Session_2_1_p2
 )
 
 goto :EOF
