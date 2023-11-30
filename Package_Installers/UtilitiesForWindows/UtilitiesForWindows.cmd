@@ -43,7 +43,7 @@ set "menu_Session_6[4]=Players Multimídia..."
 set "menu_Session_6[5]=Software de congelamento do sistema..."
 set "menu_Session_6[6]=Backup e Restauração"
 set "menu_Session_6[7]=Software de gerenciamento de partições"
-set "menu_Session_6[8]=Ferramentas de restauração do sistema"
+set "menu_Session_6[8]=Ferramentas de restauração do sistema..."
 
 set "default=%1%"
 
