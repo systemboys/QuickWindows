@@ -12,6 +12,8 @@
 :: Histórico:
 :: v0.0.1 2023-11-30 às 11h30, Marcos Aurélio:
 ::   - Versão inicial, Menu de sessão a acesso rápido a algumas funcionalidades do Windows.
+:: v0.0.2 2023-11-30 às 12h03, Marcos Aurélio:
+::   - Versão inicial, Abrir Gerenciador de Arquivos com Endereço Específico.
 ::
 :: Licença: GPL.
 
@@ -36,6 +38,7 @@ set "menu_Session_2_1_p2[0]=Voltar..."
 set "menu_Session_2_1_p2[1]=Configurações avançadas do sistema (Propriedades do Sistema)"
 set "menu_Session_2_1_p2[2]=Editar Configurações do Plano"
 set "menu_Session_2_1_p2[3]=Sobre o Windows (WinVer)"
+set "menu_Session_2_1_p2[4]=Gerenciar arquivos e pastas"
 
 set "default=%1%"
 
@@ -69,6 +72,15 @@ if %ERRORLEVEL% equ 3 (
     echo Você selecionou a Opção Sobre o Windows - WinVer.
 
     winver
+
+    goto menu_Session_2_1_p2
+)
+
+if %ERRORLEVEL% equ 4 (
+    cls
+    echo Você selecionou a Opção para Gerenciar arquivos e pastas.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ManageFilesAndFolders.ps1""' -Verb RunAs}"
 
     goto menu_Session_2_1_p2
 )
