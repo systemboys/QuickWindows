@@ -35,7 +35,7 @@ if (Test-Path $directory) {
         $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/readerdc64_br_xa_mdr_install_win11_64bits.exe"
         $downloadPath = "$env:temp\readerdc64_br_xa_mdr_install_win11_64bits.exe"
     } else {
-        Write-Host "O sistema operacional não é Windows 10 ou 11."
+        Write-Host "The operating system is not Windows 10 or 11."
     }
     
     # Faz o download do Adobe Reader
