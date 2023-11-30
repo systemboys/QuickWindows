@@ -43,7 +43,7 @@ set "menu_Session_2_1_p1[7]=Explorador de arquivos do Windows"
 set "menu_Session_2_1_p1[8]=Configurações - Tela (tipo, ajustes de resolução de tela)"
 set "menu_Session_2_1_p1[9]=Mais..."
 
-set "default=0"
+set "default=%1%"
 
 :menu_Session_2_1_p1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
