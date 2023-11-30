@@ -57,7 +57,7 @@ if %ERRORLEVEL% equ 1 (
     rmdir /s /q QuickWindows
     git clone https://github.com/systemboys/QuickWindows.git
     cd QuickWindows
-    QuickWindows.cmd
+    call QuickWindows.cmd 0
 )
 
 if %ERRORLEVEL% equ 2 (
@@ -72,7 +72,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     cd ..
     cd ..
-    call QuickWindows.cmd
+    call QuickWindows.cmd 0
 )
 
 goto :EOF

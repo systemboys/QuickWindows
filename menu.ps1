@@ -66,5 +66,5 @@ if (Test-Path $directory) {
 
 # Clonando o QuickWindows do repositório GitHub
 Write-Host "Clonando o QuickWindows..."
-cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\ ; .\QuickWindows.cmd
+cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\ ; .\QuickWindows.cmd 0
 
