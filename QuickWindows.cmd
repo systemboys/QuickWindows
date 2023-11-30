@@ -82,6 +82,8 @@
 ::   - Opção para "Instalação de WinZip" na sessão "Utilitários para Windows".
 :: v0.3.2 2023-11-30 às 01h14, Marcos Aurélio:
 ::   - Concluindo a sessão "Software de congelamento do sistema".
+:: v0.3.3 2023-11-30 às 11h30, Marcos Aurélio:
+::   - Foi adicionado uma nova página para sessão "Windows / Acesso rápido à Configurações... / Page 1 e Page 2".
 ::
 :: Licença: GPL.
 

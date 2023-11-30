@@ -1,7 +1,7 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: QuickAccessToSettings.cmd - Para executar algumas funcionalidades do Windows.
+:: QuickAccessToSettings2.cmd - Para executar algumas funcionalidades do Windows.
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -10,7 +10,7 @@
 :: Este programa tem a finalidade de dar acesso rápido a algumas funcionalidades do Windows.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-14 às 00h15, Marcos Aurélio:
+:: v0.0.1 2023-11-30 às 11h30, Marcos Aurélio:
 ::   - Versão inicial, Menu de sessão a acesso rápido a algumas funcionalidades do Windows.
 ::
 :: Licença: GPL.
