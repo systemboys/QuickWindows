@@ -67,7 +67,7 @@ if %ERRORLEVEL% equ 2 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_6_5title = "=== / Utilitarios para Windows / Software de congelamento do sistema ==="
+$menu_Session_6_5title = "=== / Utilitarios / Congelamento do sistema ==="
 $menu_Session_6_5prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_6_5prompt.length + 6
