@@ -15,14 +15,14 @@
 
 Add-Type -AssemblyName System.Windows.Forms
 
-# Cria uma caixa de diálogo para inserir o endereço
+# Cria uma caixa de diálogo para inserir o local
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "Informe o endereço"
+$form.Text = "Informe o local"
 $form.Size = New-Object System.Drawing.Size(300,150)
 $form.StartPosition = "CenterScreen"
 
 $label = New-Object System.Windows.Forms.Label
-$label.Text = "Digite o endereço:"
+$label.Text = "Digite o local:"
 $label.AutoSize = $true
 $label.Location = New-Object System.Drawing.Point(10,10)
 $form.Controls.Add($label)
@@ -39,9 +39,9 @@ $button.Text = "Enviar"
 $button.Add_Click({
     $address = $textBox.Text
     if ([string]::IsNullOrEmpty($address)) {
-        [System.Windows.Forms.MessageBox]::Show("Por favor, informe um endereço!", "Erro", "OK", "Error")
+        [System.Windows.Forms.MessageBox]::Show("Por favor, informe um local!", "Erro", "OK", "Error")
     } else {
-        # Abrir o Gerenciador de Arquivos com o endereço fornecido
+        # Abrir o Gerenciador de Arquivos com o local fornecido
         Start-Process "explorer.exe" ([Environment]::GetFolderPath("Desktop"))
         Start-Process "explorer.exe" $address
         $form.Close()
