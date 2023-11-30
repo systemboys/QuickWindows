@@ -1,6 +1,5 @@
-# Install_WinZip.ps1 - Executa o script de instalação de WinZip.
+# Install_Shadow_Defender.ps1 - Executa o script de instalação de Shadow Defender.
 #
-# URL: https://github.com/github_user/project_on_github.git
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #
@@ -9,28 +8,28 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-30 às 00h46, Marcos Aurélio:
-#   - Versão inicial, Instalação de WinZip.
+# v0.0.1 2023-11-30 às 01h02, Marcos Aurélio:
+#   - Versão inicial, Instalação de Shadow Defender e Deep Freeze Standard.
 #
 # Licença: GPL.
 
-# Se o WinZip não estiver instalado, faz o download e instala
+# Se o Shadow_Defender não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files"
-$directory = "$programFiles\WinZip"
+$directory = "$programFiles\Shadow Defender"
 
 if (Test-Path $directory) {
-    Write-Host "WinZip is installed!"
+    Write-Host "Shadow Defender is installed!"
 } else {
-    Write-Host "WinZip is not installed! Starting installation process."
+    Write-Host "Shadow Defender is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/WinZip.exe"
-    $downloadPath = "$env:temp\WinZip.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/Shadow_Defender.exe"
+    $downloadPath = "$env:temp\Shadow_Defender.exe"
     
-    # Faz o download do WinZip
+    # Faz o download do Shadow_Defender
     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
     
-    # Instala o WinZip
+    # Instala o Shadow_Defender
     Start-Process -FilePath "$downloadPath" -Wait
 
     # Apagar o arquivo

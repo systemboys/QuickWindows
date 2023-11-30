@@ -78,6 +78,10 @@
 ::   - A opção "Instalar AnyDesk" na sessão "Internet" foi mudada para "Softwares de Acesso Remoto".
 :: v0.3.0 2023-11-29 às 22h50, Marcos Aurélio:
 ::   - Script de Interação: Janela de Comando Interativa para Execução de Comandos.
+:: v0.3.1 2023-11-30 às 00h46, Marcos Aurélio:
+::   - Opção para "Instalação de WinZip" na sessão "Utilitários para Windows".
+:: v0.3.2 2023-11-30 às 01h14, Marcos Aurélio:
+::   - Concluindo a sessão "Software de congelamento do sistema".
 ::
 :: Licença: GPL.
 
