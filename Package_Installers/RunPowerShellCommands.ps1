@@ -46,8 +46,8 @@ $button.Size = New-Object System.Drawing.Size(100,23)
 $button.Text = "Enviar"
 $button.Add_Click({
     # Verifica se o campo está vazio
-    if ([string]::IsNullOrWhiteSpace($textBox.Text)) {
-        [System.Windows.Forms.MessageBox]::Show("Por favor, digite um comando!", "Campo Vazio", "OK", [System.Windows.Forms.MessageBoxIcon]::Warning)
+    if ([string]::IsNullOrWhiteSpace($textBox.Text) -or $textBox.Text -eq "Digite o comando aqui...") {
+        [System.Windows.Forms.MessageBox]::Show("O campo é obrigatório. Por favor, digite um comando.", "Campo Vazio", "OK", [System.Windows.Forms.MessageBoxIcon]::Warning)
     } else {
         # Quando o botão for clicado e o campo não estiver vazio, executa o comando no PowerShell
         $command = $textBox.Text
