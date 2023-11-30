@@ -57,7 +57,7 @@ set "menu_Session_3[5]=Comunicador Skype"
 set "menu_Session_3[6]=Navegador Opera"
 set "menu_Session_3[7]=Navegador Mozilla Firefox"
 set "menu_Session_3[8]=Visualizador Real VNC Viewer"
-set "menu_Session_3[9]=Transmission (downloads - torrent)"
+set "menu_Session_3[9]=Transmission, downloads, torrent"
 
 set "default=%1"
 
@@ -146,10 +146,10 @@ if %ERRORLEVEL% equ 8 (
     goto menu_Session_3
 )
 
-:: Transmission (downloads - torrent)
+:: Transmission, downloads, torrent
 if %ERRORLEVEL% equ 9 (
     cls
-    echo Você selecionou a Opção para instalar o Transmission (downloads - torrent).
+    echo Você selecionou a Opção para instalar o Transmission, downloads, torrent.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Transmission.ps1""' -Verb RunAs}"
 
