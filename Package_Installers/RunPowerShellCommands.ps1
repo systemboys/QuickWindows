@@ -30,13 +30,7 @@ $form.StartPosition = "CenterScreen"
 $textBox = New-Object System.Windows.Forms.TextBox
 $textBox.Location = New-Object System.Drawing.Point(50,30)
 $textBox.Size = New-Object System.Drawing.Size(200,20)
-$textBox.Text = "Digite o comando aqui..."
-$textBox.Add_Enter({
-    # Limpa o texto inicial quando o usuário clicar no campo
-    if ($textBox.Text -eq "Digite o comando aqui...") {
-        $textBox.Text = ""
-    }
-})
+$label.Text = "Digite o comando:"
 $form.Controls.Add($textBox)
 
 # Cria um botão "Enviar"
@@ -46,8 +40,8 @@ $button.Size = New-Object System.Drawing.Size(100,23)
 $button.Text = "Enviar"
 $button.Add_Click({
     # Verifica se o campo está vazio
-    if ([string]::IsNullOrWhiteSpace($textBox.Text) -or $textBox.Text -eq "Digite o comando aqui...") {
-        [System.Windows.Forms.MessageBox]::Show("O campo é obrigatório. Por favor, digite um comando.", "Campo Vazio", "OK", [System.Windows.Forms.MessageBoxIcon]::Warning)
+    if ([string]::IsNullOrWhiteSpace($textBox.Text)) {
+        [System.Windows.Forms.MessageBox]::Show("Por favor, digite um comando!", "Campo Vazio", "OK", [System.Windows.Forms.MessageBoxIcon]::Warning)
     } else {
         # Quando o botão for clicado e o campo não estiver vazio, executa o comando no PowerShell
         $command = $textBox.Text
