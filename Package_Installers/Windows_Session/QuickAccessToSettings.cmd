@@ -126,7 +126,7 @@ if %ERRORLEVEL% equ 8 (
 
 if %ERRORLEVEL% equ 9 (
     cls
-    call QuickAccessToSettings2.cmd 5
+    call QuickAccessToSettings2.cmd 0
 )
 
 goto :EOF

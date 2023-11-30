@@ -37,7 +37,7 @@ set "menu_Session_2_1_p2[1]=Configurações avançadas do sistema (Propriedades 
 set "menu_Session_2_1_p2[2]=Editar Configurações do Plano"
 set "menu_Session_2_1_p2[3]=Sobre o Windows (WinVer)"
 
-set "default=0"
+set "default=%1%"
 
 :menu_Session_2_1_p2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
