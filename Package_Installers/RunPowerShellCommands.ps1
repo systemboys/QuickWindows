@@ -85,6 +85,6 @@ $form.Controls.Add($button)
 $form.ShowDialog()
 # /Script de Interação: Janela de Comando Interativa para Execução de Comandos
 
-Write-Host "Press any key to continue..."
-$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+# Write-Host "Press any key to continue..."
+# $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
