@@ -35,6 +35,7 @@ echo QuickWindows / Utilitários para Windows / Compactadores
 :: Opções do Menu
 set "menu_Session_6_2[0]=Voltar..."
 set "menu_Session_6_2[1]=WinRAR"
+set "menu_Session_6_2[2]=WinZip"
 
 set "default=0"
 
@@ -50,6 +51,15 @@ if %ERRORLEVEL% equ 1 (
     echo Você selecionou a Opção para instalar o WinRAR.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_WinRAR.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_2
+)
+
+if %ERRORLEVEL% equ 2 (
+    cls
+    echo Você selecionou a Opção para instalar o WinZip.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_WinZip.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_2
 )
