@@ -32,111 +32,55 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Access Settings
 
 :: Opções do Menu
-set "menu_Session_2_1[0]=Voltar..."
-set "menu_Session_2_1[1]=Painel de Controle (Control)"
-set "menu_Session_2_1[2]=Editor de Registro (RegEdit)"
-set "menu_Session_2_1[3]=Configurações do Sistema (MSConfig)"
-set "menu_Session_2_1[4]=Serviços (Services.msc)"
-set "menu_Session_2_1[5]=Gerenciador de Dispositivos (DevMgmt.msc)"
-set "menu_Session_2_1[6]=Gerenciamento de Discos (DiskMgmt.msc)"
-set "menu_Session_2_1[7]=Explorador de arquivos do Windows"
-set "menu_Session_2_1[8]=Configurações - Tela (tipo, ajustes de resolução de tela)"
-set "menu_Session_2_1[9]=Mais..."
+set "menu_Session_2_1_p2[0]=Voltar..."
+set "menu_Session_2_1_p2[1]=Configurações avançadas do sistema (Propriedades do Sistema)"
+set "menu_Session_2_1_p2[2]=Editar Configurações do Plano"
+set "menu_Session_2_1_p2[3]=Sobre o Windows (WinVer)"
 
 set "default=0"
 
-:menu_Session_2_1
+:menu_Session_2_1_p2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
     cls
-    call Windows_Session.cmd 5
+    call QuickAccessToSettings.cmd 9
 )
 
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção Painel de Controle - Control.
+    echo Você selecionou a Opção Configurações avançadas do sistema - Propriedades do Sistema.
 
-    control
+    sysdm.cpl
 
-    goto menu_Session_2_1
+    goto menu_Session_2_1_p2
 )
 
 if %ERRORLEVEL% equ 2 (
     cls
-    echo Você selecionou a Opção Editor de Registro - RegEdit.
+    echo Você selecionou a Opção Editar Configurações do Plan.
 
-    regedit
+    powercfg.cpl
 
-    goto menu_Session_2_1
+    goto menu_Session_2_1_p2
 )
 
 if %ERRORLEVEL% equ 3 (
     cls
-    echo Você selecionou a Opção Configurações do Sistema - MSConfig.
+    echo Você selecionou a Opção Sobre o Windows - WinVer.
 
-    msconfig
-
-    goto menu_Session_2_1
-)
-
-if %ERRORLEVEL% equ 4 (
-    cls
-    echo Você selecionou a Opção Serviços - Services.msc.
-
-    services.msc
+    winver
 
     goto menu_Session_2_1
-)
-
-if %ERRORLEVEL% equ 5 (
-    cls
-    echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
-
-    devmgmt.msc
-
-    goto menu_Session_2_1
-)
-
-if %ERRORLEVEL% equ 6 (
-    cls
-    echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
-
-    diskmgmt.msc
-
-    goto menu_Session_2_1
-)
-
-if %ERRORLEVEL% equ 7 (
-    cls
-    echo Você selecionou a Opção Explorador de arquivos do Window.
-
-    explorer
-
-    goto menu_Session_2_1
-)
-
-if %ERRORLEVEL% equ 8 (
-    cls
-    echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
-
-    desk.cpl
-
-    goto menu_Session_2_1
-)
-
-if %ERRORLEVEL% equ 9 (
-    cls
-    call QuickAccessToSettings2.cmd 5
 )
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_2_1title = "=== QuickWindows / Windows / Access Settings ==="
-$menu_Session_2_1prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menu_Session_2_1_p2title = "=== QuickWindows / Windows / Access Settings ==="
+$menu_Session_2_1_p2prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menu_Session_2_1prompt.length + 6
-$menu_Session_2_1 = gci env: | ?{ $_.Name -match "^menu_Session_2_1\[\d+\]$" } | %{
+$maxlen = $menu_Session_2_1_p2prompt.length + 6
+$menu_Session_2_1_p2 = gci env: | ?{ $_.Name -match "^menu_Session_2_1_p2\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -145,11 +89,11 @@ $menu_Session_2_1 = gci env: | ?{ $_.Name -match "^menu_Session_2_1\[\d+\]$" } |
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menu_Session_2_1.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menu_Session_2_1_p2.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menu_Session_2_1.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menu_Session_2_1_p2.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -158,7 +102,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_2_1.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_2_1_p2.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -184,14 +128,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menu_Session_2_1 {
+function menu_Session_2_1_p2 {
     $line = $ypos
-    center $menu_Session_2_1title
+    center $menu_Session_2_1_p2title
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menu_Session_2_1[$i]; $i++) {
+    for ($i=0; $item = $menu_Session_2_1_p2[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -202,11 +146,11 @@ function menu_Session_2_1 {
     }
     center " "
     $line++
-    center $menu_Session_2_1prompt
+    center $menu_Session_2_1_p2prompt
     1
 }
 
-while (menu_Session_2_1) {
+while (menu_Session_2_1_p2) {
 
     [int]$key = getKey
 
@@ -216,7 +160,7 @@ while (menu_Session_2_1) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menu_Session_2_1.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menu_Session_2_1_p2.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }
