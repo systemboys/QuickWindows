@@ -26,11 +26,17 @@ $form.Width = 300
 $form.Height = 150
 $form.StartPosition = "CenterScreen"
 
+# Cria um Label com a mensagem informativa
+$label = New-Object System.Windows.Forms.Label
+$label.Location = New-Object System.Drawing.Point(50,10)
+$label.Size = New-Object System.Drawing.Size(250,20)
+$label.Text = "Digite o comando:"
+$form.Controls.Add($label)
+
 # Cria um campo de texto para o comando
 $textBox = New-Object System.Windows.Forms.TextBox
 $textBox.Location = New-Object System.Drawing.Point(50,30)
 $textBox.Size = New-Object System.Drawing.Size(200,20)
-$label.Text = "Digite o comando:"
 $form.Controls.Add($textBox)
 
 # Cria um botão "Enviar"
