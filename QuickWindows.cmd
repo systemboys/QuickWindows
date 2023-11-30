@@ -76,6 +76,8 @@
 ::   - Sessão para "Utilitários para Windows" onde foram adicionados instaladores diversos.
 :: v0.2.9 2023-11-29 às 17h08, Marcos Aurélio:
 ::   - A opção "Instalar AnyDesk" na sessão "Internet" foi mudada para "Softwares de Acesso Remoto".
+:: v0.0.1 2023-11-29 às 22h50, Marcos Aurélio:
+::   - Script de Interação: Janela de Comando Interativa para Execução de Comandos.
 ::
 :: Licença: GPL.
 

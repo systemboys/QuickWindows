@@ -11,16 +11,12 @@
 # v0.0.1 2023-11-01 às 22h50, Marcos Aurélio:
 #   - Versão inicial, Execução Interativa de Comandos no PowerShell:
 #     Como Permitir que os Usuários Execute Comandos Personalizados.
+# v0.0.1 2023-11-29 às 22h50, Marcos Aurélio:
+#   - Script de Interação: Janela de Comando Interativa para Execução de Comandos.
 #
 # Licença: GPL.
 
-# Execução Interativa de Comandos no PowerShell
-
-# Solicita ao usuário que digite um comando por meio do cmdlet
-# $command = Read-Host "Enter a command to be executed in PowerShell"
-# Invoke-Expression $command
-
-# ------------------------------------------
+# Script de Interação: Janela de Comando Interativa para Execução de Comandos
 Add-Type -AssemblyName System.Windows.Forms
 
 # Cria uma janela de formulário
@@ -42,15 +38,20 @@ $button.Location = New-Object System.Drawing.Point(100,70)
 $button.Size = New-Object System.Drawing.Size(100,23)
 $button.Text = "Enviar"
 $button.Add_Click({
-    # Quando o botão for clicado, executa o comando no PowerShell
-    $command = $textBox.Text
-    Invoke-Expression $command
+    # Verifica se o campo está vazio
+    if ([string]::IsNullOrWhiteSpace($textBox.Text)) {
+        [System.Windows.Forms.MessageBox]::Show("O campo é obrigatório. Por favor, digite um comando.", "Campo Vazio", "OK", [System.Windows.Forms.MessageBoxIcon]::Warning)
+    } else {
+        # Quando o botão for clicado e o campo não estiver vazio, executa o comando no PowerShell
+        $command = $textBox.Text
+        Invoke-Expression $command
+    }
 })
 $form.Controls.Add($button)
 
 # Mostra o formulário
 $form.ShowDialog()
-# ------------------------------------------
+# /Script de Interação: Janela de Comando Interativa para Execução de Comandos
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
