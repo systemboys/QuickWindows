@@ -30,7 +30,7 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo QuickWindows / Sessão
+echo QuickWindows / Software de congelamento do sistema
 
 :: Opções do Menu
 set "menu_Session_6_5[0]=Voltar..."
@@ -67,7 +67,7 @@ if %ERRORLEVEL% equ 2 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_6_5title = "=== QuickWindows / New Session ==="
+$menu_Session_6_5title = "=== / Utilitarios para Windows / Software de congelamento do sistema ==="
 $menu_Session_6_5prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_6_5prompt.length + 6
