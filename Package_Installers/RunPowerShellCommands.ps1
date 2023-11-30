@@ -30,6 +30,13 @@ $form.StartPosition = "CenterScreen"
 $textBox = New-Object System.Windows.Forms.TextBox
 $textBox.Location = New-Object System.Drawing.Point(50,30)
 $textBox.Size = New-Object System.Drawing.Size(200,20)
+$textBox.Text = "Digite o comando aqui..."
+$textBox.Add_Enter({
+    # Limpa o texto inicial quando o usuário clicar no campo
+    if ($textBox.Text -eq "Digite o comando aqui...") {
+        $textBox.Text = ""
+    }
+})
 $form.Controls.Add($textBox)
 
 # Cria um botão "Enviar"
