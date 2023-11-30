@@ -41,11 +41,14 @@ set "default=%1"
 
 :menu_Session_3_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     call Internet_Session.cmd 1
 )
 
+:: AnyDesk
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o AnyDesk.
@@ -55,6 +58,7 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_3_1
 )
 
+:: RustDesk
 if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para instalar o RustDesk.

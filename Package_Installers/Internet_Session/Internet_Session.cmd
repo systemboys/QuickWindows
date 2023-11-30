@@ -57,9 +57,11 @@ set "menu_Session_3[5]=Comunicador Skype"
 set "menu_Session_3[6]=Navegador Opera"
 set "menu_Session_3[7]=Navegador Mozilla Firefox"
 set "menu_Session_3[8]=Visualizador Real VNC Viewer"
+set "menu_Session_3[9]=Transmission (downloads / torrent)"
 
 set "default=%1"
 
+:: Voltar...
 :menu_Session_3
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 if %ERRORLEVEL% equ 0 (
@@ -69,10 +71,12 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd 3
 )
 
+:: Acesso Remoto...
 if %ERRORLEVEL% equ 1 (
     call Session_RemoteAccessSoftware.cmd 0
 )
 
+:: Navegador Microsoft Edge
 if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para instalar o Microsoft Edge.
@@ -82,6 +86,7 @@ if %ERRORLEVEL% equ 2 (
     goto menu_Session_3
 )
 
+:: Navegador Google Chrome
 if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção para instalar o Google Chrome.
@@ -91,6 +96,7 @@ if %ERRORLEVEL% equ 3 (
     goto menu_Session_3
 )
 
+:: Navegador Google Earth Pro
 if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção para instalar o Google Earth Pro.
@@ -100,6 +106,7 @@ if %ERRORLEVEL% equ 4 (
     goto menu_Session_3
 )
 
+:: Comunicador Skype
 if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a Opção para instalar o Skype.
@@ -109,6 +116,7 @@ if %ERRORLEVEL% equ 5 (
     goto menu_Session_3
 )
 
+:: Navegador Opera
 if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a Opção para instalar o Opera.
@@ -118,6 +126,7 @@ if %ERRORLEVEL% equ 6 (
     goto menu_Session_3
 )
 
+:: Navegador Mozilla Firefox
 if %ERRORLEVEL% equ 7 (
     cls
     echo Você selecionou a Opção para instalar o Mozilla Firefox.
@@ -127,11 +136,22 @@ if %ERRORLEVEL% equ 7 (
     goto menu_Session_3
 )
 
+:: Visualizador Real VNC Viewer
 if %ERRORLEVEL% equ 8 (
     cls
     echo Você selecionou a Opção para instalar o Real VNC Viewer.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_RealVNCViewer.ps1""' -Verb RunAs}"
+
+    goto menu_Session_3
+)
+
+:: Transmission (downloads / torrent)
+if %ERRORLEVEL% equ 9 (
+    cls
+    echo Você selecionou a Opção para instalar o Transmission (downloads / torrent).
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Transmission.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )

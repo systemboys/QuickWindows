@@ -142,36 +142,43 @@ set "default=%1%"
 
 :menu
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Sair
 if %ERRORLEVEL% equ 0 (
     echo Você escolheu Sair.
     pause
     goto :EOF
 )
 
+:: Menu QuickWindows...
 if %ERRORLEVEL% equ 1 (
     cd Package_Installers\Menu_QuickWindows
     call Menu_QuickWindows.cmd 0
     cd ..
 )
 
+:: Windows...
 if %ERRORLEVEL% equ 2 (
     cd Package_Installers\Windows_Session
     call Windows_Session.cmd 0
     cd ..
 )
 
+:: Internet...
 if %ERRORLEVEL% equ 3 (
     cd Package_Installers\Internet_Session
     call Internet_Session.cmd 0
     cd ..
 )
 
+:: Redes...
 if %ERRORLEVEL% equ 4 (
     cd Package_Installers\Networking_Session
     call Networking_Session.cmd 0
     cd ..
 )
 
+:: Execução de Comandos no PowerShell
 if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a Opção para Execução de Comandos no PowerShell.
@@ -181,12 +188,14 @@ if %ERRORLEVEL% equ 5 (
     goto menu
 )
 
+:: Utilitários para Windows...
 if %ERRORLEVEL% equ 6 (
     cd Package_Installers\UtilitiesForWindows
     call UtilitiesForWindows.cmd 0
     cd ..
 )
 
+:: Office software...
 if %ERRORLEVEL% equ 7 (
     cd Package_Installers\OfficeSoftware
     call OfficeSoftware.cmd 0
