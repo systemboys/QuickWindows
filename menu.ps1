@@ -10,7 +10,7 @@
 # v0.0.1 2023-11-13 às 01h10, Marcos Aurélio:
 #   - Versão inicial, Instalação do QuickWindows.
 # v0.0.2 2023-11-13 às 16h00, Marcos Aurélio:
-#   - Correção feita na verificação onde fechar a janela do Windows PowerShell.
+#   - Correção feita na verificação onde fecha a janela do Windows PowerShell.
 #
 # Licença: GPL.
 
