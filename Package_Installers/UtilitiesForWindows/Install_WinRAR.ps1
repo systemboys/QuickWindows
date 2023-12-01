@@ -24,7 +24,7 @@ if (Test-Path $directory) {
     Write-Host "WinRAR is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/WinRAR.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/WinRAR.exe"
     $downloadPath = "$env:temp\WinRAR.exe"
     
     # Faz o download do WinRAR

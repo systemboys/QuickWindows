@@ -23,7 +23,7 @@ if (Test-Path $directory) {
     Write-Host "Shadow Defender is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/Shadow_Defender.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Shadow_Defender.exe"
     $downloadPath = "$env:temp\Shadow_Defender.exe"
     
     # Faz o download do Shadow_Defender

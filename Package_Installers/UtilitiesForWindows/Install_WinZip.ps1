@@ -24,7 +24,7 @@ if (Test-Path $directory) {
     Write-Host "WinZip is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/WinZip.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/WinZip.exe"
     $downloadPath = "$env:temp\WinZip.exe"
     
     # Faz o download do WinZip

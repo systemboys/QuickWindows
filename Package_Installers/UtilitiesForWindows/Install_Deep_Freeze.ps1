@@ -20,7 +20,7 @@ $directory = "$programFiles\Deep Freeze"
 Write-Host "Deep Freeze is not installed! Starting installation process."
 
 # Link do download e o diretório Temp
-$downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/Deep_Freeze.exe"
+$downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Deep_Freeze.exe"
 $downloadPath = "$env:temp\Deep_Freeze.exe"
 
 # Faz o download do Deep_Freeze

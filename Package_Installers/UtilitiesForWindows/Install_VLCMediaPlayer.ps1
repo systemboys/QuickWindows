@@ -24,7 +24,7 @@ if (Test-Path $directory) {
     Write-Host "VLC Media Player is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/VLCMediaPlayer.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/VLCMediaPlayer.exe"
     $downloadPath = "$env:temp\VLCMediaPlayer.exe"
     
     # Faz o download do VLCMediaPlayer

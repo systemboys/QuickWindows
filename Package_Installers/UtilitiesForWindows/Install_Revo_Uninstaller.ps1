@@ -24,7 +24,7 @@ if (Test-Path $directory) {
     Write-Host "Revo Uninstaller is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/Revo_Uninstaller_Setup.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Revo_Unistaller_Setup.exe"
     $downloadPath = "$env:temp\Revo_Uninstaller_Setup.exe"
     
     # Faz o download do Revo Uninstaller

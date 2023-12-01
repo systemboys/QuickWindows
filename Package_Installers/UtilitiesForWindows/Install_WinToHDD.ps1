@@ -24,7 +24,7 @@ if (Test-Path $directory) {
     Write-Host "WinToHDD is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/UtilitiesForWindows/WinToHDD.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/WinToHDD.exe"
     $downloadPath = "$env:temp\WinToHDD.exe"
     
     # Faz o download do WinToHDD
