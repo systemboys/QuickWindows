@@ -183,7 +183,7 @@ Aqui estão todas as opções em desenvolvimento.
 
 > ***( ! ) Atenção!*** Esses recursos que estão marcos **[x]** estão concluídos, apenas os desmarcados **[_]** ainda serão incluídos!
 >
-> Alguns que tiveram mal funcionamento foram comentados com ( ! )...
+> Alguns que tiveram mal funcionamento foram comentados com ( ! ) e com informações ( i )...
 
 ---
 
