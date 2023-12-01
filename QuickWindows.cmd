@@ -88,6 +88,8 @@
 ::   - Versão inicial, Abrir Gerenciador de Arquivos com Endereço Específico na sessão "Windows / Acesso rápido à Configurações... / página 2".
 :: v0.3.5 2023-11-30 às 19h23, Marcos Aurélio:
 ::   - Opção para instalação de "Microsoft Office 2019 a 2021" na sessão "Office software".
+:: v0.3.6 2023-11-30 às 22h22, Marcos Aurélio:
+::   - Opção para "Configurações do Windows" na sessão "Windows / Acesso rápido à Configurações...".
 ::
 :: Licença: GPL.
 

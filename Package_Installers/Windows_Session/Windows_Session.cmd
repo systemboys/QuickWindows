@@ -20,6 +20,8 @@
 ::   - Versão inicial, atualizar o PowerShell.
 :: v0.0.4 2023-11-14 às 00h15, Marcos Aurélio:
 ::   - Opção para Menu de sessão a acesso rápido a algumas funcionalidades do Windows.
+:: v0.0.5 2023-11-30 às 22h22, Marcos Aurélio:
+::   - Opção para "Configurações do Windows".
 ::
 :: Licença: GPL.
 
@@ -51,6 +53,8 @@ set "default=%1"
 
 :menu_Session_2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -58,18 +62,21 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd 2
 )
 
+:: Desligar o Windows
 if %ERRORLEVEL% equ 1 (
     cls
     :: Desligar o Windows
     shutdown -s -t 00
 )
 
+:: Reiniciar o Windows
 if %ERRORLEVEL% equ 2 (
     cls
     :: Reiniciar o Windows
     shutdown -r -t 00
 )
 
+:: Atualizar Windows e Softwares
 if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção para atualizar softwares no Windows.
@@ -79,6 +86,7 @@ if %ERRORLEVEL% equ 3 (
     goto menu_Session_2
 )
 
+:: Atualizar o PowerShell
 if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção para atualizar o Microsoft PowerShell.
@@ -88,6 +96,7 @@ if %ERRORLEVEL% equ 4 (
     goto menu_Session_2
 )
 
+:: Acesso rápido à Configurações...
 if %ERRORLEVEL% equ 5 (
     cd Package_Installers\Windows_Session
     call QuickAccessToSettings.cmd 0

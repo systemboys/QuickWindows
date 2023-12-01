@@ -13,7 +13,9 @@
 :: v0.0.1 2023-11-30 às 11h30, Marcos Aurélio:
 ::   - Versão inicial, Menu de sessão a acesso rápido a algumas funcionalidades do Windows.
 :: v0.0.2 2023-11-30 às 12h03, Marcos Aurélio:
-::   - Versão inicial, Abrir Gerenciador de Arquivos com Endereço Específico.
+::   - Opção para "Abrir Gerenciador de Arquivos com Endereço Específico".
+:: v0.0.3 2023-11-30 às 22h22, Marcos Aurélio:
+::   - Opção para "Configurações do Windows".
 ::
 :: Licença: GPL.
 
@@ -39,16 +41,20 @@ set "menu_Session_2_1_p2[1]=Configurações avançadas do sistema (Propriedades 
 set "menu_Session_2_1_p2[2]=Editar Configurações do Plano"
 set "menu_Session_2_1_p2[3]=Sobre o Windows (WinVer)"
 set "menu_Session_2_1_p2[4]=Gerenciar arquivos e pastas"
+set "menu_Session_2_1_p2[5]=Configurações do Windows"
 
 set "default=%1%"
 
 :menu_Session_2_1_p2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     call QuickAccessToSettings.cmd 9
 )
 
+:: Configurações avançadas do sistema (Propriedades do Sistema)
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção Configurações avançadas do sistema - Propriedades do Sistema.
@@ -58,6 +64,7 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_2_1_p2
 )
 
+:: Editar Configurações do Plano
 if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção Editar Configurações do Plan.
@@ -67,6 +74,7 @@ if %ERRORLEVEL% equ 2 (
     goto menu_Session_2_1_p2
 )
 
+:: Sobre o Windows (WinVer)
 if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção Sobre o Windows - WinVer.
@@ -76,11 +84,22 @@ if %ERRORLEVEL% equ 3 (
     goto menu_Session_2_1_p2
 )
 
+:: Gerenciar arquivos e pastas
 if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção para Gerenciar arquivos e pastas.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ManageFilesAndFolders.ps1""' -Verb RunAs}"
+
+    goto menu_Session_2_1_p2
+)
+
+:: Configurações do Windows
+if %ERRORLEVEL% equ 5 (
+    cls
+    echo Você selecionou a Opção Configurações do Windows.
+
+    start ms-settings:
 
     goto menu_Session_2_1_p2
 )

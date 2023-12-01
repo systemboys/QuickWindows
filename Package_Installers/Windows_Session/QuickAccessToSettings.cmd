@@ -49,11 +49,14 @@ set "default=%1%"
 
 :menu_Session_2_1_p1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     call Windows_Session.cmd 5
 )
 
+:: Painel de Controle (Control)
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção Painel de Controle - Control.
@@ -63,6 +66,7 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_2_1_p1
 )
 
+:: Editor de Registro (RegEdit)
 if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção Editor de Registro - RegEdit.
@@ -72,6 +76,7 @@ if %ERRORLEVEL% equ 2 (
     goto menu_Session_2_1_p1
 )
 
+:: Configurações do Sistema (MSConfig)
 if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção Configurações do Sistema - MSConfig.
@@ -81,6 +86,7 @@ if %ERRORLEVEL% equ 3 (
     goto menu_Session_2_1_p1
 )
 
+:: Serviços (Services.msc)
 if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção Serviços - Services.msc.
@@ -90,6 +96,7 @@ if %ERRORLEVEL% equ 4 (
     goto menu_Session_2_1_p1
 )
 
+:: Gerenciador de Dispositivos (DevMgmt.msc)
 if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
@@ -99,6 +106,7 @@ if %ERRORLEVEL% equ 5 (
     goto menu_Session_2_1_p1
 )
 
+:: Gerenciamento de Discos (DiskMgmt.msc)
 if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
@@ -108,6 +116,7 @@ if %ERRORLEVEL% equ 6 (
     goto menu_Session_2_1_p1
 )
 
+:: Explorador de arquivos do Windows
 if %ERRORLEVEL% equ 7 (
     cls
     echo Você selecionou a Opção Explorador de arquivos do Window.
@@ -117,6 +126,7 @@ if %ERRORLEVEL% equ 7 (
     goto menu_Session_2_1_p1
 )
 
+:: Configurações - Tela (tipo, ajustes de resolução de tela)
 if %ERRORLEVEL% equ 8 (
     cls
     echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
@@ -126,6 +136,7 @@ if %ERRORLEVEL% equ 8 (
     goto menu_Session_2_1_p1
 )
 
+:: Mais...
 if %ERRORLEVEL% equ 9 (
     cls
     call QuickAccessToSettings2.cmd 0
