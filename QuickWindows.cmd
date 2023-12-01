@@ -126,7 +126,7 @@ echo │ ░▒▓▓▓░▒▓▓▓ ░▒▓▓▓ ░▒▓▓▓ │
 echo │ ░▒▓▓▓▓▓▓▓▓ ░▒▓▓▓ ░▒▓▓▓ │
 echo │ GLOBAL TEC Informática │
 echo │ A Tecnologia da        │
-echo │ informação é o Futuro  │
+echo │ Informação é o Futuro  │
 echo │ www.gti1.com.br        │
 echo └────────────────────────┘
 
