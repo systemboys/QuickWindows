@@ -138,14 +138,14 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Instalar Google Earth Pro
       ( ! ) Fase de teste...
     - [x] Instalar Skype
-      ( ! ) O tamanho do instalador do "Skype-setupe.exe" é 84.74 MB, está hospedado no GitHub e não é recomendado! Procurar um hospedeiro em breve.
+      > ( ! ) O tamanho do instalador do "Skype-setupe.exe" é 84.74 MB, está hospedado no GitHub e não é recomendado! Procurar um hospedeiro em breve.
     - [x] Instalar Opera
     - [x] Instalar Mozilla Firefox
     - [x] Instalar TigerVNC Viewer
     - [ ] Pesquisar na Web
-      ( i ) O usuário clica na opção, aparece uma pop-up com um campo de formulário e após digitar, a o navegador padrão do Windows abrirá com a pesquisa já indexada.
+      > ( i ) O usuário clica na opção, aparece uma pop-up com um campo de formulário e após digitar, a o navegador padrão do Windows abrirá com a pesquisa já indexada.
     - [ ] Transmission
-      ( i ) Ferramenta para download de turrents.
+      > ( i ) Ferramenta para download de turrents.
   - [x] **Redes**
     - [x] Voltar...
     - [x] Obter IP público
@@ -155,7 +155,7 @@ Aqui estão todas as opções em desenvolvimento.
   - [x] **Utilitários para Windows**
     - [x] Voltar...
     - [x] Instalar Revo Unistaller
-      ***( ! )** Apresentou problemas chegando a não baixar o arquivo!*
+      > ( ! ) Apresentou problemas chegando a não baixar o arquivo!
     - [x] **Compactadores**
       - [x] Instalar WinRAR
       - [x] Instalar WinZIP
@@ -170,7 +170,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] **Backup e Restauração**
       - [ ] Instalar Veeam Backup
       - [ ] Copiar arquivos de origem para destino
-        ( ! ) Via comando PowerShell, o usuário deverá informar a origem e o destino.
+        > ( ! ) Via comando PowerShell, o usuário deverá informar a origem e o destino.
     - [x] **Software de gerenciamento de partições**
       - [ ] Partition Magic
       - [ ] MiniTool Partition Wizard
