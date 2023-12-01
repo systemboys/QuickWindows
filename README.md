@@ -95,6 +95,94 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 
 Dentro do diretório "Package_Installers", você pode ter vários `arquivos.cmd`, cada um responsável por instalar um pacote de software específico. Isso torna a estrutura do seu projeto organizada e fácil de entender.
 
+---
+
+## Estrutura de opções
+
+Todas as opções do QuickWindows
+
+Aqui estão todas as opções em desenvolvimento.
+
+- [x] **Menu QuickWindows**
+  - [x] Sair
+  - [x] **Menu QuickWindows**
+    - [x] Voltar...
+    - [x] Atualizar QuickWindows
+    - [x] Deletar QuickWindows
+    - [x] Recarregar QuickLinux
+  - [x] **Windows**
+    - [x] Voltar...
+    - [x] Desligar o Windows
+    - [x] Reiniciar o Windows
+    - [x] Atualizar Windows e Softwares
+    - [x] Atualizar o PowerShell
+    - [x] **Acesso rápido à Configurações**
+      - [x] Painel de controle
+      - [x] RegEdit
+      - [x] MSConfig
+      - [x] Services
+      - [x] Gerenciador de dispositivos
+      - [x] Gerenciamento de discos
+      - [x] Explorador de arquivos do Windows
+      - [x] Configurações - Tela (tipo, ajustes de resolução de tela)
+      - [x] Configurações avançadas do sistema (Propriedades do Sistema)
+      - [x] Editar Configurações do Plano
+      - [x] Sobre o Windows (WinVer)
+      - [x] Gerenciar arquivos e pastas
+      - [x] Configurações do Windows
+  - [x] **Internet**
+    - [x] Voltar...
+    - [x] Instalar AnyDesk
+    - [x] Instalar Microsoft Edge
+    - [x] Instalar Google Chrome
+    - [x] Instalar Google Earth Pro
+      ( ! ) Fase de teste...
+    - [x] Instalar Skype
+      ( ! ) O tamanho do instalador do "Skype-setupe.exe" é 84.74 MB, está hospedado no GitHub e não é recomendado! Procurar um hospedeiro em breve.
+    - [x] Instalar Opera
+    - [x] Instalar Mozilla Firefox
+    - [x] Instalar TigerVNC Viewer
+    - [ ] Pesquisar na Web
+      ( i ) O usuário clica na opção, aparece uma pop-up com um campo de formulário e após digitar, a o navegador padrão do Windows abrirá com a pesquisa já indexada.
+    - [ ] Transmission
+      ( i ) Ferramenta para download de turrents.
+  - [x] **Redes**
+    - [x] Voltar...
+    - [x] Obter IP público
+    - [x] Obter IP local
+    - [x] Obter IP's de uma determinada rota
+  - [x] Execução de Comandos no PowerShell
+  - [x] **Utilitários para Windows**
+    - [x] Voltar...
+    - [x] Instalar Revo Unistaller
+      ***( ! )** Apresentou problemas chegando a não baixar o arquivo!*
+    - [x] **Compactadores**
+      - [x] Instalar WinRAR
+      - [x] Instalar WinZIP
+    - [x] **Leitores de PDF**
+      - [x] Instalar Acrobat Reader DC Win10
+      - [x] Instalar Acrobat Reader DC Win11
+    - [x] **Players Multimídia**
+      - [x] Instalar VLC Media Player
+    - [x] **Software de congelamento do sistema**
+      - [x] Instalar Deep Freeze
+      - [x] Instalar Shadow Defender
+    - [x] **Backup e Restauração**
+      - [ ] Instalar Veeam Backup
+      - [ ] Copiar arquivos de origem para destino
+        ( ! ) Via comando PowerShell, o usuário deverá informar a origem e o destino.
+    - [x] **Software de gerenciamento de partições**
+      - [ ] Partition Magic
+      - [ ] MiniTool Partition Wizard
+      - [ ] GParted
+    - [x] **Ferramentas de restauração do sistema**
+      - [x] WinToHDD
+  - [x] **Softwares para Escritório**
+    - [x] Microsoft Office 2016 a 2019
+    - [x] Microsoft Office 2019 a 2021
+
+---
+
 # Rascunho para novos itens
 
 Aqui você pode editar o arquivo caso necessário, adicionando mais recursos.
