@@ -108,7 +108,7 @@ if %ERRORLEVEL% equ 5 (
 )
 
 :: Gerenciador de Tarefas do Windows
-if %ERRORLEVEL% equ 5 (
+if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a Opção Gerenciador de Tarefas do Windows.
 
