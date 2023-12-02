@@ -144,8 +144,12 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Instalar TigerVNC Viewer
     - [ ] Pesquisar na Web
       > ( i ) O usuário clica na opção, aparece uma pop-up com um campo de formulário e após digitar, a o navegador padrão do Windows abrirá com a pesquisa já indexada.
-    - [ ] Transmission
-      > ( i ) Ferramenta para download de turrents.
+    - [ ] Downloads
+    
+      - [x] Transmission
+        > ( i ) Ferramenta para download de turrents.
+    
+      - [ ] IDM - Internet Download Manager
   - [x] **Redes**
     - [x] Voltar...
     - [x] Obter IP público

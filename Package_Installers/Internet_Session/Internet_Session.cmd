@@ -29,6 +29,8 @@
 ::   - Opção para instalar o visualizador "Real VNC Viewer".
 :: v0.0.8 2023-11-13 às 17h07, Marcos Aurélio:
 ::   - A opção "AnyDesk" foi mudada para "Softwares de Acesso Remoto".
+:: v0.0.9 2023-12-01 às 22h28, Marcos Aurélio:
+::   - Versão inicial, adicionada a sessão "Downloads" e a opção para instalação de Internet Download Manager.
 ::
 :: Licença: GPL.
 
@@ -57,13 +59,14 @@ set "menu_Session_3[5]=Comunicador Skype"
 set "menu_Session_3[6]=Navegador Opera"
 set "menu_Session_3[7]=Navegador Mozilla Firefox"
 set "menu_Session_3[8]=Visualizador Real VNC Viewer"
-set "menu_Session_3[9]=Transmission / downloads / torrent"
+set "menu_Session_3[9]=Downloads..."
 
 set "default=%1"
 
-:: Voltar...
 :menu_Session_3
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -146,14 +149,10 @@ if %ERRORLEVEL% equ 8 (
     goto menu_Session_3
 )
 
-:: Transmission / downloads / torrent
+:: Downloads...
 if %ERRORLEVEL% equ 9 (
     cls
-    echo Você selecionou a Opção para instalar o Transmission / downloads / torrent.
-
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Transmission.ps1""' -Verb RunAs}"
-
-    goto menu_Session_3
+    call Downloads.cmd 0
 )
 
 goto :EOF

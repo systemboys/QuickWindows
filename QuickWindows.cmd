@@ -90,6 +90,8 @@
 ::   - Opção para instalação de "Microsoft Office 2019 a 2021" na sessão "Office software".
 :: v0.3.6 2023-11-30 às 22h22, Marcos Aurélio:
 ::   - Opção para "Configurações do Windows" na sessão "Windows / Acesso rápido à Configurações...".
+:: v0.3.7 2023-12-01 às 22h28, Marcos Aurélio:
+::   - Versão inicial, adicionada a sessão "Downloads" dentro da sessão "Windows" e a opção para instalação de Internet Download Manager.
 ::
 :: Licença: GPL.
 
