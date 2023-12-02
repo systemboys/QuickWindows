@@ -10,6 +10,8 @@
 # Histórico:
 # v0.0.1 2023-11-29 às 16h56, Marcos Aurélio:
 #   - Versão inicial, Instalação de RustDesk.
+# v0.0.2 2023-12-02 às 08h33, Marcos Aurélio:
+#   - Foi feito uma correção no link do download do arquivo.
 #
 # Licença: GPL.
 
@@ -23,7 +25,7 @@ if (Test-Path $directory) {
     Write-Host "RustDesk is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Internet/RustDesk_Setup.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/RustDesk_Setup.exe"
     $downloadPath = "$env:temp\RustDesk_Setup.exe"
     
     # Faz o download do RustDesk
