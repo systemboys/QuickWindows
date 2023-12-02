@@ -92,6 +92,8 @@
 ::   - Opção para "Configurações do Windows" na sessão "Windows / Acesso rápido à Configurações...".
 :: v0.3.7 2023-12-01 às 22h28, Marcos Aurélio:
 ::   - Versão inicial, adicionada a sessão "Downloads" dentro da sessão "Windows" e a opção para instalação de Internet Download Manager.
+:: v0.3.8 2023-12-01 às 22h56, Marcos Aurélio:
+::   - Opção para "Gerenciador de Tarefas do Windows" na sessão "Windows".
 ::
 :: Licença: GPL.
 

@@ -130,6 +130,7 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Sobre o Windows (WinVer)
       - [x] Gerenciar arquivos e pastas
       - [x] Configurações do Windows
+      - [x] Gerenciador de Tarefas do Windows
   - [x] **Internet**
     - [x] Voltar...
     - [x] Instalar AnyDesk
@@ -144,12 +145,12 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Instalar TigerVNC Viewer
     - [ ] Pesquisar na Web
       > ( i ) O usuário clica na opção, aparece uma pop-up com um campo de formulário e após digitar, a o navegador padrão do Windows abrirá com a pesquisa já indexada.
-    - [ ] Downloads
+    - [x] Downloads
     
       - [x] Transmission
         > ( i ) Ferramenta para download de turrents.
     
-      - [ ] IDM - Internet Download Manager
+      - [x] IDM - Internet Download Manager
   - [x] **Redes**
     - [x] Voltar...
     - [x] Obter IP público

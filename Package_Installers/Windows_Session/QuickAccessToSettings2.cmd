@@ -16,6 +16,8 @@
 ::   - Opção para "Abrir Gerenciador de Arquivos com Endereço Específico".
 :: v0.0.3 2023-11-30 às 22h22, Marcos Aurélio:
 ::   - Opção para "Configurações do Windows".
+:: v0.0.4 2023-12-01 às 22h56, Marcos Aurélio:
+::   - Opção para "Gerenciador de Tarefas do Windows".
 ::
 :: Licença: GPL.
 
@@ -42,6 +44,7 @@ set "menu_Session_2_1_p2[2]=Editar Configurações do Plano"
 set "menu_Session_2_1_p2[3]=Sobre o Windows (WinVer)"
 set "menu_Session_2_1_p2[4]=Gerenciar arquivos e pastas"
 set "menu_Session_2_1_p2[5]=Configurações do Windows"
+set "menu_Session_2_1_p2[6]=Gerenciador de Tarefas do Windows"
 
 set "default=%1%"
 
@@ -100,6 +103,16 @@ if %ERRORLEVEL% equ 5 (
     echo Você selecionou a Opção Configurações do Windows.
 
     start ms-settings:
+
+    goto menu_Session_2_1_p2
+)
+
+:: Gerenciador de Tarefas do Windows
+if %ERRORLEVEL% equ 5 (
+    cls
+    echo Você selecionou a Opção Gerenciador de Tarefas do Windows.
+
+    start taskmgr
 
     goto menu_Session_2_1_p2
 )
