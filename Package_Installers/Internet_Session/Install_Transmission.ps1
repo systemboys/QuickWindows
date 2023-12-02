@@ -23,7 +23,7 @@ if (Test-Path $directory) {
     Write-Host "Transmission is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Internet/transmission-downloads.msi"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/transmission-downloads.msi"
     $downloadPath = "$env:temp\transmission-downloads.msi"
     
     # Faz o download do Transmission
