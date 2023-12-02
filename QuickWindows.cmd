@@ -94,6 +94,8 @@
 ::   - Versão inicial, adicionada a sessão "Downloads" dentro da sessão "Windows" e a opção para instalação de Internet Download Manager.
 :: v0.3.8 2023-12-01 às 22h56, Marcos Aurélio:
 ::   - Opção para "Gerenciador de Tarefas do Windows" na sessão "Windows".
+:: v0.3.9 2023-12-02 às 17h46, Marcos Aurélio:
+::   - Opção para instalação de "Microsoft Office 365" na sessão "Softwares para Escritório".
 ::
 :: Licença: GPL.
 

@@ -185,6 +185,7 @@ Aqui estão todas as opções em desenvolvimento.
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
     - [x] Microsoft Office 2019 a 2021
+    - [x] Microsoft Office 365
 
 > ***( ! ) Atenção!*** Esses recursos que estão marcos **[x]** estão concluídos, apenas os desmarcados **[_]** ainda serão incluídos!
 >

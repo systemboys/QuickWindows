@@ -13,8 +13,10 @@
 :: Histórico:
 :: v0.0.1 2023-11-29 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, sessão "Softwares para escritório".
-:: v0.0.1 2023-11-30 às 19h23, Marcos Aurélio:
+:: v0.0.2 2023-11-30 às 19h23, Marcos Aurélio:
 ::   - Opção para instalação de Microsoft Office 2019 a 2021.
+:: v0.0.3 2023-12-02 às 17h46, Marcos Aurélio:
+::   - Opção para instalação de Microsoft Office 365.
 ::
 :: Licença: GPL.
 
@@ -38,6 +40,7 @@ echo QuickWindows / Softwares para Escritório
 set "menu_Session_7[0]=Voltar..."
 set "menu_Session_7[1]=Microsoft Office 2016 a 2019"
 set "menu_Session_7[2]=Microsoft Office 2019 a 2021"
+set "menu_Session_7[3]=Microsoft Office 365"
 
 set "default=%1"
 
@@ -64,6 +67,15 @@ if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção para instalar o Microsoft Office 2019 a 2021.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Microsoft_Office_2019_to_2021.ps1""' -Verb RunAs}"
+
+    goto menu_Session_7
+)
+
+if %ERRORLEVEL% equ 3 (
+    cls
+    echo Você selecionou a Opção para instalar o Microsoft Office 365.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Microsoft_Office_365.ps1""' -Verb RunAs}"
 
     goto menu_Session_7
 )

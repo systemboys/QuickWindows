@@ -1,4 +1,4 @@
-# Install_Microsoft_Office_2019_to_2021.ps1 - Executa o script de instalação de Microsoft Office 2019 a 2021.
+# Install_Microsoft_Office_365.ps1 - Executa o script de instalação de Microsoft Office 365.
 #
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
@@ -8,8 +8,8 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-30 às 19h23, Marcos Aurélio:
-#   - Versão inicial, Instalação de Microsoft Office 2019 a 2021.
+# v0.0.1 2023-12-02 às 17h46, Marcos Aurélio:
+#   - Versão inicial, Instalação de Microsoft Office 365.
 #
 # Licença: GPL.
 
@@ -23,8 +23,8 @@ if (Test-Path $directory) {
     Write-Host "Microsoft Office is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/OfficeSoftware/Microsoft_Office_2019-2021.exe"
-    $downloadPath = "$env:temp\Microsoft_Office_2019-2021.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/OfficeSoftware/Microsoft_Office_365.exe"
+    $downloadPath = "$env:temp\Microsoft_Office_365.exe"
     
     # Faz o download do Microsoft Office
     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
