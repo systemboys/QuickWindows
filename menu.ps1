@@ -11,6 +11,8 @@
 #   - Versão inicial, Instalação do QuickWindows.
 # v0.0.2 2023-11-13 às 16h00, Marcos Aurélio:
 #   - Correção feita na verificação onde fecha a janela do Windows PowerShell.
+# v0.0.3 2023-12-04 às 15h06, Marcos Aurélio:
+#   - Opção para instalar o "AnyDesk" quando o usuário chamar o menu interativo com a ferramenta IRM.
 #
 # Licença: GPL.
 
@@ -18,6 +20,39 @@ clear
 
 # Ativar a execução de scripts no PowerShell
 Set-ExecutionPolicy RemoteSigned
+
+# Se o AnyDesk não estiver instalado, faz o download e instala
+$programFiles = "$env:SystemDrive\Program Files (x86)"
+$directory = "$programFiles\AnyDesk"
+
+if (Test-Path $directory) {
+    Write-Host "AnyDesk is installed!"
+} else {
+    Add-Type -AssemblyName PresentationFramework
+
+    $ButtonType = [System.Windows.MessageBoxButton]::YesNo
+    $MessageIcon = [System.Windows.MessageBoxImage]::Question
+    $MessageBody = "Do you want to install AnyDesk?"
+    $MessageTitle = "AnyDesk Installation"
+    $MessageBox = [System.Windows.MessageBox]::Show($MessageBody,$MessageTitle,$ButtonType,$MessageIcon)
+
+    if ($MessageBox -eq 'Yes') {
+        Write-Host "AnyDesk is not installed! Starting installation process."
+
+        # Link do download e o diretório Temp
+        $downloadUrl = "https://download.anydesk.com/AnyDesk.exe"
+        $downloadPath = "$env:temp\AnyDesk.exe"
+    
+        # Faz o download do AnyDesk
+        Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    
+        # Instala o AnyDesk
+        Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
+
+        # Apagar o arquivo
+        Remove-Item -Path $downloadPath -Force
+    }
+}
 
 # Verifica se o pacote está instalado
 Write-Host "Checking if Git exists on Windows..."
