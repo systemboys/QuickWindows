@@ -16,11 +16,12 @@
 
 $command = Read-Host "Shut down Windows in how many minutes?"
 
-$minutos = $command
+$minutos = [int]$command
 $segundos = $minutos * 60
 
 $command = "shutdown -s -t $segundos"
 Invoke-Expression $command
+
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
