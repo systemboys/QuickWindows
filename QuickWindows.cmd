@@ -96,6 +96,8 @@
 ::   - Opção para "Gerenciador de Tarefas do Windows" na sessão "Windows".
 :: v0.3.9 2023-12-02 às 17h46, Marcos Aurélio:
 ::   - Opção para instalação de "Microsoft Office 365" na sessão "Softwares para Escritório".
+:: v0.4.0 2023-12-05 às 14h45, Marcos Aurélio:
+::   - Opção para agendar desligamento automático na sessão "Windows".
 ::
 :: Licença: GPL.
 

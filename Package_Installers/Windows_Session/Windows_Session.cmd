@@ -22,6 +22,8 @@
 ::   - Opção para Menu de sessão a acesso rápido a algumas funcionalidades do Windows.
 :: v0.0.5 2023-11-30 às 22h22, Marcos Aurélio:
 ::   - Opção para "Configurações do Windows".
+:: v0.0.6 2023-12-05 às 14h45, Marcos Aurélio:
+::   - Opção para agendar desligamento automático.
 ::
 :: Licença: GPL.
 
@@ -45,9 +47,10 @@ echo QuickWindows / Sessão Windows
 set "menu_Session_2[0]=Voltar..."
 set "menu_Session_2[1]=Desligar o Windows"
 set "menu_Session_2[2]=Reiniciar o Windows"
-set "menu_Session_2[3]=Atualizar Windows e Softwares"
-set "menu_Session_2[4]=Atualizar o PowerShell"
-set "menu_Session_2[5]=Acesso rápido à Configurações..."
+set "menu_Session_2[3]=Agendar desligamento do Windows"
+set "menu_Session_2[4]=Atualizar Windows e Softwares"
+set "menu_Session_2[5]=Atualizar o PowerShell"
+set "menu_Session_2[6]=Acesso rápido à Configurações..."
 
 set "default=%1"
 
@@ -86,8 +89,18 @@ if %ERRORLEVEL% equ 3 (
     goto menu_Session_2
 )
 
-:: Atualizar o PowerShell
+:: Atualizar Windows e Softwares
 if %ERRORLEVEL% equ 4 (
+    cls
+    echo Você selecionou a Opção para atualizar softwares no Windows.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0UpdatingSoftwareInWindows.ps1""' -Verb RunAs}"
+
+    goto menu_Session_2
+)
+
+:: Atualizar o PowerShell
+if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a Opção para atualizar o Microsoft PowerShell.
 
@@ -97,7 +110,7 @@ if %ERRORLEVEL% equ 4 (
 )
 
 :: Acesso rápido à Configurações...
-if %ERRORLEVEL% equ 5 (
+if %ERRORLEVEL% equ 6 (
     cd Package_Installers\Windows_Session
     call QuickAccessToSettings.cmd 0
     cd ..
