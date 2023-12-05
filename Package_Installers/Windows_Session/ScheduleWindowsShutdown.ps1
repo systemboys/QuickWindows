@@ -14,17 +14,17 @@
 
 # Se o ScheduleWindowsShutdown não estiver instalado, faz o download e instala
 
-$command = Read-Host "Shut down Windows in how many minutes?"
+# Verifica se foi agendado algum desligamento do Windows
+$shutdownScheduled = $false
+$shutdownOutput = & shutdown.exe -a
 
-$minutos = [int]$command
-$segundos = $minutos * 60
+if ($shutdownOutput -match "Nenhum desligamento foi agendado.") {
+    $shutdownScheduled = $false
+} else {
+    $shutdownScheduled = $true
+}
 
-$command = "shutdown -s -t $segundos"
-Invoke-Expression $command
-
-Write-Host
-Write-Host "Windows will automatically shut down in $minutos minutes..."
-Write-Host
+$shutdownScheduled
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
