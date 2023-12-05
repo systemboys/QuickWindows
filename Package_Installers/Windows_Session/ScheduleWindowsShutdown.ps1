@@ -13,6 +13,7 @@
 # Licença: GPL.
 
 do {
+    clear
     Write-Host "0 = Exit"
     Write-Host "1 = Schedule a shutdown"
     Write-Host "2 = Cancel a shutdown"
