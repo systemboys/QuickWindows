@@ -13,6 +13,8 @@
 # Licença: GPL.
 
 do {
+    Write-Host "Press any key to continue..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
     clear
     Write-Host "0 = Exit"
     Write-Host "1 = Schedule a shutdown"
