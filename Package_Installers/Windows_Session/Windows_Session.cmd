@@ -79,12 +79,12 @@ if %ERRORLEVEL% equ 2 (
     shutdown -r -t 00
 )
 
-:: Atualizar Windows e Softwares
+:: Agendar desligamento do Windows
 if %ERRORLEVEL% equ 3 (
     cls
-    echo Você selecionou a Opção para atualizar softwares no Windows.
+    echo Você selecionou a Opção para Agendar desligamento do Windows.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0UpdatingSoftwareInWindows.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ScheduleWindowsShutdown.ps1""' -Verb RunAs}"
 
     goto menu_Session_2
 )
