@@ -13,22 +13,24 @@
 # Licença: GPL.
 
 # Verifica se há um desligamento programado
-$shutdown = & shutdown.exe /a 2>&1
+$shutdown = Get-ScheduledTask | Where-Object {$_.TaskName -eq "Shutdown"}
 
-if ($shutdown -like "*Nenhum desligamento pendente*") {
+if ($null -eq $shutdown) {
     Write-Host "Não há desligamento programado."
     $resposta = Read-Host "Deseja agendar um desligamento? (s/n)"
     if ($resposta -eq "s") {
         $tempo = Read-Host "Em quantos minutos você deseja desligar o Windows?"
-        shutdown.exe /s /t ($tempo * 60)
+        $action = New-ScheduledTaskAction -Execute "shutdown.exe" -Argument "/s /t 0"
+        $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes($tempo)
+        Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "Shutdown" -Description "Desligamento programado"
         Write-Host "Desligamento programado para daqui a $tempo minutos."
     }
 } else {
-    $tempoRestante = [regex]::Match($shutdown, '(\d+)').Groups[1].Value
+    $tempoRestante = ($shutdown.Triggers.StartBoundary - (Get-Date)).TotalMinutes
     Write-Host "Há um desligamento programado para daqui a $tempoRestante minutos."
     $resposta = Read-Host "Deseja anular o desligamento? (s/n)"
     if ($resposta -eq "s") {
-        shutdown.exe /a
+        Unregister-ScheduledTask -TaskName "Shutdown" -Confirm:$false
         Write-Host "Desligamento anulado."
     }
 }
