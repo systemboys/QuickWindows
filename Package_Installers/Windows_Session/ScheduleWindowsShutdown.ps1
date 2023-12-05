@@ -13,11 +13,9 @@
 # Licença: GPL.
 
 # Verifica se há um desligamento programado
-$shutdown = Get-WmiObject -Class Win32_OperatingSystem | Select-Object -ExpandProperty LastBootUpTime
-$shutdown = [Management.ManagementDateTimeConverter]::ToDateTime($shutdown)
-$shutdown = New-TimeSpan -Start $shutdown -End (Get-Date)
+$shutdown = & shutdown.exe /a 2>&1
 
-if ($shutdown.TotalSeconds -lt 0) {
+if ($shutdown -like "*Nenhum desligamento pendente*") {
     Write-Host "Não há desligamento programado."
     $resposta = Read-Host "Deseja agendar um desligamento? (s/n)"
     if ($resposta -eq "s") {
@@ -26,7 +24,7 @@ if ($shutdown.TotalSeconds -lt 0) {
         Write-Host "Desligamento programado para daqui a $tempo minutos."
     }
 } else {
-    $tempoRestante = [math]::Round($shutdown.TotalSeconds / 60)
+    $tempoRestante = [regex]::Match($shutdown, '(\d+)').Groups[1].Value
     Write-Host "Há um desligamento programado para daqui a $tempoRestante minutos."
     $resposta = Read-Host "Deseja anular o desligamento? (s/n)"
     if ($resposta -eq "s") {
