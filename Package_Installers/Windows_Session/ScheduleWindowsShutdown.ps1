@@ -13,9 +13,6 @@
 # Licença: GPL.
 
 do {
-    Write-Host "Press any key to continue..."
-    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-    clear
     Write-Host "0 = Exit"
     Write-Host "1 = Schedule a shutdown"
     Write-Host "2 = Cancel a shutdown"
@@ -31,6 +28,8 @@ do {
                 shutdown -s -t $seconds
             } else {
                 Write-Host "Invalid input. Please enter a valid number of minutes."
+                Write-Host "Press any key to continue..."
+                $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
             }
         }
         '2' {
@@ -38,9 +37,8 @@ do {
         }
         default {
             Write-Host "Invalid option. Please choose a valid option."
+            Write-Host "Press any key to continue..."
+            $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
         }
     }
 } while ($input -ne '0')
-
-Write-Host "Press any key to continue..."
-$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
