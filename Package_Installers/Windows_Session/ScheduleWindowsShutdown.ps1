@@ -12,32 +12,18 @@
 #
 # Licença: GPL.
 
-# Verifica se há um desligamento programado
-$shutdown = Get-ScheduledTask | Where-Object {$_.TaskName -eq "Shutdown"}
+# Verifica se um desligamento foi agendado
+$shutdownScheduled = (schtasks /query /TN "Microsoft\Windows\Shutdown" | Select-String "Pronto").Count -gt 0
 
-if ($null -eq $shutdown) {
-    Write-Host "Não há desligamento programado."
-    $resposta = Read-Host "Deseja agendar um desligamento? (s/n)"
-    if ($resposta -eq "s") {
-        $tempo = Read-Host "Em quantos minutos você deseja desligar o Windows?"
-        
-        $minutos = [int]$tempo
-        $segundos = $minutos * 60
-        
-        $command = "shutdown -s -t $segundos"
-        Invoke-Expression $command
-        
-        Write-Host "Desligamento programado para daqui a $tempo minutos."
-    }
+# Define a variável com base no resultado
+if ($shutdownScheduled) {
+    $shutdownVariable = 1
 } else {
-    $tempoRestante = ($shutdown.Triggers.StartBoundary - (Get-Date)).TotalMinutes
-    Write-Host "Há um desligamento programado para daqui a $tempoRestante minutos."
-    $resposta = Read-Host "Deseja anular o desligamento? (s/n)"
-    if ($resposta -eq "s") {
-        $command = "shutdown -a"
-        Invoke-Expression $command
-    }
+    $shutdownVariable = 0
 }
+
+# Imprime o valor da variável
+Write-Output $shutdownVariable
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
