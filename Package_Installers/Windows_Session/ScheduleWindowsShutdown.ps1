@@ -12,8 +12,6 @@
 #
 # Licença: GPL.
 
-# Se o ScheduleWindowsShutdown não estiver instalado, faz o download e instala
-
 # Obter todas as tarefas agendadas
 $tasks = Get-ScheduledTask | Where-Object {$_.State -ne 'Disabled'}
 
@@ -25,6 +23,7 @@ if ($shutdownTask -ne $null) {
 } else {
     Write-Output "Nenhum desligamento agendado encontrado."
 }
+
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
