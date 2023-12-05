@@ -20,9 +20,13 @@ if ($null -eq $shutdown) {
     $resposta = Read-Host "Deseja agendar um desligamento? (s/n)"
     if ($resposta -eq "s") {
         $tempo = Read-Host "Em quantos minutos você deseja desligar o Windows?"
-        $action = New-ScheduledTaskAction -Execute "shutdown.exe" -Argument "/s /t 0"
-        $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes($tempo)
-        Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "Shutdown" -Description "Desligamento programado"
+        
+        $minutos = [int]$tempo
+        $segundos = $minutos * 60
+        
+        $command = "shutdown -s -t $segundos"
+        Invoke-Expression $command
+        
         Write-Host "Desligamento programado para daqui a $tempo minutos."
     }
 } else {
@@ -30,8 +34,8 @@ if ($null -eq $shutdown) {
     Write-Host "Há um desligamento programado para daqui a $tempoRestante minutos."
     $resposta = Read-Host "Deseja anular o desligamento? (s/n)"
     if ($resposta -eq "s") {
-        Unregister-ScheduledTask -TaskName "Shutdown" -Confirm:$false
-        Write-Host "Desligamento anulado."
+        $command = "shutdown -a"
+        Invoke-Expression $command
     }
 }
 
