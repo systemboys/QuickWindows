@@ -14,12 +14,16 @@
 
 # Se o ScheduleWindowsShutdown não estiver instalado, faz o download e instala
 
-$shutdownCheck = shutdown.exe /a 2>&1
+# Obter todas as tarefas agendadas
+$tasks = Get-ScheduledTask | Where-Object {$_.State -ne 'Disabled'}
 
-if ($shutdownCheck -like "*Nenhum desligamento pendente*") {
-    Write-Host "Não há desligamento agendado!"
+# Filtrar para encontrar a tarefa de desligamento
+$shutdownTask = $tasks | Where-Object {$_.Actions.Execute -eq 'C:\Windows\System32\shutdown.exe'}
+
+if ($shutdownTask -ne $null) {
+    Write-Output "Desligamento agendado encontrado: $($shutdownTask.TaskName)"
 } else {
-    Write-Host "Há um desligamento agendado!"
+    Write-Output "Nenhum desligamento agendado encontrado."
 }
 
 Write-Host "Press any key to continue..."
