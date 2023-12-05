@@ -24,7 +24,7 @@ do {
         '1' {
             $time = Read-Host "Please enter the time in minutes for the shutdown"
             if (![string]::IsNullOrWhiteSpace($time) -and $time -match '^\d+$') {
-                $seconds = $time * 60
+                $seconds = [int]$time * 60
                 shutdown -s -t $seconds
             } else {
                 Write-Host "Invalid input. Please enter a valid number of minutes."
