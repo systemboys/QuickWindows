@@ -14,14 +14,12 @@
 
 # Se o ScheduleWindowsShutdown não estiver instalado, faz o download e instala
 
-$command = Read-Host "Desligar o Windows em quantos minutos?"
-
-$minutos = [int]$command
-$segundos = $minutos * 60
-
 $shutdownCheck = shutdown.exe /a 2>&1
 
 if ($shutdownCheck -like "*Nenhum desligamento pendente*") {
+    $command = Read-Host "Desligar o Windows em quantos minutos?"
+    $minutos = [int]$command
+    $segundos = $minutos * 60
     $command = "shutdown -s -t $segundos"
     Invoke-Expression $command
 } else {
@@ -30,10 +28,13 @@ if ($shutdownCheck -like "*Nenhum desligamento pendente*") {
     if ($resposta -eq "s") {
         shutdown.exe /a
         Write-Host "Desligamento anulado."
-    } else {
+    } elseif ($resposta -eq "n") {
         Write-Host "Desligamento mantido."
+    } else {
+        Write-Host "Opção inválida."
     }
 }
+
 
 # Write-Host
 # Write-Host "Windows will automatically shut down in $minutos minutes..."
