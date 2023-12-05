@@ -12,19 +12,28 @@
 #
 # Licença: GPL.
 
-# Se o ScheduleWindowsShutdown não estiver instalado, faz o download e instala
+# Verifica se há um desligamento programado
+$shutdown = Get-WmiObject -Class Win32_OperatingSystem | Select-Object -ExpandProperty LastBootUpTime
+$shutdown = [Management.ManagementDateTimeConverter]::ToDateTime($shutdown)
+$shutdown = New-TimeSpan -Start $shutdown -End (Get-Date)
 
-# Verifica se foi agendado algum desligamento do Windows
-$shutdownScheduled = $false
-$shutdownOutput = & shutdown.exe -a
-
-if ($shutdownOutput -match "Nenhum desligamento foi agendado.") {
-    $shutdownScheduled = $false
+if ($shutdown.TotalSeconds -lt 0) {
+    Write-Host "Não há desligamento programado."
+    $resposta = Read-Host "Deseja agendar um desligamento? (s/n)"
+    if ($resposta -eq "s") {
+        $tempo = Read-Host "Em quantos minutos você deseja desligar o Windows?"
+        shutdown.exe /s /t ($tempo * 60)
+        Write-Host "Desligamento programado para daqui a $tempo minutos."
+    }
 } else {
-    $shutdownScheduled = $true
+    $tempoRestante = [math]::Round($shutdown.TotalSeconds / 60)
+    Write-Host "Há um desligamento programado para daqui a $tempoRestante minutos."
+    $resposta = Read-Host "Deseja anular o desligamento? (s/n)"
+    if ($resposta -eq "s") {
+        shutdown.exe /a
+        Write-Host "Desligamento anulado."
+    }
 }
-
-$shutdownScheduled
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
