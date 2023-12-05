@@ -17,27 +17,28 @@
 $shutdownCheck = shutdown.exe /a 2>&1
 
 if ($shutdownCheck -like "*Nenhum desligamento pendente*") {
-    $command = Read-Host "Desligar o Windows em quantos minutos?"
+    $command = Read-Host "Shut down Windows in how many minutes?"
+
     $minutos = [int]$command
     $segundos = $minutos * 60
+
     $command = "shutdown -s -t $segundos"
     Invoke-Expression $command
+
+    Write-Host
+    Write-Host "Windows will automatically shut down in $minutos minutes..."
+    Write-Host
 } else {
-    Write-Host "Há um desligamento agendado."
-    $resposta = Read-Host "Deseja anular? (s/n)"
+    $resposta = Read-Host "Deseja anular o desligamento automático? (s/n)"
     if ($resposta -eq "s") {
         shutdown.exe /a
-        Write-Host "Desligamento anulado."
+        Write-Host "Desligamento automático anulado!"
     } elseif ($resposta -eq "n") {
-        Write-Host "Desligamento mantido."
+        Write-Host "Desligamento mantido!"
     } else {
         Write-Host "Opção inválida."
     }
 }
 
-
-# Write-Host
-# Write-Host "Windows will automatically shut down in $minutos minutes..."
-# Write-Host
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
