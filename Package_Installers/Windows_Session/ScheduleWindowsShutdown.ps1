@@ -12,18 +12,19 @@
 #
 # Licença: GPL.
 
-# Obter todas as tarefas agendadas
-$tasks = Get-ScheduledTask | Where-Object {$_.State -ne 'Disabled'}
+# Se o ScheduleWindowsShutdown não estiver instalado, faz o download e instala
 
-# Filtrar para encontrar a tarefa de desligamento
-$shutdownTask = $tasks | Where-Object {$_.Actions.Execute -eq 'C:\Windows\System32\shutdown.exe'}
+$command = Read-Host "Shut down Windows in how many minutes?"
 
-if ($shutdownTask -ne $null) {
-    Write-Output "Desligamento agendado encontrado: $($shutdownTask.TaskName)"
-} else {
-    Write-Output "Nenhum desligamento agendado encontrado."
-}
+$minutos = [int]$command
+$segundos = $minutos * 60
 
+$command = "shutdown -s -t $segundos"
+Invoke-Expression $command
+
+Write-Host
+Write-Host "Windows will automatically shut down in $minutos minutes..."
+Write-Host
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
