@@ -22,6 +22,7 @@ $segundos = $minutos * 60
 $command = "shutdown -s -t $segundos"
 Invoke-Expression $command
 
-
+Write-Host "Windows will automatically shut down in $minutos minutes..."
+Write-Host
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
