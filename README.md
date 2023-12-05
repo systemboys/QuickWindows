@@ -114,6 +114,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Voltar...
     - [x] Desligar o Windows
     - [x] Reiniciar o Windows
+    - [x] Agendar desligamento do Windows
     - [x] Atualizar Windows e Softwares
     - [x] Atualizar o PowerShell
     - [x] **Acesso rápido à Configurações**
