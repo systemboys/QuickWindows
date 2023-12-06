@@ -134,7 +134,9 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Gerenciador de Tarefas do Windows
   - [x] **Internet**
     - [x] Voltar...
-    - [x] Instalar AnyDesk
+    - [x] Acesso Remoto...
+      - [x] AnyDesk
+      - [x] RustDesk
     - [x] Instalar Microsoft Edge
     - [x] Instalar Google Chrome
     - [x] Instalar Google Earth Pro
