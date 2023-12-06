@@ -69,6 +69,7 @@ Com o QuickWindows, queremos tornar a experiência de instalação de software n
 Este Menu contêm scripts de instalação de pacotes de software dentro do diretório "/QuickWindows/". Estão armazenados vários arquivos.cmd. Veja a estrutura de arquivos:
 
 ```batch
+/QuickWindows/
 ├─ /Images/
 │  └─ QuickWindows.png
 ├─ /Package_Installers/
