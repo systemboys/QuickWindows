@@ -1,6 +1,5 @@
 # Install_Internet_Download_Manager.ps1 - Executa o script de instalação de Internet_Download_Manager.
 #
-# URL: https://github.com/github_user/project_on_github.git
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #

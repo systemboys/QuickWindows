@@ -450,7 +450,6 @@ Para escrever o `arquivo.ps1` para scripts de instalação:
 ```powershell
 # Install_YourPackage.ps1 - Executa o script de instalação de YourPackage.
 #
-# URL: https://github.com/github_user/project_on_github.git
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #

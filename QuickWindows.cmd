@@ -98,6 +98,8 @@
 ::   - Opção para instalação de "Microsoft Office 365" na sessão "Softwares para Escritório".
 :: v0.4.0 2023-12-05 às 14h45, Marcos Aurélio:
 ::   - Opção para agendar desligamento automático na sessão "Windows".
+:: v0.4.1 2023-12-06 às 12h05, Marcos Aurélio:
+::   - Removidas as linhas das URL de onde ficam os arquivos no GitHub, não são necessárias.
 ::
 :: Licença: GPL.
 

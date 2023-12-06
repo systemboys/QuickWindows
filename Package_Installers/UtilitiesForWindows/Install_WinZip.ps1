@@ -1,6 +1,5 @@
 # Install_WinZip.ps1 - Executa o script de instalação de WinZip.
 #
-# URL: https://github.com/github_user/project_on_github.git
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #

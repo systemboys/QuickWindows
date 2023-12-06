@@ -1,6 +1,5 @@
 # Install_Microsoft_Office_2016_to_2019.ps1 - Executa o script de instalação de Microsoft Office 2016 a 2019.
 #
-# URL: https://github.com/github_user/project_on_github.git
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #

@@ -1,6 +1,5 @@
 # Install_WinRAR.ps1 - Executa o script de instalação de WinRAR.
 #
-# URL: https://github.com/github_user/project_on_github.git
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #
