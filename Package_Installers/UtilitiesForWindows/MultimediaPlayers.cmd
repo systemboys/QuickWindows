@@ -40,11 +40,14 @@ set "default=0"
 
 :menu_Session_6_4
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     call UtilitiesForWindows.cmd 4
 )
 
+:: VLC Media Player
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o VLC Media Player.

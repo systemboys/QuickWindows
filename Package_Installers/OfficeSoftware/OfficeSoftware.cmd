@@ -46,6 +46,8 @@ set "default=%1"
 
 :menu_Session_7
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -53,6 +55,7 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd 7
 )
 
+:: Microsoft Office 2016 a 2019
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o Microsoft Office 2016 a 2019.
@@ -62,6 +65,7 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_7
 )
 
+:: Microsoft Office 2019 a 2021
 if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para instalar o Microsoft Office 2019 a 2021.
@@ -71,6 +75,7 @@ if %ERRORLEVEL% equ 2 (
     goto menu_Session_7
 )
 
+:: Microsoft Office 365
 if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção para instalar o Microsoft Office 365.

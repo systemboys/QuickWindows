@@ -49,6 +49,8 @@ set "default=%1%"
 
 :menu_Session_6
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -56,6 +58,7 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd 6
 )
 
+:: Instalar Revo Uninstaller
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o Revo Uninstaller.
@@ -65,22 +68,27 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_6
 )
 
+:: Compactadores...
 if %ERRORLEVEL% equ 2 (
     call Compactors.cmd 0
 )
 
+:: Leitores de PDF...
 if %ERRORLEVEL% equ 3 (
     call PDFReaders.cmd 0
 )
 
+:: Players Multimídia...
 if %ERRORLEVEL% equ 4 (
     call MultimediaPlayers.cmd 0
 )
 
+:: Software de congelamento do sistema...
 if %ERRORLEVEL% equ 5 (
     call SystemFreezeSoftware.cmd 0
 )
 
+:: Ferramentas de restauração do sistema...
 if %ERRORLEVEL% equ 8 (
     call SystemRestoreTools.cmd 0
 )

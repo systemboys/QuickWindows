@@ -43,11 +43,14 @@ set "default=0"
 
 :menu_Session_6_2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     call UtilitiesForWindows.cmd 2
 )
 
+:: WinRAR
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o WinRAR.
@@ -57,6 +60,7 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_6_2
 )
 
+:: WinZip
 if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para instalar o WinZip.

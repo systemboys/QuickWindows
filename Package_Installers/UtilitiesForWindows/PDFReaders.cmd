@@ -40,11 +40,14 @@ set "default=0"
 
 :menu_Session_6_3
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     call UtilitiesForWindows.cmd 3
 )
 
+:: Acrobat Reader DC
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o AdobeReader.

@@ -41,11 +41,14 @@ set "default=%1%"
 
 :menu_Session_6_5
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     call UtilitiesForWindows.cmd 5
 )
 
+:: Deep Freeze Standard
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o Deep Freeze Standard.
@@ -55,6 +58,7 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_6_5
 )
 
+:: Shadow Defender
 if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para instalar o Shadow_Defender.

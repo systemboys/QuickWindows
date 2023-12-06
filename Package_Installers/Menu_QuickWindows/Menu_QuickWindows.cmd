@@ -42,6 +42,8 @@ set "default=%1%"
 
 :menu_Session_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -49,6 +51,7 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd 1
 )
 
+:: Atualizar QuickWindows
 if %ERRORLEVEL% equ 1 (
     cls
     cd ..
@@ -60,6 +63,7 @@ if %ERRORLEVEL% equ 1 (
     call QuickWindows.cmd 0
 )
 
+:: Deletar QuickWindows
 if %ERRORLEVEL% equ 2 (
     cls
     cd ..
@@ -68,6 +72,7 @@ if %ERRORLEVEL% equ 2 (
     rmdir /s /q QuickWindows
 )
 
+:: Recarregar QuickWindows
 if %ERRORLEVEL% equ 3 (
     cls
     cd ..

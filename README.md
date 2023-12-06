@@ -247,6 +247,8 @@ set "default=%1"
 
 :menu_Session_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -254,6 +256,7 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd
 )
 
+:: Opção 1
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção 1.
@@ -263,6 +266,7 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_1
 )
 
+:: Opção 2
 if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção 2.
@@ -272,6 +276,7 @@ if %ERRORLEVEL% equ 2 (
     goto menu_Session_1
 )
 
+:: Opção 3
 if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção 3.
@@ -383,6 +388,7 @@ Para chamar sua nova sessão a partir do menu inicial, adicione a função que e
 ```batch
 :: ... (outras funções)
 
+:: Opção 1
 if %ERRORLEVEL% equ 1 (
     cd Package_Installers\New_Session_A
     call New_Session_A.cmd 0
@@ -397,6 +403,7 @@ if %ERRORLEVEL% equ 1 (
 ```batch
 :: ... (restante do código)
 
+:: Opção 2
 if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção 2.
 

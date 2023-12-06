@@ -48,6 +48,8 @@ set "default=%1"
 
 :menu_Session_4
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
+
+:: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -55,6 +57,7 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd 4
 )
 
+:: Obter IP público
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção Obter IP público.
@@ -64,6 +67,7 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_4
 )
 
+:: Obter IP local
 if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção Obter IP local.
@@ -73,6 +77,7 @@ if %ERRORLEVEL% equ 2 (
     goto menu_Session_4
 )
 
+:: Obter IP's de uma determinada rota
 if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção Obter IP local.
