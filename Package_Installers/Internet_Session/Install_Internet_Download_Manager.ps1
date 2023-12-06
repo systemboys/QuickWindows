@@ -10,6 +10,8 @@
 # Histórico:
 # v0.0.1 2023-12-01 às 22h28, Marcos Aurélio:
 #   - Versão inicial, Instalação de Internet Download Manager.
+# v0.0.2 2023-12-06 às 20h22, Marcos Aurélio:
+#   - Atualização da URL do executável.
 #
 # Licença: GPL.
 
@@ -23,7 +25,7 @@ if (Test-Path $directory) {
     Write-Host "Internet Download Manager is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Internet_Download_Manager.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Downloads/Internet_Download_Manager.exe"
     $downloadPath = "$env:temp\Internet_Download_Manager.exe"
     
     # Faz o download do Internet Download Manager
