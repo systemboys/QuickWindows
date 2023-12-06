@@ -149,6 +149,7 @@ set "menu[4]=Redes..."
 set "menu[5]=Execução de Comandos no PowerShell"
 set "menu[6]=Utilitários para Windows..."
 set "menu[7]=Office software..."
+:: set "menu[8]=Sistemas Operacionais Microsoft…"
 
 set "default=%1%"
 

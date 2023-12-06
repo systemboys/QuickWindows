@@ -69,28 +69,63 @@ Com o QuickWindows, queremos tornar a experiência de instalação de software n
 Este Menu contêm scripts de instalação de pacotes de software dentro do diretório "/QuickWindows/". Estão armazenados vários arquivos.cmd. Veja a estrutura de arquivos:
 
 ```batch
-/QuickWindows
-├─ /Imagens/
-│  └─ QuickWindows.png
+├─ /Images/
+├─ └─ QuickWindows.png
 ├─ /Package_Installers/
 │  ├─ /Internet_Session/
+│  │  ├─ Downloads.cmd
+│  │  ├─ Install_AnyDesk.ps1
+│  │  ├─ Install_Google_Chrome.ps1
+│  │  ├─ Install_Google_Earth_Pro.ps1
+│  │  ├─ Install_Internet_Download_Manager.ps1
+│  │  ├─ Install_Microsoft_Edge.ps1
+│  │  ├─ Install_Mozilla_Firefox.ps1
+│  │  ├─ Install_Opera.ps1
+│  │  ├─ Install_RealVNCViewer.ps1
+│  │  ├─ Install_RustDesk.ps1
+│  │  ├─ Install_Skype.ps1
+│  │  ├─ Install_Transmission.ps1
 │  │  ├─ Internet_Session.cmd
-│  │  ├─ Install_Package1.ps1
-│  │  ├─ Install_Package2.ps1
-│  │  ├─ Install_Package3.ps1
-│  │  └─ ...
+│  │  └─ Session_RemoteAccessSoftware.cmd
 │  ├─ /Menu_QuickWindows/
-│  │    └─ Menu_QuickWindows.cmd
+│  │  ├─ Menu_QuickWindows.cmd
 │  ├─ /Networking_Session/
-│  │  ├─ Networking_Session.cmd
-│  │  ├─ Install_Package3.ps1
-│  │  └─ ...
-│  └─ /Windows_Session/
-│     ├─ Windows_Session.cmd
-│     ├─ Install_Package1.ps1
-│     └─ ...
+│  │  ├─ GetConnectionIPRoute.ps1
+│  │  ├─ GetLocalIPAddress.ps1
+│  │  ├─ GetPublicIPAddress.ps1
+│  │  └─ Networking_Session.cmd
+│  ├─ /OfficeSoftware/
+│  │  ├─ Install_Microsoft_Office_2016_to_2019.ps1
+│  │  ├─ Install_Microsoft_Office_2019_to_2021.ps1
+│  │  ├─ Install_Microsoft_Office_365.ps1
+│  │  └─ OfficeSoftware.cmd
+│  ├─ /UtilitiesForWindows/
+│  │  ├─ Compactors.cmd
+│  │  ├─ Install_AdobeReaderPDF.ps1
+│  │  ├─ Install_Deep_Freeze.ps1
+│  │  ├─ Install_Revo_Uninstaller.ps1
+│  │  ├─ Install_Shadow_Defender.ps1
+│  │  ├─ Install_VLCMediaPlayer.ps1
+│  │  ├─ Install_WinRAR.ps1
+│  │  ├─ Install_WinToHDD.ps1
+│  │  ├─ Install_WinZip.ps1
+│  │  ├─ MultimediaPlayers.cmd
+│  │  ├─ PDFReaders.cmd
+│  │  ├─ SystemFreezeSoftware.cmd
+│  │  ├─ SystemRestoreTools.cmd
+│  │  └─ UtilitiesForWindows.cmd
+│  ├─ /Windows_Session/
+│  │  ├─ ManageFilesAndFolders.ps1
+│  │  ├─ QuickAccessToSettings.cmd
+│  │  ├─ QuickAccessToSettings2.cmd
+│  │  ├─ ScheduleWindowsShutdown.ps1
+│  │  ├─ Update_PowerShell.ps1
+│  │  ├─ UpdatingSoftwareInWindows.ps1
+│  │  └─ Windows_Session.cmd
+│  └─ RunPowerShellCommands.ps1
 ├─ QuickWindows.cmd
-└─ README.md
+├─ README.md
+└─ menu.ps1
 ```
 
 Dentro do diretório "Package_Installers", você pode ter vários `arquivos.cmd`, cada um responsável por instalar um pacote de software específico. Isso torna a estrutura do seu projeto organizada e fácil de entender.
