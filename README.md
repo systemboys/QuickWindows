@@ -70,7 +70,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 
 ```batch
 ├─ /Images/
-├─ └─ QuickWindows.png
+│  └─ QuickWindows.png
 ├─ /Package_Installers/
 │  ├─ /Internet_Session/
 │  │  ├─ Downloads.cmd
@@ -88,7 +88,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Internet_Session.cmd
 │  │  └─ Session_RemoteAccessSoftware.cmd
 │  ├─ /Menu_QuickWindows/
-│  │  ├─ Menu_QuickWindows.cmd
+│  │  └─ Menu_QuickWindows.cmd
 │  ├─ /Networking_Session/
 │  │  ├─ GetConnectionIPRoute.ps1
 │  │  ├─ GetLocalIPAddress.ps1
