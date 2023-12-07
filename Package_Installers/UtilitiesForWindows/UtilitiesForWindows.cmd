@@ -88,6 +88,26 @@ if %ERRORLEVEL% equ 5 (
     call SystemFreezeSoftware.cmd 0
 )
 
+:: Backup e Restauração
+if %ERRORLEVEL% equ 6 (
+    cls
+    echo Você selecionou a Opção Backup e Restauração e este recurso ainda não foi desenvolvido.
+
+    @REM  Your commands here...
+
+    goto menu_Session_6
+)
+
+:: Software de gerenciamento de partições
+if %ERRORLEVEL% equ 7 (
+    cls
+    echo Você selecionou a Opção Software de gerenciamento de partições e este recurso ainda não foi desenvolvido.
+
+    @REM  Your commands here...
+
+    goto menu_Session_6
+)
+
 :: Ferramentas de restauração do sistema...
 if %ERRORLEVEL% equ 8 (
     call SystemRestoreTools.cmd 0
