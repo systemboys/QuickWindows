@@ -29,7 +29,7 @@ if (Test-Path $directory) {
     [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
 
     # Define a mensagem, o título e os botões da pop-up
-    $message = "O AnyDesk já está instalado, deseja executá-lo?"
+    $message = "AnyDesk is already installed, do you want to run it?"
     $title = "AnyDesk"
     $buttons = [Microsoft.VisualBasic.MsgBoxStyle]::YesNo
 
