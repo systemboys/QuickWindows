@@ -26,7 +26,25 @@ $programFiles = "$env:SystemDrive\Program Files (x86)"
 $directory = "$programFiles\AnyDesk"
 
 if (Test-Path $directory) {
-    Write-Host "AnyDesk is installed!"
+    # Carrega a biblioteca do .NET Framework para criar a pop-up
+    [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
+
+    # Define a mensagem, o título e os botões da pop-up
+    $message = "AnyDesk is already installed, do you want to run it?"
+    $title = "AnyDesk"
+    $buttons = [Microsoft.VisualBasic.MsgBoxStyle]::YesNo
+
+    # Mostra a pop-up ao usuário e guarda a resposta em uma variável
+    $response = [Microsoft.VisualBasic.Interaction]::MsgBox($message, $buttons, $title)
+
+    # Verifica se a resposta do usuário foi "Sim"
+    if ($response -eq "Yes") {
+        # Executa o AnyDesk
+        Start-Process -FilePath "C:\Program Files (x86)\AnyDesk\AnyDesk.exe"
+    }
+    else {
+        exit
+    }
 } else {
     Add-Type -AssemblyName PresentationFramework
 
