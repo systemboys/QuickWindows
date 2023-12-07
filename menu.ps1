@@ -43,7 +43,7 @@ if (Test-Path $directory) {
         Start-Process -FilePath "C:\Program Files (x86)\AnyDesk\AnyDesk.exe"
     }
     else {
-        exit
+        # exit
     }
 } else {
     Add-Type -AssemblyName PresentationFramework
