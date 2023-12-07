@@ -219,6 +219,7 @@ Aqui estão todas as opções em desenvolvimento.
       - [ ] GParted
     - [x] **Ferramentas de restauração do sistema**
       - [x] WinToHDD
+      - [x] Hasleo WinToHDD Free
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
     - [x] Microsoft Office 2019 a 2021
