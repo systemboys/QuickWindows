@@ -10,6 +10,8 @@
 # Histórico:
 # v0.0.1 2023-11-29 às 10h50, Marcos Aurélio:
 #   - Versão inicial, Instalação de WinToHDD.
+# v0.0.2 2023-12-06 às 21h00, Marcos Aurélio:
+#   - Foi informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -21,6 +23,7 @@ if (Test-Path $directory) {
     Write-Host "WinToHDD is installed!"
 } else {
     Write-Host "WinToHDD is not installed! Starting installation process."
+    Write-Host "File size: 9.32 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/WinToHDD.exe"

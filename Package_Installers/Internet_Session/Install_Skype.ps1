@@ -9,6 +9,8 @@
 # Histórico:
 # v0.0.1 2023-11-13 às 21h10, Marcos Aurélio:
 #   - Versão inicial, Instalação do Skype.
+# v0.0.2 2023-12-06 às 20h50, Marcos Aurélio:
+#   - Foi informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -20,6 +22,7 @@ if (Test-Path $directory) {
     Write-Host "Skype is installed!"
 } else {
     Write-Host "Skype is not installed! Starting installation process."
+    Write-Host "File size: 84.7 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Skype-setup.exe"

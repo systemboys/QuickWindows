@@ -10,6 +10,8 @@
 # Histórico:
 # v0.0.1 2023-11-29 às 13h51, Marcos Aurélio:
 #   - Versão inicial, Instalação de AdobeReaderPDF.
+# v0.0.2 2023-12-06 às 21h01, Marcos Aurélio:
+#   - Foi informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -21,6 +23,7 @@ if (Test-Path $directory) {
     Write-Host "Adobe Reader is installed!"
 } else {
     Write-Host "Adobe Reader is not installed! Starting installation process."
+    Write-Host "File size: 1.2 MB"
 
     # Link do download e o diretório Temp
     # Verifica a versão do sistema operacional

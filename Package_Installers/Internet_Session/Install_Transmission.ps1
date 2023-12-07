@@ -11,7 +11,7 @@
 # v0.0.1 2023-11-30 às 19h58, Marcos Aurélio:
 #   - Versão inicial, Instalação de Transmission.
 # v0.0.2 2023-12-06 às 20h22, Marcos Aurélio:
-#   - Atualização da URL do executável.
+#   - Atualização da URL do executável e informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -23,6 +23,7 @@ if (Test-Path $directory) {
     Write-Host "Transmission is installed!"
 } else {
     Write-Host "Transmission is not installed! Starting installation process."
+    Write-Host "File size: 17.9 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Downloads/transmission-downloads.msi"

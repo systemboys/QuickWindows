@@ -100,6 +100,8 @@
 ::   - Opção para agendar desligamento automático na sessão "Windows".
 :: v0.4.1 2023-12-06 às 12h05, Marcos Aurélio:
 ::   - Removidas as linhas das URL de onde ficam os arquivos no GitHub, não são necessárias.
+:: v0.4.2 2023-12-06 às 20h43, Marcos Aurélio:
+::   - Foi informado o tamanho dos executáveis em seus arquivos PS1.
 ::
 :: Licença: GPL.
 

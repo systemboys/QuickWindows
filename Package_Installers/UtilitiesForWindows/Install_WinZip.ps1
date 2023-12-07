@@ -10,6 +10,8 @@
 # Histórico:
 # v0.0.1 2023-11-30 às 00h46, Marcos Aurélio:
 #   - Versão inicial, Instalação de WinZip.
+# v0.0.2 2023-12-06 às 21h00, Marcos Aurélio:
+#   - Foi informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -21,6 +23,7 @@ if (Test-Path $directory) {
     Write-Host "WinZip is installed!"
 } else {
     Write-Host "WinZip is not installed! Starting installation process."
+    Write-Host "File size: 2.8 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/WinZip.exe"

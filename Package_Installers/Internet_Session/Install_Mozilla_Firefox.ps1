@@ -9,6 +9,8 @@
 # Histórico:
 # v0.0.1 2023-11-13 às 22h50, Marcos Aurélio:
 #   - Versão inicial, Instalação do navetador "Mozilla Firefox".
+# v0.0.2 2023-12-06 às 20h48, Marcos Aurélio:
+#   - Foi informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -20,6 +22,7 @@ if (Test-Path $directory) {
     Write-Host "Mozilla Firefox is installed!"
 } else {
     Write-Host "Mozilla Firefox is not installed! Starting installation process."
+    Write-Host "File size: 389 KB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Firefox-Installer.exe"

@@ -13,7 +13,7 @@
 # v0.0.2 2023-12-02 às 08h33, Marcos Aurélio:
 #   - Foi feito uma correção no link do download do arquivo.
 # v0.0.2 2023-12-06 às 20h22, Marcos Aurélio:
-#   - Atualização da URL do executável.
+#   - Foi informado o tamanho do executável e atualizada a URL do executável.
 #
 # Licença: GPL.
 
@@ -25,6 +25,7 @@ if (Test-Path $directory) {
     Write-Host "RustDesk is installed!"
 } else {
     Write-Host "RustDesk is not installed! Starting installation process."
+    Write-Host "File size: 19.8 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/RemoteAccess/RustDesk_Setup.exe"

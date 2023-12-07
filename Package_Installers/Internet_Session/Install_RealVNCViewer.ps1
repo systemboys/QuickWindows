@@ -9,6 +9,8 @@
 # Histórico:
 # v0.0.1 2023-11-13 às 23h40, Marcos Aurélio:
 #   - Versão inicial, Instalação de Real VNC Viewer.
+# v0.0.2 2023-12-06 às 20h51, Marcos Aurélio:
+#   - Foi informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -20,6 +22,7 @@ if (Test-Path $directory) {
     Write-Host "Real VNC Viewer is installed!"
 } else {
     Write-Host "Real VNC Viewer is not installed! Starting installation process."
+    Write-Host "File size: 11 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/VNC-Viewer-Windows.exe"

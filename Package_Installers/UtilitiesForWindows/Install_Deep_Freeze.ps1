@@ -10,6 +10,8 @@
 # Histórico:
 # v0.0.1 2023-11-30 às 01h02, Marcos Aurélio:
 #   - Versão inicial, Instalação de Deep Freeze.
+# v0.0.2 2023-12-06 às 20h56, Marcos Aurélio:
+#   - Foi informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -18,6 +20,7 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\Deep Freeze"
 
 Write-Host "Deep Freeze is not installed! Starting installation process."
+Write-Host "File size: 20.5 MB"
 
 # Link do download e o diretório Temp
 $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Deep_Freeze.exe"

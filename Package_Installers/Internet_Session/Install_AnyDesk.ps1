@@ -15,6 +15,8 @@
 # v0.0.2 2023-11-01 às 22h55, Marcos Aurélio:
 #   - Correção na linha de comando que apaga o arquivo de instalação
 #     do AnyDesk baixado.
+# v0.0.3 2023-12-06 às 20h43, Marcos Aurélio:
+#   - Foi informado o tamanho do executável e atualizada a URL.
 #
 # Licença: GPL.
 
@@ -26,9 +28,10 @@ if (Test-Path $directory) {
     Write-Host "AnyDesk is installed!"
 } else {
     Write-Host "AnyDesk is not installed! Starting installation process."
+    Write-Host "File size: 5.27 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://download.anydesk.com/AnyDesk.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/RemoteAccess/AnyDesk.exe"
     $downloadPath = "$env:temp\AnyDesk.exe"
     
     # Faz o download do AnyDesk

@@ -10,6 +10,8 @@
 # Histórico:
 # v0.0.1 2023-12-02 às 17h46, Marcos Aurélio:
 #   - Versão inicial, Instalação de Microsoft Office 365.
+# v0.0.2 2023-12-06 às 20h55, Marcos Aurélio:
+#   - Foi informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -21,6 +23,7 @@ if (Test-Path $directory) {
     Write-Host "Microsoft Office is installed!"
 } else {
     Write-Host "Microsoft Office is not installed! Starting installation process."
+    Write-Host "File size: 7.11 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/OfficeSoftware/Microsoft_Office_365.exe"

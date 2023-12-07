@@ -10,6 +10,8 @@
 # Histórico:
 # v0.0.1 2023-11-29 às 15h53, Marcos Aurélio:
 #   - Versão inicial, Instalação de Microsoft Office 2016 a 2019.
+# v0.0.2 2023-12-06 às 20h54, Marcos Aurélio:
+#   - Foi informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -21,6 +23,7 @@ if (Test-Path $directory) {
     Write-Host "Microsoft Office is installed!"
 } else {
     Write-Host "Microsoft Office is not installed! Starting installation process."
+    Write-Host "File size: 9.79 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/OfficeSoftware/Microsoft_Office_2016-2019.exe"

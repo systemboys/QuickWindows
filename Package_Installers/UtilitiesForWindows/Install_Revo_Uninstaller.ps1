@@ -10,6 +10,8 @@
 # Histórico:
 # v0.0.1 2023-11-29 às 16h30, Marcos Aurélio:
 #   - Versão inicial, Instalação de Revo Uninstaller.
+# v0.0.2 2023-12-06 às 20h57, Marcos Aurélio:
+#   - Foi informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -21,6 +23,7 @@ if (Test-Path $directory) {
     Write-Host "Revo Uninstaller is installed!"
 } else {
     Write-Host "Revo Uninstaller is not installed! Starting installation process."
+    Write-Host "File size: 6.65 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Revo_Unistaller_Setup.exe"

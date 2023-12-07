@@ -11,6 +11,8 @@
 #   - Versão inicial, opção para instalar o Microsoft Edge.
 # v0.0.2 2023-11-12 às 11h00, Marcos Aurélio:
 #   - Correção, foi reescrito o script para baixar e executar o instalador do Microsoft Edge.
+# v0.0.3 2023-12-06 às 20h49, Marcos Aurélio:
+#   - Foi informado o tamanho do executável.
 #
 # Licença: GPL.
 
@@ -22,6 +24,7 @@ if (Test-Path $directory) {
     Write-Host "Microsoft Edge is installed!"
 } else {
     Write-Host "Microsoft Edge is not installed! Starting installation process."
+    Write-Host "File size: 1.52 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/MicrosoftEdgeSetup.exe"

@@ -507,6 +507,7 @@ if (Test-Path $directory) {
     Write-Host "YourPackage is installed!"
 } else {
     Write-Host "YourPackage is not installed! Starting installation process."
+    Write-Host "File size: 9.9 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://download.anydesk.com/YourPackage.exe"
