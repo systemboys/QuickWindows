@@ -13,6 +13,8 @@
 :: Histórico:
 :: v0.0.1 2023-11-29 às 10h50, Marcos Aurélio:
 ::   - Versão inicial, Instalação de WinToHDD.
+:: v0.0.1 2023-12-06 às 21h32, Marcos Aurélio:
+::   - Opção para instalar o 'Hasleo WinToHDD Free'.
 ::
 :: Licença: GPL.
 
@@ -35,6 +37,7 @@ echo QuickWindows / Utilitários para Windows / Ferramentas de restauração do 
 :: Opções do Menu
 set "menu_Session_6_8[0]=Voltar..."
 set "menu_Session_6_8[1]=WinToHDD"
+set "menu_Session_6_8[2]=Hasleo WinToHDD Free"
 
 set "default=0"
 
@@ -53,6 +56,16 @@ if %ERRORLEVEL% equ 1 (
     echo Você selecionou a Opção para instalar o WinToHDD.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_WinToHDD.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_8
+)
+
+:: Hasleo WinToHDD Free
+if %ERRORLEVEL% equ 1 (
+    cls
+    echo Você selecionou a Opção para instalar o Hasleo WinToHDD Free.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Hasleo_WinToHDD_Free.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_8
 )

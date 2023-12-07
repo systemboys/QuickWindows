@@ -102,6 +102,8 @@
 ::   - Removidas as linhas das URL de onde ficam os arquivos no GitHub, não são necessárias.
 :: v0.4.2 2023-12-06 às 20h43, Marcos Aurélio:
 ::   - Foi informado o tamanho dos executáveis em seus arquivos PS1.
+:: v0.4.3 2023-12-06 às 21h32, Marcos Aurélio:
+::   - Opção para instalar o 'Hasleo WinToHDD Free' na sessão 'Utilitários para Windows'.
 ::
 :: Licença: GPL.
 
