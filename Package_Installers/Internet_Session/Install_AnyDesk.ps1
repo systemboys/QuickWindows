@@ -16,7 +16,7 @@
 #   - Correção na linha de comando que apaga o arquivo de instalação
 #     do AnyDesk baixado.
 # v0.0.3 2023-12-06 às 20h43, Marcos Aurélio:
-#   - Foi informado o tamanho do executável e atualizada a URL.
+#   - Foi informado o tamanho do executável, atualizada a URL e colocada uma condição que executa o AnyDesk caso esteja instalado.
 #
 # Licença: GPL.
 
