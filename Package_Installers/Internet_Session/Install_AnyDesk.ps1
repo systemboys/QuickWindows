@@ -43,6 +43,9 @@ if (Test-Path $directory) {
         # Executa o AnyDesk
         Start-Process -FilePath "C:\Program Files (x86)\AnyDesk\AnyDesk.exe"
     }
+    else {
+        exit
+    }
     # ---------------------------------------------
 } else {
     Write-Host "AnyDesk is not installed! Starting installation process."
