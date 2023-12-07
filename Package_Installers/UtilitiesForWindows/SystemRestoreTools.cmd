@@ -61,7 +61,7 @@ if %ERRORLEVEL% equ 1 (
 )
 
 :: Hasleo WinToHDD Free
-if %ERRORLEVEL% equ 1 (
+if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para instalar o Hasleo WinToHDD Free.
 
