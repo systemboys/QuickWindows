@@ -32,7 +32,8 @@ if (Test-Path $directory) {
     # Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
     # -------------------
     # Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
-    start-process -PassThru  -wait powershell {Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath}
+    # start-process -PassThru  -wait powershell {Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath}
+    WebClient.Downloadfile($downloadUrl, $downloadPath)
     # -------------------
     
     # Instala o Skype
