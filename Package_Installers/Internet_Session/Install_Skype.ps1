@@ -29,7 +29,10 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\Skype-setup.exe"
     
     # Faz o download do Skype
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    # Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    # -------------------
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
+    # -------------------
     
     # Instala o Skype
     Start-Process -FilePath "$downloadPath" -Wait
