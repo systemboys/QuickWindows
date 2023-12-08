@@ -29,12 +29,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\Skype-setup.exe"
     
     # Faz o download do Skype
-    # Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
-    # -------------------
-    # Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
-    # start-process -PassThru  -wait powershell {Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath}
-    WebClient.Downloadfile($downloadUrl, $downloadPath)
-    # -------------------
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o Skype
     Start-Process -FilePath "$downloadPath" -Wait
