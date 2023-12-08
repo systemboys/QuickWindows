@@ -20,32 +20,23 @@ $directory = "$programFiles\Microsoft\Skype for Desktop"
 
 if (Test-Path $directory) {
     Write-Host "Skype is installed!"
-} else {
-    Write-Host "Skype is not installed! Starting installation process."
-    Write-Host "File size: 84.7 MB"
+    } else {
+        Write-Host "AnyDesk is not installed! Starting installation process."
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Skype-setup.exe"
-    $downloadPath = "$env:temp\Skype-setup.exe"
-    
-    # Faz o download do Skype
-    # Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
-    # --------------------------------------
-    $webClient = New-Object System.Net.WebClient
-    $webClient.DownloadProgressChanged += {
-        Write-Progress -Activity "Downloading Skype" -Status "$($_.ProgressPercentage)% Complete:" -PercentComplete $_.ProgressPercentage
-    }
-    $webClient.DownloadFileAsync($downloadUrl, $downloadPath)
-    while ($webClient.IsBusy) {
-        Start-Sleep -Milliseconds 100
-    }
-    # --------------------------------------
-    
-    # Instala o Skype
+    $downloadUrl = "https://download.anydesk.com/AnyDesk.exe"
+    $downloadPath = "$env:temp\AnyDesk.exe"
+
+    # Faz o download do AnyDesk
+    $ProgressPreference = 'Continue'
+    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+
+    # Instala o AnyDesk
     Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
 
     # Apagar o arquivo
     Remove-Item -Path $downloadPath -Force
+
 }
 
 Write-Host "Press any key to continue..."
