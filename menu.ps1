@@ -15,6 +15,8 @@
 #   - Opção para instalar o "AnyDesk" quando o usuário chamar o menu interativo com a ferramenta IRM.
 # v0.0.4 2023-12-07 às 00h24, Marcos Aurélio:
 #   - Se o AnyDesk tiver instalado, o script pergunta se quer executá-lo e, reabertura do Windows PowerShell após instalação do Git.
+# v0.0.5 2023-12-08 às 17h27, Marcos Aurélio:
+#   - Alteração que faz com que o script não precise mais clonar novamente o "QuickWindows" caso já esteja instalado do diretório Temp.
 #
 # Licença: GPL.
 
@@ -74,7 +76,7 @@ if (Test-Path $directory) {
     }
 }
 
-# Verifica se o pacote está instalado
+# Verifica se o Git está instalado
 Write-Host "Checking if Git exists on Windows..."
 if (!(Get-Command git -ErrorAction SilentlyContinue)) {
     # Definição do arquivo
@@ -85,17 +87,17 @@ if (!(Get-Command git -ErrorAction SilentlyContinue)) {
     Write-Host "$fileName does not exist on Windows! Downloading the installer..."
     Write-Host "File size: 58.4 MB"
 
-    # Baixa o instalador do pacote
+    # Baixa o instalador do Git
     Invoke-WebRequest -Uri $fileUrl -OutFile "$env:TEMP\$outputFileName"
 
     Write-Host "Running the $fileName installer..."
 
-    # Instala o pacote
+    # Instala o Git
     Start-Process -FilePath "$env:TEMP\$outputFileName" -Wait
 
     Write-Host "Deleting the $fileName installer..."
 
-    # Remove o instalador do pacote
+    # Remove o instalador do Git
     Remove-Item "$env:TEMP\$outputFileName"
 
     # Fechar a janela do Windows PowerShell
@@ -107,26 +109,21 @@ if (!(Get-Command git -ErrorAction SilentlyContinue)) {
     exit
 }
 
-# Check if the directory exists
-Write-Host "Check if QuickWindows exists, if so, delete it to clone it again..."
+# Verifique se o QuickWindows existe
 $programFiles = $env:TEMP
-$directory = "$programFiles\QuickWindows"
+$filePath = "$programFiles\QuickWindows\QuickWindows.cmd"
 
-# Verifica se o diretório existe antes de excluí-lo
-if (Test-Path $directory) {
-    Write-Host "The directory $directory exists."
-    Remove-Item -Path $directory -Recurse -Force
+if (Test-Path $filePath) {
+    Write-Host "Iniciando o QuickWindows..."
+    cd $env:TEMP\QuickWindows\
 } else {
-    Write-Host "The directory $directory does not exist."
+    Write-Host "Clonando o QuickWindows..."
+    # Clonar e executar Windows PowerShell novamente com o comando
+    cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\
 }
+# Fim da verificação
 
-# Clonando o QuickWindows do repositório GitHub
-Write-Host "Clonando o QuickWindows..."
-# cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\ ; .\QuickWindows.cmd 0
-
-# Clonar e executar Windows PowerShell novamente com o comando
-cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\
 # Inicia o PowerShell em modo Administrador com o comando desejado
-Start-Process -FilePath "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Verb runAs -ArgumentList "-Command", "& {$env:TEMP\QuickWindows\QuickWindows.cmd}"
-exit ; exit
+Start-Process -FilePath "powershell.exe" -Verb runAs -ArgumentList "-Command", "& {$env:TEMP\QuickWindows\QuickWindows.cmd 0}"
+exit
 
