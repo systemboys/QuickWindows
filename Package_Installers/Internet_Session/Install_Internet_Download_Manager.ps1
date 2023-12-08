@@ -30,7 +30,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\Internet_Download_Manager.exe"
     
     # Faz o download do Internet Download Manager
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o Internet Download Manager
     Start-Process -FilePath "$downloadPath" -Wait

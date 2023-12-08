@@ -30,7 +30,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\Microsoft_Office_365.exe"
     
     # Faz o download do Microsoft Office
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o Microsoft Office
     Start-Process -FilePath "$downloadPath" -Wait

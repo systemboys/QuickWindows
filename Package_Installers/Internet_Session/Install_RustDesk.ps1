@@ -32,7 +32,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\RustDesk_Setup.exe"
     
     # Faz o download do RustDesk
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o RustDesk
     Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait

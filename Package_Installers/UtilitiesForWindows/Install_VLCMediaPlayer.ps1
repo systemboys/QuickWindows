@@ -30,7 +30,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\VLCMediaPlayer.exe"
     
     # Faz o download do VLCMediaPlayer
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o VLCMediaPlayer
     Start-Process -FilePath "$downloadPath" -Wait

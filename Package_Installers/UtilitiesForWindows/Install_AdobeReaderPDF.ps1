@@ -41,7 +41,7 @@ if (Test-Path $directory) {
     }
     
     # Faz o download do Adobe Reader
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o Adobe Reader
     Start-Process -FilePath "$downloadPath" -Wait

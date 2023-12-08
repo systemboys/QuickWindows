@@ -30,7 +30,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\OperaSetup.exe"
     
     # Faz o download do Opera
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o Opera
     Start-Process -FilePath "$downloadPath" -Wait

@@ -30,7 +30,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\Revo_Uninstaller_Setup.exe"
     
     # Faz o download do Revo Uninstaller
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o Revo Uninstaller
     Start-Process -FilePath "$downloadPath" -Wait

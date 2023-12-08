@@ -30,7 +30,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\WinToHDD.exe"
     
     # Faz o download do WinToHDD
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o WinToHDD
     Start-Process -FilePath "$downloadPath" -Wait

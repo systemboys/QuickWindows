@@ -18,7 +18,7 @@ if ($installed -eq $null) {
     $temporaryDirectory = $env:TEMP
     $url = "https://dl.google.com/earth/client/advanced/current/GoogleEarthProWin.exe"
     $output = "$temporaryDirectory\GoogleEarthProWin.exe"
-    Invoke-WebRequest -Uri $url -OutFile $output
+    Start-BitsTransfer -Source $url -Destination $output
     Start-Process -FilePath $output -ArgumentList "/S /v/qn"
     Remove-Item $output
 } else {

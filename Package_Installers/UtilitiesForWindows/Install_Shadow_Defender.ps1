@@ -30,7 +30,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\Shadow_Defender.exe"
     
     # Faz o download do Shadow_Defender
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o Shadow_Defender
     Start-Process -FilePath "$downloadPath" -Wait

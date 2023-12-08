@@ -30,7 +30,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\WinRAR.exe"
     
     # Faz o download do WinRAR
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o WinRAR
     Start-Process -FilePath "$downloadPath" -Wait

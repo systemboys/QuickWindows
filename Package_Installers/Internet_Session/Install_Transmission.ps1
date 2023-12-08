@@ -30,7 +30,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\transmission-downloads.msi"
     
     # Faz o download do Transmission
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o Transmission
     Start-Process -FilePath "$downloadPath" -Wait

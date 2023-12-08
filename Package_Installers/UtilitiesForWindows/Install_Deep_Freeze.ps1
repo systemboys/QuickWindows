@@ -27,7 +27,7 @@ $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Uti
 $downloadPath = "$env:temp\Deep_Freeze.exe"
 
 # Faz o download do Deep_Freeze
-Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 
 # Instala o Deep_Freeze
 Start-Process -FilePath "$downloadPath" -Wait

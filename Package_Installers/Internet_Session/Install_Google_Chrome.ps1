@@ -29,7 +29,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\ChromeSetup.exe"
     
     # Faz o download do Google Chrome
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o Google Chrome
     Start-Process -FilePath "$downloadPath" -Wait

@@ -29,7 +29,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\Firefox-Installer.exe"
     
     # Faz o download do Mozilla Firefox
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o Mozilla Firefox
     Start-Process -FilePath "$downloadPath" -Wait

@@ -31,7 +31,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\MicrosoftEdgeSetup.exe"
 
     # Faz o download do Microsoft Edge
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 
     # Instala o Microsoft Edge
     Start-Process -FilePath "$downloadPath" -Wait

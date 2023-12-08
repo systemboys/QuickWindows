@@ -66,7 +66,7 @@ if (Test-Path $directory) {
         $downloadPath = "$env:temp\AnyDesk.exe"
     
         # Faz o download do AnyDesk
-        Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+        Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
         # Instala o AnyDesk
         Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait

@@ -29,7 +29,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\VNC-Viewer-Windows.exe"
     
     # Faz o download do Real VNC Viewer
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o Real VNC Viewer
     Start-Process -FilePath "$downloadPath" -Wait
