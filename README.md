@@ -515,7 +515,7 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\YourPackage.exe"
     
     # Faz o download do YourPackage
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
     
     # Instala o YourPackage
     Start-Process -FilePath "$downloadPath" -Wait
