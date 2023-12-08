@@ -104,6 +104,11 @@
 ::   - Foi informado o tamanho dos executáveis em seus arquivos PS1.
 :: v0.4.3 2023-12-06 às 21h32, Marcos Aurélio:
 ::   - Opção para instalar o 'Hasleo WinToHDD Free' na sessão 'Utilitários para Windows'.
+:: v0.4.4 2023-12-08 às 20h11, Marcos Aurélio:
+::   - Todos os downloads agora exibem uma barra de progresso. Foi modificado as seguintes linhas:
+::     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+::     para
+::     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 ::
 :: Licença: GPL.
 
