@@ -20,23 +20,35 @@ $directory = "$programFiles\Microsoft\Skype for Desktop"
 
 if (Test-Path $directory) {
     Write-Host "Skype is installed!"
-    } else {
-        Write-Host "AnyDesk is not installed! Starting installation process."
-
+} else {
+    Write-Host "Skype is not installed! Starting installation process."
+    Write-Host "File size: 84.7 MB"
+    
+    # Definindo o tamanho do arquivo para acompanhar o progresso
+    $fileSizeInBytes = 84.7 * 1MB  # 84.7 MB em bytes
+    
     # Link do download e o diretório Temp
-    $downloadUrl = "https://download.anydesk.com/AnyDesk.exe"
-    $downloadPath = "$env:temp\AnyDesk.exe"
-
-    # Faz o download do AnyDesk
-    $ProgressPreference = 'Continue'
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
-
-    # Instala o AnyDesk
-    Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
-
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Skype-setup.exe"
+    $downloadPath = "$env:temp\Skype-setup.exe"
+    
+    # Função para atualizar a barra de progresso
+    function Update-DownloadProgress {
+        param(
+            [int]$BytesDownloaded,
+            [int]$TotalBytes
+        )
+        $progress = $BytesDownloaded / $TotalBytes * 100
+        Write-Progress -Activity "Downloading Skype" -Status "Downloading..." -PercentComplete $progress
+    }
+    
+    # Faz o download do Skype
+    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath -PassThru -UseBasicParsing -TimeoutSec 300 -Progress ({ Update-DownloadProgress $_.BytesDownloaded $fileSizeInBytes })
+    
+    # Instala o Skype
+    Start-Process -FilePath "$downloadPath" -Wait
+    
     # Apagar o arquivo
     Remove-Item -Path $downloadPath -Force
-
 }
 
 Write-Host "Press any key to continue..."
