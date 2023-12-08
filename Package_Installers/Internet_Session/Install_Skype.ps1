@@ -42,7 +42,7 @@ if (Test-Path $directory) {
     # --------------------------------------
     
     # Instala o Skype
-    Start-Process -FilePath "$downloadPath" -Wait
+    Start-Process -FilePath $downloadPath -ArgumentList "/S" -Wait
 
     # Apagar o arquivo
     Remove-Item -Path $downloadPath -Force
