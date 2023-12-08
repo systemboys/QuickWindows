@@ -13,6 +13,8 @@
 #   - Correção feita na verificação onde fecha a janela do Windows PowerShell.
 # v0.0.3 2023-12-04 às 15h06, Marcos Aurélio:
 #   - Opção para instalar o "AnyDesk" quando o usuário chamar o menu interativo com a ferramenta IRM.
+# v0.0.4 2023-12-07 às 00h24, Marcos Aurélio:
+#   - Se o AnyDesk tiver instalado, o script pergunta se quer executá-lo e, reabertura do Windows PowerShell após instalação do Git.
 #
 # Licença: GPL.
 
@@ -77,10 +79,11 @@ Write-Host "Checking if Git exists on Windows..."
 if (!(Get-Command git -ErrorAction SilentlyContinue)) {
     # Definição do arquivo
     $fileName="Git"
-    $fileUrl="https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.2/Git-2.42.0.2-64-bit.exe"
+    $fileUrl="https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
     $outputFileName="Git_Setup.exe"
 
     Write-Host "$fileName does not exist on Windows! Downloading the installer..."
+    Write-Host "File size: 58.4 MB"
 
     # Baixa o instalador do pacote
     Invoke-WebRequest -Uri $fileUrl -OutFile "$env:TEMP\$outputFileName"
@@ -119,5 +122,11 @@ if (Test-Path $directory) {
 
 # Clonando o QuickWindows do repositório GitHub
 Write-Host "Clonando o QuickWindows..."
-cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\ ; .\QuickWindows.cmd 0
+# cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\ ; .\QuickWindows.cmd 0
+
+# Clonar e executar Windows PowerShell novamente com o comando
+cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\
+# Inicia o PowerShell em modo Administrador com o comando desejado
+Start-Process -FilePath "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Verb runAs -ArgumentList "-Command", "& {$env:TEMP\QuickWindows\QuickWindows.cmd}"
+exit ; exit
 
