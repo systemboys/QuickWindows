@@ -21,58 +21,21 @@ $directory = "$programFiles\Microsoft\Skype for Desktop"
 if (Test-Path $directory) {
     Write-Host "Skype is installed!"
 } else {
-    # Write-Host "Skype is not installed! Starting installation process."
-    # Write-Host "File size: 84.7 MB"
-
-    # # Link do download e o diretório Temp
-    # $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Skype-setup.exe"
-    # $downloadPath = "$env:temp\Skype-setup.exe"
-    
-    # # Faz o download do Skype
-    # Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
-    
-    # # Instala o Skype
-    # Start-Process -FilePath "$downloadPath" -Wait
-
-    # # Apagar o arquivo
-    # Remove-Item -Path $downloadPath -Force
-    # -------------------------------------------
     Write-Host "Skype is not installed! Starting installation process."
     Write-Host "File size: 84.7 MB"
-    
-    # Definindo o tamanho do arquivo para acompanhar o progresso
-    $fileSizeInBytes = 84.7 * 1MB  # 84.7 MB em bytes
-    
+
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Skype-setup.exe"
     $downloadPath = "$env:temp\Skype-setup.exe"
     
     # Faz o download do Skype
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath -UseBasicParsing -TimeoutSec 300
-    
-    # Obtém o tamanho do arquivo baixado
-    $fileDownloaded = Get-Item $downloadPath
-    $bytesDownloaded = $fileDownloaded.Length
-    
-    # Exibe o contador de progresso
-    Write-Host "Downloading..."
-    while ($bytesDownloaded -lt $fileSizeInBytes) {
-        $percentComplete = $bytesDownloaded / $fileSizeInBytes * 100
-        Write-Host "Progress: $($percentComplete.ToString('N2'))%"
-        
-        # Atualiza o tamanho do arquivo baixado
-        $fileDownloaded = Get-Item $downloadPath
-        $bytesDownloaded = $fileDownloaded.Length
-        
-        Start-Sleep -Seconds 1
-    }
+    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
     
     # Instala o Skype
     Start-Process -FilePath "$downloadPath" -Wait
-    
-    # Apaga o arquivo
-    Remove-Item -Path $downloadPath -Force    
-    # -------------------------------------------
+
+    # Apagar o arquivo
+    Remove-Item -Path $downloadPath -Force
 }
 
 Write-Host "Press any key to continue..."
