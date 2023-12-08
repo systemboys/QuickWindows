@@ -29,7 +29,17 @@ if (Test-Path $directory) {
     $downloadPath = "$env:temp\Skype-setup.exe"
     
     # Faz o download do Skype
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    # Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+    # --------------------------------------
+    $webClient = New-Object System.Net.WebClient
+    $webClient.DownloadProgressChanged += {
+        Write-Progress -Activity "Downloading Skype" -Status "$($_.ProgressPercentage)% Complete:" -PercentComplete $_.ProgressPercentage
+    }
+    $webClient.DownloadFileAsync($downloadUrl, $downloadPath)
+    while ($webClient.IsBusy) {
+        Start-Sleep -Milliseconds 100
+    }
+    # --------------------------------------
     
     # Instala o Skype
     Start-Process -FilePath "$downloadPath" -Wait
