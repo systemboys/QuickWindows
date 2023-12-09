@@ -88,7 +88,7 @@ if (!(Get-Command git -ErrorAction SilentlyContinue)) {
     Write-Host "File size: 58.4 MB"
 
     # Baixa o instalador do Git
-    Invoke-WebRequest -Uri $fileUrl -OutFile "$env:TEMP\$outputFileName"
+    Start-BitsTransfer -Source $fileUrl -Destination "$env:TEMP\$outputFileName"
 
     Write-Host "Running the $fileName installer..."
 

@@ -39,7 +39,7 @@ set "menu_Session_6_8[0]=Voltar..."
 set "menu_Session_6_8[1]=WinToHDD"
 set "menu_Session_6_8[2]=Hasleo WinToHDD Free"
 
-set "default=0"
+set "default=%1%"
 
 :menu_Session_6_8
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
@@ -47,7 +47,7 @@ powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 :: Voltar...
 if %ERRORLEVEL% equ 0 (
     cls
-    call UtilitiesForWindows.cmd
+    call UtilitiesForWindows.cmd 8
 )
 
 :: WinToHDD
