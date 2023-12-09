@@ -13,8 +13,10 @@
 :: Histórico:
 :: v0.0.1 2023-11-29 às 10h50, Marcos Aurélio:
 ::   - Versão inicial, Instalação de WinToHDD.
-:: v0.0.1 2023-12-06 às 21h32, Marcos Aurélio:
+:: v0.0.2 2023-12-06 às 21h32, Marcos Aurélio:
 ::   - Opção para instalar o 'Hasleo WinToHDD Free'.
+:: v0.0.3 2023-12-09 às 20h40, Marcos Aurélio:
+::   - Correção de retorno de menu, no arquivo 'SystemRestoreTools.cmd'.
 ::
 :: Licença: GPL.
 
