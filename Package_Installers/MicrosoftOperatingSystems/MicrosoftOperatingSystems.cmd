@@ -130,7 +130,7 @@ if %ERRORLEVEL% equ 7 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_8title = "=== .. / Sistemas Operacionais Microsoft ==="
+$menu_Session_8title = "=== … / Sistemas Operacionais Microsoft ==="
 $menu_Session_8prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_8prompt.length + 6

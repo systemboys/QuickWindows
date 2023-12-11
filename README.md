@@ -226,6 +226,14 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Microsoft Office 2016 a 2019
     - [x] Microsoft Office 2019 a 2021
     - [x] Microsoft Office 365
+  - [x] **Sistemas Operacionais Microsoft**
+    - [ ] Windows 7, todas as versões
+    - [ ] Windows 7 Lite
+    - [ ] Windows 10 Pro 32bits
+    - [ ] Windows 10 Pro 64bits
+    - [ ] Windows 10 1909 PRO MSDN LITE Build
+    - [ ] Windows 11 Pro
+    - [ ] Windows Server 2022
 
 > ***( ! ) Atenção!*** Esses recursos que estão marcos **[x]** estão concluídos, apenas os desmarcados **[_]** ainda serão incluídos!
 >
