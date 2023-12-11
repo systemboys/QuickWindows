@@ -9,8 +9,20 @@ $okButton = New-Object System.Windows.Forms.Button
 $okButton.Location = New-Object System.Drawing.Point(75,120)
 $okButton.Size = New-Object System.Drawing.Size(75,23)
 $okButton.Text = 'Iniciar download'
-$okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
-$form.AcceptButton = $okButton
+$okButton.Add_Click({
+    $url = $urlBox.Text
+    $dest = $destBox.Text
+
+    if (![string]::IsNullOrWhiteSpace($url) -and ![string]::IsNullOrWhiteSpace($dest))
+    {
+        $form.DialogResult = [System.Windows.Forms.DialogResult]::OK
+        $form.Close()
+    }
+    else
+    {
+        [System.Windows.Forms.MessageBox]::Show("URL e destino são obrigatórios.", "Erro", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+    }
+})
 $form.Controls.Add($okButton)
 
 $cancelButton = New-Object System.Windows.Forms.Button
@@ -50,15 +62,5 @@ $result = $form.ShowDialog()
 
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $url = $urlBox.Text
-    $dest = $destBox.Text
-
-    if (![string]::IsNullOrWhiteSpace($url) -and ![string]::IsNullOrWhiteSpace($dest))
-    {
-        Invoke-WebRequest -Uri $url -OutFile $dest
-    }
-    else
-    {
-        [System.Windows.Forms.MessageBox]::Show("URL e destino são obrigatórios.", "Erro", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
-    }
+    Invoke-WebRequest -Uri $url -OutFile $dest
 }
