@@ -44,20 +44,20 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Sessão Windows
 
 :: Opções do Menu
-set "menu_Session_2[0]=Voltar..."
+set "menu_Session_2[0]=Voltar…"
 set "menu_Session_2[1]=Desligar o Windows"
 set "menu_Session_2[2]=Reiniciar o Windows"
 set "menu_Session_2[3]=Agendar desligamento do Windows"
 set "menu_Session_2[4]=Atualizar Windows e Softwares"
 set "menu_Session_2[5]=Atualizar o PowerShell"
-set "menu_Session_2[6]=Acesso rápido à Configurações..."
+set "menu_Session_2[6]=Acesso rápido à Configurações…"
 
 set "default=%1"
 
 :menu_Session_2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -109,7 +109,7 @@ if %ERRORLEVEL% equ 5 (
     goto menu_Session_2
 )
 
-:: Acesso rápido à Configurações...
+:: Acesso rápido à Configurações…
 if %ERRORLEVEL% equ 6 (
     cd Package_Installers\Windows_Session
     call QuickAccessToSettings.cmd 0

@@ -33,7 +33,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Internet / Softwares de Acesso Remoto
 
 :: Opções do Menu
-set "menu_Session_3_1[0]=Voltar..."
+set "menu_Session_3_1[0]=Voltar…"
 set "menu_Session_3_1[1]=AnyDesk"
 set "menu_Session_3_1[2]=RustDesk"
 
@@ -42,7 +42,7 @@ set "default=%1"
 :menu_Session_3_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     call Internet_Session.cmd 1

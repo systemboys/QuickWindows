@@ -143,12 +143,12 @@ Aqui estão todas as opções em desenvolvimento.
 - [x] **Menu QuickWindows**
   - [x] Sair
   - [x] **Menu QuickWindows**
-    - [x] Voltar...
+    - [x] Voltar…
     - [x] Atualizar QuickWindows
     - [x] Deletar QuickWindows
     - [x] Recarregar QuickLinux
   - [x] **Windows**
-    - [x] Voltar...
+    - [x] Voltar…
     - [x] Desligar o Windows
     - [x] Reiniciar o Windows
     - [x] Agendar desligamento do Windows
@@ -170,14 +170,14 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Configurações do Windows
       - [x] Gerenciador de Tarefas do Windows
   - [x] **Internet**
-    - [x] Voltar...
-    - [x] Acesso Remoto...
+    - [x] Voltar…
+    - [x] Acesso Remoto…
       - [x] AnyDesk
       - [x] RustDesk
     - [x] Instalar Microsoft Edge
     - [x] Instalar Google Chrome
     - [x] Instalar Google Earth Pro
-      ( ! ) Fase de teste...
+      ( ! ) Fase de teste…
     - [x] Instalar Skype
       > ( ! ) O tamanho do instalador do "Skype-setupe.exe" é 84.74 MB, está hospedado no GitHub e não é recomendado! Procurar um hospedeiro em breve.
     - [x] Instalar Opera
@@ -191,13 +191,13 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] IDM - Internet Download Manager
       - [x] Baixar URL
   - [x] **Redes**
-    - [x] Voltar...
+    - [x] Voltar…
     - [x] Obter IP público
     - [x] Obter IP local
     - [x] Obter IP's de uma determinada rota
   - [x] Execução de Comandos no PowerShell
   - [x] **Utilitários para Windows**
-    - [x] Voltar...
+    - [x] Voltar…
     - [x] Instalar Revo Unistaller
       > ( ! ) Apresentou problemas chegando a não baixar o arquivo!
     - [x] **Compactadores**
@@ -229,7 +229,7 @@ Aqui estão todas as opções em desenvolvimento.
 
 > ***( ! ) Atenção!*** Esses recursos que estão marcos **[x]** estão concluídos, apenas os desmarcados **[_]** ainda serão incluídos!
 >
-> Alguns que tiveram mal funcionamento foram comentados com ( ! ) e, outros com informações ( i )...
+> Alguns que tiveram mal funcionamento foram comentados com ( ! ) e, outros com informações ( i )…
 
 ---
 
@@ -277,7 +277,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Sessão
 
 :: Opções do Menu
-set "menu_Session_1[0]=Voltar..."
+set "menu_Session_1[0]=Voltar…"
 set "menu_Session_1[1]=Opção 1"
 set "menu_Session_1[2]=Opção 2"
 set "menu_Session_1[3]=Opção 3"
@@ -287,7 +287,7 @@ set "default=%1"
 :menu_Session_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -300,7 +300,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção 1.
 
-    @REM  Your commands here...
+    @REM  Your commands here…
 
     goto menu_Session_1
 )
@@ -310,7 +310,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção 2.
 
-    @REM  Your commands here...
+    @REM  Your commands here…
 
     goto menu_Session_1
 )
@@ -320,7 +320,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção 3.
 
-    @REM  Your commands here...
+    @REM  Your commands here…
 
     goto menu_Session_1
 )
@@ -420,12 +420,12 @@ while (menu_Session_1) {
 }
 ```
 
-> ***( i )*** Nas opções, de forma que fique bem organizadas, quando for uma opção para acessar uma sessão, após o nome, adicione três pontos (Opção 1...), para indicar que é uma sessão.
+> ***( i )*** Nas opções, de forma que fique bem organizadas, quando for uma opção para acessar uma sessão, após o nome, adicione três pontos (Opção 1…), para indicar que é uma sessão.
 
 Para chamar sua nova sessão a partir do menu inicial, adicione a função que executa a mesma:
 
 ```batch
-:: ... (outras funções)
+:: … (outras funções)
 
 :: Opção 1
 if %ERRORLEVEL% equ 1 (
@@ -434,33 +434,33 @@ if %ERRORLEVEL% equ 1 (
     cd ..
 )
 
-:: ... (restante do código)
+:: … (restante do código)
 ```
 
 **_( i )_** Se por a caso desejar colocar apenas um comando sem sessão, altere o trecho:
 
 ```batch
-:: ... (restante do código)
+:: … (restante do código)
 
 :: Opção 2
 if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção 2.
 
-    @REM  Your commands here...
+    @REM  Your commands here…
 
     pause
     goto menu
 )
 
-:: ... (restante do código)
+:: … (restante do código)
 ```
 
 Dê a opção no menu:
 
 ```batch
-:: ... (outras opções)
+:: … (outras opções)
 set "menu[5]=Redes"
-:: ... (restante do código)
+:: … (restante do código)
 ```
 
 > **_( i )_** A partir daqui, os comandos devem ser colocados nas condições da nova sessão, se quiser separar os arquivos (.cmd) para escrever os comandos para instalação de pacotes, crie arquivos e nomei como `Install_Mozilla_Firefox.cmd` dentro do mesmo diretório da nova sessão, na condição da nova sessão, mande executar o arquivo e, após a execução dos comandos no arquivo (.cmd) de instalação do pacote, coloque o comando para voltar ao menu anterior.
@@ -468,7 +468,7 @@ set "menu[5]=Redes"
 Pode executar um `arquivo.ps1` para scripts de instalação via PowerShell:
 
 ```batch
-:: ... (restante do código)
+:: … (restante do código)
 
 if %ERRORLEVEL% equ 1 (
     cls
@@ -479,7 +479,7 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_3
 )
 
-:: ... (restante do código)
+:: … (restante do código)
 ```
 
 > **_( ! )_** Cuidado com a linha `goto menu_Session_3`, confira nas `:: Opções do Menu`!
@@ -526,7 +526,7 @@ if (Test-Path $directory) {
     Remove-Item -Path $downloadPath -Force
 }
 
-Write-Host "Press any key to continue..."
+Write-Host "Press any key to continue…"
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
 ```

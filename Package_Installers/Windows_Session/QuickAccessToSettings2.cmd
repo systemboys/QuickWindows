@@ -38,7 +38,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Access Settings [Page 2]
 
 :: Opções do Menu
-set "menu_Session_2_1_p2[0]=Voltar..."
+set "menu_Session_2_1_p2[0]=Voltar…"
 set "menu_Session_2_1_p2[1]=Configurações avançadas do sistema (Propriedades do Sistema)"
 set "menu_Session_2_1_p2[2]=Editar Configurações do Plano"
 set "menu_Session_2_1_p2[3]=Sobre o Windows (WinVer)"
@@ -51,7 +51,7 @@ set "default=%1%"
 :menu_Session_2_1_p2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     call QuickAccessToSettings.cmd 9

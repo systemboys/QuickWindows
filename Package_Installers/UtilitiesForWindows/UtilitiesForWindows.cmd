@@ -35,22 +35,22 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Utilitários para Windows
 
 :: Opções do Menu
-set "menu_Session_6[0]=Voltar..."
+set "menu_Session_6[0]=Voltar…"
 set "menu_Session_6[1]=Instalar Revo Uninstaller"
-set "menu_Session_6[2]=Compactadores..."
-set "menu_Session_6[3]=Leitores de PDF..."
-set "menu_Session_6[4]=Players Multimídia..."
-set "menu_Session_6[5]=Software de congelamento do sistema..."
+set "menu_Session_6[2]=Compactadores…"
+set "menu_Session_6[3]=Leitores de PDF…"
+set "menu_Session_6[4]=Players Multimídia…"
+set "menu_Session_6[5]=Software de congelamento do sistema…"
 set "menu_Session_6[6]=Backup e Restauração"
 set "menu_Session_6[7]=Software de gerenciamento de partições"
-set "menu_Session_6[8]=Ferramentas de restauração do sistema..."
+set "menu_Session_6[8]=Ferramentas de restauração do sistema…"
 
 set "default=%1%"
 
 :menu_Session_6
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -68,22 +68,22 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_6
 )
 
-:: Compactadores...
+:: Compactadores…
 if %ERRORLEVEL% equ 2 (
     call Compactors.cmd 0
 )
 
-:: Leitores de PDF...
+:: Leitores de PDF…
 if %ERRORLEVEL% equ 3 (
     call PDFReaders.cmd 0
 )
 
-:: Players Multimídia...
+:: Players Multimídia…
 if %ERRORLEVEL% equ 4 (
     call MultimediaPlayers.cmd 0
 )
 
-:: Software de congelamento do sistema...
+:: Software de congelamento do sistema…
 if %ERRORLEVEL% equ 5 (
     call SystemFreezeSoftware.cmd 0
 )
@@ -93,7 +93,7 @@ if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a Opção Backup e Restauração e este recurso ainda não foi desenvolvido.
 
-    @REM  Your commands here...
+    @REM  Your commands here…
 
     goto menu_Session_6
 )
@@ -103,12 +103,12 @@ if %ERRORLEVEL% equ 7 (
     cls
     echo Você selecionou a Opção Software de gerenciamento de partições e este recurso ainda não foi desenvolvido.
 
-    @REM  Your commands here...
+    @REM  Your commands here…
 
     goto menu_Session_6
 )
 
-:: Ferramentas de restauração do sistema...
+:: Ferramentas de restauração do sistema…
 if %ERRORLEVEL% equ 8 (
     call SystemRestoreTools.cmd 0
 )

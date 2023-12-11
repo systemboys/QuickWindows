@@ -33,7 +33,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Menu QuickWindows
 
 :: Opções do Menu
-set "menu_Session_1[0]=Voltar..."
+set "menu_Session_1[0]=Voltar…"
 set "menu_Session_1[1]=Atualizar QuickWindows"
 set "menu_Session_1[2]=Deletar QuickWindows"
 set "menu_Session_1[3]=Recarregar QuickWindows"
@@ -43,7 +43,7 @@ set "default=%1%"
 :menu_Session_1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..

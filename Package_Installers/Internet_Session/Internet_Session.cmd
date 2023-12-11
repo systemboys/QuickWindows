@@ -50,8 +50,8 @@ echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Inform�
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 
 :: Opções do Menu
-set "menu_Session_3[0]=Voltar..."
-set "menu_Session_3[1]=Acesso Remoto..."
+set "menu_Session_3[0]=Voltar…"
+set "menu_Session_3[1]=Acesso Remoto…"
 set "menu_Session_3[2]=Navegador Microsoft Edge"
 set "menu_Session_3[3]=Navegador Google Chrome"
 set "menu_Session_3[4]=Navegador Google Earth Pro"
@@ -59,14 +59,14 @@ set "menu_Session_3[5]=Comunicador Skype"
 set "menu_Session_3[6]=Navegador Opera"
 set "menu_Session_3[7]=Navegador Mozilla Firefox"
 set "menu_Session_3[8]=Visualizador Real VNC Viewer"
-set "menu_Session_3[9]=Downloads..."
+set "menu_Session_3[9]=Downloads…"
 
 set "default=%1"
 
 :menu_Session_3
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -74,7 +74,7 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd 3
 )
 
-:: Acesso Remoto...
+:: Acesso Remoto…
 if %ERRORLEVEL% equ 1 (
     call Session_RemoteAccessSoftware.cmd 0
 )
@@ -149,7 +149,7 @@ if %ERRORLEVEL% equ 8 (
     goto menu_Session_3
 )
 
-:: Downloads...
+:: Downloads…
 if %ERRORLEVEL% equ 9 (
     cls
     call Downloads.cmd 0

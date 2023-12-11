@@ -33,7 +33,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Software de congelamento do sistema
 
 :: Opções do Menu
-set "menu_Session_6_5[0]=Voltar..."
+set "menu_Session_6_5[0]=Voltar…"
 set "menu_Session_6_5[1]=Deep Freeze Standard"
 set "menu_Session_6_5[2]=Shadow Defender"
 
@@ -42,7 +42,7 @@ set "default=%1%"
 :menu_Session_6_5
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     call UtilitiesForWindows.cmd 5

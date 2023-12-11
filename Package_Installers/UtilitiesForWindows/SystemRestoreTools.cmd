@@ -37,7 +37,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Utilitários para Windows / Ferramentas de restauração do sistema
 
 :: Opções do Menu
-set "menu_Session_6_8[0]=Voltar..."
+set "menu_Session_6_8[0]=Voltar…"
 set "menu_Session_6_8[1]=WinToHDD"
 set "menu_Session_6_8[2]=Hasleo WinToHDD Free"
 
@@ -46,7 +46,7 @@ set "default=%1%"
 :menu_Session_6_8
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     call UtilitiesForWindows.cmd 8

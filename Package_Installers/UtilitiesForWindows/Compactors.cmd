@@ -35,7 +35,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Utilitários para Windows / Compactadores
 
 :: Opções do Menu
-set "menu_Session_6_2[0]=Voltar..."
+set "menu_Session_6_2[0]=Voltar…"
 set "menu_Session_6_2[1]=WinRAR"
 set "menu_Session_6_2[2]=WinZip"
 
@@ -44,7 +44,7 @@ set "default=0"
 :menu_Session_6_2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     call UtilitiesForWindows.cmd 2

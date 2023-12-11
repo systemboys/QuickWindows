@@ -39,7 +39,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Redes
 
 :: Opções do Menu
-set "menu_Session_4[0]=Voltar..."
+set "menu_Session_4[0]=Voltar…"
 set "menu_Session_4[1]=Obter IP público"
 set "menu_Session_4[2]=Obter IP local"
 set "menu_Session_4[3]=Obter IP's de uma determinada rota"
@@ -49,7 +49,7 @@ set "default=%1"
 :menu_Session_4
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..

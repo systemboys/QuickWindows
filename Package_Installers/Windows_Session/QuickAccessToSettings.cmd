@@ -34,7 +34,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Access Settings [Page 1]
 
 :: Opções do Menu
-set "menu_Session_2_1_p1[0]=Voltar..."
+set "menu_Session_2_1_p1[0]=Voltar…"
 set "menu_Session_2_1_p1[1]=Painel de Controle (Control)"
 set "menu_Session_2_1_p1[2]=Editor de Registro (RegEdit)"
 set "menu_Session_2_1_p1[3]=Configurações do Sistema (MSConfig)"
@@ -43,14 +43,14 @@ set "menu_Session_2_1_p1[5]=Gerenciador de Dispositivos (DevMgmt.msc)"
 set "menu_Session_2_1_p1[6]=Gerenciamento de Discos (DiskMgmt.msc)"
 set "menu_Session_2_1_p1[7]=Explorador de arquivos do Windows"
 set "menu_Session_2_1_p1[8]=Configurações - Tela (tipo, ajustes de resolução de tela)"
-set "menu_Session_2_1_p1[9]=Mais..."
+set "menu_Session_2_1_p1[9]=Mais…"
 
 set "default=%1%"
 
 :menu_Session_2_1_p1
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     call Windows_Session.cmd 5
@@ -136,7 +136,7 @@ if %ERRORLEVEL% equ 8 (
     goto menu_Session_2_1_p1
 )
 
-:: Mais...
+:: Mais…
 if %ERRORLEVEL% equ 9 (
     cls
     call QuickAccessToSettings2.cmd 0

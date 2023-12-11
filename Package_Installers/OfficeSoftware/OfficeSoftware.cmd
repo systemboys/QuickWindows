@@ -37,7 +37,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Softwares para Escritório
 
 :: Opções do Menu
-set "menu_Session_7[0]=Voltar..."
+set "menu_Session_7[0]=Voltar…"
 set "menu_Session_7[1]=Microsoft Office 2016 a 2019"
 set "menu_Session_7[2]=Microsoft Office 2019 a 2021"
 set "menu_Session_7[3]=Microsoft Office 365"
@@ -47,7 +47,7 @@ set "default=%1"
 :menu_Session_7
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..

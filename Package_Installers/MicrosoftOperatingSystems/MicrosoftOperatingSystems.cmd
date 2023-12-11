@@ -33,17 +33,21 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Sistemas Operacionais Microsoft
 
 :: Opções do Menu
-set "menu_Session_8[0]=Voltar..."
-set "menu_Session_8[1]=Opção 1"
-set "menu_Session_8[2]=Opção 2"
-set "menu_Session_8[3]=Opção 3"
+set "menu_Session_8[0]=Voltar…"
+set "menu_Session_8[1]=Windows 7, todas as versões"
+set "menu_Session_8[2]=Windows 7 Lite"
+set "menu_Session_8[3]=Windows 10 Pro 32bits"
+set "menu_Session_8[4]=Windows 10 Pro 64bits"
+set "menu_Session_8[5]=Windows 10 1909 PRO MSDN LITE Build"
+set "menu_Session_8[6]=Windows 11 Pro"
+set "menu_Session_8[7]=Windows Server 2022"
 
 set "default=%1"
 
 :menu_Session_8
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     cd ..
@@ -56,7 +60,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção 1.
 
-    @REM  Your commands here...
+    @REM  Your commands here…
 
     goto menu_Session_8
 )
@@ -66,7 +70,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção 2.
 
-    @REM  Your commands here...
+    @REM  Your commands here…
 
     goto menu_Session_8
 )
@@ -76,7 +80,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção 3.
 
-    @REM  Your commands here...
+    @REM  Your commands here…
 
     goto menu_Session_8
 )

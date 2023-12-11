@@ -33,7 +33,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Utilitários para Windows / Players de Multimídia
 
 :: Opções do Menu
-set "menu_Session_6_4[0]=Voltar..."
+set "menu_Session_6_4[0]=Voltar…"
 set "menu_Session_6_4[1]=VLC Media Player"
 
 set "default=0"
@@ -41,7 +41,7 @@ set "default=0"
 :menu_Session_6_4
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     call UtilitiesForWindows.cmd 4

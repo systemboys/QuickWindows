@@ -83,13 +83,13 @@
 :: v0.3.2 2023-11-30 às 01h14, Marcos Aurélio:
 ::   - Concluindo a sessão "Software de congelamento do sistema".
 :: v0.3.3 2023-11-30 às 11h30, Marcos Aurélio:
-::   - Foi adicionado uma nova página para sessão "Windows / Acesso rápido à Configurações... / Page 1 e Page 2".
+::   - Foi adicionado uma nova página para sessão "Windows / Acesso rápido à Configurações… / Page 1 e Page 2".
 :: v0.3.4 2023-11-30 às 12h03, Marcos Aurélio:
-::   - Versão inicial, Abrir Gerenciador de Arquivos com Endereço Específico na sessão "Windows / Acesso rápido à Configurações... / página 2".
+::   - Versão inicial, Abrir Gerenciador de Arquivos com Endereço Específico na sessão "Windows / Acesso rápido à Configurações… / página 2".
 :: v0.3.5 2023-11-30 às 19h23, Marcos Aurélio:
 ::   - Opção para instalação de "Microsoft Office 2019 a 2021" na sessão "Office software".
 :: v0.3.6 2023-11-30 às 22h22, Marcos Aurélio:
-::   - Opção para "Configurações do Windows" na sessão "Windows / Acesso rápido à Configurações...".
+::   - Opção para "Configurações do Windows" na sessão "Windows / Acesso rápido à Configurações…".
 :: v0.3.7 2023-12-01 às 22h28, Marcos Aurélio:
 ::   - Versão inicial, adicionada a sessão "Downloads" dentro da sessão "Windows" e a opção para instalação de Internet Download Manager.
 :: v0.3.8 2023-12-01 às 22h56, Marcos Aurélio:
@@ -112,7 +112,7 @@
 :: v0.4.5 2023-12-10 às 23h12, Marcos Aurélio:
 ::   - Versão inicial, Opção para colocar URL e iniciar download direto a partir do Windows PowerShell na sessão 'Internet / Downloads'.
 :: v0.4.6 2023-11-11 às 20h07, Marcos Aurélio:
-::   - Versão inicial, opções para baixar os Sistemas Operacionais da Microsoft.
+::   - Versão inicial, opções para baixar os Sistemas Operacionais da Microsoft e foram mudadas os três pontos (...) por (…) de todos os arquivos .cmd.
 ::
 :: Licença: GPL.
 
@@ -155,13 +155,13 @@ echo └────────────────────────
 
 :: Opções do Menu
 set "menu[0]=Sair"
-set "menu[1]=Menu QuickWindows..."
-set "menu[2]=Windows..."
-set "menu[3]=Internet..."
-set "menu[4]=Redes..."
+set "menu[1]=Menu QuickWindows…"
+set "menu[2]=Windows…"
+set "menu[3]=Internet…"
+set "menu[4]=Redes…"
 set "menu[5]=Execução de Comandos no PowerShell"
-set "menu[6]=Utilitários para Windows..."
-set "menu[7]=Office software..."
+set "menu[6]=Utilitários para Windows…"
+set "menu[7]=Office software…"
 set "menu[8]=Sistemas Operacionais Microsoft…"
 
 set "default=%1%"
@@ -176,28 +176,28 @@ if %ERRORLEVEL% equ 0 (
     goto :EOF
 )
 
-:: Menu QuickWindows...
+:: Menu QuickWindows…
 if %ERRORLEVEL% equ 1 (
     cd Package_Installers\Menu_QuickWindows
     call Menu_QuickWindows.cmd 0
     cd ..
 )
 
-:: Windows...
+:: Windows…
 if %ERRORLEVEL% equ 2 (
     cd Package_Installers\Windows_Session
     call Windows_Session.cmd 0
     cd ..
 )
 
-:: Internet...
+:: Internet…
 if %ERRORLEVEL% equ 3 (
     cd Package_Installers\Internet_Session
     call Internet_Session.cmd 0
     cd ..
 )
 
-:: Redes...
+:: Redes…
 if %ERRORLEVEL% equ 4 (
     cd Package_Installers\Networking_Session
     call Networking_Session.cmd 0
@@ -214,21 +214,21 @@ if %ERRORLEVEL% equ 5 (
     goto menu
 )
 
-:: Utilitários para Windows...
+:: Utilitários para Windows…
 if %ERRORLEVEL% equ 6 (
     cd Package_Installers\UtilitiesForWindows
     call UtilitiesForWindows.cmd 0
     cd ..
 )
 
-:: Office software...
+:: Office software…
 if %ERRORLEVEL% equ 7 (
     cd Package_Installers\OfficeSoftware
     call OfficeSoftware.cmd 0
     cd ..
 )
 
-:: Sistemas Operacionais Microsoft...
+:: Sistemas Operacionais Microsoft…
 if %ERRORLEVEL% equ 8 (
     cd Package_Installers\MicrosoftOperatingSystems
     call MicrosoftOperatingSystems.cmd 0

@@ -35,7 +35,7 @@ echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows / Internet / Downloads
 
 :: Opções do Menu
-set "menu_Session_3_9[0]=Voltar..."
+set "menu_Session_3_9[0]=Voltar…"
 set "menu_Session_3_9[1]=Transmission"
 set "menu_Session_3_9[2]=IDM - Internet Download Manager"
 set "menu_Session_3_9[3]=Baixar URL"
@@ -45,7 +45,7 @@ set "default=%1"
 :menu_Session_3_9
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
-:: Voltar...
+:: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
     call Internet_Session.cmd 9
