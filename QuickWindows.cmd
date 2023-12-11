@@ -111,6 +111,8 @@
 ::     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 :: v0.4.5 2023-12-10 às 23h12, Marcos Aurélio:
 ::   - Versão inicial, Opção para colocar URL e iniciar download direto a partir do Windows PowerShell na sessão 'Internet / Downloads'.
+:: v0.4.6 2023-11-11 às 20h07, Marcos Aurélio:
+::   - Versão inicial, opções para baixar os Sistemas Operacionais da Microsoft.
 ::
 :: Licença: GPL.
 
@@ -160,7 +162,7 @@ set "menu[4]=Redes..."
 set "menu[5]=Execução de Comandos no PowerShell"
 set "menu[6]=Utilitários para Windows..."
 set "menu[7]=Office software..."
-:: set "menu[8]=Sistemas Operacionais Microsoft…"
+set "menu[8]=Sistemas Operacionais Microsoft…"
 
 set "default=%1%"
 
@@ -223,6 +225,13 @@ if %ERRORLEVEL% equ 6 (
 if %ERRORLEVEL% equ 7 (
     cd Package_Installers\OfficeSoftware
     call OfficeSoftware.cmd 0
+    cd ..
+)
+
+:: Sistemas Operacionais Microsoft...
+if %ERRORLEVEL% equ 8 (
+    cd Package_Installers\MicrosoftOperatingSystems
+    call MicrosoftOperatingSystems.cmd 0
     cd ..
 )
 
