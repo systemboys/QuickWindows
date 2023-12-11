@@ -55,35 +55,77 @@ if %ERRORLEVEL% equ 0 (
     call QuickWindows.cmd 8
 )
 
-:: Opção 1
+:: Opção para baixar o Windows 7, todas as versões
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção 1.
+    echo "Você selecionou a Opção para baixar o Windows 7, todas as versões"
 
-    @REM  Your commands here…
+    @REM Your commands here...
 
     goto menu_Session_8
 )
 
-:: Opção 2
+:: Opção para baixar o Windows 7 Lite
 if %ERRORLEVEL% equ 2 (
     cls
-    echo Você selecionou a Opção 2.
+    echo "Você selecionou a Opção para baixar o Windows 7 Lite"
 
-    @REM  Your commands here…
+    @REM Your commands here...
 
     goto menu_Session_8
 )
 
-:: Opção 3
+:: Opção para baixar o Windows 10 Pro 32bits
 if %ERRORLEVEL% equ 3 (
     cls
-    echo Você selecionou a Opção 3.
+    echo "Você selecionou a Opção para baixar o Windows 10 Pro 32bits"
 
-    @REM  Your commands here…
+    @REM Your commands here...
 
     goto menu_Session_8
 )
+
+:: Opção para baixar o Windows 10 Pro 64bits
+if %ERRORLEVEL% equ 4 (
+    cls
+    echo "Você selecionou a Opção para baixar o Windows 10 Pro 64bits"
+
+    @REM Your commands here...
+
+    goto menu_Session_8
+)
+
+:: Opção para baixar o Windows 10 1909 PRO MSDN LITE Build
+if %ERRORLEVEL% equ 5 (
+    cls
+    echo "Você selecionou a Opção para baixar o Windows 10 1909 PRO MSDN LITE Build"
+
+    @REM Your commands here...
+
+    goto menu_Session_8
+)
+
+:: Opção para baixar o Windows 11 Pro
+if %ERRORLEVEL% equ 6 (
+    cls
+    echo "Você selecionou a Opção para baixar o Windows 11 Pro"
+
+    @REM Your commands here...
+
+    goto menu_Session_8
+)
+
+:: Opção para baixar o Windows Server 2022
+if %ERRORLEVEL% equ 7 (
+    cls
+    echo "Você selecionou a Opção para baixar o Windows Server 2022"
+
+    @REM Your commands here...
+
+    goto menu_Session_8
+)
+
+
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
