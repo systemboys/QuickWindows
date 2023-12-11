@@ -20,7 +20,7 @@ $okButton.Add_Click({
     }
     else
     {
-        [System.Windows.Forms.MessageBox]::Show("URL e destino são obrigatórios.", "Erro", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+        [System.Windows.Forms.MessageBox]::Show("URL e destino sao obrigatorios.", "Erro", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
     }
 })
 $form.Controls.Add($okButton)
@@ -66,6 +66,7 @@ while ($result -ne [System.Windows.Forms.DialogResult]::OK)
 
     if ($result -eq [System.Windows.Forms.DialogResult]::OK)
     {
-        Invoke-WebRequest -Uri $url -OutFile $dest
+        # Invoke-WebRequest -Uri $url -OutFile $dest
+        Start-BitsTransfer -Source $url -Destination $dest
     }
 }
