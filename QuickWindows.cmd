@@ -109,6 +109,8 @@
 ::     Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
 ::     para
 ::     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
+:: v0.4.5 2023-12-10 às 23h12, Marcos Aurélio:
+::   - Versão inicial, Opção para colocar URL e iniciar download direto a partir do Windows PowerShell na sessão 'Internet / Downloads'.
 ::
 :: Licença: GPL.
 

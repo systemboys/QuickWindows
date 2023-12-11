@@ -13,6 +13,8 @@
 :: Histórico:
 :: v0.0.1 2023-12-01 às 22h13, Marcos Aurélio:
 ::   - Versão inicial, criada a sessão de "Downloads" na sessão "Internet".
+:: v0.0.1 2023-12-10 às 23h12, Marcos Aurélio:
+::   - Versão inicial, Opção para colocar URL e iniciar download direto a partir do Windows PowerShell na sessão 'Internet / Downloads'.
 ::
 :: Licença: GPL.
 
