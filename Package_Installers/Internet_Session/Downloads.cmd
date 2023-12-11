@@ -36,6 +36,7 @@ echo QuickWindows / Internet / Downloads
 set "menu_Session_3_9[0]=Voltar..."
 set "menu_Session_3_9[1]=Transmission"
 set "menu_Session_3_9[2]=IDM - Internet Download Manager"
+set "menu_Session_3_9[3]=Baixar URL"
 
 set "default=%1"
 
@@ -64,6 +65,16 @@ if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção para instalar o Transmission.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Internet_Download_Manager.ps1""' -Verb RunAs}"
+
+    goto menu_Session_3_9
+)
+
+:: Baixar URL
+if %ERRORLEVEL% equ 3 (
+    cls
+    echo Você selecionou a Opção Baixar URL.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0DownloadURL.ps1""' -Verb RunAs}"
 
     goto menu_Session_3_9
 )
