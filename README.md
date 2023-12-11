@@ -75,6 +75,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 ├─ /Package_Installers/
 │  ├─ /Internet_Session/
 │  │  ├─ Downloads.cmd
+│  │  ├─ DownloadURL.ps1
 │  │  ├─ Install_AnyDesk.ps1
 │  │  ├─ Install_Google_Chrome.ps1
 │  │  ├─ Install_Google_Earth_Pro.ps1
@@ -188,6 +189,7 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Transmission
         > ( i ) Ferramenta para download de turrents.
       - [x] IDM - Internet Download Manager
+      - [x] Baixar URL
   - [x] **Redes**
     - [x] Voltar...
     - [x] Obter IP público
