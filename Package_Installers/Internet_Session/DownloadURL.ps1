@@ -60,7 +60,12 @@ $form.Topmost = $true
 $form.Add_Shown({ $form.Activate() })
 $result = $form.ShowDialog()
 
-if ($result -eq [System.Windows.Forms.DialogResult]::OK)
+while ($result -ne [System.Windows.Forms.DialogResult]::OK)
 {
-    Invoke-WebRequest -Uri $url -OutFile $dest
+    $result = $form.ShowDialog()
+
+    if ($result -eq [System.Windows.Forms.DialogResult]::OK)
+    {
+        Invoke-WebRequest -Uri $url -OutFile $dest
+    }
 }
