@@ -16,26 +16,26 @@
 $validInput = $false
 
 while (-not $validInput) {
-    Write-Host "Digite a URL:"
+    Write-Host "Enter the URL:"
     $url = Read-Host
 
     if (![string]::IsNullOrWhiteSpace($url)) {
         $validInput = $true
     } else {
-        Write-Host "URL é obrigatória. Por favor, digite uma URL válida."
+        Write-Host "URL is mandatory. Please enter a valid URL."
     }
 }
 
 $validInput = $false
 
 while (-not $validInput) {
-    Write-Host "Digite o destino:"
+    Write-Host "Enter destination:"
     $dest = Read-Host
 
     if (![string]::IsNullOrWhiteSpace($dest)) {
         $validInput = $true
     } else {
-        Write-Host "Destino é obrigatório. Por favor, digite um destino válido."
+        Write-Host "Destination is mandatory. Please enter a valid destination."
     }
 }
 
