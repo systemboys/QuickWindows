@@ -75,7 +75,7 @@ if (-not $destination) {
 
 # Iniciando o download em uma nova janela do PowerShell
 Write-Host "Starting the download in a new window..."
-Start-Process powershell -ArgumentList "-NoExit -Command Start-BitsTransfer -Source $url -Destination $destination"
+Start-BitsTransfer -Source $url -Destination $destination
 
 Write-Host "Download completed!"
 Write-Host "Press any key to continue..."
