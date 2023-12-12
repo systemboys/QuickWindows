@@ -493,17 +493,23 @@ if %ERRORLEVEL% equ 1 (
 Se for passar algum argumento, tipo um número segue abaixo um exemplo de como passar o argumento `numero 3`:
 
 ```batch
+:: … (restante do código)
+
 PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1"""" -numero 3' -Verb RunAs"
+
+:: … (restante do código)
 ```
 
 E para receber o argumento em um arquivo `.ps1`:
 
 ```powershell
 # … (restante do código)
+
 param (
     [Parameter(Mandatory=$true)]
     [int]$numero
 )
+
 # … (restante do código)
 ```
 
