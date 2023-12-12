@@ -62,20 +62,6 @@ switch ($numero) {
     }
 }
 
-# Verificação se a URL tem um nome personalizado definido
-if ($customNames.ContainsKey($url)) {
-    $outputFileName = $customNames[$url]
-} else {
-    # Extrair o nome do arquivo da URL se não houver um nome personalizado
-    $outputFileName = ($url -split '/')[-1]
-
-    # Verificar se a URL não tem uma extensão de arquivo
-    if ($outputFileName -notmatch "\.\w{2,5}$") {
-        # Definir manualmente o nome do arquivo e a extensão para URLs sem extensão
-        $outputFileName = "NomePersonalizado.extensao" # Defina o nome e a extensão desejados
-    }
-}
-
 # Solicitação do local de destino
 $destination = Read-Host "Enter the full destination path to save the file"
 
@@ -87,7 +73,7 @@ if (-not $destination) {
 
 # Iniciando o download em uma nova janela do PowerShell
 Write-Host "Starting the download in a new window..."
-Start-BitsTransfer -Source $url -Destination (Join-Path -Path $destination -ChildPath $outputFileName)
+Start-BitsTransfer -Source $url -Destination $destination
 
 Write-Host "Download completed!"
 Write-Host "Press any key to continue..."
