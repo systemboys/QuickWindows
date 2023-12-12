@@ -496,6 +496,17 @@ Se for passar algum argumento, tipo um número segue abaixo um exemplo de como p
 PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1"""" -numero 3' -Verb RunAs"
 ```
 
+E para receber o argumento em um arquivo `.ps1`:
+
+```powershell
+# … (restante do código)
+param (
+    [Parameter(Mandatory=$true)]
+    [int]$numero
+)
+# … (restante do código)
+```
+
 > **_( ! )_** Cuidado com a linha `goto menu_Session_3`, confira nas `:: Opções do Menu`!
 
 Para escrever o `arquivo.ps1` para scripts de instalação:
