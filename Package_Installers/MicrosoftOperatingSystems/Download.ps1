@@ -78,7 +78,5 @@ if (-not $destination) {
 Write-Host "Starting the download in a new window..."
 Start-Process powershell -ArgumentList "-NoExit -Command Start-BitsTransfer -Source $url -Destination $destination"
 
-Write-Host "Download concluído!"
-
 Write-Host "Press any key to continue…"
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
