@@ -111,7 +111,7 @@
 ::     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 :: v0.4.5 2023-12-10 às 23h12, Marcos Aurélio:
 ::   - Versão inicial, Opção para colocar URL e iniciar download direto a partir do Windows PowerShell na sessão 'Internet / Downloads'.
-:: v0.4.6 2023-11-11 às 20h07, Marcos Aurélio:
+:: v0.4.6 2023-12-11 às 20h07, Marcos Aurélio:
 ::   - Versão inicial, opções para baixar os Sistemas Operacionais da Microsoft e foram mudadas os três pontos (...) por (…) de todos os arquivos .cmd.
 ::
 :: Licença: GPL.
