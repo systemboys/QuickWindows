@@ -91,6 +91,9 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  └─ Session_RemoteAccessSoftware.cmd
 │  ├─ /Menu_QuickWindows/
 │  │  └─ Menu_QuickWindows.cmd
+│  ├─ /MicrosoftOperatingSystems/
+│  │  ├─ Download.ps1
+│  │  └─ MicrosoftOperatingSystems.cmd
 │  ├─ /Networking_Session/
 │  │  ├─ GetConnectionIPRoute.ps1
 │  │  ├─ GetLocalIPAddress.ps1
