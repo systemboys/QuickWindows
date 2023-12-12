@@ -230,6 +230,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Microsoft Office 2019 a 2021
     - [x] Microsoft Office 365
   - [x] **Sistemas Operacionais Microsoft**
+      > ( ! ) No final do download, o arquivo baixado poderá receber o nome do link, no entanto, você pode renomeá-lo e colocando sua extensão que no caso das ISO's, é `.iso`!
     - [x] Windows 7, todas as versões
     - [x] Windows 7 Lite
     - [x] Windows 10 Pro 32bits
