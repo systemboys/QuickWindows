@@ -51,14 +51,13 @@ $url7 = "https://lf4ufa.bl.files.1drv.com/y4mI-kG_0RZ1EFBvYS8fAhZS67y083H8pTYnue
 
 # Verificação e download do arquivo com base na escolha
 switch ($numero) {
-    1 { $url = $url1} # Windows 7, todas as versões
-    2 { $url = $url2} # Windows 7 Lite
-    3 { $url = $url3} # Windows 10 Pro 32bits
-    4 { $url = $url4} # Windows 10 Pro 64bits
-    5 { $url = $url5} # Windows 10 1909 PRO MSDN LITE Build
-    6 { $url = $url6} # Windows 11 Pro
-    7 { $url = $url7} # Windows Server 2022
-
+    1 { $url = $url1 } # Windows 7, todas as versões
+    2 { $url = $url2 } # Windows 7 Lite
+    3 { $url = $url3 } # Windows 10 Pro 32bits
+    4 { $url = $url4 } # Windows 10 Pro 64bits
+    5 { $url = $url5 } # Windows 10 1909 PRO MSDN LITE Build
+    6 { $url = $url6 } # Windows 11 Pro
+    7 { $url = $url7 } # Windows Server 2022
     default {
         Write-Host "Invalid option. Please choose a valid option."
         exit
@@ -78,5 +77,6 @@ if (-not $destination) {
 Write-Host "Starting the download in a new window..."
 Start-Process powershell -ArgumentList "-NoExit -Command Start-BitsTransfer -Source $url -Destination $destination"
 
-Write-Host "Press any key to continue…"
+Write-Host "Download completed!"
+Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
