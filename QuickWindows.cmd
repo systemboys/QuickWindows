@@ -141,17 +141,31 @@ echo Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 echo Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 echo Este programa tem a finadade de agilizar na instalação de softwares para Windows durante a formatação e/ou manutenção de computadores.
 echo.
-echo ┌────────────────────────┐
-echo │ ░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓ │
-echo │                        │
-echo │ ░▒▓▓▓      ░▒▓▓▓ ░▒▓▓▓ │
-echo │ ░▒▓▓▓░▒▓▓▓ ░▒▓▓▓ ░▒▓▓▓ │
-echo │ ░▒▓▓▓▓▓▓▓▓ ░▒▓▓▓ ░▒▓▓▓ │
-echo │ GLOBAL TEC Informática │
-echo │ A Tecnologia da        │
-echo │ Informação é o Futuro  │
-echo │ www.gti1.com.br        │
-echo └────────────────────────┘
+@REM echo ┌────────────────────────┐
+@REM echo │ ░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓ │
+@REM echo │                        │
+@REM echo │ ░▒▓▓▓      ░▒▓▓▓ ░▒▓▓▓ │
+@REM echo │ ░▒▓▓▓░▒▓▓▓ ░▒▓▓▓ ░▒▓▓▓ │
+@REM echo │ ░▒▓▓▓▓▓▓▓▓ ░▒▓▓▓ ░▒▓▓▓ │
+@REM echo │ GLOBAL TEC Informática │
+@REM echo │ A Tecnologia da        │
+@REM echo │ Informação é o Futuro  │
+@REM echo │ www.gti1.com.br        │
+@REM echo └────────────────────────┘
+
+echo ░██████╗░████████╗██╗
+echo ██╔════╝░╚══██╔══╝██║
+echo ██║░░██╗░░░░██║░░░██║
+echo ██║░░╚██╗░░░██║░░░██║
+echo ╚██████╔╝░░░██║░░░██║
+echo ░╚═════╝░░░░╚═╝░░░╚═╝
+echo ╭━━━┳╮╱╱╭━━━┳━━╮╭━━━┳╮╱╱╱╭━━━━┳━━━┳━━━╮╭━━╮╱╱╭━╮╱╱╱╱╱╱╱╱╱╱╭╮
+echo ┃╭━╮┃┃╱╱┃╭━╮┃╭╮┃┃╭━╮┃┃╱╱╱┃╭╮╭╮┃╭━━┫╭━╮┃╰┫┣╯╱╱┃╭╯╱╱╱╱╱╱╱╱╱╭╯╰╮
+echo ┃┃╱╰┫┃╱╱┃┃╱┃┃╰╯╰┫┃╱┃┃┃╱╱╱╰╯┃┃╰┫╰━━┫┃╱╰╯╱┃┃╭━┳╯╰┳━━┳━┳╮╭┳━┻╮╭╋┳━━┳━━╮
+echo ┃┃╭━┫┃╱╭┫┃╱┃┃╭━╮┃╰━╯┃┃╱╭╮╱╱┃┃╱┃╭━━┫┃╱╭╮╱┃┃┃╭╋╮╭┫╭╮┃╭┫╰╯┃╭╮┃┃┣┫╭━┫╭╮┃
+echo ┃╰┻━┃╰━╯┃╰━╯┃╰━╯┃╭━╮┃╰━╯┃╱╱┃┃╱┃╰━━┫╰━╯┃╭┫┣┫┃┃┃┃┃╰╯┃┃┃┃┃┃╭╮┃╰┫┃╰━┫╭╮┃
+echo ╰━━━┻━━━┻━━━┻━━━┻╯╱╰┻━━━╯╱╱╰╯╱╰━━━┻━━━╯╰━━┻╯╰┻╯╰━━┻╯╰┻┻┻╯╰┻━┻┻━━┻╯╰╯
+echo A Tecnologia da Informação é o Futuro | www.gti1.com.br
 
 :: Opções do Menu
 set "menu[0]=Sair"
