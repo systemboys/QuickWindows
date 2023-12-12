@@ -26,6 +26,11 @@
 
 # Definição dos URLs dos arquivos
 
+param (
+    [Parameter(Mandatory=$true)]
+    [int]$numero
+)
+
 # Windows 7, todas as versões
 $url1 = "https://htciuq.bl.files.1drv.com/y4mt9d6zCC8LoPtWykd16m0C78ToCfoJ-zdWeZYYAC-JDhYnhYcaltM76Ak8fGYw2u82BF5VtA87srqHOQR7mHc0V_FPrm-w0b5J9ns-VT8T8QRg0U4yLxFzCeLVLf-LGAydIKrvwN0LuDZXS9yPyJaRlQSSkguOrvVv6dwq7D8LwANl-NDE2A-ObLZE2dvhtcQGlapagf4_za-Ir_GIdCuNw"
 
@@ -48,11 +53,8 @@ $url6 = "https://wwa4la.bl.files.1drv.com/y4mMrQ82KZWfL4g2Xv87sh53A7wBJcU8aWefOZ
 $url7 = "https://lf4ufa.bl.files.1drv.com/y4mI-kG_0RZ1EFBvYS8fAhZS67y083H8pTYnueBbUitj5SUoXCKO2P-vFUlwYgxBUH48XtIHi2_C_N1Fp-gj7BY1OsBkKG1C2tJVDwLtjj4y4gmg0DKrYy1EDsOlYBaB5ZZCh4vrfqpc5_tBn03HOpGjqZU85k8zwAgihAgQqZp7rfKlMY0oGtNMf7CvwNWKGpPFWE87uRMGGZP3om40pWGAA"
 
 
-# Solicitação do número para download
-$download = Read-Host "Digite o número do arquivo que deseja baixar (1, 2 ou 3)"
-
 # Verificação e download do arquivo com base na escolha
-switch ($download) {
+switch ($numero) {
     1 { # Windows 7, todas as versões
         $url = $url1
     }

@@ -60,7 +60,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 7, todas as versões"
 
-    @REM Your commands here...
+    powershell.exe -ExecutionPolicy Bypass -File "Download.ps1" -numero 1
 
     goto menu_Session_8
 )
@@ -70,7 +70,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 7 Lite"
 
-    @REM Your commands here...
+    powershell.exe -ExecutionPolicy Bypass -File "Download.ps1" -numero 2
 
     goto menu_Session_8
 )
@@ -80,7 +80,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 10 Pro 32bits"
 
-    @REM Your commands here...
+    powershell.exe -ExecutionPolicy Bypass -File "Download.ps1" -numero 3
 
     goto menu_Session_8
 )
@@ -90,7 +90,7 @@ if %ERRORLEVEL% equ 4 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 10 Pro 64bits"
 
-    @REM Your commands here...
+    powershell.exe -ExecutionPolicy Bypass -File "Download.ps1" -numero 4
 
     goto menu_Session_8
 )
@@ -100,7 +100,7 @@ if %ERRORLEVEL% equ 5 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 10 1909 PRO MSDN LITE Build"
 
-    @REM Your commands here...
+    powershell.exe -ExecutionPolicy Bypass -File "Download.ps1" -numero 5
 
     goto menu_Session_8
 )
@@ -110,7 +110,7 @@ if %ERRORLEVEL% equ 6 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 11 Pro"
 
-    @REM Your commands here...
+    powershell.exe -ExecutionPolicy Bypass -File "Download.ps1" -numero 6
 
     goto menu_Session_8
 )
@@ -120,7 +120,7 @@ if %ERRORLEVEL% equ 7 (
     cls
     echo "Você selecionou a Opção para baixar o Windows Server 2022"
 
-    @REM Your commands here...
+    powershell.exe -ExecutionPolicy Bypass -File "Download.ps1" -numero 7
 
     goto menu_Session_8
 )
