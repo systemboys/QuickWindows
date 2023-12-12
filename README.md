@@ -490,6 +490,12 @@ if %ERRORLEVEL% equ 1 (
 :: … (restante do código)
 ```
 
+Se for passar algum argumento, tipo um número segue abaixo um exemplo de como passar o argumento `numero 3`:
+
+```batch
+PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1"""" -numero 3' -Verb RunAs"
+```
+
 > **_( ! )_** Cuidado com a linha `goto menu_Session_3`, confira nas `:: Opções do Menu`!
 
 Para escrever o `arquivo.ps1` para scripts de instalação:
