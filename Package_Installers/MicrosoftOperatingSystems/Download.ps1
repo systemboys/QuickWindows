@@ -60,22 +60,22 @@ switch ($numero) {
     7 { $url = $url7} # Windows Server 2022
 
     default {
-        Write-Host "Opção inválida. Por favor, escolha uma opção válida."
+        Write-Host "Invalid option. Please choose a valid option."
         exit
     }
 }
 
 # Solicitação do local de destino
-$destination = Read-Host "Digite o caminho completo de destino para salvar o arquivo"
+$destination = Read-Host "Enter the full destination path to save the file"
 
 # Verificação se o destino foi fornecido
 if (-not $destination) {
-    Write-Host "Destino é obrigatório. Por favor, forneça o caminho de destino."
+    Write-Host "Destination is mandatory. Please provide the destination path."
     exit
 }
 
 # Iniciando o download em uma nova janela do PowerShell
-Write-Host "Iniciando o download em uma nova janela..."
+Write-Host "Starting the download in a new window..."
 Start-Process powershell -ArgumentList "-NoExit -Command Start-BitsTransfer -Source $url -Destination $destination"
 
 Write-Host "Download concluído!"
