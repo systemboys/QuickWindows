@@ -86,28 +86,5 @@ for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
     Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
 }
 
-# -------------------------------------
-# Pergunta se deseja renomear o arquivo baixado
-$renameFile = Read-Host "Do you want to rename the downloaded file? (Y/N)"
-if ($renameFile -eq "Y" -or $renameFile -eq "y") {
-    $newName = Read-Host "Enter the new file name (without extension)"
-    if ($newName) {
-        # Obter a extensão original do arquivo baixado
-        $extension = [System.IO.Path]::GetExtension($destination)
-        
-        # Construir o novo caminho com o nome fornecido pelo usuário e a extensão original
-        $newPath = Join-Path (Split-Path $destination) "$newName$extension"
-        
-        # Renomear o arquivo baixado
-        Rename-Item -Path $destination -NewName $newPath
-        Write-Host "File renamed successfully to: $newPath"
-    } else {
-        Write-Host "Keeping the original file name."
-    }
-} else {
-    Write-Host "Keeping the original file name."
-}
-# -------------------------------------
-
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
