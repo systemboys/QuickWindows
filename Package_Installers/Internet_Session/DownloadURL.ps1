@@ -50,5 +50,6 @@ for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
     [Console]::Beep(500, 300)
     Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
 }
+
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
