@@ -79,6 +79,23 @@ Start-BitsTransfer -Source $url -Destination $destination
 
 Write-Host "Download completed!"
 
+# ----------------------------
+# Verificando se o download foi concluído
+if (Test-Path (Join-Path -Path $destination -ChildPath "Git-2.43.0-64-bit.exe")) {
+    $newName = Read-Host "Deseja renomear o arquivo? Insira o novo nome ou pressione Enter para manter o nome original:"
+    
+    if (-not [string]::IsNullOrWhiteSpace($newName)) {
+        $newPath = Join-Path -Path $destination -ChildPath "$newName.exe"
+        Rename-Item -Path (Join-Path -Path $destination -ChildPath "Git-2.43.0-64-bit.exe") -NewName $newPath
+        Write-Host "Arquivo renomeado para $newName.exe"
+    } else {
+        Write-Host "Mantendo o nome original do arquivo."
+    }
+} else {
+    Write-Host "O download não foi concluído com sucesso."
+}
+# ----------------------------
+
 # Emitir Sequência de Beeps
 $numeroDeBeeps = 10
 for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
