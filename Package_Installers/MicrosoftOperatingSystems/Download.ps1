@@ -79,6 +79,13 @@ Start-BitsTransfer -Source $url -Destination $destination
 
 Write-Host "Download completed!"
 
+# Emitir Sequência de Beeps
+$numeroDeBeeps = 10
+for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
+    [Console]::Beep(500, 300)
+    Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
+}
+
 # ----------------------------
 # Verificando se o download foi concluído
 if (Test-Path (Join-Path -Path $destination -ChildPath "Git-2.43.0-64-bit.exe")) {
@@ -96,11 +103,5 @@ if (Test-Path (Join-Path -Path $destination -ChildPath "Git-2.43.0-64-bit.exe"))
 }
 # ----------------------------
 
-# Emitir Sequência de Beeps
-$numeroDeBeeps = 10
-for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
-    [Console]::Beep(500, 300)
-    Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
-}
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
