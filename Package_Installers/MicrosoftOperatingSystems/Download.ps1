@@ -7,8 +7,10 @@
 # Este programa tem a finalidade de facilitar o Download de Softwares de instalação do Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-12-31 às 20h51, Marcos Aurélio:
+# v0.0.1 2023-12-11 às 20h51, Marcos Aurélio:
 #   - Versão inicial, Download de Softwares.
+# v0.0.2 2023-12-13 às 20h51, Marcos Aurélio:
+#   - Emitir Sequência de Beeps após Downloads.
 #
 # Licença: GPL.
 
@@ -74,6 +76,13 @@ if (-not $destination) {
 # Iniciando o download em uma nova janela do PowerShell
 Write-Host "Starting the download in a new window..."
 Start-BitsTransfer -Source $url -Destination $destination
+
+# Emitir Sequência de Beeps
+$numeroDeBeeps = 10
+for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
+    [Console]::Beep(500, 300)
+    Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
+}
 
 Write-Host "Download completed!"
 Write-Host "Press any key to continue..."

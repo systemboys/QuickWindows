@@ -113,6 +113,8 @@
 ::   - Versão inicial, Opção para colocar URL e iniciar download direto a partir do Windows PowerShell na sessão 'Internet / Downloads'.
 :: v0.4.6 2023-12-11 às 20h07, Marcos Aurélio:
 ::   - Versão inicial, opções para baixar os Sistemas Operacionais da Microsoft e foram mudadas os três pontos (...) por (…) de todos os arquivos .cmd.
+:: v0.4.7 2023-12-13 às 20h51, Marcos Aurélio:
+::   - Emitir Sequência de Beeps após Downloads das ISO's dos sistemas operacionais da Microsoft.
 ::
 :: Licença: GPL.
 
