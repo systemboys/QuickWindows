@@ -42,13 +42,13 @@ while (-not $validInput) {
 Write-Host "Iniciando o download..."
 Start-BitsTransfer -Source $url -Destination $dest
 
+Write-Host "Download completed!"
+
 # Emitir Sequência de Beeps
 $numeroDeBeeps = 10
 for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
     [Console]::Beep(500, 300)
     Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
 }
-
-Write-Host "Download completed!"
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
