@@ -115,6 +115,8 @@
 ::   - Versão inicial, opções para baixar os Sistemas Operacionais da Microsoft e foram mudadas os três pontos (...) por (…) de todos os arquivos .cmd.
 :: v0.4.7 2023-12-13 às 20h51, Marcos Aurélio:
 ::   - Emitir Sequência de Beeps após Downloads das ISO's dos sistemas operacionais da Microsoft.
+:: v0.4.8 2023-12-14 às 17h07, Marcos Aurélio:
+::   - Ajuste na logo GTi e o nome 'GLOBAL TEC Informática' da tela inicial.
 ::
 :: Licença: GPL.
 
@@ -154,7 +156,7 @@ echo.
 @REM echo │ Informação é o Futuro  │
 @REM echo │ www.gti1.com.br        │
 @REM echo └────────────────────────┘
-
+echo.
 echo  ░██████╗░████████╗██╗
 echo  ██╔════╝░╚══██╔══╝██║
 echo  ██║░░██╗░░░░██║░░░██║
@@ -170,10 +172,13 @@ echo.
 echo.
 echo.
 echo.
+echo  ▒█▀▀█ ▒█░░░ ▒█▀▀▀█ ▒█▀▀█ ░█▀▀█ ▒█░░░   ▀▀█▀▀ ▒█▀▀▀ ▒█▀▀█
+echo  ▒█░▄▄ ▒█░░░ ▒█░░▒█ ▒█▀▀▄ ▒█▄▄█ ▒█░░░   ░▒█░░ ▒█▀▀▀ ▒█░░░
+echo  ▒█▄▄█ ▒█▄▄█ ▒█▄▄▄█ ▒█▄▄█ ▒█░▒█ ▒█▄▄█   ░▒█░░ ▒█▄▄▄ ▒█▄▄█
 echo.
-echo  ▒█▀▀█ ▒█░░░ ▒█▀▀▀█ ▒█▀▀█ ░█▀▀█ ▒█░░░   ▀▀█▀▀ ▒█▀▀▀ ▒█▀▀█   ▀█▀ █▀▀▄ █▀▀ █▀▀█ █▀▀█ █▀▄▀█ █▀▀█ ▀▀█▀▀ ░▀░ █▀▀ █▀▀█ 
-echo  ▒█░▄▄ ▒█░░░ ▒█░░▒█ ▒█▀▀▄ ▒█▄▄█ ▒█░░░   ░▒█░░ ▒█▀▀▀ ▒█░░░   ▒█░ █░░█ █▀▀ █░░█ █▄▄▀ █░▀░█ █▄▄█ ░░█░░ ▀█▀ █░░ █▄▄█ 
-echo  ▒█▄▄█ ▒█▄▄█ ▒█▄▄▄█ ▒█▄▄█ ▒█░▒█ ▒█▄▄█   ░▒█░░ ▒█▄▄▄ ▒█▄▄█   ▄█▄ ▀░░▀ ▀░░ ▀▀▀▀ ▀░▀▀ ▀░░░▀ ▀░░▀ ░░▀░░ ▀▀▀ ▀▀▀ ▀░░▀
+echo                      ▀█▀ █▀▀▄ █▀▀ █▀▀█ █▀▀█ █▀▄▀█ █▀▀█ ▀▀█▀▀ ░▀░ █▀▀ █▀▀█ 
+echo                      ▒█░ █░░█ █▀▀ █░░█ █▄▄▀ █░▀░█ █▄▄█ ░░█░░ ▀█▀ █░░ █▄▄█ 
+echo                      ▄█▄ ▀░░▀ ▀░░ ▀▀▀▀ ▀░▀▀ ▀░░░▀ ▀░░▀ ░░▀░░ ▀▀▀ ▀▀▀ ▀░░▀
 echo.
 echo  ╔══╗╔══╗─────────────╔╗────╔╗───╔══╗──╔═╗───────────────────────╔══╗╔╗
 echo  ║╔╗║╚╗╔╩╦═╦═╦╦═╦╗╔═╦═╬╬═╗─╔╝╠═╗─╚║║╬═╦╣═╬═╦╦╦══╦═╗╔═╦═╗╔═╗╔═╗╔═╗║═╦╬╣╚╦╦╦╦╦═╗
