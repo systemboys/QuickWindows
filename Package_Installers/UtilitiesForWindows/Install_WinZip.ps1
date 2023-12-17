@@ -35,6 +35,13 @@ if (Test-Path $directory) {
     # Instala o WinZip
     Start-Process -FilePath "$downloadPath" -Wait
 
+    # Emitir Sequência de Beeps
+    $numeroDeBeeps = 10
+    for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
+        [Console]::Beep(500, 300)
+        Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
+    }
+
     # Apagar o arquivo
     Remove-Item -Path $downloadPath -Force
 }

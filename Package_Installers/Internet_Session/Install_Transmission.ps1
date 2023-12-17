@@ -31,6 +31,13 @@ if (Test-Path $directory) {
     
     # Faz o download do Transmission
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
+
+    # Emitir Sequência de Beeps
+    $numeroDeBeeps = 10
+    for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
+        [Console]::Beep(500, 300)
+        Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
+    }
     
     # Instala o Transmission
     Start-Process -FilePath "$downloadPath" -Wait

@@ -19,6 +19,14 @@ if ($installed -eq $null) {
     $url = "https://dl.google.com/earth/client/advanced/current/GoogleEarthProWin.exe"
     $output = "$temporaryDirectory\GoogleEarthProWin.exe"
     Start-BitsTransfer -Source $url -Destination $output
+
+    # Emitir Sequência de Beeps
+    $numeroDeBeeps = 10
+    for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
+        [Console]::Beep(500, 300)
+        Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
+    }
+
     Start-Process -FilePath $output -ArgumentList "/S /v/qn"
     Remove-Item $output
 } else {

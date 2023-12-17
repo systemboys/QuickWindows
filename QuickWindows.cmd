@@ -117,6 +117,8 @@
 ::   - Emitir Sequência de Beeps após Downloads das ISO's dos sistemas operacionais da Microsoft.
 :: v0.4.8 2023-12-14 às 17h07, Marcos Aurélio:
 ::   - Ajuste na logo GTi e o nome 'GLOBAL TEC Informática' da tela inicial.
+:: v0.4.9 2023-12-16 às 23h44, Marcos Aurélio:
+::   - Todos os downloads foram modificados para emitir uma sequência de Beeps.
 ::
 :: Licença: GPL.
 
