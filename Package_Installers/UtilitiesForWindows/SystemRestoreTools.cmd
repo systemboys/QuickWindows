@@ -17,6 +17,8 @@
 ::   - Opção para instalar o 'Hasleo WinToHDD Free'.
 :: v0.0.3 2023-12-09 às 20h40, Marcos Aurélio:
 ::   - Correção de retorno de menu, no arquivo 'SystemRestoreTools.cmd'.
+:: v0.0.4 2023-12-25 às 20h00, Marcos Aurélio:
+::   - Opção para instalação de Rufus.
 ::
 :: Licença: GPL.
 
@@ -40,6 +42,7 @@ echo QuickWindows / Utilitários para Windows / Ferramentas de restauração do 
 set "menu_Session_6_8[0]=Voltar…"
 set "menu_Session_6_8[1]=WinToHDD"
 set "menu_Session_6_8[2]=Hasleo WinToHDD Free"
+set "menu_Session_6_8[3]=Fufus"
 
 set "default=%1%"
 
@@ -68,6 +71,16 @@ if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção para instalar o Hasleo WinToHDD Free.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Hasleo_WinToHDD_Free.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_8
+)
+
+:: Rufus
+if %ERRORLEVEL% equ 3 (
+    cls
+    echo Você selecionou a Opção para instalar o Rufus.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Rufus.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_8
 )

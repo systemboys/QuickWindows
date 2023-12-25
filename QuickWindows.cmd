@@ -119,6 +119,8 @@
 ::   - Ajuste na logo GTi e o nome 'GLOBAL TEC Informática' da tela inicial.
 :: v0.4.9 2023-12-16 às 23h44, Marcos Aurélio:
 ::   - Todos os downloads foram modificados para emitir uma sequência de Beeps.
+:: v0.5.0 2023-12-25 às 20h00, Marcos Aurélio:
+::   - Opção para instalação de Rufus na sessão "Utilitários para Windows / Ferramentas de restauração do Sistema".
 ::
 :: Licença: GPL.
 
