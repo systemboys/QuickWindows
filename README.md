@@ -108,7 +108,9 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Compactors.cmd
 │  │  ├─ Install_AdobeReaderPDF.ps1
 │  │  ├─ Install_Deep_Freeze.ps1
+│  │  ├─ Install_Hasleo_WinToHDD_Free.ps1
 │  │  ├─ Install_Revo_Uninstaller.ps1
+│  │  ├─ Install_Rufus.ps1
 │  │  ├─ Install_Shadow_Defender.ps1
 │  │  ├─ Install_VLCMediaPlayer.ps1
 │  │  ├─ Install_WinRAR.ps1
@@ -213,6 +215,7 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Instalar VLC Media Player
     - [x] **Software de congelamento do sistema**
       - [x] Instalar Deep Freeze
+      - [x] Install_Hasleo_WinToHDD_Free.ps1
       - [x] Instalar Shadow Defender
     - [x] **Backup e Restauração**
       - [ ] Instalar Veeam Backup
@@ -225,6 +228,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] **Ferramentas de restauração do sistema**
       - [x] WinToHDD
       - [x] Hasleo WinToHDD Free
+      - [x] Install_Rufus.ps1
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
     - [x] Microsoft Office 2019 a 2021
