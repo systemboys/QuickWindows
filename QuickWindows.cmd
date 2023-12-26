@@ -121,6 +121,8 @@
 ::   - Todos os downloads foram modificados para emitir uma sequência de Beeps.
 :: v0.5.0 2023-12-25 às 20h00, Marcos Aurélio:
 ::   - Opção para instalação de Rufus na sessão "Utilitários para Windows / Ferramentas de restauração do Sistema".
+:: v0.5.1 2023-12-26 às 00h48, Marcos Aurélio:
+::   - Adicionada a opção para ajustar Horário para Brasília na sessão "Windows".
 ::
 :: Licença: GPL.
 

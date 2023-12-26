@@ -174,6 +174,7 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Gerenciar arquivos e pastas
       - [x] Configurações do Windows
       - [x] Gerenciador de Tarefas do Windows
+    - [x] Ajustar Horário para Brasília
   - [x] **Internet**
     - [x] Voltar…
     - [x] Acesso Remoto…
