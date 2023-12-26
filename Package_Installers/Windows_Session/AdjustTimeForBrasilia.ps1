@@ -12,7 +12,7 @@
 #
 # Licença: GPL.
 
-# Define o fuso horário para Brasília
+# Define o fuso horário desejado
 $timezoneId = "E. South America Standard Time"
 
 # Define o comando para ajustar o fuso horário do sistema
