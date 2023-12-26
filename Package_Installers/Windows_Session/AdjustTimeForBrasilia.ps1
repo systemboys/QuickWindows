@@ -13,16 +13,13 @@
 # Licença: GPL.
 
 # Define o fuso horário para Brasília
-$timezone = [System.TimeZoneInfo]::FindSystemTimeZoneById("E. South America Standard Time")
+$timezoneId = "E. South America Standard Time"
 
-# Obtém a data e hora atual
-$currentTime = Get-Date
+# Define o comando para ajustar o fuso horário do sistema
+$command = "tzutil /s '$timezoneId'"
 
-# Converte a data e hora atual para o fuso horário de Brasília
-$adjustedTime = [System.TimeZoneInfo]::ConvertTime($currentTime, $timezone)
-
-# Ajusta a data e hora do sistema para o fuso horário de Brasília
-Set-Date $adjustedTime
+# Executa o comando para ajustar o fuso horário
+Invoke-Expression -Command $command
 
 Write-Host "Time zone for Brasilia successfully set!"
 Write-Host "Press any key to continue..."
