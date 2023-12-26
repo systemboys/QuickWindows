@@ -122,6 +122,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ SystemRestoreTools.cmd
 │  │  └─ UtilitiesForWindows.cmd
 │  ├─ /Windows_Session/
+│  │  ├─ AdjustTimeForBrasilia.ps1
 │  │  ├─ ManageFilesAndFolders.ps1
 │  │  ├─ QuickAccessToSettings.cmd
 │  │  ├─ QuickAccessToSettings2.cmd
