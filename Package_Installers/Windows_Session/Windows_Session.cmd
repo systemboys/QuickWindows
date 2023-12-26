@@ -120,7 +120,7 @@ if %ERRORLEVEL% equ 6 (
 )
 
 :: Ajustar Horário para Brasília
-if %ERRORLEVEL% equ 1 (
+if %ERRORLEVEL% equ 7 (
     cls
     echo Você selecionou a Opção Ajustar Horário para Brasília.
 
