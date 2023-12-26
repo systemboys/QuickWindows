@@ -122,7 +122,6 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ SystemRestoreTools.cmd
 │  │  └─ UtilitiesForWindows.cmd
 │  ├─ /Windows_Session/
-│  │  ├─ AdjustTimeForBrasilia.ps1
 │  │  ├─ ManageFilesAndFolders.ps1
 │  │  ├─ QuickAccessToSettings.cmd
 │  │  ├─ QuickAccessToSettings2.cmd
@@ -175,7 +174,6 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Gerenciar arquivos e pastas
       - [x] Configurações do Windows
       - [x] Gerenciador de Tarefas do Windows
-    - [x] Ajustar Horário para Brasília
   - [x] **Internet**
     - [x] Voltar…
     - [x] Acesso Remoto…

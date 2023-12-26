@@ -24,8 +24,6 @@
 ::   - Opção para "Configurações do Windows".
 :: v0.0.6 2023-12-05 às 14h45, Marcos Aurélio:
 ::   - Opção para agendar desligamento automático.
-:: v0.0.7 2023-12-26 às 00h48, Marcos Aurélio:
-::   - Adicionada a opção para ajustar Horário para Brasília.
 ::
 :: Licença: GPL.
 
@@ -53,7 +51,6 @@ set "menu_Session_2[3]=Agendar desligamento do Windows"
 set "menu_Session_2[4]=Atualizar Windows e Softwares"
 set "menu_Session_2[5]=Atualizar o PowerShell"
 set "menu_Session_2[6]=Acesso rápido à Configurações…"
-set "menu_Session_2[7]=Ajustar Horário para Brasília"
 
 set "default=%1"
 
@@ -117,16 +114,6 @@ if %ERRORLEVEL% equ 6 (
     cd Package_Installers\Windows_Session
     call QuickAccessToSettings.cmd 0
     cd ..
-)
-
-:: Ajustar Horário para Brasília
-if %ERRORLEVEL% equ 7 (
-    cls
-    echo Você selecionou a Opção Ajustar Horário para Brasília.
-
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0AdjustTimeForBrasilia.ps1""' -Verb RunAs}"
-
-    goto menu_Session_2
 )
 
 goto :EOF
