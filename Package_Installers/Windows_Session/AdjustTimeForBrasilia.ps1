@@ -12,14 +12,20 @@
 #
 # Licença: GPL.
 
-# Define o fuso horário desejado
-$timezoneId = "E. South America Standard Time"
+# # Define o fuso horário desejado
+# $timezoneId = "E. South America Standard Time"
 
-# Define o comando para ajustar o fuso horário do sistema
-$command = "tzutil /s '$timezoneId'"
+# # Define o comando para ajustar o fuso horário do sistema
+# $command = "tzutil /s '$timezoneId'"
 
-# Executa o comando para ajustar o fuso horário
-Invoke-Expression -Command $command
+# # Executa o comando para ajustar o fuso horário
+# Invoke-Expression -Command $command
+
+# ------------------
+# Obter a data e hora atual na internet no fuso horário Brasileiro (Brasília)
+$currentTime = Get-Date -Format "dd/MM/yyyy HH:mm:ss"
+Set-Date -Date $currentTime
+# ------------------
 
 Write-Host "Time zone for Brasilia successfully set!"
 Write-Host "Press any key to continue..."
