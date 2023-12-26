@@ -21,6 +21,6 @@ $dateInBrasilia = [System.TimeZoneInfo]::ConvertTimeFromUtc([System.DateTime]::U
 # Define a data e hora do sistema para a data e hora de Brasília
 Set-Date -Date $dateInBrasilia
 
-Write-Host "Fuso horário para Brasília definido com sucesso!"
+Write-Host "Time zone for Brasilia successfully set!"
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
