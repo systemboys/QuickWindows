@@ -121,6 +121,9 @@
 ::   - Todos os downloads foram modificados para emitir uma sequência de Beeps.
 :: v0.5.0 2023-12-25 às 20h00, Marcos Aurélio:
 ::   - Opção para instalação de Rufus na sessão "Utilitários para Windows / Ferramentas de restauração do Sistema".
+:: v0.5.1 2023-12-28 às 16h58, Marcos Aurélio:
+::   - Alterção na execução do utilitário 'WinToHDD', se já estiver instalado, haverá uma pergunta se deseja executá-lo na sessão 'Utilitários para Windows.
+::   - Correção do caminho do executável do 'AnyDesk' no arquivo 'Install_AnyDesk.ps1'.
 ::
 :: Licença: GPL.
 

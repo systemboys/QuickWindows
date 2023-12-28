@@ -12,6 +12,8 @@
 #   - Versão inicial, Instalação de WinToHDD.
 # v0.0.2 2023-12-06 às 21h00, Marcos Aurélio:
 #   - Foi informado o tamanho do executável.
+# v0.0.3 2023-12-28 às 16h58, Marcos Aurélio:
+#   - Alterção na execução do utilitário 'WinToHDD', se já estiver instalado, haverá uma pergunta se deseja executá-lo.
 #
 # Licença: GPL.
 

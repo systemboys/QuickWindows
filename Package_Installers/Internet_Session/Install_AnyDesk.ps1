@@ -17,6 +17,8 @@
 #     do AnyDesk baixado.
 # v0.0.3 2023-12-06 às 20h43, Marcos Aurélio:
 #   - Foi informado o tamanho do executável, atualizada a URL e colocada uma condição que executa o AnyDesk caso esteja instalado.
+# v0.0.4 2023-12-28 às 17h00, Marcos Aurélio:
+#   - Corrigido o caminho do arquivo executável do 'AnyDesk'.
 #
 # Licença: GPL.
 
