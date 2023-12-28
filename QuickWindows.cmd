@@ -152,17 +152,6 @@ echo Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 echo Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 echo Este programa tem a finadade de agilizar na instalação de softwares para Windows durante a formatação e/ou manutenção de computadores.
 echo.
-@REM echo ┌────────────────────────┐
-@REM echo │ ░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓ │
-@REM echo │                        │
-@REM echo │ ░▒▓▓▓      ░▒▓▓▓ ░▒▓▓▓ │
-@REM echo │ ░▒▓▓▓░▒▓▓▓ ░▒▓▓▓ ░▒▓▓▓ │
-@REM echo │ ░▒▓▓▓▓▓▓▓▓ ░▒▓▓▓ ░▒▓▓▓ │
-@REM echo │ GLOBAL TEC Informática │
-@REM echo │ A Tecnologia da        │
-@REM echo │ Informação é o Futuro  │
-@REM echo │ www.gti1.com.br        │
-@REM echo └────────────────────────┘
 echo.
 echo  ░██████╗░████████╗██╗
 echo  ██╔════╝░╚══██╔══╝██║
