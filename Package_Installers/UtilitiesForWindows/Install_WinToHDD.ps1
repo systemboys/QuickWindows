@@ -20,7 +20,26 @@ $programFiles = "$env:SystemDrive\Program Files\Hasleo"
 $directory = "$programFiles\WinToHDD"
 
 if (Test-Path $directory) {
-    Write-Host "WinToHDD is installed!"
+    # Carrega a biblioteca do .NET Framework para criar a pop-up
+    [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
+
+    # Define a mensagem, o título e os botões da pop-up
+    $message = "WinToHDD is already installed, do you want to run it?"
+    $title = "WinToHDD"
+    $buttons = [Microsoft.VisualBasic.MsgBoxStyle]::YesNo
+
+    # Mostra a pop-up ao usuário e guarda a resposta em uma variável
+    $response = [Microsoft.VisualBasic.Interaction]::MsgBox($message, $buttons, $title)
+
+    # Verifica se a resposta do usuário foi "Sim"
+    if ($response -eq "Yes") {
+        # Executa o WinToHDD
+        Start-Process -FilePath "$env:SystemDrive\Program Files\Hasleo\WinToHDD\bin\WinToHDD.exe"
+    }
+    else {
+        exit
+    }
+    # Write-Host "WinToHDD is installed!"
 } else {
     Write-Host "WinToHDD is not installed! Starting installation process."
     Write-Host "File size: 9.32 MB"

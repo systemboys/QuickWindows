@@ -39,7 +39,7 @@ if (Test-Path $directory) {
     # Verifica se a resposta do usuário foi "Sim"
     if ($response -eq "Yes") {
         # Executa o AnyDesk
-        Start-Process -FilePath "C:\Program Files (x86)\AnyDesk\AnyDesk.exe"
+        Start-Process -FilePath "$env:SystemDrive\Program Files (x86)\AnyDesk\AnyDesk.exe"
     }
     else {
         exit
