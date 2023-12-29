@@ -19,6 +19,8 @@
 ::   - Correção de retorno de menu, no arquivo 'SystemRestoreTools.cmd'.
 :: v0.0.4 2023-12-25 às 20h00, Marcos Aurélio:
 ::   - Opção para instalação de Rufus.
+:: v0.0.5 2023-12-29 às 01h41, Marcos Aurélio:
+::   - Opção para instalação de DriverMax.
 ::
 :: Licença: GPL.
 
@@ -43,6 +45,7 @@ set "menu_Session_6_8[0]=Voltar…"
 set "menu_Session_6_8[1]=WinToHDD"
 set "menu_Session_6_8[2]=Hasleo WinToHDD Free"
 set "menu_Session_6_8[3]=Fufus"
+set "menu_Session_6_8[4]=DriverMax"
 
 set "default=%1%"
 
@@ -85,10 +88,20 @@ if %ERRORLEVEL% equ 3 (
     goto menu_Session_6_8
 )
 
+:: DriverMax
+if %ERRORLEVEL% equ 3 (
+    cls
+    echo Você selecionou a Opção para instalar o DriverMax.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_DriverMax.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_8
+)
+
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_6_8title = "=== ../ Ferramentas de restauracao do sistema ==="
+$menu_Session_6_8title = "=== ../ Ferramentas de Restauracao do Sistema ==="
 $menu_Session_6_8prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_6_8prompt.length + 6
