@@ -89,7 +89,7 @@ if %ERRORLEVEL% equ 3 (
 )
 
 :: DriverMax
-if %ERRORLEVEL% equ 3 (
+if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção para instalar o DriverMax.
 
