@@ -25,7 +25,7 @@ if (Test-Path $directory) {
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/DriverMax_setup.exe"
-    $downloadPath = "$env:temp\DriverMax.exe"
+    $downloadPath = "$env:temp\DriverMax_setup.exe"
     
     # Faz o download do DriverMax
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
