@@ -60,14 +60,14 @@ if (Test-Path $directory) {
     Write-Host "File size: 7.01 MB"
 
     # Pedir ao usuário para digitar o caminho onde deseja salvar o arquivo
-    $saveLocation = Read-Host "Enter the path where you want to save the file (e.g., C:\Users\MarcosGTi\Downloads)"
+    $saveLocation = Read-Host "Enter the path where you want to save the file (Ex.: C:\Users\UserPC\Downloads)"
 
     # Verifica se o caminho existe, caso contrário, cria o diretório
     if (-not (Test-Path $saveLocation)) {
         New-Item -ItemType Directory -Path $saveLocation -ErrorAction SilentlyContinue | Out-Null
     }
 
-    # Define o caminho completo para o arquivo de download
+    # Define o caminho completo para o arquivo de download, incluindo a extensão .exe
     $downloadPath = Join-Path -Path $saveLocation -ChildPath "DriverMax_setup.exe"
     
     # Faz o download do DriverMax
