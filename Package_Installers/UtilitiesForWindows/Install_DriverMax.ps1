@@ -14,7 +14,7 @@
 # Licença: GPL.
 
 # Se o DriverMax não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files"
+$programFiles = "$env:SystemDrive\Program Files (x86)\Innovative Solutions"
 $directory = "$programFiles\DriverMax"
 
 if (Test-Path $directory) {
