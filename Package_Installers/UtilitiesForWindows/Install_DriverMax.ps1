@@ -10,6 +10,8 @@
 # Histórico:
 # v0.0.1 2023-12-29 às 01h41, Marcos Aurélio:
 #   - Versão inicial, Instalação de DriverMax.
+# v0.0.2 2023-12-29 às 21h34, Marcos Aurélio:
+#   - Modificação onde o PowerShell pergunta onde deve salvar o download do arquivo.
 #
 # Licença: GPL.
 
@@ -23,11 +25,19 @@
 #     Write-Host "DriverMax is not installed! Starting installation process."
 #     Write-Host "File size: 7.01 MB"
 
-#     # Link do download e o diretório Temp
-#     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/DriverMax_setup.exe"
-#     $downloadPath = "$env:temp\DriverMax_setup.exe"
+#     # Pedir ao usuário para digitar o caminho onde deseja salvar o arquivo
+#     $saveLocation = Read-Host "Enter the path where you want to save the file (Ex.: C:\Users\UserPC\Downloads)"
+
+#     # Verifica se o caminho existe, caso contrário, cria o diretório
+#     if (-not (Test-Path $saveLocation)) {
+#         New-Item -ItemType Directory -Path $saveLocation -ErrorAction SilentlyContinue | Out-Null
+#     }
+
+#     # Define o caminho completo para o arquivo de download
+#     $downloadPath = Join-Path -Path $saveLocation -ChildPath "DriverMax_setup.exe"
     
 #     # Faz o download do DriverMax
+#     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/DriverMax_setup.exe"
 #     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 
 #     # Emitir Sequência de Beeps
@@ -38,16 +48,13 @@
 #     }
     
 #     # Instala o DriverMax
-#     Start-Process -FilePath "$downloadPath" -Wait
-
-#     # Apagar o arquivo
-#     Remove-Item -Path $downloadPath -Force
+#     Start-Process -FilePath $downloadPath -Wait
 # }
 
 # Write-Host "Press any key to continue..."
 # $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
-# -----------------------------------------
+# ------------------------
 
 # Se o DriverMax não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files (x86)\Innovative Solutions"
@@ -60,14 +67,16 @@ if (Test-Path $directory) {
     Write-Host "File size: 7.01 MB"
 
     # Pedir ao usuário para digitar o caminho onde deseja salvar o arquivo
-    $saveLocation = Read-Host "Enter the path where you want to save the file (Ex.: C:\Users\UserPC\Downloads)"
+    do {
+        $saveLocation = Read-Host "Enter the path where you want to save the file (Ex.: C:\Users\UserPC\Downloads)"
 
-    # Verifica se o caminho existe, caso contrário, cria o diretório
-    if (-not (Test-Path $saveLocation)) {
-        New-Item -ItemType Directory -Path $saveLocation -ErrorAction SilentlyContinue | Out-Null
-    }
+        # Verifica se o caminho existe e é válido
+        if (-not (Test-Path (Split-Path -Path $saveLocation))) {
+            Write-Host "Invalid path or directory does not exist. Please enter a valid path."
+        }
+    } until (Test-Path (Split-Path -Path $saveLocation))
 
-    # Define o caminho completo para o arquivo de download, incluindo a extensão .exe
+    # Define o caminho completo para o arquivo de download
     $downloadPath = Join-Path -Path $saveLocation -ChildPath "DriverMax_setup.exe"
     
     # Faz o download do DriverMax
