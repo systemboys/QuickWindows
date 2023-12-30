@@ -124,7 +124,7 @@
 :: v0.5.1 2023-12-28 às 16h58, Marcos Aurélio:
 ::   - Alterção na execução do utilitário 'WinToHDD', se já estiver instalado, haverá uma pergunta se deseja executá-lo na sessão 'Utilitários para Windows.
 ::   - Correção do caminho do executável do 'AnyDesk' no arquivo 'Install_AnyDesk.ps1'.
-:: v0.5.2 2023-12-29 às 01h41, Marcos Aurélio:
+:: v0.5.2 2023-12-29 às 01h41, Sandro de Souza Silva (Servo):
 ::   - Opção para instalação de 'DriverMax' na sessão 'Utilitários para Windows / Ferramentas de Restauração do Sistema'.
 :: v0.5.3 2023-12-29 às 21h34, Marcos Aurélio:
 ::   - Modificação onde o PowerShell pergunta onde deve salvar o download do arquivo de instalação do 'DriverMax' na sessão
