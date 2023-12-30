@@ -126,6 +126,9 @@
 ::   - Correção do caminho do executável do 'AnyDesk' no arquivo 'Install_AnyDesk.ps1'.
 :: v0.5.2 2023-12-29 às 01h41, Marcos Aurélio:
 ::   - Opção para instalação de 'DriverMax' na sessão 'Utilitários para Windows / Ferramentas de Restauração do Sistema'.
+:: v0.5.3 2023-12-29 às 21h34, Marcos Aurélio:
+::   - Modificação onde o PowerShell pergunta onde deve salvar o download do arquivo de instalação do 'DriverMax' na sessão
+::     'Utilitários para Windows / Ferramentas de Restauração do Sistema'.
 ::
 :: Licença: GPL.
 
