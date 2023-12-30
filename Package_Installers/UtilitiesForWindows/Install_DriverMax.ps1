@@ -8,7 +8,7 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-12-29 às 01h41, Marcos Aurélio:
+# v0.0.1 2023-12-29 às 01h41, Sandro de Souza Silva (Servo Informática):
 #   - Versão inicial, Instalação de DriverMax.
 # v0.0.2 2023-12-29 às 21h34, Marcos Aurélio:
 #   - Modificação onde o PowerShell pergunta onde deve salvar o download do arquivo.
