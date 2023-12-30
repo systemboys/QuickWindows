@@ -70,11 +70,17 @@ if (Test-Path $directory) {
     do {
         $saveLocation = Read-Host "Enter the path where you want to save the file (Ex.: C:\Users\UserPC\Downloads)"
 
-        # Verifica se o caminho existe e é válido
-        if (-not (Test-Path (Split-Path -Path $saveLocation))) {
-            Write-Host "Invalid path or directory does not exist. Please enter a valid path."
+        # Verifica se o campo está vazio
+        if ([string]::IsNullOrWhiteSpace($saveLocation)) {
+            Write-Host "Please enter a valid path."
         }
-    } until (Test-Path (Split-Path -Path $saveLocation))
+        else {
+            # Verifica se o caminho existe e é válido
+            if (-not (Test-Path (Split-Path -Path $saveLocation))) {
+                Write-Host "Invalid path or directory does not exist. Please enter a valid path."
+            }
+        }
+    } until (-not [string]::IsNullOrWhiteSpace($saveLocation) -and (Test-Path (Split-Path -Path $saveLocation)))
 
     # Define o caminho completo para o arquivo de download
     $downloadPath = Join-Path -Path $saveLocation -ChildPath "DriverMax_setup.exe"
