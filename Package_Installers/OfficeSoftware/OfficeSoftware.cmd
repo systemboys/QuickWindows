@@ -20,6 +20,10 @@
 ::
 :: Licença: GPL.
 
+:: Mudar a cor do plano de fundo
+powershell -command "$Host.UI.RawUI.BackgroundColor = 'Black'"
+cls
+
 cls
 
 chcp 65001 > nul

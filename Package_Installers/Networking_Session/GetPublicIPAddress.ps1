@@ -12,6 +12,10 @@
 #
 # Licença: GPL.
 
+# Define a cor de fundo para preto
+$Host.UI.RawUI.BackgroundColor = "Black"
+Clear-Host  # Limpa a tela para aplicar a nova cor
+
 $ipAddress = Invoke-RestMethod -Uri "https://api.ipify.org?format=json" | Select-Object -ExpandProperty ip
 Write-Host "Public IP Address: $ipAddress"
 Write-Host "Press any key to continue..."

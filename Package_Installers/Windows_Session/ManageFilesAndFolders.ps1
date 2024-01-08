@@ -13,6 +13,10 @@
 #
 # Licença: GPL.
 
+# Define a cor de fundo para preto
+$Host.UI.RawUI.BackgroundColor = "Black"
+Clear-Host  # Limpa a tela para aplicar a nova cor
+
 Add-Type -AssemblyName System.Windows.Forms
 
 # Cria uma caixa de diálogo para inserir o local

@@ -12,6 +12,10 @@
 #
 # Licença: GPL.
 
+# Define a cor de fundo para preto
+$Host.UI.RawUI.BackgroundColor = "Black"
+Clear-Host  # Limpa a tela para aplicar a nova cor
+
 do {
     clear
     Write-Host "0 = Exit"

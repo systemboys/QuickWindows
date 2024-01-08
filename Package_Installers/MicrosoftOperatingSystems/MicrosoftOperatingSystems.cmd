@@ -16,6 +16,10 @@
 ::
 :: Licença: GPL.
 
+:: Mudar a cor do plano de fundo
+powershell -command "$Host.UI.RawUI.BackgroundColor = 'Black'"
+cls
+
 cls
 
 chcp 65001 > nul
@@ -124,8 +128,6 @@ if %ERRORLEVEL% equ 7 (
 
     goto menu_Session_8
 )
-
-
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>

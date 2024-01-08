@@ -15,6 +15,10 @@
 #
 # Licença: GPL.
 
+# Define a cor de fundo para preto
+$Host.UI.RawUI.BackgroundColor = "Black"
+Clear-Host  # Limpa a tela para aplicar a nova cor
+
 # Se o Revo Uninstaller não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files\VS Revo Group"
 $directory = "$programFiles\Revo Uninstaller"

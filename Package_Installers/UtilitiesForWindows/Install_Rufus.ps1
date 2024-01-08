@@ -13,6 +13,10 @@
 #
 # Licença: GPL.
 
+# Define a cor de fundo para preto
+$Host.UI.RawUI.BackgroundColor = "Black"
+Clear-Host  # Limpa a tela para aplicar a nova cor
+
 Write-Host "Rufus is not installed! Starting installation process."
 Write-Host "File size: 9.9 MB"
 

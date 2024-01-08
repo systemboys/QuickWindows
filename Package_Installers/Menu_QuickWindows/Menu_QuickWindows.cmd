@@ -20,6 +20,10 @@ cls
 
 chcp 65001 > nul
 
+:: Mudar a cor do plano de fundo
+powershell -command "$Host.UI.RawUI.BackgroundColor = 'Black'"
+cls
+
 :: Obter o ano atual
 for /f "tokens=2 delims==" %%I in ('"wmic os get localdatetime /value"') do set datetime=%%I
 set "ano=%datetime:~0,4%"

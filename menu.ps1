@@ -22,6 +22,10 @@
 
 clear
 
+# Define a cor de fundo para preto
+$Host.UI.RawUI.BackgroundColor = "Black"
+Clear-Host  # Limpa a tela para aplicar a nova cor
+
 # Ativar a execução de scripts no PowerShell
 Set-ExecutionPolicy RemoteSigned
 

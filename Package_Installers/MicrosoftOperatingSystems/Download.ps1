@@ -14,6 +14,10 @@
 #
 # Licença: GPL.
 
+# Define a cor de fundo para preto
+$Host.UI.RawUI.BackgroundColor = "Black"
+Clear-Host  # Limpa a tela para aplicar a nova cor
+
 # [1]=Windows 7, todas as versões
 # [2]=Windows 7 Lite
 # [3]=Windows 10 Pro 32bits

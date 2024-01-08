@@ -15,6 +15,10 @@
 #
 # Licença: GPL.
 
+# Define a cor de fundo para preto
+$Host.UI.RawUI.BackgroundColor = "Black"
+Clear-Host  # Limpa a tela para aplicar a nova cor
+
 $domain = Read-Host "Enter the domain of the website"
 $ip = [System.Net.Dns]::GetHostAddresses($domain) | Select-Object -ExpandProperty IPAddressToString
 $traceroute = Test-NetConnection -TraceRoute -ComputerName $ip
