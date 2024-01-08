@@ -129,12 +129,18 @@
 :: v0.5.3 2023-12-29 às 21h34, Marcos Aurélio:
 ::   - Modificação onde o PowerShell pergunta onde deve salvar o download do arquivo de instalação do 'DriverMax' na sessão
 ::     'Utilitários para Windows / Ferramentas de Restauração do Sistema'.
+:: v0.5.4 2024-01-08 às 18h52, Marcos Aurélio:
+::   - Adicionado um comando para mudar a cor do plano de fundo do Windows PowerShell.
 ::
 :: Licença: GPL.
 
 cls
 
 chcp 65001 > nul
+
+:: Mudar a cor do plano de fundo
+powershell -command "$Host.UI.RawUI.BackgroundColor = 'Black'"
+cls
 
 :: Obtém o número da última versão do histórico do script
 for /f "tokens=2 delims= " %%a in ('findstr /r /c:":: v[0-9]*\.[0-9]*\.[0-9]*" "%~f0"') do (
