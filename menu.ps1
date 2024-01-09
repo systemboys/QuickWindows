@@ -17,6 +17,8 @@
 #   - Se o AnyDesk tiver instalado, o script pergunta se quer executá-lo e, reabertura do Windows PowerShell após instalação do Git.
 # v0.0.5 2023-12-08 às 17h27, Marcos Aurélio:
 #   - Alteração que faz com que o script não precise mais clonar novamente o "QuickWindows" caso já esteja instalado do diretório Temp.
+# v0.0.6 2024-01-09 às 16h21, Marcos Aurélio:
+#   - Correção do script 'menu.ps1' onde ele verifica se o Git está instalado.
 #
 # Licença: GPL.
 
