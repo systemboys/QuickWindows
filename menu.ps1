@@ -17,8 +17,6 @@
 #   - Se o AnyDesk tiver instalado, o script pergunta se quer executá-lo e, reabertura do Windows PowerShell após instalação do Git.
 # v0.0.5 2023-12-08 às 17h27, Marcos Aurélio:
 #   - Alteração que faz com que o script não precise mais clonar novamente o "QuickWindows" caso já esteja instalado do diretório Temp.
-# v0.0.6 2024-01-09 às 16h21, Marcos Aurélio:
-#   - Correção do script 'menu.ps1' onde ele verifica se o Git está instalado.
 #
 # Licença: GPL.
 
@@ -82,7 +80,10 @@ if (Test-Path $directory) {
     }
 }
 
-# ---------------------------------------------
+# Verifica se o Git está instalado no Windows (versões 10 e 11)
+Write-Host "Checking if Git is installed on Windows..."
+
+# Verifica o caminho padrão de instalação no Windows 10 e 11
 $gitPaths = @(
     "$env:ProgramFiles\Git\bin\git.exe",
     "$env:ProgramFiles(x86)\Git\bin\git.exe"
@@ -102,7 +103,6 @@ if ($gitInstalled) {
     Write-Host "Git is installed."
 } else {
     Write-Host "Git is not installed."
-
     # Definição do arquivo
     $fileName="Git"
     $fileUrl="https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
@@ -132,7 +132,6 @@ if ($gitInstalled) {
     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
     exit
 }
-# ---------------------------------------------
 
 # Verifique se o QuickWindows existe
 $programFiles = $env:TEMP
