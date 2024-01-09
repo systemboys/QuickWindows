@@ -82,12 +82,27 @@ if (Test-Path $directory) {
     }
 }
 
-# Verifica se o Git está instalado
-Write-Host "Checking if Git exists on Windows..."
-# Se o Git não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files"
-$directory = "$programFiles\Git"
-if (-not (Test-Path $directory)) {
+# ---------------------------------------------
+$gitPaths = @(
+    "$env:ProgramFiles\Git\bin\git.exe",
+    "$env:ProgramFiles(x86)\Git\bin\git.exe"
+)
+
+$gitInstalled = $false
+
+foreach ($path in $gitPaths) {
+    if (Test-Path $path) {
+        Write-Host "Git found at $path"
+        $gitInstalled = $true
+        break
+    }
+}
+
+if ($gitInstalled) {
+    Write-Host "Git is installed."
+} else {
+    Write-Host "Git is not installed."
+
     # Definição do arquivo
     $fileName="Git"
     $fileUrl="https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
@@ -117,6 +132,7 @@ if (-not (Test-Path $directory)) {
     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
     exit
 }
+# ---------------------------------------------
 
 # Verifique se o QuickWindows existe
 $programFiles = $env:TEMP
