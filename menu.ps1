@@ -82,7 +82,12 @@ if (Test-Path $directory) {
 
 # Verifica se o Git está instalado
 Write-Host "Checking if Git exists on Windows..."
-if (!(Get-Command git -ErrorAction SilentlyContinue)) {
+# Se o Git não estiver instalado, faz o download e instala
+$programFiles = "$env:SystemDrive\Program Files"
+$directory = "$programFiles\Git"
+if (Test-Path $directory) 
+    Write-Host "The directory $directory exists."
+} else {
     # Definição do arquivo
     $fileName="Git"
     $fileUrl="https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
