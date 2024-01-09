@@ -87,7 +87,7 @@ Write-Host "Checking if Git exists on Windows..."
 # Se o Git não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\Git"
-if (Test-Path $directory) 
+if (Test-Path $directory) {
     Write-Host "The directory $directory exists."
 } else {
     # Definição do arquivo
