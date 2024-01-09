@@ -83,7 +83,7 @@ if (Test-Path $directory) {
 # Verifica se o Git está instalado no Windows (versões 10 e 11)
 Write-Host "Checking if Git is installed on Windows..."
 
-# Verifica o caminho padrão de instalação no Windows 10 e 11
+# Verificação do caminho padrão de instalação do Git em outras versões do Windows
 $gitPaths = @(
     "$env:ProgramFiles\Git\bin\git.exe",
     "$env:ProgramFiles(x86)\Git\bin\git.exe"
@@ -132,6 +132,7 @@ if ($gitInstalled) {
     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
     exit
 }
+# Fim da verificação do caminho padrão de instalação do Git em outras versões do Windows
 
 # Verifique se o QuickWindows existe
 $programFiles = $env:TEMP
