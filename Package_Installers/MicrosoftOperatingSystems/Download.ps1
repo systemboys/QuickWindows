@@ -14,6 +14,12 @@
 #
 # Licença: GPL.
 
+# Recebe um argumento que pode ser um número
+param (
+    [Parameter(Mandatory=$true)]
+    [int]$numero
+)
+
 # Define a cor de fundo para preto
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
@@ -25,12 +31,6 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 # [5]=Windows 10 1909 PRO MSDN LITE Build
 # [6]=Windows 11 Pro
 # [7]=Windows Server 2022
-
-# Recebe um argumento que pode ser um número
-param (
-    [Parameter(Mandatory=$true)]
-    [int]$numero
-)
 
 # Windows 7, todas as versões
 $url1 = "https://htciuq.bl.files.1drv.com/y4mt9d6zCC8LoPtWykd16m0C78ToCfoJ-zdWeZYYAC-JDhYnhYcaltM76Ak8fGYw2u82BF5VtA87srqHOQR7mHc0V_FPrm-w0b5J9ns-VT8T8QRg0U4yLxFzCeLVLf-LGAydIKrvwN0LuDZXS9yPyJaRlQSSkguOrvVv6dwq7D8LwANl-NDE2A-ObLZE2dvhtcQGlapagf4_za-Ir_GIdCuNw"
