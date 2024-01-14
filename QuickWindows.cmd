@@ -131,6 +131,8 @@
 ::     'Utilitários para Windows / Ferramentas de Restauração do Sistema'.
 :: v0.5.4 2024-01-08 às 18h52, Marcos Aurélio:
 ::   - Adicionado um comando para mudar a cor do plano de fundo do Windows PowerShell.
+:: v0.5.5 2024-01-14 às 11h45, Marcos Aurélio:
+::   - Opção para executar "Opções de pastas" na sessão "Windows / Acesso rápido à Configurações".
 ::
 :: Licença: GPL.
 

@@ -18,6 +18,8 @@
 ::   - Opção para "Configurações do Windows".
 :: v0.0.4 2023-12-01 às 22h56, Marcos Aurélio:
 ::   - Opção para "Gerenciador de Tarefas do Windows".
+:: v0.0.5 2024-01-14 às 11h45, Marcos Aurélio:
+::   - Opção para executar "Opções de pastas".
 ::
 :: Licença: GPL.
 
@@ -49,6 +51,7 @@ set "menu_Session_2_1_p2[3]=Sobre o Windows (WinVer)"
 set "menu_Session_2_1_p2[4]=Gerenciar arquivos e pastas"
 set "menu_Session_2_1_p2[5]=Configurações do Windows"
 set "menu_Session_2_1_p2[6]=Gerenciador de Tarefas do Windows"
+set "menu_Session_2_1_p2[7]=Opções de pastas"
 
 set "default=%1%"
 
@@ -117,6 +120,16 @@ if %ERRORLEVEL% equ 6 (
     echo Você selecionou a Opção Gerenciador de Tarefas do Windows.
 
     start taskmgr
+
+    goto menu_Session_2_1_p2
+)
+
+:: Opções de pastas
+if %ERRORLEVEL% equ 7 (
+    cls
+    echo Você selecionou a Opções de pastas.
+
+    start control folders
 
     goto menu_Session_2_1_p2
 )
