@@ -22,12 +22,13 @@ Write-Host "Starting cleaning temporary files..."
 # Limpar diretório C:\Windows\Temp
 $windowsTempPath = "C:\Windows\Temp"
 Write-Host "Clearing temporary files in: $windowsTempPath"
-Remove-Item -Path $windowsTempPath\* -Force -Recurse
+Get-ChildItem -Path $windowsTempPath | Where-Object { $_.FullName -notlike "*\QuickWindows\*" } | Remove-Item -Force -Recurse
 
-# Limpar diretório %temp% do usuário
+# Limpar diretório %temp% do usuário, excluindo o diretório QuickWindows
 $userTempPath = [System.IO.Path]::GetTempPath()
-Write-Host "Clearing temporary files in: $userTempPath"
-Remove-Item -Path $userTempPath\* -Force -Recurse
+$quickWindowsPath = Join-Path $userTempPath "QuickWindows"
+Write-Host "Clearing temporary files in: $userTempPath, exceto $quickWindowsPath"
+Get-ChildItem -Path $userTempPath | Where-Object { $_.FullName -ne $quickWindowsPath } | Remove-Item -Force -Recurse
 
 # Mensagem de conclusão
 Write-Host "Temporary file cleanup complete."
