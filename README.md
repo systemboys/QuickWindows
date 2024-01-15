@@ -174,6 +174,7 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Gerenciar arquivos e pastas
       - [x] Configurações do Windows
       - [x] Gerenciador de Tarefas do Windows
+      - [x] Opções de pastas
   - [x] **Internet**
     - [x] Voltar…
     - [x] Acesso Remoto…
@@ -229,6 +230,9 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] WinToHDD
       - [x] Hasleo WinToHDD Free
       - [x] Install_Rufus.ps1
+    - [x] Limpar Spooler de Impressão
+      > ( ! ) Essa opção irá parar o serviço de spooler de impressão, limpar os arquivos temporários e reiniciar o serviço.
+
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
     - [x] Microsoft Office 2019 a 2021

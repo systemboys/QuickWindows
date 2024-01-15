@@ -15,6 +15,8 @@
 ::   - Versão inicial, sessão para "Utilitários para Windows" e Instalação de WinToHDD.
 :: v0.0.2 2023-11-30 às 01h14, Marcos Aurélio:
 ::   - Concluindo a sessão "Software de congelamento do sistema".
+:: v0.0.3 2024-01-15 às 18h04, Marcos Aurélio:
+::   - Opção que para o serviço de spooler de impressão, limpa os arquivos temporários e reinicia o serviço.
 ::
 :: Licença: GPL.
 
@@ -48,6 +50,7 @@ set "menu_Session_6[5]=Software de congelamento do sistema…"
 set "menu_Session_6[6]=Backup e Restauração"
 set "menu_Session_6[7]=Software de gerenciamento de partições"
 set "menu_Session_6[8]=Ferramentas de restauração do sistema…"
+set "menu_Session_6[9]=Limpar Spooler de Impressão"
 
 set "default=%1%"
 
@@ -115,6 +118,20 @@ if %ERRORLEVEL% equ 7 (
 :: Ferramentas de restauração do sistema…
 if %ERRORLEVEL% equ 8 (
     call SystemRestoreTools.cmd 0
+)
+
+:: Limpar Spooler de Impressão
+if %ERRORLEVEL% equ 9 (
+    echo Você selecionou para Limpar Spooler de Impressão.
+
+    net stop spooler
+    cd %systemroot%\system32\spool\PRINTERS
+    del /f /s *.SHD
+    del /f /s *.SPL
+    net start spooler
+
+    pause
+    goto menu_Session_6
 )
 
 goto :EOF
