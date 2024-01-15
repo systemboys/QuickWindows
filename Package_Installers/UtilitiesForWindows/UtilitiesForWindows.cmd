@@ -122,15 +122,11 @@ if %ERRORLEVEL% equ 8 (
 
 :: Limpar Spooler de Impressão
 if %ERRORLEVEL% equ 9 (
+    cls
     echo Você selecionou para Limpar Spooler de Impressão.
 
-    net stop spooler
-    cd %systemroot%\system32\spool\PRINTERS
-    del /f /s *.SHD
-    del /f /s *.SPL
-    net start spooler
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ClearPrintSpooler.ps1""' -Verb RunAs}"
 
-    pause
     goto menu_Session_6
 )
 
