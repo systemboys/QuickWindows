@@ -49,15 +49,13 @@ powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 :: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
-    cd ..
-    cd ..
     call UtilitiesForWindows.cmd 9
 )
 
 :: Limpar Spooler de Impressão
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou para Limpar Spooler de Impressão.
+    echo Você selecionou a opção para Limpar Spooler de Impressão.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ClearPrintSpooler.ps1""' -Verb RunAs}"
 
@@ -67,7 +65,7 @@ if %ERRORLEVEL% equ 1 (
 :: Limpar Arquivos Temporários
 if %ERRORLEVEL% equ 2 (
     cls
-    echo Você selecionou para Limpar Arquivos Temporários.
+    echo Você selecionou a opção para Limpar Arquivos Temporários.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ClearTemporaryFiles.ps1""' -Verb RunAs}"
 

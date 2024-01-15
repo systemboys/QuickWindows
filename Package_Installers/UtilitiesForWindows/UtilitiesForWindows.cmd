@@ -51,9 +51,6 @@ set "menu_Session_6_p1[6]=Backup e Restauração"
 set "menu_Session_6_p1[7]=Software de gerenciamento de partições"
 set "menu_Session_6_p1[8]=Ferramentas de restauração do sistema…"
 set "menu_Session_6_p1[9]=Mais…"
-@REM Mais...
-@REM set "menu_Session_6_p2[1]=Limpar Spooler de Impressão"
-@REM set "menu_Session_6_p2[2]=Limpar Arquivos Temporários"
 
 set "default=%1%"
 
@@ -123,7 +120,7 @@ if %ERRORLEVEL% equ 8 (
     call SystemRestoreTools.cmd 0
 )
 
-:: Compactadores…
+:: Mais…
 if %ERRORLEVEL% equ 9 (
     call UtilitiesForWindows2.cmd 0
 )
