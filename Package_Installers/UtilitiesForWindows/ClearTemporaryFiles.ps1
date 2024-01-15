@@ -22,13 +22,27 @@ Write-Host "Starting cleaning temporary files..."
 # Limpar diretório C:\Windows\Temp
 $windowsTempPath = "C:\Windows\Temp"
 Write-Host "Clearing temporary files in: $windowsTempPath"
-Get-ChildItem -Path $windowsTempPath | Where-Object { $_.FullName -notlike "*\QuickWindows\*" } | Remove-Item -Force -Recurse
+Get-ChildItem -Path $windowsTempPath | Where-Object { $_.FullName -notlike "*\QuickWindows\*" } | ForEach-Object {
+    try {
+        Remove-Item $_.FullName -Force -Recurse -ErrorAction Stop
+        Write-Host "Deleted file: $($_.FullName)"
+    } catch {
+        Write-Host "Error deleting file: $($_.FullName). $($_.Exception.Message)"
+    }
+}
 
 # Limpar diretório %temp% do usuário, excluindo o diretório QuickWindows
 $userTempPath = [System.IO.Path]::GetTempPath()
 $quickWindowsPath = Join-Path $userTempPath "QuickWindows"
 Write-Host "Clearing temporary files in: $userTempPath, exceto $quickWindowsPath"
-Get-ChildItem -Path $userTempPath | Where-Object { $_.FullName -ne $quickWindowsPath } | Remove-Item -Force -Recurse
+Get-ChildItem -Path $userTempPath | Where-Object { $_.FullName -ne $quickWindowsPath } | ForEach-Object {
+    try {
+        Remove-Item $_.FullName -Force -Recurse -ErrorAction Stop
+        Write-Host "Deleted file: $($_.FullName)"
+    } catch {
+        Write-Host "Error deleting file: $($_.FullName). $($_.Exception.Message)"
+    }
+}
 
 # Mensagem de conclusão
 Write-Host "Temporary file cleanup complete."
