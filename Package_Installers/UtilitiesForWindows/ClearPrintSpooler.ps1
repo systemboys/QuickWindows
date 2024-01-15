@@ -22,26 +22,26 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\YourPackage"
 
 # Mensagem de início
-Write-Host "Iniciando o processo de limpeza do Spooler de Impressão..."
+Write-Host "Starting the Print Spooler cleaning process..."
 
 # Parar o serviço de spooler
-Write-Host "Parando o serviço de Spooler de Impressão..."
+Write-Host "Stopping the Print Spooler service..."
 Stop-Service -Name Spooler -Force
 
 # Remover arquivos temporários
 $shdPath = "$env:systemroot\system32\spool\PRINTERS\*.SHD"
 $splPath = "$env:systemroot\system32\spool\PRINTERS\*.SPL"
 
-Write-Host "Removendo arquivos temporários: $shdPath, $splPath"
+Write-Host "Removing temporary files: $shdPath, $splPath"
 Remove-Item -Path $shdPath -Force -Recurse
 Remove-Item -Path $splPath -Force -Recurse
 
 # Iniciar o serviço de spooler
-Write-Host "Iniciando o serviço de Spooler de Impressão..."
+Write-Host "Starting the Print Spooler service..."
 Start-Service -Name Spooler
 
 # Mensagem de conclusão
-Write-Host "Limpeza do Spooler de Impressão concluída."
+Write-Host "Print Spooler Cleanup Complete."
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
