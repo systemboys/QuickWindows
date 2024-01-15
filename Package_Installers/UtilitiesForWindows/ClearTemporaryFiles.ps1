@@ -20,7 +20,7 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 Write-Host "Starting cleaning temporary files..."
 
 # Limpar diretório C:\Windows\Temp
-$windowsTempPath = $env:TEMP
+$windowsTempPath = "$env:Windir\Temp"
 Write-Host "Clearing temporary files in: $windowsTempPath"
 Get-ChildItem -Path $windowsTempPath | Where-Object { $_.FullName -notlike "*\QuickWindows\*" } | ForEach-Object {
     try {
