@@ -21,10 +21,27 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\YourPackage"
 
+# Mensagem de início
+Write-Host "Iniciando o processo de limpeza do Spooler de Impressão..."
+
+# Parar o serviço de spooler
+Write-Host "Parando o serviço de Spooler de Impressão..."
 Stop-Service -Name Spooler -Force
-Remove-Item -Path "$env:systemroot\system32\spool\PRINTERS\*.SHD" -Force -Recurse
-Remove-Item -Path "$env:systemroot\system32\spool\PRINTERS\*.SPL" -Force -Recurse
+
+# Remover arquivos temporários
+$shdPath = "$env:systemroot\system32\spool\PRINTERS\*.SHD"
+$splPath = "$env:systemroot\system32\spool\PRINTERS\*.SPL"
+
+Write-Host "Removendo arquivos temporários: $shdPath, $splPath"
+Remove-Item -Path $shdPath -Force -Recurse
+Remove-Item -Path $splPath -Force -Recurse
+
+# Iniciar o serviço de spooler
+Write-Host "Iniciando o serviço de Spooler de Impressão..."
 Start-Service -Name Spooler
+
+# Mensagem de conclusão
+Write-Host "Limpeza do Spooler de Impressão concluída."
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
