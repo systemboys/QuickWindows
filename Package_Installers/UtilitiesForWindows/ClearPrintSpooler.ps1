@@ -1,15 +1,14 @@
-# Install_YourPackage.ps1 - Executa o script de instalação de YourPackage.
+# ClearPrintSpooler.ps1 - Executa o script que limpa o spooler de impressão do Windows
 #
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #
 # ---------------------------------------------------------------
-# Este programa tem a finalidade de facilitar na instalação de
-# pacotes para Windows.
+# Este programa tem a finalidade de limpar o spooler de impressão do Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:
-#   - Versão inicial, Instalação de YourPackage.
+# v0.0.1 2024-01-15 às 19h22, Marcos Aurélio:
+#   - Versão inicial, Opção que para o serviço de spooler de impressão, limpa os arquivos temporários e reinicia o serviço na sessão 'Utilitários para Windows'.
 #
 # Licença: GPL.
 

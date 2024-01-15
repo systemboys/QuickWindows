@@ -1,7 +1,7 @@
 <# : Batch portion
 @echo off & setlocal enabledelayedexpansion
 
-:: UtilitiesForWindows.cmd - Para instalação de softwares para Windows
+:: UtilitiesForWindows2.cmd - Para instalação de softwares para Windows
 ::
 :: Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 :: Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
@@ -11,12 +11,8 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-29 às 10h40, Marcos Aurélio:
-::   - Versão inicial, sessão para "Utilitários para Windows" e Instalação de WinToHDD.
-:: v0.0.2 2023-11-30 às 01h14, Marcos Aurélio:
-::   - Concluindo a sessão "Software de congelamento do sistema".
-:: v0.0.3 2024-01-15 às 18h04, Marcos Aurélio:
-::   - Opção que para o serviço de spooler de impressão, limpa os arquivos temporários e reinicia o serviço.
+:: v0.0.1 2024-01-15 às 19h18, Marcos Aurélio:
+::   - Versão inicial, Opção que limpa os arquivos temporários do diretório C:\Windows\Temp e %temp% do usuário.
 ::
 :: Licença: GPL.
 
@@ -38,26 +34,16 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo QuickWindows / Utilitários para Windows [Page 1]
+echo QuickWindows / Utilitários para Windows [Page 2]
 
 :: Opções do Menu
-set "menu_Session_6_p1[0]=Voltar…"
-set "menu_Session_6_p1[1]=Instalar Revo Uninstaller"
-set "menu_Session_6_p1[2]=Compactadores…"
-set "menu_Session_6_p1[3]=Leitores de PDF…"
-set "menu_Session_6_p1[4]=Players Multimídia…"
-set "menu_Session_6_p1[5]=Software de congelamento do sistema…"
-set "menu_Session_6_p1[6]=Backup e Restauração"
-set "menu_Session_6_p1[7]=Software de gerenciamento de partições"
-set "menu_Session_6_p1[8]=Ferramentas de restauração do sistema…"
-set "menu_Session_6_p1[9]=Mais…"
-@REM Mais...
-@REM set "menu_Session_6_p2[1]=Limpar Spooler de Impressão"
-@REM set "menu_Session_6_p2[2]=Limpar Arquivos Temporários"
+set "menu_Session_6_p2[0]=Voltar…"
+set "menu_Session_6_p2[1]=Limpar Spooler de Impressão"
+set "menu_Session_6_p2[2]=Limpar Arquivos Temporários"
 
 set "default=%1%"
 
-:menu_Session_6_p1
+:menu_Session_6_p2
 powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 
 :: Voltar…
@@ -65,77 +51,37 @@ if %ERRORLEVEL% equ 0 (
     cls
     cd ..
     cd ..
-    call QuickWindows.cmd 6
+    call UtilitiesForWindows.cmd 9
 )
 
-:: Instalar Revo Uninstaller
+:: Limpar Spooler de Impressão
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção para instalar o Revo Uninstaller.
+    echo Você selecionou para Limpar Spooler de Impressão.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Your_Package.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ClearPrintSpooler.ps1""' -Verb RunAs}"
 
-    goto menu_Session_6_p1
+    goto menu_Session_6_p2
 )
 
-:: Compactadores…
+:: Limpar Arquivos Temporários
 if %ERRORLEVEL% equ 2 (
-    call Compactors.cmd 0
-)
-
-:: Leitores de PDF…
-if %ERRORLEVEL% equ 3 (
-    call PDFReaders.cmd 0
-)
-
-:: Players Multimídia…
-if %ERRORLEVEL% equ 4 (
-    call MultimediaPlayers.cmd 0
-)
-
-:: Software de congelamento do sistema…
-if %ERRORLEVEL% equ 5 (
-    call SystemFreezeSoftware.cmd 0
-)
-
-:: Backup e Restauração
-if %ERRORLEVEL% equ 6 (
     cls
-    echo Você selecionou a Opção Backup e Restauração e este recurso ainda não foi desenvolvido.
+    echo Você selecionou para Limpar Arquivos Temporários.
 
-    @REM  Your commands here…
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ClearTemporaryFiles.ps1""' -Verb RunAs}"
 
-    goto menu_Session_6_p1
-)
-
-:: Software de gerenciamento de partições
-if %ERRORLEVEL% equ 7 (
-    cls
-    echo Você selecionou a Opção Software de gerenciamento de partições e este recurso ainda não foi desenvolvido.
-
-    @REM  Your commands here…
-
-    goto menu_Session_6_p1
-)
-
-:: Ferramentas de restauração do sistema…
-if %ERRORLEVEL% equ 8 (
-    call SystemRestoreTools.cmd 0
-)
-
-:: Compactadores…
-if %ERRORLEVEL% equ 9 (
-    call UtilitiesForWindows2.cmd 0
+    goto menu_Session_6_p2
 )
 
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_6_p1title = "=== QuickWindows / Utilitarios para Windows [Page 1] ==="
-$menu_Session_6_p1prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
+$menu_Session_6_p2title = "=== QuickWindows / Utilitarios para Windows [Page 2] ==="
+$menu_Session_6_p2prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
-$maxlen = $menu_Session_6_p1prompt.length + 6
-$menu_Session_6_p1 = gci env: | ?{ $_.Name -match "^menu_Session_6_p1\[\d+\]$" } | %{
+$maxlen = $menu_Session_6_p2prompt.length + 6
+$menu_Session_6_p2 = gci env: | ?{ $_.Name -match "^menu_Session_6_p2\[\d+\]$" } | %{
     $_.Value.trim()
     $len = $_.Value.trim().Length + 6
     if ($len -gt $maxlen) { $maxlen = $len }
@@ -144,11 +90,11 @@ $menu_Session_6_p1 = gci env: | ?{ $_.Name -match "^menu_Session_6_p1\[\d+\]$" }
 $h = $Host.UI.RawUI.WindowSize.Height
 $w = $Host.UI.RawUI.WindowSize.Width
 $xpos = [math]::floor(($w - ($maxlen + 5)) / 2)
-$ypos = [math]::floor(($h - ($menu_Session_6_p1.Length + 4)) / 3)
+$ypos = [math]::floor(($h - ($menu_Session_6_p2.Length + 4)) / 3)
 
 $offY = [console]::WindowTop;
 $rect = New-Object Management.Automation.Host.Rectangle `
-    0,$offY,($w - 1),($offY+$ypos+$menu_Session_6_p1.length+4)
+    0,$offY,($w - 1),($offY+$ypos+$menu_Session_6_p2.length+4)
 $buffer = $Host.UI.RawUI.GetBufferContents($rect)
 
 function destroy {
@@ -157,7 +103,7 @@ function destroy {
 }
 
 function getKey {
-    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_6_p1.length)) -contains $x)) {
+    while (-not ((37..40 + 13 + 48..(47 + $menu_Session_6_p2.length)) -contains $x)) {
         $x = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
     }
     $x
@@ -183,14 +129,14 @@ function center([string]$what) {
     WriteTo-Pos "$lpad   $what   $rpad" $xpos $line blue yellow
 }
 
-function menu_Session_6_p1 {
+function menu_Session_6_p2 {
     $line = $ypos
-    center $menu_Session_6_p1title
+    center $menu_Session_6_p2title
     $line++
     center " "
     $line++
 
-    for ($i=0; $item = $menu_Session_6_p1[$i]; $i++) {
+    for ($i=0; $item = $menu_Session_6_p2[$i]; $i++) {
         # write-host $xpad -nonewline
         $rtpad = " " * ($maxlen - $item.length)
         if ($i -eq $selection) {
@@ -201,11 +147,11 @@ function menu_Session_6_p1 {
     }
     center " "
     $line++
-    center $menu_Session_6_p1prompt
+    center $menu_Session_6_p2prompt
     1
 }
 
-while (menu_Session_6_p1) {
+while (menu_Session_6_p2) {
 
     [int]$key = getKey
 
@@ -215,7 +161,7 @@ while (menu_Session_6_p1) {
         38 { if ($selection) { $selection-- }; break }
 
         39 {}   # right or down
-        40 { if ($selection -lt ($menu_Session_6_p1.length - 1)) { $selection++ }; break }
+        40 { if ($selection -lt ($menu_Session_6_p2.length - 1)) { $selection++ }; break }
 
         # number or enter
         default { if ($key -gt 13) {$selection = $key - 48}; destroy; exit($selection) }

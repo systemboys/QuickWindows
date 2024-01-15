@@ -232,6 +232,8 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Install_Rufus.ps1
     - [x] Limpar Spooler de Impressão
       > ( ! ) Essa opção irá parar o serviço de spooler de impressão, limpar os arquivos temporários e reiniciar o serviço.
+    - [x] Limpar Arquivos Temporários
+      > ( ! ) Essa opção irá limpar os arquivos temporários do diretório C:\Windows\Temp e %temp% do usuário.
 
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
