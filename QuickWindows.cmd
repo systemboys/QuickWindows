@@ -138,6 +138,8 @@
 ::   - Opção que limpa os arquivos temporários do diretório C:\Windows\Temp e %temp% do usuário.
 :: v0.5.7 2024-01-18 às 21h40, Marcos Aurélio:
 ::   - Alteração no 'menu.ps1' onde verifica se o Windows PowerShell está sendo executado como administrador.
+:: v0.5.8 2024-01-19 às 01h08, Marcos Aurélio:
+::   - Alteração que mostra a quantidade de arquivos temporários foram apagados na sessão "Utilitários para Windows / Limpar Arquivos Temporários".
 ::
 :: Licença: GPL.
 
