@@ -17,10 +17,19 @@
 #   - Se o AnyDesk tiver instalado, o script pergunta se quer executá-lo e, reabertura do Windows PowerShell após instalação do Git.
 # v0.0.5 2023-12-08 às 17h27, Marcos Aurélio:
 #   - Alteração que faz com que o script não precise mais clonar novamente o "QuickWindows" caso já esteja instalado do diretório Temp.
+# v0.0.6 2024-01-18 às 21h40, Marcos Aurélio:
+#   - Alteração que verifica se o Windows PowerShell está sendo executado como administrador.
 #
 # Licença: GPL.
 
 clear
+
+# Verifica se o Windows PowerShell está sendo executado como administrador
+if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Host "Este script precisa ser executado como administrador."
+    Start-Process powershell -Verb RunAs -ArgumentList "-Command irm qw.gti1.com.br/menu.ps1 | iex"
+    exit
+}
 
 # Define a cor de fundo para preto
 $Host.UI.RawUI.BackgroundColor = "Black"

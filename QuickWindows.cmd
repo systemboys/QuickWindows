@@ -136,6 +136,8 @@
 :: v0.5.6 2024-01-15 às 18h04, Marcos Aurélio:
 ::   - Opção que para o serviço de spooler de impressão, limpa os arquivos temporários e reinicia o serviço na sessão 'Utilitários para Windows'.
 ::   - Opção que limpa os arquivos temporários do diretório C:\Windows\Temp e %temp% do usuário.
+:: v0.5.7 2024-01-18 às 21h40, Marcos Aurélio:
+::   - Alteração no 'menu.ps1' onde verifica se o Windows PowerShell está sendo executado como administrador.
 ::
 :: Licença: GPL.
 
