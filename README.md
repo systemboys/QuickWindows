@@ -205,7 +205,6 @@ Aqui estão todas as opções em desenvolvimento.
   - [x] **Utilitários para Windows**
     - [x] Voltar…
     - [x] Instalar Revo Unistaller
-      > ( ! ) Apresentou problemas chegando a não baixar o arquivo!
     - [x] **Compactadores**
       - [x] Instalar WinRAR
       - [x] Instalar WinZIP
