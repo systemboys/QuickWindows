@@ -16,7 +16,7 @@
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
-# Se o YourPackage não estiver instalado, faz o download e instala
+# Se o MiniTool Partition Wizard não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\YourPackage"
 
@@ -27,10 +27,10 @@ if (Test-Path $directory) {
     Write-Host "File size: 9.9 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://download.anydesk.com/YourPackage.exe"
-    $downloadPath = "$env:temp\YourPackage.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/MiniTool-Partition-Wizard-v12-64bit-portable.zip"
+    $downloadPath = "$env:temp\MiniTool-Partition-Wizard-v12-64bit-portable.zip"
     
-    # Faz o download do YourPackage
+    # Faz o download do MiniTool Partition Wizard
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 
     # Emitir Sequência de Beeps
@@ -40,7 +40,7 @@ if (Test-Path $directory) {
         Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
     }
     
-    # Instala o YourPackage
+    # Instala o MiniTool Partition Wizard
     Start-Process -FilePath "$downloadPath" -Wait
 
     # Apagar o arquivo

@@ -18,13 +18,13 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # Se o MiniTool Partition Wizard não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files"
-$directory = "$programFiles\YourPackage"
+$directory = "$programFiles\MiniTool Partition Wizard 12"
 
 if (Test-Path $directory) {
     Write-Host "YourPackage is installed!"
 } else {
     Write-Host "YourPackage is not installed! Starting installation process."
-    Write-Host "File size: 9.9 MB"
+    Write-Host "File size: 3.1 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/MiniTool-Partition-Wizard-v12-Installation.exe"

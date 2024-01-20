@@ -222,8 +222,8 @@ Aqui estão todas as opções em desenvolvimento.
         > ( ! ) Via comando PowerShell, o usuário deverá informar a origem e o destino.
     - [x] **Software de gerenciamento de partições**
       - [x] MiniTool Partition Wizard v12 Installation
-      - [x] MiniTool Partition Wizard v12 32bit portable
-      - [x] MiniTool Partition Wizard v12 64bit portable
+      - [ ] MiniTool Partition Wizard v12 32bit portable
+      - [ ] MiniTool Partition Wizard v12 64bit portable
       - [ ] GParted
     - [x] **Ferramentas de restauração do sistema**
       - [x] WinToHDD
