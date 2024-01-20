@@ -17,13 +17,13 @@ $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # Se o MiniTool Partition Wizard não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files"
-$directory = "$programFiles\YourPackage"
+$programFiles = "$env:temp"
+$directory = "$programFiles\MiniTool-Partition-Wizard-v12-64bit-portable"
 
 if (Test-Path $directory) {
-    Write-Host "YourPackage is installed!"
+    Write-Host "MiniTool Partition Wizard is installed!"
 } else {
-    Write-Host "YourPackage is not installed! Starting installation process."
+    Write-Host "MiniTool Partition Wizard is not installed! Starting installation process."
     Write-Host "File size: 29.7 MB"
 
     # Link do download e o diretório Temp
@@ -39,12 +39,24 @@ if (Test-Path $directory) {
         [Console]::Beep(500, 300)
         Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
     }
-    
-    # Instala o MiniTool Partition Wizard
-    Start-Process -FilePath "$downloadPath" -Wait
 
-    # Apagar o arquivo
+    # Extrair o arquivo compactado (.zip)
+    # Definir o caminho do diretório de destino para a extração
+    $extractPath = $env:temp
+
+    # Extrair o arquivo zip para o diretório de destino
+    Expand-Archive -Path $downloadPath -DestinationPath $extractPath
+
+    # Definir o caminho do arquivo exe dentro do diretório descompactado
+    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\MiniTool-Partition-Wizard-v12-64bit-portable\partitionwizard.exe"
+    # /Extrair o arquivo compactado (.zip)
+    
+    # Executar o MiniTool Partition Wizard
+    Start-Process -FilePath "$extractPath\MiniTool-Partition-Wizard-v12-64bit-portable\partitionwizard.exe" -Wait
+
+    # Apagar o arquivo e o diretório
     Remove-Item -Path $downloadPath -Force
+    Remove-Item -Path "$extractPath\MiniTool-Partition-Wizard-v12-64bit-portable" -Recurse -Force
 }
 
 Write-Host "Press any key to continue..."

@@ -40,7 +40,7 @@ if (Test-Path $directory) {
         Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
     }
 
-    # --------------------Extrair o arquivo compactado (.zip) ---------------------------------------
+    # Extrair o arquivo compactado (.zip)
     # Definir o caminho do diretório de destino para a extração
     $extractPath = $env:temp
 
@@ -49,7 +49,7 @@ if (Test-Path $directory) {
 
     # Definir o caminho do arquivo exe dentro do diretório descompactado
     $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\MiniTool-Partition-Wizard-v12-32bit-portable\partitionwizard.exe"
-    # --------------------/Extrair o arquivo compactado (.zip) ---------------------------------------
+    # /Extrair o arquivo compactado (.zip)
     
     # Executar o MiniTool Partition Wizard
     Start-Process -FilePath "$extractPath\MiniTool-Partition-Wizard-v12-32bit-portable\partitionwizard.exe" -Wait
