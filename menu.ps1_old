@@ -19,8 +19,6 @@
 #   - Alteração que faz com que o script não precise mais clonar novamente o "QuickWindows" caso já esteja instalado do diretório Temp.
 # v0.0.6 2024-01-18 às 21h40, Marcos Aurélio:
 #   - Alteração que verifica se o Windows PowerShell está sendo executado como administrador.
-# v0.0.7 2024-01-20 às 00h20, Marcos Aurélio:
-#   - Modificação do script que faz a instalação do Git via 'Chocolatey'.
 #
 # Licença: GPL.
 
@@ -60,6 +58,9 @@ if (Test-Path $directory) {
     if ($response -eq "Yes") {
         # Executa o AnyDesk
         Start-Process -FilePath "$env:SystemDrive\Program Files (x86)\AnyDesk\AnyDesk.exe"
+    }
+    else {
+        # exit
     }
 } else {
     Add-Type -AssemblyName PresentationFramework
@@ -111,17 +112,28 @@ if ($gitInstalled) {
     Write-Host "Git is installed."
 } else {
     Write-Host "Git is not installed."
-    
-    # Verifica se o Chocolatey está instalado
-    if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
-        # Se não estiver instalado, instala o Chocolatey
-        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-    }
-    # Instala o Git usando Chocolatey
-    choco install git.install -params "/GitAndUnixToolsOnPath /NoShellIntegration /SChannel /NoAutoCrlf /UseCredentialManager" -y
+    # Definição do arquivo
+    $fileName="Git"
+    $fileUrl="https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
+    $outputFileName="Git_Setup.exe"
+
+    Write-Host "$fileName does not exist on Windows! Downloading the installer..."
+    Write-Host "File size: 58.4 MB"
+
+    # Baixa o instalador do Git
+    Start-BitsTransfer -Source $fileUrl -Destination "$env:TEMP\$outputFileName"
+
+    Write-Host "Running the $fileName installer..."
+
+    # Instala o Git
+    Start-Process -FilePath "$env:TEMP\$outputFileName" -Wait
+
+    Write-Host "Deleting the $fileName installer..."
+
+    # Remove o instalador do Git
+    Remove-Item "$env:TEMP\$outputFileName"
 
     # Fechar a janela do Windows PowerShell
-    Write-Host
     Write-Host "After installing Git, Windows PowerShell must be restarted!"
     Write-Host "Type the same command again or press the up directional arrow key."
     Write-Host
