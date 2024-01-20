@@ -142,6 +142,8 @@
 ::   - Alteração que mostra a quantidade de arquivos temporários foram apagados na sessão "Utilitários para Windows / Limpar Arquivos Temporários".
 :: v0.5.9 2024-01-20 às 17h04, Marcos Aurélio:
 ::   - Corrigido o nome do arquivo.ps1 que baixa e executa o Revo Uninstaller na função no arquivo 'UtilitiesForWindows.cmd'.
+:: v0.6.0 2024-01-20 às 17h04, Marcos Aurélio:
+::   - Opção para Sessão 'Software de gerenciamento de partições'. Versão inicial, Menu da Sessão para 'Softwares de Gerenciamento de Partições' no Windows.
 ::
 :: Licença: GPL.
 
