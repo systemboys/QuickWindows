@@ -56,7 +56,7 @@ if (Test-Path $directory) {
 
     # Apagar o arquivo e o diretório
     Remove-Item -Path $downloadPath -Force
-    Remove-Item -Path "$extractPath\MiniTool-Partition-Wizard-v12-32bit-portable" -Force
+    Remove-Item -Path "$extractPath\MiniTool-Partition-Wizard-v12-32bit-portable" -Recurse -Force
 }
 
 Write-Host "Press any key to continue..."
