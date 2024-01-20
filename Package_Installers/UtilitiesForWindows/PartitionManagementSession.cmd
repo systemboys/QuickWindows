@@ -49,9 +49,7 @@ powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 :: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
-    cd ..
-    cd ..
-    call QuickWindows.cmd 0
+    call UtilitiesForWindows.cmd 7
 )
 
 :: Opção 1
@@ -87,7 +85,7 @@ if %ERRORLEVEL% equ 3 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_6_7title = "=== QuickWindows / Software de Gerenciamento de Partições ==="
+$menu_Session_6_7title = "=== ... / Software de Gerenciamento de Partições ==="
 $menu_Session_6_7prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_6_7prompt.length + 6
