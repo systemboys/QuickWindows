@@ -33,7 +33,7 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo QuickWindows / Software de Gerenciamento de Partições
+echo QuickWindows / Utilitários para Windows / Software de Gerenciamento de Partições
 
 :: Opções do Menu
 set "menu_Session_6_7[0]=Voltar…"
@@ -85,7 +85,7 @@ if %ERRORLEVEL% equ 3 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_6_7title = "=== ... / Software de Gerenciamento de Partições ==="
+$menu_Session_6_7title = "=== ... / Software de Gerenciamento de Particoes ==="
 $menu_Session_6_7prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_6_7prompt.length + 6
