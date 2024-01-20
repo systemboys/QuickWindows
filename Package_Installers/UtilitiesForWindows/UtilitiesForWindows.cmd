@@ -17,6 +17,8 @@
 ::   - Concluindo a sessão "Software de congelamento do sistema".
 :: v0.0.3 2024-01-15 às 18h04, Marcos Aurélio:
 ::   - Opção que para o serviço de spooler de impressão, limpa os arquivos temporários e reinicia o serviço.
+:: v0.0.4 2024-01-20 às 17h04, Marcos Aurélio:
+::   - Corrigido o nome do arquivo.ps1 que baixa e executa o Revo Uninstaller na função.
 ::
 :: Licença: GPL.
 
