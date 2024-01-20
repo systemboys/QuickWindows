@@ -37,9 +37,9 @@ echo QuickWindows / Utilitários para Windows / Software de Gerenciamento de Par
 
 :: Opções do Menu
 set "menu_Session_6_7[0]=Voltar…"
-set "menu_Session_6_7[1]=Opção 1"
-set "menu_Session_6_7[2]=Opção 2"
-set "menu_Session_6_7[3]=Opção 3"
+set "menu_Session_6_7[1]=MiniTool Partition Wizard v12 Installation"
+set "menu_Session_6_7[2]=MiniTool Partition Wizard v12 32bit portable"
+set "menu_Session_6_7[3]=MiniTool Partition Wizard v12 64bit portable"
 
 set "default=%1"
 
@@ -52,32 +52,34 @@ if %ERRORLEVEL% equ 0 (
     call UtilitiesForWindows.cmd 7
 )
 
-:: Opção 1
+:: MiniTool Partition Wizard v12 Installation
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Opção 1.
+    echo Você selecionou a Opção para instalar o MiniTool Partition Wizard v12 Installation.
 
-    @REM  Your commands here…
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_MiniToolPartitionWizardInstallation.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_7
 )
 
-:: Opção 2
+:: MiniTool Partition Wizard v12 32bit portable
 if %ERRORLEVEL% equ 2 (
     cls
-    echo Você selecionou a Opção 2.
+    
+    echo Você selecionou a Opção para baixar e executar o MiniTool Partition Wizard v12 32bit portable.
 
-    @REM  Your commands here…
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_MiniToolPartitionWizard32bitPortable.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_7
 )
 
-:: Opção 3
+:: MiniTool Partition Wizard v12 64bit portable
 if %ERRORLEVEL% equ 3 (
     cls
-    echo Você selecionou a Opção 3.
+    
+    echo Você selecionou a Opção para baixar e executar o MiniTool Partition Wizard v12 64bit portable.
 
-    @REM  Your commands here…
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_MiniToolPartitionWizard64bitPortable.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_7
 )

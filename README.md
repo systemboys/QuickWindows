@@ -221,8 +221,9 @@ Aqui estão todas as opções em desenvolvimento.
       - [ ] Copiar arquivos de origem para destino
         > ( ! ) Via comando PowerShell, o usuário deverá informar a origem e o destino.
     - [x] **Software de gerenciamento de partições**
-      - [ ] Partition Magic
-      - [ ] MiniTool Partition Wizard
+      - [x] MiniTool Partition Wizard v12 Installation
+      - [x] MiniTool Partition Wizard v12 32bit portable
+      - [x] MiniTool Partition Wizard v12 64bit portable
       - [ ] GParted
     - [x] **Ferramentas de restauração do sistema**
       - [x] WinToHDD
