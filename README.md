@@ -215,7 +215,6 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Instalar VLC Media Player
     - [x] **Software de congelamento do sistema**
       - [x] Instalar Deep Freeze
-      - [x] Install_Hasleo_WinToHDD_Free.ps1
       - [x] Instalar Shadow Defender
     - [x] **Backup e Restauração**
       - [ ] Instalar Veeam Backup
@@ -228,7 +227,8 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] **Ferramentas de restauração do sistema**
       - [x] WinToHDD
       - [x] Hasleo WinToHDD Free
-      - [x] Install_Rufus.ps1
+      - [x] Rufus
+      - [x] DriverMax
     - [x] Limpar Spooler de Impressão
       > ( ! ) Essa opção irá parar o serviço de spooler de impressão, limpar os arquivos temporários e reiniciar o serviço.
     - [x] Limpar Arquivos Temporários
