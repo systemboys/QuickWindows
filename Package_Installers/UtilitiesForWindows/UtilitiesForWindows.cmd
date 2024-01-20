@@ -109,12 +109,7 @@ if %ERRORLEVEL% equ 6 (
 
 :: Software de gerenciamento de partições
 if %ERRORLEVEL% equ 7 (
-    cls
-    echo Você selecionou a Opção Software de gerenciamento de partições e este recurso ainda não foi desenvolvido.
-
-    @REM  Your commands here…
-
-    goto menu_Session_6_p1
+    call PartitionManagementSession.cmd
 )
 
 :: Ferramentas de restauração do sistema…
