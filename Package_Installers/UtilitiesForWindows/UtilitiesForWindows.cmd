@@ -70,7 +70,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o Revo Uninstaller.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Your_Package.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Revo_Uninstaller.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p1
 )
