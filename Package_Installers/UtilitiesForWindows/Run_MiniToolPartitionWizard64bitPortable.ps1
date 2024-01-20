@@ -24,7 +24,7 @@ if (Test-Path $directory) {
     Write-Host "YourPackage is installed!"
 } else {
     Write-Host "YourPackage is not installed! Starting installation process."
-    Write-Host "File size: 9.9 MB"
+    Write-Host "File size: 29.7 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/MiniTool-Partition-Wizard-v12-64bit-portable.zip"

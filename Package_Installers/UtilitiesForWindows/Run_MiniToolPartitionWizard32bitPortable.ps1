@@ -24,7 +24,7 @@ if (Test-Path $directory) {
     Write-Host "YourPackage is installed!"
 } else {
     Write-Host "YourPackage is not installed! Starting installation process."
-    Write-Host "File size: 9.9 MB"
+    Write-Host "File size: 26.7 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/MiniTool-Partition-Wizard-v12-32bit-portable.zip"
@@ -39,12 +39,24 @@ if (Test-Path $directory) {
         [Console]::Beep(500, 300)
         Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
     }
+
+    # --------------------Extrair o arquivo compactado (.zip) ---------------------------------------
+    # Definir o caminho do diretório de destino para a extração
+    $extractPath = $env:temp
+
+    # Extrair o arquivo zip para o diretório de destino
+    Expand-Archive -Path $downloadPath -DestinationPath $extractPath
+
+    # Definir o caminho do arquivo exe dentro do diretório descompactado
+    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\MiniTool-Partition-Wizard-v12-32bit-portable\partitionwizard.exe"
+    # --------------------/Extrair o arquivo compactado (.zip) ---------------------------------------
     
     # Executar o MiniTool Partition Wizard
-    Start-Process -FilePath "$downloadPath" -Wait
+    Start-Process -FilePath "$extractPath\MiniTool-Partition-Wizard-v12-32bit-portable\partitionwizard.exe" -Wait
 
-    # Apagar o arquivo
+    # Apagar o arquivo e o diretório
     Remove-Item -Path $downloadPath -Force
+    Remove-Item -Path "$extractPath\MiniTool-Partition-Wizard-v12-32bit-portable" -Force
 }
 
 Write-Host "Press any key to continue..."
