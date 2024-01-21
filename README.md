@@ -105,10 +105,14 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Install_Microsoft_Office_365.ps1
 │  │  └─ OfficeSoftware.cmd
 │  ├─ /UtilitiesForWindows/
+│  │  ├─ ClearPrintSpooler.ps1
+│  │  ├─ ClearTemporaryFiles.ps1
 │  │  ├─ Compactors.cmd
 │  │  ├─ Install_AdobeReaderPDF.ps1
 │  │  ├─ Install_Deep_Freeze.ps1
+│  │  ├─ Install_DriverMax.ps1
 │  │  ├─ Install_Hasleo_WinToHDD_Free.ps1
+│  │  ├─ Install_MiniToolPartitionWizardInstallation.ps1
 │  │  ├─ Install_Revo_Uninstaller.ps1
 │  │  ├─ Install_Rufus.ps1
 │  │  ├─ Install_Shadow_Defender.ps1
@@ -118,9 +122,13 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Install_WinZip.ps1
 │  │  ├─ MultimediaPlayers.cmd
 │  │  ├─ PDFReaders.cmd
+│  │  ├─ PartitionManagementSession.cmd
+│  │  ├─ Run_MiniToolPartitionWizard32bitPortable.ps1
+│  │  ├─ Run_MiniToolPartitionWizard64bitPortable.ps1
 │  │  ├─ SystemFreezeSoftware.cmd
 │  │  ├─ SystemRestoreTools.cmd
-│  │  └─ UtilitiesForWindows.cmd
+│  │  ├─ UtilitiesForWindows.cmd
+│  │  └─ UtilitiesForWindows2.cmd
 │  ├─ /Windows_Session/
 │  │  ├─ ManageFilesAndFolders.ps1
 │  │  ├─ QuickAccessToSettings.cmd
