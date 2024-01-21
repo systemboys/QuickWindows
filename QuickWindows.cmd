@@ -144,6 +144,8 @@
 ::   - Corrigido o nome do arquivo.ps1 que baixa e executa o Revo Uninstaller na função no arquivo 'UtilitiesForWindows.cmd'.
 :: v0.6.0 2024-01-20 às 17h04, Marcos Aurélio:
 ::   - Opção para Sessão 'Software de gerenciamento de partições'. Versão inicial, Menu da Sessão para 'Softwares de Gerenciamento de Partições' no Windows.
+:: v0.6.1 2024-01-20 às 23h20, Marcos Aurélio:
+::   - Correção na Sessão 'Menu QuickWindows', onde foi mudado de 'rmdir /s /q QuickWindows' para 'Remove-Item -Path "QuickWindows" -Recurse -Force'.
 ::
 :: Licença: GPL.
 
