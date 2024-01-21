@@ -14,7 +14,7 @@
 :: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, menu_Session_1 de instalações de programas para Windows.
 :: v0.0.2 2024-01-20 às 23h20, Marcos Aurélio:
-::   - Correção no script, onde foi mudado de 'rmdir /s /q QuickWindows' para 'Remove-Item -Path "QuickWindows" -Recurse -Force'.
+::   - Correção no script, onde foi mudado de 'rmdir /s /q QuickWindows' para 'PowerShell -Command "Remove-Item -Path 'QuickWindows' -Recurse -Force"'.
 ::
 :: Licença: GPL.
 
@@ -63,7 +63,7 @@ if %ERRORLEVEL% equ 1 (
     cd ..
     cd ..
     cd ..
-    Remove-Item -Path "QuickWindows" -Recurse -Force
+    PowerShell -Command "Remove-Item -Path 'QuickWindows' -Recurse -Force"
     git clone https://github.com/systemboys/QuickWindows.git
     cd QuickWindows
     call QuickWindows.cmd 0
@@ -75,7 +75,7 @@ if %ERRORLEVEL% equ 2 (
     cd ..
     cd ..
     cd ..
-    Remove-Item -Path "QuickWindows" -Recurse -Force
+    PowerShell -Command "Remove-Item -Path 'QuickWindows' -Recurse -Force"
 )
 
 :: Recarregar QuickWindows
