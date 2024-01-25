@@ -25,7 +25,7 @@ if (Test-Path $directory) {
     Write-Host "Foxit PDF Reader is installed!"
 } else {
     Write-Host "Foxit PDF Reader is not installed! Starting installation process."
-    Write-Host "File size: 9.9 MB"
+    Write-Host "File size: 153.0 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://public.bl.files.1drv.com/y4mhXxb-H_Z4V8uDytwQSgzG5ccbk1mYgPPa3vtO81Xb5uAZR8d08ePkFHk91e6IJc5pMT5vAYohY2naeGXcBiO89TPQIba35N4-C543Zod9cIYxynjIMvWkKH4Dh5lpsGqC3uqe4vLCNCZZZAX7x2_tu4jqzB66A69XsE0Tg3Q87uJGBzfUyXUIWS_ynRImLV8OdmECfv7pK01tN_qEXxuVqCtysU-gA35FPvU3qiMhY4?AVOverride=1"
