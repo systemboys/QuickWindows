@@ -15,6 +15,8 @@
 ::   - Versão inicial, sessão "Compactadores" para Windows.
 :: v0.0.2 2023-11-30 às 00h46, Marcos Aurélio:
 ::   - Opção para Instalação de WinZip.
+:: v0.0.3 2024-01-25 às 19h43, Marcos Aurélio:
+::   - Opção para Instalação de 7-Zip.
 ::
 :: Licença: GPL.
 
@@ -42,6 +44,7 @@ echo QuickWindows / Utilitários para Windows / Compactadores
 set "menu_Session_6_2[0]=Voltar…"
 set "menu_Session_6_2[1]=WinRAR"
 set "menu_Session_6_2[2]=WinZip"
+set "menu_Session_6_2[3]=7-Zip"
 
 set "default=0"
 
@@ -70,6 +73,16 @@ if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção para instalar o WinZip.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_WinZip.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_2
+)
+
+:: 7-Zip
+if %ERRORLEVEL% equ 2 (
+    cls
+    echo Você selecionou a Opção para instalar o 7-Zip.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_7_Zip.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_2
 )
