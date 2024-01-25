@@ -112,6 +112,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Install_AdobeReaderPDF.ps1
 │  │  ├─ Install_Deep_Freeze.ps1
 │  │  ├─ Install_DriverMax.ps1
+│  │  ├─ Install_FoxitPDFReader.ps1
 │  │  ├─ Install_Hasleo_WinToHDD_Free.ps1
 │  │  ├─ Install_MiniToolPartitionWizardInstallation.ps1
 │  │  ├─ Install_Revo_Uninstaller.ps1
@@ -221,6 +222,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] **Leitores de PDF**
       - [x] Acrobat Reader DC
         > ( i ) O script que instala o Acrobat Reader DC detecta qual é a versão do Windows e direciona para o download da versão.
+      - [x] Foxit PDF Reader
     - [x] **Players Multimídia**
       - [x] Instalar VLC Media Player
     - [x] **Software de congelamento do sistema**

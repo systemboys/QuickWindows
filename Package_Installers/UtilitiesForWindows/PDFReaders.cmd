@@ -13,6 +13,8 @@
 :: Histórico:
 :: v0.0.1 2023-11-29 às 13h45, Marcos Aurélio:
 ::   - Versão inicial, sessão de leitores de PDF para Windows.
+:: v0.0.2 2024-01-25 às 20h11, Marcos Aurélio:
+::   - Versão inicial, Instalação de Foxit PDF Reader.
 ::
 :: Licença: GPL.
 
@@ -39,6 +41,7 @@ echo QuickWindows / Leitores de PDF
 :: Opções do Menu
 set "menu_Session_6_3[0]=Voltar…"
 set "menu_Session_6_3[1]=Acrobat Reader DC"
+set "menu_Session_6_3[2]=Foxit PDF Reader"
 
 set "default=0"
 
@@ -57,6 +60,16 @@ if %ERRORLEVEL% equ 1 (
     echo Você selecionou a Opção para instalar o AdobeReader.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_AdobeReaderPDF.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_3
+)
+
+:: Foxit PDF Reader
+if %ERRORLEVEL% equ 2 (
+    cls
+    echo Você selecionou a Opção para instalar o Foxit PDF Reader.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_FoxitPDFReader.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_3
 )
