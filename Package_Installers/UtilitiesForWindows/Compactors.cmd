@@ -78,7 +78,7 @@ if %ERRORLEVEL% equ 2 (
 )
 
 :: 7-Zip
-if %ERRORLEVEL% equ 2 (
+if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção para instalar o 7-Zip.
 
