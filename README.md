@@ -108,6 +108,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ ClearPrintSpooler.ps1
 │  │  ├─ ClearTemporaryFiles.ps1
 │  │  ├─ Compactors.cmd
+│  │  ├─ Install_7_Zip.ps1
 │  │  ├─ Install_AdobeReaderPDF.ps1
 │  │  ├─ Install_Deep_Freeze.ps1
 │  │  ├─ Install_DriverMax.ps1
@@ -214,11 +215,12 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Voltar…
     - [x] Instalar Revo Unistaller
     - [x] **Compactadores**
-      - [x] Instalar WinRAR
-      - [x] Instalar WinZIP
+      - [x] WinRAR
+      - [x] WinZIP
+      - [x] 7-Zip
     - [x] **Leitores de PDF**
-      - [x] Instalar Acrobat Reader DC Win10
-      - [x] Instalar Acrobat Reader DC Win11
+      - [x] Acrobat Reader DC
+        > ( i ) O script que instala o Acrobat Reader DC detecta qual é a versão do Windows e direciona para o download da versão.
     - [x] **Players Multimídia**
       - [x] Instalar VLC Media Player
     - [x] **Software de congelamento do sistema**
