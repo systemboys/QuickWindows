@@ -105,6 +105,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Install_Microsoft_Office_365.ps1
 │  │  └─ OfficeSoftware.cmd
 │  ├─ /UtilitiesForWindows/
+│  │  ├─ BackupAndRestore.cmd
 │  │  ├─ ClearPrintSpooler.ps1
 │  │  ├─ ClearTemporaryFiles.ps1
 │  │  ├─ Compactors.cmd

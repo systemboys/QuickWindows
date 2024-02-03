@@ -148,6 +148,8 @@
 ::   - Opção para Instalação de '7-Zip' na sessão 'Utilitários para Windows / Compactadores'.
 :: v0.6.2 2024-01-25 às 20h11, Marcos Aurélio:
 ::   - Versão inicial, Instalação de 'Foxit PDF Reader' na sessão 'Utilitários para Windows / Leitores de PDF'.
+:: v0.6.3 2024-02-03 às 20h17, Marcos Aurélio:
+::   - Opção para "Compressão de arquivos, PowerShell Backup Automático (.zip)" na sessão "Utilitários para Windows / Backup e Restaruação".
 ::
 :: Licença: GPL.
 

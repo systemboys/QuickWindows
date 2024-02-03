@@ -33,7 +33,7 @@ set /a resultado=ano-2008
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática.
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
-echo QuickWindows / Sessão
+echo QuickWindows / Utilitarios para Windows / Backup e Restaruação
 
 :: Opções do Menu
 set "menu_Session_6_6[0]=Voltar…"
@@ -47,9 +47,7 @@ powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 :: Voltar…
 if %ERRORLEVEL% equ 0 (
     cls
-    cd ..
-    cd ..
-    call QuickWindows.cmd 0
+    call UtilitiesForWindows.cmd 6
 )
 
 :: Compressão de arquivos, PowerShell Backup Automático (.zip)
@@ -65,7 +63,7 @@ if %ERRORLEVEL% equ 1 (
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 
-$menu_Session_6_6title = "=== QuickWindows / New Session ==="
+$menu_Session_6_6title = "=== .. / Utilitarios / Backup e Restaruação ==="
 $menu_Session_6_6prompt = "Use as teclas direcionais. Pressione Enter para selecionar."
 
 $maxlen = $menu_Session_6_6prompt.length + 6
