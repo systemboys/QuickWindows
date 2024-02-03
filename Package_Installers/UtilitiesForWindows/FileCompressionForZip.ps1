@@ -18,9 +18,9 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # Solicita ao usuário o diretório a ser copiado
 do {
-    $sourceDirectory = Read-Host "Enter the full path of the directory to be copied"
+    $sourceDirectory = Read-Host "Digite o caminho completo do diretório a ser copiado"
     if (-not $sourceDirectory) {
-        Write-Host "Invalid path. Please provide a valid path."
+        Write-Host "Caminho inválido. Por favor, informe um caminho válido."
     }
     elseif (-not (Test-Path $sourceDirectory -PathType Container)) {
         Write-Host "O diretório de origem não existe. Verifique o caminho e tente novamente."
@@ -29,12 +29,12 @@ do {
 
 # Solicita ao usuário o caminho onde o arquivo ZIP será salvo
 do {
-    $destinationZip = Read-Host "Enter the full path to the location where the ZIP file will be saved"
+    $destinationZip = Read-Host "Digite o caminho completo do local onde o arquivo ZIP será salvo"
     if (-not $destinationZip) {
-        Write-Host "Invalid path. Please provide a valid path."
+        Write-Host "Caminho inválido. Por favor, informe um caminho válido."
     }
     elseif (-not (Test-Path $destinationZip -PathType Container)) {
-        Write-Host "The destination directory does not exist. Check the path and try again."
+        Write-Host "O diretório de destino não existe. Verifique o caminho e tente novamente."
     }
 } while (-not $destinationZip -or -not (Test-Path $destinationZip -PathType Container))
 
@@ -46,7 +46,7 @@ $zipFileName = Join-Path $destinationZip ("$($sourceDirectory -split '\\|/' | Se
 $zipArchive = [System.IO.Compression.ZipFile]::Open($zipFileName, 'Create')
 
 # Adiciona uma barra de progresso
-Write-Progress -Activity "Compressing files" -Status "Starting" -PercentComplete 0
+Write-Progress -Activity "Comprimindo arquivos" -Status "Iniciando" -PercentComplete 0
 
 # Utiliza a classe ZipArchive para criar o arquivo ZIP
 $files = Get-ChildItem -Path $sourceDirectory -File -Recurse
@@ -57,7 +57,7 @@ foreach ($file in $files) {
     # Atualiza a barra de progresso
     $currentFile++
     $percentComplete = ($currentFile / $totalFiles) * 100
-    Write-Progress -Activity "Compressing files" -Status "In progress" -PercentComplete $percentComplete
+    Write-Progress -Activity "Comprimindo arquivos" -Status "Em andamento" -PercentComplete $percentComplete
 
     # Comprime o arquivo para o arquivo ZIP
     $entry = $zipArchive.CreateEntry($file.FullName -replace [regex]::Escape($sourceDirectory), 'Optimal')
@@ -72,8 +72,8 @@ foreach ($file in $files) {
 $zipArchive.Dispose()
 
 # Atualiza a barra de progresso para 100% e exibe a conclusão
-Write-Progress -Activity "Compressing files" -Status "Completed" -PercentComplete 100
-Write-Host "Backup completed successfully. The ZIP file is at: $zipFileName"
+Write-Progress -Activity "Comprimindo arquivos" -Status "Concluído" -PercentComplete 100
+Write-Host "Backup concluído com sucesso. O arquivo ZIP está em: $zipFileName"
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
