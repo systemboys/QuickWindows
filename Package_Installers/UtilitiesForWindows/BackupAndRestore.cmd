@@ -53,9 +53,9 @@ if %ERRORLEVEL% equ 0 (
 :: Compressão de arquivos, PowerShell Backup Automático (.zip)
 if %ERRORLEVEL% equ 1 (
     cls
-    echo Você selecionou a Compressão de arquivos, PowerShell Backup Automático (.zip).
+    echo Você selecionou a Opção para o Compressor de arquivos, PowerShell Backup Automático .Zip.
 
-    @REM  Your commands here…
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0FileCompressionForZip.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_6
 )
