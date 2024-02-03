@@ -99,12 +99,7 @@ if %ERRORLEVEL% equ 5 (
 
 :: Backup e Restauração
 if %ERRORLEVEL% equ 6 (
-    cls
-    echo Você selecionou a Opção Backup e Restauração e este recurso ainda não foi desenvolvido.
-
-    @REM  Your commands here…
-
-    goto menu_Session_6_p1
+    call BackupAndRestore.cmd 0
 )
 
 :: Software de gerenciamento de partições
