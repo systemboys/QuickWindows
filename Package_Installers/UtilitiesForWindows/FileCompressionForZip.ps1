@@ -36,11 +36,11 @@ do {
     elseif (-not (Test-Path $destinationZip -PathType Container)) {
         Write-Host "The destination directory does not exist. Check the path and try again."
     }
-} while (-not "$destinationZip" -or -not (Test-Path "$destinationZip" -PathType Container))
+} while (-not $destinationZip -or -not (Test-Path $destinationZip -PathType Container))
 
 # Obtém o nome base do diretório de origem e a data e hora atual para criar o nome do arquivo ZIP
 $dateString = Get-Date -Format "yyyy-MM-dd HH-mm-ss"
-$zipFileName = Join-Path "$destinationZip" ("$($sourceDirectory -split '\\|/' | Select-Object -Last 1) $dateString.zip")
+$zipFileName = Join-Path $destinationZip ("$($sourceDirectory -split '\\|/' | Select-Object -Last 1) $dateString.zip")
 
 # Cria uma instância de ZipArchive
 $zipArchive = [System.IO.Compression.ZipFile]::Open($zipFileName, 'Create')
@@ -49,27 +49,16 @@ $zipArchive = [System.IO.Compression.ZipFile]::Open($zipFileName, 'Create')
 Write-Progress -Activity "Compressing files" -Status "Starting" -PercentComplete 0
 
 # Utiliza a classe ZipArchive para criar o arquivo ZIP
+Write-Host "Creating ZIP archive: $zipFileName"
 $files = Get-ChildItem -Path $sourceDirectory -File -Recurse
-$totalFiles = $files.Count
-$currentFile = 0
 
-foreach ($file in $files) {
-    # Atualiza a barra de progresso
-    $currentFile++
-    $percentComplete = ($currentFile / $totalFiles) * 100
-    Write-Progress -Activity "Compressing files" -Status "In progress" -PercentComplete $percentComplete
-
-    # Comprime o arquivo para o arquivo ZIP
-    $entry = $zipArchive.CreateEntry($file.FullName -replace [regex]::Escape($sourceDirectory), 'Optimal')
-    $stream = $entry.Open()
-    $fileStream = [System.IO.File]::OpenRead($file.FullName)
-    $fileStream.CopyTo($stream)
-    $fileStream.Close()
-    $stream.Close()
+try {
+    Compress-Archive -Path $files.FullName -DestinationPath $zipFileName -Force -CompressionLevel Optimal
+    Write-Host "ZIP archive created successfully."
 }
-
-# Fecha o arquivo ZIP
-$zipArchive.Dispose()
+catch {
+    Write-Host "Error creating ZIP archive: $_"
+}
 
 # Atualiza a barra de progresso para 100% e exibe a conclusão
 Write-Progress -Activity "Compressing files" -Status "Completed" -PercentComplete 100
