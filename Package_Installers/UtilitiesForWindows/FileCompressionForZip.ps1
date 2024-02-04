@@ -66,3 +66,6 @@ Write-Host "Backup completed successfully. The ZIP file is at: $zipFileName"
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+
+# Adiciona a instrução return para evitar a mensagem de erro
+return
