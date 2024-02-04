@@ -232,9 +232,8 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] **Backup e Restauração**
       - [ ] Instalar Veeam Backup
       - [ ] Copiar arquivos de origem para destino
-        > ( ! ) Via comando PowerShell, o usuário deverá informar a origem e o destino.
+        > ( i ) Via comando PowerShell, o usuário deverá informar a origem e o destino.
       - [x] Compressão de arquivos, PowerShell Backup Automático (.zip)
-        > ( ! ) Apresentando erros!
     - [x] **Software de gerenciamento de partições**
       - [x] MiniTool Partition Wizard v12 Installation
       - [x] MiniTool Partition Wizard v12 32bit portable
