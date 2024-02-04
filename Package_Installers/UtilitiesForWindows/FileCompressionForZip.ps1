@@ -18,7 +18,7 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # Solicita ao usuário o diretório a ser copiado
 do {
-    $sourceDirectory = Join-Path $PSScriptRoot Read-Host "Enter the full path of the directory to be copied"
+    $sourceDirectory = Read-Host "Enter the full path of the directory to be copied"
     if (-not $sourceDirectory) {
         Write-Host "Invalid path. Please provide a valid path."
     }
@@ -29,7 +29,7 @@ do {
 
 # Solicita ao usuário o caminho onde o arquivo ZIP será salvo
 do {
-    $destinationZip = Join-Path $PSScriptRoot Read-Host "Enter the full path to the location where the ZIP file will be saved"
+    $destinationZip = Read-Host "Enter the full path to the location where the ZIP file will be saved"
     if (-not $destinationZip) {
         Write-Host "Invalid path. Please provide a valid path."
     }
