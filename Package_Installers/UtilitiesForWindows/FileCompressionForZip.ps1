@@ -70,6 +70,11 @@ catch {
     Write-Host "Error creating ZIP archive: $_"
 }
 
+# Adiciona linhas vazias para espaçamento
+Write-Host ""
+Write-Host ""
+Write-Host ""
+
 # Atualiza a barra de progresso para 100% e exibe a conclusão
 Write-Progress -Activity "Compressing files" -Status "Completed" -PercentComplete 100
 Write-Host "Backup completed successfully. The ZIP file is at: $zipFileName"
