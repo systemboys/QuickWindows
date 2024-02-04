@@ -16,6 +16,8 @@
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+Set-ExecutionPolicy RemoteSigned
+
 # Solicita ao usuário o diretório a ser copiado
 do {
     $sourceDirectory = Read-Host "Enter the full path of the directory to be copied"
