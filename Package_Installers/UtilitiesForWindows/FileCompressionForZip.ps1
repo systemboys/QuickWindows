@@ -23,7 +23,7 @@ do {
         Write-Host "Invalid path. Please provide a valid path."
     }
     elseif (-not (Test-Path $sourceDirectory -PathType Container)) {
-        Write-Host "O diretório de origem não existe. Verifique o caminho e tente novamente."
+        Write-Host "The source directory does not exist. Check the path and try again."
     }
 } while (-not $sourceDirectory -or -not (Test-Path $sourceDirectory -PathType Container))
 
@@ -42,34 +42,11 @@ do {
 $dateString = Get-Date -Format "yyyy-MM-dd HH-mm-ss"
 $zipFileName = Join-Path $destinationZip ("$($sourceDirectory -split '\\|/' | Select-Object -Last 1) $dateString.zip")
 
-# Cria uma instância de ZipArchive
-$zipArchive = [System.IO.Compression.ZipFile]::Open($zipFileName, 'Create')
-
 # Adiciona uma barra de progresso
 Write-Progress -Activity "Compressing files" -Status "Starting" -PercentComplete 0
 
-# Utiliza a classe ZipArchive para criar o arquivo ZIP
-$files = Get-ChildItem -Path $sourceDirectory -File -Recurse
-$totalFiles = $files.Count
-$currentFile = 0
-
-foreach ($file in $files) {
-    # Atualiza a barra de progresso
-    $currentFile++
-    $percentComplete = ($currentFile / $totalFiles) * 100
-    Write-Progress -Activity "Compressing files" -Status "In progress" -PercentComplete $percentComplete
-
-    # Comprime o arquivo para o arquivo ZIP
-    $entry = $zipArchive.CreateEntry($file.FullName -replace [regex]::Escape($sourceDirectory), 'Optimal')
-    $stream = $entry.Open()
-    $fileStream = [System.IO.File]::OpenRead($file.FullName)
-    $fileStream.CopyTo($stream)
-    $fileStream.Close()
-    $stream.Close()
-}
-
-# Fecha o arquivo ZIP
-$zipArchive.Dispose()
+# Utiliza a classe ZipFile para criar o arquivo ZIP
+[System.IO.Compression.ZipFile]::CreateFromDirectory($sourceDirectory, $zipFileName, 'Optimal', $false)
 
 # Atualiza a barra de progresso para 100% e exibe a conclusão
 Write-Progress -Activity "Compressing files" -Status "Completed" -PercentComplete 100
