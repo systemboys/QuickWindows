@@ -8,7 +8,7 @@
 # ---------------------------------------------------------------
 # Histórico:
 # v0.0.1 2023-02-03 às 20h24, Marcos Aurélio:
-#   - Versão inicial, Compactação de diretório para aruqivo Zip.
+#   - Versão inicial, Compactação de diretório para arquivo Zip.
 #
 # Licença: GPL.
 
@@ -23,7 +23,7 @@ do {
         Write-Host "Invalid path. Please provide a valid path."
     }
     elseif (-not (Test-Path $sourceDirectory -PathType Container)) {
-        Write-Host "O diretório de origem não existe. Verifique o caminho e tente novamente."
+        Write-Host "The source directory does not exist. Check the path and try again."
     }
 } while (-not $sourceDirectory -or -not (Test-Path $sourceDirectory -PathType Container))
 
@@ -42,11 +42,21 @@ do {
 $dateString = Get-Date -Format "yyyy-MM-dd HH-mm-ss"
 $zipFileName = Join-Path $destinationZip ("$($sourceDirectory -split '\\|/' | Select-Object -Last 1) $dateString.zip")
 
-# Cria uma instância de ZipArchive
-$zipArchive = [System.IO.Compression.ZipFile]::Open($zipFileName, 'Create')
-
 # Adiciona uma barra de progresso
 Write-Progress -Activity "Compressing files" -Status "Starting" -PercentComplete 0
+
+# Utiliza a classe ZipArchive para criar o arquivo ZIP
+try {
+    $zipArchive = [System.IO.Compression.ZipFile]::Open($zipFileName, 'Create')
+
+    # Restante do código que usa $zipArchive para adicionar arquivos ao ZIP
+
+    # Fecha o arquivo ZIP
+    $zipArchive.Dispose()
+}
+catch {
+    Write-Host "Error using System.IO.Compression.ZipFile: $_"
+}
 
 # Utiliza a classe ZipArchive para criar o arquivo ZIP
 Write-Host "Creating ZIP archive: $zipFileName"
