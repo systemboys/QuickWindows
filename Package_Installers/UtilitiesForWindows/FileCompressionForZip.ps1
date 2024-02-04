@@ -74,6 +74,7 @@ catch {
 Write-Host ""
 Write-Host ""
 Write-Host ""
+Write-Host ""
 
 # Atualiza a barra de progresso para 100% e exibe a conclusão
 Write-Progress -Activity "Compressing files" -Status "Completed" -PercentComplete 100
