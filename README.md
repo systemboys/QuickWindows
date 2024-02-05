@@ -571,6 +571,8 @@ Para escrever o `arquivo.ps1` para scripts de instalação:
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ----------------------[Conteúdo do script abaixo]---------------------------
+
 # Se o YourPackage não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\YourPackage"
@@ -601,6 +603,8 @@ if (Test-Path $directory) {
     # Apagar o arquivo
     Remove-Item -Path $downloadPath -Force
 }
+
+# ---------------------[/Conteúdo do script acima]---------------------------
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
