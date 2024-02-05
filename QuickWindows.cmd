@@ -150,6 +150,8 @@
 ::   - Versão inicial, Instalação de 'Foxit PDF Reader' na sessão 'Utilitários para Windows / Leitores de PDF'.
 :: v0.6.3 2024-02-03 às 20h17, Marcos Aurélio:
 ::   - Opção para "Compressão de arquivos, PowerShell Backup Automático (.zip)" na sessão "Utilitários para Windows / Backup e Restaruação".
+:: v0.6.4 2024-02-04 às 22h57, Marcos Aurélio:
+::   - Opção para Obter 'Informações do Sistema com PowerShell' na sessão 'Windows / Acesso rápido às Configurações' página 2.
 ::
 :: Licença: GPL.
 

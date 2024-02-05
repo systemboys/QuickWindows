@@ -186,6 +186,7 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Configurações do Windows
       - [x] Gerenciador de Tarefas do Windows
       - [x] Opções de pastas
+      - [x] Obtendo Informações do Sistema com PowerShell
   - [x] **Internet**
     - [x] Voltar…
     - [x] Acesso Remoto…

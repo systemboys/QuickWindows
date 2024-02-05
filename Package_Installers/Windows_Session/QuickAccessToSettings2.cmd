@@ -20,6 +20,8 @@
 ::   - Opção para "Gerenciador de Tarefas do Windows".
 :: v0.0.5 2024-01-14 às 11h45, Marcos Aurélio:
 ::   - Opção para executar "Opções de pastas".
+:: v0.0.6 2024-02-04 às 22h57, Marcos Aurélio:
+::   - Opção para Obter Informações do Sistema com PowerShell.
 ::
 :: Licença: GPL.
 
@@ -52,6 +54,7 @@ set "menu_Session_2_1_p2[4]=Gerenciar arquivos e pastas"
 set "menu_Session_2_1_p2[5]=Configurações do Windows"
 set "menu_Session_2_1_p2[6]=Gerenciador de Tarefas do Windows"
 set "menu_Session_2_1_p2[7]=Opções de pastas"
+set "menu_Session_2_1_p2[8]=Obtendo Informações do Sistema com PowerShell"
 
 set "default=%1%"
 
@@ -130,6 +133,16 @@ if %ERRORLEVEL% equ 7 (
     echo Você selecionou a Opções de pastas.
 
     start control folders
+
+    goto menu_Session_2_1_p2
+)
+
+:: Obtendo Informações do Sistema com PowerShell
+if %ERRORLEVEL% equ 8 (
+    cls
+    echo Você selecionou a Opção para Obter Informações do Sistema com PowerShell.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ObtainingSystemInformation.ps1""' -Verb RunAs}"
 
     goto menu_Session_2_1_p2
 )
