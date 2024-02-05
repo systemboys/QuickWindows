@@ -134,6 +134,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  └─ UtilitiesForWindows2.cmd
 │  ├─ /Windows_Session/
 │  │  ├─ ManageFilesAndFolders.ps1
+│  │  ├─ ObtainingSystemInformation.ps1
 │  │  ├─ QuickAccessToSettings.cmd
 │  │  ├─ QuickAccessToSettings2.cmd
 │  │  ├─ ScheduleWindowsShutdown.ps1
