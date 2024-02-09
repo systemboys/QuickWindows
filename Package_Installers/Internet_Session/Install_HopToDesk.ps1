@@ -27,7 +27,7 @@ if (Test-Path $directory) {
     Write-Host "HopToDesk is installed!"
 } else {
     Write-Host "HopToDesk is not installed! Starting installation process."
-    Write-Host "File size: 9.9 MB"
+    Write-Host "File size: 7.27 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/RemoteAccess/HopToDesk.exe"
