@@ -152,6 +152,8 @@
 ::   - Opção para "Compressão de arquivos, PowerShell Backup Automático (.zip)" na sessão "Utilitários para Windows / Backup e Restaruação".
 :: v0.6.4 2024-02-04 às 22h57, Marcos Aurélio:
 ::   - Opção para Obter 'Informações do Sistema com PowerShell' na sessão 'Windows / Acesso rápido às Configurações' página 2.
+:: v0.6.5 2024-02-08 às 22h29, Marcos Aurélio:
+::   - Inclusão da opção para baixar o 'HopToDesk' na sessão 'Internet / Acesso Remoto'.
 ::
 :: Licença: GPL.
 

@@ -13,6 +13,8 @@
 :: Histórico:
 :: v0.0.1 2023-11-29 às 17h00, Marcos Aurélio:
 ::   - Versão inicial, sessão "Softwares de Acesso Remoto".
+:: v0.0.2 2024-02-08 às 22h29, Marcos Aurélio:
+::   - Inclusão da opção para baixar o 'HopToDesk'.
 ::
 :: Licença: GPL.
 
@@ -40,6 +42,7 @@ echo QuickWindows / Internet / Softwares de Acesso Remoto
 set "menu_Session_3_1[0]=Voltar…"
 set "menu_Session_3_1[1]=AnyDesk"
 set "menu_Session_3_1[2]=RustDesk"
+set "menu_Session_3_1[3]=HopToDesk"
 
 set "default=%1"
 
@@ -68,6 +71,16 @@ if %ERRORLEVEL% equ 2 (
     echo Você selecionou a Opção para instalar o RustDesk.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_RustDesk.ps1""' -Verb RunAs}"
+
+    goto menu_Session_3_1
+)
+
+:: HopToDesk
+if %ERRORLEVEL% equ 3 (
+    cls
+    echo Você selecionou a Opção para instalar o HopToDesk.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_HopToDesk.ps1""' -Verb RunAs}"
 
     goto menu_Session_3_1
 )

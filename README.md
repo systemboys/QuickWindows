@@ -79,6 +79,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Install_AnyDesk.ps1
 │  │  ├─ Install_Google_Chrome.ps1
 │  │  ├─ Install_Google_Earth_Pro.ps1
+│  │  ├─ Install_HopToDesk.ps1
 │  │  ├─ Install_Internet_Download_Manager.ps1
 │  │  ├─ Install_Microsoft_Edge.ps1
 │  │  ├─ Install_Mozilla_Firefox.ps1
@@ -193,6 +194,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Acesso Remoto…
       - [x] AnyDesk
       - [x] RustDesk
+      - [x] HopToDesk
     - [x] Instalar Microsoft Edge
     - [x] Instalar Google Chrome
     - [x] Instalar Google Earth Pro
