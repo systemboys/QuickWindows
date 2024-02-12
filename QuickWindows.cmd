@@ -156,6 +156,8 @@
 ::   - Inclusão da opção para baixar o 'HopToDesk' na sessão 'Internet / Acesso Remoto'.
 :: v0.6.6 2024-02-12 às 03h05, Marcos Aurélio:
 ::   - Opção para instalação de 'DriverBoosterFree' na sessão 'Utilitários para Windows / Page 2'.
+:: v0.6.7 2024-02-12 às 10h27, Marcos Aurélio:
+::   - Opção para instalação de 'CPU-Z' na sessão 'Utilitários para Windows / Page 2'.
 ::
 :: Licença: GPL.
 
