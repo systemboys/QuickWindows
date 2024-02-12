@@ -20,14 +20,14 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 # ----------------------[Conteúdo do script abaixo]---------------------------
 
 # Se o CPU-Z não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files"
+$programFiles = "$env:SystemDrive\Program Files\CPUID"
 $directory = "$programFiles\CPU-Z"
 
 if (Test-Path $directory) {
     Write-Host "CPU-Z is installed!"
 } else {
     Write-Host "CPU-Z is not installed! Starting installation process."
-    Write-Host "File size: 9.9 MB"
+    Write-Host "File size: 2.13 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/CPU-Z.exe"
