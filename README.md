@@ -113,6 +113,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Install_7_Zip.ps1
 │  │  ├─ Install_AdobeReaderPDF.ps1
 │  │  ├─ Install_Deep_Freeze.ps1
+│  │  ├─ Install_DriverBoosterFree.ps1
 │  │  ├─ Install_DriverMax.ps1
 │  │  ├─ Install_FoxitPDFReader.ps1
 │  │  ├─ Install_Hasleo_WinToHDD_Free.ps1
@@ -252,6 +253,7 @@ Aqui estão todas as opções em desenvolvimento.
       > ( i ) Essa opção irá parar o serviço de spooler de impressão, limpar os arquivos temporários e reiniciar o serviço.
     - [x] Limpar Arquivos Temporários
       > ( i ) Essa opção irá limpar os arquivos temporários do diretório C:\Windows\Temp e %temp% do usuário.
+    - [x] Driver Booster Free
 
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019

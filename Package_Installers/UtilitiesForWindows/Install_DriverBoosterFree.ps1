@@ -20,18 +20,18 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 # ----------------------[Conteúdo do script abaixo]---------------------------
 
 # Se o DriverBoosterFree não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files"
-$directory = "$programFiles\DriverBoosterFree"
+$programFiles = "$env:SystemDrive\Program Files (x86)\IObit"
+$directory = "$programFiles\\Driver Booster"
 
 if (Test-Path $directory) {
     Write-Host "DriverBoosterFree is installed!"
 } else {
     Write-Host "DriverBoosterFree is not installed! Starting installation process."
-    Write-Host "File size: 9.9 MB"
+    Write-Host "File size: 28.2 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://download.anydesk.com/DriverBoosterFree.exe"
-    $downloadPath = "$env:temp\DriverBoosterFree.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/DriverBooster_Setup.exe"
+    $downloadPath = "$env:temp\DriverBooster_Setup.exe"
     
     # Faz o download do DriverBoosterFree
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
