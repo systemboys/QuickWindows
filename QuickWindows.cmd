@@ -145,15 +145,17 @@
 :: v0.6.0 2024-01-20 às 17h04, Marcos Aurélio:
 ::   - Opção para Sessão 'Software de gerenciamento de partições'. Versão inicial, Menu da Sessão para 'Softwares de Gerenciamento de Partições' no Windows.
 :: v0.6.1 2024-01-25 às 19h43, Marcos Aurélio:
-::   - Opção para Instalação de '7-Zip' na sessão 'Utilitários para Windows / Compactadores'.
+::   - Opção para instalação de '7-Zip' na sessão 'Utilitários para Windows / Compactadores'.
 :: v0.6.2 2024-01-25 às 20h11, Marcos Aurélio:
-::   - Versão inicial, Instalação de 'Foxit PDF Reader' na sessão 'Utilitários para Windows / Leitores de PDF'.
+::   - Opção para instalação de 'Foxit PDF Reader' na sessão 'Utilitários para Windows / Leitores de PDF'.
 :: v0.6.3 2024-02-03 às 20h17, Marcos Aurélio:
 ::   - Opção para "Compressão de arquivos, PowerShell Backup Automático (.zip)" na sessão "Utilitários para Windows / Backup e Restaruação".
 :: v0.6.4 2024-02-04 às 22h57, Marcos Aurélio:
 ::   - Opção para Obter 'Informações do Sistema com PowerShell' na sessão 'Windows / Acesso rápido às Configurações' página 2.
 :: v0.6.5 2024-02-08 às 22h29, Marcos Aurélio:
 ::   - Inclusão da opção para baixar o 'HopToDesk' na sessão 'Internet / Acesso Remoto'.
+:: v0.6.6 2024-02-12 às 03h05, Marcos Aurélio:
+::   - Opção para instalação de 'DriverBoosterFree' na sessão 'Utilitários para Windows / Page 2'.
 ::
 :: Licença: GPL.
 

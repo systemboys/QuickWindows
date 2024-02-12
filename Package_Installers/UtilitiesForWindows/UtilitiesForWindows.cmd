@@ -21,6 +21,8 @@
 ::   - Corrigido o nome do arquivo.ps1 que baixa e executa o Revo Uninstaller na função.
 :: v0.0.5 2024-02-03 às 20h17, Marcos Aurélio:
 ::   - Opção para "Compressão de arquivos, PowerShell Backup Automático (.zip)" na sessão "Backup e Restaruação".
+:: v0.0.6 2024-02-12 às 03h00, Marcos Aurélio:
+::   - Correções de texto das opções, foram adicionados três pontos em um caractere (…).
 ::
 :: Licença: GPL.
 
@@ -51,8 +53,8 @@ set "menu_Session_6_p1[2]=Compactadores…"
 set "menu_Session_6_p1[3]=Leitores de PDF…"
 set "menu_Session_6_p1[4]=Players Multimídia…"
 set "menu_Session_6_p1[5]=Software de congelamento do sistema…"
-set "menu_Session_6_p1[6]=Backup e Restauração"
-set "menu_Session_6_p1[7]=Software de gerenciamento de partições"
+set "menu_Session_6_p1[6]=Backup e Restauração…"
+set "menu_Session_6_p1[7]=Software de gerenciamento de partições…"
 set "menu_Session_6_p1[8]=Ferramentas de restauração do sistema…"
 set "menu_Session_6_p1[9]=Mais…"
 

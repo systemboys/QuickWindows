@@ -13,6 +13,8 @@
 :: Histórico:
 :: v0.0.1 2024-01-15 às 19h18, Marcos Aurélio:
 ::   - Versão inicial, Opção que limpa os arquivos temporários do diretório C:\Windows\Temp e %temp% do usuário.
+:: v0.0.2 2024-02-12 às 03h05, Marcos Aurélio:
+::   - Versão inicial, Instalação de DriverBoosterFree.
 ::
 :: Licença: GPL.
 
@@ -40,6 +42,7 @@ echo QuickWindows / Utilitários para Windows [Page 2]
 set "menu_Session_6_p2[0]=Voltar…"
 set "menu_Session_6_p2[1]=Limpar Spooler de Impressão"
 set "menu_Session_6_p2[2]=Limpar Arquivos Temporários"
+set "menu_Session_6_p2[3]=Driver Booster Free"
 
 set "default=%1%"
 
@@ -68,6 +71,16 @@ if %ERRORLEVEL% equ 2 (
     echo Você selecionou a opção para Limpar Arquivos Temporários.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ClearTemporaryFiles.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_p2
+)
+
+:: Driver Booster Free
+if %ERRORLEVEL% equ 3 (
+    cls
+    echo Você selecionou a opção para Driver Booster Free.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_DriverBoosterFree.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )
