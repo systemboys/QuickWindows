@@ -112,6 +112,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Compactors.cmd
 │  │  ├─ Install_7_Zip.ps1
 │  │  ├─ Install_AdobeReaderPDF.ps1
+│  │  ├─ Install_CobianBackup.ps1
 │  │  ├─ Install_CPU_Z.ps1
 │  │  ├─ Install_Deep_Freeze.ps1
 │  │  ├─ Install_DriverBoosterFree.ps1
@@ -240,6 +241,7 @@ Aqui estão todas as opções em desenvolvimento.
       - [ ] Copiar arquivos de origem para destino
         > ( i ) Via comando PowerShell, o usuário deverá informar a origem e o destino.
       - [x] Compressão de arquivos, PowerShell Backup Automático (.zip)
+      - [x] Cobian Backup
     - [x] **Software de gerenciamento de partições**
       - [x] MiniTool Partition Wizard v12 Installation
       - [x] MiniTool Partition Wizard v12 32bit portable

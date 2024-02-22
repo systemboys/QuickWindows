@@ -12,6 +12,8 @@
 :: Histórico:
 :: v0.0.1 2024-02-03 às 20h11, Marcos Aurélio:
 ::   - Versão inicial, sessão para backups e restauração.
+:: v0.0.2 2024-02-21 às 22h46, Marcos Aurélio:
+::   - Opção para instalação de Cobian Backup.
 ::
 :: Licença: GPL.
 
@@ -38,6 +40,7 @@ echo QuickWindows / Utilitarios para Windows / Backup e Restaruação
 :: Opções do Menu
 set "menu_Session_6_6[0]=Voltar…"
 set "menu_Session_6_6[1]=Compressão de arquivos, PowerShell Backup Automático (.zip)"
+set "menu_Session_6_6[2]=Cobian Backup"
 
 set "default=%1"
 
@@ -56,6 +59,16 @@ if %ERRORLEVEL% equ 1 (
     echo Você selecionou a Opção para o Compressor de arquivos, PowerShell Backup Automático .Zip.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0FileCompressionForZip.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_6
+)
+
+:: Cobian Backup
+if %ERRORLEVEL% equ 2 (
+    cls
+    echo Você selecionou a Opção para o Cobian Backup.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_CobianBackup.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_6
 )

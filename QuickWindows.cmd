@@ -158,6 +158,8 @@
 ::   - Opção para instalação de 'DriverBoosterFree' na sessão 'Utilitários para Windows / Page 2'.
 :: v0.6.7 2024-02-12 às 10h27, Marcos Aurélio:
 ::   - Opção para instalação de 'CPU-Z' na sessão 'Utilitários para Windows / Page 2'.
+:: v0.6.8 2024-02-21 às 22h46, Marcos Aurélio:
+::   - Opção para instalação de 'Cobian Backup' na sessão 'Utilitários para Windows / Backup e Restauração'.
 ::
 :: Licença: GPL.
 
