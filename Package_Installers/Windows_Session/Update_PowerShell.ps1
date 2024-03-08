@@ -26,7 +26,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
-$chave = 1 # "1" para o comando "Invoke-WebRequest", "2" para a ferramenta "IRM".
+$chave = 2 # "1" para o comando "Invoke-WebRequest", "2" para a ferramenta "IRM".
 
 if ($chave -eq 1) {
     # URL do instalador do PowerShell Core
