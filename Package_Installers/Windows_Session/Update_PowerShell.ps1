@@ -55,27 +55,29 @@ public class Program
         
         private void OpenCalculator(object sender, EventArgs e)
         {
-            iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
+            Process.Start('iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"');
         }
         
         private void OpenControlPanel(object sender, EventArgs e)
         {
-            # URL do instalador do PowerShell Core
-            $installerUrl = "https://aka.ms/install-powershell.ps1"
-            
-            # Caminho para o instalador temporário
-            $installerPath = Join-Path $env:TEMP "install-powershell.ps1"
-            
-            # Baixar o script de instalação
-            Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath
-            
-            # Executar o script de instalação
-            & $installerPath
-            
-            # Remover o script de instalação temporário
-            Remove-Item $installerPath -Force
-            
-            # /Script para atualizar o PowerShell para a versão mais recente
+            Process.Start('
+                # URL do instalador do PowerShell Core
+                $installerUrl = "https://aka.ms/install-powershell.ps1"
+                
+                # Caminho para o instalador temporário
+                $installerPath = Join-Path $env:TEMP "install-powershell.ps1"
+                
+                # Baixar o script de instalação
+                Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath
+                
+                # Executar o script de instalação
+                & $installerPath
+                
+                # Remover o script de instalação temporário
+                Remove-Item $installerPath -Force
+                
+                # /Script para atualizar o PowerShell para a versão mais recente
+            ');
         }
     }
 }
