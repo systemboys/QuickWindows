@@ -178,6 +178,11 @@ for /f "tokens=2 delims= " %%a in ('findstr /r /c:":: v[0-9]*\.[0-9]*\.[0-9]*" "
     set "lastVersion=%%a"
 )
 
+:: ----------------------------
+set "psCommand=powershell -Command "& {if ($PSVersionTable.PSVersion.Major -ge 7) {'pwsh'} else {'PowerShell'}}""
+for /f "delims=" %%i in ('%psCommand%') do set "verPwShll=%%i"
+:: ----------------------------
+
 :: Obter o ano atual
 for /f "tokens=2 delims==" %%I in ('"wmic os get localdatetime /value"') do set datetime=%%I
 set "ano=%datetime:~0,4%"
@@ -281,7 +286,7 @@ if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a Opção para Execução de Comandos no PowerShell.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Package_Installers\RunPowerShellCommands.ps1""' -Verb RunAs}"
+    %verPwShll%.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process %verPwShll%.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Package_Installers\RunPowerShellCommands.ps1""' -Verb RunAs}"
 
     goto menu
 )
