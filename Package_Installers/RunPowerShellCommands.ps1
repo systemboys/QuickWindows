@@ -34,7 +34,7 @@ function ExecutarComando {
 
     # Abrir uma nova janela do PowerShell e executar o comando
     $psi = New-Object System.Diagnostics.ProcessStartInfo
-    $psi.FileName = "powershell"
+    $psi.FileName = "pwsh"
     $psi.Arguments = "-NoExit -Command `"$comando`""
     [System.Diagnostics.Process]::Start($psi) | Out-Null
 }
