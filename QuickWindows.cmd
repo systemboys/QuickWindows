@@ -160,6 +160,8 @@
 ::   - Opção para instalação de 'CPU-Z' na sessão 'Utilitários para Windows / Page 2'.
 :: v0.6.8 2024-02-21 às 22h46, Marcos Aurélio:
 ::   - Opção para instalação de 'Cobian Backup' na sessão 'Utilitários para Windows / Backup e Restauração'.
+:: v0.6.9 2024-03-08 às 12h10, Marcos Aurélio:
+::   - Condição com uma chave para escolher qual dos comandos serão executados na sessão 'Windows' para atualizar o PowerShell.
 ::
 :: Licença: GPL.
 

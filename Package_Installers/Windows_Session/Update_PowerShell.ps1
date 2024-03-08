@@ -9,6 +9,8 @@
 # Histórico:
 # v0.0.1 2023-11-11 às 19h10, Marcos Aurélio:
 #   - Versão inicial, atualizar o PowerShell.
+# v0.0.2 2024-03-08 às 12h10, Marcos Aurélio:
+#   - Condição com uma chave para escolher qual dos comandos serão executados.
 #
 # Licença: GPL.
 
@@ -24,67 +26,28 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
-# -------------------------------------
-Add-Type -TypeDefinition @"
-using System;
-using System.Diagnostics;
-using System.Windows.Forms;
+$chave = 1 # "1" para o comando "Invoke-WebRequest", "2" para a ferramenta "IRM".
 
-public class Program
-{
-    public static void Main()
-    {
-        Application.Run(new MyForm());
-    }
-    
-    public class MyForm : Form
-    {
-        public MyForm()
-        {
-            Button button1 = new Button();
-            button1.Text = "Via IRM";
-            button1.Click += new EventHandler(OpenCalculator);
-            
-            Button button2 = new Button();
-            button2.Text = "Via Invoke-WebRequest";
-            button2.Click += new EventHandler(OpenControlPanel);
-            
-            Controls.Add(button1);
-            Controls.Add(button2);
-        }
-        
-        private void OpenCalculator(object sender, EventArgs e)
-        {
-            Process.Start('iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"');
-        }
-        
-        private void OpenControlPanel(object sender, EventArgs e)
-        {
-            Process.Start('
-                # URL do instalador do PowerShell Core
-                $installerUrl = "https://aka.ms/install-powershell.ps1"
-                
-                # Caminho para o instalador temporário
-                $installerPath = Join-Path $env:TEMP "install-powershell.ps1"
-                
-                # Baixar o script de instalação
-                Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath
-                
-                # Executar o script de instalação
-                & $installerPath
-                
-                # Remover o script de instalação temporário
-                Remove-Item $installerPath -Force
-                
-                # /Script para atualizar o PowerShell para a versão mais recente
-            ');
-        }
-    }
+if ($chave -eq 1) {
+    # URL do instalador do PowerShell Core
+    $installerUrl = "https://aka.ms/install-powershell.ps1"
+
+    # Caminho para o instalador temporário
+    $installerPath = Join-Path $env:TEMP "install-powershell.ps1"
+
+    # Baixar o script de instalação
+    Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath
+
+    # Executar o script de instalação
+    & $installerPath
+
+    # Remover o script de instalação temporário
+    Remove-Item $installerPath -Force
+
+    # /Script para atualizar o PowerShell para a versão mais recente
+} elseif ($chave -eq 2) {
+    iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 }
-"@
-
-[Program]::Main()
-# -------------------------------------
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
