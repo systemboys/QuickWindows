@@ -173,14 +173,6 @@ chcp 65001 > nul
 powershell -command "$Host.UI.RawUI.BackgroundColor = 'Black'"
 cls
 
-:: ------------------------------
-:: Verifica se o PowerShell 7 está instalado
-if (Get-Command pwsh -ErrorAction SilentlyContinue) {
-    # Executa o comando "pwsh" para abrir o PowerShell 7
-    pwsh -Command ".\QuickWindows.cmd"
-}
-:: ------------------------------
-
 :: Obtém o número da última versão do histórico do script
 for /f "tokens=2 delims= " %%a in ('findstr /r /c:":: v[0-9]*\.[0-9]*\.[0-9]*" "%~f0"') do (
     set "lastVersion=%%a"
