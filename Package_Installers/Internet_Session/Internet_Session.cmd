@@ -148,7 +148,7 @@ if %ERRORLEVEL% equ 8 (
     cls
     echo Você selecionou a Opção para instalar o Real VNC Viewer.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_RealVNCViewer.ps1""' -Verb RunAs}"
+    pwsh.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process pwsh.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_RealVNCViewer.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
