@@ -45,16 +45,8 @@ if ($chave -eq 1) {
     Remove-Item $installerPath -Force
 
     # /Script para atualizar o PowerShell para a versão mais recente
-
-    Write-Host "Atualização concluída!"
-    $psVersion = $PSVersionTable.PSVersion
-    Write-Host "Versão: PowerShell $psVersion."
 } elseif ($chave -eq 2) {
     iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
-
-    Write-Host "Atualização concluída!"
-    $psVersion = $PSVersionTable.PSVersion
-    Write-Host "Versão: PowerShell $psVersion."
 }
 
 Write-Host "Press any key to continue..."
