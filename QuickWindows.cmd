@@ -174,7 +174,7 @@ powershell -command "$Host.UI.RawUI.BackgroundColor = 'Black'"
 cls
 
 :: ------------------------------
-# Verifica se o PowerShell 7 está instalado
+:: Verifica se o PowerShell 7 está instalado
 if (Get-Command pwsh -ErrorAction SilentlyContinue) {
     # Executa o comando "pwsh" para abrir o PowerShell 7
     pwsh -Command ".\QuickWindows.cmd"
