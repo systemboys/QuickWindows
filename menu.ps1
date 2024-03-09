@@ -142,15 +142,21 @@ if ($gitInstalled) {
 
 # Verifique se o QuickWindows existe
 $programFiles = $env:TEMP
-$filePath = "$programFiles\QuickWindows\QuickWindows.cmd"
+$dirPath = "$programFiles\QuickWindows"
+$filePath = "$dirPath\QuickWindows.cmd"
 
-if (Test-Path $filePath) {
-    Write-Host "Iniciando o QuickWindows..."
-    cd $env:TEMP\QuickWindows\
+if (Test-Path $dirPath) {
+    if (Test-Path $filePath) {
+        Write-Host "Iniciando o QuickWindows..."
+        Set-Location $dirPath
+    } else {
+        Write-Host "O arquivo QuickWindows.cmd não existe. Removendo o diretório QuickWindows..."
+        Remove-Item -Recurse -Force $dirPath
+    }
 } else {
     Write-Host "Clonando o QuickWindows..."
     # Clonar e executar Windows PowerShell novamente com o comando
-    cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\
+    Set-Location $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; Set-Location .\QuickWindows\
 }
 # Fim da verificação
 
