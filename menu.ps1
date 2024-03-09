@@ -19,6 +19,8 @@
 #   - Alteração que faz com que o script não precise mais clonar novamente o "QuickWindows" caso já esteja instalado do diretório Temp.
 # v0.0.6 2024-01-18 às 21h40, Marcos Aurélio:
 #   - Alteração que verifica se o Windows PowerShell está sendo executado como administrador.
+# v0.0.7 2024-03-09 às 16h26, Marcos Aurélio:
+#   - Alteração que verifica se o arquivo 'QuickWindows.cmd' existe, se não existir, apagar o diretório 'QquicoWindows'.
 #
 # Licença: GPL.
 
@@ -140,19 +142,36 @@ if ($gitInstalled) {
 }
 # Fim da verificação do caminho padrão de instalação do Git em outras versões do Windows
 
-# Verifique se o QuickWindows existe
+# ------------------[Verifique se o QuickWindows existe] -----------------------------
 $programFiles = $env:TEMP
 $filePath = "$programFiles\QuickWindows\QuickWindows.cmd"
 
 if (Test-Path $filePath) {
-    Write-Host "Iniciando o QuickWindows..."
-    cd $env:TEMP\QuickWindows\
+    Write-Host "Starting QuickWindows..."
+    Set-Location -Path "$env:TEMP\QuickWindows"
 } else {
-    Write-Host "Clonando o QuickWindows..."
+    # --------[Verificar se o arquivo "QuickWindows.cmd" existe, se não existir, apagar o diretório "QquicoWindows"]----------
+    # Define o caminho do diretório e do arquivo
+    $dirPath = "$env:TEMP\QuickWindows"
+    $filePath = "$dirPath\QuickWindows.cmd"
+
+    # Verifica se o diretório existe
+    if (Test-Path $dirPath) {
+        # Se o diretório existe, verifica se o arquivo não existe
+        if (-not (Test-Path $filePath)) {
+            # Se o arquivo não existe, remove o diretório
+            Write-Host "Removendo o diretório $dirPath..."
+            Remove-Item -Recurse -Force $dirPath
+        }
+    } else {
+        Write-Host "O diretório $dirPath não existe."
+    }
+    # --------[/Verificar se o arquivo "QuickWindows.cmd" existe, se não existir, apagar o diretório "QquicoWindows"]----------
+    Write-Host "Cloning QuickWindows..."
     # Clonar e executar Windows PowerShell novamente com o comando
-    cd $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\
+    Set-Location -Path $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\
 }
-# Fim da verificação
+# ------------------[/Verifique se o QuickWindows existe] -----------------------------
 
 # Inicia o PowerShell em modo Administrador com o comando desejado
 Start-Process -FilePath "powershell.exe" -Verb runAs -ArgumentList "-Command", "& {$env:TEMP\QuickWindows\QuickWindows.cmd 0}"
