@@ -160,16 +160,16 @@ if (Test-Path $filePath) {
         # Se o diretório existe, verifica se o arquivo não existe
         if (-not (Test-Path $filePath)) {
             # Se o arquivo não existe, remove o diretório
-            Write-Host "Removendo o diretório $dirPath..."
+            Write-Host "Removing the $dirPath directory..."
             Remove-Item -Recurse -Force $dirPath
         }
     } else {
-        Write-Host "O diretório $dirPath não existe."
+        Write-Host "The $dirPath directory does not exist."
     }
     # --------[/Verificar se o arquivo "QuickWindows.cmd" existe, se não existir, apagar o diretório "QquicoWindows"]----------
     Write-Host "Cloning QuickWindows..."
     # Clonar e executar Windows PowerShell novamente com o comando
-    Set-Location -Path $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; cd .\QuickWindows\
+    Set-Location -Path $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; Set-Location -Path .\QuickWindows\
 }
 # ------------------[/Verifique se o QuickWindows existe] -----------------------------
 
