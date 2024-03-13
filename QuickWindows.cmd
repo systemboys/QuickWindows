@@ -235,6 +235,7 @@ set "menu[5]=Execução de Comandos no PowerShell"
 set "menu[6]=Utilitários para Windows…"
 set "menu[7]=Softwares para Escritório…"
 set "menu[8]=Sistemas Operacionais Microsoft…"
+set "menu[9]=Executar rotinas…"
 
 set "default=%1%"
 
@@ -305,6 +306,16 @@ if %ERRORLEVEL% equ 8 (
     cd Package_Installers\MicrosoftOperatingSystems
     call MicrosoftOperatingSystems.cmd 0
     cd ..
+)
+
+:: Executar rotinas…
+if %ERRORLEVEL% equ 9 (
+    cls
+    echo Você selecionou a Opção para Executar rotinas.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Package_Installers\RunRoutines.ps1""' -Verb RunAs}"
+
+    goto menu
 )
 
 goto :EOF
