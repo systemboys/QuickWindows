@@ -95,7 +95,7 @@ Write-Host "
     68 = Ferramentas de restauracao do sistema...
         681 = WinToHDD
         682 = Hasleo WinToHDD Free
-        683 = Fufus
+        683 = Rufus
         684 = DriverMax
     69 = Mais...
         691 = Limpar Spooler de Impressao
@@ -192,7 +192,7 @@ $Files = @{
         # "68" = "" # Ferramentas de restauração do sistema…
             "681" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_WinToHDD.ps1" # WinToHDD
             "682" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_Hasleo_WinToHDD_Free.ps1" # Hasleo WinToHDD Free
-            "683" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_Rufus.ps1" # Fufus
+            "683" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_Rufus.ps1" # Rufus
             "684" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_DriverMax.ps1" # DriverMax
         # "69" = "" # Mais…
             "691" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\ClearPrintSpooler.ps1" # Limpar Spooler de Impressão

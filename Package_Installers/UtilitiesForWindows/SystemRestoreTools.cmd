@@ -21,6 +21,8 @@
 ::   - Opção para instalação de Rufus.
 :: v0.0.5 2023-12-29 às 01h41, Marcos Aurélio:
 ::   - Opção para instalação de DriverMax.
+:: v0.0.6 2024-03-15 às 20h14, Marcos Aurélio:
+::   - Correção do nome do 'Rufos', estava escrito 'Fufus'.
 ::
 :: Licença: GPL.
 
@@ -48,7 +50,7 @@ echo QuickWindows / Utilitários para Windows / Ferramentas de restauração do 
 set "menu_Session_6_8[0]=Voltar…"
 set "menu_Session_6_8[1]=WinToHDD"
 set "menu_Session_6_8[2]=Hasleo WinToHDD Free"
-set "menu_Session_6_8[3]=Fufus"
+set "menu_Session_6_8[3]=Rufus"
 set "menu_Session_6_8[4]=DriverMax"
 
 set "default=%1%"

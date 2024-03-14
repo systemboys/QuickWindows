@@ -361,7 +361,7 @@ Aqui estão todas as opções em desenvolvimento.
     68 = Ferramentas de restauração do sistema…
         681 = WinToHDD
         682 = Hasleo WinToHDD Free
-        683 = Fufus
+        683 = Rufus
         684 = DriverMax
     69 = Mais…
         691 = Limpar Spooler de Impressão

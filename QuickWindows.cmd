@@ -163,7 +163,9 @@
 :: v0.6.9 2024-03-08 às 12h10, Marcos Aurélio:
 ::   - Condição com uma chave para escolher qual dos comandos serão executados na sessão 'Windows' para atualizar o PowerShell.
 :: v0.7.0 2024-03-14 às 00h12, Marcos Aurélio:
-::   - Opção para execução de 'Rotinas'. 
+::   - Opção para execução de 'Rotinas'.
+:: v0.7.1 2024-03-14 às 20h14, Marcos Aurélio:
+::   - Correção do nome do 'Rufos', estava escrito 'Fufus' na sessão de utilitários.
 ::
 :: Licença: GPL.
 
