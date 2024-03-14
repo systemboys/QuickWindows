@@ -120,7 +120,7 @@ Write-Host "
 $Resources = @{
     '0'    = ''
     '1'    = ''
-    '11'   = ''
+    '11'   = 'cd .. ; call QuickWindows.cmd 1'
     '12'   = ''
     '13'   = ''
     '2'    = ''
