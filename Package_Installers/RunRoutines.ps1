@@ -116,6 +116,20 @@ Write-Host "
     87 = Windows Server 2022
 "
 
+# Função para executar um recurso
+function Execute-Resource {
+    param(
+        [string]$Resource
+    )
+
+    # Verifica se o recurso é um comando
+    if ($Resource -match ';') {
+        Start-Process cmd.exe -ArgumentList "/c $Resource"
+    } else {
+        Start-Process $Resource
+    }
+}
+
 # Array associativo que mapeia as rotinas aos recursos
 $Resources = @{
     '0'    = ''
