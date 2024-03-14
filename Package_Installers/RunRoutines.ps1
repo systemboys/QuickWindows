@@ -134,7 +134,7 @@ function Execute-Resource {
 $Resources = @{
     '0'    = ''
     '1'    = ''
-    '11'   = 'cd .. ; call QuickWindows.cmd 1'
+    '11'   = 'powershell -Command cd .\Internet_Session\Install_AnyDesk.ps1'
     '12'   = ''
     '13'   = ''
     '2'    = ''
