@@ -116,16 +116,16 @@ Write-Host "
     87 = Windows Server 2022
 "
 
-# Array associativo que mapeia as rotinas aos comandos
+# Array associativo que mapeia as rotinas aos recursos
 $Resources = @{
     '0'    = ''
     '1'    = ''
-    '11'   = 'powershell -Command .\Internet_Session\Install_AnyDesk.ps1'
+    '11'   = 'calc'
     '12'   = ''
     '13'   = ''
     '2'    = ''
     '21'   = ''
-    '22'   = ''
+    '22'   = 'control'
     '23'   = ''
     '24'   = ''
     '25'   = ''
@@ -153,7 +153,7 @@ $Resources = @{
     '312'  = ''
     '313'  = ''
     '32'   = ''
-    '33'   = ''
+    '33'   = 'winver'
     '34'   = ''
     '35'   = ''
     '36'   = ''
@@ -220,7 +220,7 @@ function Execute-Resource {
         [string]$Resource
     )
 
-    Start-Process powershell -ArgumentList "-Command", "$Resource"
+    Start-Process $Resource
 }
 
 # Loop para solicitar entrada até que uma entrada válida seja fornecida
