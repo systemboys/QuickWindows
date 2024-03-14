@@ -221,7 +221,7 @@ function Execute-Script {
     )
 
     # Construir o comando para executar o arquivo .ps1 em uma nova janela
-    $Command = "Start-Process powershell -ArgumentList '-NoExit','-File','$File' -WindowStyle Hidden"
+    $Command = "Start-Process powershell -ArgumentList '-NoExit','-File','$File' -Wait"
 
     # Executar o comando
     Invoke-Expression $Command
