@@ -1,3 +1,22 @@
+# RunRoutines.ps1 - Executa o script de Rotinas.
+#
+# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+#
+# ---------------------------------------------------------------
+# Este programa tem a finalidade de facilitar na instalação de
+# pacotes para Windows.
+# ---------------------------------------------------------------
+# Histórico:
+# v0.0.1 2024-03-13 às 19h10, Marcos Aurélio:
+#   - Versão inicial, Execução de Rotinas.
+#
+# Licença: GPL.
+
+# Define a cor de fundo para preto
+$Host.UI.RawUI.BackgroundColor = "Black"
+Clear-Host  # Limpa a tela para aplicar a nova cor
+
 Write-Host "
 ## Rotinas
 
