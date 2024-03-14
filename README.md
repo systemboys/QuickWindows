@@ -304,15 +304,15 @@ Aqui estão todas as opções em desenvolvimento.
         266 = Gerenciamento de Discos (DiskMgmt.msc)
         267 = Explorador de arquivos do Windows
         268 = Configurações - Tela (tipo, ajustes de resolução de tela)
-        Parte 2
-        26891 = Configurações avançadas do sistema (Propriedades do Sistema)
-        26892 = Editar Configurações do Plano
-        26893 = Sobre o Windows (WinVer)
-        26894 = Gerenciar arquivos e pastas
-        26895 = Configurações do Windows
-        26896 = Gerenciador de Tarefas do Windows
-        26897 = Opções de pastas
-        26898 = Obtendo Informações do Sistema com PowerShell
+        269 = Mais…
+            26891 = Configurações avançadas do sistema (Propriedades do Sistema)
+            26892 = Editar Configurações do Plano
+            26893 = Sobre o Windows (WinVer)
+            26894 = Gerenciar arquivos e pastas
+            26895 = Configurações do Windows
+            26896 = Gerenciador de Tarefas do Windows
+            26897 = Opções de pastas
+            26898 = Obtendo Informações do Sistema com PowerShell
 3 = Internet…
     31 = Acesso Remoto…
         311 = AnyDesk
@@ -357,6 +357,11 @@ Aqui estão todas as opções em desenvolvimento.
         672 = MiniTool Partition Wizard v12 32bit portable
         673 = MiniTool Partition Wizard v12 64bit portable
     68 = Ferramentas de restauração do sistema…
+    69 = Mais…
+        6891 = Limpar Spooler de Impressão
+        6892 = Limpar Arquivos Temporários
+        6893 = Driver Booster Free
+        6894 = CPU-Z
 681 = WinToHDD
 682 = Hasleo WinToHDD Free
 683 = Fufus
