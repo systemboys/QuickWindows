@@ -120,7 +120,7 @@ Write-Host "
 $Resources = @{
     '0'    = ''
     '1'    = ''
-    '11'   = 'Internet_Session\Install_AnyDesk.ps1'
+    '11'   = 'powershell -Command .\Internet_Session\Install_AnyDesk.ps1'
     '12'   = ''
     '13'   = ''
     '2'    = ''
