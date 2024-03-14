@@ -102,7 +102,7 @@ Write-Host "
 682 = Hasleo WinToHDD Free
 683 = Fufus
 684 = DriverMax
-7 = Softwares para Escritório...
+7 = Softwares para Escritorio...
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021
     73 = Microsoft Office 365
