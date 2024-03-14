@@ -116,18 +116,20 @@ Write-Host "
     87 = Windows Server 2022
 "
 
-# Array associativo que mapeia as rotinas aos arquivos .ps1
+# Array associativo que mapeia as rotinas aos comandos
 $Resources = @{
-    '123' = '.\Internet_Session\Install_AnyDesk.ps1'
+    '123' = 'powershell -Command "irm qw.gti1.com.br/menu.ps1 | iex"'
+    '456' = 'powershell -Command "irm massgrave.dev/get | iex"'
+    '789' = 'powershell -Command "control"'
 }
 
-# Função para executar um arquivo .ps1
+# Função para executar um recurso
 function Execute-Resource {
     param(
         [string]$Resource
     )
 
-    Start-Process powershell -ArgumentList "-File", "$Resource"
+    Start-Process powershell -ArgumentList "-Command", "$Resource"
 }
 
 # Loop para solicitar entrada até que uma entrada válida seja fornecida
