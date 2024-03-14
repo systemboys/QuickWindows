@@ -116,125 +116,18 @@ Write-Host "
     87 = Windows Server 2022
 "
 
-# Função para executar um recurso
-function Execute-Resource {
-    param(
-        [string]$Resource
-    )
-
-    # Verifica se o recurso é um comando
-    if ($Resource -match ';') {
-        Start-Process cmd.exe -ArgumentList "/c $Resource"
-    } else {
-        Start-Process $Resource
-    }
-}
-
-# Array associativo que mapeia as rotinas aos recursos
+# Array associativo que mapeia as rotinas aos arquivos .ps1
 $Resources = @{
-    '0'    = ''
-    '1'    = ''
-    '11'   = '.\Internet_Session\Install_AnyDesk.ps1'
-    '12'   = ''
-    '13'   = ''
-    '2'    = ''
-    '21'   = ''
-    '22'   = ''
-    '23'   = ''
-    '24'   = ''
-    '25'   = ''
-    '26'   = ''
-    '261'  = ''
-    '262'  = ''
-    '263'  = ''
-    '264'  = ''
-    '265'  = ''
-    '266'  = ''
-    '267'  = ''
-    '268'  = ''
-    '269'  = ''
-    '2691' = ''
-    '2692' = ''
-    '2693' = ''
-    '2694' = ''
-    '2695' = ''
-    '2696' = ''
-    '2697' = ''
-    '2698' = ''
-    '3'    = ''
-    '31'   = ''
-    '311'  = ''
-    '312'  = ''
-    '313'  = ''
-    '32'   = ''
-    '33'   = ''
-    '34'   = ''
-    '35'   = ''
-    '36'   = ''
-    '37'   = ''
-    '38'   = ''
-    '39'   = ''
-    '391'  = ''
-    '392'  = ''
-    '393'  = ''
-    '4'    = ''
-    '41'   = ''
-    '42'   = ''
-    '43'   = ''
-    '5'    = ''
-    '6'    = ''
-    '61'   = ''
-    '62'   = ''
-    '621'  = ''
-    '622'  = ''
-    '623'  = ''
-    '63'   = ''
-    '631'  = ''
-    '632'  = ''
-    '64'   = ''
-    '640'  = ''
-    '641'  = ''
-    '65'   = ''
-    '651'  = ''
-    '652'  = ''
-    '66'   = ''
-    '661'  = ''
-    '662'  = ''
-    '67'   = ''
-    '671'  = ''
-    '672'  = ''
-    '673'  = ''
-    '68'   = ''
-    '69'   = ''
-    '691'  = ''
-    '692'  = ''
-    '693'  = ''
-    '694'  = ''
-    '681'  = ''
-    '682'  = ''
-    '683'  = ''
-    '684'  = ''
-    '7'    = ''
-    '71'   = ''
-    '72'   = ''
-    '73'   = ''
-    '8'    = ''
-    '81'   = ''
-    '82'   = ''
-    '83'   = ''
-    '84'   = ''
-    '85'   = ''
-    '86'   = ''
-    '87'   = ''
+    '123' = '.\Internet_Session\Install_AnyDesk.ps1'
 }
 
-# Função para executar um recurso
+# Função para executar um arquivo .ps1
 function Execute-Resource {
     param(
         [string]$Resource
     )
 
-    Start-Process $Resource
+    Start-Process powershell -ArgumentList "-File", "$Resource"
 }
 
 # Loop para solicitar entrada até que uma entrada válida seja fornecida
@@ -260,4 +153,3 @@ foreach ($Routine in $Routines) {
         Write-Host "Invalid routine: $Routine"
     }
 }
-
