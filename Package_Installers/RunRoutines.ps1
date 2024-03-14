@@ -116,8 +116,8 @@ Write-Host "
     87 = Windows Server 2022
 "
 
-# Array associativo que mapeia as rotinas aos recursos
-$Resources = @{
+# Array associativo que mapeia as rotinas aos arquivos .ps1
+$Files = @{
     '0'    = ''
     '1'    = ''
     '11'   = ''
@@ -214,13 +214,17 @@ $Resources = @{
     '87'   = ''
 }
 
-# Função para executar um recurso
-function Execute-Resource {
+# Função para executar um arquivo .ps1
+function Execute-Script {
     param(
-        [string]$Resource
+        [string]$File
     )
 
-    Start-Process $Resource
+    if (Test-Path $File) {
+        & $File
+    } else {
+        Write-Host "File not found: $File"
+    }
 }
 
 # Loop para solicitar entrada até que uma entrada válida seja fornecida
@@ -235,11 +239,11 @@ do {
 
 $Routines = $Input -split ','
 foreach ($Routine in $Routines) {
-    $Resource = $Resources[$Routine.Trim()]
-    if ($Resource) {
-        Execute-Resource $Resource
+    $File = $Files[$Routine.Trim()]
+    if ($File) {
+        Execute-Script $File
         if ($Routines.Count -gt 1) {
-            Write-Host "Waiting for $Resource to finish. Press Enter to continue..."
+            Write-Host "Waiting for $File to finish. Press Enter to continue..."
             Read-Host
         }
     } else {
