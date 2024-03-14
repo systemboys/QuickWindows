@@ -162,6 +162,8 @@
 ::   - Opção para instalação de 'Cobian Backup' na sessão 'Utilitários para Windows / Backup e Restauração'.
 :: v0.6.9 2024-03-08 às 12h10, Marcos Aurélio:
 ::   - Condição com uma chave para escolher qual dos comandos serão executados na sessão 'Windows' para atualizar o PowerShell.
+:: v0.7.0 2024-03-14 às 00h12, Marcos Aurélio:
+::   - Opção para execução de 'Rotinas'. 
 ::
 :: Licença: GPL.
 
@@ -235,7 +237,7 @@ set "menu[5]=Execução de Comandos no PowerShell"
 set "menu[6]=Utilitários para Windows…"
 set "menu[7]=Softwares para Escritório…"
 set "menu[8]=Sistemas Operacionais Microsoft…"
-set "menu[9]=Executar rotinas…"
+set "menu[9]=Executar Rotinas…"
 
 set "default=%1%"
 
@@ -308,10 +310,10 @@ if %ERRORLEVEL% equ 8 (
     cd ..
 )
 
-:: Executar rotinas…
+:: Executar Rotinas…
 if %ERRORLEVEL% equ 9 (
     cls
-    echo Você selecionou a Opção para Executar rotinas.
+    echo Você selecionou a Opção para Executar Rotinas.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Package_Installers\RunRoutines.ps1""' -Verb RunAs}"
 

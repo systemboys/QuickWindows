@@ -118,8 +118,8 @@ Write-Host "
 
 # Array associativo que mapeia as rotinas aos arquivos .ps1
 $Files = @{
-    "0"    = "exit"
-    "1"    = ""
+    # "0"    = ""
+    # "1"    = ""
     "11"   = ""
     "12"   = ""
     "13"   = ""

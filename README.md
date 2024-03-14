@@ -145,7 +145,8 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Update_PowerShell.ps1
 │  │  ├─ UpdatingSoftwareInWindows.ps1
 │  │  └─ Windows_Session.cmd
-│  └─ RunPowerShellCommands.ps1
+│  ├─ RunPowerShellCommands.ps1
+│  └─ RunRoutines.ps1
 ├─ QuickWindows.cmd
 ├─ README.md
 └─ menu.ps1
@@ -272,6 +273,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Windows 10 1909 PRO MSDN LITE Build
     - [x] Windows 11 Pro
     - [x] Windows Server 2022
+  - [x] Executar Rotinas
 
 > ***( ! ) Atenção!*** Esses recursos que estão marcos **[x]** estão concluídos, apenas os desmarcados **[_]** ainda serão incluídos!
 >
