@@ -332,7 +332,7 @@ Aqui estão todas as opções em desenvolvimento.
 4 = Redes…
     41 = Obter IP público
     42 = Obter IP local
-    43 = Obter IP's de uma determinada rota
+    43 = Obter IPs de uma determinada rota
 5 = Execução de Comandos no PowerShell
 6 = Utilitários para Windows…
     61 = Instalar Revo Uninstaller
