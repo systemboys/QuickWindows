@@ -242,10 +242,8 @@ foreach ($Routine in $Routines) {
     $File = $Files[$Routine.Trim()]
     if ($File) {
         Execute-Script $File
-        if ($Routines.Count -gt 1) {
-            Write-Host "Waiting for $File to finish. Press Enter to continue..."
-            Read-Host
-        }
+        Write-Host "Waiting for $File to finish. Press Enter to continue..."
+        Read-Host
     } else {
         Write-Host "Invalid routine: $Routine"
     }
