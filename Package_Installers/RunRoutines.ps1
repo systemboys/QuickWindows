@@ -214,17 +214,17 @@ $Files = @{
     '87'   = ''
 }
 
-# Função para executar um arquivo .ps1
+# Função para executar um arquivo .ps1 em uma nova janela do PowerShell
 function Execute-Script {
     param(
         [string]$File
     )
 
-    if (Test-Path $File) {
-        & $File
-    } else {
-        Write-Host "File not found: $File"
-    }
+    # Construir o comando para executar o arquivo .ps1 em uma nova janela
+    $Command = "Start-Process powershell -ArgumentList '-NoExit','-File','$File' -WindowStyle Hidden"
+
+    # Executar o comando
+    Invoke-Expression $Command
 }
 
 # Loop para solicitar entrada até que uma entrada válida seja fornecida
