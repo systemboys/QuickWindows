@@ -17,6 +17,8 @@
 ::   - Opção para instalação de DriverBoosterFree.
 :: v0.0.3 2024-02-12 às 10h25, Marcos Aurélio:
 ::   - Opção para instalação de CPU-Z.
+:: v0.0.4 2024-03-21 às 18h10, Marcos Aurélio:
+::   - Opção para instalação do 'Crystal Disk Info'.
 ::
 :: Licença: GPL.
 
@@ -46,6 +48,7 @@ set "menu_Session_6_p2[1]=Limpar Spooler de Impressão"
 set "menu_Session_6_p2[2]=Limpar Arquivos Temporários"
 set "menu_Session_6_p2[3]=Driver Booster Free"
 set "menu_Session_6_p2[4]=CPU-Z"
+set "menu_Session_6_p2[5]=Crystal Disk Info"
 
 set "default=%1%"
 
@@ -94,6 +97,16 @@ if %ERRORLEVEL% equ 4 (
     echo Você selecionou a opção para CPU-Z.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_CPU_Z.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_p2
+)
+
+:: Crystal Disk Info
+if %ERRORLEVEL% equ 4 (
+    cls
+    echo Você selecionou a opção para Crystal Disk Info.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_CrystalDiskInfo.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )
