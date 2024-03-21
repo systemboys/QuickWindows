@@ -102,7 +102,7 @@ if %ERRORLEVEL% equ 4 (
 )
 
 :: Crystal Disk Info
-if %ERRORLEVEL% equ 4 (
+if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a opção para Crystal Disk Info.
 
