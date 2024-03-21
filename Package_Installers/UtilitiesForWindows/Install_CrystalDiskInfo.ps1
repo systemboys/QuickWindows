@@ -27,7 +27,7 @@ if (Test-Path $directory) {
     Write-Host "Crystal Disk Info is installed!"
 } else {
     Write-Host "Crystal Disk Info is not installed! Starting installation process."
-    Write-Host "File size: 9.9 MB"
+    Write-Host "File size: 5.64 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://download.anydesk.com/Crystal Disk Info.exe"
