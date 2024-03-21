@@ -30,7 +30,7 @@ if (Test-Path $directory) {
     Write-Host "File size: 5.64 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://download.anydesk.com/Crystal Disk Info.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/CrystalDiskInfo.exe"
     $downloadPath = "$env:temp\CrystalDiskInfo.exe"
     
     # Faz o download do Crystal Disk Info
