@@ -113,6 +113,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Install_7_Zip.ps1
 │  │  ├─ Install_AdobeReaderPDF.ps1
 │  │  ├─ Install_CobianBackup.ps1
+│  │  ├─ Install_CrystalDiskInfo.ps1
 │  │  ├─ Install_CPU_Z.ps1
 │  │  ├─ Install_Deep_Freeze.ps1
 │  │  ├─ Install_DriverBoosterFree.ps1
@@ -259,6 +260,7 @@ Aqui estão todas as opções em desenvolvimento.
       > ( i ) Essa opção irá limpar os arquivos temporários do diretório C:\Windows\Temp e %temp% do usuário.
     - [x] Driver Booster Free
     - [x] CPU-Z
+    - [x] Crystal Disk Info
 
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
@@ -368,6 +370,7 @@ Aqui estão todas as opções em desenvolvimento.
         692 = Limpar Arquivos Temporários
         693 = Driver Booster Free
         694 = CPU-Z
+        695 = Crystal Disk Info
 7 = Softwares para Escritório…
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021
