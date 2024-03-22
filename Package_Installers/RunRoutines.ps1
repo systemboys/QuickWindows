@@ -105,6 +105,7 @@ Write-Host "
         693 = Driver Booster Free
         694 = CPU-Z
         695 = Crystal Disk Info
+        696 = Crystal Disk Info Portable
 7 = Softwares para Escritorio...
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021
@@ -203,6 +204,7 @@ $Files = @{
             "693" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_DriverBoosterFree.ps1" # Driver Booster Free
             "694" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_CPU_Z.ps1" # CPU-Z
             "695" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_CrystalDiskInfo.ps1" # Crystal Disk Info
+            "696" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_CrystalDiskInfo_Portable.ps1" # Crystal Disk Info Portable
     # "7" = "" # Softwares para Escritório…
         "71" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2016_to_2019.ps1" # Microsoft Office 2016 a 2019
         "72" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2019_to_2021.ps1" # Microsoft Office 2019 a 2021
