@@ -20,7 +20,7 @@ $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
 Write-Host "
-## Rotinas `u{1F600}
+## Rotinas 😀
 
 0 = Sair
 1 = Menu QuickWindows...
