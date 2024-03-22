@@ -21,9 +21,9 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\MiniTool Partition Wizard 12"
 
 if (Test-Path $directory) {
-    Write-Host "YourPackage is installed!"
+    Write-Host "MiniTool Partition is installed!"
 } else {
-    Write-Host "YourPackage is not installed! Starting installation process."
+    Write-Host "MiniTool Partition is not installed! Starting installation process."
     Write-Host "File size: 3.1 MB"
 
     # Link do download e o diretório Temp
@@ -40,7 +40,7 @@ if (Test-Path $directory) {
         Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
     }
     
-    # Instala o YourPackage
+    # Instala o MiniTool Partition
     Start-Process -FilePath "$downloadPath" -Wait
 
     # Apagar o arquivo

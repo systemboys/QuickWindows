@@ -49,6 +49,7 @@ set "menu_Session_6_p2[2]=Limpar Arquivos Temporários"
 set "menu_Session_6_p2[3]=Driver Booster Free"
 set "menu_Session_6_p2[4]=CPU-Z"
 set "menu_Session_6_p2[5]=Crystal Disk Info"
+set "menu_Session_6_p2[6]=Crystal Disk Info Portable"
 
 set "default=%1%"
 
@@ -107,6 +108,16 @@ if %ERRORLEVEL% equ 5 (
     echo Você selecionou a opção para Crystal Disk Info.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_CrystalDiskInfo.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_p2
+)
+
+:: Crystal Disk Info Portable
+if %ERRORLEVEL% equ 5 (
+    cls
+    echo Você selecionou a opção para Crystal Disk Info Portable.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_CrystalDiskInfo_Portable.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )
