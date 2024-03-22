@@ -16,21 +16,21 @@
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
-# Se o Crystal Disk Info Wizard não estiver instalado, faz o download e instala
+# Se o Crystal Disk Info não estiver instalado, faz o download e instala
 $programFiles = "$env:temp"
 $directory = "$programFiles\CrystalDiskInfo"
 
 if (Test-Path $directory) {
-    Write-Host "Crystal Disk Info Wizard is installed!"
+    Write-Host "Crystal Disk Info is installed!"
 } else {
-    Write-Host "Crystal Disk Info Wizard is not installed! Starting installation process."
+    Write-Host "Crystal Disk Info is not installed! Starting installation process."
     Write-Host "File size: 5.69 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/CrystalDiskInfo.zip"
     $downloadPath = "$env:temp\CrystalDiskInfo.zip"
     
-    # Faz o download do Crystal Disk Info Wizard
+    # Faz o download do Crystal Disk Info
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 
     # Emitir Sequência de Beeps
@@ -51,7 +51,7 @@ if (Test-Path $directory) {
     $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\CrystalDiskInfo\DiskInfo64.exe"
     # /Extrair o arquivo compactado (.zip)
     
-    # Executar o Crystal Disk Info Wizard
+    # Executar o Crystal Disk Info
     Start-Process -FilePath "$extractPath\CrystalDiskInfo\DiskInfo64.exe" -Wait
 
     # Apagar o arquivo e o diretório

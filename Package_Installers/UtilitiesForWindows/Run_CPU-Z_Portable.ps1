@@ -16,21 +16,21 @@
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
-# Se o CPU-Z Wizard não estiver instalado, faz o download e instala
+# Se o CPU-Z não estiver instalado, faz o download e instala
 $programFiles = "$env:temp"
 $directory = "$programFiles\CPU-Z"
 
 if (Test-Path $directory) {
-    Write-Host "CPU-Z Wizard is installed!"
+    Write-Host "CPU-Z is installed!"
 } else {
-    Write-Host "CPU-Z Wizard is not installed! Starting installation process."
+    Write-Host "CPU-Z is not installed! Starting installation process."
     Write-Host "File size: 1.72 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/CPU-Z.zip"
     $downloadPath = "$env:temp\CPU-Z.zip"
     
-    # Faz o download do CPU-Z Wizard
+    # Faz o download do CPU-Z
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 
     # Emitir Sequência de Beeps
@@ -48,11 +48,11 @@ if (Test-Path $directory) {
     Expand-Archive -Path $downloadPath -DestinationPath $extractPath
 
     # Definir o caminho do arquivo exe dentro do diretório descompactado
-    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\CPU-Z\cpuz.exe"
+    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\CPU-Z\DiskInfo64.exe"
     # /Extrair o arquivo compactado (.zip)
     
-    # Executar o CPU-Z Wizard
-    Start-Process -FilePath "$extractPath\CPU-Z\cpuz.exe" -Wait
+    # Executar o CPU-Z
+    Start-Process -FilePath "$extractPath\CPU-Z\DiskInfo64.exe" -Wait
 
     # Apagar o arquivo e o diretório
     Remove-Item -Path $downloadPath -Force
