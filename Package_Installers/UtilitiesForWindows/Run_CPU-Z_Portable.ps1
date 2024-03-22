@@ -48,11 +48,11 @@ if (Test-Path $directory) {
     Expand-Archive -Path $downloadPath -DestinationPath $extractPath
 
     # Definir o caminho do arquivo exe dentro do diretório descompactado
-    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\CPU-Z\DiskInfo64.exe"
+    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\CPU-Z\cpuz.exe"
     # /Extrair o arquivo compactado (.zip)
     
     # Executar o CPU-Z
-    Start-Process -FilePath "$extractPath\CPU-Z\DiskInfo64.exe" -Wait
+    Start-Process -FilePath "$extractPath\CPU-Z\cpuz.exe" -Wait
 
     # Apagar o arquivo e o diretório
     Remove-Item -Path $downloadPath -Force
