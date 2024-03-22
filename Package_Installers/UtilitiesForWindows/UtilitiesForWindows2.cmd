@@ -113,7 +113,7 @@ if %ERRORLEVEL% equ 5 (
 )
 
 :: Crystal Disk Info Portable
-if %ERRORLEVEL% equ 5 (
+if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a opção para Crystal Disk Info Portable.
 
