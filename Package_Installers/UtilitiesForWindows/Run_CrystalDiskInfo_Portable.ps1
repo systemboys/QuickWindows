@@ -1,14 +1,14 @@
-# Run_CrystalDiskInfo_Portable.ps1 - Executa o script de Download e execução de Crystal Disk Info Wizard v12 64bit portable.
+# Run_CrystalDiskInfo_Portable.ps1 - Executa o script de Download e execução de Crystal Disk Info portable.
 #
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #
 # ---------------------------------------------------------------
-# Este programa tem a finalidade de baixar e executar o Crystal Disk Info Wizard v12 64bit portable no Windows.
+# Este programa tem a finalidade de baixar e executar o Crystal Disk Info portable no Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2024-01-20 às 01h10, Marcos Aurélio:
-#   - Versão inicial, Download e execução de Crystal Disk Info Wizard v12 64bit portable.
+# v0.0.1 2024-03-21 às 21h46, Marcos Aurélio:
+#   - Versão inicial, Download e execução de Crystal Disk Info portable.
 #
 # Licença: GPL.
 
@@ -24,7 +24,7 @@ if (Test-Path $directory) {
     Write-Host "Crystal Disk Info Wizard is installed!"
 } else {
     Write-Host "Crystal Disk Info Wizard is not installed! Starting installation process."
-    Write-Host "File size: 29.7 MB"
+    Write-Host "File size: 5.69 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/CrystalDiskInfo.zip"

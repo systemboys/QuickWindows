@@ -131,6 +131,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ MultimediaPlayers.cmd
 │  │  ├─ PDFReaders.cmd
 │  │  ├─ PartitionManagementSession.cmd
+│  │  ├─ Run_CrystalDiskInfo_Portable.ps1
 │  │  ├─ Run_MiniToolPartitionWizard32bitPortable.ps1
 │  │  ├─ Run_MiniToolPartitionWizard64bitPortable.ps1
 │  │  ├─ SystemFreezeSoftware.cmd
@@ -261,6 +262,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Driver Booster Free
     - [x] CPU-Z
     - [x] Crystal Disk Info
+    - [x] Crystal Disk Info Portable
 
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
@@ -371,6 +373,7 @@ Aqui estão todas as opções em desenvolvimento.
         693 = Driver Booster Free
         694 = CPU-Z
         695 = Crystal Disk Info
+        696 = Crystal Disk Info Portable
 7 = Softwares para Escritório…
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021
