@@ -12,6 +12,8 @@
 #   - Versão inicial, Execução de Rotinas.
 # v0.0.2 2024-03-21 às 18h19, Marcos Aurélio:
 #   - Rotina para o 'Crystal Disk Info'.
+# v0.0.3 2024-03-21 às 23h26, Marcos Aurélio:
+#   - Versão inicial, Download e execução de CPU-Z portable em Utilitários para Windows.
 #
 # Licença: GPL.
 

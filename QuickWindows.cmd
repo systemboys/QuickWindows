@@ -168,6 +168,8 @@
 ::   - Correção do nome do 'Rufos', estava escrito 'Fufus' na sessão de utilitários.
 :: v0.7.2 2024-03-21 às 18h10, Marcos Aurélio:
 ::   - Opção para instalação do 'Crystal Disk Info' na sessão 'Utilitários para Windows, na parte 2.
+:: v0.7.3 2024-03-21 às 23h26, Marcos Aurélio:
+::   - Versão inicial, Download e execução de CPU-Z portable em Utilitários para Windows.
 ::
 :: Licença: GPL.
 

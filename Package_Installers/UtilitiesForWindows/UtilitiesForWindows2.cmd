@@ -48,8 +48,9 @@ set "menu_Session_6_p2[1]=Limpar Spooler de Impressão"
 set "menu_Session_6_p2[2]=Limpar Arquivos Temporários"
 set "menu_Session_6_p2[3]=Driver Booster Free"
 set "menu_Session_6_p2[4]=CPU-Z"
-set "menu_Session_6_p2[5]=Crystal Disk Info"
-set "menu_Session_6_p2[6]=Crystal Disk Info Portable"
+set "menu_Session_6_p2[5]=CPU-Z Portable"
+set "menu_Session_6_p2[6]=Crystal Disk Info"
+set "menu_Session_6_p2[7]=Crystal Disk Info Portable"
 
 set "default=%1%"
 
@@ -102,8 +103,18 @@ if %ERRORLEVEL% equ 4 (
     goto menu_Session_6_p2
 )
 
-:: Crystal Disk Info
+:: CPU-Z Portable
 if %ERRORLEVEL% equ 5 (
+    cls
+    echo Você selecionou a opção para CPU-Z Portable.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_CPU-Z_Portable.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_p2
+)
+
+:: Crystal Disk Info
+if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a opção para Crystal Disk Info.
 
@@ -113,7 +124,7 @@ if %ERRORLEVEL% equ 5 (
 )
 
 :: Crystal Disk Info Portable
-if %ERRORLEVEL% equ 6 (
+if %ERRORLEVEL% equ 7 (
     cls
     echo Você selecionou a opção para Crystal Disk Info Portable.
 

@@ -1,4 +1,4 @@
-# Run_CPU-Z.ps1 - Executa o script de Download e execução de CPU-Z portable.
+# Run_CPU-Z_Portable.ps1 - Executa o script de Download e execução de CPU-Z portable.
 #
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
@@ -7,7 +7,7 @@
 # Este programa tem a finalidade de baixar e executar o CPU-Z portable no Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2024-03-21 às 21h46, Marcos Aurélio:
+# v0.0.1 2024-03-21 às 23h26, Marcos Aurélio:
 #   - Versão inicial, Download e execução de CPU-Z portable.
 #
 # Licença: GPL.
@@ -24,7 +24,7 @@ if (Test-Path $directory) {
     Write-Host "CPU-Z Wizard is installed!"
 } else {
     Write-Host "CPU-Z Wizard is not installed! Starting installation process."
-    Write-Host "File size: 5.69 MB"
+    Write-Host "File size: 1.72 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/CPU-Z.zip"
