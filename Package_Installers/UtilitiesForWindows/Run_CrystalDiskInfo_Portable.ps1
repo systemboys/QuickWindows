@@ -52,7 +52,7 @@ if (Test-Path $directory) {
     # /Extrair o arquivo compactado (.zip)
     
     # Executar o Crystal Disk Info Wizard
-    Start-Process -FilePath "$extractPath\CrystalDiskInfo\partitionwizard.exe" -Wait
+    Start-Process -FilePath "$extractPath\CrystalDiskInfo\DiskInfo64.exe" -Wait
 
     # Apagar o arquivo e o diretório
     Remove-Item -Path $downloadPath -Force
