@@ -19,11 +19,8 @@
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
-$EmojiIcon = [System.Convert]::toInt32("1F600",16) # Converte o valor Hex para Int32
-[System.Char]::ConvertFromUtf32($EmojiIcon) # Converte o ponto Unicode para String UTF-16
-
 Write-Host "
-## Rotinas `u{1F600}
+## Rotinas
 
 0 = Sair
 1 = Menu QuickWindows...
