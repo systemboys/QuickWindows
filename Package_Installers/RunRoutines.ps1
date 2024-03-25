@@ -109,6 +109,7 @@ Write-Host "
         695 = CPU-Z Portable
         696 = Crystal Disk Info
         697 = Crystal Disk Info Portable
+        698 = Windows Update Activation
 7 = Softwares para Escritorio...
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021
