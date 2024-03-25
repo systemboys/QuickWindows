@@ -18,7 +18,7 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # Se o Revo Uninstaller Portable não estiver instalado, faz o download e instala
 $programFiles = "$env:temp"
-$directory = "$programFiles\RevoUninstaller"
+$directory = "$programFiles\RevoUninstallerPortable"
 
 if (Test-Path $directory) {
     Write-Host "Revo Uninstaller Portable is installed!"
@@ -48,15 +48,15 @@ if (Test-Path $directory) {
     Expand-Archive -Path $downloadPath -DestinationPath $extractPath
 
     # Definir o caminho do arquivo exe dentro do diretório descompactado
-    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\RevoUninstaller\RevoUnin.exe"
+    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\RevoUninstallerPortable\RevoUnin.exe"
     # /Extrair o arquivo compactado (.zip)
     
     # Executar o Revo Uninstaller Portable
-    Start-Process -FilePath "$extractPath\RevoUninstaller\RevoUnin.exe" -Wait
+    Start-Process -FilePath "$extractPath\RevoUninstallerPortable\RevoUnin.exe" -Wait
 
     # Apagar o arquivo e o diretório
     Remove-Item -Path $downloadPath -Force
-    Remove-Item -Path "$extractPath\RevoUninstaller" -Recurse -Force
+    Remove-Item -Path "$extractPath\RevoUninstallerPortable" -Recurse -Force
 }
 
 Write-Host "Press any key to continue..."
