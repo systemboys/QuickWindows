@@ -138,7 +138,8 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ SystemFreezeSoftware.cmd
 │  │  ├─ SystemRestoreTools.cmd
 │  │  ├─ UtilitiesForWindows.cmd
-│  │  └─ UtilitiesForWindows2.cmd
+│  │  ├─ UtilitiesForWindows2.cmd
+│  │  └─ WindowsUpdateActivation.ps1
 │  ├─ /Windows_Session/
 │  │  ├─ ManageFilesAndFolders.ps1
 │  │  ├─ ObtainingSystemInformation.ps1
@@ -265,6 +266,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] CPU-Z Portable
     - [x] Crystal Disk Info
     - [x] Crystal Disk Info Portable
+    - [x] Windows Update Activation
 
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
@@ -377,6 +379,7 @@ Aqui estão todas as opções em desenvolvimento.
         695 = CPU-Z Portable
         696 = Crystal Disk Info
         697 = Crystal Disk Info Portable
+        698 = Windows Update Activation
 7 = Softwares para Escritório…
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021

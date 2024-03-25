@@ -209,6 +209,7 @@ $Files = @{
             "695" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_CPU-Z_Portable.ps1" # CPU-Z Portable
             "696" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_CrystalDiskInfo.ps1" # Crystal Disk Info
             "697" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_CrystalDiskInfo_Portable.ps1" # Crystal Disk Info Portable
+            "698" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\WindowsUpdateActivation.ps1" # Windows Update Activation
     # "7" = "" # Softwares para Escritório…
         "71" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2016_to_2019.ps1" # Microsoft Office 2016 a 2019
         "72" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2019_to_2021.ps1" # Microsoft Office 2019 a 2021
