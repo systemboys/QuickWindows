@@ -21,6 +21,8 @@
 #   - Alteração que verifica se o Windows PowerShell está sendo executado como administrador.
 # v0.0.7 2024-03-09 às 16h26, Marcos Aurélio:
 #   - Alteração que verifica se o arquivo 'QuickWindows.cmd' existe, se não existir, apagar o diretório 'QquicoWindows'.
+# v0.0.8 2024-03-25 às 01h06, Marcos Aurélio:
+#   - Modificação para criar um ícone da Área de trabalho do Windows que executar o script.
 #
 # Licença: GPL.
 
@@ -172,6 +174,35 @@ if (Test-Path $filePath) {
     Set-Location -Path $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; Set-Location -Path .\QuickWindows\
 }
 # ------------------[/Verifique se o QuickWindows existe] -----------------------------
+
+# ------------------[/Ícone na Área de trabalho]---------------------------
+# Comando a ser executado
+$command = "irm qw.gti1.com.br/menu.ps1 | iex"
+
+# Caminho do Desktop
+$desktopPath = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::DesktopDirectory)
+
+# Nome do atalho
+$shortcutName = "GTi Support"
+
+# Caminho completo para o atalho
+$shortcutPath = Join-Path -Path $desktopPath -ChildPath "$shortcutName.lnk"
+
+# Caminho para o ícone
+$iconPath = "$env:TEMP\QuickWindows\Images\QuickWindows.ico"
+
+# Criar um objeto WScript.Shell
+$shell = New-Object -ComObject WScript.Shell
+
+# Criar atalho
+$shortcut = $shell.CreateShortcut($shortcutPath)
+$shortcut.TargetPath = "powershell.exe"
+$shortcut.Arguments = "-Command `"$command`""
+$shortcut.IconLocation = $iconPath
+$shortcut.Save()
+
+Write-Host "Atalho criado em: $shortcutPath"
+# ------------------[Ícone na Área de trabalho]---------------------------
 
 # Inicia o PowerShell em modo Administrador com o comando desejado
 Start-Process -FilePath "powershell.exe" -Verb runAs -ArgumentList "-Command", "& {$env:TEMP\QuickWindows\QuickWindows.cmd 0}"

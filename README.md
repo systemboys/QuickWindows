@@ -71,6 +71,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 ```tex
 /QuickWindows/
 ├─ /Images/
+│  ├─ QuickWindows.ico
 │  └─ QuickWindows.png
 ├─ /Package_Installers/
 │  ├─ /Internet_Session/
