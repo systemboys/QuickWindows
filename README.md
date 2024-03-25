@@ -267,6 +267,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Crystal Disk Info
     - [x] Crystal Disk Info Portable
     - [x] Windows Update Activation
+    - [x] Revo Uninstaller Portable
 
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
