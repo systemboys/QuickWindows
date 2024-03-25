@@ -171,7 +171,7 @@
 :: v0.7.3 2024-03-21 às 23h26, Marcos Aurélio:
 ::   - Download e execução de CPU-Z portable em Utilitários para Windows.
 :: v0.7.4 2024-03-24 às 23h43, Marcos Aurélio:
-::   - Execução de 'Windows Update Activation' na sessão 'Utilitários para Windows'.
+::   - Execução de 'Windows Update Activation' e o 'Revo Uninstaller Portable' na sessão 'Utilitários para Windows'.
 ::
 :: Licença: GPL.
 

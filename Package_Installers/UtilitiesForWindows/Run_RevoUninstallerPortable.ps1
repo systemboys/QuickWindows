@@ -27,8 +27,8 @@ if (Test-Path $directory) {
     Write-Host "File size: 5.6 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/RevoUninstaller.zip"
-    $downloadPath = "$env:temp\RevoUninstaller.zip"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/RevoUninstallerPortable.zip"
+    $downloadPath = "$env:temp\RevoUninstallerPortable.zip"
     
     # Faz o download do Revo Uninstaller Portable
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath

@@ -135,6 +135,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Run_CrystalDiskInfo_Portable.ps1
 │  │  ├─ Run_MiniToolPartitionWizard32bitPortable.ps1
 │  │  ├─ Run_MiniToolPartitionWizard64bitPortable.ps1
+│  │  ├─ Run_RevoUninstallerPortable.ps1
 │  │  ├─ SystemFreezeSoftware.cmd
 │  │  ├─ SystemRestoreTools.cmd
 │  │  ├─ UtilitiesForWindows.cmd
@@ -381,6 +382,7 @@ Aqui estão todas as opções em desenvolvimento.
         696 = Crystal Disk Info
         697 = Crystal Disk Info Portable
         698 = Windows Update Activation
+        699 = Revo Uninstaller Portable
 7 = Softwares para Escritório…
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021
