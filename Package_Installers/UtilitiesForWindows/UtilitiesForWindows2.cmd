@@ -19,6 +19,8 @@
 ::   - Opção para instalação de CPU-Z.
 :: v0.0.4 2024-03-21 às 18h10, Marcos Aurélio:
 ::   - Opção para instalação do 'Crystal Disk Info'.
+:: v0.0.5 2024-03-24 às 23h43, Marcos Aurélio:
+::   - Versão inicial, Execução de Windows Update Activation.
 ::
 :: Licença: GPL.
 
@@ -51,6 +53,7 @@ set "menu_Session_6_p2[4]=CPU-Z"
 set "menu_Session_6_p2[5]=CPU-Z Portable"
 set "menu_Session_6_p2[6]=Crystal Disk Info"
 set "menu_Session_6_p2[7]=Crystal Disk Info Portable"
+set "menu_Session_6_p2[8]=Windows Update Activation"
 
 set "default=%1%"
 
@@ -129,6 +132,16 @@ if %ERRORLEVEL% equ 7 (
     echo Você selecionou a opção para Crystal Disk Info Portable.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_CrystalDiskInfo_Portable.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_p2
+)
+
+:: Windows Update Activation
+if %ERRORLEVEL% equ 8 (
+    cls
+    echo Você selecionou a opção para Windows Update Activation.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0WindowsUpdateActivation.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )
