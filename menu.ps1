@@ -176,6 +176,8 @@ if ($gitInstalled) {
     Write-Host "After installing Git, Windows PowerShell must be restarted!"
     Write-Host "Type the same command again or press the up directional arrow key."
     Write-Host
+    Write-Host "There is a GTi Support shortcut on the Desktop!"
+    Write-Host
     Write-Host "Press any key to continue..."
     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
     exit
