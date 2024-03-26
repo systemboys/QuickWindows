@@ -122,7 +122,7 @@ $shortcut = $shell.CreateShortcut($shortcutPath)
 $shortcut.TargetPath = "powershell.exe"
 $shortcut.Arguments = "-Command `"$command`""
 $shortcut.IconLocation = $iconPath
-$shortcut.Description = "QuickWindows - Facilite as instalações com rotinas"
+$shortcut.Description = "QuickWindows - Facilitate installations with routines"
 $shortcut.Save()
 
 Write-Host "Atalho criado em: $shortcutPath"
