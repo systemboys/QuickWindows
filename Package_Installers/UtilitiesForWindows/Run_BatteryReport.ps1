@@ -38,5 +38,7 @@ Start-Process $caminhoArquivo
 
 # ---------------------[/Conteúdo do script acima]---------------------------
 
-Write-Host "Press any key to continue..."
-$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+# Write-Host "Press any key to continue..."
+# $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+
+exit
