@@ -16,6 +16,8 @@
 #   - Versão inicial, Download e execução de CPU-Z portable em Utilitários para Windows.
 # v0.0.4 2024-03-24 às 23h43, Marcos Aurélio:
 #   - Versão inicial, Execução de 'Windows Update Activation' e o 'Revo Uninstaller Portable' na sessão 'Utilitários para Windows'.
+# v0.0.5 2024-03-29 às 16h47, Marcos Aurélio:
+#   - Adicionada a rotina para 'Battery Report'.
 #
 # Licença: GPL.
 
@@ -112,7 +114,9 @@ Write-Host "
         696 = Crystal Disk Info
         697 = Crystal Disk Info Portable
         698 = Windows Update Activation
-        699 = Revo Uninstaller Portable
+        699 = Mais...
+            6991 = Revo Uninstaller Portable
+            6992 = Battery Report
 7 = Softwares para Escritorio...
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021
@@ -214,7 +218,9 @@ $Files = @{
             "696" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_CrystalDiskInfo.ps1" # Crystal Disk Info
             "697" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_CrystalDiskInfo_Portable.ps1" # Crystal Disk Info Portable
             "698" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\WindowsUpdateActivation.ps1" # Windows Update Activation
-            "699" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_RevoUninstallerPortable.ps1" # Revo Uninstaller Portable
+            # "699" = "" # Mais…
+                "6991" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_RevoUninstallerPortable.ps1" # Revo Uninstaller Portable
+                "6992" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_BatteryReport.ps1" # Battery Report
     # "7" = "" # Softwares para Escritório…
         "71" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2016_to_2019.ps1" # Microsoft Office 2016 a 2019
         "72" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2019_to_2021.ps1" # Microsoft Office 2019 a 2021
