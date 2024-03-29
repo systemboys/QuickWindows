@@ -25,6 +25,8 @@
 #   - Modificação para criar um ícone da Área de trabalho do Windows que executar o script.
 # v0.0.9 2024-03-26 às 14h31, Marcos Aurélio:
 #   - Incrementação de uma descrição que deverá aparecer quando o ícone for apontado pelo mouse.
+# v0.1.0 2024-03-29 às 00h05, Marcos Aurélio:
+#   - Correção da ativação da execução de scripts no PowerShell.
 #
 # Licença: GPL.
 
@@ -42,7 +44,7 @@ $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # Ativar a execução de scripts no PowerShell
-Set-ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
 # Se o AnyDesk não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files (x86)"
