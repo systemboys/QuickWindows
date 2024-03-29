@@ -21,6 +21,8 @@
 ::   - Opção para instalação do 'Crystal Disk Info'.
 :: v0.0.5 2024-03-24 às 23h43, Marcos Aurélio:
 ::   - Versão inicial, Execução de 'Windows Update Activation' e o 'Revo Uninstaller Portable'.
+:: v0.0.6 2024-03-29 às 16h30, Marcos Aurélio:
+::   - A opção '9' foi mudada para 'Mais…', para acessar a parte 3 do menu de 'Utilitários para Windows'.
 ::
 :: Licença: GPL.
 
@@ -54,7 +56,7 @@ set "menu_Session_6_p2[5]=CPU-Z Portable"
 set "menu_Session_6_p2[6]=Crystal Disk Info"
 set "menu_Session_6_p2[7]=Crystal Disk Info Portable"
 set "menu_Session_6_p2[8]=Windows Update Activation"
-set "menu_Session_6_p2[9]=Revo Uninstaller Portable"
+set "menu_Session_6_p2[9]=Mais…"
 
 set "default=%1%"
 
@@ -147,14 +149,9 @@ if %ERRORLEVEL% equ 8 (
     goto menu_Session_6_p2
 )
 
-:: Revo Uninstaller Portable
+:: Mais…
 if %ERRORLEVEL% equ 9 (
-    cls
-    echo Você selecionou a opção para Revo Uninstaller Portable.
-
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_RevoUninstallerPortable.ps1""' -Verb RunAs}"
-
-    goto menu_Session_6_p2
+    call UtilitiesForWindows3.cmd 0
 )
 
 goto :EOF
