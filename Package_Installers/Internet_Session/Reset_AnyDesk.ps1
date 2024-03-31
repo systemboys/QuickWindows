@@ -1,11 +1,10 @@
-# Reset_AnyDesk.ps1 - Executa o script de instalação de Reset AnyDesk.
+# Reset_AnyDesk.ps1 - Executa o script de redefinição do AnyDesk.
 #
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #
 # ---------------------------------------------------------------
-# Este programa tem a finalidade de facilitar na instalação de
-# pacotes para Windows.
+# Este programa tem a finalidade de redefinir o AnyDesk.
 # ---------------------------------------------------------------
 # Histórico:
 # v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:
