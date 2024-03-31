@@ -90,6 +90,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Install_Skype.ps1
 │  │  ├─ Install_Transmission.ps1
 │  │  ├─ Internet_Session.cmd
+│  │  ├─ Reset_AnyDesk.ps1
 │  │  └─ Session_RemoteAccessSoftware.cmd
 │  ├─ /Menu_QuickWindows/
 │  │  └─ Menu_QuickWindows.cmd
@@ -204,6 +205,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Voltar…
     - [x] Acesso Remoto…
       - [x] AnyDesk
+      - [x] Reset AnyDesk
       - [x] RustDesk
       - [x] HopToDesk
     - [x] Instalar Microsoft Edge
@@ -331,8 +333,9 @@ Aqui estão todas as opções em desenvolvimento.
 3 = Internet…
     31 = Acesso Remoto…
         311 = AnyDesk
-        312 = RustDesk
-        313 = HopToDesk
+        312 = Reset AnyDesk
+        313 = RustDesk
+        314 = HopToDesk
     32 = Navegador Microsoft Edge
     33 = Navegador Google Chrome
     34 = Navegador Google Earth Pro
