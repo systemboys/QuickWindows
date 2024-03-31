@@ -174,6 +174,8 @@
 ::   - Execução de 'Windows Update Activation' e o 'Revo Uninstaller Portable' na sessão 'Utilitários para Windows' e modificação no arquivo './menu.ps1' para criar um ícone da Área de trabalho do Windows que executar o script.
 :: v0.7.5 2024-03-29 às 16h38, Marcos Aurélio:
 ::   - A opção '9' foi mudada para 'Mais…', para acessar a parte 3 do menu de 'Utilitários para Windows' e uma nova opção foi incrementada nesta sessão, a opção foi 'Battery Report'
+:: v0.7.6 2024-03-31 às 14h57, Marcos Aurélio:
+::   - Adicionada a opção 'Reset AnyDesk' na sessão 'Internet / Acesso remoto' e a rotina 'Reset AnyDesk'.
 ::
 :: Licença: GPL.
 

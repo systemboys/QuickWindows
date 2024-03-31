@@ -18,6 +18,8 @@
 #   - Versão inicial, Execução de 'Windows Update Activation' e o 'Revo Uninstaller Portable' na sessão 'Utilitários para Windows'.
 # v0.0.5 2024-03-29 às 16h47, Marcos Aurélio:
 #   - Adicionada a rotina para 'Battery Report'.
+# v0.0.6 2024-03-31 às 14h48, Marcos Aurélio:
+#   - Adicionada a rotina para 'Reset AnyDesk'.
 #
 # Licença: GPL.
 
@@ -60,8 +62,9 @@ Write-Host "
 3 = Internet...
     31 = Acesso Remoto...
         311 = AnyDesk
-        312 = RustDesk
-        313 = HopToDesk
+        312 = Reset AnyDesk
+        313 = RustDesk
+        314 = HopToDesk
     32 = Navegador Microsoft Edge
     33 = Navegador Google Chrome
     34 = Navegador Google Earth Pro
@@ -165,8 +168,9 @@ $Files = @{
     # "3" = "" # Internet…
         # "31" = "" # Acesso Remoto…
             "311" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_AnyDesk.ps1" # AnyDesk
-            "312" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_RustDesk.ps1" # RustDesk
-            "313" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_HopToDesk.ps1" # HopToDesk
+            "312" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Reset_AnyDesk.ps1" # Reset AnyDesk
+            "313" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_RustDesk.ps1" # RustDesk
+            "314" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_HopToDesk.ps1" # HopToDesk
         "32" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_Microsoft_Edge.ps1" # Navegador Microsoft Edge
         "33" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_Google_Chrome.ps1" # Navegador Google Chrome
         "34" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_Google_Earth_Pro.ps1" # Navegador Google Earth Pro

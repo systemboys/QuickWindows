@@ -15,6 +15,8 @@
 ::   - Versão inicial, sessão "Softwares de Acesso Remoto".
 :: v0.0.2 2024-02-08 às 22h29, Marcos Aurélio:
 ::   - Inclusão da opção para baixar o 'HopToDesk'.
+:: v0.0.3 2024-03-31 às 14h41, Marcos Aurélio:
+::   - Opção para 'Reset AnyDesk'.
 ::
 :: Licença: GPL.
 
@@ -41,8 +43,9 @@ echo QuickWindows / Internet / Softwares de Acesso Remoto
 :: Opções do Menu
 set "menu_Session_3_1[0]=Voltar…"
 set "menu_Session_3_1[1]=AnyDesk"
-set "menu_Session_3_1[2]=RustDesk"
-set "menu_Session_3_1[3]=HopToDesk"
+set "menu_Session_3_1[2]=Reset AnyDesk"
+set "menu_Session_3_1[3]=RustDesk"
+set "menu_Session_3_1[4]=HopToDesk"
 
 set "default=%1"
 
@@ -65,8 +68,18 @@ if %ERRORLEVEL% equ 1 (
     goto menu_Session_3_1
 )
 
-:: RustDesk
+:: Reset AnyDesk
 if %ERRORLEVEL% equ 2 (
+    cls
+    echo Você selecionou a Opção para instalar o Reset AnyDesk.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Reset_AnyDesk.ps1""' -Verb RunAs}"
+
+    goto menu_Session_3_1
+)
+
+:: RustDesk
+if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção para instalar o RustDesk.
 
@@ -76,7 +89,7 @@ if %ERRORLEVEL% equ 2 (
 )
 
 :: HopToDesk
-if %ERRORLEVEL% equ 3 (
+if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção para instalar o HopToDesk.
 
