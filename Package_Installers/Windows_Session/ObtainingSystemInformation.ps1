@@ -39,7 +39,7 @@ $memoryContent = "Total Physical Memory: {0:N2} GB" -f ($memoryInfo.Sum)
 
 # Obter informações gerais do sistema
 $systemInfo = Get-CimInstance -ClassName Win32_ComputerSystem | Select-Object Manufacturer, Model, TotalPhysicalMemory
-$systemContent = "Manufacturer: $($systemInfo.Manufacturer)", "Model: $($systemInfo.Model)", "Total Physical Memory: {0:N2} GB" -f ($systemInfo.TotalPhysicalMemory / 1GB)
+$systemContent = "Manufacturer: $($systemInfo.Manufacturer)", "Model: $($systemInfo.Model),", "Total Physical Memory: {0:N2} GB" -f ($systemInfo.TotalPhysicalMemory / 1GB)
 
 # Exibir informações em quadros
 Show-InfoFrame -title "Processor Info" -content ($processorContent -join "`n")
