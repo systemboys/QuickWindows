@@ -12,7 +12,9 @@
 :: ---------------------------------------------------------------
 :: Histórico:
 :: v0.0.1 2024-03-29 às 16h25, Marcos Aurélio:
-::   - Versão inicial, Opção ...
+::   - Versão inicial, Opção para 'Revo Uninstaller Portable' e 'Battery Report' em nova página da sessão.
+:: v0.0.1 2024-04-11 às 19h36, Marcos Aurélio:
+::   - Opção para baixar e instalar o 'SiberiaProg-CH341A', programa de gravação de EPROM.
 ::
 :: Licença: GPL.
 
@@ -40,6 +42,7 @@ echo QuickWindows / Utilitários para Windows [Page 3]
 set "menu_Session_6_p3[0]=Voltar…"
 set "menu_Session_6_p3[1]=Revo Uninstaller Portable"
 set "menu_Session_6_p3[2]=Battery Report"
+set "menu_Session_6_p3[3]=SiberiaProg-CH341A"
 
 set "default=%1%"
 
@@ -68,6 +71,16 @@ if %ERRORLEVEL% equ 2 (
     echo Você selecionou a opção para Battery Report.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_BatteryReport.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_p3
+)
+
+:: SiberiaProg-CH341A
+if %ERRORLEVEL% equ 3 (
+    cls
+    echo Você selecionou a opção para SiberiaProg-CH341A.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_SiberiaProg-CH341A.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p3
 )

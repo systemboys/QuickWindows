@@ -176,6 +176,8 @@
 ::   - A opção '9' foi mudada para 'Mais…', para acessar a parte 3 do menu de 'Utilitários para Windows' e uma nova opção foi incrementada nesta sessão, a opção foi 'Battery Report'
 :: v0.7.6 2024-03-31 às 14h57, Marcos Aurélio:
 ::   - Adicionada a opção 'Reset AnyDesk' na sessão 'Internet / Acesso remoto' e a rotina 'Reset AnyDesk'.
+:: v0.7.7 2024-04-11 às 19h32, Marcos Aurélio:
+::   - Adicionada a opção para baixar e instalar o 'SiberiaProg-CH341A', programa de gravação de EPROM.
 ::
 :: Licença: GPL.
 

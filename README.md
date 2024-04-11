@@ -126,6 +126,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Install_Revo_Uninstaller.ps1
 │  │  ├─ Install_Rufus.ps1
 │  │  ├─ Install_Shadow_Defender.ps1
+│  │  ├─ Install_SiberiaProg-CH341A.ps1
 │  │  ├─ Install_VLCMediaPlayer.ps1
 │  │  ├─ Install_WinRAR.ps1
 │  │  ├─ Install_WinToHDD.ps1
@@ -274,6 +275,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Windows Update Activation
     - [x] Revo Uninstaller Portable
     - [x] Battery Report
+    - [x] SiberiaProg-CH341A
 
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
@@ -391,6 +393,7 @@ Aqui estão todas as opções em desenvolvimento.
         699 = Mais…
             6991 = Revo Uninstaller Portable
             6992 = Battery Report
+            6993 = SiberiaProg-CH341A
 7 = Softwares para Escritório…
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021
