@@ -27,11 +27,11 @@ if (Test-Path $directory) {
     Write-Host "SiberiaProg-CH341A is installed!"
 } else {
     Write-Host "SiberiaProg-CH341A is not installed! Starting installation process."
-    Write-Host "File size: 9.9 MB"
+    Write-Host "File size: 8.81 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://download.anydesk.com/SiberiaProg-CH341A.exe"
-    $downloadPath = "$env:temp\SiberiaProg-CH341A.exe"
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/SiberiaProg-CH341A_v1.40.0.0.exe"
+    $downloadPath = "$env:temp\SiberiaProg-CH341A_v1.40.0.0.exe"
     
     # Faz o download do SiberiaProg-CH341A
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
