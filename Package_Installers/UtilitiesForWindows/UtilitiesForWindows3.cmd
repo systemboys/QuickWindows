@@ -43,6 +43,7 @@ set "menu_Session_6_p3[0]=Voltar…"
 set "menu_Session_6_p3[1]=Revo Uninstaller Portable"
 set "menu_Session_6_p3[2]=Battery Report"
 set "menu_Session_6_p3[3]=SiberiaProg-CH341A"
+set "menu_Session_6_p3[4]=SiberiaProg-CH341A Portable"
 
 set "default=%1%"
 
