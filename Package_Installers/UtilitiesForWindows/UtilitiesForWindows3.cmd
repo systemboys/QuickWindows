@@ -85,6 +85,16 @@ if %ERRORLEVEL% equ 3 (
     goto menu_Session_6_p3
 )
 
+:: SiberiaProg-CH341A Portable
+if %ERRORLEVEL% equ 4 (
+    cls
+    echo Você selecionou a opção para SiberiaProg-CH341A Portable.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_SiberiaProg-CH341A_Portable.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_p3
+)
+
 goto :EOF
 : end batch / begin PowerShell hybrid chimera #>
 

@@ -121,6 +121,7 @@ Write-Host "
             6991 = Revo Uninstaller Portable
             6992 = Battery Report
             6993 = SiberiaProg-CH341A
+            6994 = SiberiaProg-CH341A Portable
 7 = Softwares para Escritorio...
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021
@@ -227,6 +228,7 @@ $Files = @{
                 "6991" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_RevoUninstallerPortable.ps1" # Revo Uninstaller Portable
                 "6992" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_BatteryReport.ps1" # Battery Report
                 "6993" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_SiberiaProg-CH341A.ps1" # SiberiaProg-CH341A
+                "6994" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_SiberiaProg-CH341A_Portable.ps1" # SiberiaProg-CH341A Portable
     # "7" = "" # Softwares para Escritório…
         "71" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2016_to_2019.ps1" # Microsoft Office 2016 a 2019
         "72" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2019_to_2021.ps1" # Microsoft Office 2019 a 2021
