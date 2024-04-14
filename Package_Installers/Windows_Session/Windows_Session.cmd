@@ -55,6 +55,7 @@ set "menu_Session_2[3]=Agendar desligamento do Windows"
 set "menu_Session_2[4]=Atualizar Windows e Softwares"
 set "menu_Session_2[5]=Atualizar o PowerShell"
 set "menu_Session_2[6]=Acesso rápido à Configurações…"
+set "menu_Session_2[7]=Criar atalhos para 'Desligar e Reiniciar'"
 
 set "default=%1"
 
@@ -118,6 +119,16 @@ if %ERRORLEVEL% equ 6 (
     cd Package_Installers\Windows_Session
     call QuickAccessToSettings.cmd 0
     cd ..
+)
+
+:: Criar atalhos para 'Desligar e Reiniciar'
+if %ERRORLEVEL% equ 5 (
+    cls
+    echo Você selecionou a Opção para Criar atalhos para 'Desligar e Reiniciar'.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ShortcutMaker.ps1""' -Verb RunAs}"
+
+    goto menu_Session_2
 )
 
 goto :EOF
