@@ -122,7 +122,7 @@ if %ERRORLEVEL% equ 6 (
 )
 
 :: Criar atalhos para 'Desligar e Reiniciar'
-if %ERRORLEVEL% equ 5 (
+if %ERRORLEVEL% equ 7 (
     cls
     echo Você selecionou a Opção para Criar atalhos para 'Desligar e Reiniciar'.
 
