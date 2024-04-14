@@ -20,6 +20,8 @@
 #   - Adicionada a rotina para 'Battery Report'.
 # v0.0.6 2024-03-31 às 14h48, Marcos Aurélio:
 #   - Adicionada a rotina para 'Reset AnyDesk'.
+# v0.0.7 2024-04-14 às 17h56, Marcos Aurélio:
+#   - Adicionada a opção na sessão 'Windows' para criar dois atalhos na Área de trabalho do Windows (Desligar e Reiniciar).
 #
 # Licença: GPL.
 
@@ -59,6 +61,7 @@ Write-Host "
             2696 = Gerenciador de Tarefas do Windows
             2697 = Opcaes de pastas
             2698 = Obtendo Informacaes do Sistema com PowerShell
+    27 = Criar atalhos para 'Desligar e Reiniciar'
 3 = Internet...
     31 = Acesso Remoto...
         311 = AnyDesk
@@ -167,6 +170,7 @@ $Files = @{
                 # "2696" = "" # Gerenciador de Tarefas do Windows
                 # "2697" = "" # Opções de pastas
                 "2698" = "$env:TEMP\QuickWindows\Package_Installers\Windows_Session\ObtainingSystemInformation.ps1" # Obtendo Informações do Sistema com PowerShell
+        "27" = "$env:TEMP\QuickWindows\Package_Installers\Windows_Session\ShortcutMaker.ps1" # Criar atalhos para 'Desligar e Reiniciar'
     # "3" = "" # Internet…
         # "31" = "" # Acesso Remoto…
             "311" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_AnyDesk.ps1" # AnyDesk

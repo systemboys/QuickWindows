@@ -178,6 +178,8 @@
 ::   - Adicionada a opção 'Reset AnyDesk' na sessão 'Internet / Acesso remoto' e a rotina 'Reset AnyDesk'.
 :: v0.7.7 2024-04-11 às 19h32, Marcos Aurélio:
 ::   - Adicionada a opção para baixar e instalar o 'SiberiaProg-CH341A', programa de gravação de EPROM.
+:: v0.7.8 2024-04-14 às 17h56, Marcos Aurélio:
+::   - Adicionada a opção na sessão 'Windows' para criar dois atalhos na Área de trabalho do Windows (Desligar e Reiniciar).
 ::
 :: Licença: GPL.
 

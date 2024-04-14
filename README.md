@@ -152,6 +152,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ QuickAccessToSettings.cmd
 │  │  ├─ QuickAccessToSettings2.cmd
 │  │  ├─ ScheduleWindowsShutdown.ps1
+│  │  ├─ ShortcutMaker.ps1
 │  │  ├─ Update_PowerShell.ps1
 │  │  ├─ UpdatingSoftwareInWindows.ps1
 │  │  └─ Windows_Session.cmd
@@ -203,6 +204,7 @@ Aqui estão todas as opções em desenvolvimento.
       - [x] Gerenciador de Tarefas do Windows
       - [x] Opções de pastas
       - [x] Obtendo Informações do Sistema com PowerShell
+    - [x] Criar atalhos para 'Desligar e Reiniciar'
   - [x] **Internet**
     - [x] Voltar…
     - [x] Acesso Remoto…
@@ -334,6 +336,7 @@ Aqui estão todas as opções em desenvolvimento.
             2696 = Gerenciador de Tarefas do Windows
             2697 = Opções de pastas
             2698 = Obtendo Informações do Sistema com PowerShell
+    27 = Criar atalhos para 'Desligar e Reiniciar'
 3 = Internet…
     31 = Acesso Remoto…
         311 = AnyDesk
