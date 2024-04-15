@@ -95,6 +95,26 @@ if (Test-Path $directory) {
 }
 
 # ------------------[Ícone na Área de trabalho]---------------------------
+
+# --- Criar diretório em ambiente de usuário ---
+# Define o nome do diretório
+$dirName = "GTiSupport"
+
+# Define o caminho completo do diretório
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+
+# Cria o diretório se ele não existir
+if(!(Test-Path -Path $fullPath))
+{
+    New-Item -ItemType Directory -Path $fullPath
+    Write-Host "Diretório '$dirName' criado com sucesso em '$env:USERPROFILE'"
+}
+else
+{
+    Write-Host "Diretório '$dirName' já existe em '$env:USERPROFILE'"
+}
+# --- /Criar diretório em ambiente de usuário ---
+
 # Comando a ser executado
 $command = "irm qw.gti1.com.br/menu.ps1 | iex"
 
@@ -111,7 +131,7 @@ $shortcutPath = Join-Path -Path $desktopPath -ChildPath "$shortcutName.lnk"
 $iconUrl = "https://github.com/systemboys/QuickWindows/raw/main/Images/QuickWindows.ico"
 
 # Caminho local para salvar o ícone
-$iconPath = "$env:USERPROFILE\QuickWindows.ico"
+$iconPath = "$env:USERPROFILE\GTiSupport\QuickWindows.ico"
 
 # Baixar o ícone
 Invoke-WebRequest -Uri $iconUrl -OutFile $iconPath

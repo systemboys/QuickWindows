@@ -35,7 +35,7 @@ $shortcutPath = Join-Path -Path $desktopPath -ChildPath "$shortcutName.lnk"
 $iconUrl = "https://raw.githubusercontent.com/systemboys/_GTi_Support_/main/icons/buttons/button-icon-png-21067-Windows.ico"
 
 # Caminho local para salvar o ícone
-$iconPath = "$env:USERPROFILE\button-icon-png-21067-Windows.ico"
+$iconPath = "$env:USERPROFILE\GTiSupport\button-icon-png-21067-Windows.ico"
 
 # Baixar o ícone
 Invoke-WebRequest -Uri $iconUrl -OutFile $iconPath
@@ -70,7 +70,7 @@ $shortcutPath = Join-Path -Path $desktopPath -ChildPath "$shortcutName.lnk"
 $iconUrl = "https://raw.githubusercontent.com/systemboys/_GTi_Support_/main/icons/buttons/restart-icon-32273-Windows.ico"
 
 # Caminho local para salvar o ícone
-$iconPath = "$env:USERPROFILE\restart-icon-32273-Windows.ico"
+$iconPath = "$env:USERPROFILE\GTiSupport\restart-icon-32273-Windows.ico"
 
 # Baixar o ícone
 Invoke-WebRequest -Uri $iconUrl -OutFile $iconPath
