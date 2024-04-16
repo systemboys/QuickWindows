@@ -18,17 +18,17 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # ----------------------[Conteúdo do script abaixo]---------------------------
 
-param (
-    [Parameter(Mandatory=$true)]
-    [int]$argumento
-)
-
-if ($argumento -eq 1) {
-    Stop-Computer -Force
-} elseif ($argumento -eq 2) {
-    Restart-Computer -Force
+if ($args.Count -eq 0) {
+    Write-Host "No argument provided. Use 1 to turn off the computer and 2 to restart."
 } else {
-    Write-Host "Unconception argument. Use 1 to turn off the computer and 2 to restart."
+    $argumento = $args[0]
+    if ($argumento -eq 1) {
+        Stop-Computer -Force
+    } elseif ($argumento -eq 2) {
+        Restart-Computer -Force
+    } else {
+        Write-Host "Unknown argument. Use 1 to turn off the computer and 2 to restart."
+    }
 }
 
 # ---------------------[/Conteúdo do script acima]---------------------------
