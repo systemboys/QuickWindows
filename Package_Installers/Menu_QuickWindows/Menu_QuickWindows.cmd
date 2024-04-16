@@ -80,7 +80,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para Deletar QuickWindows.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0RemoveQuickWindows.ps1""' -Verb RunAs; exit}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0RemoveQuickWindows.ps1""' -Verb RunAs}"
 
     goto menu_Session_1
 )
