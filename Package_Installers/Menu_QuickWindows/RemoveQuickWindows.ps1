@@ -36,6 +36,9 @@ if (Test-Path -Path $DirectoryPath) {
 # Mensagem de sucesso
 Write-Output "Successfully removed QuickWindows."
 
+# Fechar todas as janelas do PowerShell
+Stop-Process -Name powershell -Force
+
 # ---------------------[/Conteúdo do script acima]---------------------------
 
 Write-Host "Press any key to continue..."
