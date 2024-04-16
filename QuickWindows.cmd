@@ -182,8 +182,6 @@
 ::   - Adicionada a opção na sessão 'Windows' para criar dois atalhos na Área de trabalho do Windows (Desligar e Reiniciar).
 :: v0.7.9 2024-04-16 às 00h43, Marcos Aurélio:
 ::   - Opção para execução de Gerenciador de Energia (Desligar ou Reiniciar) na sessão 'Windows'.
-:: v0.8.0 2024-04-16 às 19h49, Marcos Aurélio:
-::   - Opção para a remoção do QuickWindows na sessão 'Menu QuickWindows'.
 ::
 :: Licença: GPL.
 

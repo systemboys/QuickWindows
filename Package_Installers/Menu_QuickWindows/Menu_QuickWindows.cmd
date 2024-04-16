@@ -13,8 +13,6 @@
 :: Histórico:
 :: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, menu_Session_1 de instalações de programas para Windows.
-:: v0.0.2 2024-04-16 às 19h49, Marcos Aurélio:
-::   - Versão inicial, Opção para remoção do QuickWindows.
 ::
 :: Licença: GPL.
 
@@ -71,13 +69,6 @@ if %ERRORLEVEL% equ 1 (
 
 :: Deletar QuickWindows
 if %ERRORLEVEL% equ 2 (
-    cls
-    echo Você selecionou a Opção para Deletar QuickWindows.
-
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0RemoveQuickWindows.ps1""' -Verb RunAs}"
-
-    goto menu_Session_1
-
     cls
     cd ..
     cd ..

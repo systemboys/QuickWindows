@@ -93,8 +93,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Reset_AnyDesk.ps1
 │  │  └─ Session_RemoteAccessSoftware.cmd
 │  ├─ /Menu_QuickWindows/
-│  │  ├─ Menu_QuickWindows.cmd
-│  │  └─ RemoveQuickWindows.ps1
+│  │  └─ Menu_QuickWindows.cmd
 │  ├─ /MicrosoftOperatingSystems/
 │  │  ├─ Download.ps1
 │  │  └─ MicrosoftOperatingSystems.cmd
