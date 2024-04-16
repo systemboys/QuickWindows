@@ -33,4 +33,5 @@ if ($args.Count -eq 0) {
 
 # ---------------------[/Conteúdo do script acima]---------------------------
 
-Read-Host -Prompt "Press Enter to exit"
+Write-Host "Press any key to continue..."
+$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
