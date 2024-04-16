@@ -24,6 +24,8 @@
 ::   - Opção para "Configurações do Windows".
 :: v0.0.6 2023-12-05 às 14h45, Marcos Aurélio:
 ::   - Opção para agendar desligamento automático.
+:: v0.0.7 2024-04-16 às 00h43, Marcos Aurélio:
+::   - Opção para execução de Gerenciador de Energia (Desligar ou Reiniciar).
 ::
 :: Licença: GPL.
 
@@ -71,17 +73,37 @@ if %ERRORLEVEL% equ 0 (
 )
 
 :: Desligar o Windows
+@REM if %ERRORLEVEL% equ 1 (
+@REM     cls
+@REM     :: Desligar o Windows
+@REM     shutdown -s -t 00
+@REM )
+
+:: Desligar o Windows
 if %ERRORLEVEL% equ 1 (
     cls
-    :: Desligar o Windows
-    shutdown -s -t 00
+    echo Você selecionou a Opção para Desligar o Windows.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0PowerStateManager.ps1 1""' -Verb RunAs}"
+
+    goto menu_Session_2
 )
+
+:: Reiniciar o Windows
+@REM if %ERRORLEVEL% equ 2 (
+@REM     cls
+@REM     :: Reiniciar o Windows
+@REM     shutdown -r -t 00
+@REM )
 
 :: Reiniciar o Windows
 if %ERRORLEVEL% equ 2 (
     cls
-    :: Reiniciar o Windows
-    shutdown -r -t 00
+    echo Você selecionou a Opção para Reiniciar o Windows.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0PowerStateManager.ps1 2""' -Verb RunAs}"
+
+    goto menu_Session_2
 )
 
 :: Agendar desligamento do Windows

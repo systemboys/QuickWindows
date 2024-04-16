@@ -180,6 +180,8 @@
 ::   - Adicionada a opção para baixar e instalar o 'SiberiaProg-CH341A', programa de gravação de EPROM.
 :: v0.7.8 2024-04-14 às 17h56, Marcos Aurélio:
 ::   - Adicionada a opção na sessão 'Windows' para criar dois atalhos na Área de trabalho do Windows (Desligar e Reiniciar).
+:: v0.7.9 2024-04-16 às 00h43, Marcos Aurélio:
+::   - Opção para execução de Gerenciador de Energia (Desligar ou Reiniciar) na sessão 'Windows'.
 ::
 :: Licença: GPL.
 

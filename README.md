@@ -149,6 +149,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  ├─ /Windows_Session/
 │  │  ├─ ManageFilesAndFolders.ps1
 │  │  ├─ ObtainingSystemInformation.ps1
+│  │  ├─ PowerStateManager.ps1
 │  │  ├─ QuickAccessToSettings.cmd
 │  │  ├─ QuickAccessToSettings2.cmd
 │  │  ├─ ScheduleWindowsShutdown.ps1

@@ -22,6 +22,8 @@
 #   - Adicionada a rotina para 'Reset AnyDesk'.
 # v0.0.7 2024-04-14 às 17h56, Marcos Aurélio:
 #   - Adicionada a opção na sessão 'Windows' para criar dois atalhos na Área de trabalho do Windows (Desligar e Reiniciar).
+# v0.0.8 2024-04-16 às 00h43, Marcos Aurélio:
+#   - Opção para execução de Gerenciador de Energia (Desligar ou Reiniciar) na sessão 'Windows'.
 #
 # Licença: GPL.
 
@@ -147,8 +149,8 @@ $Files = @{
         # "12" = "" # Deletar QuickWindows
         # "13" = "" # Recarregar QuickWindows
     # "2" = "" # Windows…
-        # "21" = "" # Desligar o Windows
-        # "22" = "" # Reiniciar o Windows
+        "21" = "$env:TEMP\QuickWindows\Package_Installers\Windows_Session\PowerStateManager.ps1 1" # Desligar o Windows
+        "22" = "$env:TEMP\QuickWindows\Package_Installers\Windows_Session\PowerStateManager.ps1 2" # Reiniciar o Windows
         # "23" = "" # Agendar desligamento do Windows
         "24" = "$env:TEMP\QuickWindows\Package_Installers\Windows_Session\UpdatingSoftwareInWindows.ps1" # Atualizar Windows e Softwares
         "25" = "$env:TEMP\QuickWindows\Package_Installers\Windows_Session\Update_PowerShell.ps1" # Atualizar o PowerShell
