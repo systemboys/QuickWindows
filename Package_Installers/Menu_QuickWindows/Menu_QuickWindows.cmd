@@ -61,10 +61,6 @@ if %ERRORLEVEL% equ 1 (
     cd ..
     cd ..
     cd ..
-    :: -------
-    set "desktop=%USERPROFILE%\Desktop"
-    del /F "%desktop%\GTi Support.lnk"
-    :: -------
     rmdir /s /q QuickWindows
     git clone https://github.com/systemboys/QuickWindows.git
     cd QuickWindows
@@ -77,10 +73,6 @@ if %ERRORLEVEL% equ 2 (
     cd ..
     cd ..
     cd ..
-    :: -------
-    set "desktop=%USERPROFILE%\Desktop"
-    del /F "%desktop%\GTi Support.lnk"
-    :: -------
     rmdir /s /q QuickWindows
 )
 
