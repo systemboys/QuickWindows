@@ -18,6 +18,9 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # ----------------------[Conteúdo do script abaixo]---------------------------
 
+# Sair do diretório
+cd .. ; cd .. ; cd ..
+
 # Variáveis de ambiente
 $UserPath = [Environment]::GetFolderPath("Desktop")
 $ShortcutPath = Join-Path -Path $UserPath -ChildPath "GTi Support.lnk"
