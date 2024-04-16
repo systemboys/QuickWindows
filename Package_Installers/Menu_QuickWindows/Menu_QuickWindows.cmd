@@ -62,9 +62,7 @@ if %ERRORLEVEL% equ 1 (
     cd ..
     cd ..
     :: -------
-    @echo off
-    set "desktop=%USERPROFILE%\Desktop"
-    del "%desktop%\GTi Support.lnk"
+    del "%USERPROFILE%\Desktop\GTi Support.lnk"
     :: -------
     rmdir /s /q QuickWindows
     git clone https://github.com/systemboys/QuickWindows.git
@@ -79,9 +77,7 @@ if %ERRORLEVEL% equ 2 (
     cd ..
     cd ..
     :: -------
-    @echo off
-    set "desktop=%USERPROFILE%\Desktop"
-    del "%desktop%\GTi Support.lnk"
+    del "%USERPROFILE%\Desktop\GTi Support.lnk"
     :: -------
     rmdir /s /q QuickWindows
 )
