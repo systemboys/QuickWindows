@@ -77,7 +77,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para Desligar o Windows.
 
-    Start-Process -FilePath "PowerShell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File ""%~dp0PowerStateManager.ps1"" ""1"""
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0PowerStateManager.ps1" "1"
 
     goto menu_Session_2
 )
@@ -87,7 +87,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para Reiniciar o Windows.
 
-    Start-Process -FilePath "PowerShell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File ""%~dp0PowerStateManager.ps1"" ""2"""
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0PowerStateManager.ps1" "2"
 
     goto menu_Session_2
 )
