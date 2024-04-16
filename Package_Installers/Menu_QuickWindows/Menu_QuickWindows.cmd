@@ -78,11 +78,11 @@ if %ERRORLEVEL% equ 2 (
 
     goto menu_Session_1
 
-::    cls
-::    cd ..
-::    cd ..
-::    cd ..
-::    rmdir /s /q QuickWindows
+    cls
+    cd ..
+    cd ..
+    cd ..
+    rmdir /s /q QuickWindows
 )
 
 :: Recarregar QuickWindows

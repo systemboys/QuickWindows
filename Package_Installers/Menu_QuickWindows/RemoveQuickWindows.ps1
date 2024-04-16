@@ -24,7 +24,7 @@ cd .. ; cd .. ; cd ..
 # Variáveis de ambiente
 $UserPath = [Environment]::GetFolderPath("Desktop")
 $ShortcutPath = Join-Path -Path $UserPath -ChildPath "GTi Support.lnk"
-$DirectoryPath = Join-Path -Path $env:temp -ChildPath "QuickWindows"
+# $DirectoryPath = Join-Path -Path $env:temp -ChildPath "QuickWindows"
 
 # Remover o atalho
 if (Test-Path -Path $ShortcutPath) {
@@ -32,15 +32,15 @@ if (Test-Path -Path $ShortcutPath) {
 }
 
 # Remover o diretório
-if (Test-Path -Path $DirectoryPath) {
-    Remove-Item -Path $DirectoryPath -Recurse -Force
-}
+# if (Test-Path -Path $DirectoryPath) {
+#     Remove-Item -Path $DirectoryPath -Recurse -Force
+# }
 
 # Mensagem de sucesso
 Write-Output "Successfully removed QuickWindows."
 
 # Fechar todas as janelas do PowerShell
-Stop-Process -Name powershell -Force
+# Stop-Process -Name powershell -Force
 
 # ---------------------[/Conteúdo do script acima]---------------------------
 
