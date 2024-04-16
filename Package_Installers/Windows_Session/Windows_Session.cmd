@@ -73,13 +73,6 @@ if %ERRORLEVEL% equ 0 (
 )
 
 :: Desligar o Windows
-@REM if %ERRORLEVEL% equ 1 (
-@REM     cls
-@REM     :: Desligar o Windows
-@REM     shutdown -s -t 00
-@REM )
-
-:: Desligar o Windows
 if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para Desligar o Windows.
@@ -88,13 +81,6 @@ if %ERRORLEVEL% equ 1 (
 
     goto menu_Session_2
 )
-
-:: Reiniciar o Windows
-@REM if %ERRORLEVEL% equ 2 (
-@REM     cls
-@REM     :: Reiniciar o Windows
-@REM     shutdown -r -t 00
-@REM )
 
 :: Reiniciar o Windows
 if %ERRORLEVEL% equ 1 (
