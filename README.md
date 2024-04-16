@@ -678,6 +678,16 @@ PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerS
 :: … (restante do código)
 ```
 
+Ou:
+
+```batch
+:: … (restante do código)
+
+PowerShell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Downloa.ps1" "1"
+
+:: … (restante do código)
+```
+
 E para receber o argumento em um arquivo `.ps1`:
 
 ```powershell
