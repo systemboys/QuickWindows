@@ -84,7 +84,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para Desligar o Windows.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0PowerStateManager.ps1"" ""1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {iex ""%~dp0PowerStateManager.ps1 1""}"
 
     goto menu_Session_2
 )
@@ -97,11 +97,11 @@ if %ERRORLEVEL% equ 1 (
 @REM )
 
 :: Reiniciar o Windows
-if %ERRORLEVEL% equ 2 (
+if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para Reiniciar o Windows.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0PowerStateManager.ps1"" ""2""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {iex ""%~dp0PowerStateManager.ps1 1""}"
 
     goto menu_Session_2
 )
