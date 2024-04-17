@@ -30,7 +30,7 @@ $officeApps = @{
 
 # Verifica se o Office está instalado
 if (Test-Path "${env:ProgramFiles}\Microsoft Office\root\Office16") {
-    Write-Host "Microsoft Office está instalado."
+    Write-Host "Microsoft Office is installed."
 
     # Cria atalhos para cada aplicativo do Office
     foreach ($app in $officeApps.GetEnumerator()) {
@@ -42,9 +42,9 @@ if (Test-Path "${env:ProgramFiles}\Microsoft Office\root\Office16") {
         $Shortcut.Save()
     }
 
-    Write-Host "Atalhos criados com sucesso na área de trabalho."
+    Write-Host "Shortcuts successfully created on the desktop."
 } else {
-    Write-Host "Microsoft Office não está instalado."
+    Write-Host "Microsoft Office is not installed."
 }
 
 # ---------------------[/Conteúdo do script acima]---------------------------
