@@ -17,6 +17,8 @@
 ::   - Opção para instalação de Microsoft Office 2019 a 2021.
 :: v0.0.3 2023-12-02 às 17h46, Marcos Aurélio:
 ::   - Opção para instalação de Microsoft Office 365.
+:: v0.0.4 2024-04-17 às 20h10, Marcos Aurélio:
+::   - Versão inicial, opção para criação dos atalhos dos aplicativos Microsoft Office na área de trabalho do Windows.
 ::
 :: Licença: GPL.
 
@@ -45,6 +47,7 @@ set "menu_Session_7[0]=Voltar…"
 set "menu_Session_7[1]=Microsoft Office 2016 a 2019"
 set "menu_Session_7[2]=Microsoft Office 2019 a 2021"
 set "menu_Session_7[3]=Microsoft Office 365"
+set "menu_Session_7[4]=Criar atalhos para Apps do Office 2021"
 
 set "default=%1"
 
@@ -85,6 +88,16 @@ if %ERRORLEVEL% equ 3 (
     echo Você selecionou a Opção para instalar o Microsoft Office 365.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Microsoft_Office_365.ps1""' -Verb RunAs}"
+
+    goto menu_Session_7
+)
+
+:: Criar atalhos para Apps do Office 2021
+if %ERRORLEVEL% equ 4 (
+    cls
+    echo Você selecionou a Opção para Criar atalhos para Apps do Office 2021.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0MicrosoftAppShortcuts.ps1""' -Verb RunAs}"
 
     goto menu_Session_7
 )

@@ -106,6 +106,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Install_Microsoft_Office_2016_to_2019.ps1
 │  │  ├─ Install_Microsoft_Office_2019_to_2021.ps1
 │  │  ├─ Install_Microsoft_Office_365.ps1
+│  │  ├─ MicrosoftAppShortcuts.ps1
 │  │  └─ OfficeSoftware.cmd
 │  ├─ /UtilitiesForWindows/
 │  │  ├─ BackupAndRestore.cmd
@@ -286,6 +287,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Microsoft Office 2016 a 2019
     - [x] Microsoft Office 2019 a 2021
     - [x] Microsoft Office 365
+    - [x] Criar atalhos para Apps do Office 2021
   - [x] **Sistemas Operacionais Microsoft**
       > ( ! ) No final do download, o arquivo baixado poderá receber o nome do link, no entanto, você pode renomeá-lo e colocando sua extensão que no caso das ISO's, é `.iso`!
     - [x] Windows 7, todas as versões
@@ -405,6 +407,7 @@ Aqui estão todas as opções em desenvolvimento.
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021
     73 = Microsoft Office 365
+    74 = Criar atalhos para Apps do Office 2021
 8 = Sistemas Operacionais Microsoft…
     81 = Windows 7, todas as versões
     82 = Windows 7 Lite
@@ -712,8 +715,7 @@ Para escrever o `arquivo.ps1` para scripts de instalação:
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #
 # ---------------------------------------------------------------
-# Este programa tem a finalidade de facilitar na instalação de
-# pacotes para Windows.
+# Este programa tem a finalidade de facilitar na instalação de pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
 # v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:

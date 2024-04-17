@@ -182,6 +182,8 @@
 ::   - Adicionada a opção na sessão 'Windows' para criar dois atalhos na Área de trabalho do Windows (Desligar e Reiniciar).
 :: v0.7.9 2024-04-16 às 00h43, Marcos Aurélio:
 ::   - Opção para execução de Gerenciador de Energia (Desligar ou Reiniciar) na sessão 'Windows'.
+:: v0.8.0 2024-04-17 às 20h10, Marcos Aurélio:
+::   - Opção para criação dos atalhos dos aplicativos Microsoft Office na área de trabalho do Windows na sessão 'Softwares para escritório'.
 ::
 :: Licença: GPL.
 

@@ -11,19 +11,21 @@
 # v0.0.1 2024-03-13 às 19h10, Marcos Aurélio:
 #   - Versão inicial, Execução de Rotinas.
 # v0.0.2 2024-03-21 às 18h19, Marcos Aurélio:
-#   - Rotina para o 'Crystal Disk Info'.
+#   - Adicionada a rotina para o 'Crystal Disk Info'.
 # v0.0.3 2024-03-21 às 23h26, Marcos Aurélio:
-#   - Versão inicial, Download e execução de CPU-Z portable em Utilitários para Windows.
+#   - Adicionada a rotina para Download e execução de CPU-Z portable em Utilitários para Windows.
 # v0.0.4 2024-03-24 às 23h43, Marcos Aurélio:
-#   - Versão inicial, Execução de 'Windows Update Activation' e o 'Revo Uninstaller Portable' na sessão 'Utilitários para Windows'.
+#   - Adicionada a rotina para Execução de 'Windows Update Activation' e o 'Revo Uninstaller Portable' na sessão 'Utilitários para Windows'.
 # v0.0.5 2024-03-29 às 16h47, Marcos Aurélio:
 #   - Adicionada a rotina para 'Battery Report'.
 # v0.0.6 2024-03-31 às 14h48, Marcos Aurélio:
 #   - Adicionada a rotina para 'Reset AnyDesk'.
 # v0.0.7 2024-04-14 às 17h56, Marcos Aurélio:
-#   - Adicionada a opção na sessão 'Windows' para criar dois atalhos na Área de trabalho do Windows (Desligar e Reiniciar).
+#   - Adicionada a rotina na sessão 'Windows' para criar dois atalhos na Área de trabalho do Windows (Desligar e Reiniciar).
 # v0.0.8 2024-04-16 às 00h43, Marcos Aurélio:
-#   - Opção para execução de Gerenciador de Energia (Desligar ou Reiniciar) na sessão 'Windows'.
+#   - Adicionada a rotina para execução de Gerenciador de Energia (Desligar ou Reiniciar) na sessão 'Windows'.
+# v0.0.9 2024-04-17 às 20h10, Marcos Aurélio:
+#   - Adicionada a rotina para Criação dos atalhos dos aplicativos Microsoft Office na área de trabalho do Windows na sessão 'Softwares para escritório'.
 #
 # Licença: GPL.
 
@@ -131,6 +133,7 @@ Write-Host "
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021
     73 = Microsoft Office 365
+    74 = Criar atalhos para Apps do Office 2021
 8 = Sistemas Operacionais Microsoft...
     81 = Windows 7, todas as versões
     82 = Windows 7 Lite
@@ -239,6 +242,7 @@ $Files = @{
         "71" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2016_to_2019.ps1" # Microsoft Office 2016 a 2019
         "72" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2019_to_2021.ps1" # Microsoft Office 2019 a 2021
         "73" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_365.ps1" # Microsoft Office 365
+        "74" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\MicrosoftAppShortcuts.ps1" # Criar atalhos para Apps do Office 2021
     # "8" = "" # Sistemas Operacionais Microsoft…
         "81" = "$env:TEMP\QuickWindows\Package_Installers\MicrosoftOperatingSystems\Download.ps1 1" # Windows 7, todas as versões
         "82" = "$env:TEMP\QuickWindows\Package_Installers\MicrosoftOperatingSystems\Download.ps1 2" # Windows 7 Lite
