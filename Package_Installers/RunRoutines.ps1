@@ -36,12 +36,13 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "                             ROTINAS                                            | (ok)> = (.ps1)" -ForegroundColor Green
 Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "## Rotinas                                                                              [  ok  ]" -ForegroundColor Green
 Write-Host "0 = Sair                                                                                [ null ]" -ForegroundColor Red
+Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "1 = Menu QuickWindows...                                                                [ null ]" -ForegroundColor Red
 Write-Host "    11 = Atualizar QuickWindows                                                         [  ok  ]" -ForegroundColor Green
 Write-Host "    12 = Deletar QuickWindows                                                           [  ok  ]" -ForegroundColor Green
 Write-Host "    13 = Recarregar QuickWindows                                                        [  ok  ]" -ForegroundColor Green
+Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "2 = Windows...                                                                          [ null ]" -ForegroundColor Red
 Write-Host "    21 = Desligar o Windows                                                             [  ok  ]" -ForegroundColor Green
 Write-Host "    22 = Reiniciar o Windows                                                            [  ok  ]" -ForegroundColor Green
@@ -67,6 +68,7 @@ Write-Host "            2696 = Gerenciador de Tarefas do Windows                
 Write-Host "            2697 = Opcaes de pastas                                                     [  ok  ]" -ForegroundColor Green
 Write-Host "            2698 = Obtendo Informacaes do Sistema com PowerShell                        [  ok  ]" -ForegroundColor Green
 Write-Host "    27 = Criar atalhos para 'Desligar e Reiniciar'                                      [  ok  ]" -ForegroundColor Green
+Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "3 = Internet...                                                                         [ null ]" -ForegroundColor Red
 Write-Host "    31 = Acesso Remoto...                                                               [ null ]" -ForegroundColor Red
 Write-Host "        311 = AnyDesk                                                                   [  ok  ]" -ForegroundColor Green
@@ -88,7 +90,9 @@ Write-Host "4 = Redes...                                                        
 Write-Host "    41 = Obter IP publico                                                               [  ok  ]" -ForegroundColor Green
 Write-Host "    42 = Obter IP local                                                                 [  ok  ]" -ForegroundColor Green
 Write-Host "    43 = Obter IPs de uma determinada rota                                              [  ok  ]" -ForegroundColor Green
+Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "5 = Execucao de Comandos no PowerShell                                                  [  ok  ]" -ForegroundColor Green
+Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "6 = Utilitarios para Windows...                                                         [ null ]" -ForegroundColor Red
 Write-Host "    61 = Instalar Revo Uninstaller                                                      [  ok  ]" -ForegroundColor Green
 Write-Host "    62 = Compactadores...                                                               [ null ]" -ForegroundColor Red
@@ -142,6 +146,7 @@ Write-Host "    84 = Windows 10 Pro 64bits                                      
 Write-Host "    85 = Windows 10 1909 PRO MSDN LITE Build                                            [  ok  ]" -ForegroundColor Green
 Write-Host "    86 = Windows 11 Pro                                                                 [  ok  ]" -ForegroundColor Green
 Write-Host "    87 = Windows Server 2022                                                            [  ok  ]" -ForegroundColor Green
+Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 
 # Array associativo que mapeia as rotinas aos arquivos .ps1
 $Files = @{
