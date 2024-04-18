@@ -34,7 +34,7 @@ clear
 
 # Verifica se o Windows PowerShell está sendo executado como administrador
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Host "Este script precisa ser executado como administrador."
+    Write-Host "This script needs to be run as administrator."
     Start-Process powershell -Verb RunAs -ArgumentList "-Command irm qw.gti1.com.br/menu.ps1 | iex"
     exit
 }
@@ -107,11 +107,11 @@ $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 if(!(Test-Path -Path $fullPath))
 {
     New-Item -ItemType Directory -Path $fullPath
-    Write-Host "Diretório '$dirName' criado com sucesso em '$env:USERPROFILE'"
+    Write-Host "'$dirName' directory successfully created in '$env:USERPROFILE'"
 }
 else
 {
-    Write-Host "Diretório '$dirName' já existe em '$env:USERPROFILE'"
+    Write-Host "'$dirName' directory already exists in '$env:USERPROFILE'"
 }
 # --- /Criar diretório em ambiente de usuário ---
 
