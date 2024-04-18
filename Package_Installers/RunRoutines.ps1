@@ -34,7 +34,7 @@ $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
 Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "                             ROTINAS                                            | (ok) => (.ps1)" -ForegroundColor Green
+Write-Host "                                      ROTINAS                                   | (ok) => (.ps1)" -ForegroundColor Green
 Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "0 = Sair                                                                                [ null ]" -ForegroundColor Red
 Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
