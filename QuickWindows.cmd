@@ -184,6 +184,8 @@
 ::   - Opção para execução de Gerenciador de Energia (Desligar ou Reiniciar) na sessão 'Windows'.
 :: v0.8.0 2024-04-17 às 20h10, Marcos Aurélio:
 ::   - Opção para criação dos atalhos dos aplicativos Microsoft Office na área de trabalho do Windows na sessão 'Softwares para escritório'.
+:: v0.8.1 2024-04-18 às 17h24, Marcos Aurélio:
+::   - Ajuste da lista de rotinas para melhor visualizar.
 ::
 :: Licença: GPL.
 
