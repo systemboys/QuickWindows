@@ -28,6 +28,9 @@ $officeApps = @{
     "OneNote" = "${env:ProgramFiles}\Microsoft Office\root\Office16\ONENOTE.EXE";
 }
 
+# Verifica a versão do Windows
+$osVersion = [System.Environment]::OSVersion.Version
+
 # Verifica se o Office está instalado
 if (Test-Path "${env:ProgramFiles}\Microsoft Office\root\Office16") {
     Write-Host "Microsoft Office is installed."
@@ -35,14 +38,25 @@ if (Test-Path "${env:ProgramFiles}\Microsoft Office\root\Office16") {
     # Cria atalhos para cada aplicativo do Office
     foreach ($app in $officeApps.GetEnumerator()) {
         $WshShell = New-Object -comObject WScript.Shell
-        $Shortcut = $WshShell.CreateShortcut("$Home\Desktop\$($app.Name).lnk")
+        $Shortcut = $null
+
+        # Usa switch para lidar com diferentes versões do Windows
+        switch ($osVersion.Major) {
+            10 {
+                $Shortcut = $WshShell.CreateShortcut("$Home\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\$($app.Name).lnk")
+            }
+            default {
+                $Shortcut = $WshShell.CreateShortcut("$Home\Desktop\$($app.Name).lnk")
+            }
+        }
+
         $Shortcut.TargetPath = $app.Value
         $Shortcut.IconLocation = $app.Value
         $Shortcut.Description = "Microsoft $($app.Name)"
         $Shortcut.Save()
     }
 
-    Write-Host "Shortcuts successfully created on the desktop."
+    Write-Host "Shortcuts successfully created."
 } else {
     Write-Host "Microsoft Office is not installed."
 }
