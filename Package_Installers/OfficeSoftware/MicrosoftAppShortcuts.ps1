@@ -37,23 +37,28 @@ if (Test-Path "${env:ProgramFiles}\Microsoft Office\root\Office16") {
 
     # Cria atalhos para cada aplicativo do Office
     foreach ($app in $officeApps.GetEnumerator()) {
-        # Nome do atalho
-        $shortcutName = $app.Name
+        # Verifica se o arquivo de execução do programa existe
+        if (Test-Path $app.Value) {
+            # Nome do atalho
+            $shortcutName = $app.Name
 
-        # Caminho completo para o atalho
-        $shortcutPath = Join-Path -Path $desktopPath -ChildPath "$shortcutName.lnk"
+            # Caminho completo para o atalho
+            $shortcutPath = Join-Path -Path $desktopPath -ChildPath "$shortcutName.lnk"
 
-        # Criar um objeto WScript.Shell
-        $shell = New-Object -ComObject WScript.Shell
+            # Criar um objeto WScript.Shell
+            $shell = New-Object -ComObject WScript.Shell
 
-        # Criar atalho
-        $shortcut = $shell.CreateShortcut($shortcutPath)
-        $shortcut.TargetPath = $app.Value
-        $shortcut.Description = "Microsoft $($app.Name)"
-        $shortcut.Save()
+            # Criar atalho
+            $shortcut = $shell.CreateShortcut($shortcutPath)
+            $shortcut.TargetPath = $app.Value
+            $shortcut.Description = "Microsoft $($app.Name)"
+            $shortcut.Save()
+
+            Write-Host "Shortcut for $shortcutName successfully created on the desktop."
+        } else {
+            Write-Host "Executable for $shortcutName does not exist. Skipping..."
+        }
     }
-
-    Write-Host "Shortcuts successfully created on the desktop."
 } else {
     Write-Host "Microsoft Office is not installed."
 }
