@@ -133,11 +133,13 @@ Write-Host "            6991 = Revo Uninstaller Portable                        
 Write-Host "            6992 = Battery Report                                                       [  ok  ]" -ForegroundColor Green
 Write-Host "            6993 = SiberiaProg-CH341A                                                   [  ok  ]" -ForegroundColor Green
 Write-Host "            6994 = SiberiaProg-CH341A Portable                                          [  ok  ]" -ForegroundColor Green
+Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "7 = Softwares para Escritorio...                                                        [ null ]" -ForegroundColor Red
 Write-Host "    71 = Microsoft Office 2016 a 2019                                                   [  ok  ]" -ForegroundColor Green
 Write-Host "    72 = Microsoft Office 2019 a 2021                                                   [  ok  ]" -ForegroundColor Green
 Write-Host "    73 = Microsoft Office 365                                                           [  ok  ]" -ForegroundColor Green
 Write-Host "    74 = Criar atalhos para Apps do Office 2021                                         [  ok  ]" -ForegroundColor Green
+Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "8 = Sistemas Operacionais Microsoft...                                                  [ null ]" -ForegroundColor Red
 Write-Host "    81 = Windows 7, todas as versoes                                                    [  ok  ]" -ForegroundColor Green
 Write-Host "    82 = Windows 7 Lite                                                                 [  ok  ]" -ForegroundColor Green
