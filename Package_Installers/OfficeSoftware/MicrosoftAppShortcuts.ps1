@@ -28,18 +28,29 @@ $officeApps = @{
     "OneNote" = "${env:ProgramFiles}\Microsoft Office\root\Office16\ONENOTE.EXE";
 }
 
+# Caminho do Desktop
+$desktopPath = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::DesktopDirectory)
+
 # Verifica se o Office está instalado
 if (Test-Path "${env:ProgramFiles}\Microsoft Office\root\Office16") {
     Write-Host "Microsoft Office is installed."
 
     # Cria atalhos para cada aplicativo do Office
     foreach ($app in $officeApps.GetEnumerator()) {
-        $WshShell = New-Object -comObject WScript.Shell
-        $Shortcut = $WshShell.CreateShortcut("$Home\Desktop\$($app.Name).lnk")
-        $Shortcut.TargetPath = $app.Value
-        $Shortcut.IconLocation = $app.Value
-        $Shortcut.Description = "Microsoft $($app.Name)"
-        $Shortcut.Save()
+        # Nome do atalho
+        $shortcutName = $app.Name
+
+        # Caminho completo para o atalho
+        $shortcutPath = Join-Path -Path $desktopPath -ChildPath "$shortcutName.lnk"
+
+        # Criar um objeto WScript.Shell
+        $shell = New-Object -ComObject WScript.Shell
+
+        # Criar atalho
+        $shortcut = $shell.CreateShortcut($shortcutPath)
+        $shortcut.TargetPath = $app.Value
+        $shortcut.Description = "Microsoft $($app.Name)"
+        $shortcut.Save()
     }
 
     Write-Host "Shortcuts successfully created on the desktop."
