@@ -86,6 +86,7 @@ Write-Host "    39 = Downloads...                                               
 Write-Host "        391 = Transmission                                                              [  ok  ]" -ForegroundColor Green
 Write-Host "        392 = IDM - Internet Download Manager                                           [  ok  ]" -ForegroundColor Green
 Write-Host "        393 = Baixar URL                                                                [  ok  ]" -ForegroundColor Green
+Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "4 = Redes...                                                                            [ null ]" -ForegroundColor Red
 Write-Host "    41 = Obter IP publico                                                               [  ok  ]" -ForegroundColor Green
 Write-Host "    42 = Obter IP local                                                                 [  ok  ]" -ForegroundColor Green
