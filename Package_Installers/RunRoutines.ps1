@@ -33,27 +33,29 @@
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
-Write-Host "## Rotinas .....................................................................[  ok  ]" -ForegroundColor Green
-Write-Host "0 = Sair .......................................................................[ null ]" -ForegroundColor Red
-Write-Host "1 = Menu QuickWindows... .......................................................[ null ]" -ForegroundColor Red
-Write-Host "    11 = Atualizar QuickWindows ................................................[  ok  ]" -ForegroundColor Green
-Write-Host "    12 = Deletar QuickWindows ..................................................[  ok  ]" -ForegroundColor Green
-Write-Host "    13 = Recarregar QuickWindows ...............................................[  ok  ]" -ForegroundColor Green
-Write-Host "2 = Windows... .................................................................[ null ]" -ForegroundColor Red
-Write-Host "    21 = Desligar o Windows ....................................................[  ok  ]" -ForegroundColor Green
-Write-Host "    22 = Reiniciar o Windows ...................................................[  ok  ]" -ForegroundColor Green
-Write-Host "    23 = Agendar desligamento do Windows .......................................[  ok  ]" -ForegroundColor Green
-Write-Host "    24 = Atualizar Windows e Softwares .........................................[  ok  ]" -ForegroundColor Green
-Write-Host "    25 = Atualizar o PowerShell ................................................[  ok  ]" -ForegroundColor Green
-Write-Host "    26 = Acesso rapido a Configuracaes... ......................................[ null ]" -ForegroundColor Red
-Write-Host "        261 = Painel de Controle (Control) .....................................[  ok  ]" -ForegroundColor Green
-Write-Host "        262 = Editor de Registro (RegEdit) .....................................[  ok  ]" -ForegroundColor Green
-Write-Host "        263 = Configuracaes do Sistema (MSConfig) ..............................[  ok  ]" -ForegroundColor Green
-Write-Host "        264 = Servicas (Services.msc) ..........................................[  ok  ]" -ForegroundColor Green
-Write-Host "        265 = Gerenciador de Dispositivos (DevMgmt.msc) ........................[  ok  ]" -ForegroundColor Green
-Write-Host "        266 = Gerenciamento de Discos (DiskMgmt.msc) ...........................[  ok  ]" -ForegroundColor Green
-Write-Host "        267 = Explorador de arquivos do Windows ................................[  ok  ]" -ForegroundColor Green
-Write-Host "        268 = Configuracaes - Tela (tipo, ajustes de resolucao de tela) ........[  ok  ]" -ForegroundColor Green
+Write-Host "ROTINAS                                                                         | (ok)> = (.ps1)" -ForegroundColor Green
+Write-Host "--------------------------------------------------------------------------------|---------------" -ForegroundColor Green
+Write-Host "## Rotinas                                                                      [  ok  ]" -ForegroundColor Green
+Write-Host "0 = Sair                                                                        [ null ]" -ForegroundColor Red
+Write-Host "1 = Menu QuickWindows...                                                        [ null ]" -ForegroundColor Red
+Write-Host "    11 = Atualizar QuickWindows                                                 [  ok  ]" -ForegroundColor Green
+Write-Host "    12 = Deletar QuickWindows                                                   [  ok  ]" -ForegroundColor Green
+Write-Host "    13 = Recarregar QuickWindows                                                [  ok  ]" -ForegroundColor Green
+Write-Host "2 = Windows...                                                                  [ null ]" -ForegroundColor Red
+Write-Host "    21 = Desligar o Windows                                                     [  ok  ]" -ForegroundColor Green
+Write-Host "    22 = Reiniciar o Windows                                                    [  ok  ]" -ForegroundColor Green
+Write-Host "    23 = Agendar desligamento do Windows                                        [  ok  ]" -ForegroundColor Green
+Write-Host "    24 = Atualizar Windows e Softwares                                          [  ok  ]" -ForegroundColor Green
+Write-Host "    25 = Atualizar o PowerShell                                                 [  ok  ]" -ForegroundColor Green
+Write-Host "    26 = Acesso rapido a Configuracaes...                                       [ null ]" -ForegroundColor Red
+Write-Host "        261 = Painel de Controle (Control)                                      [  ok  ]" -ForegroundColor Green
+Write-Host "        262 = Editor de Registro (RegEdit)                                      [  ok  ]" -ForegroundColor Green
+Write-Host "        263 = Configuracaes do Sistema (MSConfig)                               [  ok  ]" -ForegroundColor Green
+Write-Host "        264 = Servicas (Services.msc)                                           [  ok  ]" -ForegroundColor Green
+Write-Host "        265 = Gerenciador de Dispositivos (DevMgmt.msc)                         [  ok  ]" -ForegroundColor Green
+Write-Host "        266 = Gerenciamento de Discos (DiskMgmt.msc)                            [  ok  ]" -ForegroundColor Green
+Write-Host "        267 = Explorador de arquivos do Windows                                 [  ok  ]" -ForegroundColor Green
+Write-Host "        268 = Configuracaes - Tela (tipo, ajustes de resolucao de tela)         [  ok  ]" -ForegroundColor Green
 Write-Host "        269 = Mais...                                                           [ null ]" -ForegroundColor Red
 Write-Host "            2691 = Configuracaes avancadas do sistema (Propriedades do Sistema) [  ok  ]" -ForegroundColor Green
 Write-Host "            2692 = Editar Configuracaes do Plano                                [  ok  ]" -ForegroundColor Green
