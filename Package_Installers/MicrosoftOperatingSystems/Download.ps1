@@ -14,6 +14,12 @@
 #
 # Licença: GPL.
 
+# Cria uma nova instância do objeto System.Management.Automation.Host.Size
+$size = New-Object System.Management.Automation.Host.Size(100, 30)
+
+# Atribui o novo tamanho à janela do PowerShell
+$host.UI.RawUI.WindowSize = $size
+
 # Recebe um argumento que pode ser um número
 param (
     [Parameter(Mandatory=$true)]

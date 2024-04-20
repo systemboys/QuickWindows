@@ -15,6 +15,12 @@
 #
 # Licença: GPL.
 
+# Cria uma nova instância do objeto System.Management.Automation.Host.Size
+$size = New-Object System.Management.Automation.Host.Size(100, 30)
+
+# Atribui o novo tamanho à janela do PowerShell
+$host.UI.RawUI.WindowSize = $size
+
 # Define a cor de fundo para preto
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
