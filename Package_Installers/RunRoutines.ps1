@@ -26,6 +26,8 @@
 #   - Adicionada a rotina para execução de Gerenciador de Energia (Desligar ou Reiniciar) na sessão 'Windows'.
 # v0.0.9 2024-04-17 às 20h10, Marcos Aurélio:
 #   - Adicionada a rotina para Criação dos atalhos dos aplicativos Microsoft Office na área de trabalho do Windows na sessão 'Softwares para escritório'.
+# v0.1.0 2024-04-20 às 17h51, Marcos Aurélio:
+#   - Ajuste de cores em algumas linhas da lista de rotinas, com a inteção de destacar de vermelho as que não estão funcionando.
 #
 # Licença: GPL.
 
