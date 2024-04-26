@@ -64,7 +64,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 7, todas as versões"
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1"""" -numero 1' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1""""', '-numero', '1' -Verb RunAs"
 
     goto menu_Session_8
 )
@@ -74,7 +74,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 7 Lite"
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1"""" -numero 2' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1""""', '-numero', '2' -Verb RunAs"
 
     goto menu_Session_8
 )
@@ -84,7 +84,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 10 Pro 32bits"
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1"""" -numero 3' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1""""', '-numero', '3' -Verb RunAs"
 
     goto menu_Session_8
 )
@@ -94,7 +94,7 @@ if %ERRORLEVEL% equ 4 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 10 Pro 64bits"
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1"""" -numero 4' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1""""', '-numero', '4' -Verb RunAs"
 
     goto menu_Session_8
 )
@@ -104,7 +104,7 @@ if %ERRORLEVEL% equ 5 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 10 1909 PRO MSDN LITE Build"
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1"""" -numero 5' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1""""', '-numero', '5' -Verb RunAs"
 
     goto menu_Session_8
 )
@@ -114,7 +114,7 @@ if %ERRORLEVEL% equ 6 (
     cls
     echo "Você selecionou a Opção para baixar o Windows 11 Pro"
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1"""" -numero 6' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1""""', '-numero', '6' -Verb RunAs"
 
     goto menu_Session_8
 )
@@ -124,7 +124,7 @@ if %ERRORLEVEL% equ 7 (
     cls
     echo "Você selecionou a Opção para baixar o Windows Server 2022"
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1"""" -numero 7' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1""""', '-numero', '7' -Verb RunAs"
 
     goto menu_Session_8
 )
