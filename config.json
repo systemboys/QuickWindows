@@ -1,5 +1,6 @@
 {
-    "backgroundColor": "DarkGray",
+    "backgroundColor1": "Black",
+    "backgroundColor2": "Black",
     "PowerShellTerminalWidth": 115,
     "PowerShellTerminalHeight": 30,
     "beepsOnDownloads": 3
