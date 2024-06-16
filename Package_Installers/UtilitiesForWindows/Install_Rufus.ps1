@@ -39,7 +39,7 @@ $downloadPath = "$env:temp\rufus_setup.exe"
 Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 
 # Emitir Sequência de Beeps
-$numeroDeBeeps = $configData.beepsNosDownloads
+$numeroDeBeeps = $configData.beepsOnDownloads
 for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
     [Console]::Beep(500, 300)
     Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
