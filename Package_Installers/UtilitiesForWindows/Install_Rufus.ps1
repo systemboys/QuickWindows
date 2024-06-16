@@ -12,11 +12,16 @@
 #   - Versão inicial, Instalação de Rufus.
 # v0.0.2 2024-06-14 às 23h09, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
+# v0.0.3 2024-06-16 às 01h33, Marcos Aurélio:
+#   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.
 
+# Configurações
+$configData = Get-Content -Path "./config.json" | ConvertFrom-Json
+
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
-$size = New-Object System.Management.Automation.Host.Size(120, 30)
+$size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
 
 # Atribui o novo tamanho à janela do PowerShell
 $host.UI.RawUI.WindowSize = $size
@@ -24,9 +29,6 @@ $host.UI.RawUI.WindowSize = $size
 # Define a cor de fundo para preto
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
-
-# Configurações
-$configData = Get-Content -Path "./config.json" | ConvertFrom-Json
 
 Write-Host "Rufus is not installed! Starting installation process."
 Write-Host "File size: 9.9 MB"

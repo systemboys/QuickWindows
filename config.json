@@ -1,4 +1,5 @@
 {
-    "activateFunctionality": 1,
+    "PowerShellTerminalWidth": 120,
+    "PowerShellTerminalHeight": 30,
     "beepsOnDownloads": 3
 }
