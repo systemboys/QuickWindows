@@ -27,7 +27,7 @@ $size = New-Object System.Management.Automation.Host.Size($configData.PowerShell
 $host.UI.RawUI.WindowSize = $size
 
 # Define a cor de fundo para preto
-$Host.UI.RawUI.BackgroundColor = "Black"
+$Host.UI.RawUI.BackgroundColor = $configData.backgroundColor
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
 Write-Host "Rufus is not installed! Starting installation process."
