@@ -19,6 +19,8 @@
 #   - Foi informado o tamanho do executável, atualizada a URL e colocada uma condição que executa o AnyDesk caso esteja instalado.
 # v0.0.4 2023-12-28 às 17h00, Marcos Aurélio:
 #   - Corrigido o caminho do arquivo executável do 'AnyDesk'.
+# v0.0.4 2024-06-14 às 22h55, Marcos Aurélio:
+#   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 #
 # Licença: GPL.
 

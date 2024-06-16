@@ -10,6 +10,8 @@
 # Histórico:
 # v0.0.1 2024-02-08 às 22h33, Marcos Aurélio:
 #   - Versão inicial, Instalação de HopToDesk.
+# v0.0.2 2024-06-14 às 22h56, Marcos Aurélio:
+#   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 #
 # Licença: GPL.
 

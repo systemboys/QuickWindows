@@ -9,6 +9,8 @@
 # Histórico:
 # v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:
 #   - Versão inicial, Instalação de Reset AnyDesk.
+# v0.0.2 2024-06-14 às 22h59, Marcos Aurélio:
+#   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 #
 # Licença: GPL.
 

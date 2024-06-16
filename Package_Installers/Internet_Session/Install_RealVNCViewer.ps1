@@ -11,6 +11,8 @@
 #   - Versão inicial, Instalação de Real VNC Viewer.
 # v0.0.2 2023-12-06 às 20h51, Marcos Aurélio:
 #   - Foi informado o tamanho do executável.
+# v0.0.3 2024-06-14 às 22h58, Marcos Aurélio:
+#   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 #
 # Licença: GPL.
 

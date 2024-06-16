@@ -10,11 +10,13 @@
 # Histórico:
 # v0.0.1 2024-02-12 às 03h05, Marcos Aurélio:
 #   - Versão inicial, Instalação de DriverBoosterFree.
+# v0.0.2 2024-06-14 às 23h07, Marcos Aurélio:
+#   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 #
 # Licença: GPL.
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
-$size = New-Object System.Management.Automation.Host.Size(100, 30)
+$size = New-Object System.Management.Automation.Host.Size(120, 30)
 
 # Atribui o novo tamanho à janela do PowerShell
 $host.UI.RawUI.WindowSize = $size

@@ -11,11 +11,13 @@
 #   - Versão inicial, atualizar o PowerShell.
 # v0.0.2 2024-03-08 às 12h10, Marcos Aurélio:
 #   - Condição com uma chave para escolher qual dos comandos serão executados.
+# v0.0.3 2024-06-14 às 23h15, Marcos Aurélio:
+#   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 #
 # Licença: GPL.
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
-$size = New-Object System.Management.Automation.Host.Size(100, 30)
+$size = New-Object System.Management.Automation.Host.Size(120, 30)
 
 # Atribui o novo tamanho à janela do PowerShell
 $host.UI.RawUI.WindowSize = $size

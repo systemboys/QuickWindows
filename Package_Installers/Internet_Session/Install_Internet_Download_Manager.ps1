@@ -12,6 +12,8 @@
 #   - Versão inicial, Instalação de Internet Download Manager.
 # v0.0.2 2023-12-06 às 20h22, Marcos Aurélio:
 #   - Atualização da URL do executável e informado o tamanho do executável.
+# v0.0.3 2024-06-14 às 22h56, Marcos Aurélio:
+#   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 #
 # Licença: GPL.
 

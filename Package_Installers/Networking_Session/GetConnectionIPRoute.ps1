@@ -12,11 +12,13 @@
 # v0.0.2 2023-11-01 às 23h45, Marcos Aurélio:
 #   - Script PowerShell que ao informar um domínio de um site, ele
 #     retornará com a rota da conexão na sessão QuickWindows / Redes.
+# v0.0.3 2024-06-14 às 23h01, Marcos Aurélio:
+#   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 #
 # Licença: GPL.
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
-$size = New-Object System.Management.Automation.Host.Size(100, 30)
+$size = New-Object System.Management.Automation.Host.Size(120, 30)
 
 # Atribui o novo tamanho à janela do PowerShell
 $host.UI.RawUI.WindowSize = $size

@@ -14,11 +14,13 @@
 #   - Foi informado o tamanho do executável.
 # v0.0.3 2023-12-28 às 16h58, Marcos Aurélio:
 #   - Alterção na execução do utilitário 'WinToHDD', se já estiver instalado, haverá uma pergunta se deseja executá-lo.
+# v0.0.4 2024-06-14 às 23h10, Marcos Aurélio:
+#   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 #
 # Licença: GPL.
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
-$size = New-Object System.Management.Automation.Host.Size(100, 30)
+$size = New-Object System.Management.Automation.Host.Size(120, 30)
 
 # Atribui o novo tamanho à janela do PowerShell
 $host.UI.RawUI.WindowSize = $size
