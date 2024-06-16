@@ -25,9 +25,6 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
-# Configurações
-$configData = Get-Content -Path "../../config.json" | ConvertFrom-Json
-
 Write-Host "Rufus is not installed! Starting installation process."
 Write-Host "File size: 9.9 MB"
 
@@ -39,7 +36,7 @@ $downloadPath = "$env:temp\rufus_setup.exe"
 Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 
 # Emitir Sequência de Beeps
-$numeroDeBeeps = $configData.beepsNosDownloads
+$numeroDeBeeps = 10
 for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
     [Console]::Beep(500, 300)
     Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
