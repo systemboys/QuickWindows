@@ -186,6 +186,8 @@
 ::   - Opção para criação dos atalhos dos aplicativos Microsoft Office na área de trabalho do Windows na sessão 'Softwares para escritório'.
 :: v0.8.1 2024-04-18 às 17h24, Marcos Aurélio:
 ::   - Ajuste da lista de rotinas para melhor visualizar.
+:: v0.8.2 2024-06-14 às 23h17, Marcos Aurélio:
+::   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 ::
 :: Licença: GPL.
 
