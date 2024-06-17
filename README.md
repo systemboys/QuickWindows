@@ -160,6 +160,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  └─ Windows_Session.cmd
 │  ├─ RunPowerShellCommands.ps1
 │  └─ RunRoutines.ps1
+├─ config.json
 ├─ QuickWindows.cmd
 ├─ README.md
 └─ menu.ps1
@@ -723,8 +724,14 @@ Para escrever o `arquivo.ps1` para scripts de instalação:
 #
 # Licença: GPL.
 
+# Configurações
+$configData = Get-Content -Path "./config.json" | ConvertFrom-Json
+
+# Cria uma nova instância do objeto System.Management.Automation.Host.Size
+$size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
+
 # Define a cor de fundo para preto
-$Host.UI.RawUI.BackgroundColor = "Black"
+$Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # ----------------------[Conteúdo do script abaixo]---------------------------
@@ -747,7 +754,7 @@ if (Test-Path $directory) {
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 
     # Emitir Sequência de Beeps
-    $numeroDeBeeps = 10
+    $numeroDeBeeps = $configData.beepsOnDownloads
     for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
         [Console]::Beep(500, 300)
         Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
