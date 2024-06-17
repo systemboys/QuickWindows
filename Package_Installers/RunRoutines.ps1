@@ -33,6 +33,9 @@
 #
 # Licença: GPL.
 
+# Configurações
+$configData = Get-Content -Path "./config.json" | ConvertFrom-Json
+
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size(100, 30)
 
