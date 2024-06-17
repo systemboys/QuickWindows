@@ -17,6 +17,17 @@
 #
 # Licença: GPL.
 
+# Configurações
+# Tenta encontrar o arquivo config.json na pasta raiz
+$configPath = "./config.json"
+# Verifica se o arquivo existe no caminho atual
+if (-not (Test-Path $configPath)) {
+    # Se não existir, tenta o caminho relativo
+    $configPath = "../../config.json"
+}
+# Importa as configurações do arquivo encontrado
+$configData = Get-Content -Path $configPath | ConvertFrom-Json
+
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
 

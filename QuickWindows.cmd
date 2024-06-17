@@ -190,6 +190,8 @@
 ::   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 :: v1.60.83 2024-06-16 às 23h31, Marcos Aurélio:
 ::   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+:: v1.60.84 2024-06-17 às 00h01, Marcos Aurélio:
+::   - Correção de um bug, onde o arquivo de configuração './config.json' não era encontrado quando o arquivo que continha a importação era executado de outro local.
 ::
 :: Licença: GPL.
 
