@@ -28,6 +28,8 @@
 #   - Adicionada a rotina para Criação dos atalhos dos aplicativos Microsoft Office na área de trabalho do Windows na sessão 'Softwares para escritório'.
 # v0.1.0 2024-04-20 às 17h51, Marcos Aurélio:
 #   - Ajuste de cores em algumas linhas da lista de rotinas, com a inteção de destacar de vermelho as que não estão funcionando.
+# v0.1.1 2024-06-16 às 22h31, Marcos Aurélio:
+#   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.
 
@@ -38,7 +40,7 @@ $size = New-Object System.Management.Automation.Host.Size(100, 30)
 $host.UI.RawUI.WindowSize = $size
 
 # Define a cor de fundo para preto
-$Host.UI.RawUI.BackgroundColor = "Black"
+$Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
 Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
