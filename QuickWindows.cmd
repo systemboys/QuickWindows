@@ -188,6 +188,8 @@
 ::   - Ajuste da lista de rotinas para melhor visualizar.
 :: v1.60.82 2024-06-14 às 23h17, Marcos Aurélio:
 ::   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
+:: v1.60.83 2024-06-16 às 23h31, Marcos Aurélio:
+::   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 ::
 :: Licença: GPL.
 
