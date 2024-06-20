@@ -15,6 +15,8 @@
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 # v1.2.1 2024-06-16 às 22h38, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+# v1.3.1 2024-06-20 às 19h16, Marcos Aurélio:
+#   - Incrementação de novo comando para atualização do PowerShell.
 #
 # Licença: GPL.
 
@@ -47,7 +49,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
-$chave = 2 # "1" para o comando "Invoke-WebRequest", "2" para a ferramenta "IRM".
+$chave = 3 # "1" para o comando "Invoke-WebRequest", "2" para a ferramenta "IRM", "3" para a ferramenta "WinGet".
 
 if ($chave -eq 1) {
     # URL do instalador do PowerShell Core
@@ -68,6 +70,8 @@ if ($chave -eq 1) {
     # /Script para atualizar o PowerShell para a versão mais recente
 } elseif ($chave -eq 2) {
     iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
+} elseif ($chave -eq 3) {
+    winget install --id Microsoft.Powershell --source winget
 }
 
 Write-Host "Press any key to continue..."

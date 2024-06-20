@@ -193,7 +193,7 @@
 :: v1.60.84 2024-06-17 às 00h01, Marcos Aurélio:
 ::   - Correção de um bug, onde o arquivo de configuração './config.json' não era encontrado quando o arquivo que continha a importação era executado de outro local.
 :: v1.60.85 2024-06-17 às 18h50, Marcos Aurélio:
-::   - Correção de um erro que ocorria quando os scripts erão executados, erro relacionado à definição do tamanho da janela (WindowSize).
+::   - Incrementação de novo comando para atualização do PowerShell.
 ::
 :: Licença: GPL.
 
