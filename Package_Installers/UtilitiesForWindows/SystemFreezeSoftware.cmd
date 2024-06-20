@@ -11,7 +11,7 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-30 às 00h54, Marcos Aurélio:
+:: v1.0.0 2023-11-30 às 00h54, Marcos Aurélio:
 ::   - Versão inicial, sessão "Software de congelamento do sistema" e Shadow Defender e Deep Freeze Standard.
 ::
 :: Licença: GPL.

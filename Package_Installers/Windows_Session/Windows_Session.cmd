@@ -10,21 +10,21 @@
 :: Este programa tem a finalidade de executar a sessão relacionada a instalação a Windows.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-10-31 às 02h38, Marcos Aurélio:
+:: v1.0.0 2023-10-31 às 02h38, Marcos Aurélio:
 ::   - Versão inicial, menu_Session_2 de instalações de programas para Windows.
-:: v0.0.2 2023-10-31 às 22h40, Marcos Aurélio:
+:: v1.1.0 2023-10-31 às 22h40, Marcos Aurélio:
 ::   - Código PowerShell para atualizar softwares do Windows usando o comando winget.
-:: v0.0.3 2023-10-31 às 23h55, Marcos Aurélio:
+:: v1.2.0 2023-10-31 às 23h55, Marcos Aurélio:
 ::   - Script para instalar o Winget via Powershell.
-:: v0.0.4 2023-11-11 às 19h10, Marcos Aurélio:
-::   - Versão inicial, atualizar o PowerShell.
-:: v0.0.4 2023-11-14 às 00h15, Marcos Aurélio:
+:: v1.3.0 2023-11-11 às 19h10, Marcos Aurélio:
+::   - Opção para atualizar o PowerShell.
+:: v1.4.0 2023-11-14 às 00h15, Marcos Aurélio:
 ::   - Opção para Menu de sessão a acesso rápido a algumas funcionalidades do Windows.
-:: v0.0.5 2023-11-30 às 22h22, Marcos Aurélio:
+:: v1.5.0 2023-11-30 às 22h22, Marcos Aurélio:
 ::   - Opção para "Configurações do Windows".
-:: v0.0.6 2023-12-05 às 14h45, Marcos Aurélio:
+:: v1.6.0 2023-12-05 às 14h45, Marcos Aurélio:
 ::   - Opção para agendar desligamento automático.
-:: v0.0.7 2024-04-16 às 00h43, Marcos Aurélio:
+:: v1.7.0 2024-04-16 às 00h43, Marcos Aurélio:
 ::   - Opção para execução de Gerenciador de Energia (Desligar ou Reiniciar).
 ::
 :: Licença: GPL.

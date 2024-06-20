@@ -11,9 +11,9 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2024-03-29 às 16h25, Marcos Aurélio:
+:: v1.0.0 2024-03-29 às 16h25, Marcos Aurélio:
 ::   - Versão inicial, Opção para 'Revo Uninstaller Portable' e 'Battery Report' em nova página da sessão.
-:: v0.0.1 2024-04-11 às 19h36, Marcos Aurélio:
+:: v1.1.0 2024-04-11 às 19h36, Marcos Aurélio:
 ::   - Opção para baixar e instalar o 'SiberiaProg-CH341A', programa de gravação de EPROM.
 ::
 :: Licença: GPL.

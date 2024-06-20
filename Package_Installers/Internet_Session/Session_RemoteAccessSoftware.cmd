@@ -11,11 +11,11 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-29 às 17h00, Marcos Aurélio:
+:: v1.0.0 2023-11-29 às 17h00, Marcos Aurélio:
 ::   - Versão inicial, sessão "Softwares de Acesso Remoto".
-:: v0.0.2 2024-02-08 às 22h29, Marcos Aurélio:
+:: v1.1.0 2024-02-08 às 22h29, Marcos Aurélio:
 ::   - Inclusão da opção para baixar o 'HopToDesk'.
-:: v0.0.3 2024-03-31 às 14h41, Marcos Aurélio:
+:: v1.2.0 2024-03-31 às 14h41, Marcos Aurélio:
 ::   - Opção para 'Reset AnyDesk'.
 ::
 :: Licença: GPL.

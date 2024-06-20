@@ -8,11 +8,11 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-12-10 às 23h12, Marcos Aurélio:
+# v1.0.0 2023-12-10 às 23h12, Marcos Aurélio:
 #   - Versão inicial, Opção para colocar URL e iniciar download direto a partir do Windows PowerShell na sessão 'Internet / Downloads'.
-# v0.0.2 2024-06-14 às 22h54, Marcos Aurélio:
+# v1.0.1 2024-06-14 às 22h54, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.3 2024-06-16 às 23h12, Marcos Aurélio:
+# v1.1.1 2024-06-16 às 23h12, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

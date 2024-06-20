@@ -8,15 +8,15 @@
 # RustDesk para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-29 às 16h56, Marcos Aurélio:
+# v1.0.0 2023-11-29 às 16h56, Marcos Aurélio:
 #   - Versão inicial, Instalação de RustDesk.
-# v0.0.2 2023-12-02 às 08h33, Marcos Aurélio:
+# v1.0.1 2023-12-02 às 08h33, Marcos Aurélio:
 #   - Foi feito uma correção no link do download do arquivo.
-# v0.0.3 2023-12-06 às 20h22, Marcos Aurélio:
+# v1.0.2 2023-12-06 às 20h22, Marcos Aurélio:
 #   - Foi informado o tamanho do executável e atualizada a URL do executável.
-# v0.0.4 2024-06-14 às 22h58, Marcos Aurélio:
+# v1.0.3 2024-06-14 às 22h58, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.5 2024-06-16 às 23h20, Marcos Aurélio:
+# v1.1.3 2024-06-16 às 23h20, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

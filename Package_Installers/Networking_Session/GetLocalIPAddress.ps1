@@ -7,12 +7,12 @@
 # Este programa tem a finalidade de obter o IP local.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-01 às 15h45, Marcos Aurélio:
+# v1.0.0 2023-11-01 às 15h45, Marcos Aurélio:
 #   - Versão inicial, opção para obter a rota de determinado
 #     domínio na Sessão de Redes.
-# v0.0.2 2024-06-14 às 23h01, Marcos Aurélio:
+# v1.0.1 2024-06-14 às 23h01, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.3 2024-06-16 às 23h07, Marcos Aurélio:
+# v1.1.1 2024-06-16 às 23h07, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

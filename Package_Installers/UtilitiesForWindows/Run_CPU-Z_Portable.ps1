@@ -7,11 +7,11 @@
 # Este programa tem a finalidade de baixar e executar o CPU-Z portable no Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2024-03-21 às 23h26, Marcos Aurélio:
+# v1.0.0 2024-03-21 às 23h26, Marcos Aurélio:
 #   - Versão inicial, Download e execução de CPU-Z portable.
-# v0.0.2 2024-06-14 às 23h11, Marcos Aurélio:
+# v1.0.1 2024-06-14 às 23h11, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.3 2024-06-16 às 22h19, Marcos Aurélio:
+# v1.1.1 2024-06-16 às 22h19, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

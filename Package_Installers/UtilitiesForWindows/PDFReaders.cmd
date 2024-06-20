@@ -11,10 +11,10 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-29 às 13h45, Marcos Aurélio:
+:: v1.0.0 2023-11-29 às 13h45, Marcos Aurélio:
 ::   - Versão inicial, sessão de leitores de PDF para Windows.
-:: v0.0.2 2024-01-25 às 20h11, Marcos Aurélio:
-::   - Versão inicial, Instalação de Foxit PDF Reader.
+:: v1.1.0 2024-01-25 às 20h11, Marcos Aurélio:
+::   - Opção para Instalação de Foxit PDF Reader.
 ::
 :: Licença: GPL.
 

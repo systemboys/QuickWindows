@@ -11,7 +11,7 @@
 :: de ISO's de Sistemas Operacionais Microsoft.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-12-11 às 20h07, Marcos Aurélio:
+:: v1.0.0 2023-12-11 às 20h07, Marcos Aurélio:
 ::   - Versão inicial, opções para baixar os Sistemas Operacionais da Microsoft.
 ::
 :: Licença: GPL.

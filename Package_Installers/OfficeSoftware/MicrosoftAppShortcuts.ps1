@@ -7,11 +7,11 @@
 # Este programa tem a finalidade de facilitar na criação de atalhos para os aplicativos OMicrosoft Office.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2024-04-17 às 20h10, Marcos Aurélio:
+# v1.0.0 2024-04-17 às 20h10, Marcos Aurélio:
 #   - Versão inicial, Criação dos atalhos dos aplicativos Microsoft Office na área de trabalho do Windows.
-# v0.0.2 2024-06-14 às 23h03, Marcos Aurélio:
+# v1.0.1 2024-06-14 às 23h03, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.3 2024-06-16 às 23h02, Marcos Aurélio:
+# v1.1.1 2024-06-16 às 23h02, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

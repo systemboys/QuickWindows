@@ -10,17 +10,17 @@
 :: Este programa tem a finalidade de dar acesso rápido a algumas funcionalidades do Windows.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-30 às 11h30, Marcos Aurélio:
+:: v1.0.0 2023-11-30 às 11h30, Marcos Aurélio:
 ::   - Versão inicial, Menu de sessão a acesso rápido a algumas funcionalidades do Windows.
-:: v0.0.2 2023-11-30 às 12h03, Marcos Aurélio:
+:: v1.1.1 2023-11-30 às 12h03, Marcos Aurélio:
 ::   - Opção para "Abrir Gerenciador de Arquivos com Endereço Específico".
-:: v0.0.3 2023-11-30 às 22h22, Marcos Aurélio:
+:: v1.2.1 2023-11-30 às 22h22, Marcos Aurélio:
 ::   - Opção para "Configurações do Windows".
-:: v0.0.4 2023-12-01 às 22h56, Marcos Aurélio:
+:: v1.3.1 2023-12-01 às 22h56, Marcos Aurélio:
 ::   - Opção para "Gerenciador de Tarefas do Windows".
-:: v0.0.5 2024-01-14 às 11h45, Marcos Aurélio:
+:: v1.4.1 2024-01-14 às 11h45, Marcos Aurélio:
 ::   - Opção para executar "Opções de pastas".
-:: v0.0.6 2024-02-04 às 22h57, Marcos Aurélio:
+:: v1.5.1 2024-02-04 às 22h57, Marcos Aurélio:
 ::   - Opção para Obter Informações do Sistema com PowerShell.
 ::
 :: Licença: GPL.

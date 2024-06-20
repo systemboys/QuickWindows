@@ -10,10 +10,10 @@
 :: Este programa tem a finalidade de dar acesso rápido a algumas funcionalidades do Windows.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-14 às 00h15, Marcos Aurélio:
+:: v1.0.0 2023-11-14 às 00h15, Marcos Aurélio:
 ::   - Versão inicial, Menu de sessão a acesso rápido a algumas funcionalidades do Windows.
-:: v0.0.2 2023-11-30 às 12h03, Marcos Aurélio:
-::   - Versão inicial, Abrir Gerenciador de Arquivos com Endereço Específico.
+:: v1.1.0 2023-11-30 às 12h03, Marcos Aurélio:
+::   - Abrir Gerenciador de Arquivos com Endereço Específico.
 ::
 :: Licença: GPL.
 

@@ -8,13 +8,13 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-30 às 01h02, Marcos Aurélio:
+# v1.0.0 2023-11-30 às 01h02, Marcos Aurélio:
 #   - Versão inicial, Instalação de Shadow Defender e Deep Freeze Standard.
-# v0.0.2 2023-12-06 às 20h58, Marcos Aurélio:
+# v1.0.1 2023-12-06 às 20h58, Marcos Aurélio:
 #   - Foi informado o tamanho do executável.
-# v0.0.3 2024-06-14 às 23h09, Marcos Aurélio:
+# v1.0.2 2024-06-14 às 23h09, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.4 2024-06-16 às 22h08, Marcos Aurélio:
+# v1.1.2 2024-06-16 às 22h08, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

@@ -7,14 +7,14 @@
 # Este programa tem a finalidade de obter a rota de IP até a Google.com.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-01 às 16h05, Marcos Aurélio:
+# v1.0.0 2023-11-01 às 16h05, Marcos Aurélio:
 #   - Versão inicial, criada a opção para obter a rota de IP até um determinado domínio.
-# v0.0.2 2023-11-01 às 23h45, Marcos Aurélio:
+# v1.1.0 2023-11-01 às 23h45, Marcos Aurélio:
 #   - Script PowerShell que ao informar um domínio de um site, ele
 #     retornará com a rota da conexão na sessão QuickWindows / Redes.
-# v0.0.3 2024-06-14 às 23h01, Marcos Aurélio:
+# v1.1.1 2024-06-14 às 23h01, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.4 2024-06-16 às 23h07, Marcos Aurélio:
+# v1.2.1 2024-06-16 às 23h07, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

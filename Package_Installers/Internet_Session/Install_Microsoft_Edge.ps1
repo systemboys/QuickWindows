@@ -7,15 +7,15 @@
 # Este programa tem a finalidade de instalar o Microsoft Edge.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-11 às 23h36, Marcos Aurélio:
+# v1.0.0 2023-11-11 às 23h36, Marcos Aurélio:
 #   - Versão inicial, opção para instalar o Microsoft Edge.
-# v0.0.2 2023-11-12 às 11h00, Marcos Aurélio:
+# v1.0.1 2023-11-12 às 11h00, Marcos Aurélio:
 #   - Correção, foi reescrito o script para baixar e executar o instalador do Microsoft Edge.
-# v0.0.3 2023-12-06 às 20h49, Marcos Aurélio:
+# v1.0.2 2023-12-06 às 20h49, Marcos Aurélio:
 #   - Foi informado o tamanho do executável.
-# v0.0.4 2024-06-14 às 22h56, Marcos Aurélio:
+# v1.0.3 2024-06-14 às 22h56, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.5 2024-06-16 às 23h17, Marcos Aurélio:
+# v1.1.3 2024-06-16 às 23h17, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

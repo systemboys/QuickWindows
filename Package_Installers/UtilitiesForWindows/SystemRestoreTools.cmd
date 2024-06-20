@@ -11,17 +11,17 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-29 às 10h50, Marcos Aurélio:
+:: v1.0.0 2023-11-29 às 10h50, Marcos Aurélio:
 ::   - Versão inicial, Instalação de WinToHDD.
-:: v0.0.2 2023-12-06 às 21h32, Marcos Aurélio:
+:: v1.1.0 2023-12-06 às 21h32, Marcos Aurélio:
 ::   - Opção para instalar o 'Hasleo WinToHDD Free'.
-:: v0.0.3 2023-12-09 às 20h40, Marcos Aurélio:
+:: v1.1.1 2023-12-09 às 20h40, Marcos Aurélio:
 ::   - Correção de retorno de menu, no arquivo 'SystemRestoreTools.cmd'.
-:: v0.0.4 2023-12-25 às 20h00, Marcos Aurélio:
+:: v1.2.1 2023-12-25 às 20h00, Marcos Aurélio:
 ::   - Opção para instalação de Rufus.
-:: v0.0.5 2023-12-29 às 01h41, Marcos Aurélio:
+:: v1.3.1 2023-12-29 às 01h41, Marcos Aurélio:
 ::   - Opção para instalação de DriverMax.
-:: v0.0.6 2024-03-15 às 20h14, Marcos Aurélio:
+:: v1.3.2 2024-03-15 às 20h14, Marcos Aurélio:
 ::   - Correção do nome do 'Rufos', estava escrito 'Fufus'.
 ::
 :: Licença: GPL.

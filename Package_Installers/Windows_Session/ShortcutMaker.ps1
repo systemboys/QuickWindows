@@ -7,11 +7,11 @@
 # Este programa tem a finalidade de facilitar a criação de atalhos no Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:
+# v1.0.0 2023-10-31 às 01h10, Marcos Aurélio:
 #   - Versão inicial, criar dois atalhos na Área de trabalho do Windows (Desligar e Reiniciar).
-# v0.0.2 2024-06-14 às 23h15, Marcos Aurélio:
+# v1.0.1 2024-06-14 às 23h15, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.3 2024-06-16 às 22h39, Marcos Aurélio:
+# v1.1.1 2024-06-16 às 22h39, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

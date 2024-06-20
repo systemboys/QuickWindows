@@ -10,13 +10,13 @@
 :: Este programa tem a finalidade de funções relacionadas à redes.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-01 às 15h45, Marcos Aurélio:
+:: v1.0.0 2023-11-01 às 15h45, Marcos Aurélio:
 ::   - Versão inicial, Sessão de Redes para opções relacionadas à redes.
-:: v0.0.2 2023-11-01 às 08h30, Marcos Aurélio:
+:: v1.1.0 2023-11-01 às 08h30, Marcos Aurélio:
 ::   - Criada a opção para obter IP público na Sessão de Redes.
-:: v0.0.3 2023-11-01 às 15h45, Marcos Aurélio:
+:: v1.2.0 2023-11-01 às 15h45, Marcos Aurélio:
 ::   - Criada a opção para obter IP local na Sessão de Redes.
-:: v0.0.4 2023-11-01 às 16h05, Marcos Aurélio:
+:: v1.3.0 2023-11-01 às 16h05, Marcos Aurélio:
 ::   - Criada a opção para o Script PowerShell que ao informar um domínio
 ::     de um site, ele retornará com a rota da conexão.
 ::

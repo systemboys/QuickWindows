@@ -11,26 +11,26 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
+:: v1.0.0 2023-10-28 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, menu_Session_3 de instalações de programas para Windows.
-:: v0.0.2 2023-10-31 às 01h10, Marcos Aurélio:
+:: v1.1.0 2023-10-31 às 01h10, Marcos Aurélio:
 ::   - Sessão Internet, Instalação de "AnyDesk".
-:: v0.0.3 2023-11-11 às 23h36, Marcos Aurélio:
+:: v1.2.0 2023-11-11 às 23h36, Marcos Aurélio:
 ::   - Opção para instalar o "Microsoft Edge".
-:: v0.0.3 2023-11-11 às 23h50, Marcos Aurélio:
+:: v1.3.0 2023-11-11 às 23h50, Marcos Aurélio:
 ::   - Opção para instalar o "Google Chrome".
-:: v0.0.4 2023-11-13 às 21h10, Marcos Aurélio:
+:: v1.4.0 2023-11-13 às 21h10, Marcos Aurélio:
 ::   - Opção para instalar o "Skype".
-:: v0.0.5 2023-11-13 às 22h15, Marcos Aurélio:
+:: v1.5.0 2023-11-13 às 22h15, Marcos Aurélio:
 ::   - Opção para instalar o navetador "Opera".
-:: v0.0.6 2023-11-13 às 22h50, Marcos Aurélio:
+:: v1.6.0 2023-11-13 às 22h50, Marcos Aurélio:
 ::   - Opção para instalar o navetador "Mozilla Firefox".
-:: v0.0.7 2023-11-13 às 23h40, Marcos Aurélio:
+:: v1.7.0 2023-11-13 às 23h40, Marcos Aurélio:
 ::   - Opção para instalar o visualizador "Real VNC Viewer".
-:: v0.0.8 2023-11-13 às 17h07, Marcos Aurélio:
+:: v1.8.0 2023-11-13 às 17h07, Marcos Aurélio:
 ::   - A opção "AnyDesk" foi mudada para "Softwares de Acesso Remoto".
-:: v0.0.9 2023-12-01 às 22h28, Marcos Aurélio:
-::   - Versão inicial, adicionada a sessão "Downloads" e a opção para instalação de Internet Download Manager.
+:: v1.9.0 2023-12-01 às 22h28, Marcos Aurélio:
+::   - Adicionada a sessão "Downloads" e a opção para instalação de Internet Download Manager.
 ::
 :: Licença: GPL.
 

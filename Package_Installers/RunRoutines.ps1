@@ -8,27 +8,27 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2024-03-13 às 19h10, Marcos Aurélio:
+# v1.0.0 2024-03-13 às 19h10, Marcos Aurélio:
 #   - Versão inicial, Execução de Rotinas.
-# v0.0.2 2024-03-21 às 18h19, Marcos Aurélio:
+# v1.1.0 2024-03-21 às 18h19, Marcos Aurélio:
 #   - Adicionada a rotina para o 'Crystal Disk Info'.
-# v0.0.3 2024-03-21 às 23h26, Marcos Aurélio:
+# v1.2.0 2024-03-21 às 23h26, Marcos Aurélio:
 #   - Adicionada a rotina para Download e execução de CPU-Z portable em Utilitários para Windows.
-# v0.0.4 2024-03-24 às 23h43, Marcos Aurélio:
+# v1.3.0 2024-03-24 às 23h43, Marcos Aurélio:
 #   - Adicionada a rotina para Execução de 'Windows Update Activation' e o 'Revo Uninstaller Portable' na sessão 'Utilitários para Windows'.
-# v0.0.5 2024-03-29 às 16h47, Marcos Aurélio:
+# v1.4.0 2024-03-29 às 16h47, Marcos Aurélio:
 #   - Adicionada a rotina para 'Battery Report'.
-# v0.0.6 2024-03-31 às 14h48, Marcos Aurélio:
+# v1.5.0 2024-03-31 às 14h48, Marcos Aurélio:
 #   - Adicionada a rotina para 'Reset AnyDesk'.
-# v0.0.7 2024-04-14 às 17h56, Marcos Aurélio:
+# v1.6.0 2024-04-14 às 17h56, Marcos Aurélio:
 #   - Adicionada a rotina na sessão 'Windows' para criar dois atalhos na Área de trabalho do Windows (Desligar e Reiniciar).
-# v0.0.8 2024-04-16 às 00h43, Marcos Aurélio:
+# v1.7.0 2024-04-16 às 00h43, Marcos Aurélio:
 #   - Adicionada a rotina para execução de Gerenciador de Energia (Desligar ou Reiniciar) na sessão 'Windows'.
-# v0.0.9 2024-04-17 às 20h10, Marcos Aurélio:
+# v1.8.0 2024-04-17 às 20h10, Marcos Aurélio:
 #   - Adicionada a rotina para Criação dos atalhos dos aplicativos Microsoft Office na área de trabalho do Windows na sessão 'Softwares para escritório'.
-# v0.1.0 2024-04-20 às 17h51, Marcos Aurélio:
+# v1.9.1 2024-04-20 às 17h51, Marcos Aurélio:
 #   - Ajuste de cores em algumas linhas da lista de rotinas, com a inteção de destacar de vermelho as que não estão funcionando.
-# v0.1.1 2024-06-16 às 22h31, Marcos Aurélio:
+# v1.10.1 2024-06-16 às 22h31, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

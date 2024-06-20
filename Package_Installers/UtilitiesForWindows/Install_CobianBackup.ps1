@@ -8,11 +8,11 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2024-02-21 às 22h46, Marcos Aurélio:
+# v1.0.0 2024-02-21 às 22h46, Marcos Aurélio:
 #   - Versão inicial, Instalação de Cobian Backup.
-# v0.0.2 2024-06-14 às 23h06, Marcos Aurélio:
+# v1.0.1 2024-06-14 às 23h06, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.3 2024-06-16 às 21h53, Marcos Aurélio:
+# v1.1.1 2024-06-16 às 21h53, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

@@ -7,11 +7,11 @@
 # Este programa tem a finalidade de atualizar os softwares no Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-12 às 17h10, Marcos Aurélio:
+# v1.0.0 2023-11-12 às 17h10, Marcos Aurélio:
 #   - Versão inicial, atualizar os softwares no Windows.
-# v0.0.2 2024-06-14 às 23h16, Marcos Aurélio:
+# v1.0.1 2024-06-14 às 23h16, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.3 2024-06-16 às 22h37, Marcos Aurélio:
+# v1.1.1 2024-06-16 às 22h37, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

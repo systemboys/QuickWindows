@@ -450,7 +450,7 @@ Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sess�
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-10-28 às 16h40, Marcos Aurélio:
+:: v1.0.0 2023-10-28 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, menu_Session_1 de instalações de programas para Windows.
 ::
 :: Licença: GPL.
@@ -728,7 +728,7 @@ Para escrever o `arquivo.ps1` para scripts de instalação:
 # Este programa tem a finalidade de facilitar na instalação de pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:
+# v1.0.0 2023-10-31 às 01h10, Marcos Aurélio:
 #   - Versão inicial, Instalação de YourPackage.
 #
 # Licença: GPL.

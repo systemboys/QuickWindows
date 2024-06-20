@@ -8,15 +8,15 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-29 às 10h50, Marcos Aurélio:
+# v1.0.0 2023-11-29 às 10h50, Marcos Aurélio:
 #   - Versão inicial, Instalação de WinToHDD.
-# v0.0.2 2023-12-06 às 21h00, Marcos Aurélio:
+# v1.0.1 2023-12-06 às 21h00, Marcos Aurélio:
 #   - Foi informado o tamanho do executável.
-# v0.0.3 2023-12-28 às 16h58, Marcos Aurélio:
+# v1.0.2 2023-12-28 às 16h58, Marcos Aurélio:
 #   - Alterção na execução do utilitário 'WinToHDD', se já estiver instalado, haverá uma pergunta se deseja executá-lo.
-# v0.0.4 2024-06-14 às 23h10, Marcos Aurélio:
+# v1.0.3 2024-06-14 às 23h10, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.5 2024-06-16 às 22h12, Marcos Aurélio:
+# v1.1.3 2024-06-16 às 22h12, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

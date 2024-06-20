@@ -7,11 +7,11 @@
 # Este programa tem a finalidade de executar o BatteryReport.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2024-03-29 às 16h35, Marcos Aurélio:
+# v1.0.0 2024-03-29 às 16h35, Marcos Aurélio:
 #   - Versão inicial, Execução de BatteryReport.
-# v0.0.2 2024-06-14 às 23h11, Marcos Aurélio:
+# v1.0.1 2024-06-14 às 23h11, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.3 2024-06-16 às 22h17, Marcos Aurélio:
+# v1.1.1 2024-06-16 às 22h17, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

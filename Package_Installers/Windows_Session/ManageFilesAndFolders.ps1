@@ -8,11 +8,11 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-30 às 12h03, Marcos Aurélio:
+# v1.0.0 2023-11-30 às 12h03, Marcos Aurélio:
 #   - Versão inicial, Abrir Gerenciador de Arquivos com Endereço Específico.
-# v0.0.2 2024-06-14 às 23h14, Marcos Aurélio:
+# v1.0.1 2024-06-14 às 23h14, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.3 2024-06-16 às 22h42, Marcos Aurélio:
+# v1.1.1 2024-06-16 às 22h42, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

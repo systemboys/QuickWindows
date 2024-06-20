@@ -8,14 +8,18 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-29 às 13h51, Marcos Aurélio:
+# v1.0.0 2023-11-29 às 13h51, Marcos Aurélio:
 #   - Versão inicial, Instalação de AdobeReaderPDF.
-# v0.0.2 2023-12-06 às 21h01, Marcos Aurélio:
+# v1.0.1 2023-12-06 às 21h01, Marcos Aurélio:
 #   - Foi informado o tamanho do executável.
-# v0.0.3 2024-06-14 às 23h05, Marcos Aurélio:
+# v1.0.2 2024-06-14 às 23h05, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.4 2024-06-16 às 21h52, Marcos Aurélio:
+# v1.1.2 2024-06-16 às 21h52, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+# v1.1.3 2024-06-20 às 12h12, Marcos Aurélio:
+#   - A linha a qual remove o arquivo de instalação do Adobe Reader foi comentada, não é
+#     necessário apagá-lo por que o próprio instalador após instalação do Adobe Reader o
+#     apaga.
 #
 # Licença: GPL.
 
@@ -79,7 +83,7 @@ if (Test-Path $directory) {
     Start-Process -FilePath "$downloadPath" -Wait
 
     # Apagar o arquivo
-    Remove-Item -Path $downloadPath -Force
+    # Remove-Item -Path $downloadPath -Force
 }
 
 Write-Host "Press any key to continue..."

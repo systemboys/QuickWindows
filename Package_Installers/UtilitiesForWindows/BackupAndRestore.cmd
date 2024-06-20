@@ -10,9 +10,9 @@
 :: Este programa tem a finalidade de agilizar seleção de opções para programas de backup e restaruação.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2024-02-03 às 20h11, Marcos Aurélio:
+:: v1.0.0 2024-02-03 às 20h11, Marcos Aurélio:
 ::   - Versão inicial, sessão para backups e restauração.
-:: v0.0.2 2024-02-21 às 22h46, Marcos Aurélio:
+:: v1.1.0 2024-02-21 às 22h46, Marcos Aurélio:
 ::   - Opção para instalação de Cobian Backup.
 ::
 :: Licença: GPL.

@@ -11,17 +11,17 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2024-01-15 às 19h18, Marcos Aurélio:
+:: v1.0.0 2024-01-15 às 19h18, Marcos Aurélio:
 ::   - Versão inicial, Opção que limpa os arquivos temporários do diretório C:\Windows\Temp e %temp% do usuário.
-:: v0.0.2 2024-02-12 às 03h05, Marcos Aurélio:
+:: v1.1.0 2024-02-12 às 03h05, Marcos Aurélio:
 ::   - Opção para instalação de DriverBoosterFree.
-:: v0.0.3 2024-02-12 às 10h25, Marcos Aurélio:
+:: v1.2.0 2024-02-12 às 10h25, Marcos Aurélio:
 ::   - Opção para instalação de CPU-Z.
-:: v0.0.4 2024-03-21 às 18h10, Marcos Aurélio:
+:: v1.3.0 2024-03-21 às 18h10, Marcos Aurélio:
 ::   - Opção para instalação do 'Crystal Disk Info'.
-:: v0.0.5 2024-03-24 às 23h43, Marcos Aurélio:
-::   - Versão inicial, Execução de 'Windows Update Activation' e o 'Revo Uninstaller Portable'.
-:: v0.0.6 2024-03-29 às 16h30, Marcos Aurélio:
+:: v1.4.0 2024-03-24 às 23h43, Marcos Aurélio:
+::   - Execução de 'Windows Update Activation' e o 'Revo Uninstaller Portable'.
+:: v1.5.0 2024-03-29 às 16h30, Marcos Aurélio:
 ::   - A opção '9' foi mudada para 'Mais…', para acessar a parte 3 do menu de 'Utilitários para Windows'.
 ::
 :: Licença: GPL.

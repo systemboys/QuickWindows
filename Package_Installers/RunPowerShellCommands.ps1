@@ -8,10 +8,10 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-01 às 22h50, Marcos Aurélio:
+# v1.0.0 2023-11-01 às 22h50, Marcos Aurélio:
 #   - Versão inicial, Execução Interativa de Comandos no PowerShell:
 #     Como Permitir que os Usuários Execute Comandos Personalizados.
-# v0.0.1 2023-11-29 às 22h50, Marcos Aurélio:
+# v1.1.0 2023-11-29 às 22h50, Marcos Aurélio:
 #   - Script de Interação: Janela de Comando Interativa para Execução de Comandos.
 #
 # Licença: GPL.

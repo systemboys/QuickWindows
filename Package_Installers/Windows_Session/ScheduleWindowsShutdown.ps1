@@ -7,11 +7,11 @@
 # Este programa tem a finalidade de facilitar agendamento de desligamento do Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-12-05 às 14h45, Marcos Aurélio:
+# v1.0.0 2023-12-05 às 14h45, Marcos Aurélio:
 #   - Versão inicial, agendamento de desligamento do Windows.
-# v0.0.2 2024-06-14 às 23h15, Marcos Aurélio:
+# v1.0.1 2024-06-14 às 23h15, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.3 2024-06-16 às 22h40, Marcos Aurélio:
+# v1.2.1 2024-06-16 às 22h40, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

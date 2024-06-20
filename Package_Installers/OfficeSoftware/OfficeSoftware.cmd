@@ -11,14 +11,14 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-29 às 16h40, Marcos Aurélio:
+:: v1.0.0 2023-11-29 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, sessão "Softwares para escritório".
-:: v0.0.2 2023-11-30 às 19h23, Marcos Aurélio:
+:: v1.1.0 2023-11-30 às 19h23, Marcos Aurélio:
 ::   - Opção para instalação de Microsoft Office 2019 a 2021.
-:: v0.0.3 2023-12-02 às 17h46, Marcos Aurélio:
+:: v1.2.0 2023-12-02 às 17h46, Marcos Aurélio:
 ::   - Opção para instalação de Microsoft Office 365.
-:: v0.0.4 2024-04-17 às 20h10, Marcos Aurélio:
-::   - Versão inicial, opção para criação dos atalhos dos aplicativos Microsoft Office na área de trabalho do Windows.
+:: v1.3.0 2024-04-17 às 20h10, Marcos Aurélio:
+::   - Opção para criação dos atalhos dos aplicativos Microsoft Office na área de trabalho do Windows.
 ::
 :: Licença: GPL.
 

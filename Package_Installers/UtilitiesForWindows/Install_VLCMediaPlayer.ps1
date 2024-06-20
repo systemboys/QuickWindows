@@ -8,13 +8,13 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-13 às 14h25, Marcos Aurélio:
+# v1.0.0 2023-11-13 às 14h25, Marcos Aurélio:
 #   - Versão inicial, Instalação de VLCMediaPlayer.
-# v0.0.2 2023-12-06 às 20h59, Marcos Aurélio:
+# v1.0.1 2023-12-06 às 20h59, Marcos Aurélio:
 #   - Foi informado o tamanho do executável.
-# v0.0.3 2024-06-14 às 23h10, Marcos Aurélio:
+# v1.0.2 2024-06-14 às 23h10, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.4 2024-06-16 às 22h11, Marcos Aurélio:
+# v1.1.2 2024-06-16 às 22h11, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

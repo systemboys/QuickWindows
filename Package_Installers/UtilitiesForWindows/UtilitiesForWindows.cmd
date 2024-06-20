@@ -11,17 +11,17 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-29 às 10h40, Marcos Aurélio:
+:: v1.0.0 2023-11-29 às 10h40, Marcos Aurélio:
 ::   - Versão inicial, sessão para "Utilitários para Windows" e Instalação de WinToHDD.
-:: v0.0.2 2023-11-30 às 01h14, Marcos Aurélio:
+:: v1.1.0 2023-11-30 às 01h14, Marcos Aurélio:
 ::   - Concluindo a sessão "Software de congelamento do sistema".
-:: v0.0.3 2024-01-15 às 18h04, Marcos Aurélio:
+:: v1.2.0 2024-01-15 às 18h04, Marcos Aurélio:
 ::   - Opção que para o serviço de spooler de impressão, limpa os arquivos temporários e reinicia o serviço.
-:: v0.0.4 2024-01-20 às 17h04, Marcos Aurélio:
+:: v1.2.1 2024-01-20 às 17h04, Marcos Aurélio:
 ::   - Corrigido o nome do arquivo.ps1 que baixa e executa o Revo Uninstaller na função.
-:: v0.0.5 2024-02-03 às 20h17, Marcos Aurélio:
+:: v1.3.1 2024-02-03 às 20h17, Marcos Aurélio:
 ::   - Opção para "Compressão de arquivos, PowerShell Backup Automático (.zip)" na sessão "Backup e Restaruação".
-:: v0.0.6 2024-02-12 às 03h00, Marcos Aurélio:
+:: v1.3.2 2024-02-12 às 03h00, Marcos Aurélio:
 ::   - Correções de texto das opções, foram adicionados três pontos em um caractere (…).
 ::
 :: Licença: GPL.

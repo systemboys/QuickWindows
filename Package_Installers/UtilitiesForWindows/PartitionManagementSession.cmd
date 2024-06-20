@@ -10,7 +10,7 @@
 :: Este programa tem a finalidade de selecionar e baixar Softwares de Gerenciamento de Partições para Windows.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2024-01-20 às 17h40, Marcos Aurélio:
+:: v1.0.0 2024-01-20 às 17h40, Marcos Aurélio:
 ::   - Versão inicial, Menu da Sessão para 'Softwares de Gerenciamento de Partições' no Windows.
 ::
 :: Licença: GPL.

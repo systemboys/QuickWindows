@@ -7,13 +7,13 @@
 # Este programa tem a finalidade de instalar o Skype.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-13 às 21h10, Marcos Aurélio:
+# v1.0.0 2023-11-13 às 21h10, Marcos Aurélio:
 #   - Versão inicial, Instalação do Skype.
-# v0.0.2 2023-12-06 às 20h50, Marcos Aurélio:
+# v1.0.1 2023-12-06 às 20h50, Marcos Aurélio:
 #   - Foi informado o tamanho do executável.
-# v0.0.3 2024-06-14 às 22h59, Marcos Aurélio:
+# v1.0.2 2024-06-14 às 22h59, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.4 2024-06-16 às 23h21, Marcos Aurélio:
+# v1.1.2 2024-06-16 às 23h21, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

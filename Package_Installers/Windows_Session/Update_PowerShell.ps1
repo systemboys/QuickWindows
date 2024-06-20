@@ -7,13 +7,13 @@
 # Este programa tem a finalidade de atualizar o PowerShell.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-11 às 19h10, Marcos Aurélio:
+# v1.0.0 2023-11-11 às 19h10, Marcos Aurélio:
 #   - Versão inicial, atualizar o PowerShell.
-# v0.0.2 2024-03-08 às 12h10, Marcos Aurélio:
+# v1.1.0 2024-03-08 às 12h10, Marcos Aurélio:
 #   - Condição com uma chave para escolher qual dos comandos serão executados.
-# v0.0.3 2024-06-14 às 23h15, Marcos Aurélio:
+# v1.1.1 2024-06-14 às 23h15, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.4 2024-06-16 às 22h38, Marcos Aurélio:
+# v1.2.1 2024-06-16 às 22h38, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

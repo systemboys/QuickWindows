@@ -8,20 +8,20 @@
 # AnyDesk para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-10-31 às 01h10, Marcos Aurélio:
+# v1.0.0 2023-10-31 às 01h10, Marcos Aurélio:
 #   - Versão inicial, Instalação de AnyDesk.
-# v0.0.2 2023-11-01 às 16h54, Marcos Aurélio:
+# v1.0.1 2023-11-01 às 16h54, Marcos Aurélio:
 #   - Correção da verificação da existência do AnyDesk no Windows.
-# v0.0.2 2023-11-01 às 22h55, Marcos Aurélio:
+# v1.0.2 2023-11-01 às 22h55, Marcos Aurélio:
 #   - Correção na linha de comando que apaga o arquivo de instalação
 #     do AnyDesk baixado.
-# v0.0.3 2023-12-06 às 20h43, Marcos Aurélio:
+# v1.0.3 2023-12-06 às 20h43, Marcos Aurélio:
 #   - Foi informado o tamanho do executável, atualizada a URL e colocada uma condição que executa o AnyDesk caso esteja instalado.
-# v0.0.4 2023-12-28 às 17h00, Marcos Aurélio:
+# v1.0.4 2023-12-28 às 17h00, Marcos Aurélio:
 #   - Corrigido o caminho do arquivo executável do 'AnyDesk'.
-# v0.0.4 2024-06-14 às 22h55, Marcos Aurélio:
+# v1.0.4 2024-06-14 às 22h55, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.5 2024-06-16 às 23h12, Marcos Aurélio:
+# v1.1.4 2024-06-16 às 23h12, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

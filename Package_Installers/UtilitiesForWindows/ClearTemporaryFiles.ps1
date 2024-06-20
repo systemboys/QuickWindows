@@ -7,13 +7,13 @@
 # Este programa tem a finalidade de apagar os arquivos temporários do Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2024-01-15 às 19h18, Marcos Aurélio:
+# v1.0.0 2024-01-15 às 19h18, Marcos Aurélio:
 #   - Versão inicial, Opção que limpa os arquivos temporários do diretório C:\Windows\Temp e %temp% do usuário.
-# v0.0.2 2024-01-19 às 01h08, Marcos Aurélio:
+# v1.0.1 2024-01-19 às 01h08, Marcos Aurélio:
 #   - Alteração que mostra a quantidade de arquivos temporários foram apagados.
-# v0.0.3 2024-06-14 às 23h04, Marcos Aurélio:
+# v1.0.2 2024-06-14 às 23h04, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.4 2024-06-16 às 02h05, Marcos Aurélio:
+# v1.1.2 2024-06-16 às 02h05, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

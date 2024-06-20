@@ -11,11 +11,11 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-29 às 13h30, Marcos Aurélio:
+:: v1.0.0 2023-11-29 às 13h30, Marcos Aurélio:
 ::   - Versão inicial, sessão "Compactadores" para Windows.
-:: v0.0.2 2023-11-30 às 00h46, Marcos Aurélio:
+:: v1.1.0 2023-11-30 às 00h46, Marcos Aurélio:
 ::   - Opção para Instalação de WinZip.
-:: v0.0.3 2024-01-25 às 19h43, Marcos Aurélio:
+:: v1.2.0 2024-01-25 às 19h43, Marcos Aurélio:
 ::   - Opção para Instalação de 7-Zip.
 ::
 :: Licença: GPL.

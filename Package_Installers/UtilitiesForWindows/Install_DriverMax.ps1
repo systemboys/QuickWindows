@@ -8,13 +8,13 @@
 # pacotes para Windows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-12-29 às 01h41, Sandro de Souza Silva (Servo Informática):
+# v1.0.0 2023-12-29 às 01h41, Sandro de Souza Silva (Servo Informática):
 #   - Versão inicial, Instalação de DriverMax.
-# v0.0.2 2023-12-29 às 21h34, Marcos Aurélio:
+# v1.0.1 2023-12-29 às 21h34, Marcos Aurélio:
 #   - Modificação onde o PowerShell pergunta onde deve salvar o download do arquivo.
-# v0.0.3 2024-06-14 às 23h07, Marcos Aurélio:
+# v1.0.2 2024-06-14 às 23h07, Marcos Aurélio:
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
-# v0.0.4 2024-06-16 às 22h03, Marcos Aurélio:
+# v1.1.2 2024-06-16 às 22h03, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 #
 # Licença: GPL.

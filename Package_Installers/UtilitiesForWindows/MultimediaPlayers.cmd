@@ -11,7 +11,7 @@
 :: para Windows durante a formatação e/ou manutenção de computadores.
 :: ---------------------------------------------------------------
 :: Histórico:
-:: v0.0.1 2023-11-29 às 14h20, Marcos Aurélio:
+:: v1.0.0 2023-11-29 às 14h20, Marcos Aurélio:
 ::   - Versão inicial, sessão de "Multimídia Players".
 ::
 :: Licença: GPL.
