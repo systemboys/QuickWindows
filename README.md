@@ -2,7 +2,7 @@
 
 > **( ! )** Esse menu ainda está em desenvolvimento!
 
-![Menu de instalações de pacotes Linux](./Images/QuickWindows.png "Menu de instalações de pacotes Windows")
+![Menu de instalações de pacotes Windows](./Images/QuickWindows.png "Menu de instalações de pacotes Windows")
 
 **Descrição do Menu Interativo QuickWindows**
 
@@ -59,15 +59,15 @@ O QuickWindows é a solução ideal para técnicos e usuários que buscam uma fo
    > irm qw.gti1.com.br/menu.ps1 | iex
    > ```
 
-3. **Explore e Instale:** Explore as categorias, escolha os pacotes que deseja instalar e siga as instruções. Em poucos instantes, você terá os programas desejados em seu sistema Linux.
+3. **Explore e Instale:** Explore as categorias, escolha os pacotes que deseja instalar e siga as instruções. Em poucos instantes, você terá os programas desejados em seu sistema Windows.
 
 **Contribua e Compartilhe:**
 
 Este menu é um projeto de código aberto, e encorajamos contribuições da comunidade. Sinta-se à vontade para abrir problemas, enviar solicitações de pull e ajudar a melhorar esta ferramenta para todos.
 
-Com o QuickWindows, queremos tornar a experiência de instalação de software no Linux tão simples e acessível quanto possível. Esperamos que você aproveite usar o menu tanto quanto nós gostamos de criá-lo!
+Com o QuickWindows, queremos tornar a experiência de instalação de software no Windows tão simples e acessível quanto possível. Esperamos que você aproveite usar o menu tanto quanto nós gostamos de criá-lo!
 
-*Divirta-se instalando, configurando e explorando no Linux!* 🚀🐧
+*Divirta-se instalando, configurando e explorando no Windows!* 🚀🐧
 
 > Marcos Aurélio Rocha da Silva | [https://www.gti1.com.br](https://www.gti1.com.br "Site em desenvolvimento") | systemboys@hotmail.com
 
@@ -191,7 +191,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Voltar…
     - [x] Atualizar QuickWindows
     - [x] Deletar QuickWindows
-    - [x] Recarregar QuickLinux
+    - [x] Recarregar QuickWindows
   - [x] **Windows**
     - [x] Voltar…
     - [x] Desligar o Windows
