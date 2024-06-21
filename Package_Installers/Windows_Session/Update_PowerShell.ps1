@@ -49,7 +49,10 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
-$chave = 3 # "1" para o comando "Invoke-WebRequest", "2" para a ferramenta "IRM", "3" para a ferramenta "WinGet".
+# "1" para o comando "Invoke-WebRequest"
+# "2" para a ferramenta "IRM"
+# "3" para a ferramenta "WinGet".
+$chave = 3
 
 if ($chave -eq 1) {
     # URL do instalador do PowerShell Core
