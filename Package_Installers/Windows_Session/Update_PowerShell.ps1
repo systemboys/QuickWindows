@@ -49,6 +49,8 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
+# Chave para definir qual comando será executado
+# ----------------------------------------------
 # "1" para o comando "Invoke-WebRequest"
 # "2" para a ferramenta "IRM"
 # "3" para a ferramenta "WinGet".
