@@ -194,6 +194,8 @@
 ::   - Correção de um bug, onde o arquivo de configuração './config.json' não era encontrado quando o arquivo que continha a importação era executado de outro local.
 :: v1.60.85 2024-06-17 às 18h50, Marcos Aurélio:
 ::   - Incrementação de novo comando para atualização do PowerShell.
+:: v1.61.85 2024-06-26 às 00h52, Marcos Aurélio:
+::   - Novo script de instalação silenciosa do Git.
 ::
 :: Licença: GPL.
 

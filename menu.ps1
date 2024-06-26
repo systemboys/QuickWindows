@@ -7,11 +7,11 @@
 # Este programa tem a finalidade de instalar o QuickWindows.
 # ---------------------------------------------------------------
 # Histórico:
-# v1.0.0 2023-11-13 às 01h10, Marcos Aurélio:
+# v1.0.1 2023-11-13 às 01h10, Marcos Aurélio:
 #   - Versão inicial, Instalação do QuickWindows.
-# v1.0.1 2023-11-13 às 16h00, Marcos Aurélio:
+# v1.0.2 2023-11-13 às 16h00, Marcos Aurélio:
 #   - Correção feita na verificação onde fecha a janela do Windows PowerShell.
-# v1.1.1 2023-12-04 às 15h06, Marcos Aurélio:
+# v1.1.2 2023-12-04 às 15h06, Marcos Aurélio:
 #   - Opção para instalar o "AnyDesk" quando o usuário chamar o menu interativo com a ferramenta IRM.
 # v1.1.2 2023-12-07 às 00h24, Marcos Aurélio:
 #   - Se o AnyDesk tiver instalado, o script pergunta se quer executá-lo e, reabertura do Windows PowerShell após instalação do Git.
@@ -27,6 +27,8 @@
 #   - Incrementação de uma descrição que deverá aparecer quando o ícone for apontado pelo mouse.
 # v1.1.8 2024-03-29 às 00h05, Marcos Aurélio:
 #   - Correção da ativação da execução de scripts no PowerShell.
+# v1.2.8 2024-06-25 às 23h50, Marcos Aurélio:
+#   - Novo script de instalação silenciosa do Git.
 #
 # Licença: GPL.
 
@@ -150,61 +152,153 @@ $shortcut.Save()
 Write-Host "Atalho criado em: $shortcutPath"
 # ------------------[/Ícone na Área de trabalho]---------------------------
 
-# Verifica se o Git está instalado no Windows (versões 10 e 11)
-Write-Host "Checking if Git is installed on Windows..."
+# ---------------[Verifica se o Winget está instalado no Windows]---------------
+if (Get-Command winget -ErrorAction SilentlyContinue) {
+    $GitInstallation = 1 # Define qual script será executado
+    Write-Host "Winget is installed!"
+} else {
+    $GitInstallation = 2 # Define qual script será executado
+    Write-Host "Winget is not installed!"
+}
 
-# Verificação do caminho padrão de instalação do Git em outras versões do Windows
-$gitPaths = @(
-    "$env:ProgramFiles\Git\bin\git.exe",
-    "$env:ProgramFiles(x86)\Git\bin\git.exe"
-)
+# -------------[Executar atalho na Área de trabalho]-----------------
+function RunShortcut {
+    # Caminho completo para o atalho na Área de Trabalho
+    $desktopPath = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::DesktopDirectory)
+    $shortcut = Join-Path $desktopPath "GTi Support.lnk"
 
-$gitInstalled = $false
-
-foreach ($path in $gitPaths) {
-    if (Test-Path $path) {
-        Write-Host "Git found at $path"
-        $gitInstalled = $true
-        break
+    # Verifica se o atalho existe
+    if (Test-Path $shortcut) {
+        # Executa o atalho
+        Invoke-Item $shortcut
+    } else {
+        Write-Host "The shortcut was not found."
     }
 }
+# -------------[/Executar atalho na Área de trabalho]-----------------
 
-if ($gitInstalled) {
-    Write-Host "Git is installed."
-} else {
-    Write-Host "Git is not installed."
-    # Definição do arquivo
-    $fileName="Git"
-    $fileUrl="https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
-    $outputFileName="Git_Setup.exe"
-
-    Write-Host "$fileName does not exist on Windows! Downloading the installer..."
-    Write-Host "File size: 58.4 MB"
-
-    # Baixa o instalador do Git
-    Start-BitsTransfer -Source $fileUrl -Destination "$env:TEMP\$outputFileName"
-
-    Write-Host "Running the $fileName installer..."
-
-    # Instala o Git
-    Start-Process -FilePath "$env:TEMP\$outputFileName" -Wait
-
-    Write-Host "Deleting the $fileName installer..."
-
-    # Remove o instalador do Git
-    Remove-Item "$env:TEMP\$outputFileName"
-
-    # Fechar a janela do Windows PowerShell
-    Write-Host "After installing Git, Windows PowerShell must be restarted!"
-    Write-Host "Type the same command again or press the up directional arrow key."
-    Write-Host
-    Write-Host "There is a GTi Support shortcut on the Desktop!"
-    Write-Host
-    Write-Host "Press any key to continue..."
-    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-    exit
+if ($GitInstallation -eq 1) {
+    # ---------------[Novo script de instalação silenciosa do Git]-----------------
+    # Função para verificar se um programa está instalado
+    function Is-ProgramInstalled {
+        param (
+            [string]$program
+        )
+        Get-Command $program -ErrorAction SilentlyContinue
+        return $?
+    }
+    
+    # Função para exibir um indicador de progresso
+    function Show-Progress {
+        param (
+            [int]$seconds
+        )
+        $dots = "."
+        for ($i = 0; $i -lt $seconds; $i++) {
+            Write-Host -NoNewline $dots
+            Start-Sleep -Seconds 1
+        }
+        Write-Host ""
+    }
+    
+    # Verificar se o Git está instalado
+    if (-not (Is-ProgramInstalled "git")) {
+        Write-Host "Git is not installed. Checking the available installer..."
+    
+        # Verificar se o winget está instalado
+        if (-not (Is-ProgramInstalled "winget")) {
+            Write-Host "winget is not installed. Checking out Chocolatey..."
+    
+            # Verificar se o Chocolatey está instalado
+            if (-not (Get-Command "choco" -ErrorAction SilentlyContinue)) {
+                Write-Host "Chocolatey is not installed. Installing Chocolatey..."
+                
+                # Instalar Chocolatey
+                Set-ExecutionPolicy Bypass -Scope Process -Force
+                [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+                Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+            }
+    
+            # Instalar Git usando Chocolatey de forma silenciosa
+            Write-Host "Starting the Git installation using Chocolatey..."
+            choco install git -y --execution-timeout 0 --force --package-parameters="'/NoShellIntegration /NoAutoCrlf /SILENT'"
+            Show-Progress 5  # Indicador de progresso simples (5 segundos)
+            # Chame a função para executar o atalho
+            RunShortcut
+            # Chame a função para executar o atalho
+            RunShortcut
+        } else {
+            # Instalar Git usando winget de forma silenciosa
+            Write-Host "Starting Git installation using winget..."
+            winget install --id Git.Git -e --source winget --silent
+            Show-Progress 5  # Indicador de progresso simples (5 segundos)
+            # Chame a função para executar o atalho
+            RunShortcut
+            exit
+        }
+    } else {
+        Write-Host "Git is already installed."
+    }
+    # ---------------[/Novo script de instalação silenciosa do Git]-----------------
+} elseif ($variavel -eq 2) {
+    # ---------------[Script antigo que instala o Git]-----------------
+    # ---------------[Verifica se o Git está instalado no Windows (versões 10 e 11)]---------------
+    Write-Host "Checking if Git is installed on Windows..."
+    
+    # Verificação do caminho padrão de instalação do Git em outras versões do Windows
+    $gitPaths = @(
+        "$env:ProgramFiles\Git\bin\git.exe",
+        "$env:ProgramFiles(x86)\Git\bin\git.exe"
+    )
+    
+    $gitInstalled = $false
+    
+    foreach ($path in $gitPaths) {
+        if (Test-Path $path) {
+            Write-Host "Git found at $path"
+            $gitInstalled = $true
+            break
+        }
+    }
+    
+    if ($gitInstalled) {
+        Write-Host "Git is installed."
+    } else {
+        Write-Host "Git is not installed."
+        # Definição do arquivo
+        $fileName="Git"
+        $fileUrl="https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
+        $outputFileName="Git_Setup.exe"
+    
+        Write-Host "$fileName does not exist on Windows! Downloading the installer..."
+        Write-Host "File size: 58.4 MB"
+    
+        # Baixa o instalador do Git
+        Start-BitsTransfer -Source $fileUrl -Destination "$env:TEMP\$outputFileName"
+    
+        Write-Host "Running the $fileName installer..."
+    
+        # Instala o Git
+        Start-Process -FilePath "$env:TEMP\$outputFileName" -Wait
+    
+        Write-Host "Deleting the $fileName installer..."
+    
+        # Remove o instalador do Git
+        Remove-Item "$env:TEMP\$outputFileName"
+    
+        # Fechar a janela do Windows PowerShell
+        Write-Host "After installing Git, Windows PowerShell must be restarted!"
+        Write-Host "Type the same command again or press the up directional arrow key."
+        Write-Host
+        Write-Host "There is a GTi Support shortcut on the Desktop!"
+        Write-Host
+        # Chame a função para executar o atalho
+        RunShortcut
+        exit
+    }
+    # ---------------[/Script antigo que instala o Git]-----------------
 }
-# Fim da verificação do caminho padrão de instalação do Git em outras versões do Windows
+# ---------------[/Fim da verificação do caminho padrão de instalação do Git em outras versões do Windows]---------------
 
 # ------------------[Verifique se o QuickWindows existe] -----------------------------
 $programFiles = $env:TEMP
