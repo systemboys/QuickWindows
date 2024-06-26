@@ -7,25 +7,25 @@
 # Este programa tem a finalidade de instalar o QuickWindows.
 # ---------------------------------------------------------------
 # Histórico:
-# v1.0.0 2023-11-13 às 01h10, Marcos Aurélio:
+# v0.0.1 2023-11-13 às 01h10, Marcos Aurélio:
 #   - Versão inicial, Instalação do QuickWindows.
-# v1.0.1 2023-11-13 às 16h00, Marcos Aurélio:
+# v0.0.2 2023-11-13 às 16h00, Marcos Aurélio:
 #   - Correção feita na verificação onde fecha a janela do Windows PowerShell.
-# v1.1.1 2023-12-04 às 15h06, Marcos Aurélio:
+# v0.0.3 2023-12-04 às 15h06, Marcos Aurélio:
 #   - Opção para instalar o "AnyDesk" quando o usuário chamar o menu interativo com a ferramenta IRM.
-# v1.1.2 2023-12-07 às 00h24, Marcos Aurélio:
+# v0.0.4 2023-12-07 às 00h24, Marcos Aurélio:
 #   - Se o AnyDesk tiver instalado, o script pergunta se quer executá-lo e, reabertura do Windows PowerShell após instalação do Git.
-# v1.1.3 2023-12-08 às 17h27, Marcos Aurélio:
+# v0.0.5 2023-12-08 às 17h27, Marcos Aurélio:
 #   - Alteração que faz com que o script não precise mais clonar novamente o "QuickWindows" caso já esteja instalado do diretório Temp.
-# v1.1.4 2024-01-18 às 21h40, Marcos Aurélio:
+# v0.0.6 2024-01-18 às 21h40, Marcos Aurélio:
 #   - Alteração que verifica se o Windows PowerShell está sendo executado como administrador.
-# v1.1.5 2024-03-09 às 16h26, Marcos Aurélio:
+# v0.0.7 2024-03-09 às 16h26, Marcos Aurélio:
 #   - Alteração que verifica se o arquivo 'QuickWindows.cmd' existe, se não existir, apagar o diretório 'QquicoWindows'.
-# v1.1.6 2024-03-25 às 01h06, Marcos Aurélio:
+# v0.0.8 2024-03-25 às 01h06, Marcos Aurélio:
 #   - Modificação para criar um ícone da Área de trabalho do Windows que executar o script.
-# v1.1.7 2024-03-26 às 14h31, Marcos Aurélio:
+# v0.0.9 2024-03-26 às 14h31, Marcos Aurélio:
 #   - Incrementação de uma descrição que deverá aparecer quando o ícone for apontado pelo mouse.
-# v1.1.8 2024-03-29 às 00h05, Marcos Aurélio:
+# v0.1.0 2024-03-29 às 00h05, Marcos Aurélio:
 #   - Correção da ativação da execução de scripts no PowerShell.
 #
 # Licença: GPL.
