@@ -7,26 +7,28 @@
 # Este programa tem a finalidade de instalar o QuickWindows.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-13 às 01h10, Marcos Aurélio:
+# v1.0.0 2023-11-13 às 01h10, Marcos Aurélio:
 #   - Versão inicial, Instalação do QuickWindows.
-# v0.0.2 2023-11-13 às 16h00, Marcos Aurélio:
+# v1.0.1 2023-11-13 às 16h00, Marcos Aurélio:
 #   - Correção feita na verificação onde fecha a janela do Windows PowerShell.
-# v0.0.3 2023-12-04 às 15h06, Marcos Aurélio:
+# v1.1.1 2023-12-04 às 15h06, Marcos Aurélio:
 #   - Opção para instalar o "AnyDesk" quando o usuário chamar o menu interativo com a ferramenta IRM.
-# v0.0.4 2023-12-07 às 00h24, Marcos Aurélio:
+# v1.1.2 2023-12-07 às 00h24, Marcos Aurélio:
 #   - Se o AnyDesk tiver instalado, o script pergunta se quer executá-lo e, reabertura do Windows PowerShell após instalação do Git.
-# v0.0.5 2023-12-08 às 17h27, Marcos Aurélio:
+# v1.1.3 2023-12-08 às 17h27, Marcos Aurélio:
 #   - Alteração que faz com que o script não precise mais clonar novamente o "QuickWindows" caso já esteja instalado do diretório Temp.
-# v0.0.6 2024-01-18 às 21h40, Marcos Aurélio:
+# v1.1.4 2024-01-18 às 21h40, Marcos Aurélio:
 #   - Alteração que verifica se o Windows PowerShell está sendo executado como administrador.
-# v0.0.7 2024-03-09 às 16h26, Marcos Aurélio:
+# v1.1.5 2024-03-09 às 16h26, Marcos Aurélio:
 #   - Alteração que verifica se o arquivo 'QuickWindows.cmd' existe, se não existir, apagar o diretório 'QquicoWindows'.
-# v0.0.8 2024-03-25 às 01h06, Marcos Aurélio:
+# v1.1.6 2024-03-25 às 01h06, Marcos Aurélio:
 #   - Modificação para criar um ícone da Área de trabalho do Windows que executar o script.
-# v0.0.9 2024-03-26 às 14h31, Marcos Aurélio:
+# v1.1.7 2024-03-26 às 14h31, Marcos Aurélio:
 #   - Incrementação de uma descrição que deverá aparecer quando o ícone for apontado pelo mouse.
-# v0.1.0 2024-03-29 às 00h05, Marcos Aurélio:
+# v1.1.8 2024-03-29 às 00h05, Marcos Aurélio:
 #   - Correção da ativação da execução de scripts no PowerShell.
+# v1.2.8 2024-06-26 às 21h02, Marcos Aurélio:
+#   - Instalação silenciosa do Git via Winget, se o Winget tiver instalado.
 #
 # Licença: GPL.
 
@@ -94,7 +96,7 @@ if (Test-Path $directory) {
     }
 }
 
-# ------------------[Ícone na Área de trabalho]---------------------------
+# ------------------ Ícone na Área de trabalho ---------------------------
 
 # --- Criar diretório em ambiente de usuário ---
 # Define o nome do diretório
@@ -148,7 +150,7 @@ $shortcut.Description = "QuickWindows - Facilitate installations with routines"
 $shortcut.Save()
 
 Write-Host "Atalho criado em: $shortcutPath"
-# ------------------[/Ícone na Área de trabalho]---------------------------
+# ------------------ /Ícone na Área de trabalho ---------------------------
 
 # Verifica se o Git está instalado no Windows (versões 10 e 11)
 Write-Host "Checking if Git is installed on Windows..."
@@ -173,26 +175,63 @@ if ($gitInstalled) {
     Write-Host "Git is installed."
 } else {
     Write-Host "Git is not installed."
-    # Definição do arquivo
-    $fileName="Git"
-    $fileUrl="https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
-    $outputFileName="Git_Setup.exe"
+    # -------------- Instalação do Git -------------------
+    # Verifica se o winget está instalado
+    if (Get-Command winget -ErrorAction SilentlyContinue) {
+        # Inicia a instalação do Git em um job
+        $job = Start-Job -ScriptBlock {
+            winget install --id Git.Git -e --source winget --silent
+        }
+        
+        # Define os símbolos para o indicador de progresso
+        # $symbols = @('\', '|', '/', '-')
+        $symbols = @('.   \', ' .  |', '  . /', '   .-')
+        $index = 0
+    
+        # Loop para exibir o indicador de progresso enquanto a instalação está em andamento
+        while ($job.State -eq 'Running') {
+            Write-Host -NoNewline ("`rInstalling Git" + $symbols[$index])
+            Start-Sleep -Milliseconds 200
+            $index = ($index + 1) % $symbols.Count
+        }
+    
+        # Espera o job terminar
+        Wait-Job $job
+    
+        # Verifica o resultado do job
+        $jobResult = Receive-Job $job
+        if ($jobResult -eq $null) {
+            Write-Host "`rGit foi instalado com sucesso!"
+        } else {
+            Write-Host "`rOcorreu um erro durante a instalação do Git."
+        }
+    
+        # Remove o job
+        Remove-Job $job
+    } else {
+        # Baixar o instalador do Git via Winget via BitsTransfer e executar
+        # Definição do arquivo
+        $fileName="Git"
+        $fileUrl="https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
+        $outputFileName="Git_Setup.exe"
 
-    Write-Host "$fileName does not exist on Windows! Downloading the installer..."
-    Write-Host "File size: 58.4 MB"
+        Write-Host "$fileName does not exist on Windows! Downloading the installer..."
+        Write-Host "File size: 58.4 MB"
 
-    # Baixa o instalador do Git
-    Start-BitsTransfer -Source $fileUrl -Destination "$env:TEMP\$outputFileName"
+        # Baixa o instalador do Git
+        Start-BitsTransfer -Source $fileUrl -Destination "$env:TEMP\$outputFileName"
 
-    Write-Host "Running the $fileName installer..."
+        Write-Host "Running the $fileName installer..."
 
-    # Instala o Git
-    Start-Process -FilePath "$env:TEMP\$outputFileName" -Wait
+        # Instala o Git
+        Start-Process -FilePath "$env:TEMP\$outputFileName" -Wait
 
-    Write-Host "Deleting the $fileName installer..."
+        Write-Host "Deleting the $fileName installer..."
 
-    # Remove o instalador do Git
-    Remove-Item "$env:TEMP\$outputFileName"
+        # Remove o instalador do Git
+        Remove-Item "$env:TEMP\$outputFileName"
+    }
+    # -------------- /Instalação do Git -------------------
 
     # Fechar a janela do Windows PowerShell
     Write-Host "After installing Git, Windows PowerShell must be restarted!"
@@ -202,11 +241,12 @@ if ($gitInstalled) {
     Write-Host
     Write-Host "Press any key to continue..."
     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+    Executar o atalho do Quick Windows no Desktop
     exit
 }
 # Fim da verificação do caminho padrão de instalação do Git em outras versões do Windows
 
-# ------------------[Verifique se o QuickWindows existe] -----------------------------
+# ------------------ Verifique se o QuickWindows existe -----------------------------
 $programFiles = $env:TEMP
 $filePath = "$programFiles\QuickWindows\QuickWindows.cmd"
 
@@ -214,7 +254,7 @@ if (Test-Path $filePath) {
     Write-Host "Starting QuickWindows..."
     Set-Location -Path "$env:TEMP\QuickWindows"
 } else {
-    # --------[Verificar se o arquivo "QuickWindows.cmd" existe, se não existir, apagar o diretório "QquicoWindows"]----------
+    # -------- Verificar se o arquivo "QuickWindows.cmd" existe, se não existir, apagar o diretório "QquicoWindows" ----------
     # Define o caminho do diretório e do arquivo
     $dirPath = "$env:TEMP\QuickWindows"
     $filePath = "$dirPath\QuickWindows.cmd"
@@ -230,12 +270,12 @@ if (Test-Path $filePath) {
     } else {
         Write-Host "The $dirPath directory does not exist."
     }
-    # --------[/Verificar se o arquivo "QuickWindows.cmd" existe, se não existir, apagar o diretório "QquicoWindows"]----------
+    # -------- /Verificar se o arquivo "QuickWindows.cmd" existe, se não existir, apagar o diretório "QquicoWindows" ----------
     Write-Host "Cloning QuickWindows..."
     # Clonar e executar Windows PowerShell novamente com o comando
     Set-Location -Path $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; Set-Location -Path .\QuickWindows\
 }
-# ------------------[/Verifique se o QuickWindows existe] -----------------------------
+# ------------------ /Verifique se o QuickWindows existe -----------------------------
 
 # Inicia o PowerShell em modo Administrador com o comando desejado
 Start-Process -FilePath "powershell.exe" -Verb runAs -ArgumentList "-Command", "& {$env:TEMP\QuickWindows\QuickWindows.cmd 0}"
