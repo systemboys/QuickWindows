@@ -62,9 +62,9 @@ Write-Host "--------------------------------------------------------------------
 Write-Host "0 = Sair                                                                                [ null ]" -ForegroundColor Red
 Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "1 = Menu QuickWindows...                                                                [ null ]" -ForegroundColor Red
-Write-Host "    11 = Atualizar QuickWindows                                                         [  ok  ]" -ForegroundColor Green
-Write-Host "    12 = Deletar QuickWindows                                                           [  ok  ]" -ForegroundColor Green
-Write-Host "    13 = Recarregar QuickWindows                                                        [  ok  ]" -ForegroundColor Green
+Write-Host "    11 = Atualizar QuickWindows                                                         [ null ]" -ForegroundColor Red
+Write-Host "    12 = Deletar QuickWindows                                                           [ null ]" -ForegroundColor Red
+Write-Host "    13 = Recarregar QuickWindows                                                        [ null ]" -ForegroundColor Red
 Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "2 = Windows...                                                                          [ null ]" -ForegroundColor Red
 Write-Host "    21 = Desligar o Windows                                                             [  ok  ]" -ForegroundColor Green
