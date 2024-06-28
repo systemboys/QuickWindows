@@ -30,6 +30,8 @@
 #   - Ajuste de cores em algumas linhas da lista de rotinas, com a inteção de destacar de vermelho as que não estão funcionando.
 # v1.10.1 2024-06-16 às 22h31, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+# v1.10.2 2024-06-27 às 23h34, Marcos Aurélio:
+#   - Os recursos do Windows agora serão executados por um arquivo .ps1.
 #
 # Licença: GPL.
 
