@@ -196,6 +196,8 @@
 ::   - Incrementação de novo comando para atualização do PowerShell.
 :: v1.61.85 2024-06-26 às 21h24, Marcos Aurélio:
 ::   - Instalação silenciosa do Git via Winget, se o Winget tiver instalado.
+:: v1.62.85 2024-06-27 às 23h25, Marcos Aurélio:
+::   - Os recursos do Windows agora serão executados por um arquivo .ps1.
 ::
 :: Licença: GPL.
 

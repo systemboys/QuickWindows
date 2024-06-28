@@ -14,6 +14,8 @@
 ::   - Versão inicial, Menu de sessão a acesso rápido a algumas funcionalidades do Windows.
 :: v1.1.0 2023-11-30 às 12h03, Marcos Aurélio:
 ::   - Abrir Gerenciador de Arquivos com Endereço Específico.
+:: v1.2.0 2024-06-27 às 23h29, Marcos Aurélio:
+::   - Os recursos do Windows agora serão executados por um arquivo .ps1.
 ::
 :: Licença: GPL.
 
@@ -65,7 +67,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção Painel de Controle - Control.
 
-    control
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 1' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -75,7 +77,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção Editor de Registro - RegEdit.
 
-    regedit
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 2' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -85,7 +87,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção Configurações do Sistema - MSConfig.
 
-    msconfig
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 3' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -95,7 +97,7 @@ if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção Serviços - Services.msc.
 
-    services.msc
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 4' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -105,7 +107,7 @@ if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
 
-    devmgmt.msc
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 5' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -115,7 +117,7 @@ if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
 
-    diskmgmt.msc
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 6' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -123,9 +125,9 @@ if %ERRORLEVEL% equ 6 (
 :: Explorador de arquivos do Windows
 if %ERRORLEVEL% equ 7 (
     cls
-    echo Você selecionou a Opção Explorador de arquivos do Window.
+    echo Você selecionou a Opção Explorador de arquivos do Windows.
 
-    explorer
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 7' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -135,7 +137,7 @@ if %ERRORLEVEL% equ 8 (
     cls
     echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
 
-    desk.cpl
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 8' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )

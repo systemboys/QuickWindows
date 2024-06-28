@@ -22,6 +22,8 @@
 ::   - Opção para executar "Opções de pastas".
 :: v1.5.1 2024-02-04 às 22h57, Marcos Aurélio:
 ::   - Opção para Obter Informações do Sistema com PowerShell.
+:: v1.6.1 2024-06-27 às 23h29, Marcos Aurélio:
+::   - Os recursos do Windows agora serão executados por um arquivo .ps1.
 ::
 :: Licença: GPL.
 
@@ -72,7 +74,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção Configurações avançadas do sistema - Propriedades do Sistema.
 
-    sysdm.cpl
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 9' -Verb RunAs"
 
     goto menu_Session_2_1_p2
 )
@@ -82,7 +84,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção Editar Configurações do Plan.
 
-    powercfg.cpl
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 10' -Verb RunAs"
 
     goto menu_Session_2_1_p2
 )
@@ -92,7 +94,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção Sobre o Windows - WinVer.
 
-    winver
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 11' -Verb RunAs"
 
     goto menu_Session_2_1_p2
 )
@@ -112,7 +114,7 @@ if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a Opção Configurações do Windows.
 
-    start ms-settings:
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 12' -Verb RunAs"
 
     goto menu_Session_2_1_p2
 )
@@ -122,7 +124,7 @@ if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a Opção Gerenciador de Tarefas do Windows.
 
-    start taskmgr
+    start PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 13' -Verb RunAs"
 
     goto menu_Session_2_1_p2
 )
@@ -132,7 +134,7 @@ if %ERRORLEVEL% equ 7 (
     cls
     echo Você selecionou a Opções de pastas.
 
-    start control folders
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 14' -Verb RunAs"
 
     goto menu_Session_2_1_p2
 )
