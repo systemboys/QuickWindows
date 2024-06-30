@@ -222,7 +222,7 @@ set "ano=%datetime:~0,4%"
 set /a resultado=ano-2008
 
 @REM ---------------------
-$Host.UI.RawUI.WindowTitle = "QuickWindows..."
+TITLE Novo QuickWindows
 @REM ---------------------
 
 :: Mensagem de entrada do Menu com o resultado
