@@ -223,18 +223,11 @@ set "ano=%datetime:~0,4%"
 :: Subtrair o ano atual por 2008
 set /a resultado=ano-2008
 
-:: ------------------------------------
-:: Ler o conteúdo do arquivo config.json
-for /f "usebackq delims=" %%a in ("config.json") do (
-    set "jsonContent=%%a"
-)
-:: ------------------------------------
-
 :: Definir o título da janela do Prompt
 TITLE GTi - QuickWindows !lastVersion!
 
 :: Mensagem de entrada do Menu com o resultado
-echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática - QuickWindows !lastVersion! - %promptWindowTitle%
+echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática - QuickWindows !lastVersion!
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
 echo QuickWindows.cmd - Executa o menu com várias linhas de comandos para instalação de softwares para Windows
 echo URL: https://github.com/systemboys/QuickWindows.git
