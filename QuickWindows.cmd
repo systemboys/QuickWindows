@@ -223,6 +223,15 @@ set "ano=%datetime:~0,4%"
 :: Subtrair o ano atual por 2008
 set /a resultado=ano-2008
 
+:: ------------------------------------
+:: Ler o conteúdo do arquivo config.json
+for /f "usebackq delims=" %%a in ("config.json") do (
+    set "jsonContent=%%a"
+)
+:: Exibir o conteúdo do JSON
+echo %promptWindowTitle%
+:: ------------------------------------
+
 :: Definir o título da janela do Prompt
 TITLE GTi - QuickWindows !lastVersion!
 
