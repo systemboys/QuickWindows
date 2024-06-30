@@ -57,7 +57,7 @@ $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # Definir o título da janela do Prompt
-$Host.UI.RawUI.WindowTitle = "GTi - QW / Rotinas"
+$Host.UI.RawUI.WindowTitle = $configData.promptWindowTitle + " / Rotinas"
 
 Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "                                      ROTINAS                                   | (ok) => (.ps1)" -ForegroundColor Green
