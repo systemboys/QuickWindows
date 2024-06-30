@@ -221,9 +221,8 @@ set "ano=%datetime:~0,4%"
 :: Subtrair o ano atual por 2008
 set /a resultado=ano-2008
 
-@REM ---------------------
-TITLE Novo QuickWindows
-@REM ---------------------
+:: Definir o título da janela do Prompt
+TITLE Novo QuickWindows !lastVersion!
 
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática - QuickWindows !lastVersion!
