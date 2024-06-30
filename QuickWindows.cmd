@@ -221,6 +221,10 @@ set "ano=%datetime:~0,4%"
 :: Subtrair o ano atual por 2008
 set /a resultado=ano-2008
 
+@REM ---------------------
+$Host.UI.RawUI.WindowTitle = "QuickWindows..."
+@REM ---------------------
+
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática - QuickWindows !lastVersion!
 echo www.gti1.com.br - gti.inf@hotmail.com - systemboys@hotmail.com
