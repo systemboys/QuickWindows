@@ -198,6 +198,8 @@
 ::   - Instalação silenciosa do Git via Winget, se o Winget tiver instalado.
 :: v1.62.85 2024-06-27 às 23h25, Marcos Aurélio:
 ::   - Os recursos do Windows agora serão executados por um arquivo .ps1.
+:: v1.62.86 2024-06-30 às 01h50, Marcos Aurélio:
+::   - Definir o título da janela do Prompt
 ::
 :: Licença: GPL.
 
@@ -222,7 +224,7 @@ set "ano=%datetime:~0,4%"
 set /a resultado=ano-2008
 
 :: Definir o título da janela do Prompt
-TITLE Novo QuickWindows !lastVersion!
+TITLE GTi - QuickWindows !lastVersion!
 
 :: Mensagem de entrada do Menu com o resultado
 echo © %ano% - GLOBAL TEC Informática ® - A %resultado% no mercado de Informática - QuickWindows !lastVersion!
