@@ -199,7 +199,9 @@
 :: v1.62.85 2024-06-27 às 23h25, Marcos Aurélio:
 ::   - Os recursos do Windows agora serão executados por um arquivo .ps1.
 :: v1.62.86 2024-06-30 às 01h50, Marcos Aurélio:
-::   - Definir o título da janela do Prompt
+::   - Definir o título da janela do Prompt.
+:: v1.62.87 2024-07-03 às 01h50, Marcos Aurélio:
+::   - Corrigido a remoção do instalador do Git no diretório Temp.
 ::
 :: Licença: GPL.
 

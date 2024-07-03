@@ -29,6 +29,8 @@
 #   - Correção da ativação da execução de scripts no PowerShell.
 # v1.2.8 2024-06-26 às 21h02, Marcos Aurélio:
 #   - Instalação silenciosa do Git via Winget, se o Winget tiver instalado.
+# v1.2.9 2024-07-03 às 00h36, Marcos Aurélio:
+#   - Corrigido a remoção do instalador do Git no diretório Temp.
 #
 # Licença: GPL.
 
@@ -229,7 +231,10 @@ if ($gitInstalled) {
         Write-Host "Deleting the $fileName installer..."
 
         # Remove o instalador do Git
-        Remove-Item "$env:TEMP\$outputFileName"
+        # Remove-Item "$env:TEMP\$outputFileName"
+        if (Test-Path "$env:TEMP\$outputFileName") {
+            Remove-Item -Path "$env:TEMP\$outputFileName" -Force
+        }        
     }
     # -------------- /Instalação do Git -------------------
 
