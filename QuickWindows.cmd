@@ -202,6 +202,8 @@
 ::   - Definir o título da janela do Prompt.
 :: v1.62.87 2024-07-03 às 01h50, Marcos Aurélio:
 ::   - Corrigido a remoção do instalador do Git no diretório Temp.
+:: v1.62.89 2024-07-05 às 19h07, Marcos Aurélio:
+::   - Baixar o instalador via BitsTransfer e instalar o Git de forma silenciosa
 ::
 :: Licença: GPL.
 

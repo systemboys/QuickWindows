@@ -31,6 +31,8 @@
 #   - Instalação silenciosa do Git via Winget, se o Winget tiver instalado.
 # v1.2.9 2024-07-03 às 00h36, Marcos Aurélio:
 #   - Corrigido a remoção do instalador do Git no diretório Temp.
+# v1.2.10 2024-07-05 às 19h07, Marcos Aurélio:
+#   - Baixar o instalador via BitsTransfer e instalar o Git de forma silenciosa
 #
 # Licença: GPL.
 
@@ -211,30 +213,63 @@ if ($gitInstalled) {
         # Remove o job
         Remove-Job $job
     } else {
-        # Baixar o instalador do Git via Winget via BitsTransfer e executar
+        # ---------------Baixar o instalador via BitsTransfer e instalar o Git de forma silenciosa----------------
         # Definição do arquivo
-        $fileName="Git"
-        $fileUrl="https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
-        $outputFileName="Git_Setup.exe"
+        $fileName = "Git"
+        $fileUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
+        $outputFileName = "Git_Setup.exe"
 
         Write-Host "$fileName does not exist on Windows! Downloading the installer..."
         Write-Host "File size: 58.4 MB"
 
+        # Função para mostrar o indicador de progresso
+        function Show-Progress {
+            param (
+                [int]$delay = 100
+            )
+            $spinner = @('-','\','|','/')
+            while ($true) {
+                foreach ($spin in $spinner) {
+                    Write-Host -NoNewline "`r$spin"
+                    Start-Sleep -Milliseconds $delay
+                }
+            }
+        }
+
         # Baixa o instalador do Git
         Start-BitsTransfer -Source $fileUrl -Destination "$env:TEMP\$outputFileName"
 
-        Write-Host "Running the $fileName installer..."
+        Write-Host "`nRunning the $fileName installer..."
 
-        # Instala o Git
-        Start-Process -FilePath "$env:TEMP\$outputFileName" -Wait
+        # Instala o Git de forma silenciosa
+        $process = Start-Process -FilePath "$env:TEMP\$outputFileName" -ArgumentList "/VERYSILENT" -NoNewWindow -PassThru
 
-        Write-Host "Deleting the $fileName installer..."
+        # Função para aguardar o processo com indicador de progresso
+        function Wait-ProcessWithProgress {
+            param (
+                [System.Diagnostics.Process]$process
+            )
+            $spinner = @('-','\','|','/')
+            while (-not $process.HasExited) {
+                foreach ($spin in $spinner) {
+                    Write-Host -NoNewline "`r$spin"
+                    Start-Sleep -Milliseconds 100
+                }
+            }
+        }
+
+        # Espera o processo terminar enquanto mostra o indicador de progresso
+        Wait-ProcessWithProgress -process $process
+
+        Write-Host "`nDeleting the $fileName installer..."
 
         # Remove o instalador do Git
-        # Remove-Item "$env:TEMP\$outputFileName"
         if (Test-Path "$env:TEMP\$outputFileName") {
             Remove-Item -Path "$env:TEMP\$outputFileName" -Force
-        }        
+        }
+
+        Write-Host "`nDownload and installation completed."
+        # ---------------/Baixar o instalador via BitsTransfer e instalar o Git de forma silenciosa----------------
     }
     # -------------- /Instalação do Git -------------------
 
