@@ -434,9 +434,9 @@ Aqui estão todas as opções em desenvolvimento.
 
 ```bash
 # FORMATAÇÃO REMOTA
-681,266,2696,84 ► Windows 10 Pro 64bits
-681,266,2696,85 ► Windows 10 Pro MSDN 1909
-681,266,2696,86 ► Windows 11 Pro 64bits
+681,266,2696,84 # Windows 10 Pro 64bits
+681,266,2696,85 # Windows 10 Pro MSDN 1909
+681,266,2696,86 # Windows 11 Pro 64bits
 ┬── ┬── ┬─── ┬─
 │   │   │    │
 └───┼───┼────┼───┤ # WinToHDD
