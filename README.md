@@ -428,6 +428,39 @@ Aqui estão todas as opções em desenvolvimento.
     87 = Windows Server 2022
 ```
 
+> ### Rotinas para instalações padrão
+>
+> Aqui você tem algumas rotinas para instalação padrão formulada pelos TI's da GLOBAL TEC Informática.
+
+```bash
+# FORMATAÇÃO REMOTA
+681,266,2696,84 => Windows 10 Pro 64bits
+681,266,2696,85 => Windows 10 Pro MSDN 1909
+681,266,2696,86 => Windows 11 Pro 64bits
+
+# ROTINAS PARA INSTALAÇÃO PADRÃO APÓS FORMATAÇÃO
+Rotina  Descrição
+-------------------------------------------------
+27      Criar atalhos para 'Desligar e Reiniciar'
+2692    Editar Configurações do Plano
+2695    Configurações do Windows
+72      Microsoft Office 2019 a 2021
+74      Criar atalhos para Apps do Office 2021
+698     Windows Update Activation
+5       Execução de Comandos no PowerShell
+32      Navegador Microsoft Edge
+37      Navegador Mozilla Firefox
+33      Navegador Google Chrome
+621     WinRAR
+641     VLC Media Player
+631     Acrobat Reader DC
+692     Limpar Arquivos Temporários
+-------------------------------------------------
+27,2692,2695,72,74,698,5,32,37,33,621,641,631,692
+```
+
+---
+
 # Rascunho para novos itens
 
 Aqui você pode editar o arquivo caso necessário, adicionando mais recursos.
