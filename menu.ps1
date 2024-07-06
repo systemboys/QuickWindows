@@ -227,7 +227,8 @@ if ($gitInstalled) {
             param (
                 [int]$delay = 100
             )
-            $spinner = @('-','\','|','/')
+            # $spinner = @('-','\','|','/')
+            $spinner = @('.   \', ' .  |', '  . /', '   .-')
             while ($true) {
                 foreach ($spin in $spinner) {
                     Write-Host -NoNewline "`r$spin"
@@ -249,7 +250,8 @@ if ($gitInstalled) {
             param (
                 [System.Diagnostics.Process]$process
             )
-            $spinner = @('-','\','|','/')
+            # $spinner = @('-','\','|','/')
+            $spinner = @('.   \', ' .  |', '  . /', '   .-')
             while (-not $process.HasExited) {
                 foreach ($spin in $spinner) {
                     Write-Host -NoNewline "`r$spin"
