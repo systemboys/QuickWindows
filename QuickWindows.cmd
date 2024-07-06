@@ -204,6 +204,9 @@
 ::   - Corrigido a remoção do instalador do Git no diretório Temp.
 :: v1.62.89 2024-07-05 às 19h07, Marcos Aurélio:
 ::   - Baixar o instalador via BitsTransfer e instalar o Git de forma silenciosa
+:: v1.62.90 2024-07-06 às 12h50, Marcos Aurélio:
+::   - Linha de comando para executar o gerenciador de tarefas do Windows para monitorar
+::     o desempenho do download.
 ::
 :: Licença: GPL.
 
