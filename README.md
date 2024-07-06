@@ -455,7 +455,7 @@ Aqui estão todas as opções em desenvolvimento.
              └───┤ # Sistemas Operacionais Microsoft…
                  │ Essa rotina, indica qual das ISOs será baixada.
                  │ O técnico informará para que possa ser baixada
-                 │ na unidade D:\ por exemplo.
+                 │ na unidade "D:\_Support_" por exemplo.
 
 # ROTINAS PARA INSTALAÇÃO PADRÃO APÓS FORMATAÇÃO
 Rotina  Descrição
