@@ -16,6 +16,8 @@
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 # v1.1.2 2024-06-16 às 23h05, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+# v1.1.3 2024-07-06 às 12h17, Marcos Aurélio:
+#   - Correção das linhas que apagam o arquivo após a execução.
 #
 # Licença: GPL.
 
@@ -68,7 +70,9 @@ if (Test-Path $directory) {
     Start-Process -FilePath "$downloadPath" -Wait
 
     # Apagar o arquivo
-    Remove-Item -Path $downloadPath -Force
+    if (Test-Path "$env:TEMP\$downloadPath") {
+        Remove-Item -Path "$env:TEMP\$downloadPath" -Force
+    }
 }
 
 Write-Host "Press any key to continue..."

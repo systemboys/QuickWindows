@@ -207,6 +207,8 @@
 :: v1.62.90 2024-07-06 às 12h50, Marcos Aurélio:
 ::   - Linha de comando para executar o gerenciador de tarefas do Windows para monitorar
 ::     o desempenho do download.
+:: v1.62.91 2024-07-06 às 13h19, Marcos Aurélio:
+::   - Correção das linhas que apagam os instaladores do Office.
 ::
 :: Licença: GPL.
 
