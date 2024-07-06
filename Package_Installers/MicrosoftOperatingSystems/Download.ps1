@@ -17,6 +17,9 @@
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 # v1.2.1 2024-06-16 às 23h10, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+# v1.2.2 2024-07-06 às 12h50, Marcos Aurélio:
+#   - Linha de comando para executar o gerenciador de tarefas do Windows para monitorar
+#     o desempenho do download.
 #
 # Licença: GPL.
 
@@ -99,6 +102,9 @@ if (-not $destination) {
     Write-Host "Destination is mandatory. Please provide the destination path."
     exit
 }
+
+# Executar o gerenciador de tarefas do Windows para monitorar o desempenho do download
+start taskmgr
 
 # Iniciando o download em uma nova janela do PowerShell
 Write-Host "Starting the download in a new window..."
