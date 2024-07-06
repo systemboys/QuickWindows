@@ -2,7 +2,7 @@
 
 > **( ! )** Esse menu ainda está em desenvolvimento!
 
-![Menu de instalações de pacotes Windows](./Images/QuickWindows.png "Menu de instalações de pacotes Windows")
+[![Menu de instalações de pacotes Windows](./Images/QuickWindows.png "Menu de instalações de pacotes Windows")](#rotinas-para-instala%C3%A7%C3%B5es-padr%C3%A3o "Clique para ver as rotinas padrão!")
 
 **Descrição do Menu Interativo QuickWindows**
 
