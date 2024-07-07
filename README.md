@@ -834,7 +834,9 @@ if (Test-Path $directory) {
     Start-Process -FilePath "$downloadPath" -Wait
 
     # Apagar o arquivo
-    Remove-Item -Path $downloadPath -Force
+    if (Test-Path "$env:TEMP\$downloadPath") {
+        Remove-Item -Path "$env:TEMP\$downloadPath" -Force
+    }
 }
 
 # ---------------------[/Conteúdo do script acima]---------------------------
