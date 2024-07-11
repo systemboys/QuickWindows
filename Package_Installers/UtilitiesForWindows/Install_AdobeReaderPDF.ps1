@@ -20,6 +20,8 @@
 #   - A linha a qual remove o arquivo de instalação do Adobe Reader foi comentada, não é
 #     necessário apagá-lo por que o próprio instalador após instalação do Adobe Reader o
 #     apaga.
+# v1.1.4 2024-07-11 às 00h46, Marcos Aurélio:
+#   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 #
 # Licença: GPL.
 
@@ -83,7 +85,9 @@ if (Test-Path $directory) {
     Start-Process -FilePath "$downloadPath" -Wait
 
     # Apagar o arquivo
-    # Remove-Item -Path $downloadPath -Force
+    if (Test-Path "$env:TEMP\$downloadPath") {
+        Remove-Item -Path "$env:TEMP\$downloadPath" -Force
+    }
 }
 
 Write-Host "Press any key to continue..."

@@ -209,6 +209,8 @@
 ::     o desempenho do download.
 :: v1.62.91 2024-07-06 às 13h19, Marcos Aurélio:
 ::   - Correção das linhas que apagam os instaladores do Office.
+:: v1.62.92 2024-07-11 às 01h04, Marcos Aurélio:
+::   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 ::
 :: Licença: GPL.
 
