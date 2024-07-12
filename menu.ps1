@@ -281,7 +281,7 @@ if ($gitInstalled) {
     Write-Host "Press any key to continue..."
     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
     Executar o atalho do Quick Windows no Desktop
-    exit
+    return
 }
 # Fim da verificação do caminho padrão de instalação do Git em outras versões do Windows
 
