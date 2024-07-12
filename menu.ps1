@@ -33,6 +33,8 @@
 #   - Corrigido a remoção do instalador do Git no diretório Temp.
 # v1.2.10 2024-07-05 às 19h07, Marcos Aurélio:
 #   - Baixar o instalador via BitsTransfer e instalar o Git de forma silenciosa
+# v1.2.11 2024-07-12 às 17h21, Marcos Aurélio:
+#   - Melhorando a instalação do Git, eliminando o método com winget e deixando apenas o método de baixar e executar o instalador.
 #
 # Licença: GPL.
 
@@ -180,80 +182,74 @@ if ($gitInstalled) {
 } else {
     Write-Host "Git is not installed."
     # -------------- Instalação do Git -------------------
-    # Verifica se o winget está instalado
-    if (Get-Command winget -ErrorAction SilentlyContinue) {
-        # Inicia a instalação do Git em um job
-        $job = Start-Job -ScriptBlock {
-            winget install --id Git.Git -e --source winget --silent
-        }
-        
-        # Define os símbolos para o indicador de progresso
-        # $symbols = @('\', '|', '/', '-')
-        $symbols = @('.   \', ' .  |', '  . /', '   .-')
-        $index = 0
-    
-        # Loop para exibir o indicador de progresso enquanto a instalação está em andamento
-        while ($job.State -eq 'Running') {
-            Write-Host -NoNewline ("`rInstalling Git" + $symbols[$index])
-            Start-Sleep -Milliseconds 200
-            $index = ($index + 1) % $symbols.Count
-        }
-    
-        # Espera o job terminar
-        Wait-Job $job
-    
-        # Verifica o resultado do job
-        $jobResult = Receive-Job $job
-        if ($jobResult -eq $null) {
-            Write-Host "`rGit foi instalado com sucesso!"
-        } else {
-            Write-Host "`rOcorreu um erro durante a instalação do Git."
-        }
-    
-        # Remove o job
-        Remove-Job $job
-    } else {
-        # ---------------Baixar o instalador via BitsTransfer e instalar o Git de forma silenciosa----------------
+    # Verifica se o Git já está instalado
+    if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
         # Definição do arquivo
         $fileName = "Git"
         $fileUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/VersionControlSoftware/Git_Setup.exe"
         $outputFileName = "Git_Setup.exe"
+        $destinationPath = "$env:TEMP\$outputFileName"
 
-        Write-Host "$fileName does not exist on Windows! Downloading the installer..."
+        Write-Host "$fileName doesn't exist on Windows! Downloading the installer..."
         Write-Host "File size: 58.4 MB"
+
+        # Define os símbolos para o indicador de progresso
+        $symbols = @('.   \', ' .  |', '  . /', '   .-')
+        $index = 0
 
         # Função para mostrar o indicador de progresso
         function Show-Progress {
             param (
                 [int]$delay = 100
             )
-            # $spinner = @('-','\','|','/')
-            $spinner = @('.   \', ' .  |', '  . /', '   .-')
             while ($true) {
-                foreach ($spin in $spinner) {
+                foreach ($spin in $symbols) {
                     Write-Host -NoNewline "`r$spin"
                     Start-Sleep -Milliseconds $delay
                 }
             }
         }
 
-        # Baixa o instalador do Git
-        Start-BitsTransfer -Source $fileUrl -Destination "$env:TEMP\$outputFileName"
+        # Inicia o download do instalador do Git em um job
+        $job = Start-Job -ScriptBlock {
+            param ($fileUrl, $destinationPath)
+            Start-BitsTransfer -Source $fileUrl -Destination $destinationPath
+        } -ArgumentList $fileUrl, $destinationPath
+
+        # Loop para exibir o indicador de progresso enquanto o download está em andamento
+        while ($job.State -eq 'Running') {
+            Write-Host -NoNewline ("`rDownloading Git" + $symbols[$index])
+            Start-Sleep -Milliseconds 200
+            $index = ($index + 1) % $symbols.Count
+        }
+
+        # Espera o job terminar
+        Wait-Job $job
+
+        # Verifica o resultado do job
+        $jobResult = Receive-Job $job
+        if ($jobResult -eq $null) {
+            Write-Host "`rDownload completed successfully!"
+        } else {
+            Write-Host "`rAn error occurred while downloading Git."
+            $jobResult
+        }
+
+        # Remove o job
+        Remove-Job $job
 
         Write-Host "`nRunning the $fileName installer..."
 
         # Instala o Git de forma silenciosa
-        $process = Start-Process -FilePath "$env:TEMP\$outputFileName" -ArgumentList "/VERYSILENT" -NoNewWindow -PassThru
+        $process = Start-Process -FilePath $destinationPath -ArgumentList "/VERYSILENT" -NoNewWindow -PassThru
 
         # Função para aguardar o processo com indicador de progresso
         function Wait-ProcessWithProgress {
             param (
                 [System.Diagnostics.Process]$process
             )
-            # $spinner = @('-','\','|','/')
-            $spinner = @('.   \', ' .  |', '  . /', '   .-')
             while (-not $process.HasExited) {
-                foreach ($spin in $spinner) {
+                foreach ($spin in $symbols) {
                     Write-Host -NoNewline "`r$spin"
                     Start-Sleep -Milliseconds 100
                 }
@@ -266,12 +262,13 @@ if ($gitInstalled) {
         Write-Host "`nDeleting the $fileName installer..."
 
         # Remove o instalador do Git
-        if (Test-Path "$env:TEMP\$outputFileName") {
-            Remove-Item -Path "$env:TEMP\$outputFileName" -Force
+        if (Test-Path $destinationPath) {
+            Remove-Item -Path $destinationPath -Force
         }
 
-        Write-Host "`nDownload and installation completed."
-        # ---------------/Baixar o instalador via BitsTransfer e instalar o Git de forma silenciosa----------------
+        Write-Host "`nDownload e instalação concluídos."
+    } else {
+        Write-Host "Git is already installed."
     }
     # -------------- /Instalação do Git -------------------
 
