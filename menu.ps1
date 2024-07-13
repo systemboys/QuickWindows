@@ -83,6 +83,7 @@ if (Test-Path $filePath) {
     try {
         Invoke-WebRequest -Uri $url -OutFile $filePath
         Write-Host "File downloaded successfully."
+        Import-Module $filePath -ErrorAction Stop
     } catch {
         Write-Host "An error occurred while downloading the file: $_"
     }
