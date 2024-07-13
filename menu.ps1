@@ -327,7 +327,7 @@ if ($gitInstalled) {
         Write-Host "Log created in: $logPath"
         clear
 
-        Write-Host "`nDownload e instalação concluídos."
+        Write-Host "`nDownload and installation completed."
     } else {
         Write-Host "Git is already installed."
     }
