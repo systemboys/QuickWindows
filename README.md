@@ -170,6 +170,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  ├─ RunPowerShellCommands.ps1
 │  └─ RunRoutines.ps1
 ├─ config.json
+├─ functions.ps1
 ├─ QuickWindows.cmd
 ├─ README.md
 └─ menu.ps1

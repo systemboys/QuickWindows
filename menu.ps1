@@ -96,6 +96,7 @@ $fileName = "QWLog.txt"
 $message = "QuickWindows iniciado, foi dado o comando para execução."
 $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
 Write-Host "Log created in: $logPath"
+clear
 
 # Se o AnyDesk não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files (x86)"
@@ -123,6 +124,7 @@ if (Test-Path $directory) {
         $message = "O usuário confirmou o download e a execução do AnyDesk."
         $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
         Write-Host "Log created in: $logPath"
+        clear
     }
 } else {
     Add-Type -AssemblyName PresentationFramework
@@ -155,6 +157,7 @@ if (Test-Path $directory) {
         $message = "O usuário confirmou a execução do AnyDesk."
         $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
         Write-Host "Log created in: $logPath"
+        clear
     }
 }
 
@@ -315,6 +318,14 @@ if ($gitInstalled) {
         if (Test-Path $destinationPath) {
             Remove-Item -Path $destinationPath -Force
         }
+
+        # Executar função que cria logs do sistema
+        $address = $fullPath
+        $fileName = "QWLog.txt"
+        $message = "O Git foi instalado com sucesso."
+        $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
+        Write-Host "Log created in: $logPath"
+        clear
 
         Write-Host "`nDownload e instalação concluídos."
     } else {
