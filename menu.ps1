@@ -56,9 +56,45 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 # Ativar a execução de scripts no PowerShell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
-# ------------------------- Importação de algumas funções --------------------------
-. .\functions.ps1
-# ------------------------ /Importação de algumas funções ---------------------------
+# Define o nome do diretório utilizado pelo QuickWindows
+$dirName = "GTiSupport"
+
+# Define o caminho completo do diretório utilizado pelo QuickWindows
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+
+# ------------------------- Função que cria logs do sistema --------------------------
+# Definindo o caminho do arquivo
+$filePath = ".\functions.ps1"
+
+# Verificando se o arquivo já existe
+if (Test-Path $filePath) {
+    Write-Host "The file already exists!"
+    try {
+        Import-Module $filePath -ErrorAction Stop
+        Write-Host "File imported successfully."
+    } catch {
+        Write-Host "An error occurred while importing the file: $_"
+    }
+} else {
+    # URL do arquivo para download
+    $url = "https://raw.githubusercontent.com/systemboys/QuickWindows/main/functions.ps1"
+
+    # Baixando o arquivo
+    try {
+        Invoke-WebRequest -Uri $url -OutFile $filePath
+        Write-Host "File downloaded successfully."
+    } catch {
+        Write-Host "An error occurred while downloading the file: $_"
+    }
+}
+# ------------------------ /Função que cria logs do sistema ---------------------------
+
+# Executar função que cria logs do sistema
+$address = $fullPath
+$fileName = "QWLog.txt"
+$message = "QuickWindows iniciado, foi dado o comando para execução."
+$logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
+Write-Host "Log created in: $logPath"
 
 # Se o AnyDesk não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files (x86)"
@@ -80,6 +116,12 @@ if (Test-Path $directory) {
     if ($response -eq "Yes") {
         # Executa o AnyDesk
         Start-Process -FilePath "$env:SystemDrive\Program Files (x86)\AnyDesk\AnyDesk.exe"
+        # Executar função que cria logs do sistema
+        $address = $fullPath
+        $fileName = "QWLog.txt"
+        $message = "O usuário confirmou o download e a execução do AnyDesk."
+        $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
+        Write-Host "Log created in: $logPath"
     }
 } else {
     Add-Type -AssemblyName PresentationFramework
@@ -105,18 +147,19 @@ if (Test-Path $directory) {
 
         # Apagar o arquivo
         Remove-Item -Path $downloadPath -Force
+
+        # Executar função que cria logs do sistema
+        $address = $fullPath
+        $fileName = "QWLog.txt"
+        $message = "O usuário confirmou a execução do AnyDesk."
+        $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
+        Write-Host "Log created in: $logPath"
     }
 }
 
 # ------------------ Ícone na Área de trabalho ---------------------------
 
 # --- Criar diretório em ambiente de usuário ---
-# Define o nome do diretório
-$dirName = "GTiSupport"
-
-# Define o caminho completo do diretório
-$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
-
 # Cria o diretório se ele não existir
 if(!(Test-Path -Path $fullPath))
 {
@@ -128,15 +171,6 @@ else
     Write-Host "'$dirName' directory already exists in '$env:USERPROFILE'"
 }
 # --- /Criar diretório em ambiente de usuário ---
-
-# ------------------------ Executar função que cria logs -----------------------------
-# Criar log
-$address = $fullPath
-$fileName = "QWLog.txt"
-$message = "Hello World!"
-$logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-$logPath
-# ----------------------- /Executar função que cria logs ------------------------------
 
 # Comando a ser executado
 $command = "irm qw.gti1.com.br/menu.ps1 | iex"

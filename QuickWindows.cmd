@@ -213,6 +213,8 @@
 ::   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 :: v1.62.93 2024-07-12 às 17h21, Marcos Aurélio:
 ::   - Melhorando a instalação do Git, eliminando o método com winget e deixando apenas o método de baixar e executar o instalador.
+:: v1.63.93 2024-07-12 às 23h40, Marcos Aurélio:
+::   - Incrementação da função que cria cria e registra logs do sistema.
 ::
 :: Licença: GPL.
 
