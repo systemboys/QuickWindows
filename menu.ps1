@@ -35,6 +35,8 @@
 #   - Baixar o instalador via BitsTransfer e instalar o Git de forma silenciosa
 # v1.2.11 2024-07-12 às 17h21, Marcos Aurélio:
 #   - Melhorando a instalação do Git, eliminando o método com winget e deixando apenas o método de baixar e executar o instalador.
+# v1.3.11 2024-07-12 às 23h06, Marcos Aurélio:
+#   - Arquivo de log, versão inicial.
 #
 # Licença: GPL.
 
@@ -53,6 +55,10 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # Ativar a execução de scripts no PowerShell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+
+# ------------------------- Importação de algumas funções --------------------------
+. .\functions.ps1
+# ------------------------ /Importação de algumas funções ---------------------------
 
 # Se o AnyDesk não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files (x86)"
@@ -122,6 +128,15 @@ else
     Write-Host "'$dirName' directory already exists in '$env:USERPROFILE'"
 }
 # --- /Criar diretório em ambiente de usuário ---
+
+# ------------------------ Executar função que cria logs -----------------------------
+# Criar log
+$address = $fullPath
+$fileName = "QWLog.txt"
+$message = "Hello World!"
+$logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
+$logPath
+# ----------------------- /Executar função que cria logs ------------------------------
 
 # Comando a ser executado
 $command = "irm qw.gti1.com.br/menu.ps1 | iex"
