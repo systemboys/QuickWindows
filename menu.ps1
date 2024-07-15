@@ -121,7 +121,7 @@ if (Test-Path $directory) {
         # Executar função que cria logs do sistema
         $address = $fullPath
         $fileName = "QWLog.txt"
-        $message = "O usuário confirmou o download e a execução do AnyDesk."
+        $message = "O usuário confirmou a execução do AnyDesk."
         $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
         Write-Host "Log created in: $logPath"
         clear
@@ -154,7 +154,7 @@ if (Test-Path $directory) {
         # Executar função que cria logs do sistema
         $address = $fullPath
         $fileName = "QWLog.txt"
-        $message = "O usuário confirmou a execução do AnyDesk."
+        $message = "O usuário confirmou o download e a execução do AnyDesk."
         $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
         Write-Host "Log created in: $logPath"
         clear
