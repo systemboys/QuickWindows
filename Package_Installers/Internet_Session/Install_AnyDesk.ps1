@@ -41,11 +41,11 @@ $configData = Get-Content -Path $configPath | ConvertFrom-Json
 
 # Funções
 # Tenta encontrar o arquivo functions.ps1 na pasta raiz
-$functionPath "./functions.ps1"
+$functionPath ".\functions.ps1"
 # Verifica se o arquivo existe no caminho atual
 if (-not (Test-Path $functionPath)) {
     # Se não existir, tenta o caminho relativo
-    $functionPath = "../../functions.json"
+    $functionPath = "..\..\functions.json"
 }
 # Importa as funções do arquivo encontrado
 Import-Module $functionPath -ErrorAction Stop
