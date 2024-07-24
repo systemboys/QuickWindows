@@ -35,7 +35,7 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # Se o Open Hardware Monitor não estiver instalado, faz o download e instala
 $programFiles = "$env:temp"
-$directory = "$programFiles\MiniTool-Partition-Wizard-v12-64bit-portable"
+$directory = "$programFiles\OpenHardwareMonitor"
 
 if (Test-Path $directory) {
     Write-Host "Open Hardware Monitor is installed!"
@@ -65,17 +65,17 @@ if (Test-Path $directory) {
     Expand-Archive -Path $downloadPath -DestinationPath $extractPath
 
     # Definir o caminho do arquivo exe dentro do diretório descompactado
-    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\MiniTool-Partition-Wizard-v12-64bit-portable\partitionwizard.exe"
+    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\OpenHardwareMonitor\OpenHardwareMonitor.exe"
     # /Extrair o arquivo compactado (.zip)
     
     # Executar o MiniTool Partition Wizard
-    Start-Process -FilePath "$extractPath\MiniTool-Partition-Wizard-v12-64bit-portable\partitionwizard.exe" -Wait
+    Start-Process -FilePath "$extractPath\OpenHardwareMonitor\OpenHardwareMonitor.exe" -Wait
 
     # Apagar o arquivo e o diretório
     if (Test-Path "$env:TEMP\$downloadPath") {
         Remove-Item -Path "$env:TEMP\$downloadPath" -Force
     }
-    Remove-Item -Path "$extractPath\MiniTool-Partition-Wizard-v12-64bit-portable" -Recurse -Force
+    Remove-Item -Path "$extractPath\OpenHardwareMonitor" -Recurse -Force
 }
 
 Write-Host "Press any key to continue..."
