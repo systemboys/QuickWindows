@@ -149,6 +149,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Run_CrystalDiskInfo_Portable.ps1
 │  │  ├─ Run_MiniToolPartitionWizard32bitPortable.ps1
 │  │  ├─ Run_MiniToolPartitionWizard64bitPortable.ps1
+│  │  ├─ Run_OpenHardwareMonitor.ps1
 │  │  ├─ Run_RevoUninstallerPortable.ps1
 │  │  ├─ Run_SiberiaProg-CH341A_Portable.ps1
 │  │  ├─ SystemFreezeSoftware.cmd
@@ -293,6 +294,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Battery Report
     - [x] SiberiaProg-CH341A
     - [x] SiberiaProg-CH341A Portable
+    - [x] Open Hardware Monitor
 
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
@@ -414,6 +416,7 @@ Aqui estão todas as opções em desenvolvimento.
             6992 = Battery Report
             6993 = SiberiaProg-CH341A
             6994 = SiberiaProg-CH341A Portable
+            6995 = Open Hardware Monitor
 7 = Softwares para Escritório…
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021

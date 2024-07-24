@@ -32,6 +32,8 @@
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 # v1.10.2 2024-06-27 às 23h34, Marcos Aurélio:
 #   - Os recursos do Windows agora serão executados por um arquivo .ps1.
+# v1.11.2 2024-07-24 às 00h11, Marcos Aurélio:
+#   - Opção para baixar e executar o Open Hardware Monitor.
 #
 # Licença: GPL.
 
@@ -160,6 +162,7 @@ Write-Host "            6991 = Revo Uninstaller Portable                        
 Write-Host "            6992 = Battery Report                                                       [  ok  ]" -ForegroundColor Green
 Write-Host "            6993 = SiberiaProg-CH341A                                                   [  ok  ]" -ForegroundColor Green
 Write-Host "            6994 = SiberiaProg-CH341A Portable                                          [  ok  ]" -ForegroundColor Green
+Write-Host "            6995 = Open Hardware Monitor                                                [  ok  ]" -ForegroundColor Green
 Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "7 = Softwares para Escritorio...                                                        [ null ]" -ForegroundColor Red
 Write-Host "    71 = Microsoft Office 2016 a 2019                                                   [  ok  ]" -ForegroundColor Green
@@ -271,6 +274,7 @@ $Files = @{
                 "6992" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_BatteryReport.ps1" # Battery Report
                 "6993" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_SiberiaProg-CH341A.ps1" # SiberiaProg-CH341A
                 "6994" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_SiberiaProg-CH341A_Portable.ps1" # SiberiaProg-CH341A Portable
+                "6995" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_OpenHardwareMonitor.ps1" # Open Hardware Monitor
     # "7" = "" # Softwares para Escritório…
         "71" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2016_to_2019.ps1" # Microsoft Office 2016 a 2019
         "72" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2019_to_2021.ps1" # Microsoft Office 2019 a 2021

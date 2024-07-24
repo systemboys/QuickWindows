@@ -215,6 +215,8 @@
 ::   - Melhorando a instalação do Git, eliminando o método com winget e deixando apenas o método de baixar e executar o instalador.
 :: v1.63.93 2024-07-12 às 23h40, Marcos Aurélio:
 ::   - Incrementação da função que cria cria e registra logs do sistema.
+:: v1.64.93 2024-07-24 às 00h10, Marcos Aurélio:
+::   - Opção para baixar e executar o Open Hardware Monitor na sessão Utilitários para Windows.
 ::
 :: Licença: GPL.
 
