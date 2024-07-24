@@ -66,11 +66,11 @@ if (Test-Path $directory) {
     # Verifica se o sistema operacional é Windows 10 ou 11
     if ($osVersion -like "10.*") {
         Write-Host "File size: 1.6 MB"
-        $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/readerdc64_br_xa_mdr_install_win10_64bits.exe"
+        $downloadUrl = "https://1drv.ms/u/s!AijDX6h8vVT-i5UUsbdWAULANDQ49w?e=D91Ehh"
         $downloadPath = "$env:temp\readerdc64_br_xa_mdr_install_win10_64bits.exe"
     } elseif ($osVersion -like "11.*") {
         Write-Host "File size: 1.3 MB"
-        $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/readerdc64_br_xa_mdr_install_win11_64bits.exe"
+        $downloadUrl = "https://1drv.ms/u/s!AijDX6h8vVT-i5UT13rvFA_1pPZ_eA?e=WnTHHz"
         $downloadPath = "$env:temp\readerdc64_br_xa_mdr_install_win11_64bits.exe"
     } else {
         Write-Host "The operating system is not Windows 10 or 11."
