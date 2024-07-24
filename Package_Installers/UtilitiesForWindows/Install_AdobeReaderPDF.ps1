@@ -51,8 +51,8 @@ $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # Se o Adobe Reader não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files\Adobe\Acrobat DC"
-$directory = "$programFiles\Acrobat"
+$programFiles = "$env:SystemDrive\Program Files (x86)\Adobe\Acrobat Reader DC"
+$directory = "$programFiles\Reader"
 
 if (Test-Path $directory) {
     Write-Host "Adobe Reader is installed!"
