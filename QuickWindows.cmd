@@ -219,6 +219,8 @@
 ::   - Opção para baixar e executar o Open Hardware Monitor na sessão Utilitários para Windows.
 :: v1.64.94 2024-07-24 às 01h48, Marcos Aurélio:
 ::   - Ajuste para finalização dos Processos do Adobe no PowerShell para Continuação de Scripts.
+:: v1.64.94 2024-07-24 às 02h13, Marcos Aurélio:
+::   - Atualização do arquivo de instalação do Adobe da versão do Windows 10.
 ::
 :: Licença: GPL.
 

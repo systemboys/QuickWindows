@@ -24,6 +24,8 @@
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 # v1.1.5 2024-07-24 às 01h47, Marcos Aurélio:
 #   - Ajuste para finalização dos Processos do Adobe no PowerShell para Continuação de Scripts.
+# v1.1.5 2024-07-24 às 01h47, Marcos Aurélio:
+#   - Atualização do arquivo de instalação do Adobe da versão do Windows 10.
 #
 # Licença: GPL.
 
@@ -56,7 +58,6 @@ if (Test-Path $directory) {
     Write-Host "Adobe Reader is installed!"
 } else {
     Write-Host "Adobe Reader is not installed! Starting installation process."
-    Write-Host "File size: 1.2 MB"
 
     # Link do download e o diretório Temp
     # Verifica a versão do sistema operacional
@@ -64,9 +65,11 @@ if (Test-Path $directory) {
 
     # Verifica se o sistema operacional é Windows 10 ou 11
     if ($osVersion -like "10.*") {
+        Write-Host "File size: 1.6 MB"
         $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/readerdc64_br_xa_mdr_install_win10_64bits.exe"
         $downloadPath = "$env:temp\readerdc64_br_xa_mdr_install_win10_64bits.exe"
     } elseif ($osVersion -like "11.*") {
+        Write-Host "File size: 1.3 MB"
         $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/readerdc64_br_xa_mdr_install_win11_64bits.exe"
         $downloadPath = "$env:temp\readerdc64_br_xa_mdr_install_win11_64bits.exe"
     } else {
@@ -91,9 +94,13 @@ if (Test-Path $directory) {
         Remove-Item -Path "$env:TEMP\$downloadPath" -Force
     }
 
-    # ------------------Test----------------------
     # Array com os nomes dos processos que deseja finalizar
-    $processNames = @("AcroRd32", "AdobeARM")
+    $processNames = @(
+        "AcroRd32",
+        "AdobeARM",
+        "Acrobat",
+        "armsvc"
+    )
 
     # Loop para finalizar cada processo do array
     foreach ($processName in $processNames) {
@@ -102,7 +109,6 @@ if (Test-Path $directory) {
 
     # Coloque aqui os comandos que você deseja executar após finalizar os processos
     Write-Host "Processes completed. Continuing with the rest of the script..."
-    # ------------------/Test---------------------
 }
 
 Write-Host "Press any key to continue..."
