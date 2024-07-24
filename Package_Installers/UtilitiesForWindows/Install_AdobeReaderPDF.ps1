@@ -67,11 +67,11 @@ if (Test-Path $directory) {
     if ($osVersion -like "10.*") {
         Write-Host "File size: 1.6 MB"
         $downloadUrl = "https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2400220759/AcroRdrDC2400220759_pt_BR.exe"
-        $downloadPath = "$env:temp\readerdc64_br_xa_mdr_install_win10_64bits.exe"
+        $downloadPath = "$env:temp\AcroRdrDC2400220759_pt_BR.exe"
     } elseif ($osVersion -like "11.*") {
         Write-Host "File size: 1.3 MB"
         $downloadUrl = "https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2400220759/AcroRdrDC2400220759_pt_BR.exe"
-        $downloadPath = "$env:temp\readerdc64_br_xa_mdr_install_win11_64bits.exe"
+        $downloadPath = "$env:temp\AcroRdrDC2400220759_pt_BR.exe"
     } else {
         Write-Host "The operating system is not Windows 10 or 11."
     }
