@@ -217,6 +217,8 @@
 ::   - Incrementação da função que cria cria e registra logs do sistema.
 :: v1.64.93 2024-07-24 às 00h10, Marcos Aurélio:
 ::   - Opção para baixar e executar o Open Hardware Monitor na sessão Utilitários para Windows.
+:: v1.64.94 2024-07-24 às 01h48, Marcos Aurélio:
+::   - Ajuste para finalização dos Processos do Adobe no PowerShell para Continuação de Scripts.
 ::
 :: Licença: GPL.
 

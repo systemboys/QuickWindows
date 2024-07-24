@@ -22,6 +22,8 @@
 #     apaga.
 # v1.1.4 2024-07-11 às 00h46, Marcos Aurélio:
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
+# v1.1.5 2024-07-24 às 01h47, Marcos Aurélio:
+#   - Ajuste para finalização dos Processos do Adobe no PowerShell para Continuação de Scripts.
 #
 # Licença: GPL.
 
@@ -88,6 +90,19 @@ if (Test-Path $directory) {
     if (Test-Path "$env:TEMP\$downloadPath") {
         Remove-Item -Path "$env:TEMP\$downloadPath" -Force
     }
+
+    # ------------------Test----------------------
+    # Array com os nomes dos processos que deseja finalizar
+    $processNames = @("AcroRd32", "AdobeARM")
+
+    # Loop para finalizar cada processo do array
+    foreach ($processName in $processNames) {
+        Get-Process -Name $processName -ErrorAction SilentlyContinue | Stop-Process -Force
+    }
+
+    # Coloque aqui os comandos que você deseja executar após finalizar os processos
+    Write-Host "Processes completed. Continuing with the rest of the script..."
+    # ------------------/Test---------------------
 }
 
 Write-Host "Press any key to continue..."
