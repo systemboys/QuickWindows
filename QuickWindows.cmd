@@ -221,6 +221,8 @@
 ::   - Ajuste para finalização dos Processos do Adobe no PowerShell para Continuação de Scripts.
 :: v1.64.94 2024-07-24 às 02h13, Marcos Aurélio:
 ::   - Atualização do arquivo de instalação do Adobe da versão do Windows 10.
+:: v1.64.95 2024-07-24 às 21h50, Marcos Aurélio:
+::   - Correção de um erro no final da instalação do Git, havia uma linha de comentário que não estava comentada "#" no arquivo "menu.ps1".
 ::
 :: Licença: GPL.
 

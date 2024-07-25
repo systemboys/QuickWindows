@@ -37,6 +37,8 @@
 #   - Melhorando a instalação do Git, eliminando o método com winget e deixando apenas o método de baixar e executar o instalador.
 # v1.3.11 2024-07-12 às 23h06, Marcos Aurélio:
 #   - Arquivo de log, versão inicial.
+# v1.3.12 2024-07-24 às 21h48, Marcos Aurélio:
+#   - Correção de um erro no final da instalação do Git, havia uma linha de comentário que não estava comentada "#".
 #
 # Licença: GPL.
 
@@ -61,6 +63,17 @@ $dirName = "GTiSupport"
 
 # Define o caminho completo do diretório utilizado pelo QuickWindows
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+
+# Garantir que o diretório exista
+if (-not (Test-Path -Path $fullPath)) {
+    try {
+        New-Item -Path $fullPath -ItemType Directory -Force
+        Write-Host "Directory created successfully: $fullPath"
+    } catch {
+        Write-Host "An error occurred while creating the directory: $_"
+        exit
+    }
+}
 
 # ------------------------- Função que cria logs do sistema --------------------------
 # Definindo o caminho do arquivo
@@ -341,9 +354,6 @@ if ($gitInstalled) {
     Write-Host
     Write-Host "Press any key to continue..."
     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-    Executar o atalho do Quick Windows no Desktop
-    return
-    break
 }
 # Fim da verificação do caminho padrão de instalação do Git em outras versões do Windows
 
