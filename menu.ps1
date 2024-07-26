@@ -39,6 +39,8 @@
 #   - Arquivo de log, versão inicial.
 # v1.3.12 2024-07-24 às 21h48, Marcos Aurélio:
 #   - Correção de um erro no final da instalação do Git, havia uma linha de comentário que não estava comentada "#".
+# v1.3.13 2024-07-26 às 18h46, Marcos Aurélio:
+#   - Função para simular a exibição de uma linha com o status 'OK'.
 #
 # Licença: GPL.
 
@@ -387,6 +389,63 @@ if (Test-Path $filePath) {
     Set-Location -Path $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; Set-Location -Path .\QuickWindows\
 }
 # ------------------ /Verifique se o QuickWindows existe -----------------------------
+
+# ------------------Simulação de carregamento de recursos-----------------------------
+# Função para simular a inicialização do Linux
+function Simulate-LinuxBoot {
+    # Função para simular a exibição de uma linha com o status "OK"
+    function Show-LoadingLine {
+        param (
+            [string]$message
+        )
+        Write-Host "[ " -NoNewline
+        Write-Host "OK" -NoNewline -ForegroundColor Green
+        Write-Host " ] $message"
+        $sleepTime = Get-Random -InputObject @(100, 250, 500)
+        Start-Sleep -Milliseconds $sleepTime
+    }
+
+    # Mensagens para exibir
+    $messages = @(
+        "Started LSB: Record successful boot for GRUB.",
+        "Reached target Host and Network Name Lookups.",
+        "Started Thermal Daemon Service.",
+        "Started WPA supplicant.",
+        "Finished Remove Stale Online ext4 Metadata Check Snapshots.",
+        "Started Network Manager.",
+        "Started Avahi mDNS/DNS-SD Stack.",
+        "Started Switcheroo Control Proxy service.",
+        "Reached target Network.",
+        "Starting Network Manager Wait Online...",
+        "Started Make remote CUPS printers available locally.",
+        "Starting OpenVPN service...",
+        "Started Service for snap application... canonical-livepatch.",
+        "Started Dispatcher daemon for systemd-networkd.",
+        "Finished Permit User Sessions.",
+        "Starting GNOME Display Manager...",
+        "Starting Hold until boot process finishes up...",
+        "Started Authorization Manager.",
+        "Starting Modem Manager...",
+        "Finished Set console scheme.",
+        "Started GNOME Display Manager.",
+        "Started Accounts Service.",
+        "Started Disk Manager.",
+        "Started Login Service.",
+        "Started User Manager for UID 1000..."
+    )
+
+    # Exibir cada mensagem
+    foreach ($msg in $messages) {
+        Show-LoadingLine -message $msg
+    }
+
+    # Indicar fim da animação
+    Write-Host "Initialization complete."
+}
+
+# Executar a função de simulação de carregamento
+Simulate-LinuxBoot
+# ------------------/Simulação de carregamento de recursos----------------------------
 
 # Inicia o PowerShell em modo Administrador com o comando desejado
 Start-Process -FilePath "powershell.exe" -Verb runAs -ArgumentList "-Command", "& {$env:TEMP\QuickWindows\QuickWindows.cmd 0}"

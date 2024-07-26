@@ -223,6 +223,8 @@
 ::   - Atualização do arquivo de instalação do Adobe da versão do Windows 10.
 :: v1.64.95 2024-07-24 às 21h50, Marcos Aurélio:
 ::   - Correção de um erro no final da instalação do Git, havia uma linha de comentário que não estava comentada "#" no arquivo "menu.ps1".
+:: v1.64.96 2024-07-26 às 18h47, Marcos Aurélio:
+::   - Função para simular a exibição de uma linha com o status 'OK' no arquivo de instalação do QuickWindows (menu.ps1).
 ::
 :: Licença: GPL.
 
