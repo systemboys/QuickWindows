@@ -354,8 +354,8 @@ if ($gitInstalled) {
     Write-Host
     Write-Host "There is a GTi Support shortcut on the Desktop!"
     Write-Host
-    Write-Host "Press any key to continue..."
-    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+    # Write-Host "Press any key to continue..."
+    # $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 }
 # Fim da verificação do caminho padrão de instalação do Git em outras versões do Windows
 
@@ -368,25 +368,22 @@ if (Test-Path $filePath) {
     Set-Location -Path "$env:TEMP\QuickWindows"
 } else {
     # -------- Verificar se o arquivo "QuickWindows.cmd" existe, se não existir, apagar o diretório "QquicoWindows" ----------
-    # Define o caminho do diretório e do arquivo
-    $dirPath = "$env:TEMP\QuickWindows"
-    $filePath = "$dirPath\QuickWindows.cmd"
+    # Verifica se o QuickWindows existe e tenta removê-lo se não estiver em uso
+    $programFiles = $env:TEMP
+    $dirPath = "$programFiles\QuickWindows"
 
-    # Verifica se o diretório existe
     if (Test-Path $dirPath) {
-        # Se o diretório existe, verifica se o arquivo não existe
-        if (-not (Test-Path $filePath)) {
-            # Se o arquivo não existe, remove o diretório
-            Write-Host "Removing the $dirPath directory..."
-            Remove-Item -Recurse -Force $dirPath
-        }
+        Write-Host "Removing the $dirPath directory..."
+        Remove-Item -Recurse -Force $dirPath -ErrorAction SilentlyContinue
     } else {
         Write-Host "The $dirPath directory does not exist."
-    }
-    # -------- /Verificar se o arquivo "QuickWindows.cmd" existe, se não existir, apagar o diretório "QquicoWindows" ----------
-    Write-Host "Cloning QuickWindows..."
+    }    
+
     # Clonar e executar Windows PowerShell novamente com o comando
-    Set-Location -Path $env:TEMP ; git clone https://github.com/systemboys/QuickWindows.git ; Set-Location -Path .\QuickWindows\
+    Write-Host "Cloning QuickWindows..."
+    Set-Location -Path $env:TEMP
+    git clone https://github.com/systemboys/QuickWindows.git
+    Set-Location -Path .\QuickWindows\
 }
 # ------------------ /Verifique se o QuickWindows existe -----------------------------
 
