@@ -60,11 +60,11 @@ if %ERRORLEVEL% equ 1 (
     cls
     cd ..
     cd ..
-    echo Você selecionou a Opção para atualizar o QuickWindows.
-
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0UpdateQuickWindows.ps1""' -Verb RunAs}"
-
-    exit
+    cd ..
+    rmdir /s /q QuickWindows
+    git clone https://github.com/systemboys/QuickWindows.git
+    cd QuickWindows
+    call QuickWindows.cmd 0
 )
 
 :: Deletar QuickWindows
