@@ -379,11 +379,18 @@ if (Test-Path $filePath) {
         Write-Host "The $dirPath directory does not exist."
     }
 
-    # Clonar e executar Windows PowerShell novamente com o comando
-    Write-Host "Cloning QuickWindows..."
-    Set-Location -Path $env:TEMP
-    git clone https://github.com/systemboys/QuickWindows.git
-    Set-Location -Path .\QuickWindows\
+    # Verifica se o Git está disponível
+    if (Get-Command git -ErrorAction SilentlyContinue) {
+        # Clonar e executar Windows PowerShell novamente com o comando
+        Write-Host "Cloning QuickWindows..."
+        Set-Location -Path $env:TEMP
+        git clone https://github.com/systemboys/QuickWindows.git
+        Set-Location -Path .\QuickWindows\
+    } else {
+        Write-Host "PowerShell needs to be restarted. Press any key to continue and run the shortcut on the Desktop!"
+        $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+        exit
+    }
 }
 # ------------------ /Verifique se o QuickWindows existe -----------------------------
 
