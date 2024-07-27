@@ -46,10 +46,13 @@
 
 clear
 
+# Comando para usar no PowerShell
+$PowerShellCommand = "irm qw.gti1.com.br/menu.ps1 | iex"
+
 # Verifica se o Windows PowerShell está sendo executado como administrador
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Write-Host "This script needs to be run as administrator."
-    Start-Process powershell -Verb RunAs -ArgumentList "-Command irm qw.gti1.com.br/menu.ps1 | iex"
+    Start-Process powershell -Verb RunAs -ArgumentList "-Command $PowerShellCommand"
     exit
 }
 
@@ -192,7 +195,7 @@ else
 # --- /Criar diretório em ambiente de usuário ---
 
 # Comando a ser executado
-$command = "irm qw.gti1.com.br/menu.ps1 | iex"
+$command = $PowerShellCommand
 
 # Caminho do Desktop
 $desktopPath = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::DesktopDirectory)
