@@ -44,8 +44,7 @@ git clone https://github.com/systemboys/QuickWindows.git
 Set-Location -Path "QuickWindows"
 
 # Executa o script QuickWindows.cmd com o argumento 0
-Start-Process -FilePath "QuickWindows.cmd" -ArgumentList "0" -Wait
+Start-Process -FilePath "QuickWindows.cmd" -ArgumentList "0" -Wait exit
 
 # ---------------------[/Conteúdo do script acima]---------------------------
 
-exit
