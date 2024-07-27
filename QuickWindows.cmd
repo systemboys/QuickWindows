@@ -225,6 +225,8 @@
 ::   - Correção de um erro no final da instalação do Git, havia uma linha de comentário que não estava comentada "#" no arquivo "menu.ps1".
 :: v1.64.96 2024-07-26 às 18h47, Marcos Aurélio:
 ::   - Função para simular a exibição de uma linha com o status 'OK' no arquivo de instalação do QuickWindows (menu.ps1).
+:: v1.64.97 2024-07-26 às 21h38, Marcos Aurélio:
+::   - Correção de um bug após instalação do Git no arquivo 'menu.ps1', o PowerShell deve ser reinicializado.
 ::
 :: Licença: GPL.
 

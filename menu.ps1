@@ -41,6 +41,8 @@
 #   - Correção de um erro no final da instalação do Git, havia uma linha de comentário que não estava comentada "#".
 # v1.3.13 2024-07-26 às 18h46, Marcos Aurélio:
 #   - Função para simular a exibição de uma linha com o status 'OK'.
+# v1.3.14 2024-07-26 às 21h37, Marcos Aurélio:
+#   - Correção de um bug após instalação do Git, o PowerShell deve ser reinicializado.
 #
 # Licença: GPL.
 
