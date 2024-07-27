@@ -234,6 +234,9 @@ cls
 
 chcp 65001 > nul
 
+:: Define a largura e a altura da janela do CMD
+mode con: cols=120 lines=30
+
 :: Mudar a cor do plano de fundo
 powershell -command "$Host.UI.RawUI.BackgroundColor = 'Black'"
 cls
