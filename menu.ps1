@@ -377,7 +377,7 @@ if (Test-Path $filePath) {
         Remove-Item -Recurse -Force $dirPath -ErrorAction SilentlyContinue
     } else {
         Write-Host "The $dirPath directory does not exist."
-    }    
+    }
 
     # Clonar e executar Windows PowerShell novamente com o comando
     Write-Host "Cloning QuickWindows..."
