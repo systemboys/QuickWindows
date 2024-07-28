@@ -52,15 +52,15 @@ $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Down
 $validInput = $false
 
 while (-not $validInput) {
-    Write-Host "Enter the URL:"
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o URL:"; Write-Host "Log created in: $logPath"; clear
+    Write-Host "Enter the URL:"
     $url = Read-Host
 
     if (![string]::IsNullOrWhiteSpace($url)) {
         $validInput = $true
     } else {
-        Write-Host "URL is mandatory. Please enter a valid URL."
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "URL é obrigatório. Insira uma URL válida."; Write-Host "Log created in: $logPath"; clear
+        Write-Host "URL is mandatory. Please enter a valid URL."
     }
 }
 
@@ -73,17 +73,17 @@ while (-not $validInput) {
     if (![string]::IsNullOrWhiteSpace($dest)) {
         $validInput = $true
     } else {
-        Write-Host "Destination is mandatory. Please enter a valid destination."
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O destino é obrigatório. Insira um destino válido."; Write-Host "Log created in: $logPath"; clear
+        Write-Host "Destination is mandatory. Please enter a valid destination."
     }
 }
 
-Write-Host "Starting download..."
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando download..."; Write-Host "Log created in: $logPath"; clear
+Write-Host "Starting download..."
 Start-BitsTransfer -Source $url -Destination $dest
 
-Write-Host "Download completed!"
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Transferência concluída!"; Write-Host "Log created in: $logPath"; clear
+Write-Host "Download completed!"
 
 # Emitir Sequência de Beeps
 $numeroDeBeeps = $configData.beepsOnDownloads
