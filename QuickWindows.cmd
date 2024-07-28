@@ -229,6 +229,8 @@
 ::   - Correção de um bug após instalação do Git no arquivo 'menu.ps1', o PowerShell deve ser reinicializado.
 :: v1.65.97 2024-07-28 às 01h56, Marcos Aurélio:
 ::   - Registro de logs em todos os arquivos de execução.
+:: v1.65.98 2024-07-28 às 11h27, Marcos Aurélio:
+::   - Correções de bugs, os níveis de chamada do arquivo de função que registra logs.
 ::
 :: Licença: GPL.
 
