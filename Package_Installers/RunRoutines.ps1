@@ -34,6 +34,8 @@
 #   - Os recursos do Windows agora serão executados por um arquivo .ps1.
 # v1.11.2 2024-07-24 às 00h11, Marcos Aurélio:
 #   - Opção para baixar e executar o Open Hardware Monitor.
+# v1.12.2 2024-07-28 às 00h49, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -57,6 +59,17 @@ $host.UI.RawUI.WindowSize = $size
 # Define a cor de fundo para preto
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
+
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. .\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Executar Rotinas."; Write-Host "Log created in: $logPath"; clear
 
 # Definir o título da janela do Prompt
 $Host.UI.RawUI.WindowTitle = $configData.promptWindowTitle + " / Rotinas"
@@ -317,10 +330,12 @@ $Routines = $Input -split ','
 foreach ($Routine in $Routines) {
     $File = $Files[$Routine.Trim()]
     if ($File) {
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Aguardando $File terminar. Pressione Enter para continuar..."; Write-Host "Log created in: $logPath"; clear
         Execute-Script $File
         Write-Host "Waiting for $File to finish. Press Enter to continue..."
         Read-Host
     } else {
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Rotina inválida: $Routine"; Write-Host "Log created in: $logPath"; clear
         Write-Host "Invalid routine: $Routine"
     }
 }
