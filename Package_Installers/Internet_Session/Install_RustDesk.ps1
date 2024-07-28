@@ -57,6 +57,9 @@ if (-not (Test-Path $functionPath)) {
     $functionPath = ".\functions.ps1"
 }
 
+# Importa a função do caminho encontrado
+. $functionPath
+
 # Executar função que cria logs do sistema
 $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
