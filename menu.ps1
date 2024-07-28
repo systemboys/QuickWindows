@@ -118,7 +118,7 @@ $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
 Write-Host "Log created in: $logPath"
 clear
 
-# Se o AnyDesk não estiver instalado, faz o download e instala
+# Se o AnyDesk não estiver instalado, faz o download e instalar
 $programFiles = "$env:SystemDrive\Program Files (x86)"
 $directory = "$programFiles\AnyDesk"
 
