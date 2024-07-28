@@ -71,14 +71,7 @@ if (Test-Path $directory) {
     # Define a mensagem, o título e os botões da pop-up
     $message = "AnyDesk is already installed, do you want to run it?"
     $title = "AnyDesk"
-    # ------------------Registrar logo-----------------------
-    $address = $fullPath
-    $fileName = "QWLog.txt"
-    $message = "AnyDesk está instalado, deseja executá-lo?"
-    $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-    Write-Host "Log created in: $logPath"
-    clear
-    # ------------------/Registrar logo----------------------
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk está instalado, deseja executá-lo?"; Write-Host "Log created in: $logPath"; clear
     $buttons = [Microsoft.VisualBasic.MsgBoxStyle]::YesNo
 
     # Mostra a pop-up ao usuário e guarda a resposta em uma variável
@@ -88,37 +81,16 @@ if (Test-Path $directory) {
     if ($response -eq "Yes") {
         # Executa o AnyDesk
         Start-Process -FilePath "$env:SystemDrive\Program Files (x86)\AnyDesk\AnyDesk.exe"
-        # ------------------Registrar logo-----------------------
-        $address = $fullPath
-        $fileName = "QWLog.txt"
-        $message = "AnyDesk foi executado."
-        $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-        Write-Host "Log created in: $logPath"
-        clear
-        # ------------------/Registrar logo----------------------
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk foi executado."; Write-Host "Log created in: $logPath"; clear
     } else {
-        # ------------------Registrar logo-----------------------
-        $address = $fullPath
-        $fileName = "QWLog.txt"
-        $message = "AnyDesk não foi executado."
-        $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-        Write-Host "Log created in: $logPath"
-        clear
-        # ------------------/Registrar logo----------------------
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não foi executado."; Write-Host "Log created in: $logPath"; clear
         exit
     }
 } else {
     Write-Host "AnyDesk is not installed! Starting installation process."
     Write-Host "File size: 5.27 MB"
 
-    # ------------------Registrar logo-----------------------
-    $address = $fullPath
-    $fileName = "QWLog.txt"
-    $message = "AnyDesk não está instalado! Iniciando processo de instalação."
-    $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-    Write-Host "Log created in: $logPath"
-    clear
-    # ------------------/Registrar logo----------------------
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/RemoteAccess/AnyDesk.exe"
@@ -141,14 +113,7 @@ if (Test-Path $directory) {
     if (Test-Path "$env:TEMP\$downloadPath") {
         Remove-Item -Path "$env:TEMP\$downloadPath" -Force
     }
-    # ------------------Registrar logo-----------------------
-    $address = $fullPath
-    $fileName = "QWLog.txt"
-    $message = "AnyDesk não está instalado, o executável será executado."
-    $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-    Write-Host "Log created in: $logPath"
-    clear
-    # ------------------/Registrar logo----------------------
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não está instalado, o executável será executado."; Write-Host "Log created in: $logPath"; clear
 }
 
 Write-Host "Press any key to continue..."

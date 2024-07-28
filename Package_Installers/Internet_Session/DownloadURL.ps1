@@ -47,20 +47,20 @@ $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar logo-----
 
-# ------------------Registrar logo-----------------------
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Download de arquivos a partir de uma URL."; Write-Host "Log created in: $logPath"; clear
-# ------------------/Registrar logo----------------------
 
 $validInput = $false
 
 while (-not $validInput) {
     Write-Host "Enter the URL:"
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o URL:"; Write-Host "Log created in: $logPath"; clear
     $url = Read-Host
 
     if (![string]::IsNullOrWhiteSpace($url)) {
         $validInput = $true
     } else {
         Write-Host "URL is mandatory. Please enter a valid URL."
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "URL é obrigatório. Insira uma URL válida."; Write-Host "Log created in: $logPath"; clear
     }
 }
 
@@ -74,13 +74,16 @@ while (-not $validInput) {
         $validInput = $true
     } else {
         Write-Host "Destination is mandatory. Please enter a valid destination."
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O destino é obrigatório. Insira um destino válido."; Write-Host "Log created in: $logPath"; clear
     }
 }
 
-Write-Host "Iniciando o download..."
+Write-Host "Starting download..."
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando download..."; Write-Host "Log created in: $logPath"; clear
 Start-BitsTransfer -Source $url -Destination $dest
 
 Write-Host "Download completed!"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Transferência concluída!"; Write-Host "Log created in: $logPath"; clear
 
 # Emitir Sequência de Beeps
 $numeroDeBeeps = $configData.beepsOnDownloads
