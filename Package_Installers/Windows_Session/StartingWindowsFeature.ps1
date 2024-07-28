@@ -9,6 +9,8 @@
 # Histórico:
 # v1.0.0 2024-06-27 às 22h48, Marcos Aurélio:
 #   - Versão inicial, executando recursos do Windows.
+# v1.1.0 2024-07-28 às 11h20, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -38,6 +40,22 @@ $host.UI.RawUI.WindowSize = $size
 # Define a cor de fundo para preto
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
+
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Tentativa de importar a função a partir de diferentes caminhos
+# Primeiro caminho (subindo dois níveis)
+$functionPath = "..\..\functions.ps1"
+
+# Verifica se o arquivo existe no primeiro caminho
+if (-not (Test-Path $functionPath)) {
+    # Se não existir, tenta o caminho alternativo (nível zero)
+    $functionPath = ".\functions.ps1"
+}
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
 # [1]  = Painel de Controle - Control
 # [2]  = Editor de Registro - RegEdit
@@ -86,6 +104,7 @@ switch ($numero) {
     13 { $commandToExecute = $terminalCommand13 } # Gerenciador de Tarefas do Windows
     14 { $commandToExecute = $terminalCommand14 } # Opções de pastas - Control Folders
     default {
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Opção inválida. Por favor, escolha uma opção válida."; Write-Host "Log created in: $logPath"; clear
         Write-Host "Invalid option. Please choose a valid option."
         exit
     }

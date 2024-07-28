@@ -13,6 +13,8 @@
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 # v1.2.1 2024-06-16 às 22h40, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+# v1.3.1 2024-07-28 às 11h12, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -37,6 +39,22 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Tentativa de importar a função a partir de diferentes caminhos
+# Primeiro caminho (subindo dois níveis)
+$functionPath = "..\..\functions.ps1"
+
+# Verifica se o arquivo existe no primeiro caminho
+if (-not (Test-Path $functionPath)) {
+    # Se não existir, tenta o caminho alternativo (nível zero)
+    $functionPath = ".\functions.ps1"
+}
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
 do {
     clear
     Write-Host "0 = Exit"
@@ -48,11 +66,13 @@ do {
             exit
         }
         '1' {
+            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Por favor, insira o tempo em minutos para o desligamento."; Write-Host "Log created in: $logPath"; clear
             $time = Read-Host "Please enter the time in minutes for the shutdown"
             if (![string]::IsNullOrWhiteSpace($time) -and $time -match '^\d+$') {
                 $seconds = [int]$time * 60
                 shutdown -s -t $seconds
             } else {
+                $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Entrada inválida. Insira um número válido de minutos."; Write-Host "Log created in: $logPath"; clear
                 Write-Host "Invalid input. Please enter a valid number of minutes."
                 Write-Host "Press any key to continue..."
                 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
@@ -62,6 +82,7 @@ do {
             shutdown -a
         }
         default {
+            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Opção inválida. Por favor, escolha uma opção válida."; Write-Host "Log created in: $logPath"; clear
             Write-Host "Invalid option. Please choose a valid option."
             Write-Host "Press any key to continue..."
             $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")

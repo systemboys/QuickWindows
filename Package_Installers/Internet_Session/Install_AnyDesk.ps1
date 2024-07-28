@@ -53,7 +53,6 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # ------Importação da função e configuração de endereço e arquivo para Registrar log------
 # Tentativa de importar a função a partir de diferentes caminhos
-
 # Primeiro caminho (subindo dois níveis)
 $functionPath = "..\..\functions.ps1"
 
