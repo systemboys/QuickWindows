@@ -330,7 +330,7 @@ $Routines = $Input -split ','
 foreach ($Routine in $Routines) {
     $File = $Files[$Routine.Trim()]
     if ($File) {
-        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Aguardando a rotina $Routine terminar. Pressione Enter para continuar..."; Write-Host "Log created in: $logPath"
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Executada a rotina $Routine."; Write-Host "Log created in: $logPath"
         Execute-Script $File
         Write-Host "Waiting for $File to finish. Press Enter to continue..."
         Read-Host

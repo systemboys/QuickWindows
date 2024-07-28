@@ -13,6 +13,8 @@
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 # v1.1.1 2024-06-16 às 02h02, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+# v1.2.1 2024-07-28 às 01h06, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -37,14 +39,21 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
-# Se o YourPackage não estiver instalado, faz o download e instala
-$programFiles = "$env:SystemDrive\Program Files"
-$directory = "$programFiles\YourPackage"
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
 # Mensagem de início
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o processo de limpeza do spooler de impressão..."; Write-Host "Log created in: $logPath"
 Write-Host "Starting the Print Spooler cleaning process..."
 
 # Parar o serviço de spooler
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Parando o serviço Spooler de impressão..."; Write-Host "Log created in: $logPath"
 Write-Host "Stopping the Print Spooler service..."
 Stop-Service -Name Spooler -Force
 
@@ -52,15 +61,18 @@ Stop-Service -Name Spooler -Force
 $shdPath = "$env:systemroot\system32\spool\PRINTERS\*.SHD"
 $splPath = "$env:systemroot\system32\spool\PRINTERS\*.SPL"
 
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Removendo arquivos temporários: $shdPath, $splPath"; Write-Host "Log created in: $logPath"
 Write-Host "Removing temporary files: $shdPath, $splPath"
 Remove-Item -Path $shdPath -Force -Recurse
 Remove-Item -Path $splPath -Force -Recurse
 
 # Iniciar o serviço de spooler
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o serviço Spooler de impressão..."; Write-Host "Log created in: $logPath"
 Write-Host "Starting the Print Spooler service..."
 Start-Service -Name Spooler
 
 # Mensagem de conclusão
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Limpeza do spooler de impressão concluída."; Write-Host "Log created in: $logPath"
 Write-Host "Print Spooler Cleanup Complete."
 
 Write-Host "Press any key to continue..."

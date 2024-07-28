@@ -808,6 +808,15 @@ $size = New-Object System.Management.Automation.Host.Size($configData.PowerShell
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
 # ----------------------[Conteúdo do script abaixo]---------------------------
 
 # Se o YourPackage não estiver instalado, faz o download e instala
@@ -815,8 +824,10 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\YourPackage"
 
 if (Test-Path $directory) {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "YourPackage está instalado!"; Write-Host "Log created in: $logPath"; clear
     Write-Host "YourPackage is installed!"
 } else {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "YourPackage não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
     Write-Host "YourPackage is not installed! Starting installation process."
     Write-Host "File size: 9.9 MB"
 
