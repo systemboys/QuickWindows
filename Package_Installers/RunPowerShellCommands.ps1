@@ -24,7 +24,7 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # ------Importação da função e configuração de endereço e arquivo para Registrar log------
 # Importar a função
-. ..\..\functions.ps1
+. ..\functions.ps1
 
 # Executar função que cria logs do sistema
 $dirName = "GTiSupport"
