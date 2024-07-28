@@ -25,7 +25,7 @@
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 # v1.1.5 2024-07-11 às 00h46, Marcos Aurélio:
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
-# v1.1.6 2024-07-27 às 23h12, Marcos Aurélio:
+# v1.2.5 2024-07-27 às 23h12, Marcos Aurélio:
 #   - Registro de logs.
 #
 # Licença: GPL.
