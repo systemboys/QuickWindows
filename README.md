@@ -480,6 +480,9 @@ Rotina  Descrição
 631     Acrobat Reader DC
 692     Limpar Arquivos Temporários
 -------------------------------------------------
+```
+Copie as Rotinas a executar no QuickWindows
+```bash
 27,2692,2695,72,74,698,5,32,37,33,621,641,631,692
 ```
 
