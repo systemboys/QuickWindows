@@ -13,6 +13,8 @@
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 # v1.1.1 2024-06-16 às 23h22, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+# v1.2.1 2024-07-28 às 00h18, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -37,6 +39,15 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
 # ----------------------[Conteúdo do script abaixo]---------------------------
 
 # Se o AnyDesk não estiver instalado, faz o download e instala
@@ -45,6 +56,7 @@ $directory = "$programFiles\AnyDesk"
 
 if (Test-Path $directory) {
     # Define a mensagem, o título e os botões da pop-up
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Mensagem aqui..."; Write-Host "Log created in: $logPath"; clear
     Write-Host "AnyDesk is already installed, resetting the settings!"
 
     # Define a função para parar o serviço AnyDesk
@@ -64,7 +76,8 @@ if (Test-Path $directory) {
 
     # Verifica se o script está sendo executado como administrador
     if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-        Write-Host "Por favor, execute como administrador."
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Por favor, execute como administrador."; Write-Host "Log created in: $logPath"; clear
+        Write-Host "Please run as administrator."
         exit
     }
 
@@ -97,9 +110,11 @@ if (Test-Path $directory) {
         Start-AnyDesk
     }
 
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Reset concluído."; Write-Host "Log created in: $logPath"; clear
     Write-Host "*********"
     Write-Host "Completed!"
 } else {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O AnyDesk não está instalado!"; Write-Host "Log created in: $logPath"; clear
     Write-Host "AnyDesk is not installed!"
 }
 

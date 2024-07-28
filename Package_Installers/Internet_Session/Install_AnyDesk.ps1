@@ -51,14 +51,14 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
-# ------Importação da função e configuração de endereço e arquivo para Registrar logo------
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
 # Importar a função
 . ..\..\functions.ps1
 
 # Executar função que cria logs do sistema
 $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
-# ------/Importação da função e configuração de endereço e arquivo para Registrar logo-----
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
 # Se o AnyDesk não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files (x86)"
@@ -69,9 +69,9 @@ if (Test-Path $directory) {
     [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
 
     # Define a mensagem, o título e os botões da pop-up
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk está instalado, deseja executá-lo?"; Write-Host "Log created in: $logPath"; clear
     $message = "AnyDesk is already installed, do you want to run it?"
     $title = "AnyDesk"
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk está instalado, deseja executá-lo?"; Write-Host "Log created in: $logPath"; clear
     $buttons = [Microsoft.VisualBasic.MsgBoxStyle]::YesNo
 
     # Mostra a pop-up ao usuário e guarda a resposta em uma variável
@@ -80,8 +80,8 @@ if (Test-Path $directory) {
     # Verifica se a resposta do usuário foi "Sim"
     if ($response -eq "Yes") {
         # Executa o AnyDesk
-        Start-Process -FilePath "$env:SystemDrive\Program Files (x86)\AnyDesk\AnyDesk.exe"
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk foi executado."; Write-Host "Log created in: $logPath"; clear
+        Start-Process -FilePath "$env:SystemDrive\Program Files (x86)\AnyDesk\AnyDesk.exe"
     } else {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não foi executado."; Write-Host "Log created in: $logPath"; clear
         exit
