@@ -25,6 +25,8 @@
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 # v1.1.5 2024-07-11 às 00h46, Marcos Aurélio:
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
+# v1.1.6 2024-07-27 às 23h12, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -108,6 +110,15 @@ if (Test-Path $directory) {
 } else {
     Write-Host "AnyDesk is not installed! Starting installation process."
     Write-Host "File size: 5.27 MB"
+
+    # ------------------Registrar logo-----------------------
+    $address = $fullPath
+    $fileName = "QWLog.txt"
+    $message = "AnyDesk não está instalado! Iniciando processo de instalação."
+    $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
+    Write-Host "Log created in: $logPath"
+    clear
+    # ------------------/Registrar logo----------------------
 
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/RemoteAccess/AnyDesk.exe"
