@@ -43,6 +43,8 @@
 #   - Função para simular a exibição de uma linha com o status 'OK'.
 # v1.3.14 2024-07-26 às 21h37, Marcos Aurélio:
 #   - Correção de um bug após instalação do Git, o PowerShell deve ser reinicializado.
+# v1.3.15 2024-07-28 às 13h04, Marcos Aurélio:
+#   - Definição de execução do software de acesso remoto, foi criada auma chave para para habilitar ou desabilitar o recurso.
 #
 # Licença: GPL.
 
@@ -123,28 +125,33 @@ $programFiles = "$env:SystemDrive\Program Files (x86)"
 $directory = "$programFiles\AnyDesk"
 
 if (Test-Path $directory) {
-    # Carrega a biblioteca do .NET Framework para criar a pop-up
-    [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
+    # Definição de execução do software de acesso remoto
+    # 0 para desabilitar, 1 para habilitar
+    $remoteInstallationRequest = 0
+    if ($remoteInstallationRequest -eq 1) {
+        # Carrega a biblioteca do .NET Framework para criar a pop-up
+        [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
 
-    # Define a mensagem, o título e os botões da pop-up
-    $message = "AnyDesk is already installed, do you want to run it?"
-    $title = "AnyDesk"
-    $buttons = [Microsoft.VisualBasic.MsgBoxStyle]::YesNo
+        # Define a mensagem, o título e os botões da pop-up
+        $message = "AnyDesk is already installed, do you want to run it?"
+        $title = "AnyDesk"
+        $buttons = [Microsoft.VisualBasic.MsgBoxStyle]::YesNo
 
-    # Mostra a pop-up ao usuário e guarda a resposta em uma variável
-    $response = [Microsoft.VisualBasic.Interaction]::MsgBox($message, $buttons, $title)
+        # Mostra a pop-up ao usuário e guarda a resposta em uma variável
+        $response = [Microsoft.VisualBasic.Interaction]::MsgBox($message, $buttons, $title)
 
-    # Verifica se a resposta do usuário foi "Sim"
-    if ($response -eq "Yes") {
-        # Executa o AnyDesk
-        Start-Process -FilePath "$env:SystemDrive\Program Files (x86)\AnyDesk\AnyDesk.exe"
-        # Executar função que cria logs do sistema
-        $address = $fullPath
-        $fileName = "QWLog.txt"
-        $message = "O usuário confirmou a execução do AnyDesk."
-        $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-        Write-Host "Log created in: $logPath"
-        clear
+        # Verifica se a resposta do usuário foi "Sim"
+        if ($response -eq "Yes") {
+            # Executa o AnyDesk
+            Start-Process -FilePath "$env:SystemDrive\Program Files (x86)\AnyDesk\AnyDesk.exe"
+            # Executar função que cria logs do sistema
+            $address = $fullPath
+            $fileName = "QWLog.txt"
+            $message = "O usuário confirmou a execução do AnyDesk."
+            $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
+            Write-Host "Log created in: $logPath"
+            clear
+        }
     }
 } else {
     Add-Type -AssemblyName PresentationFramework
