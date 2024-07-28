@@ -14,8 +14,6 @@
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 # v1.1.1 2024-06-16 às 23h12, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
-# v1.2.1 2024-07-27 às 23h21, Marcos Aurélio:
-#   - Registrando logs.
 #
 # Licença: GPL.
 
@@ -48,13 +46,9 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar logo-----
+
 # ------------------Registrar logo-----------------------
-$address = $fullPath
-$fileName = "QWLog.txt"
-$message = "Baixar arquivo a partir de uma URL."
-$logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-Write-Host "Log created in: $logPath"
-clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Download de arquivos a partir de uma URL."; Write-Host "Log created in: $logPath"; clear
 # ------------------/Registrar logo----------------------
 
 $validInput = $false
@@ -67,14 +61,6 @@ while (-not $validInput) {
         $validInput = $true
     } else {
         Write-Host "URL is mandatory. Please enter a valid URL."
-        # ------------------Registrar logo-----------------------
-        $address = $fullPath
-        $fileName = "QWLog.txt"
-        $message = "URL é obrigatório. Por favor, insira um URL válido."
-        $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-        Write-Host "Log created in: $logPath"
-        clear
-        # ------------------/Registrar logo----------------------
     }
 }
 
@@ -82,51 +68,19 @@ $validInput = $false
 
 while (-not $validInput) {
     Write-Host "Enter destination:"
-    # ------------------Registrar logo-----------------------
-    $address = $fullPath
-    $fileName = "QWLog.txt"
-    $message = "Insira o destino:"
-    $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-    Write-Host "Log created in: $logPath"
-    clear
-    # ------------------/Registrar logo----------------------
     $dest = Read-Host
 
     if (![string]::IsNullOrWhiteSpace($dest)) {
         $validInput = $true
     } else {
         Write-Host "Destination is mandatory. Please enter a valid destination."
-        # ------------------Registrar logo-----------------------
-        $address = $fullPath
-        $fileName = "QWLog.txt"
-        $message = "O destino é obrigatório. Insira um destino válido."
-        $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-        Write-Host "Log created in: $logPath"
-        clear
-        # ------------------/Registrar logo----------------------
     }
 }
 
-Write-Host "Starting download..."
-# ------------------Registrar logo-----------------------
-$address = $fullPath
-$fileName = "QWLog.txt"
-$message = "Iniciando o download..."
-$logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-Write-Host "Log created in: $logPath"
-clear
-# ------------------/Registrar logo----------------------
+Write-Host "Iniciando o download..."
 Start-BitsTransfer -Source $url -Destination $dest
 
 Write-Host "Download completed!"
-# ------------------Registrar logo-----------------------
-$address = $fullPath
-$fileName = "QWLog.txt"
-$message = "Transferência de $url concluída!"
-$logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-Write-Host "Log created in: $logPath"
-clear
-# ------------------/Registrar logo----------------------
 
 # Emitir Sequência de Beeps
 $numeroDeBeeps = $configData.beepsOnDownloads
