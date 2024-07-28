@@ -54,6 +54,7 @@ Clear-Host  # Limpa a tela para aplicar a nova cor
 . ..\..\functions.ps1
 
 # Executar função que cria logs do sistema
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 $address = $fullPath
 $fileName = "QWLog.txt"
 $message = "ddddddddddddd"
