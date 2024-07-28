@@ -9,6 +9,8 @@
 # Histórico:
 # v1.0.0 2024-07-24 às 00h16, Marcos Aurélio:
 #   - Versão inicial, Download e execução de Open Hardware Monitor.
+# v1.1.0 2024-07-28 às 01h51, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -33,13 +35,24 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
 # Se o Open Hardware Monitor não estiver instalado, faz o download e instala
 $programFiles = "$env:temp"
 $directory = "$programFiles\OpenHardwareMonitor"
 
 if (Test-Path $directory) {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Open Hardware Monitor está instalado!"; Write-Host "Log created in: $logPath"; clear
     Write-Host "Open Hardware Monitor is installed!"
 } else {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Open Hardware Monitor não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
     Write-Host "Open Hardware Monitor is not installed! Starting installation process."
     Write-Host "File size: 491 KB"
 

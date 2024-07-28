@@ -13,6 +13,8 @@
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 # v1.1.1 2024-06-16 às 22h17, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+# v1.2.1 2024-07-28 às 01h45, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -37,6 +39,15 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
 # ----------------------[Conteúdo do script abaixo]---------------------------
 
 # Obtém a data e a hora atual
@@ -52,6 +63,7 @@ $caminhoArquivo = Join-Path $env:TEMP $nomeArquivo
 Invoke-Expression "powercfg /batteryreport /output `"$caminhoArquivo`""
 
 # Exibe o caminho do arquivo gerado
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Relatório de bateria gerado em: $caminhoArquivo"; Write-Host "Log created in: $logPath"; clear
 Write-Output "Relatório de bateria gerado em: $caminhoArquivo"
 
 # Abre o arquivo no navegador padrão do sistema

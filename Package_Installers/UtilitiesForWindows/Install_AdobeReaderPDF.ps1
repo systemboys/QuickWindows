@@ -26,6 +26,8 @@
 #   - Ajuste para finalização dos Processos do Adobe no PowerShell para Continuação de Scripts.
 # v1.1.5 2024-07-24 às 01h47, Marcos Aurélio:
 #   - Atualização do arquivo de instalação do Adobe da versão do Windows 10.
+# v1.2.5 2024-07-28 às 01h24, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -50,13 +52,24 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
 # Se o Adobe Reader não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files (x86)\Adobe\Acrobat Reader DC"
 $directory = "$programFiles\Reader"
 
 if (Test-Path $directory) {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Adobe Reader está instalado!"; Write-Host "Log created in: $logPath"; clear
     Write-Host "Adobe Reader is installed!"
 } else {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Adobe Reader não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
     Write-Host "Adobe Reader is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

@@ -227,6 +227,8 @@
 ::   - Função para simular a exibição de uma linha com o status 'OK' no arquivo de instalação do QuickWindows (menu.ps1).
 :: v1.64.97 2024-07-26 às 21h38, Marcos Aurélio:
 ::   - Correção de um bug após instalação do Git no arquivo 'menu.ps1', o PowerShell deve ser reinicializado.
+:: v1.65.97 2024-07-28 às 01h56, Marcos Aurélio:
+::   - Registro de logs em todos os arquivos de execução.
 ::
 :: Licença: GPL.
 

@@ -16,6 +16,8 @@
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 # v1.1.2 2024-07-11 às 00h46, Marcos Aurélio:
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
+# v1.2.2 2024-07-28 às 01h37, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -40,6 +42,16 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Rufus não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
 Write-Host "Rufus is not installed! Starting installation process."
 Write-Host "File size: 9.9 MB"
 

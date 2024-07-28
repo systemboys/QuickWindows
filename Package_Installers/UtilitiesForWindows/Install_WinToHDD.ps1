@@ -20,6 +20,8 @@
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 # v1.1.4 2024-07-11 às 00h46, Marcos Aurélio:
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
+# v1.2.4 2024-07-28 às 01h42, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -44,6 +46,15 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
 # Se o WinToHDD não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files\Hasleo"
 $directory = "$programFiles\WinToHDD"
@@ -53,6 +64,7 @@ if (Test-Path $directory) {
     [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
 
     # Define a mensagem, o título e os botões da pop-up
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O WinToHDD já está instalado. Você deseja executá-lo?"; Write-Host "Log created in: $logPath"; clear
     $message = "WinToHDD is already installed, do you want to run it?"
     $title = "WinToHDD"
     $buttons = [Microsoft.VisualBasic.MsgBoxStyle]::YesNo
@@ -70,6 +82,7 @@ if (Test-Path $directory) {
     }
     # Write-Host "WinToHDD is installed!"
 } else {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "WinToHDD não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
     Write-Host "WinToHDD is not installed! Starting installation process."
     Write-Host "File size: 9.32 MB"
 

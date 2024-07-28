@@ -13,6 +13,8 @@
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 # v1.1.1 2024-06-16 às 08h29, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+# v1.2.1 2024-07-28 às 01h18, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -37,24 +39,39 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
 # Solicita ao usuário o diretório a ser copiado
 do {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Digite o caminho completo do diretório a ser copiado"; Write-Host "Log created in: $logPath"; clear
     $sourceDirectory = Read-Host "Enter the full path of the directory to be copied"
     if (-not $sourceDirectory) {
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Caminho inválido. Forneça um caminho válido."; Write-Host "Log created in: $logPath"; clear
         Write-Host "Invalid path. Please provide a valid path."
     }
     elseif (-not (Test-Path $sourceDirectory -PathType Container)) {
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O diretório de origem não existe. Verifique o caminho e tente novamente."; Write-Host "Log created in: $logPath"; clear
         Write-Host "The source directory does not exist. Check the path and try again."
     }
 } while (-not $sourceDirectory -or -not (Test-Path $sourceDirectory -PathType Container))
 
 # Solicita ao usuário o caminho onde o arquivo ZIP será salvo
 do {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Digite o caminho completo para o local onde o arquivo ZIP será salvo."; Write-Host "Log created in: $logPath"; clear
     $destinationZip = Read-Host "Enter the full path to the location where the ZIP file will be saved"
     if (-not $destinationZip) {
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Caminho inválido. Forneça um caminho válido."; Write-Host "Log created in: $logPath"; clear
         Write-Host "Invalid path. Please provide a valid path."
     }
     elseif (-not (Test-Path $destinationZip -PathType Container)) {
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O diretório de destino não existe. Verifique o caminho e tente novamente."; Write-Host "Log created in: $logPath"; clear
         Write-Host "The destination directory does not exist. Check the path and try again."
     }
 } while (-not $destinationZip -or -not (Test-Path $destinationZip -PathType Container))
@@ -76,18 +93,22 @@ try {
     $zipArchive.Dispose()
 }
 catch {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Erro ao usar System.IO.Compression.ZipFile: $_"; Write-Host "Log created in: $logPath"; clear
     Write-Host "Error using System.IO.Compression.ZipFile: $_"
 }
 
 # Utiliza a classe ZipArchive para criar o arquivo ZIP
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Criando arquivo ZIP: $zipFileName"; Write-Host "Log created in: $logPath"; clear
 Write-Host "Creating ZIP archive: $zipFileName"
 $files = Get-ChildItem -Path $sourceDirectory -File -Recurse
 
 try {
     Compress-Archive -Path $files.FullName -DestinationPath $zipFileName -Force -CompressionLevel Optimal
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Arquivo ZIP criado com sucesso."; Write-Host "Log created in: $logPath"; clear
     Write-Host "ZIP archive created successfully."
 }
 catch {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Erro ao criar arquivo ZIP: $_"; Write-Host "Log created in: $logPath"; clear
     Write-Host "Error creating ZIP archive: $_"
 }
 
@@ -99,6 +120,7 @@ Write-Host ""
 
 # Atualiza a barra de progresso para 100% e exibe a conclusão
 Write-Progress -Activity "Compressing files" -Status "Completed" -PercentComplete 100
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Backup concluído com sucesso. O arquivo ZIP está em: $zipFileName"; Write-Host "Log created in: $logPath"; clear
 Write-Host "Backup completed successfully. The ZIP file is at: $zipFileName"
 
 Write-Host "Press any key to continue..."
