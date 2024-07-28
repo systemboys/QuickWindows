@@ -49,20 +49,14 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
-# ------------------test-----------------------
+# ------Importação da função e configuração de endereço e arquivo para Registrar logo------
 # Importar a função
 . ..\..\functions.ps1
 
 # Executar função que cria logs do sistema
 $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
-$address = $fullPath
-$fileName = "QWLog.txt"
-$message = "ddddddddddddd"
-$logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
-Write-Host "Log created in: $logPath"
-clear
-# ------------------/test----------------------
+# ------/Importação da função e configuração de endereço e arquivo para Registrar logo-----
 
 # Se o AnyDesk não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files (x86)"
@@ -84,9 +78,25 @@ if (Test-Path $directory) {
     if ($response -eq "Yes") {
         # Executa o AnyDesk
         Start-Process -FilePath "$env:SystemDrive\Program Files (x86)\AnyDesk\AnyDesk.exe"
+        # ------------------Registrar logo-----------------------
+        $address = $fullPath
+        $fileName = "QWLog.txt"
+        $message = "O AnyDesk foi executado."
+        $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
+        Write-Host "Log created in: $logPath"
+        clear
+        # ------------------/Registrar logo----------------------
     }
     else {
         exit
+        # ------------------Registrar logo-----------------------
+        $address = $fullPath
+        $fileName = "QWLog.txt"
+        $message = "O AnyDesk não foi executado."
+        $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
+        Write-Host "Log created in: $logPath"
+        clear
+        # ------------------/Registrar logo----------------------
     }
 } else {
     Write-Host "AnyDesk is not installed! Starting installation process."
