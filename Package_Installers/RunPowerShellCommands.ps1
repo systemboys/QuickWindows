@@ -13,12 +13,23 @@
 #     Como Permitir que os Usuários Execute Comandos Personalizados.
 # v1.1.0 2023-11-29 às 22h50, Marcos Aurélio:
 #   - Script de Interação: Janela de Comando Interativa para Execução de Comandos.
+# v1.2.0 2024-07-28 às 00h43, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
 # Define a cor de fundo para preto
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
+
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size(30, 7)
@@ -31,6 +42,8 @@ function ExecutarComando {
     param (
         [string]$comando
     )
+
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Comando '$comando' executado."; Write-Host "Log created in: $logPath"; clear
 
     # Abrir uma nova janela do PowerShell e executar o comando
     $psi = New-Object System.Diagnostics.ProcessStartInfo

@@ -16,6 +16,8 @@
 #   - Ajuste na largura da janela do terminal Windows PowerShell para 120.
 # v1.2.1 2024-06-16 às 23h07, Marcos Aurélio:
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
+# v1.3.1 2024-07-28 às 00h33, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -40,6 +42,16 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Digite o domínio do site."; Write-Host "Log created in: $logPath"; clear
 $domain = Read-Host "Enter the domain of the website"
 $ip = [System.Net.Dns]::GetHostAddresses($domain) | Select-Object -ExpandProperty IPAddressToString
 $traceroute = Test-NetConnection -TraceRoute -ComputerName $ip

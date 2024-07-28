@@ -18,6 +18,8 @@
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 # v1.1.3 2024-07-06 às 12h17, Marcos Aurélio:
 #   - Correção das linhas que apagam o arquivo após a execução.
+# v1.2.3 2024-07-28 às 00h38, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -42,13 +44,24 @@ $host.UI.RawUI.WindowSize = $size
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
 # Se o Microsoft Office não estiver instalado, faz o download e instala
 $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\Microsoft Office"
 
 if (Test-Path $directory) {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Microsoft Office está instalado!"; Write-Host "Log created in: $logPath"; clear
     Write-Host "Microsoft Office is installed!"
 } else {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Microsoft Office não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
     Write-Host "Microsoft Office is not installed! Starting installation process."
     Write-Host "File size: 9.79 MB"
 

@@ -20,6 +20,8 @@
 # v1.2.2 2024-07-06 às 12h50, Marcos Aurélio:
 #   - Linha de comando para executar o gerenciador de tarefas do Windows para monitorar
 #     o desempenho do download.
+# v1.3.2 2024-07-28 às 00h29, Marcos Aurélio:
+#   - Registro de logs.
 #
 # Licença: GPL.
 
@@ -49,6 +51,15 @@ $host.UI.RawUI.WindowSize = $size
 # Define a cor de fundo para preto
 $Host.UI.RawUI.BackgroundColor = $configData.backgroundColor1
 Clear-Host  # Limpa a tela para aplicar a nova cor
+
+# ------Importação da função e configuração de endereço e arquivo para Registrar log------
+# Importar a função
+. ..\..\functions.ps1
+
+# Executar função que cria logs do sistema
+$dirName = "GTiSupport"
+$fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
+# ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
 # [1]=Windows 7, todas as versões
 # [2]=Windows 7 Lite
@@ -95,10 +106,12 @@ switch ($numero) {
 }
 
 # Solicitação do local de destino
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o caminho de destino completo para salvar o arquivo."; Write-Host "Log created in: $logPath"; clear
 $destination = Read-Host "Enter the full destination path to save the file"
 
 # Verificação se o destino foi fornecido
 if (-not $destination) {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O destino é obrigatório. Por favor, forneça o caminho de destino."; Write-Host "Log created in: $logPath"; clear
     Write-Host "Destination is mandatory. Please provide the destination path."
     exit
 }
@@ -107,9 +120,11 @@ if (-not $destination) {
 start taskmgr
 
 # Iniciando o download em uma nova janela do PowerShell
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o download em uma nova janela..."; Write-Host "Log created in: $logPath"; clear
 Write-Host "Starting the download in a new window..."
 Start-BitsTransfer -Source $url -Destination $destination
 
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Transferência concluída!"; Write-Host "Log created in: $logPath"; clear
 Write-Host "Download completed!"
 
 # Emitir Sequência de Beeps
