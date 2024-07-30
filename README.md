@@ -441,26 +441,26 @@ Aqui estão todas as opções em desenvolvimento.
 266,2694,681,84 # Windows 10 Pro 64bits
 266,2694,681,85 # Windows 10 Pro MSDN 1909
 266,2694,681,86 # Windows 11 Pro 64bits
-┬── ┬─── ┬─── ┬─
-│   │    │    │
-└───┼────┼────┼──┤ # Gerenciamento de Discos (DiskMgmt.msc)
-    │    │    │  │ Recurso do Windows para particionar o
-    │    │    │  │ dispositivo de armazenamento para colocar a ISO.
-    │    │    │
-    └────┼────┼──┤ # Gerenciar arquivos e pastas
-         │    │  │ Copiar ou mover os arquivos imporantes do
-         │    │  │ usuário para a unidade "D:" evitar perdas
-         │    │  │ inesperadas.
-         │    │
-         └────┼──┤ # WinToHDD
-              │  │ Software que faz a reinstalação do sistema.
-              │  │ A opção a qual deve ser utilizada é para
-              │  │ reinstalar o sistema.
-              │
-              └──┤ # Sistemas Operacionais Microsoft…
-                 │ Essa rotina indica qual das ISOs será baixada.
-                 │ O técnico informará para que possa ser baixada
-                 │ na unidade "D:\_GTi_Support_" por exemplo.
+┬── ┬─── ┬── ┬─
+│   │    │   │
+└───┼────┼───┼──┤ # Gerenciamento de Discos (DiskMgmt.msc)
+    │    │   │  │ Recurso do Windows para particionar o
+    │    │   │  │ dispositivo de armazenamento para colocar a ISO.
+    │    │   │
+    └────┼───┼──┤ # Gerenciar arquivos e pastas
+         │   │  │ Copiar ou mover os arquivos imporantes do
+         │   │  │ usuário para a unidade "D:" evitar perdas
+         │   │  │ inesperadas.
+         │   │
+         └───┼──┤ # WinToHDD
+             │  │ Software que faz a reinstalação do sistema.
+             │  │ A opção a qual deve ser utilizada é para
+             │  │ reinstalar o sistema.
+             │
+             └──┤ # Sistemas Operacionais Microsoft…
+                │ Essa rotina indica qual das ISOs será baixada.
+                │ O técnico informará para que possa ser baixada
+                │ na unidade "D:\_GTi_Support_" por exemplo.
 
 # ROTINAS PARA INSTALAÇÃO PADRÃO APÓS FORMATAÇÃO
 Rotina  Descrição
