@@ -38,6 +38,8 @@
 #   - Registro de logs.
 # v1.12.3 2024-07-29 às 23h48, Marcos Aurélio:
 #   - Ajustes no tamanho da janela e no estreitamento das colunas da tabela de rotinas.
+# v1.12.4 2024-07-30 às 00h13, Marcos Aurélio:
+#   - Inclusão das opções da sessão de redes nas rotinas.
 #
 # Licença: GPL.
 
@@ -246,9 +248,9 @@ $Files = @{
             "392" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_Internet_Download_Manager.ps1" # IDM - Internet Download Manager
             "393" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\DownloadURL.ps1" # Baixar URL
     # "4" = "" # Redes…
-        # "41" = "" # Obter IP público
-        # "42" = "" # Obter IP local
-        # "43" = "" # Obter IPs de uma determinada rota
+        "41" = "$env:TEMP\QuickWindows\Package_Installers\Networking_Session\GetPublicIPAddress.ps1" # Obter IP público
+        "42" = "$env:TEMP\QuickWindows\Package_Installers\Networking_Session\GetLocalIPAddress.ps1" # Obter IP local
+        "43" = "$env:TEMP\QuickWindows\Package_Installers\Networking_Session\GetConnectionIPRoute.ps1" # Obter IPs de uma determinada rota
     "5" = "$env:TEMP\QuickWindows\Package_Installers\RunPowerShellCommands.ps1" # Execução de Comandos no PowerShell
     # "6" = "" # Utilitários para Windows…
         "61" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Install_Revo_Uninstaller.ps1" # Instalar Revo Uninstaller
