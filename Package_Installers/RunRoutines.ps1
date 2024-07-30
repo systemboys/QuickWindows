@@ -36,6 +36,8 @@
 #   - Opção para baixar e executar o Open Hardware Monitor.
 # v1.12.2 2024-07-28 às 00h49, Marcos Aurélio:
 #   - Registro de logs.
+# v1.12.3 2024-07-29 às 23h48, Marcos Aurélio:
+#   - Ajustes no tamanho da janela e no estreitamento das colunas da tabela de rotinas.
 #
 # Licença: GPL.
 
@@ -74,124 +76,125 @@ $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Exec
 # Definir o título da janela do Prompt
 $Host.UI.RawUI.WindowTitle = $configData.promptWindowTitle + " / Rotinas"
 
-Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "                                      ROTINAS                                   | (ok) => (.ps1)" -ForegroundColor Green
-Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "0 = Sair                                                                                [ null ]" -ForegroundColor Red
-Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "1 = Menu QuickWindows...                                                                [ null ]" -ForegroundColor Red
-Write-Host "    11 = Atualizar QuickWindows                                                         [ null ]" -ForegroundColor Red
-Write-Host "    12 = Deletar QuickWindows                                                           [ null ]" -ForegroundColor Red
-Write-Host "    13 = Recarregar QuickWindows                                                        [ null ]" -ForegroundColor Red
-Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "2 = Windows...                                                                          [ null ]" -ForegroundColor Red
-Write-Host "    21 = Desligar o Windows                                                             [  ok  ]" -ForegroundColor Green
-Write-Host "    22 = Reiniciar o Windows                                                            [  ok  ]" -ForegroundColor Green
-Write-Host "    23 = Agendar desligamento do Windows                                                [  ok  ]" -ForegroundColor Green
-Write-Host "    24 = Atualizar Windows e Softwares                                                  [  ok  ]" -ForegroundColor Green
-Write-Host "    25 = Atualizar o PowerShell                                                         [  ok  ]" -ForegroundColor Green
-Write-Host "    26 = Acesso rapido a Configuracaes...                                               [ null ]" -ForegroundColor Red
-Write-Host "        261 = Painel de Controle (Control)                                              [  ok  ]" -ForegroundColor Green
-Write-Host "        262 = Editor de Registro (RegEdit)                                              [  ok  ]" -ForegroundColor Green
-Write-Host "        263 = Configuracaes do Sistema (MSConfig)                                       [  ok  ]" -ForegroundColor Green
-Write-Host "        264 = Servicas (Services.msc)                                                   [  ok  ]" -ForegroundColor Green
-Write-Host "        265 = Gerenciador de Dispositivos (DevMgmt.msc)                                 [  ok  ]" -ForegroundColor Green
-Write-Host "        266 = Gerenciamento de Discos (DiskMgmt.msc)                                    [  ok  ]" -ForegroundColor Green
-Write-Host "        267 = Explorador de arquivos do Windows                                         [  ok  ]" -ForegroundColor Green
-Write-Host "        268 = Configuracaes - Tela (tipo, ajustes de resolucao de tela)                 [  ok  ]" -ForegroundColor Green
-Write-Host "        269 = Mais...                                                                   [ null ]" -ForegroundColor Red
-Write-Host "            2691 = Configuracaes avancadas do sistema (Propriedades do Sistema)         [  ok  ]" -ForegroundColor Green
-Write-Host "            2692 = Editar Configuracaes do Plano                                        [  ok  ]" -ForegroundColor Green
-Write-Host "            2693 = Sobre o Windows (WinVer)                                             [  ok  ]" -ForegroundColor Green
-Write-Host "            2694 = Gerenciar arquivos e pastas                                          [  ok  ]" -ForegroundColor Green
-Write-Host "            2695 = Configuracaes do Windows                                             [  ok  ]" -ForegroundColor Green
-Write-Host "            2696 = Gerenciador de Tarefas do Windows                                    [  ok  ]" -ForegroundColor Green
-Write-Host "            2697 = Opcaes de pastas                                                     [  ok  ]" -ForegroundColor Green
-Write-Host "            2698 = Obtendo Informacaes do Sistema com PowerShell                        [  ok  ]" -ForegroundColor Green
-Write-Host "    27 = Criar atalhos para 'Desligar e Reiniciar'                                      [  ok  ]" -ForegroundColor Green
-Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "3 = Internet...                                                                         [ null ]" -ForegroundColor Red
-Write-Host "    31 = Acesso Remoto...                                                               [ null ]" -ForegroundColor Red
-Write-Host "        311 = AnyDesk                                                                   [  ok  ]" -ForegroundColor Green
-Write-Host "        312 = Reset AnyDesk                                                             [  ok  ]" -ForegroundColor Green
-Write-Host "        313 = RustDesk                                                                  [  ok  ]" -ForegroundColor Green
-Write-Host "        314 = HopToDesk                                                                 [  ok  ]" -ForegroundColor Green
-Write-Host "    32 = Navegador Microsoft Edge                                                       [  ok  ]" -ForegroundColor Green
-Write-Host "    33 = Navegador Google Chrome                                                        [  ok  ]" -ForegroundColor Green
-Write-Host "    34 = Navegador Google Earth Pro                                                     [  ok  ]" -ForegroundColor Green
-Write-Host "    35 = Comunicador Skype                                                              [  ok  ]" -ForegroundColor Green
-Write-Host "    36 = Navegador Opera                                                                [  ok  ]" -ForegroundColor Green
-Write-Host "    37 = Navegador Mozilla Firefox                                                      [  ok  ]" -ForegroundColor Green
-Write-Host "    38 = Visualizador Real VNC Viewer                                                   [  ok  ]" -ForegroundColor Green
-Write-Host "    39 = Downloads...                                                                   [ null ]" -ForegroundColor Red
-Write-Host "        391 = Transmission                                                              [  ok  ]" -ForegroundColor Green
-Write-Host "        392 = IDM - Internet Download Manager                                           [  ok  ]" -ForegroundColor Green
-Write-Host "        393 = Baixar URL                                                                [  ok  ]" -ForegroundColor Green
-Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "4 = Redes...                                                                            [ null ]" -ForegroundColor Red
-Write-Host "    41 = Obter IP publico                                                               [  ok  ]" -ForegroundColor Green
-Write-Host "    42 = Obter IP local                                                                 [  ok  ]" -ForegroundColor Green
-Write-Host "    43 = Obter IPs de uma determinada rota                                              [  ok  ]" -ForegroundColor Green
-Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "5 = Execucao de Comandos no PowerShell                                                  [  ok  ]" -ForegroundColor Green
-Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "6 = Utilitarios para Windows...                                                         [ null ]" -ForegroundColor Red
-Write-Host "    61 = Instalar Revo Uninstaller                                                      [  ok  ]" -ForegroundColor Green
-Write-Host "    62 = Compactadores...                                                               [ null ]" -ForegroundColor Red
-Write-Host "        621 = WinRAR                                                                    [  ok  ]" -ForegroundColor Green
-Write-Host "        622 = WinZip                                                                    [  ok  ]" -ForegroundColor Green
-Write-Host "        623 = 7-Zip                                                                     [  ok  ]" -ForegroundColor Green
-Write-Host "    63 = Leitores de PDF...                                                             [ null ]" -ForegroundColor Red
-Write-Host "        631 = Acrobat Reader DC                                                         [  ok  ]" -ForegroundColor Green
-Write-Host "        632 = Foxit PDF Reader                                                          [  ok  ]" -ForegroundColor Green
-Write-Host "    64 = Players Multimidia...                                                          [ null ]" -ForegroundColor Red
-Write-Host "        641 = VLC Media Player                                                          [  ok  ]" -ForegroundColor Green
-Write-Host "    65 = Software de congelamento do sistema...                                         [ null ]" -ForegroundColor Red
-Write-Host "        651 = Deep Freeze Standard                                                      [  ok  ]" -ForegroundColor Green
-Write-Host "        652 = Shadow Defender                                                           [  ok  ]" -ForegroundColor Green
-Write-Host "    66 = Backup e Restauracao...                                                        [ null ]" -ForegroundColor Red
-Write-Host "        661 = Compressao de arquivos, PowerShell Backup Automatico (.zip)               [  ok  ]" -ForegroundColor Green
-Write-Host "        662 = Cobian Backup                                                             [  ok  ]" -ForegroundColor Green
-Write-Host "    67 = Software de gerenciamento de particaes...                                      [ null ]" -ForegroundColor Red
-Write-Host "        671 = MiniTool Partition Wizard v12 Installation                                [  ok  ]" -ForegroundColor Green
-Write-Host "        672 = MiniTool Partition Wizard v12 32bit portable                              [  ok  ]" -ForegroundColor Green
-Write-Host "        673 = MiniTool Partition Wizard v12 64bit portable                              [  ok  ]" -ForegroundColor Green
-Write-Host "    68 = Ferramentas de restauracao do sistema...                                       [ null ]" -ForegroundColor Red
-Write-Host "        681 = WinToHDD                                                                  [  ok  ]" -ForegroundColor Green
-Write-Host "        682 = Hasleo WinToHDD Free                                                      [  ok  ]" -ForegroundColor Green
-Write-Host "        683 = Rufus                                                                     [  ok  ]" -ForegroundColor Green
-Write-Host "        684 = DriverMax                                                                 [  ok  ]" -ForegroundColor Green
-Write-Host "    69 = Mais...                                                                        [ null ]" -ForegroundColor Red
-Write-Host "        691 = Limpar Spooler de Impressao                                               [  ok  ]" -ForegroundColor Green
-Write-Host "        692 = Limpar Arquivos Temporarios                                               [  ok  ]" -ForegroundColor Green
-Write-Host "        693 = Driver Booster Free                                                       [  ok  ]" -ForegroundColor Green
-Write-Host "        694 = CPU-Z                                                                     [  ok  ]" -ForegroundColor Green
-Write-Host "        695 = CPU-Z Portable                                                            [  ok  ]" -ForegroundColor Green
-Write-Host "        696 = Crystal Disk Info                                                         [  ok  ]" -ForegroundColor Green
-Write-Host "        697 = Crystal Disk Info Portable                                                [  ok  ]" -ForegroundColor Green
-Write-Host "        698 = Windows Update Activation                                                 [  ok  ]" -ForegroundColor Green
-Write-Host "        699 = Mais...                                                                   [ null ]" -ForegroundColor Red
-Write-Host "            6991 = Revo Uninstaller Portable                                            [  ok  ]" -ForegroundColor Green
-Write-Host "            6992 = Battery Report                                                       [  ok  ]" -ForegroundColor Green
-Write-Host "            6993 = SiberiaProg-CH341A                                                   [  ok  ]" -ForegroundColor Green
-Write-Host "            6994 = SiberiaProg-CH341A Portable                                          [  ok  ]" -ForegroundColor Green
-Write-Host "            6995 = Open Hardware Monitor                                                [  ok  ]" -ForegroundColor Green
-Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "7 = Softwares para Escritorio...                                                        [ null ]" -ForegroundColor Red
-Write-Host "    71 = Microsoft Office 2016 a 2019                                                   [  ok  ]" -ForegroundColor Green
-Write-Host "    72 = Microsoft Office 2019 a 2021                                                   [  ok  ]" -ForegroundColor Green
-Write-Host "    73 = Microsoft Office 365                                                           [  ok  ]" -ForegroundColor Green
-Write-Host "    74 = Criar atalhos para Apps do Office 2021                                         [  ok  ]" -ForegroundColor Green
-Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
-Write-Host "8 = Sistemas Operacionais Microsoft...                                                  [ null ]" -ForegroundColor Red
-Write-Host "    81 = Windows 7, todas as versoes                                                    [  ok  ]" -ForegroundColor Green
-Write-Host "    82 = Windows 7 Lite                                                                 [  ok  ]" -ForegroundColor Green
-Write-Host "    83 = Windows 10 Pro 32bits                                                          [  ok  ]" -ForegroundColor Green
-Write-Host "    84 = Windows 10 Pro 64bits                                                          [  ok  ]" -ForegroundColor Green
-Write-Host "    85 = Windows 10 1909 PRO MSDN LITE Build                                            [  ok  ]" -ForegroundColor Green
-Write-Host "    86 = Windows 11 Pro                                                                 [  ok  ]" -ForegroundColor Green
-Write-Host "    87 = Windows Server 2022                                                            [  ok  ]" -ForegroundColor Green
-Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "                                      ROTINAS                   | (ok) => (.ps1)" -ForegroundColor Green
+Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "0 = Sair                                                                  [null]" -ForegroundColor Red
+Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "1 = Menu QuickWindows...                                                  [null]" -ForegroundColor Red
+Write-Host "    11 = Atualizar QuickWindows                                           [null]" -ForegroundColor Red
+Write-Host "    12 = Deletar QuickWindows                                             [null]" -ForegroundColor Red
+Write-Host "    13 = Recarregar QuickWindows                                          [null]" -ForegroundColor Red
+Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "2 = Windows...                                                            [null]" -ForegroundColor Red
+Write-Host "    21 = Desligar o Windows                                               [ ok ]" -ForegroundColor Green
+Write-Host "    22 = Reiniciar o Windows                                              [ ok ]" -ForegroundColor Green
+Write-Host "    23 = Agendar desligamento do Windows                                  [ ok ]" -ForegroundColor Green
+Write-Host "    24 = Atualizar Windows e Softwares                                    [ ok ]" -ForegroundColor Green
+Write-Host "    25 = Atualizar o PowerShell                                           [ ok ]" -ForegroundColor Green
+Write-Host "    26 = Acesso rapido a Configuracaes...                                 [null]" -ForegroundColor Red
+Write-Host "        261 = Painel de Controle (Control)                                [ ok ]" -ForegroundColor Green
+Write-Host "        262 = Editor de Registro (RegEdit)                                [ ok ]" -ForegroundColor Green
+Write-Host "        263 = Configuracaes do Sistema (MSConfig)                         [ ok ]" -ForegroundColor Green
+Write-Host "        264 = Servicas (Services.msc)                                     [ ok ]" -ForegroundColor Green
+Write-Host "        265 = Gerenciador de Dispositivos (DevMgmt.msc)                   [ ok ]" -ForegroundColor Green
+Write-Host "        266 = Gerenciamento de Discos (DiskMgmt.msc)                      [ ok ]" -ForegroundColor Green
+Write-Host "        267 = Explorador de arquivos do Windows                           [ ok ]" -ForegroundColor Green
+Write-Host "        268 = Configuracaes - Tela (tipo, ajustes de resolucao de tela)   [ ok ]" -ForegroundColor Green
+Write-Host "        269 = Mais...                                                     [null]" -ForegroundColor Red
+Write-Host "            2691 = Configuracaes avancadas do sistema (Propriedades       [ ok ]" -ForegroundColor Green
+Write-Host "                   do Sistema)                                            [ ok ]" -ForegroundColor Green
+Write-Host "            2692 = Editar Configuracaes do Plano                          [ ok ]" -ForegroundColor Green
+Write-Host "            2693 = Sobre o Windows (WinVer)                               [ ok ]" -ForegroundColor Green
+Write-Host "            2694 = Gerenciar arquivos e pastas                            [ ok ]" -ForegroundColor Green
+Write-Host "            2695 = Configuracaes do Windows                               [ ok ]" -ForegroundColor Green
+Write-Host "            2696 = Gerenciador de Tarefas do Windows                      [ ok ]" -ForegroundColor Green
+Write-Host "            2697 = Opcaes de pastas                                       [ ok ]" -ForegroundColor Green
+Write-Host "            2698 = Obtendo Informacaes do Sistema com PowerShell          [ ok ]" -ForegroundColor Green
+Write-Host "    27 = Criar atalhos para 'Desligar e Reiniciar'                        [ ok ]" -ForegroundColor Green
+Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "3 = Internet...                                                           [null]" -ForegroundColor Red
+Write-Host "    31 = Acesso Remoto...                                                 [null]" -ForegroundColor Red
+Write-Host "        311 = AnyDesk                                                     [ ok ]" -ForegroundColor Green
+Write-Host "        312 = Reset AnyDesk                                               [ ok ]" -ForegroundColor Green
+Write-Host "        313 = RustDesk                                                    [ ok ]" -ForegroundColor Green
+Write-Host "        314 = HopToDesk                                                   [ ok ]" -ForegroundColor Green
+Write-Host "    32 = Navegador Microsoft Edge                                         [ ok ]" -ForegroundColor Green
+Write-Host "    33 = Navegador Google Chrome                                          [ ok ]" -ForegroundColor Green
+Write-Host "    34 = Navegador Google Earth Pro                                       [ ok ]" -ForegroundColor Green
+Write-Host "    35 = Comunicador Skype                                                [ ok ]" -ForegroundColor Green
+Write-Host "    36 = Navegador Opera                                                  [ ok ]" -ForegroundColor Green
+Write-Host "    37 = Navegador Mozilla Firefox                                        [ ok ]" -ForegroundColor Green
+Write-Host "    38 = Visualizador Real VNC Viewer                                     [ ok ]" -ForegroundColor Green
+Write-Host "    39 = Downloads...                                                     [null]" -ForegroundColor Red
+Write-Host "        391 = Transmission                                                [ ok ]" -ForegroundColor Green
+Write-Host "        392 = IDM - Internet Download Manager                             [ ok ]" -ForegroundColor Green
+Write-Host "        393 = Baixar URL                                                  [ ok ]" -ForegroundColor Green
+Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "4 = Redes...                                                              [null]" -ForegroundColor Red
+Write-Host "    41 = Obter IP publico                                                 [ ok ]" -ForegroundColor Green
+Write-Host "    42 = Obter IP local                                                   [ ok ]" -ForegroundColor Green
+Write-Host "    43 = Obter IPs de uma determinada rota                                [ ok ]" -ForegroundColor Green
+Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "5 = Execucao de Comandos no PowerShell                                    [ ok ]" -ForegroundColor Green
+Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "6 = Utilitarios para Windows...                                           [null]" -ForegroundColor Red
+Write-Host "    61 = Instalar Revo Uninstaller                                        [ ok ]" -ForegroundColor Green
+Write-Host "    62 = Compactadores...                                                 [null]" -ForegroundColor Red
+Write-Host "        621 = WinRAR                                                      [ ok ]" -ForegroundColor Green
+Write-Host "        622 = WinZip                                                      [ ok ]" -ForegroundColor Green
+Write-Host "        623 = 7-Zip                                                       [ ok ]" -ForegroundColor Green
+Write-Host "    63 = Leitores de PDF...                                               [null]" -ForegroundColor Red
+Write-Host "        631 = Acrobat Reader DC                                           [ ok ]" -ForegroundColor Green
+Write-Host "        632 = Foxit PDF Reader                                            [ ok ]" -ForegroundColor Green
+Write-Host "    64 = Players Multimidia...                                            [null]" -ForegroundColor Red
+Write-Host "        641 = VLC Media Player                                            [ ok ]" -ForegroundColor Green
+Write-Host "    65 = Software de congelamento do sistema...                           [null]" -ForegroundColor Red
+Write-Host "        651 = Deep Freeze Standard                                        [ ok ]" -ForegroundColor Green
+Write-Host "        652 = Shadow Defender                                             [ ok ]" -ForegroundColor Green
+Write-Host "    66 = Backup e Restauracao...                                          [null]" -ForegroundColor Red
+Write-Host "        661 = Compressao de arquivos, PowerShell Backup Automatico (.zip) [ ok ]" -ForegroundColor Green
+Write-Host "        662 = Cobian Backup                                               [ ok ]" -ForegroundColor Green
+Write-Host "    67 = Software de gerenciamento de particaes...                        [null]" -ForegroundColor Red
+Write-Host "        671 = MiniTool Partition Wizard v12 Installation                  [ ok ]" -ForegroundColor Green
+Write-Host "        672 = MiniTool Partition Wizard v12 32bit portable                [ ok ]" -ForegroundColor Green
+Write-Host "        673 = MiniTool Partition Wizard v12 64bit portable                [ ok ]" -ForegroundColor Green
+Write-Host "    68 = Ferramentas de restauracao do sistema...                         [null]" -ForegroundColor Red
+Write-Host "        681 = WinToHDD                                                    [ ok ]" -ForegroundColor Green
+Write-Host "        682 = Hasleo WinToHDD Free                                        [ ok ]" -ForegroundColor Green
+Write-Host "        683 = Rufus                                                       [ ok ]" -ForegroundColor Green
+Write-Host "        684 = DriverMax                                                   [ ok ]" -ForegroundColor Green
+Write-Host "    69 = Mais...                                                          [null]" -ForegroundColor Red
+Write-Host "        691 = Limpar Spooler de Impressao                                 [ ok ]" -ForegroundColor Green
+Write-Host "        692 = Limpar Arquivos Temporarios                                 [ ok ]" -ForegroundColor Green
+Write-Host "        693 = Driver Booster Free                                         [ ok ]" -ForegroundColor Green
+Write-Host "        694 = CPU-Z                                                       [ ok ]" -ForegroundColor Green
+Write-Host "        695 = CPU-Z Portable                                              [ ok ]" -ForegroundColor Green
+Write-Host "        696 = Crystal Disk Info                                           [ ok ]" -ForegroundColor Green
+Write-Host "        697 = Crystal Disk Info Portable                                  [ ok ]" -ForegroundColor Green
+Write-Host "        698 = Windows Update Activation                                   [ ok ]" -ForegroundColor Green
+Write-Host "        699 = Mais...                                                     [null]" -ForegroundColor Red
+Write-Host "            6991 = Revo Uninstaller Portable                              [ ok ]" -ForegroundColor Green
+Write-Host "            6992 = Battery Report                                         [ ok ]" -ForegroundColor Green
+Write-Host "            6993 = SiberiaProg-CH341A                                     [ ok ]" -ForegroundColor Green
+Write-Host "            6994 = SiberiaProg-CH341A Portable                            [ ok ]" -ForegroundColor Green
+Write-Host "            6995 = Open Hardware Monitor                                  [ ok ]" -ForegroundColor Green
+Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "7 = Softwares para Escritorio...                                          [null]" -ForegroundColor Red
+Write-Host "    71 = Microsoft Office 2016 a 2019                                     [ ok ]" -ForegroundColor Green
+Write-Host "    72 = Microsoft Office 2019 a 2021                                     [ ok ]" -ForegroundColor Green
+Write-Host "    73 = Microsoft Office 365                                             [ ok ]" -ForegroundColor Green
+Write-Host "    74 = Criar atalhos para Apps do Office 2021                           [ ok ]" -ForegroundColor Green
+Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "8 = Sistemas Operacionais Microsoft...                                    [null]" -ForegroundColor Red
+Write-Host "    81 = Windows 7, todas as versoes                                      [ ok ]" -ForegroundColor Green
+Write-Host "    82 = Windows 7 Lite                                                   [ ok ]" -ForegroundColor Green
+Write-Host "    83 = Windows 10 Pro 32bits                                            [ ok ]" -ForegroundColor Green
+Write-Host "    84 = Windows 10 Pro 64bits                                            [ ok ]" -ForegroundColor Green
+Write-Host "    85 = Windows 10 1909 PRO MSDN LITE Build                              [ ok ]" -ForegroundColor Green
+Write-Host "    86 = Windows 11 Pro                                                   [ ok ]" -ForegroundColor Green
+Write-Host "    87 = Windows Server 2022                                              [ ok ]" -ForegroundColor Green
+Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
 
 # Array associativo que mapeia as rotinas aos arquivos .ps1
 $Files = @{

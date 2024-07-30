@@ -233,6 +233,8 @@
 ::   - Correções de bugs, os níveis de chamada do arquivo de função que registra logs.
 :: v1.65.99 2024-07-28 às 13h05, Marcos Aurélio:
 ::   - Definição de execução do software de acesso remoto, foi criada auma chave para para habilitar ou desabilitar o recurso.
+:: v1.65.100 2024-07-29 às 23h49, Marcos Aurélio:
+::   - Ajustes no tamanho da janela e no estreitamento das colunas da tabela de rotinas.
 ::
 :: Licença: GPL.
 
