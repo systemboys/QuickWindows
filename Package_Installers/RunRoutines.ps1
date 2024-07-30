@@ -51,7 +51,7 @@ if (-not (Test-Path $configPath)) {
 $configData = Get-Content -Path $configPath | ConvertFrom-Json
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
-$size = New-Object System.Management.Automation.Host.Size(100, 30)
+$size = New-Object System.Management.Automation.Host.Size(80, 25)
 
 # Atribui o novo tamanho à janela do PowerShell
 $host.UI.RawUI.WindowSize = $size
