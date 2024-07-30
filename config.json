@@ -2,7 +2,7 @@
     "promptWindowTitle": "GTi - QuickWindows",
     "backgroundColor0": "Black",
     "backgroundColor1": "Black",
-    "PowerShellTerminalWidth": 117,
-    "PowerShellTerminalHeight": 30,
+    "PowerShellTerminalWidth": 80,
+    "PowerShellTerminalHeight": 25,
     "beepsOnDownloads": 3
 }
