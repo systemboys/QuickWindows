@@ -235,6 +235,8 @@
 ::   - Definição de execução do software de acesso remoto, foi criada auma chave para para habilitar ou desabilitar o recurso.
 :: v1.65.100 2024-07-29 às 23h49, Marcos Aurélio:
 ::   - Ajustes no tamanho da janela e no estreitamento das colunas da tabela de rotinas.
+:: v1.65.101 2024-07-30 às 00h15, Marcos Aurélio:
+::   - Inclusão das opções da sessão de redes nas rotinas.
 ::
 :: Licença: GPL.
 
