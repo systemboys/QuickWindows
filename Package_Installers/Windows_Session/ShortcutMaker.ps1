@@ -29,10 +29,30 @@ if (-not (Test-Path $configPath)) {
 # Importa as configurações do arquivo encontrado
 $configData = Get-Content -Path $configPath | ConvertFrom-Json
 
-# Cria uma nova instância do objeto System.Management.Automation.Host.Size
-$size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
+# Detecta a resolução da tela
+Add-Type -AssemblyName System.Windows.Forms
+$screenWidth = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds.Width
+$screenHeight = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds.Height
 
-# Atribui o novo tamanho à janela do PowerShell
+# Define os tamanhos desejados
+$desiredWidth = if ($screenWidth -le 1024) { 80 } else { $configData.PowerShellTerminalWidth }
+$desiredHeight = if ($screenHeight -le 768) { 25 } else { $configData.PowerShellTerminalHeight }
+
+# Ajusta o tamanho do buffer para corresponder ao tamanho desejado da janela
+if ($host.UI.RawUI.BufferSize.Width -lt $desiredWidth) {
+    $bufferSize = $host.UI.RawUI.BufferSize
+    $bufferSize.Width = $desiredWidth
+    $host.UI.RawUI.BufferSize = $bufferSize
+}
+
+if ($host.UI.RawUI.BufferSize.Height -lt $desiredHeight) {
+    $bufferSize = $host.UI.RawUI.BufferSize
+    $bufferSize.Height = $desiredHeight
+    $host.UI.RawUI.BufferSize = $bufferSize
+}
+
+# Define o tamanho da janela
+$size = New-Object System.Management.Automation.Host.Size($desiredWidth, $desiredHeight)
 $host.UI.RawUI.WindowSize = $size
 
 # Define a cor de fundo para preto
