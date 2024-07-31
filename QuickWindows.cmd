@@ -237,6 +237,8 @@
 ::   - Ajustes no tamanho da janela e no estreitamento das colunas da tabela de rotinas.
 :: v1.65.101 2024-07-30 às 00h15, Marcos Aurélio:
 ::   - Inclusão das opções da sessão de redes nas rotinas.
+:: v1.66.101 2024-07-31 às 00h21, Marcos Aurélio:
+::   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 ::
 :: Licença: GPL.
 
