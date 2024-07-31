@@ -22,6 +22,8 @@
 #     o desempenho do download.
 # v1.3.2 2024-07-28 às 00h29, Marcos Aurélio:
 #   - Registro de logs.
+# v1.4.2 2024-07-31 às 01h47, Marcos Aurélio:
+#   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 #
 # Licença: GPL.
 
@@ -41,6 +43,20 @@ if (-not (Test-Path $configPath)) {
 }
 # Importa as configurações do arquivo encontrado
 $configData = Get-Content -Path $configPath | ConvertFrom-Json
+
+# Importa o arquivo de URLs
+$urlsPath = "./urls.json"
+if (-not (Test-Path $urlsPath)) {
+    $urlsPath = "../../urls.json"
+}
+$urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
+$Download_Package_1 = $urlsData.Internet[0] # Acessa a URL do pacote de instalação do Windows 7, todas as versões
+$Download_Package_2 = $urlsData.Internet[1] # Acessa a URL do pacote de instalação do Windows 7 Lite
+$Download_Package_3 = $urlsData.Internet[2] # Acessa a URL do pacote de instalação do Windows 10 Pro 32bits
+$Download_Package_4 = $urlsData.Internet[3] # Acessa a URL do pacote de instalação do Windows 10 Pro 64bits
+$Download_Package_5 = $urlsData.Internet[4] # Acessa a URL do pacote de instalação do Windows 10 1909 PRO MSDN LITE Build
+$Download_Package_6 = $urlsData.Internet[5] # Acessa a URL do pacote de instalação do Windows 11 Pro
+$Download_Package_7 = $urlsData.Internet[6] # Acessa a URL do pacote de instalação do Windows Server 2022
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
@@ -80,25 +96,25 @@ $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # [7]=Windows Server 2022
 
 # Windows 7, todas as versões
-$url1 = "https://htciuq.bl.files.1drv.com/y4mt9d6zCC8LoPtWykd16m0C78ToCfoJ-zdWeZYYAC-JDhYnhYcaltM76Ak8fGYw2u82BF5VtA87srqHOQR7mHc0V_FPrm-w0b5J9ns-VT8T8QRg0U4yLxFzCeLVLf-LGAydIKrvwN0LuDZXS9yPyJaRlQSSkguOrvVv6dwq7D8LwANl-NDE2A-ObLZE2dvhtcQGlapagf4_za-Ir_GIdCuNw"
+$url1 = $Download_Package_1
 
 # Windows 7 Lite
-$url2 = "https://wiupiq.bl.files.1drv.com/y4mapuTU6SGl-NtIqRdriOzRTv8jqmlEqqp7vbx2dbqc968i9w26S3483DG1tL-GpNyGpovjVmV8OeHEJQfl_rOKZoY_vCeh0ODJE85pRB5e2nOafeEZM5bo6lGLpXHLqeyuQu-z4nx6_h7fCWk-csSPsmyXyybWMYoBxECQdjc5OQrDiuy52kQXg6Wn4Njo-9vJsLR7dV0A4n6fS7huVQTtg"
+$url2 = $Download_Package_2
 
 # Windows 10 Pro 32bits
-$url3 = "https://jrfo5g.bl.files.1drv.com/y4mSyioCqp3jImlDW1TCwMSSrjRr9nKaJTq_0YrHKMUjonBmrxTpgn3zgUStM2S8T7Jp3uc7Ggk2x6m3LhO2ZxObGREXlqdwzgx8Lm6eIJDgLzbj39sEwn_g_0LFfbMKpWrM3bzTRIYBANlEkzSlxoiLzXSH4OeIYEOseYcTwimUHup-6hg7Sr5n-xkq4t4CP5OB8vzn730RQpyl3-mr0zXeQ"
+$url3 = $Download_Package_3
 
 # Windows 10 Pro 64bits
-$url4 = "https://g1v7fg.bl.files.1drv.com/y4m8DfoQK_e68fwl-96MoPKicK1usQa4LprUOzY_hdbPd-hL5U-95r8byM06mx00XWeCjrbH3EtJg5unyHeOkilCfImrqvB1nUgJ9EgFjh4Z3auIfZ6CKunq5yz_Ft02fgXLSOfdqR2mw_cIoaMYLLjAyjC0NN_1_xtCkKYK80u_6-1JVAIVgtIXs0il82ub2iHLmeSP3nsC3tcF_EGmf0R5w"
+$url4 = $Download_Package_4
 
 # Windows 10 1909 PRO MSDN LITE Build
-$url5 = "https://kemhcq.bl.files.1drv.com/y4m29ZLMN-9gkr9xnPXMEuWTk4Q8zs58ud6Tqy6536AVbT154C8qQIthy_Uw3QNhp63x1xPdeAwM4c_90qoga-WcSIysyTYcZ25TCIQB4P1Yx1MmlIFt-RYnoasqrTxhjhItUSQepY3tQQXoUeNTIyoJqPwrRcyedzrI5gXQoxZFg5OlHVkhtAURTJNMydtoPXHH7g4_5oUWO1pWjMnzRHewA"
+$url5 = $Download_Package_5
 
 # Windows 11 Pro
-$url6 = "https://wwa4la.bl.files.1drv.com/y4mMrQ82KZWfL4g2Xv87sh53A7wBJcU8aWefOZ0X4vhfwstblCxpDjY6BIjlozd4hfLkEh4V2zV1VRI8MvLKxgtqiNwUnxMYW-i1TUKxespqL7w27kct0QJ5WtyftUvb-fCMs-iFUsDbyriv6RDxonWax3-uvjLvV5yHja1dJVE1ErKZ6LK_rhSAwDWuKNPAOW1bhVUwQd4banYYZu1TJRzhQ"
+$url6 = $Download_Package_6
 
 # Windows Server 2022
-$url7 = "https://lf4ufa.bl.files.1drv.com/y4mI-kG_0RZ1EFBvYS8fAhZS67y083H8pTYnueBbUitj5SUoXCKO2P-vFUlwYgxBUH48XtIHi2_C_N1Fp-gj7BY1OsBkKG1C2tJVDwLtjj4y4gmg0DKrYy1EDsOlYBaB5ZZCh4vrfqpc5_tBn03HOpGjqZU85k8zwAgihAgQqZp7rfKlMY0oGtNMf7CvwNWKGpPFWE87uRMGGZP3om40pWGAA"
+$url7 = $Download_Package_7
 
 # Verificação e download do arquivo com base na escolha
 switch ($numero) {
