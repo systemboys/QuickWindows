@@ -15,6 +15,8 @@
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 # v1.2.1 2024-07-28 às 00h01, Marcos Aurélio:
 #   - Registro de logs.
+# v1.3.1 2024-07-31 às 00h34, Marcos Aurélio:
+#   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 #
 # Licença: GPL.
 
@@ -28,6 +30,14 @@ if (-not (Test-Path $configPath)) {
 }
 # Importa as configurações do arquivo encontrado
 $configData = Get-Content -Path $configPath | ConvertFrom-Json
+
+# Importa o arquivo de URLs
+$urlsPath = "./urls.json"
+if (-not (Test-Path $urlsPath)) {
+    $urlsPath = "../../urls.json"
+}
+$urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
+$Install_Google_Earth_Pro = $urlsData.Internet[2] # Acessa a URL do pacote
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
@@ -62,7 +72,7 @@ $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 $installed = Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Where-Object {$_.DisplayName -eq "Google Earth Pro"}
 if ($installed -eq $null) {
     $temporaryDirectory = $env:TEMP
-    $url = "https://dl.google.com/earth/client/advanced/current/GoogleEarthProWin.exe"
+    $url = $Install_Google_Earth_Pro
     $output = "$temporaryDirectory\GoogleEarthProWin.exe"
     Start-BitsTransfer -Source $url -Destination $output
 
