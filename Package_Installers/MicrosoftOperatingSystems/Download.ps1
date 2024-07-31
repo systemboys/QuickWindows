@@ -50,13 +50,13 @@ if (-not (Test-Path $urlsPath)) {
     $urlsPath = "../../urls.json"
 }
 $urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
-$Download_Package_1 = $urlsData.Internet[0] # Acessa a URL do pacote de instalação do Windows 7, todas as versões
-$Download_Package_2 = $urlsData.Internet[1] # Acessa a URL do pacote de instalação do Windows 7 Lite
-$Download_Package_3 = $urlsData.Internet[2] # Acessa a URL do pacote de instalação do Windows 10 Pro 32bits
-$Download_Package_4 = $urlsData.Internet[3] # Acessa a URL do pacote de instalação do Windows 10 Pro 64bits
-$Download_Package_5 = $urlsData.Internet[4] # Acessa a URL do pacote de instalação do Windows 10 1909 PRO MSDN LITE Build
-$Download_Package_6 = $urlsData.Internet[5] # Acessa a URL do pacote de instalação do Windows 11 Pro
-$Download_Package_7 = $urlsData.Internet[6] # Acessa a URL do pacote de instalação do Windows Server 2022
+$Download_Package_1 = $urlsData.MicrosoftOperatingSystems[0] # Acessa a URL do pacote de instalação do Windows 7, todas as versões
+$Download_Package_2 = $urlsData.MicrosoftOperatingSystems[1] # Acessa a URL do pacote de instalação do Windows 7 Lite
+$Download_Package_3 = $urlsData.MicrosoftOperatingSystems[2] # Acessa a URL do pacote de instalação do Windows 10 Pro 32bits
+$Download_Package_4 = $urlsData.MicrosoftOperatingSystems[3] # Acessa a URL do pacote de instalação do Windows 10 Pro 64bits
+$Download_Package_5 = $urlsData.MicrosoftOperatingSystems[4] # Acessa a URL do pacote de instalação do Windows 10 1909 PRO MSDN LITE Build
+$Download_Package_6 = $urlsData.MicrosoftOperatingSystems[5] # Acessa a URL do pacote de instalação do Windows 11 Pro
+$Download_Package_7 = $urlsData.MicrosoftOperatingSystems[6] # Acessa a URL do pacote de instalação do Windows Server 2022
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
