@@ -102,9 +102,7 @@ if (Test-Path $directory) {
     Start-Process -FilePath "$downloadPath" -Wait
 
     # Apagar o arquivo
-    if (Test-Path "$env:TEMP\$downloadPath") {
-        Remove-Item -Path "$env:TEMP\$downloadPath" -Force
-    }
+    Remove-Item -Path "$env:TEMP\$downloadPath" -Force
 }
 
 Write-Host "Press any key to continue..."
