@@ -8,7 +8,10 @@
         "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/MicrosoftEdgeSetup.exe",
         "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Firefox-Installer.exe",
         "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/OperaSetup.exe",
-        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/VNC-Viewer-Windows.exe"
+        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/VNC-Viewer-Windows.exe",
+        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/RemoteAccess/RustDesk_Setup.exe",
+        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Skype-setup.exe",
+        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Downloads/transmission-downloads.msi"
     ],
     "UtilitariosParaWindows": [
         "https://github.com/systemboys/QuickWindows/raw/main/Images/package_7.ico"

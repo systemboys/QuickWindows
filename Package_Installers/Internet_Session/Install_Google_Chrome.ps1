@@ -82,7 +82,6 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Google Chrome não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
     Write-Host "Google Chrome is not installed! Starting installation process."
-    Write-Host "File size: 1.31 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = $Install_Google_Chrome

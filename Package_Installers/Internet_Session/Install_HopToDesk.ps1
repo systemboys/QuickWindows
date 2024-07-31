@@ -83,7 +83,6 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "HopToDesk não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
     Write-Host "HopToDesk is not installed! Starting installation process."
-    Write-Host "File size: 7.27 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = $Install_HopToDesk

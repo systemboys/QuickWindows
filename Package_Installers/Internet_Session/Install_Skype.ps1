@@ -19,6 +19,8 @@
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 # v1.2.3 2024-07-28 às 00h16, Marcos Aurélio:
 #   - Registro de logs.
+# v1.3.3 2024-07-31 às 01h20, Marcos Aurélio:
+#   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 #
 # Licença: GPL.
 
@@ -32,6 +34,14 @@ if (-not (Test-Path $configPath)) {
 }
 # Importa as configurações do arquivo encontrado
 $configData = Get-Content -Path $configPath | ConvertFrom-Json
+
+# Importa o arquivo de URLs
+$urlsPath = "./urls.json"
+if (-not (Test-Path $urlsPath)) {
+    $urlsPath = "../../urls.json"
+}
+$urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
+$Install_Skype = $urlsData.Internet[10] # Acessa a URL do pacote
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
@@ -72,10 +82,9 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Skype não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
     Write-Host "Skype is not installed! Starting installation process."
-    Write-Host "File size: 84.7 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Skype-setup.exe"
+    $downloadUrl = $Install_Skype
     $downloadPath = "$env:temp\Skype-setup.exe"
     
     # Faz o download do Skype

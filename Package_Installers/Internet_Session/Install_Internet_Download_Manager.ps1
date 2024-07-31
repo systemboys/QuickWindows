@@ -83,7 +83,6 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Internet Download Manager não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
     Write-Host "Internet Download Manager is not installed! Starting installation process."
-    Write-Host "File size: 11.5 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = $Install_Internet_Download_Manager

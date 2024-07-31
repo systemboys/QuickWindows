@@ -108,7 +108,6 @@ if (Test-Path $directory) {
     }
 } else {
     Write-Host "AnyDesk is not installed! Starting installation process."
-    Write-Host "File size: 5.27 MB"
 
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
 

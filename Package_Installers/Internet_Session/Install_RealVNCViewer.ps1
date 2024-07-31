@@ -82,7 +82,6 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Real VNC Viewer não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
     Write-Host "Real VNC Viewer is not installed! Starting installation process."
-    Write-Host "File size: 11 MB"
 
     # Link do download e o diretório Temp
     $downloadUrl = $Install_RealVNCViewer
@@ -102,7 +101,9 @@ if (Test-Path $directory) {
     Start-Process -FilePath "$downloadPath" -Wait
 
     # Apagar o arquivo
-    Remove-Item -Path "$env:TEMP\$downloadPath" -Force
+    if (Test-Path "$env:TEMP\$downloadPath") {
+        Remove-Item -Path "$env:TEMP\$downloadPath" -Force
+    }
 }
 
 Write-Host "Press any key to continue..."

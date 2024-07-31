@@ -82,7 +82,6 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Mozilla Firefox não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
     Write-Host "Mozilla Firefox is not installed! Starting installation process."
-    Write-Host "File size: 389 KB"
 
     # Link do download e o diretório Temp
     $downloadUrl = $Install_Mozilla_Firefox
