@@ -5,7 +5,8 @@
         "https://dl.google.com/earth/client/advanced/current/GoogleEarthProWin.exe",
         "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/RemoteAccess/HopToDesk.exe",
         "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Downloads/Internet_Download_Manager.exe",
-        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/MicrosoftEdgeSetup.exe"
+        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/MicrosoftEdgeSetup.exe",
+        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/Internet/Firefox-Installer.exe"
     ],
     "UtilitariosParaWindows": [
         "https://github.com/systemboys/QuickWindows/raw/main/Images/package_7.ico"
