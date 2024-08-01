@@ -40,8 +40,6 @@
 #   - Ajustes no tamanho da janela e no estreitamento das colunas da tabela de rotinas.
 # v1.12.4 2024-07-30 às 00h13, Marcos Aurélio:
 #   - Inclusão das opções da sessão de redes nas rotinas.
-# v1.12.5 2024-08-01 às 01h28, Marcos Aurélio:
-#   - Abrir a página do repositório do QuickWindows na âncora das Rotinas.
 #
 # Licença: GPL.
 
@@ -346,14 +344,3 @@ foreach ($Routine in $Routines) {
         Write-Host "Invalid routine: $Routine"
     }
 }
-
-# ----------------Abrir link das Rotinas-------------------
-Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
-
-# Defina o URL da página que você quer abrir
-$routinesLink = "https://github.com/systemboys/QuickWindows/blob/main/README.md#rotinas-para-instala%C3%A7%C3%B5es-padr%C3%A3o"
-
-# Use Start-Process para abrir o navegador padrão com o URL
-Start-Process $routinesLink
-# ----------------/Abrir link das Rotinas------------------
-

@@ -243,8 +243,6 @@
 ::   - Remoção do trecho que imprime no terminal a informação de que os logs foram criados.
 :: v1.66.103 2024-08-01 às 00h32, Marcos Aurélio:
 ::   - Chamada de URLs na lista do arquivo JSON dos utilitários que faltavam.
-:: v1.66.104 2024-08-01 às 01h30, Marcos Aurélio:
-::   - Abrir a página do repositório do QuickWindows na âncora das Rotinas.
 ::
 :: Licença: GPL.
 
@@ -399,7 +397,7 @@ if %ERRORLEVEL% equ 9 (
     cls
     echo Você selecionou a Opção para Executar Rotinas.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Package_Installers\RunRoutines.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Package_Installers\RunRoutines.ps1""' -Verb RunAs}"
 
     goto menu
 )
