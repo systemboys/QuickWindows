@@ -347,10 +347,69 @@ foreach ($Routine in $Routines) {
     }
 }
 
-# Abrir link das Rotinas
-# Defina o URL da página que você quer abrir
-$routinesLink = "https://github.com/systemboys/QuickWindows/blob/main/README.md"
+# ----------------Abrir link das Rotinas-------------------
+# Função para verificar se a URL é válida
+function Test-Url {
+    param (
+        [string]$Url
+    )
+    try {
+        $request = [System.Net.WebRequest]::Create($Url)
+        $request.Method = "HEAD"
+        $response = $request.GetResponse()
+        $response.Close()
+        return $true
+    }
+    catch {
+        return $false
+    }
+}
 
-# Use Start-Process para abrir o navegador padrão com o URL
-Start-Process $routinesLink
+# Defina o URL da página que você quer abrir
+$routinesLink = "https://github.com/systemboys/QuickWindows/blob/main/README.md#rotinas-para-instala%C3%A7%C3%B5es-padr%C3%A3o"
+
+# Verifique se o URL é válido
+if (Test-Url $routinesLink) {
+    Write-Output "URL é válida. Tentando abrir no navegador padrão..."
+
+    try {
+        # Tenta abrir no navegador padrão
+        Start-Process $routinesLink
+        Write-Output "Página aberta no navegador padrão."
+    }
+    catch {
+        Write-Warning "Não foi possível abrir no navegador padrão. Tentando navegadores específicos..."
+
+        # Tenta abrir no Google Chrome
+        try {
+            Start-Process "chrome.exe" $routinesLink
+            Write-Output "Página aberta no Google Chrome."
+        }
+        catch {
+            Write-Warning "Não foi possível abrir no Google Chrome. Tentando Microsoft Edge..."
+
+            # Tenta abrir no Microsoft Edge
+            try {
+                Start-Process "msedge.exe" $routinesLink
+                Write-Output "Página aberta no Microsoft Edge."
+            }
+            catch {
+                Write-Warning "Não foi possível abrir no Microsoft Edge. Tentando Firefox..."
+
+                # Tenta abrir no Firefox
+                try {
+                    Start-Process "firefox.exe" $routinesLink
+                    Write-Output "Página aberta no Firefox."
+                }
+                catch {
+                    Write-Error "Não foi possível abrir a página em nenhum navegador. Verifique suas configurações."
+                }
+            }
+        }
+    }
+}
+else {
+    Write-Error "URL inválida. Por favor, verifique o link."
+}
+# ----------------/Abrir link das Rotinas------------------
 
