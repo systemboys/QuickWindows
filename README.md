@@ -838,10 +838,10 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\YourPackage"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "YourPackage está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "YourPackage está instalado!"
     Write-Host "YourPackage is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "YourPackage não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "YourPackage não está instalado! Iniciando processo de instalação."
     Write-Host "YourPackage is not installed! Starting installation process."
     Write-Host "File size: 9.9 MB"
 
