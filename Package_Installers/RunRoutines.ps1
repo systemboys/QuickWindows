@@ -344,3 +344,67 @@ foreach ($Routine in $Routines) {
         Write-Host "Invalid routine: $Routine"
     }
 }
+
+# ---Abrir o bloco de notas com as rotinas de instalação padrão---
+# Caminho para o arquivo README.md
+$filePath = "$env:TEMP\QuickWindows\README.md"
+
+# Verifica se o arquivo existe
+if (Test-Path -Path $filePath) {
+    Write-Host "O arquivo $filePath foi encontrado."
+
+    # Lê o conteúdo do arquivo
+    $fileContent = Get-Content -Path $filePath -Encoding utf8
+    
+    # Inicializa variáveis
+    $startLineFound = $false
+    $endLineFound = $false
+    $extractedContent = @()
+
+    # Define as linhas de início e fim em minúsculas
+    $startLine = "# formatação remota"
+    $endLine = "# rascunho para novos itens"
+
+    # Percorre cada linha do conteúdo do arquivo
+    foreach ($line in $fileContent) {
+        $trimmedLine = $line.Trim().ToLower()
+        if ($trimmedLine -eq $startLine) {
+            Write-Host "Linha de início encontrada."
+            $startLineFound = $true
+            continue
+        }
+        
+        if ($trimmedLine -eq $endLine) {
+            Write-Host "Linha de fim encontrada."
+            $endLineFound = $true
+            break
+        }
+        
+        if ($startLineFound -and -not $endLineFound) {
+            $extractedContent += $line
+        }
+    }
+
+    # Verifica se as linhas de início e fim foram encontradas
+    if ($startLineFound -and $endLineFound) {
+        Write-Host "Linhas de início e fim encontradas."
+
+        # Concatena o conteúdo extraído em uma string
+        $contentToDisplay = $extractedContent -join "`r`n"
+
+        # Caminho para o arquivo temporário
+        $tempFilePath = "$env:TEMP\ExtractedContent.txt"
+
+        # Escreve o conteúdo extraído no arquivo temporário
+        $contentToDisplay | Out-File -FilePath $tempFilePath -Encoding utf8
+
+        # Abre o Bloco de notas com o arquivo temporário
+        Write-Host "Abrindo o Bloco de notas com o conteúdo extraído."
+        Start-Process notepad.exe $tempFilePath
+    } else {
+        Write-Host "Não foi possível encontrar as linhas especificadas no arquivo."
+    }
+} else {
+    Write-Host "O arquivo $filePath não existe."
+}
+# ---/Abrir o bloco de notas com as rotinas de instalação padrão---
