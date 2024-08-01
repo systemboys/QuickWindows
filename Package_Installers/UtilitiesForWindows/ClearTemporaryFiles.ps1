@@ -61,7 +61,7 @@ $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
 # Mensagem de início
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando a limpeza dos arquivos temporários..."; Write-Host "Log created in: $logPath"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando a limpeza dos arquivos temporários..."
 Write-Host "Starting cleaning temporary files..."
 
 # Inicializar a contagem de arquivos apagados
@@ -69,16 +69,16 @@ $deletedFilesCount = 0
 
 # Limpar diretório C:\Windows\Temp
 $windowsTempPath = "$env:Windir\Temp"
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Limpando arquivos temporários em: $windowsTempPath"; Write-Host "Log created in: $logPath"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Limpando arquivos temporários em: $windowsTempPath"
 Write-Host "Clearing temporary files in: $windowsTempPath"
 Get-ChildItem -Path $windowsTempPath | Where-Object { $_.FullName -notlike "*\QuickWindows\*" } | ForEach-Object {
     try {
         Remove-Item $_.FullName -Force -Recurse -ErrorAction Stop
-        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Arquivo excluído: $($_.FullName)"; Write-Host "Log created in: $logPath"
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Arquivo excluído: $($_.FullName)"
         Write-Host "Deleted file: $($_.FullName)"
         $deletedFilesCount++
     } catch {
-        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Erro ao excluir arquivo: $($_.FullName). $($_.Exception.Message)"; Write-Host "Log created in: $logPath"
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Erro ao excluir arquivo: $($_.FullName). $($_.Exception.Message)"
         Write-Host "Error deleting file: $($_.FullName). $($_.Exception.Message)"
     }
 }
@@ -86,22 +86,22 @@ Get-ChildItem -Path $windowsTempPath | Where-Object { $_.FullName -notlike "*\Qu
 # Limpar diretório %temp% do usuário, excluindo o diretório QuickWindows
 $userTempPath = [System.IO.Path]::GetTempPath()
 $quickWindowsPath = Join-Path $userTempPath "QuickWindows"
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Limpando arquivos temporários em: $userTempPath, exceto $quickWindowsPath"; Write-Host "Log created in: $logPath"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Limpando arquivos temporários em: $userTempPath, exceto $quickWindowsPath"
 Write-Host "Clearing temporary files in: $userTempPath, except $quickWindowsPath"
 Get-ChildItem -Path $userTempPath | Where-Object { $_.FullName -ne $quickWindowsPath } | ForEach-Object {
     try {
         Remove-Item $_.FullName -Force -Recurse -ErrorAction Stop
-        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Arquivo excluído: $($_.FullName)"; Write-Host "Log created in: $logPath"
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Arquivo excluído: $($_.FullName)"
         Write-Host "Deleted file: $($_.FullName)"
         $deletedFilesCount++
     } catch {
-        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Erro ao excluir arquivo: $($_.FullName). $($_.Exception.Message)"; Write-Host "Log created in: $logPath"
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Erro ao excluir arquivo: $($_.FullName). $($_.Exception.Message)"
         Write-Host "Error deleting file: $($_.FullName). $($_.Exception.Message)"
     }
 }
 
 # Mensagem de conclusão com o número de arquivos apagados
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Limpeza de arquivo temporário concluída. Arquivos $deletedFilesCount excluídos."; Write-Host "Log created in: $logPath"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Limpeza de arquivo temporário concluída. Arquivos $deletedFilesCount excluídos."
 Write-Host "Temporary file cleanup complete. Deleted $deletedFilesCount files."
 
 Write-Host "Press any key to continue..."
