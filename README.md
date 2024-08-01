@@ -449,7 +449,7 @@ Aqui estão todas as opções em desenvolvimento.
     │    │   │  │ dispositivo de armazenamento para colocar a ISO.
     │    │   │
     └────┼───┼──┤ # Gerenciar arquivos e pastas
-         │   │  │ Copiar ou mover os arquivos imporantes do
+         │   │  │ Copiar ou mover os arquivos importantes do
          │   │  │ usuário para a unidade "D:" evitar perdas
          │   │  │ inesperadas.
          │   │
