@@ -347,35 +347,11 @@ foreach ($Routine in $Routines) {
     }
 }
 
-# ----------------Abrir o Bloco de notas com um trecho do conteúdo de um determinado arquivo-------------------
-# Defina o caminho do arquivo README.md
-$readmePath = "C:\Users\User-Zumbido\AppData\Local\Temp\QuickWindows\README.md"
+# ----------------Abrir link das Rotinas-------------------
+# Defina o URL da página que você quer abrir
+$routinesLink = "https://github.com/systemboys/QuickWindows/blob/main/README.md#rotinas-para-instala%C3%A7%C3%B5es-padr%C3%A3o"
 
-# Defina o caminho para o arquivo temporário
-$tempFilePath = [System.IO.Path]::GetTempFileName() + ".txt"
-
-# Leia o conteúdo do arquivo README.md
-$readmeContent = Get-Content -Path $readmePath
-
-# Encontre o índice da linha inicial e final do trecho desejado
-$startIndex = $readmeContent.IndexOf("> ### Rotinas para instalações padrão")
-$endIndex = $readmeContent.IndexOf("# Rascunho para novos itens")
-
-if ($startIndex -eq -1 -or $endIndex -eq -1) {
-    Write-Error "Não foi possível encontrar as linhas especificadas no arquivo README.md."
-    exit
-}
-
-# Extraia o conteúdo entre as linhas especificadas
-$desiredContent = $readmeContent[$startIndex..($endIndex-1)]
-
-# Salve o conteúdo extraído em um arquivo temporário
-$desiredContent | Set-Content -Path $tempFilePath
-
-# Abra o Bloco de Notas com o arquivo temporário
-Start-Process notepad.exe $tempFilePath
-
-# Exibe uma mensagem indicando que o conteúdo foi aberto no Bloco de Notas
-Write-Output "Conteúdo do trecho especificado foi aberto no Bloco de Notas."
-# ----------------/Abrir o Bloco de notas com um trecho do conteúdo de um determinado arquivo------------------
+# Use Start-Process para abrir o navegador padrão com o URL
+Start-Process $routinesLink
+# ----------------/Abrir link das Rotinas------------------
 

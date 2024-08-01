@@ -399,7 +399,7 @@ if %ERRORLEVEL% equ 9 (
     cls
     echo Você selecionou a Opção para Executar Rotinas.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Package_Installers\RunRoutines.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Package_Installers\RunRoutines.ps1""' -Verb RunAs}"
 
     goto menu
 )
