@@ -348,6 +348,8 @@ foreach ($Routine in $Routines) {
 }
 
 # ----------------Abrir link das Rotinas-------------------
+Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
+
 # Defina o URL da página que você quer abrir
 $routinesLink = "https://github.com/systemboys/QuickWindows/blob/main/README.md#rotinas-para-instala%C3%A7%C3%B5es-padr%C3%A3o"
 
