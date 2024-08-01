@@ -243,6 +243,8 @@
 ::   - Remoção do trecho que imprime no terminal a informação de que os logs foram criados.
 :: v1.66.103 2024-08-01 às 00h32, Marcos Aurélio:
 ::   - Chamada de URLs na lista do arquivo JSON dos utilitários que faltavam.
+:: v1.66.104 2024-08-01 às 01h30, Marcos Aurélio:
+::   - Abrir a página do repositório do QuickWindows na âncora das Rotinas.
 ::
 :: Licença: GPL.
 

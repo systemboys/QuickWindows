@@ -40,6 +40,8 @@
 #   - Ajustes no tamanho da janela e no estreitamento das colunas da tabela de rotinas.
 # v1.12.4 2024-07-30 às 00h13, Marcos Aurélio:
 #   - Inclusão das opções da sessão de redes nas rotinas.
+# v1.12.5 2024-08-01 às 01h28, Marcos Aurélio:
+#   - Abrir a página do repositório do QuickWindows na âncora das Rotinas.
 #
 # Licença: GPL.
 
