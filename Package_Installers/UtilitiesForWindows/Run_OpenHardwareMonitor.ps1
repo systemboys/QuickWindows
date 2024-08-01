@@ -11,6 +11,8 @@
 #   - Versão inicial, Download e execução de Open Hardware Monitor.
 # v1.1.0 2024-07-28 às 01h51, Marcos Aurélio:
 #   - Registro de logs.
+# v1.2.0 2024-08-01 às 00h24, Marcos Aurélio:
+#   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 #
 # Licença: GPL.
 
@@ -24,6 +26,14 @@ if (-not (Test-Path $configPath)) {
 }
 # Importa as configurações do arquivo encontrado
 $configData = Get-Content -Path $configPath | ConvertFrom-Json
+
+# Importa o arquivo de URLs
+$urlsPath = "./urls.json"
+if (-not (Test-Path $urlsPath)) {
+    $urlsPath = "../../urls.json"
+}
+$urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
+$Run_OpenHardwareMonitor = $urlsData.UtilitiesForWindows[24] # Acessa a URL do pacote
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
@@ -64,10 +74,9 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Open Hardware Monitor não está instalado! Iniciando processo de instalação."
     Write-Host "Open Hardware Monitor is not installed! Starting installation process."
-    Write-Host "File size: 491 KB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/OpenHardwareMonitor.zip"
+    $downloadUrl = $Run_OpenHardwareMonitor
     $downloadPath = "$env:temp\OpenHardwareMonitor.zip"
     
     # Faz o download do Open Hardware Monitor

@@ -18,6 +18,8 @@
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 # v1.3.2 2024-07-28 às 01h27, Marcos Aurélio:
 #   - Registro de logs.
+# v1.4.2 2024-07-31 às 23h43, Marcos Aurélio:
+#   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 #
 # Licença: GPL.
 
@@ -31,6 +33,14 @@ if (-not (Test-Path $configPath)) {
 }
 # Importa as configurações do arquivo encontrado
 $configData = Get-Content -Path $configPath | ConvertFrom-Json
+
+# Importa o arquivo de URLs
+$urlsPath = "./urls.json"
+if (-not (Test-Path $urlsPath)) {
+    $urlsPath = "../../urls.json"
+}
+$urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
+$Install_CPU_Z = $urlsData.UtilitiesForWindows[4] # Acessa a URL do pacote
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
@@ -73,10 +83,9 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "CPU-Z não está instalado! Iniciando processo de instalação."
     Write-Host "CPU-Z is not installed! Starting installation process."
-    Write-Host "File size: 2.13 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/CPU-Z.exe"
+    $downloadUrl = $Install_CPU_Z
     $downloadPath = "$env:temp\CPU-Z.exe"
     
     # Faz o download do CPU-Z

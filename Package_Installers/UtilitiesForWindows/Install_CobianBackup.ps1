@@ -18,6 +18,8 @@
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 # v1.2.2 2024-07-29 às 01h25, Marcos Aurélio:
 #   - Registro de logs.
+# v1.3.2 2024-07-31 às 23h41, Marcos Aurélio:
+#   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 #
 # Licença: GPL.
 
@@ -56,6 +58,14 @@ if (-not (Test-Path $functionPath)) {
 # Importa a função do caminho encontrado
 . $functionPath
 
+# Importa o arquivo de URLs
+$urlsPath = "./urls.json"
+if (-not (Test-Path $urlsPath)) {
+    $urlsPath = "../../urls.json"
+}
+$urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
+$Install_CobianBackup = $urlsData.UtilitiesForWindows[3] # Acessa a URL do pacote
+
 # Executar função que cria logs do sistema
 $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
@@ -73,10 +83,9 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Cobian Backup não está instalado! Iniciando processo de instalação."
     Write-Host "Cobian Backup is not installed! Starting installation process."
-    Write-Host "File size: 18.8 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Cobian_Backup_Setup.exe"
+    $downloadUrl = $Install_CobianBackup
     $downloadPath = "$env:temp\Cobian_Backup_Setup.exe"
     
     # Faz o download do Cobian Backup

@@ -18,6 +18,8 @@
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 # v1.2.2 2024-07-28 às 01h33, Marcos Aurélio:
 #   - Registro de logs.
+# v1.3.2 2024-07-31 às 23h53, Marcos Aurélio:
+#   - 
 #
 # Licença: GPL.
 
@@ -31,6 +33,14 @@ if (-not (Test-Path $configPath)) {
 }
 # Importa as configurações do arquivo encontrado
 $configData = Get-Content -Path $configPath | ConvertFrom-Json
+
+# Importa o arquivo de URLs
+$urlsPath = "./urls.json"
+if (-not (Test-Path $urlsPath)) {
+    $urlsPath = "../../urls.json"
+}
+$urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
+$Install_FoxitPDFReader = $urlsData.UtilitiesForWindows[9] # Acessa a URL do pacote
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
@@ -71,10 +81,9 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Foxit PDF Reader não está instalado! Iniciando processo de instalação."
     Write-Host "Foxit PDF Reader is not installed! Starting installation process."
-    Write-Host "File size: 153.0 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://public.bl.files.1drv.com/y4mhXxb-H_Z4V8uDytwQSgzG5ccbk1mYgPPa3vtO81Xb5uAZR8d08ePkFHk91e6IJc5pMT5vAYohY2naeGXcBiO89TPQIba35N4-C543Zod9cIYxynjIMvWkKH4Dh5lpsGqC3uqe4vLCNCZZZAX7x2_tu4jqzB66A69XsE0Tg3Q87uJGBzfUyXUIWS_ynRImLV8OdmECfv7pK01tN_qEXxuVqCtysU-gA35FPvU3qiMhY4?AVOverride=1"
+    $downloadUrl = $Install_FoxitPDFReader
     $downloadPath = "$env:temp\FoxitPDFReader20233_L10N_Setup_Prom.exe"
     
     # Faz o download do Foxit PDF Reader

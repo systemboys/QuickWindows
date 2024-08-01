@@ -241,6 +241,8 @@
 ::   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 :: v1.66.102 2024-07-31 às 22h54, Marcos Aurélio:
 ::   - Remoção do trecho que imprime no terminal a informação de que os logs foram criados.
+:: v1.66.102 2024-08-01 às 00h32, Marcos Aurélio:
+::   - Chamada de URLs na lista do arquivo JSON dos utilitários que faltavam.
 ::
 :: Licença: GPL.
 

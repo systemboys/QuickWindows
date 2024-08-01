@@ -17,6 +17,8 @@
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 # v1.2.2 2024-07-28 às 01h35, Marcos Aurélio:
 #   - Registro de logs.
+# v1.3.2 2024-07-31 às 23h57, Marcos Aurélio:
+#   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 #
 # Licença: GPL.
 
@@ -55,6 +57,14 @@ if (-not (Test-Path $functionPath)) {
 # Importa a função do caminho encontrado
 . $functionPath
 
+# Importa o arquivo de URLs
+$urlsPath = "./urls.json"
+if (-not (Test-Path $urlsPath)) {
+    $urlsPath = "../../urls.json"
+}
+$urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
+$Install_MiniToolPartitionWizardInstallation = $urlsData.UtilitiesForWindows[0] # Acessa a URL do pacote
+
 # Executar função que cria logs do sistema
 $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
@@ -70,10 +80,9 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "MiniTool Partition não está instalado! Iniciando processo de instalação."
     Write-Host "MiniTool Partition is not installed! Starting installation process."
-    Write-Host "File size: 3.1 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/MiniTool-Partition-Wizard-v12-Installation.exe"
+    $downloadUrl = $Install_MiniToolPartitionWizardInstallation
     $downloadPath = "$env:temp\MiniTool-Partition-Wizard-v12-Installation.exe"
     
     # Faz o download do MiniTool Partition Wizard

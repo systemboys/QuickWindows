@@ -18,6 +18,8 @@
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 # v1.2.2 2024-07-28 às 01h39, Marcos Aurélio:
 #   - Registro de logs.
+# v1.3.2 2024-08-01 às 00h04, Marcos Aurélio:
+#   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 #
 # Licença: GPL.
 
@@ -31,6 +33,14 @@ if (-not (Test-Path $configPath)) {
 }
 # Importa as configurações do arquivo encontrado
 $configData = Get-Content -Path $configPath | ConvertFrom-Json
+
+# Importa o arquivo de URLs
+$urlsPath = "./urls.json"
+if (-not (Test-Path $urlsPath)) {
+    $urlsPath = "../../urls.json"
+}
+$urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
+$Install_SiberiaProg_CH341A = $urlsData.UtilitiesForWindows[15] # Acessa a URL do pacote
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
@@ -73,10 +83,9 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "SiberiaProg-CH341A não está instalado! Iniciando processo de instalação."
     Write-Host "SiberiaProg-CH341A is not installed! Starting installation process."
-    Write-Host "File size: 8.81 MB"
 
     # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/SiberiaProg-CH341A_v1.40.0.0.exe"
+    $downloadUrl = $Install_SiberiaProg_CH341A
     $downloadPath = "$env:temp\SiberiaProg-CH341A_v1.40.0.0.exe"
     
     # Faz o download do SiberiaProg-CH341A

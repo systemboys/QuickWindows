@@ -20,6 +20,8 @@
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 # v1.2.3 2024-07-28 às 01h29, Marcos Aurélio:
 #   - Registro de logs.
+# v1.3.3 2024-07-31 às 23h48, Marcos Aurélio:
+#   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 #
 # Licença: GPL.
 
@@ -33,6 +35,14 @@ if (-not (Test-Path $configPath)) {
 }
 # Importa as configurações do arquivo encontrado
 $configData = Get-Content -Path $configPath | ConvertFrom-Json
+
+# Importa o arquivo de URLs
+$urlsPath = "./urls.json"
+if (-not (Test-Path $urlsPath)) {
+    $urlsPath = "../../urls.json"
+}
+$urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
+$Install_Deep_Freeze = $urlsData.UtilitiesForWindows[6] # Acessa a URL do pacote
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
@@ -69,10 +79,9 @@ $directory = "$programFiles\Deep Freeze"
 
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Deep Freeze não está instalado! Iniciando processo de instalação."
 Write-Host "Deep Freeze is not installed! Starting installation process."
-Write-Host "File size: 20.5 MB"
 
 # Link do download e o diretório Temp
-$downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Deep_Freeze.exe"
+$downloadUrl = $Install_Deep_Freeze
 $downloadPath = "$env:temp\Deep_Freeze.exe"
 
 # Faz o download do Deep_Freeze

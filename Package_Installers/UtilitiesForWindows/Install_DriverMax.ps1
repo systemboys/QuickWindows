@@ -20,6 +20,8 @@
 #   - Ajuste na remoção do arquivo baixado em Temp, uma condição que verifica a existência do arquivo foi adicionada.
 # v1.2.3 2024-07-28 às 01h32, Marcos Aurélio:
 #   - Registro de logs.
+# v1.3.3 2024-07-31 às 23h51, Marcos Aurélio:
+#   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
 #
 # Licença: GPL.
 
@@ -33,6 +35,14 @@ if (-not (Test-Path $configPath)) {
 }
 # Importa as configurações do arquivo encontrado
 $configData = Get-Content -Path $configPath | ConvertFrom-Json
+
+# Importa o arquivo de URLs
+$urlsPath = "./urls.json"
+if (-not (Test-Path $urlsPath)) {
+    $urlsPath = "../../urls.json"
+}
+$urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
+$Install_DriverMax = $urlsData.UtilitiesForWindows[8] # Acessa a URL do pacote
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
@@ -73,7 +83,6 @@ if (Test-Path $directory) {
 } else {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "DriverMax não está instalado! Iniciando processo de instalação."
     Write-Host "DriverMax is not installed! Starting installation process."
-    Write-Host "File size: 7.01 MB"
 
     # Pedir ao usuário para digitar o caminho onde deseja salvar o arquivo
     do {
@@ -95,7 +104,7 @@ if (Test-Path $directory) {
     $downloadPath = Join-Path -Path $saveLocation -ChildPath "DriverMax_setup.exe"
     
     # Faz o download do DriverMax
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/DriverMax_setup.exe"
+    $downloadUrl = $Install_DriverMax
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 
     # Emitir Sequência de Beeps
