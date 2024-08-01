@@ -73,7 +73,7 @@ $caminhoArquivo = Join-Path $env:TEMP $nomeArquivo
 Invoke-Expression "powercfg /batteryreport /output `"$caminhoArquivo`""
 
 # Exibe o caminho do arquivo gerado
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Relatório de bateria gerado em: $caminhoArquivo"; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Relatório de bateria gerado em: $caminhoArquivo"
 Write-Output "Relatório de bateria gerado em: $caminhoArquivo"
 
 # Abre o arquivo no navegador padrão do sistema

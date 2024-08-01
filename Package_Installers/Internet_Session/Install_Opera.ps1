@@ -78,10 +78,10 @@ $programFiles = $env:UserProfile
 $directory = "$programFiles\AppData\Local\Programs\Opera"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Opera está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Opera está instalado!"
     Write-Host "Opera is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Opera não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Opera não está instalado! Iniciando processo de instalação."
     Write-Host "Opera is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

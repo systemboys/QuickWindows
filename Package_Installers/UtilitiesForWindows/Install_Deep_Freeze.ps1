@@ -67,7 +67,7 @@ $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\Deep Freeze"
 
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Deep Freeze não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Deep Freeze não está instalado! Iniciando processo de instalação."
 Write-Host "Deep Freeze is not installed! Starting installation process."
 Write-Host "File size: 20.5 MB"
 

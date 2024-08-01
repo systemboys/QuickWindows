@@ -65,10 +65,10 @@ $programFiles = "$env:temp"
 $directory = "$programFiles\SiberiaProg-CH341A"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Revo Uninstaller Portable está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Revo Uninstaller Portable está instalado!"
     Write-Host "Revo Uninstaller Portable is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Revo Uninstaller Portable não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Revo Uninstaller Portable não está instalado! Iniciando processo de instalação."
     Write-Host "Revo Uninstaller Portable is not installed! Starting installation process."
     Write-Host "File size: 2.65 MB"
 

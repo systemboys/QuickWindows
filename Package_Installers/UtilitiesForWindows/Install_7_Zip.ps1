@@ -66,10 +66,10 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\7-Zip"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O 7-Zip está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O 7-Zip está instalado!"
     Write-Host "7-Zip is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "7-Zip não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "7-Zip não está instalado! Iniciando processo de instalação."
     Write-Host "7-Zip is not installed! Starting installation process."
     Write-Host "File size: 1.52 MB"
 

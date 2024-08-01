@@ -68,10 +68,10 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\Shadow Defender"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Shadow Defender está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Shadow Defender está instalado!"
     Write-Host "Shadow Defender is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Shadow Defender não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Shadow Defender não está instalado! Iniciando processo de instalação."
     Write-Host "Shadow Defender is not installed! Starting installation process."
     Write-Host "File size: 3.54 MB"
 

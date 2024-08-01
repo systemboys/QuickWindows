@@ -66,10 +66,10 @@ $programFiles = "$env:SystemDrive\Program Files (x86)\Foxit Software\"
 $directory = "$programFiles\Foxit PDF Reader"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Foxit PDF Reader está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Foxit PDF Reader está instalado!"
     Write-Host "Foxit PDF Reader is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Foxit PDF Reader não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Foxit PDF Reader não está instalado! Iniciando processo de instalação."
     Write-Host "Foxit PDF Reader is not installed! Starting installation process."
     Write-Host "File size: 153.0 MB"
 

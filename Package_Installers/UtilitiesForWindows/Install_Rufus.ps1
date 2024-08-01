@@ -61,7 +61,7 @@ $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Rufus não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Rufus não está instalado! Iniciando processo de instalação."
 Write-Host "Rufus is not installed! Starting installation process."
 Write-Host "File size: 9.9 MB"
 

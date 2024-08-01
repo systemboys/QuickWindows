@@ -69,13 +69,13 @@ do {
             exit
         }
         '1' {
-            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Por favor, insira o tempo em minutos para o desligamento."; Write-Host "Log created in: $logPath"; clear
+            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Por favor, insira o tempo em minutos para o desligamento."
             $time = Read-Host "Please enter the time in minutes for the shutdown"
             if (![string]::IsNullOrWhiteSpace($time) -and $time -match '^\d+$') {
                 $seconds = [int]$time * 60
                 shutdown -s -t $seconds
             } else {
-                $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Entrada inválida. Insira um número válido de minutos."; Write-Host "Log created in: $logPath"; clear
+                $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Entrada inválida. Insira um número válido de minutos."
                 Write-Host "Invalid input. Please enter a valid number of minutes."
                 Write-Host "Press any key to continue..."
                 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
@@ -85,7 +85,7 @@ do {
             shutdown -a
         }
         default {
-            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Opção inválida. Por favor, escolha uma opção válida."; Write-Host "Log created in: $logPath"; clear
+            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Opção inválida. Por favor, escolha uma opção válida."
             Write-Host "Invalid option. Please choose a valid option."
             Write-Host "Press any key to continue..."
             $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")

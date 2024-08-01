@@ -68,10 +68,10 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\WinRAR"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O WinRAR está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O WinRAR está instalado!"
     Write-Host "WinRAR is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O WinRAR não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O WinRAR não está instalado! Iniciando processo de instalação."
     Write-Host "WinRAR is not installed! Starting installation process."
     Write-Host "File size: 4.47 MB"
 

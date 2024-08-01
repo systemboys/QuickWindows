@@ -93,7 +93,7 @@ $shortcut.IconLocation = $iconPath
 $shortcut.Description = "Desligar o computador"
 $shortcut.Save()
 
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atalho criado em: $shortcutPath para Desligar o computador"; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atalho criado em: $shortcutPath para Desligar o computador"
 Write-Host "Shortcut created at: $shortcutPath"
 
 # ----------------- REINICIAR -----------------
@@ -129,7 +129,7 @@ $shortcut.IconLocation = $iconPath
 $shortcut.Description = "Reiniciar o computador"
 $shortcut.Save()
 
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atalho criado em: $shortcutPath para Reiniciar o computador"; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atalho criado em: $shortcutPath para Reiniciar o computador"
 Write-Host "Shortcut created at: $shortcutPath"
 
 

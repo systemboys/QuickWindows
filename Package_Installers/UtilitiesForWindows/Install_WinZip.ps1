@@ -68,10 +68,10 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\WinZip"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O WinZip está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O WinZip está instalado!"
     Write-Host "WinZip is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O WinZip não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O WinZip não está instalado! Iniciando processo de instalação."
     Write-Host "WinZip is not installed! Starting installation process."
     Write-Host "File size: 2.8 MB"
 

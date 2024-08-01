@@ -31,7 +31,7 @@ $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Execução de Comando no PowerShell."; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Execução de Comando no PowerShell."
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size(30, 7)
@@ -45,7 +45,7 @@ function ExecutarComando {
         [string]$comando
     )
 
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Comando '$comando' executado."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Comando '$comando' executado."
 
     # Abrir uma nova janela do PowerShell e executar o comando
     $psi = New-Object System.Diagnostics.ProcessStartInfo

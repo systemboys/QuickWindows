@@ -77,10 +77,10 @@ $programFiles = $env:ProgramFiles
 $directory = "$programFiles\Google\Chrome"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Google Chrome está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Google Chrome está instalado!"
     Write-Host "Google Chrome is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Google Chrome não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Google Chrome não está instalado! Iniciando processo de instalação."
     Write-Host "Google Chrome is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

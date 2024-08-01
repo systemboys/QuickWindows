@@ -65,10 +65,10 @@ $programFiles = "$env:temp"
 $directory = "$programFiles\MiniTool-Partition-Wizard-v12-64bit-portable"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O MiniTool Partition Wizard está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O MiniTool Partition Wizard está instalado!"
     Write-Host "MiniTool Partition Wizard is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O MiniTool Partition Wizard não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O MiniTool Partition Wizard não está instalado! Iniciando processo de instalação."
     Write-Host "MiniTool Partition Wizard is not installed! Starting installation process."
     Write-Host "File size: 29.7 MB"
 

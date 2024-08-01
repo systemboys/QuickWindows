@@ -77,10 +77,10 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\Mozilla Firefox"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Mozilla Firefox está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Mozilla Firefox está instalado!"
     Write-Host "Mozilla Firefox is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Mozilla Firefox não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Mozilla Firefox não está instalado! Iniciando processo de instalação."
     Write-Host "Mozilla Firefox is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

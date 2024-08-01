@@ -74,7 +74,7 @@ if (Test-Path $directory) {
     [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
 
     # Define a mensagem, o título e os botões da pop-up
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O WinToHDD já está instalado. Você deseja executá-lo?"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O WinToHDD já está instalado. Você deseja executá-lo?"
     $message = "WinToHDD is already installed, do you want to run it?"
     $title = "WinToHDD"
     $buttons = [Microsoft.VisualBasic.MsgBoxStyle]::YesNo
@@ -92,7 +92,7 @@ if (Test-Path $directory) {
     }
     # Write-Host "WinToHDD is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "WinToHDD não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "WinToHDD não está instalado! Iniciando processo de instalação."
     Write-Host "WinToHDD is not installed! Starting installation process."
     Write-Host "File size: 9.32 MB"
 

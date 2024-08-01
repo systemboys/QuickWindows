@@ -66,7 +66,7 @@ $directory = "$programFiles\AnyDesk"
 
 if (Test-Path $directory) {
     # Define a mensagem, o título e os botões da pop-up
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Mensagem aqui..."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Mensagem aqui..."
     Write-Host "AnyDesk is already installed, resetting the settings!"
 
     # Define a função para parar o serviço AnyDesk
@@ -86,7 +86,7 @@ if (Test-Path $directory) {
 
     # Verifica se o script está sendo executado como administrador
     if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Por favor, execute como administrador."; Write-Host "Log created in: $logPath"; clear
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Por favor, execute como administrador."
         Write-Host "Please run as administrator."
         exit
     }
@@ -120,11 +120,11 @@ if (Test-Path $directory) {
         Start-AnyDesk
     }
 
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Reset concluído."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Reset concluído."
     Write-Host "*********"
     Write-Host "Completed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O AnyDesk não está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O AnyDesk não está instalado!"
     Write-Host "AnyDesk is not installed!"
 }
 

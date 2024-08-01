@@ -80,10 +80,10 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\RustDesk"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O RustDesk está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O RustDesk está instalado!"
     Write-Host "RustDesk is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "RustDesk não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "RustDesk não está instalado! Iniciando processo de instalação."
     Write-Host "RustDesk is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

@@ -89,7 +89,7 @@ if (Test-Path $directory) {
     [System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic') | Out-Null
 
     # Define a mensagem, o título e os botões da pop-up
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk está instalado, deseja executá-lo?"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk está instalado, deseja executá-lo?"
     $message = "AnyDesk is already installed, do you want to run it?"
     $title = "AnyDesk"
     $buttons = [Microsoft.VisualBasic.MsgBoxStyle]::YesNo
@@ -100,16 +100,16 @@ if (Test-Path $directory) {
     # Verifica se a resposta do usuário foi "Sim"
     if ($response -eq "Yes") {
         # Executa o AnyDesk
-        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk foi executado."; Write-Host "Log created in: $logPath"; clear
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk foi executado."
         Start-Process -FilePath "$env:SystemDrive\Program Files (x86)\AnyDesk\AnyDesk.exe"
     } else {
-        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não foi executado."; Write-Host "Log created in: $logPath"; clear
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não foi executado."
         exit
     }
 } else {
     Write-Host "AnyDesk is not installed! Starting installation process."
 
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não está instalado! Iniciando processo de instalação."
 
     # Link do download e o diretório Temp
     $downloadUrl = $Install_AnyDesk
@@ -132,7 +132,7 @@ if (Test-Path $directory) {
     if (Test-Path "$env:TEMP\$downloadPath") {
         Remove-Item -Path "$env:TEMP\$downloadPath" -Force
     }
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não está instalado, o executável será executado."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não está instalado, o executável será executado."
 }
 
 Write-Host "Press any key to continue..."

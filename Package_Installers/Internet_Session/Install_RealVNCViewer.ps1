@@ -77,10 +77,10 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\RealVNC\VNC Viewer"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Real VNC Viewer está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Real VNC Viewer está instalado!"
     Write-Host "Real VNC Viewer is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Real VNC Viewer não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Real VNC Viewer não está instalado! Iniciando processo de instalação."
     Write-Host "Real VNC Viewer is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

@@ -60,7 +60,7 @@ $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
 $ipAddress = (Get-NetIPAddress | Where-Object {$_.InterfaceAlias -eq 'Ethernet'}).IPAddress
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Endereço IP local: $ipAddress"; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Endereço IP local: $ipAddress"
 Write-Host "Local IP Address: $ipAddress"
 ipconfig
 Write-Host "Press any key to continue..."

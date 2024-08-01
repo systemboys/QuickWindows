@@ -68,10 +68,10 @@ $programFiles = "$env:SystemDrive\Program Files (x86)"
 $directory = "$programFiles\Cobian Backup 11"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Cobian Backup está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Cobian Backup está instalado!"
     Write-Host "Cobian Backup is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Cobian Backup não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Cobian Backup não está instalado! Iniciando processo de instalação."
     Write-Host "Cobian Backup is not installed! Starting installation process."
     Write-Host "File size: 18.8 MB"
 

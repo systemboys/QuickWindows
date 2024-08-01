@@ -77,10 +77,10 @@ $programFiles = [Environment]::GetEnvironmentVariable("ProgramFiles(x86)")
 $directory = "$programFiles\Microsoft\Skype for Desktop"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Skype está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Skype está instalado!"
     Write-Host "Skype is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Skype não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Skype não está instalado! Iniciando processo de instalação."
     Write-Host "Skype is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

@@ -107,7 +107,7 @@ switch ($numero) {
     13 { $commandToExecute = $terminalCommand13 } # Gerenciador de Tarefas do Windows
     14 { $commandToExecute = $terminalCommand14 } # Opções de pastas - Control Folders
     default {
-        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Opção inválida. Por favor, escolha uma opção válida."; Write-Host "Log created in: $logPath"; clear
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Opção inválida. Por favor, escolha uma opção válida."
         Write-Host "Invalid option. Please choose a valid option."
         exit
     }

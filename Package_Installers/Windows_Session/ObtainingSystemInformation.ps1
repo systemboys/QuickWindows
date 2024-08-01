@@ -59,7 +59,7 @@ $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Informações do sistema."; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Informações do sistema."
 
 # Função para exibir informações em um quadro
 function Show-InfoFrame {

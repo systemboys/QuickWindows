@@ -61,7 +61,7 @@ $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ----------------------[Conteúdo do script abaixo]---------------------------
 
 if ($args.Count -eq 0) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Nenhum argumento fornecido. Use 1 para desligar o computador e 2 para reiniciar."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Nenhum argumento fornecido. Use 1 para desligar o computador e 2 para reiniciar."
     Write-Host "No argument provided. Use 1 to turn off the computer and 2 to restart."
 } else {
     $argumento = $args[0]
@@ -70,7 +70,7 @@ if ($args.Count -eq 0) {
     } elseif ($argumento -eq 2) {
         Restart-Computer -Force
     } else {
-        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Argumento desconhecido. Use 1 para desligar o computador e 2 para reiniciar."; Write-Host "Log created in: $logPath"; clear
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Argumento desconhecido. Use 1 para desligar o computador e 2 para reiniciar."
         Write-Host "Unknown argument. Use 1 to turn off the computer and 2 to restart."
     }
 }

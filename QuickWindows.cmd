@@ -239,6 +239,8 @@
 ::   - Inclusão das opções da sessão de redes nas rotinas.
 :: v1.66.101 2024-07-31 às 00h21, Marcos Aurélio:
 ::   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
+:: v1.66.102 2024-07-31 às 22h54, Marcos Aurélio:
+::   - Remoção do trecho que imprime no terminal a informação de que os logs foram criados.
 ::
 :: Licença: GPL.
 

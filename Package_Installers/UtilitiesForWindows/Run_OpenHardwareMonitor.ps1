@@ -59,10 +59,10 @@ $programFiles = "$env:temp"
 $directory = "$programFiles\OpenHardwareMonitor"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Open Hardware Monitor está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Open Hardware Monitor está instalado!"
     Write-Host "Open Hardware Monitor is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Open Hardware Monitor não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Open Hardware Monitor não está instalado! Iniciando processo de instalação."
     Write-Host "Open Hardware Monitor is not installed! Starting installation process."
     Write-Host "File size: 491 KB"
 

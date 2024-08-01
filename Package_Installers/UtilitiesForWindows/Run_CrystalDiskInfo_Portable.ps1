@@ -65,10 +65,10 @@ $programFiles = "$env:temp"
 $directory = "$programFiles\CrystalDiskInfo"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Crystal Disk Info está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Crystal Disk Info está instalado!"
     Write-Host "Crystal Disk Info is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Crystal Disk Info não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Crystal Disk Info não está instalado! Iniciando processo de instalação."
     Write-Host "Crystal Disk Info is not installed! Starting installation process."
     Write-Host "File size: 5.69 MB"
 

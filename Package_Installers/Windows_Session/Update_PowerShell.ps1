@@ -99,7 +99,7 @@ if ($chave -eq 1) {
 } elseif ($chave -eq 3) {
     winget install --id Microsoft.Powershell --source winget
 }
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atualização do PowerShell."; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atualização do PowerShell."
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")

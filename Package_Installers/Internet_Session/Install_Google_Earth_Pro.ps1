@@ -86,7 +86,7 @@ if ($installed -eq $null) {
     Start-Process -FilePath $output -ArgumentList "/S /v/qn"
     Remove-Item $output
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Google Earth Pro já está instalado."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Google Earth Pro já está instalado."
     Write-Host "Google Earth Pro is already installed."
 }
 

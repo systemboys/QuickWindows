@@ -68,10 +68,10 @@ $programFiles = "$env:SystemDrive\Program Files (x86)\IObit"
 $directory = "$programFiles\\Driver Booster"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "DriverBoosterFree está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "DriverBoosterFree está instalado!"
     Write-Host "DriverBoosterFree is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "DriverBoosterFree não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "DriverBoosterFree não está instalado! Iniciando processo de instalação."
     Write-Host "DriverBoosterFree is not installed! Starting installation process."
     Write-Host "File size: 28.2 MB"
 

@@ -73,7 +73,7 @@ $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Executar Rotinas."; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Executar Rotinas."
 
 # Definir o título da janela do Prompt
 $Host.UI.RawUI.WindowTitle = $configData.promptWindowTitle + " / Rotinas"

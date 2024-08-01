@@ -59,11 +59,11 @@ $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
 # Mensagem de início
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o processo de limpeza do spooler de impressão..."; Write-Host "Log created in: $logPath"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o processo de limpeza do spooler de impressão..."
 Write-Host "Starting the Print Spooler cleaning process..."
 
 # Parar o serviço de spooler
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Parando o serviço Spooler de impressão..."; Write-Host "Log created in: $logPath"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Parando o serviço Spooler de impressão..."
 Write-Host "Stopping the Print Spooler service..."
 Stop-Service -Name Spooler -Force
 
@@ -71,18 +71,18 @@ Stop-Service -Name Spooler -Force
 $shdPath = "$env:systemroot\system32\spool\PRINTERS\*.SHD"
 $splPath = "$env:systemroot\system32\spool\PRINTERS\*.SPL"
 
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Removendo arquivos temporários: $shdPath, $splPath"; Write-Host "Log created in: $logPath"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Removendo arquivos temporários: $shdPath, $splPath"
 Write-Host "Removing temporary files: $shdPath, $splPath"
 Remove-Item -Path $shdPath -Force -Recurse
 Remove-Item -Path $splPath -Force -Recurse
 
 # Iniciar o serviço de spooler
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o serviço Spooler de impressão..."; Write-Host "Log created in: $logPath"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o serviço Spooler de impressão..."
 Write-Host "Starting the Print Spooler service..."
 Start-Service -Name Spooler
 
 # Mensagem de conclusão
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Limpeza do spooler de impressão concluída."; Write-Host "Log created in: $logPath"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Limpeza do spooler de impressão concluída."
 Write-Host "Print Spooler Cleanup Complete."
 
 Write-Host "Press any key to continue..."

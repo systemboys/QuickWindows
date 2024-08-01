@@ -78,10 +78,10 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\HopToDesk"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O HopToDesk está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O HopToDesk está instalado!"
     Write-Host "HopToDesk is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "HopToDesk não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "HopToDesk não está instalado! Iniciando processo de instalação."
     Write-Host "HopToDesk is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

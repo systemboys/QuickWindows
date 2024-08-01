@@ -79,10 +79,10 @@ $programFiles = [Environment]::GetEnvironmentVariable("ProgramFiles(x86)")
 $directory = "$programFiles\Microsoft\Edge\Application"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Microsoft Edge está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Microsoft Edge está instalado!"
     Write-Host "Microsoft Edge is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Microsoft Edge não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Microsoft Edge não está instalado! Iniciando processo de instalação."
     Write-Host "Microsoft Edge is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

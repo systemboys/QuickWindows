@@ -78,10 +78,10 @@ $programFiles = "$env:SystemDrive\Program Files"
 $directory = "$programFiles\Transmission"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Transmission está instalada!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Transmission está instalada!"
     Write-Host "Transmission is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Transmission não está instalada! Iniciando o processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Transmission não está instalada! Iniciando o processo de instalação."
     Write-Host "Transmission is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

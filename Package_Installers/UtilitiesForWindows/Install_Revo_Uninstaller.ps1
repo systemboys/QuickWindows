@@ -68,10 +68,10 @@ $programFiles = "$env:SystemDrive\Program Files\VS Revo Group"
 $directory = "$programFiles\Revo Uninstaller"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Revo Uninstaller está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Revo Uninstaller está instalado!"
     Write-Host "Revo Uninstaller is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Revo Uninstaller não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Revo Uninstaller não está instalado! Iniciando processo de instalação."
     Write-Host "Revo Uninstaller is not installed! Starting installation process."
     Write-Host "File size: 6.65 MB"
 

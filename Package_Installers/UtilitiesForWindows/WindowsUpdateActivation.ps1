@@ -63,7 +63,7 @@ $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 
 # ----------------------[Conteúdo do script abaixo]---------------------------
 
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "WindowsUpdateActivation não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "WindowsUpdateActivation não está instalado! Iniciando processo de instalação."
 Write-Host "WindowsUpdateActivation is not installed! Starting installation process."
 Write-Host "File size: 692 KB"
 

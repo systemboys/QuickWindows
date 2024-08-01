@@ -76,10 +76,10 @@ $programFiles = "$env:SystemDrive\Program Files (x86)\Adobe\Acrobat Reader DC"
 $directory = "$programFiles\Reader"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Adobe Reader está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Adobe Reader está instalado!"
     Write-Host "Adobe Reader is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Adobe Reader não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Adobe Reader não está instalado! Iniciando processo de instalação."
     Write-Host "Adobe Reader is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

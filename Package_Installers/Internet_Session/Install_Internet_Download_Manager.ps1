@@ -78,10 +78,10 @@ $programFiles = "$env:SystemDrive\Program Files (x86)"
 $directory = "$programFiles\Internet Download Manager"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Internet Download Manager está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Internet Download Manager está instalado!"
     Write-Host "Internet Download Manager is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Internet Download Manager não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Internet Download Manager não está instalado! Iniciando processo de instalação."
     Write-Host "Internet Download Manager is not installed! Starting installation process."
 
     # Link do download e o diretório Temp

@@ -68,10 +68,10 @@ $programFiles = "$env:SystemDrive\Program Files (x86)"
 $directory = "$programFiles\CH341Programmer"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "SiberiaProg-CH341A está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "SiberiaProg-CH341A está instalado!"
     Write-Host "SiberiaProg-CH341A is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "SiberiaProg-CH341A não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "SiberiaProg-CH341A não está instalado! Iniciando processo de instalação."
     Write-Host "SiberiaProg-CH341A is not installed! Starting installation process."
     Write-Host "File size: 8.81 MB"
 

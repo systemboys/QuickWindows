@@ -75,7 +75,7 @@ $desktopPath = [System.Environment]::GetFolderPath([System.Environment+SpecialFo
 
 # Verifica se o Office está instalado
 if (Test-Path "${env:ProgramFiles}\Microsoft Office\root\Office16") {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Microsoft Office está instalado."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Microsoft Office está instalado."
     Write-Host "Microsoft Office is installed."
 
     # Cria atalhos para cada aplicativo do Office
@@ -97,15 +97,15 @@ if (Test-Path "${env:ProgramFiles}\Microsoft Office\root\Office16") {
             $shortcut.Description = "Microsoft $($app.Name)"
             $shortcut.Save()
 
-            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atalho para $shortcutName criado com sucesso na área de trabalho."; Write-Host "Log created in: $logPath"; clear
+            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atalho para $shortcutName criado com sucesso na área de trabalho."
             Write-Host "Shortcut for $shortcutName successfully created on the desktop."
         } else {
-            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O executável para $shortcutName não existe. Ignorando..."; Write-Host "Log created in: $logPath"; clear
+            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O executável para $shortcutName não existe. Ignorando..."
             Write-Host "Executable for $shortcutName does not exist. Skipping..."
         }
     }
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Microsoft Office não está instalado."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Microsoft Office não está instalado."
     Write-Host "Microsoft Office is not installed."
 }
 

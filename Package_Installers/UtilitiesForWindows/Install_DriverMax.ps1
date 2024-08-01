@@ -68,10 +68,10 @@ $programFiles = "$env:SystemDrive\Program Files (x86)\Innovative Solutions"
 $directory = "$programFiles\DriverMax"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "DriverMax está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "DriverMax está instalado!"
     Write-Host "DriverMax is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "DriverMax não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "DriverMax não está instalado! Iniciando processo de instalação."
     Write-Host "DriverMax is not installed! Starting installation process."
     Write-Host "File size: 7.01 MB"
 

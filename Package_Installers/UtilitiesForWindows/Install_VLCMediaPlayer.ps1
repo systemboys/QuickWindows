@@ -68,10 +68,10 @@ $programFiles = "$env:SystemDrive\Program Files (x86)\VideoLAN"
 $directory = "$programFiles\VLC"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O VLC Media Player está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O VLC Media Player está instalado!"
     Write-Host "VLC Media Player is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O VLC Media Player não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O VLC Media Player não está instalado! Iniciando processo de instalação."
     Write-Host "VLC Media Player is not installed! Starting installation process."
     Write-Host "File size: 40.9 MB"
 

@@ -68,10 +68,10 @@ $programFiles = "$env:SystemDrive\Program Files\Hasleo"
 $directory = "$programFiles\WinToUSB"
 
 if (Test-Path $directory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Hasleo WinToHDD Free está instalado!"; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Hasleo WinToHDD Free está instalado!"
     Write-Host "Hasleo WinToHDD Free is installed!"
 } else {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Hasleo WinToHDD Free não está instalado! Iniciando processo de instalação."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Hasleo WinToHDD Free não está instalado! Iniciando processo de instalação."
     Write-Host "Hasleo WinToHDD Free is not installed! Starting installation process."
     Write-Host "File size: 23.6 MB"
 

@@ -132,12 +132,12 @@ switch ($numero) {
 }
 
 # Solicitação do local de destino
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o caminho de destino completo para salvar o arquivo."; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o caminho de destino completo para salvar o arquivo."
 $destination = Read-Host "Enter the full destination path to save the file"
 
 # Verificação se o destino foi fornecido
 if (-not $destination) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O destino é obrigatório. Por favor, forneça o caminho de destino."; Write-Host "Log created in: $logPath"; clear
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O destino é obrigatório. Por favor, forneça o caminho de destino."
     Write-Host "Destination is mandatory. Please provide the destination path."
     exit
 }
@@ -146,11 +146,11 @@ if (-not $destination) {
 start taskmgr
 
 # Iniciando o download em uma nova janela do PowerShell
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o download em uma nova janela..."; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o download em uma nova janela..."
 Write-Host "Starting the download in a new window..."
 Start-BitsTransfer -Source $url -Destination $destination
 
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Transferência concluída!"; Write-Host "Log created in: $logPath"; clear
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Transferência concluída!"
 Write-Host "Download completed!"
 
 # Emitir Sequência de Beeps
