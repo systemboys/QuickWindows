@@ -19,6 +19,8 @@
 #   - Registro de logs.
 # v1.3.2 2024-07-31 às 23h57, Marcos Aurélio:
 #   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
+# v1.3.3 2024-08-02 às 14h28, Marcos Aurélio:
+#   - Correção de da URL para download do 'MiniTool-Partition-Wizard-v12-Installation.exe'.
 #
 # Licença: GPL.
 
@@ -63,7 +65,7 @@ if (-not (Test-Path $urlsPath)) {
     $urlsPath = "../../urls.json"
 }
 $urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
-$Install_MiniToolPartitionWizardInstallation = $urlsData.UtilitiesForWindows[0] # Acessa a URL do pacote
+$Install_MiniToolPartitionWizardInstallation = $urlsData.UtilitiesForWindows[11] # Acessa a URL do pacote
 
 # Executar função que cria logs do sistema
 $dirName = "GTiSupport"
