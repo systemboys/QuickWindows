@@ -58,6 +58,17 @@ $Download_Package_5 = $urlsData.MicrosoftOperatingSystems[4] # Acessa a URL do p
 $Download_Package_6 = $urlsData.MicrosoftOperatingSystems[5] # Acessa a URL do pacote de instalação do Windows 11 Pro
 $Download_Package_7 = $urlsData.MicrosoftOperatingSystems[6] # Acessa a URL do pacote de instalação do Windows Server 2022
 
+# ---test---
+# Exibir valores das URLs para debug
+Write-Output "Download Package 1: $Download_Package_1"
+Write-Output "Download Package 2: $Download_Package_2"
+Write-Output "Download Package 3: $Download_Package_3"
+Write-Output "Download Package 4: $Download_Package_4"
+Write-Output "Download Package 5: $Download_Package_5"
+Write-Output "Download Package 6: $Download_Package_6"
+Write-Output "Download Package 7: $Download_Package_7"
+# ---/test---
+
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
 
