@@ -45,6 +45,8 @@
 #   - Correção de um bug após instalação do Git, o PowerShell deve ser reinicializado.
 # v1.3.15 2024-07-28 às 13h04, Marcos Aurélio:
 #   - Definição de execução do software de acesso remoto, foi criada auma chave para para habilitar ou desabilitar o recurso.
+# v1.4.15 2024-08-07 às 01h38, Marcos Aurélio:
+#   - Download e execução de Moo0 System Monitor Portable.
 #
 # Licença: GPL.
 
@@ -237,6 +239,43 @@ $shortcut.Save()
 
 Write-Host "Atalho criado em: $shortcutPath"
 # ------------------ /Ícone na Área de trabalho ---------------------------
+
+# -----------------Executar o Moo0 System Monitor--------------------------
+$directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
+
+if (Test-Path -Path $directoryPath) {
+    # Executar o Moo0 System Monitor
+    Start-Process -FilePath "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
+} else {
+    # Link do download e o diretório Temp
+    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Moo0_SystemMonitor_Portable.zip"
+    $downloadPath = "$env:temp\Moo0_SystemMonitor_Portable.zip"
+
+    # Faz o download do Moo0 System Monitor
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
+
+    # Emitir Sequência de Beeps
+    $numeroDeBeeps = $configData.beepsOnDownloads
+    for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
+        [Console]::Beep(500, 300)
+        Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
+    }
+
+    # Extrair o arquivo compactado (.zip)
+    # Definir o caminho do diretório de destino para a extração
+    $extractPath = $env:temp
+
+    # Extrair o arquivo zip para o diretório de destino
+    Expand-Archive -Path $downloadPath -DestinationPath $extractPath -Force
+
+    # Definir o caminho do arquivo exe dentro do diretório descompactado
+    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
+    # /Extrair o arquivo compactado (.zip)
+
+    # Executar o Moo0 System Monitor
+    Start-Process -FilePath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
+}
+# ----------------/Executar o Moo0 System Monitor--------------------------
 
 # Verifica se o Git está instalado no Windows (versões 10 e 11)
 Write-Host "Checking if Git is installed on Windows..."
