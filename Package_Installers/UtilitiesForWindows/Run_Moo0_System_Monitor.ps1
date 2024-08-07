@@ -98,53 +98,5 @@ if (Test-Path -Path $directoryPath) {
     Start-Process -FilePath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
 }
 
-# ---------------tornar processo invisível----------------
-Add-Type -TypeDefinition @"
-using System;
-using System.Runtime.InteropServices;
-
-public class ProcessHider
-{
-    [DllImport("user32.dll")]
-    public static extern int ShowWindow(IntPtr hWnd, uint Msg);
-    
-    [DllImport("user32.dll")]
-    [return: MarshalAs(UnmanagedType.Bool)]
-    public static extern bool IsWindowVisible(IntPtr hWnd);
-    
-    [DllImport("user32.dll", SetLastError = true)]
-    public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-    
-    public const int SW_HIDE = 0;
-    public const int SW_SHOW = 5;
-
-    public static void HideWindow(string processName)
-    {
-        IntPtr hWnd = FindWindow(null, processName);
-        if (hWnd != IntPtr.Zero && IsWindowVisible(hWnd))
-        {
-            ShowWindow(hWnd, SW_HIDE);
-        }
-    }
-}
-"@
-
-function Hide-Process {
-    param (
-        [string]$ProcessName
-    )
-    $process = Get-Process | Where-Object { $_.Name -eq $ProcessName }
-    if ($process) {
-        [ProcessHider]::HideWindow($process.MainWindowTitle)
-        Write-Output "Process $ProcessName has been hidden."
-    } else {
-        Write-Output "Process $ProcessName not found."
-    }
-}
-
-# Example usage
-Hide-Process -ProcessName "System Monitor"
-# --------------/tornar processo invisível----------------
-
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
