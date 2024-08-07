@@ -67,7 +67,7 @@ $directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\"
 
 if (Test-Path -Path $directoryPath) {
     # Executar o Moo0 System Monitor
-    Start-Process -FilePath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
+    Start-Process -FilePath "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
 } else {
     # Link do download e o diretório Temp
     $downloadUrl = $Run_Moo0_System_Monitor
