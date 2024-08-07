@@ -322,10 +322,18 @@ function Execute-Script {
     )
 
     # Construir o comando para executar o arquivo .ps1 em uma nova janela
-    $Command = "Start-Process powershell -ArgumentList '-NoExit','-File','$File'"
+    $Command = "powershell -NoExit -File '$File'"
 
     # Executar o comando
-    Invoke-Expression $Command
+    Start-Process -NoNewWindow -FilePath "powershell" -ArgumentList "-NoExit", "-File", "$File"
+}
+
+# Função para verificar se um processo está em execução
+function Is-ProcessRunning {
+    param(
+        [string]$ProcessName
+    )
+    return @(Get-Process -Name $ProcessName -ErrorAction SilentlyContinue).Count -gt 0
 }
 
 # Loop para solicitar entrada até que uma entrada válida seja fornecida
@@ -347,20 +355,19 @@ foreach ($Routine in $Routines) {
         Write-Host "Waiting for $File to finish."
 
         # Verifica se algum dos processos ignorados está em execução
-        $isIgnoredProcessRunning = $false
+        $shouldWait = $true
         foreach ($ignoredProcess in $IgnoredProcesses) {
-            if (Get-Process -Name $ignoredProcess -ErrorAction SilentlyContinue) {
-                $isIgnoredProcessRunning = $true
+            if (Is-ProcessRunning -ProcessName $ignoredProcess) {
+                $shouldWait = $false
+                Write-Host "Ignoring wait for ignored process: $ignoredProcess"
                 break
             }
         }
 
-        # Se nenhum dos processos ignorados estiver em execução, aguarda o usuário pressionar Enter
-        if (-not $isIgnoredProcessRunning) {
+        # Se não houver processos ignorados em execução, aguarda o usuário pressionar Enter
+        if ($shouldWait) {
             Write-Host "Press Enter to continue..."
             Read-Host
-        } else {
-            Write-Host "Ignoring wait for ignored process: $ignoredProcess"
         }
     } else {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Rotina inválida: $Routine"
