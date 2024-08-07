@@ -63,7 +63,7 @@ $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Moo0 System Monitor não está instalado! Iniciando processo de instalação."
 Write-Host "Moo0 System Monitor is not installed! Starting installation process."
 
-$directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\"
+$directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
 
 if (Test-Path -Path $directoryPath) {
     # Executar o Moo0 System Monitor
