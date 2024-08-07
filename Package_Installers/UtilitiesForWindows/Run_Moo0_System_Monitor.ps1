@@ -88,7 +88,7 @@ if (Test-Path -Path $directoryPath) {
     $extractPath = $env:temp
 
     # Extrair o arquivo zip para o diretório de destino
-    Expand-Archive -Path $downloadPath -DestinationPath $extractPath
+    Expand-Archive -Path $downloadPath -DestinationPath $extractPath -Force
 
     # Definir o caminho do arquivo exe dentro do diretório descompactado
     $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
