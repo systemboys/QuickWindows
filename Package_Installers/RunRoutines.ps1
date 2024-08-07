@@ -359,6 +359,8 @@ foreach ($Routine in $Routines) {
         if (-not $isIgnoredProcessRunning) {
             Write-Host "Press Enter to continue..."
             Read-Host
+        } else {
+            Write-Host "Ignoring wait for ignored process: $ignoredProcess"
         }
     } else {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Rotina inválida: $Routine"
