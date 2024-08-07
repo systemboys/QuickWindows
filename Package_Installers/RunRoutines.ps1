@@ -322,7 +322,7 @@ function Execute-Script {
     )
 
     # Construir o comando para executar o arquivo .ps1 em uma nova janela
-    $Command = "Start-Process powershell -ArgumentList '-NoExit','-File','$File' -Wait"
+    $Command = "Start-Process powershell -ArgumentList '-NoExit','-File','$File'"
 
     # Executar o comando
     Invoke-Expression $Command
@@ -344,11 +344,20 @@ foreach ($Routine in $Routines) {
     if ($File) {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Executada a rotina $Routine."
         Execute-Script $File
-        Write-Host "Waiting for $File to finish. Press Enter to continue..."
-        
-        # Verificar se o processo é um dos ignorados
-        $ProcessName = (Get-Process -Id $LastExitCode).Name
-        if ($IgnoredProcesses -notcontains $ProcessName) {
+        Write-Host "Waiting for $File to finish."
+
+        # Verifica se algum dos processos ignorados está em execução
+        $isIgnoredProcessRunning = $false
+        foreach ($ignoredProcess in $IgnoredProcesses) {
+            if (Get-Process -Name $ignoredProcess -ErrorAction SilentlyContinue) {
+                $isIgnoredProcessRunning = $true
+                break
+            }
+        }
+
+        # Se nenhum dos processos ignorados estiver em execução, aguarda o usuário pressionar Enter
+        if (-not $isIgnoredProcessRunning) {
+            Write-Host "Press Enter to continue..."
             Read-Host
         }
     } else {
