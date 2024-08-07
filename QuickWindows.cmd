@@ -245,6 +245,8 @@
 ::   - Chamada de URLs na lista do arquivo JSON dos utilitários que faltavam.
 :: v1.66.104 2024-08-02 às 14h27, Marcos Aurélio:
 ::   - Correção de da URL para download do 'MiniTool-Partition-Wizard-v12-Installation.exe'.
+:: v1.67.104 2024-08-06 às 23h53, Marcos Aurélio:
+::   - Opção para Download e execução de Moo0 System Monitor Portable em Utilitários para Windows.
 ::
 :: Licença: GPL.
 

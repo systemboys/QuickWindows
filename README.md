@@ -149,6 +149,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Run_CrystalDiskInfo_Portable.ps1
 │  │  ├─ Run_MiniToolPartitionWizard32bitPortable.ps1
 │  │  ├─ Run_MiniToolPartitionWizard64bitPortable.ps1
+│  │  ├─ Run_Moo0_System_Monitor.ps1
 │  │  ├─ Run_OpenHardwareMonitor.ps1
 │  │  ├─ Run_RevoUninstallerPortable.ps1
 │  │  ├─ Run_SiberiaProg-CH341A_Portable.ps1
@@ -296,6 +297,7 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] SiberiaProg-CH341A
     - [x] SiberiaProg-CH341A Portable
     - [x] Open Hardware Monitor
+    - [x] Moo0 System Monitor
 
   - [x] **Softwares para Escritório**
     - [x] Microsoft Office 2016 a 2019
@@ -418,6 +420,7 @@ Aqui estão todas as opções em desenvolvimento.
             6993 = SiberiaProg-CH341A
             6994 = SiberiaProg-CH341A Portable
             6995 = Open Hardware Monitor
+            6996 = Moo0 System Monitor
 7 = Softwares para Escritório…
     71 = Microsoft Office 2016 a 2019
     72 = Microsoft Office 2019 a 2021

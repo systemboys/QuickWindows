@@ -17,6 +17,8 @@
 ::   - Opção para baixar e instalar o 'SiberiaProg-CH341A', programa de gravação de EPROM.
 :: v1.2.0 2024-07-24 às 00h10, Marcos Aurélio:
 ::   - Opção para baixar e executar o Open Hardware Monitor.
+:: v1.3.0 2024-08-06 às 23h51, Marcos Aurélio:
+::   - Opção para Download e execução de Moo0 System Monitor Portable.
 ::
 :: Licença: GPL.
 
@@ -47,6 +49,7 @@ set "menu_Session_6_p3[2]=Battery Report"
 set "menu_Session_6_p3[3]=SiberiaProg-CH341A"
 set "menu_Session_6_p3[4]=SiberiaProg-CH341A Portable"
 set "menu_Session_6_p3[5]=Open Hardware Monitor"
+set "menu_Session_6_p3[6]=Moo0 System Monitor"
 
 set "default=%1%"
 
@@ -105,6 +108,16 @@ if %ERRORLEVEL% equ 5 (
     echo Você selecionou a opção para Open Hardware Monitor.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_OpenHardwareMonitor.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_p3
+)
+
+:: Moo0 System Monitor
+if %ERRORLEVEL% equ 6 (
+    cls
+    echo Você selecionou a opção para Moo0 System Monitor.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_Moo0_System_Monitor.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p3
 )
