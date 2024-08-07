@@ -143,7 +143,7 @@ function Hide-Process {
 }
 
 # Example usage
-Hide-Process -ProcessName "SystemMonitor64"
+Hide-Process -ProcessName "System Monitor"
 # --------------/tornar processo invisível----------------
 
 Write-Host "Press any key to continue..."
