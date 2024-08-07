@@ -312,9 +312,6 @@ $Files = @{
         "87" = "$env:TEMP\QuickWindows\Package_Installers\MicrosoftOperatingSystems\Download.ps1 7" # Windows Server 2022
 }
 
-# Array de processos a serem ignorados
-$IgnoredProcesses = @("SystemMonitor64", "OneDrive")
-
 # Função para executar um arquivo .ps1 em uma nova janela do PowerShell
 function Execute-Script {
     param(
@@ -322,18 +319,10 @@ function Execute-Script {
     )
 
     # Construir o comando para executar o arquivo .ps1 em uma nova janela
-    $Command = "powershell -NoExit -File '$File'"
+    $Command = "Start-Process powershell -ArgumentList '-NoExit','-File','$File' -Wait"
 
     # Executar o comando
-    Start-Process -NoNewWindow -FilePath "powershell" -ArgumentList "-NoExit", "-File", "$File"
-}
-
-# Função para verificar se um processo está em execução
-function Is-ProcessRunning {
-    param(
-        [string]$ProcessName
-    )
-    return @(Get-Process -Name $ProcessName -ErrorAction SilentlyContinue).Count -gt 0
+    Invoke-Expression $Command
 }
 
 # Loop para solicitar entrada até que uma entrada válida seja fornecida
@@ -352,23 +341,8 @@ foreach ($Routine in $Routines) {
     if ($File) {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Executada a rotina $Routine."
         Execute-Script $File
-        Write-Host "Waiting for $File to finish."
-
-        # Verifica se algum dos processos ignorados está em execução
-        $shouldWait = $true
-        foreach ($ignoredProcess in $IgnoredProcesses) {
-            if (Is-ProcessRunning -ProcessName $ignoredProcess) {
-                $shouldWait = $false
-                Write-Host "Ignoring wait for ignored process: $ignoredProcess"
-                break
-            }
-        }
-
-        # Se não houver processos ignorados em execução, aguarda o usuário pressionar Enter
-        if ($shouldWait) {
-            Write-Host "Press Enter to continue..."
-            Read-Host
-        }
+        Write-Host "Waiting for $File to finish. Press Enter to continue..."
+        Read-Host
     } else {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Rotina inválida: $Routine"
         Write-Host "Invalid routine: $Routine"
