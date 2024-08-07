@@ -107,7 +107,7 @@ if (Test-Path $directory) {
     # /Extrair o arquivo compactado (.zip)
     
     # Executar o MiniTool Partition Wizard
-    Start-Process -FilePath "$extractPath\MiniTool-Partition-Wizard-v12-64bit-portable\partitionwizard.exe"
+    Start-Process -FilePath "$extractPath\MiniTool-Partition-Wizard-v12-64bit-portable\partitionwizard.exe" -Wait
 
     # Apagar o arquivo e o diretório
     if (Test-Path "$env:TEMP\$downloadPath") {

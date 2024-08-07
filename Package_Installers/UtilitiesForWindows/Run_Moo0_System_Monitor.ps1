@@ -63,33 +63,40 @@ $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Moo0 System Monitor não está instalado! Iniciando processo de instalação."
 Write-Host "Moo0 System Monitor is not installed! Starting installation process."
 
-# Link do download e o diretório Temp
-$downloadUrl = $Run_Moo0_System_Monitor
-$downloadPath = "$env:temp\Moo0_SystemMonitor_Portable.zip"
+$directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\"
 
-# Faz o download do Moo0 System Monitor
-Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
+if (Test-Path -Path $directoryPath) {
+    # Executar o Moo0 System Monitor
+    Start-Process -FilePath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
+} else {
+    # Link do download e o diretório Temp
+    $downloadUrl = $Run_Moo0_System_Monitor
+    $downloadPath = "$env:temp\Moo0_SystemMonitor_Portable.zip"
 
-# Emitir Sequência de Beeps
-$numeroDeBeeps = $configData.beepsOnDownloads
-for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
-    [Console]::Beep(500, 300)
-    Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
+    # Faz o download do Moo0 System Monitor
+    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
+
+    # Emitir Sequência de Beeps
+    $numeroDeBeeps = $configData.beepsOnDownloads
+    for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
+        [Console]::Beep(500, 300)
+        Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
+    }
+
+    # Extrair o arquivo compactado (.zip)
+    # Definir o caminho do diretório de destino para a extração
+    $extractPath = $env:temp
+
+    # Extrair o arquivo zip para o diretório de destino
+    Expand-Archive -Path $downloadPath -DestinationPath $extractPath
+
+    # Definir o caminho do arquivo exe dentro do diretório descompactado
+    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
+    # /Extrair o arquivo compactado (.zip)
+
+    # Executar o Moo0 System Monitor
+    Start-Process -FilePath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
 }
-
-# Extrair o arquivo compactado (.zip)
-# Definir o caminho do diretório de destino para a extração
-$extractPath = $env:temp
-
-# Extrair o arquivo zip para o diretório de destino
-Expand-Archive -Path $downloadPath -DestinationPath $extractPath
-
-# Definir o caminho do arquivo exe dentro do diretório descompactado
-$exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
-# /Extrair o arquivo compactado (.zip)
-
-# Executar o Moo0 System Monitor
-Start-Process -FilePath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe" -Wait
 
 Write-Host "Press any key to continue..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
