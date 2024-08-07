@@ -29,7 +29,7 @@ if (-not (Test-Path $urlsPath)) {
     $urlsPath = "../../urls.json"
 }
 $urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
-$Run_MiniToolPartitionWizard64bitPortable = $urlsData.UtilitiesForWindows[28] # Acessa a URL do pacote
+$Run_Moo0_System_Monitor = $urlsData.UtilitiesForWindows[28] # Acessa a URL do pacote
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
@@ -60,14 +60,14 @@ $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O MiniTool Partition Wizard não está instalado! Iniciando processo de instalação."
-Write-Host "MiniTool Partition Wizard is not installed! Starting installation process."
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Moo0 System Monitor não está instalado! Iniciando processo de instalação."
+Write-Host "Moo0 System Monitor is not installed! Starting installation process."
 
 # Link do download e o diretório Temp
-$downloadUrl = $Run_MiniToolPartitionWizard64bitPortable
+$downloadUrl = $Run_Moo0_System_Monitor
 $downloadPath = "$env:temp\Moo0_SystemMonitor_Portable.zip"
 
-# Faz o download do MiniTool Partition Wizard
+# Faz o download do Moo0 System Monitor
 Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 
 # Emitir Sequência de Beeps
@@ -88,7 +88,7 @@ Expand-Archive -Path $downloadPath -DestinationPath $extractPath
 $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
 # /Extrair o arquivo compactado (.zip)
 
-# Executar o MiniTool Partition Wizard
+# Executar o Moo0 System Monitor
 Start-Process -FilePath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe" -Wait
 
 Write-Host "Press any key to continue..."
