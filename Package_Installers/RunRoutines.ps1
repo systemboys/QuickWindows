@@ -312,6 +312,9 @@ $Files = @{
         "87" = "$env:TEMP\QuickWindows\Package_Installers\MicrosoftOperatingSystems\Download.ps1 7" # Windows Server 2022
 }
 
+# Array de processos a serem ignorados
+$IgnoredProcesses = @("SystemMonitor64", "OneDrive")
+
 # Função para executar um arquivo .ps1 em uma nova janela do PowerShell
 function Execute-Script {
     param(
@@ -342,7 +345,12 @@ foreach ($Routine in $Routines) {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Executada a rotina $Routine."
         Execute-Script $File
         Write-Host "Waiting for $File to finish. Press Enter to continue..."
-        Read-Host
+        
+        # Verificar se o processo é um dos ignorados
+        $ProcessName = (Get-Process -Id $LastExitCode).Name
+        if ($IgnoredProcesses -notcontains $ProcessName) {
+            Read-Host
+        }
     } else {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Rotina inválida: $Routine"
         Write-Host "Invalid routine: $Routine"
