@@ -325,6 +325,9 @@ function Execute-Script {
     Invoke-Expression $Command
 }
 
+# Array de processos a serem ignorados
+$IgnoreProcesses = @("SystemMonitor64", "DefenderDaemon")
+
 # Loop para solicitar entrada até que uma entrada válida seja fornecida
 do {
     Write-Host 'Enter one or more of a routine, example: 123, 456, 789:'
@@ -341,8 +344,15 @@ foreach ($Routine in $Routines) {
     if ($File) {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Executada a rotina $Routine."
         Execute-Script $File
-        Write-Host "Waiting for $File to finish. Press Enter to continue..."
-        Read-Host
+
+        # Verificar se o processo está na lista de ignorados
+        $ProcessName = [System.IO.Path]::GetFileNameWithoutExtension($File)
+        if ($IgnoreProcesses -contains $ProcessName) {
+            Write-Host "Process $ProcessName is in the ignore list. Continuing to the next routine."
+        } else {
+            Write-Host "Waiting for $File to finish. Press Enter to continue..."
+            Read-Host
+        }
     } else {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Rotina inválida: $Routine"
         Write-Host "Invalid routine: $Routine"
