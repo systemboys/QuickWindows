@@ -72,7 +72,7 @@ if ($args.Count -eq 0) {
     } elseif ($argument -eq 2) {
         Restart-Computer -Force
     } elseif ($argument -eq 3) {
-        Start-Process "shutdown" -ArgumentList "/r /fw /t 1" # A mesma coisa de "shutdown /r /fw /t 1"
+        Start-Process "shutdown" -ArgumentList "/r /fw /t 00" # A mesma coisa de "shutdown /r /fw /t 00"
     } else {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Argumento desconhecido. Use 1 para desligar o computador e 2 para reiniciar."
         Write-Host "Unknown argument. Use 1 to turn off the computer and 2 to restart."
