@@ -118,7 +118,7 @@ Write-Host "            2696 = Gerenciador de Tarefas do Windows                
 Write-Host "            2697 = Opcaes de pastas                                       [ ok ]" -ForegroundColor Green
 Write-Host "            2698 = Obtendo Informacaes do Sistema com PowerShell          [ ok ]" -ForegroundColor Green
 Write-Host "    27 = Criar atalhos para 'Desligar e Reiniciar'                        [ ok ]" -ForegroundColor Green
-Write-Host "    28 = Opção para Acesso ao Setup da BIOS via PowerShell                [ ok ]" -ForegroundColor Green
+Write-Host "    28 = Reiniciar e iniciar a BIOS da placa-mãe                          [ ok ]" -ForegroundColor Green
 Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "3 = Internet...                                                           [null]" -ForegroundColor Red
 Write-Host "    31 = Acesso Remoto...                                                 [null]" -ForegroundColor Red
