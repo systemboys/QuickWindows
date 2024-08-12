@@ -15,6 +15,8 @@
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 # v1.2.1 2024-07-28 às 11h10, Marcos Aurélio:
 #   - Registro de logs.
+# v1.3.1 2024-08-12 às 20h10, Marcos Aurélio:
+#   - Opção para Acesso ao Setup da BIOS via PowerShell.
 #
 # Licença: GPL.
 
@@ -64,11 +66,13 @@ if ($args.Count -eq 0) {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Nenhum argumento fornecido. Use 1 para desligar o computador e 2 para reiniciar."
     Write-Host "No argument provided. Use 1 to turn off the computer and 2 to restart."
 } else {
-    $argumento = $args[0]
-    if ($argumento -eq 1) {
+    $argument = $args[0]
+    if ($argument -eq 1) {
         Stop-Computer -Force
-    } elseif ($argumento -eq 2) {
+    } elseif ($argument -eq 2) {
         Restart-Computer -Force
+    } elseif ($argument -eq 3) {
+        Start-Process "shutdown" -ArgumentList "/r /fw /t 1" # A mesma coisa de "shutdown /r /fw /t 1"
     } else {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Argumento desconhecido. Use 1 para desligar o computador e 2 para reiniciar."
         Write-Host "Unknown argument. Use 1 to turn off the computer and 2 to restart."

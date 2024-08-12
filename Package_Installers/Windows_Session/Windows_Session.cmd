@@ -26,6 +26,8 @@
 ::   - Opção para agendar desligamento automático.
 :: v1.7.0 2024-04-16 às 00h43, Marcos Aurélio:
 ::   - Opção para execução de Gerenciador de Energia (Desligar ou Reiniciar).
+:: v1.8.0 2024-08-12 às 20h09, Marcos Aurélio:
+::   - Opção para Acesso ao Setup da BIOS via PowerShell.
 ::
 :: Licença: GPL.
 
@@ -58,6 +60,7 @@ set "menu_Session_2[4]=Atualizar Windows e Softwares"
 set "menu_Session_2[5]=Atualizar o PowerShell"
 set "menu_Session_2[6]=Acesso rápido à Configurações…"
 set "menu_Session_2[7]=Criar atalhos para 'Desligar e Reiniciar'"
+set "menu_Session_2[8]=Reiniciar e iniciar a BIOS da placa-mãe"
 
 set "default=%1"
 
@@ -135,6 +138,16 @@ if %ERRORLEVEL% equ 7 (
     echo Você selecionou a Opção para Criar atalhos para 'Desligar e Reiniciar'.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ShortcutMaker.ps1""' -Verb RunAs}"
+
+    goto menu_Session_2
+)
+
+:: Reiniciar e iniciar a BIOS da placa-mãe
+if %ERRORLEVEL% equ 8 (
+    cls
+    echo Você selecionou a Opção para Reiniciar e iniciar a BIOS da placa-mãe.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0PowerStateManager.ps1" "3"
 
     goto menu_Session_2
 )
