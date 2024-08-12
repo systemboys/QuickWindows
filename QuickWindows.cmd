@@ -248,7 +248,7 @@
 :: v1.67.104 2024-08-06 às 23h53, Marcos Aurélio:
 ::   - Opção para Download e execução de Moo0 System Monitor Portable em Utilitários para Windows.
 :: v1.68.104 2024-08-12 às 20h11, Marcos Aurélio:
-::   - Opção para Acesso ao Setup da BIOS via PowerShell na sessão Windows.
+::   - Opção para Reiniciar e entrar na BIOS da placa-mãe.
 ::
 :: Licença: GPL.
 

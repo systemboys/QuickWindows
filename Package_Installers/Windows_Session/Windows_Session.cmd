@@ -27,7 +27,7 @@
 :: v1.7.0 2024-04-16 às 00h43, Marcos Aurélio:
 ::   - Opção para execução de Gerenciador de Energia (Desligar ou Reiniciar).
 :: v1.8.0 2024-08-12 às 20h09, Marcos Aurélio:
-::   - Opção para Acesso ao Setup da BIOS via PowerShell.
+::   - Opção para Reiniciar e entrar na BIOS da placa-mãe.
 ::
 :: Licença: GPL.
 

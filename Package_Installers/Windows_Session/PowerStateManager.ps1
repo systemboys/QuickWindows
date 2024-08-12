@@ -16,7 +16,7 @@
 # v1.2.1 2024-07-28 às 11h10, Marcos Aurélio:
 #   - Registro de logs.
 # v1.3.1 2024-08-12 às 20h10, Marcos Aurélio:
-#   - Opção para Acesso ao Setup da BIOS via PowerShell.
+#   - Opção para Reiniciar e entrar na BIOS da placa-mãe.
 #
 # Licença: GPL.
 
