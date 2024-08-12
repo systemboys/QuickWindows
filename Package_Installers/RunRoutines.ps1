@@ -42,6 +42,8 @@
 #   - Inclusão das opções da sessão de redes nas rotinas.
 # v1.13.4 2024-08-06 às 23h56, Marcos Aurélio:
 #   - Opção para Download e execução de Moo0 System Monitor Portable em Utilitários para Windows.
+# v1.14.4 2024-08-12 às 20h19, Marcos Aurélio:
+#   - Opção para Acesso ao Setup da BIOS via PowerShell.
 #
 # Licença: GPL.
 
@@ -116,6 +118,7 @@ Write-Host "            2696 = Gerenciador de Tarefas do Windows                
 Write-Host "            2697 = Opcaes de pastas                                       [ ok ]" -ForegroundColor Green
 Write-Host "            2698 = Obtendo Informacaes do Sistema com PowerShell          [ ok ]" -ForegroundColor Green
 Write-Host "    27 = Criar atalhos para 'Desligar e Reiniciar'                        [ ok ]" -ForegroundColor Green
+Write-Host "    28 = Opção para Acesso ao Setup da BIOS via PowerShell                [ ok ]" -ForegroundColor Green
 Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "3 = Internet...                                                           [null]" -ForegroundColor Red
 Write-Host "    31 = Acesso Remoto...                                                 [null]" -ForegroundColor Red
@@ -233,6 +236,7 @@ $Files = @{
                 "2697" = "$env:TEMP\QuickWindows\Package_Installers\Windows_Session\StartingWindowsFeature.ps1 14" # Opções de pastas
                 "2698" = "$env:TEMP\QuickWindows\Package_Installers\Windows_Session\ObtainingSystemInformation.ps1" # Obtendo Informações do Sistema com PowerShell
         "27" = "$env:TEMP\QuickWindows\Package_Installers\Windows_Session\ShortcutMaker.ps1" # Criar atalhos para 'Desligar e Reiniciar'
+        "28" = "$env:TEMP\QuickWindows\Package_Installers\Windows_Session\PowerStateManager.ps1 3" # Reiniciar e iniciar a BIOS da placa-mãe
     # "3" = "" # Internet…
         # "31" = "" # Acesso Remoto…
             "311" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_AnyDesk.ps1" # AnyDesk
