@@ -20,8 +20,6 @@
 #   - Registro de logs.
 # v1.3.2 2024-07-31 às 23h32, Marcos Aurélio:
 #   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
-# v1.4.2 2024-08-14 às 02h14, Marcos Aurélio:
-#   - Testar a latência da conexão.
 #
 # Licença: GPL.
 
@@ -87,10 +85,7 @@ if (Test-Path $directory) {
     # Link do download e o diretório Temp
     $downloadUrl = $Install_7_Zip
     $downloadPath = "$env:temp\7z2301-x64.exe"
-
-    # Testar a latência da conexão
-    Testar-Latencia -pingCount 24 -criticalTime 150
-
+    
     # Faz o download do 7-Zip
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
 

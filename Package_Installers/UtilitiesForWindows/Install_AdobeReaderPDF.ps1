@@ -30,8 +30,6 @@
 #   - Registro de logs.
 # v1.3.5 2024-07-31 às 23h34, Marcos Aurélio:
 #   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
-# v1.4.5 2024-08-14 às 02h21, Marcos Aurélio:
-#   - Testar a latência da conexão.
 #
 # Licença: GPL.
 
@@ -109,9 +107,6 @@ if (Test-Path $directory) {
     } else {
         Write-Host "The operating system is not Windows 10 or 11."
     }
-
-    # Testar a latência da conexão
-    Testar-Latencia -pingCount 24 -criticalTime 150
     
     # Faz o download do Adobe Reader
     Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
