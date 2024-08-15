@@ -67,7 +67,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o Microsoft Office 2016 a 2019.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Microsoft_Office_2016_to_2019.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Microsoft_Office_2016_to_2019.ps1""' -Verb RunAs}"
 
     goto menu_Session_7
 )
@@ -77,7 +77,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para instalar o Microsoft Office 2019 a 2021.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Microsoft_Office_2019_to_2021.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Microsoft_Office_2019_to_2021.ps1""' -Verb RunAs}"
 
     goto menu_Session_7
 )
@@ -87,7 +87,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção para instalar o Microsoft Office 365.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Microsoft_Office_365.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Microsoft_Office_365.ps1""' -Verb RunAs}"
 
     goto menu_Session_7
 )
@@ -97,7 +97,7 @@ if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção para Criar atalhos para Apps do Office 2021.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0MicrosoftAppShortcuts.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\MicrosoftAppShortcuts.ps1""' -Verb RunAs}"
 
     goto menu_Session_7
 )

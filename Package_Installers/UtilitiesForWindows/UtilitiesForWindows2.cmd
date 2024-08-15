@@ -74,7 +74,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a opção para Limpar Spooler de Impressão.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ClearPrintSpooler.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\ClearPrintSpooler.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )
@@ -84,7 +84,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a opção para Limpar Arquivos Temporários.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0ClearTemporaryFiles.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\ClearTemporaryFiles.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )
@@ -94,7 +94,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a opção para Driver Booster Free.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_DriverBoosterFree.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_DriverBoosterFree.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )
@@ -104,7 +104,7 @@ if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a opção para CPU-Z.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_CPU_Z.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_CPU_Z.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )
@@ -114,7 +114,7 @@ if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a opção para CPU-Z Portable.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_CPU-Z_Portable.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_CPU-Z_Portable.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )
@@ -124,7 +124,7 @@ if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a opção para Crystal Disk Info.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_CrystalDiskInfo.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_CrystalDiskInfo.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )
@@ -134,7 +134,7 @@ if %ERRORLEVEL% equ 7 (
     cls
     echo Você selecionou a opção para Crystal Disk Info Portable.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_CrystalDiskInfo_Portable.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_CrystalDiskInfo_Portable.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )
@@ -144,7 +144,7 @@ if %ERRORLEVEL% equ 8 (
     cls
     echo Você selecionou a opção para Windows Update Activation.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0WindowsUpdateActivation.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\WindowsUpdateActivation.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p2
 )

@@ -58,7 +58,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para o Compressor de arquivos, PowerShell Backup Automático .Zip.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0FileCompressionForZip.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\FileCompressionForZip.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_6
 )
@@ -68,7 +68,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para o Cobian Backup.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_CobianBackup.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_CobianBackup.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_6
 )

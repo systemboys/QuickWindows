@@ -253,6 +253,8 @@
 ::   - Verificar e finalizar o processo "SystemMonitor64" se estiver em execução.
 :: v1.68.106 2024-08-15 às 10h24, Marcos Aurélio:
 ::   - Ajustes no código do arquivo 'menu.ps1, foi comentada a linha que exibe o tamanho do Git e alguns textos em português traduzidos para inglês.
+:: v1.68.107 2024-08-15 às 10h41, Marcos Aurélio:
+::   - Ajustes nas linhas que contém o trecho '%~dp0Package_Installers', foi adicionada uma barra (\) '%~dp0\Package_Installers'.
 ::
 :: Licença: GPL.
 
@@ -376,7 +378,7 @@ if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a Opção para Execução de Comandos no PowerShell.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Package_Installers\RunPowerShellCommands.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Package_Installers\RunPowerShellCommands.ps1""' -Verb RunAs}"
 
     goto menu
 )
@@ -407,7 +409,7 @@ if %ERRORLEVEL% equ 9 (
     cls
     echo Você selecionou a Opção para Executar Rotinas.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Package_Installers\RunRoutines.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Package_Installers\RunRoutines.ps1""' -Verb RunAs}"
 
     goto menu
 )

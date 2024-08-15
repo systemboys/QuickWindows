@@ -67,7 +67,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção Painel de Controle - Control.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 1' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0\StartingWindowsFeature.ps1"""" -numero 1' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -77,7 +77,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção Editor de Registro - RegEdit.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 2' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0\StartingWindowsFeature.ps1"""" -numero 2' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -87,7 +87,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção Configurações do Sistema - MSConfig.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 3' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0\StartingWindowsFeature.ps1"""" -numero 3' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -97,7 +97,7 @@ if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção Serviços - Services.msc.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 4' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0\StartingWindowsFeature.ps1"""" -numero 4' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -107,7 +107,7 @@ if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a Opção Gerenciador de Dispositivos - DevMgmt.msc.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 5' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0\StartingWindowsFeature.ps1"""" -numero 5' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -117,7 +117,7 @@ if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a Opção Gerenciamento de Discos - DiskMgmt.msc.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 6' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0\StartingWindowsFeature.ps1"""" -numero 6' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -127,7 +127,7 @@ if %ERRORLEVEL% equ 7 (
     cls
     echo Você selecionou a Opção Explorador de arquivos do Windows.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 7' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0\StartingWindowsFeature.ps1"""" -numero 7' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )
@@ -137,7 +137,7 @@ if %ERRORLEVEL% equ 8 (
     cls
     echo Você selecionou a Opção Configurações - Tela - tipo, ajustes de resolução de tela.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0StartingWindowsFeature.ps1"""" -numero 8' -Verb RunAs"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0\StartingWindowsFeature.ps1"""" -numero 8' -Verb RunAs"
 
     goto menu_Session_2_1_p1
 )

@@ -88,7 +88,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para instalar o Microsoft Edge.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Microsoft_Edge.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Microsoft_Edge.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
@@ -98,7 +98,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção para instalar o Google Chrome.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Google_Chrome.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Google_Chrome.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
@@ -108,7 +108,7 @@ if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção para instalar o Google Earth Pro.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Google_Earth_Pro.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Google_Earth_Pro.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
@@ -118,7 +118,7 @@ if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a Opção para instalar o Skype.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Skype.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Skype.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
@@ -128,7 +128,7 @@ if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a Opção para instalar o Opera.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Opera.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Opera.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
@@ -138,7 +138,7 @@ if %ERRORLEVEL% equ 7 (
     cls
     echo Você selecionou a Opção para instalar o Mozilla Firefox.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Mozilla_Firefox.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Mozilla_Firefox.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
@@ -148,7 +148,7 @@ if %ERRORLEVEL% equ 8 (
     cls
     echo Você selecionou a Opção para instalar o Real VNC Viewer.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_RealVNCViewer.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_RealVNCViewer.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )

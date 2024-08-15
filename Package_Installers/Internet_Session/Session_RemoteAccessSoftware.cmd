@@ -63,7 +63,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o AnyDesk.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_AnyDesk.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_AnyDesk.ps1""' -Verb RunAs}"
 
     goto menu_Session_3_1
 )
@@ -73,7 +73,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para instalar o Reset AnyDesk.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Reset_AnyDesk.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Reset_AnyDesk.ps1""' -Verb RunAs}"
 
     goto menu_Session_3_1
 )
@@ -83,7 +83,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção para instalar o RustDesk.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_RustDesk.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_RustDesk.ps1""' -Verb RunAs}"
 
     goto menu_Session_3_1
 )
@@ -93,7 +93,7 @@ if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a Opção para instalar o HopToDesk.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_HopToDesk.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_HopToDesk.ps1""' -Verb RunAs}"
 
     goto menu_Session_3_1
 )

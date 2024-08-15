@@ -57,7 +57,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o MiniTool Partition Wizard v12 Installation.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_MiniToolPartitionWizardInstallation.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_MiniToolPartitionWizardInstallation.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_7
 )
@@ -68,7 +68,7 @@ if %ERRORLEVEL% equ 2 (
     
     echo Você selecionou a Opção para baixar e executar o MiniTool Partition Wizard v12 32bit portable.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_MiniToolPartitionWizard32bitPortable.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_MiniToolPartitionWizard32bitPortable.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_7
 )
@@ -79,7 +79,7 @@ if %ERRORLEVEL% equ 3 (
     
     echo Você selecionou a Opção para baixar e executar o MiniTool Partition Wizard v12 64bit portable.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_MiniToolPartitionWizard64bitPortable.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_MiniToolPartitionWizard64bitPortable.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_7
 )

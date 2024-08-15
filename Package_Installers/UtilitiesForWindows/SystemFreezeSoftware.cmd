@@ -57,7 +57,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o Deep Freeze Standard.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Deep_Freeze.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Deep_Freeze.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_5
 )
@@ -67,7 +67,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção para instalar o Shadow_Defender.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Shadow_Defender.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Shadow_Defender.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_5
 )

@@ -67,7 +67,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a opção para Revo Uninstaller Portable.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_RevoUninstallerPortable.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_RevoUninstallerPortable.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p3
 )
@@ -77,7 +77,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a opção para Battery Report.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_BatteryReport.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_BatteryReport.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p3
 )
@@ -87,7 +87,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a opção para SiberiaProg-CH341A.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_SiberiaProg-CH341A.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_SiberiaProg-CH341A.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p3
 )
@@ -97,7 +97,7 @@ if %ERRORLEVEL% equ 4 (
     cls
     echo Você selecionou a opção para SiberiaProg-CH341A Portable.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_SiberiaProg-CH341A_Portable.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_SiberiaProg-CH341A_Portable.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p3
 )
@@ -107,7 +107,7 @@ if %ERRORLEVEL% equ 5 (
     cls
     echo Você selecionou a opção para Open Hardware Monitor.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_OpenHardwareMonitor.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_OpenHardwareMonitor.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p3
 )
@@ -117,7 +117,7 @@ if %ERRORLEVEL% equ 6 (
     cls
     echo Você selecionou a opção para Moo0 System Monitor.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Run_Moo0_System_Monitor.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_Moo0_System_Monitor.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p3
 )

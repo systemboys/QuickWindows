@@ -66,7 +66,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção Obter IP público.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0GetPublicIPAddress.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\GetPublicIPAddress.ps1""' -Verb RunAs}"
 
     goto menu_Session_4
 )
@@ -76,7 +76,7 @@ if %ERRORLEVEL% equ 2 (
     cls
     echo Você selecionou a Opção Obter IP local.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0GetLocalIPAddress.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\GetLocalIPAddress.ps1""' -Verb RunAs}"
 
     goto menu_Session_4
 )
@@ -86,7 +86,7 @@ if %ERRORLEVEL% equ 3 (
     cls
     echo Você selecionou a Opção Obter IP local.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0GetConnectionIPRoute.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\GetConnectionIPRoute.ps1""' -Verb RunAs}"
 
     goto menu_Session_4
 )
