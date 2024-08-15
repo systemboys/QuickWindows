@@ -737,7 +737,7 @@ if %ERRORLEVEL% equ 1 (
     cls
     echo Você selecionou a Opção para instalar o Your_Package.
 
-    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0Install_Your_Package.ps1""' -Verb RunAs}"
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_Your_Package.ps1""' -Verb RunAs}"
 
     goto menu_Session_3
 )
@@ -750,7 +750,7 @@ Se for passar algum argumento, tipo um número segue abaixo um exemplo de como p
 ```batch
 :: … (restante do código)
 
-PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0Download.ps1"""" -numero 3' -Verb RunAs"
+PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File """"%~dp0\Download.ps1"""" -numero 3' -Verb RunAs"
 
 :: … (restante do código)
 ```
