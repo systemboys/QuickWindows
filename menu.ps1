@@ -49,6 +49,8 @@
 #   - Download e execução de Moo0 System Monitor Portable.
 # v1.4.16 2024-08-15 às 02h14, Marcos Aurélio:
 #   - Verificar e finalizar o processo "SystemMonitor64" se estiver em execução.
+# v1.4.17 2024-08-15 às 10h22, Marcos Aurélio:
+#   - Ajustes no código, foi comentada a linha que exibe o tamanho do Git e alguns textos em português traduzidos para inglês.
 #
 # Licença: GPL.
 
@@ -249,9 +251,9 @@ $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
 
 if ($process) {
     Stop-Process -Name $processName -Force
-    Write-Host "Processo 'SystemMonitor64' finalizado."
+    Write-Host "Process 'SystemMonitor64' terminated."
 } else {
-    Write-Host "Processo 'SystemMonitor64' não está em execução."
+    Write-Host "Process 'SystemMonitor64' is not running."
 }
 
 $directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
@@ -323,7 +325,7 @@ if ($gitInstalled) {
         $destinationPath = "$env:TEMP\$outputFileName"
 
         Write-Host "$fileName doesn't exist on Windows! Downloading the installer..."
-        Write-Host "File size: 58.4 MB"
+        # Write-Host "File size: 58.4 MB"
 
         # Define os símbolos para o indicador de progresso
         $symbols = @('.   \', ' .  |', '  . /', '   .-')
