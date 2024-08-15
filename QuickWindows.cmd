@@ -251,6 +251,8 @@
 ::   - Opção para Reiniciar e entrar na BIOS da placa-mãe.
 :: v1.68.105 2024-08-15 às 02h15, Marcos Aurélio:
 ::   - Verificar e finalizar o processo "SystemMonitor64" se estiver em execução.
+:: v1.68.106 2024-08-15 às 10h24, Marcos Aurélio:
+::   - Ajustes no código do arquivo 'menu.ps1, foi comentada a linha que exibe o tamanho do Git e alguns textos em português traduzidos para inglês.
 ::
 :: Licença: GPL.
 
