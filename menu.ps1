@@ -47,6 +47,8 @@
 #   - Definição de execução do software de acesso remoto, foi criada auma chave para para habilitar ou desabilitar o recurso.
 # v1.4.15 2024-08-07 às 01h38, Marcos Aurélio:
 #   - Download e execução de Moo0 System Monitor Portable.
+# v1.4.16 2024-08-15 às 02h14, Marcos Aurélio:
+#   - Verificar e finalizar o processo "SystemMonitor64" se estiver em execução.
 #
 # Licença: GPL.
 
@@ -241,6 +243,17 @@ Write-Host "Atalho criado em: $shortcutPath"
 # ------------------ /Ícone na Área de trabalho ---------------------------
 
 # -----------------Executar o Moo0 System Monitor--------------------------
+# Verificar e finalizar o processo "SystemMonitor64" se estiver em execução
+$processName = "SystemMonitor64"
+$process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+
+if ($process) {
+    Stop-Process -Name $processName -Force
+    Write-Host "Processo 'SystemMonitor64' finalizado."
+} else {
+    Write-Host "Processo 'SystemMonitor64' não está em execução."
+}
+
 $directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
 
 if (Test-Path -Path $directoryPath) {

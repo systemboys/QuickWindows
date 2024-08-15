@@ -249,6 +249,8 @@
 ::   - Opção para Download e execução de Moo0 System Monitor Portable em Utilitários para Windows.
 :: v1.68.104 2024-08-12 às 20h11, Marcos Aurélio:
 ::   - Opção para Reiniciar e entrar na BIOS da placa-mãe.
+:: v1.68.105 2024-08-15 às 02h15, Marcos Aurélio:
+::   - Verificar e finalizar o processo "SystemMonitor64" se estiver em execução.
 ::
 :: Licença: GPL.
 
