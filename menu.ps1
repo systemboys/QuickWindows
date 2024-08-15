@@ -49,8 +49,6 @@
 #   - Download e execução de Moo0 System Monitor Portable.
 # v1.4.16 2024-08-15 às 02h14, Marcos Aurélio:
 #   - Verificar e finalizar o processo "SystemMonitor64" se estiver em execução.
-# v1.5.16 2024-08-15 às 02h47, Marcos Aurélio:
-#   - Gravar Histórico de Versões no diretório 'GTiSupport'.
 #
 # Licença: GPL.
 
@@ -125,70 +123,6 @@ $message = "QuickWindows iniciado, foi dado o comando para execução."
 $logPath = QWLogFunction -Address $address -FileName $fileName -Message $message
 Write-Host "Log created in: $logPath"
 clear
-
-# --- Gravar Histórico de Versões no diretório 'GTiSupport' -------
-# Caminho para o arquivo README.md
-$filePath = "$env:TEMP\QuickWindows\QuickWindows.cmd"
-
-# Verifica se o arquivo existe
-if (Test-Path -Path $filePath) {
-    Write-Host "O arquivo $filePath foi encontrado."
-
-    # Lê o conteúdo do arquivo
-    $fileContent = Get-Content -Path $filePath -Encoding utf8
-    
-    # Inicializa variáveis
-    $startLineFound = $false
-    $endLineFound = $false
-    $extractedContent = @()
-
-    # Define as linhas de início e fim em minúsculas
-    $startLine = ":: para Windows durante a formatação e/ou manutenção de computadores."
-    $endLine = ":: Licença: GPL."
-
-    # Percorre cada linha do conteúdo do arquivo
-    foreach ($line in $fileContent) {
-        $trimmedLine = $line.Trim().ToLower()
-        if ($trimmedLine -eq $startLine) {
-            Write-Host "Linha de início encontrada."
-            $startLineFound = $true
-            continue
-        }
-        
-        if ($trimmedLine -eq $endLine) {
-            Write-Host "Linha de fim encontrada."
-            $endLineFound = $true
-            break
-        }
-        
-        if ($startLineFound -and -not $endLineFound) {
-            $extractedContent += $line
-        }
-    }
-
-    # Verifica se as linhas de início e fim foram encontradas
-    if ($startLineFound -and $endLineFound) {
-        Write-Host "Linhas de início e fim encontradas."
-
-        # Concatena o conteúdo extraído em uma string
-        $contentToDisplay = $extractedContent -join "`r`n"
-
-        # Caminho para o arquivo temporário
-        $tempFilePath = "$fullPath\Version_history.txt"
-
-        # Escreve o conteúdo extraído no arquivo temporário
-        $contentToDisplay | Out-File -FilePath $tempFilePath -Encoding utf8
-
-        # Abre o Bloco de notas com o arquivo temporário
-        Write-Host "Abrindo o Bloco de notas com o conteúdo extraído."
-        # Start-Process notepad.exe $tempFilePath
-    } else {
-        Write-Host "Não foi possível encontrar as linhas especificadas no arquivo."
-    }
-} else {
-    Write-Host "O arquivo $filePath não existe."
-}
-# --- /Gravar Histórico de Versões no diretório 'GTiSupport' -------
 
 # Se o AnyDesk não estiver instalado, faz o download e instalar
 $programFiles = "$env:SystemDrive\Program Files (x86)"
