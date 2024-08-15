@@ -9,6 +9,8 @@
 # Histórico:
 # v1.0.0 2024-08-06 às 22h57, Marcos Aurélio:
 #   - Versão inicial, Download e execução de Moo0 System Monitor Portable.
+# v1.0.1 2024-08-15 às 02h20, Marcos Aurélio:
+#   - Verificar e finalizar o processo "SystemMonitor64" se estiver em execução.
 #
 # Licença: GPL.
 
@@ -59,6 +61,17 @@ if (-not (Test-Path $functionPath)) {
 $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
+
+# Verificar e finalizar o processo "SystemMonitor64" se estiver em execução
+$processName = "SystemMonitor64"
+$process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+
+if ($process) {
+    Stop-Process -Name $processName -Force
+    Write-Host "Processo 'SystemMonitor64' finalizado."
+} else {
+    Write-Host "Processo 'SystemMonitor64' não está em execução."
+}
 
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O Moo0 System Monitor não está instalado! Iniciando processo de instalação."
 Write-Host "Moo0 System Monitor is not installed! Starting installation process."
