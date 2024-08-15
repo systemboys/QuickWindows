@@ -49,6 +49,8 @@
 #   - Download e execução de Moo0 System Monitor Portable.
 # v1.4.16 2024-08-15 às 02h14, Marcos Aurélio:
 #   - Verificar e finalizar o processo "SystemMonitor64" se estiver em execução.
+# v1.5.16 2024-08-15 às 02h47, Marcos Aurélio:
+#   - Gravar Histórico de Versões no diretório 'GTiSupport'.
 #
 # Licença: GPL.
 
