@@ -51,13 +51,15 @@
 #   - Verificar e finalizar o processo "SystemMonitor64" se estiver em execução.
 # v1.4.17 2024-08-15 às 10h22, Marcos Aurélio:
 #   - Ajustes no código, foi comentada a linha que exibe o tamanho do Git e alguns textos em português traduzidos para inglês.
+# v1.4.18 2024-08-20 às 00h10, Marcos Aurélio:
+#   - Resolvido a forma de como baixa e executar o script que era 'irm qw.gti1.com.br/menu.ps1 | iex' e agora é 'irm qw.gti1.com.br | iex'.
 #
 # Licença: GPL.
 
 clear
 
 # Comando para usar no PowerShell
-$PowerShellCommand = "irm qw.gti1.com.br/menu.ps1 | iex"
+$PowerShellCommand = "irm qw.gti1.com.br | iex"
 
 # Verifica se o Windows PowerShell está sendo executado como administrador
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {

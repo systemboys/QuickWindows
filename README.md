@@ -16,7 +16,7 @@ O **QuickWindows** é um menu interativo desenvolvido em PowerShell projetado pa
 ### Instalação:
 A instalação do QuickWindows é realizada através do seguinte comando no terminal Windows PowerShell:
 ```bash
-irm qw.gti1.com.br/menu.ps1 | iex
+irm qw.gti1.com.br | iex
 ```
 Este comando inicia o download e execução do instalador do Git, seguido pelo clone do repositório Git onde o QuickWindows está hospedado.
 
@@ -56,7 +56,7 @@ O QuickWindows é a solução ideal para técnicos e usuários que buscam uma fo
    >
    > Inclusão do `Git` no **_Microsoft PowerShell_**
    > ```powershell
-   > irm qw.gti1.com.br/menu.ps1 | iex
+   > irm qw.gti1.com.br | iex
    > ```
 
 3. **Explore e Instale:** Explore as categorias, escolha os pacotes que deseja instalar e siga as instruções. Em poucos instantes, você terá os programas desejados em seu sistema Windows.

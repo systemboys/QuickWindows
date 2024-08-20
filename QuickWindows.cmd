@@ -255,6 +255,8 @@
 ::   - Ajustes no código do arquivo 'menu.ps1, foi comentada a linha que exibe o tamanho do Git e alguns textos em português traduzidos para inglês.
 :: v1.68.107 2024-08-15 às 10h41, Marcos Aurélio:
 ::   - Ajustes nas linhas que contém o trecho '%~dp0Package_Installers', foi adicionada uma barra (\) '%~dp0\Package_Installers'.
+:: v1.68.108 2024-08-20 às 00h13, Marcos Aurélio:
+::   - Resolvido a forma de como baixa e executar o script que era 'irm qw.gti1.com.br/menu.ps1 | iex' e agora é 'irm qw.gti1.com.br | iex'.
 ::
 :: Licença: GPL.
 
