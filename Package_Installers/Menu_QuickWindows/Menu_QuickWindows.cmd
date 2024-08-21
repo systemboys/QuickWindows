@@ -13,6 +13,8 @@
 :: Histórico:
 :: v1.0.0 2023-10-28 às 16h40, Marcos Aurélio:
 ::   - Versão inicial, menu_Session_1 de instalações de programas para Windows.
+:: v1.1.0 2024-08-20 às 23h11, Marcos Aurélio:
+::   - Opção para abrir o README do QuickWindows no Repositório Git.
 ::
 :: Licença: GPL.
 
@@ -41,6 +43,7 @@ set "menu_Session_1[0]=Voltar…"
 set "menu_Session_1[1]=Atualizar QuickWindows"
 set "menu_Session_1[2]=Deletar QuickWindows"
 set "menu_Session_1[3]=Recarregar QuickWindows"
+set "menu_Session_1[4]=Documentação do QuickWindows"
 
 set "default=%1%"
 
@@ -79,6 +82,15 @@ if %ERRORLEVEL% equ 2 (
 :: Recarregar QuickWindows
 if %ERRORLEVEL% equ 3 (
     cls
+    cd ..
+    cd ..
+    call QuickWindows.cmd 0
+)
+
+:: Documentação do QuickWindows
+if %ERRORLEVEL% equ 4 (
+    cls
+    start "" "https://github.com/systemboys/QuickWindows/blob/main/README.md"
     cd ..
     cd ..
     call QuickWindows.cmd 0
