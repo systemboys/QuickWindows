@@ -20,6 +20,36 @@ irm qw.gti1.com.br | iex
 ```
 Este comando inicia o download e execução do instalador do Git, seguido pelo clone do repositório Git onde o QuickWindows está hospedado.
 
+> Quando você executa o comando `irm qw.gti1.com.br | iex` no PowerShell, o comando está realizando duas ações principais:
+> 
+> 1. **`irm`**: É um alias para `Invoke-RestMethod`, que faz uma solicitação HTTP para o URL fornecido (`qw.gti1.com.br`), obtendo o conteúdo da resposta. Neste caso, parece que o conteúdo é um script PowerShell.
+> 
+> 2. **`iex`**: É um alias para `Invoke-Expression`, que executa o conteúdo passado para ele como um comando PowerShell.
+> 
+> ### Onde o script é armazenado?
+> 
+> Quando você usa `irm` para baixar um script e imediatamente executa o script usando `iex`, o PowerShell **não salva** o script em um arquivo físico em disco. Em vez disso, o conteúdo do script é carregado diretamente na memória e executado a partir daí.
+> 
+> **Portanto, não há um diretório específico no qual o script é armazenado fisicamente quando você executa `irm ... | iex`.** O script é carregado e executado diretamente da resposta HTTP sem ser salvo em um arquivo local.
+> 
+> ### Se você quiser salvar o script:
+> 
+> Se você deseja baixar o script e salvá-lo em um diretório específico para uso posterior, você pode modificar o comando para usar `Invoke-WebRequest` (ou seu alias `iwr`) e salvar o conteúdo em um arquivo. Por exemplo:
+> 
+> ```powershell
+> Invoke-WebRequest -Uri "http://qw.gti1.com.br" -OutFile "$env:temp\menu.ps1"
+> ```
+> 
+> Este comando salvará o script `menu.ps1` no diretório temporário do usuário (`$env:temp`).
+> 
+> Depois de salvar o arquivo, você pode executar o script diretamente do PowerShell:
+> 
+> ```powershell
+> & "$env:temp\menu.ps1"
+> ```
+> 
+> Ou você pode abri-lo para inspecioná-lo ou modificá-lo antes de executar.
+
 ### Vantagens:
 - **Eficiência:** Agiliza o processo de instalação pós-formatação.
 - **Conveniência:** Reúne diversas ferramentas em um único local.

@@ -255,24 +255,17 @@ $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
 
 if ($process) {
     Stop-Process -Name $processName -Force
-    # ------Se o arquivo "SaveData.xml" existir, ele deve ser apagado------
-    $filepath = "$env:temp\Moo0_SystemMonitor_Portable\savedata\SaveData.xml"
-
-    if (Test-Path -Path $filepath) {
-        Remove-Item -Path $filepath -Force
-    }
-    # ------Se o arquivo "SaveData.xml" existir, ele deve ser apagado------
     Write-Host "Process 'SystemMonitor64' terminated."
 } else {
     Write-Host "Process 'SystemMonitor64' is not running."
 }
 
-$directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
+# $directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
 
-if (Test-Path -Path $directoryPath) {
-    # Executar o Moo0 System Monitor
-    Start-Process -FilePath "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
-} else {
+# if (Test-Path -Path $directoryPath) {
+#     # Executar o Moo0 System Monitor
+#     Start-Process -FilePath "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
+# } else {
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Moo0_SystemMonitor_Portable.zip"
     $downloadPath = "$env:temp\Moo0_SystemMonitor_Portable.zip"
@@ -300,7 +293,7 @@ if (Test-Path -Path $directoryPath) {
 
     # Executar o Moo0 System Monitor
     Start-Process -FilePath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
-}
+# }
 # ----------------/Executar o Moo0 System Monitor--------------------------
 
 # Verifica se o Git está instalado no Windows (versões 10 e 11)
