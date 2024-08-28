@@ -53,8 +53,6 @@
 #   - Ajustes no código, foi comentada a linha que exibe o tamanho do Git e alguns textos em português traduzidos para inglês.
 # v1.4.18 2024-08-20 às 00h10, Marcos Aurélio:
 #   - Resolvido a forma de como baixa e executar o script que era 'irm qw.gti1.com.br/menu.ps1 | iex' e agora é 'irm qw.gti1.com.br | iex'.
-# v1.4.19 2024-08-28 às 00h23, Marcos Aurélio:
-#   - Se o arquivo "SaveData.xml" existir no diretório ".\Temp\Moo0_SystemMonitor_Portable\savedata\", ele deve ser apagado.
 #
 # Licença: GPL.
 
@@ -260,12 +258,12 @@ if ($process) {
     Write-Host "Process 'SystemMonitor64' is not running."
 }
 
-# $directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
+$directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
 
-# if (Test-Path -Path $directoryPath) {
-#     # Executar o Moo0 System Monitor
-#     Start-Process -FilePath "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
-# } else {
+if (Test-Path -Path $directoryPath) {
+    # Executar o Moo0 System Monitor
+    Start-Process -FilePath "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
+} else {
     # Link do download e o diretório Temp
     $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Moo0_SystemMonitor_Portable.zip"
     $downloadPath = "$env:temp\Moo0_SystemMonitor_Portable.zip"
@@ -293,7 +291,7 @@ if ($process) {
 
     # Executar o Moo0 System Monitor
     Start-Process -FilePath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
-# }
+}
 # ----------------/Executar o Moo0 System Monitor--------------------------
 
 # Verifica se o Git está instalado no Windows (versões 10 e 11)
