@@ -259,6 +259,8 @@
 ::   - Resolvido a forma de como baixa e executar o script que era 'irm qw.gti1.com.br/menu.ps1 | iex' e agora é 'irm qw.gti1.com.br | iex'.
 :: v1.69.108 2024-08-20 às 23h12, Marcos Aurélio:
 ::   - Opção para abrir o README do QuickWindows no Repositório Git na sessão 'Menu QuickWindows'.
+:: v1.69.109 2024-08-28 às 02h29, Marcos Aurélio:
+::   - Verificar se o arquivo 'Moo0_SystemMonitor_Portable.zip' existe, se existir, apagar.
 ::
 :: Licença: GPL.
 

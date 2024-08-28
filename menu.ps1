@@ -53,6 +53,8 @@
 #   - Ajustes no código, foi comentada a linha que exibe o tamanho do Git e alguns textos em português traduzidos para inglês.
 # v1.4.18 2024-08-20 às 00h10, Marcos Aurélio:
 #   - Resolvido a forma de como baixa e executar o script que era 'irm qw.gti1.com.br/menu.ps1 | iex' e agora é 'irm qw.gti1.com.br | iex'.
+# v1.4.19 2024-08-28 às 02h28, Marcos Aurélio:
+#   - Verificar se o arquivo 'Moo0_SystemMonitor_Portable.zip' existe, se existir, apagar.
 #
 # Licença: GPL.
 
@@ -247,6 +249,20 @@ Write-Host "Atalho criado em: $shortcutPath"
 # ------------------ /Ícone na Área de trabalho ---------------------------
 
 # -----------------Executar o Moo0 System Monitor--------------------------
+# -----Verificar se o arquivo 'Moo0_SystemMonitor_Portable.zip' existe, se existir, apagar-----
+# Define o caminho do arquivo
+$filePath_Moo0 = "$env:temp\Moo0_SystemMonitor_Portable.zip"
+
+# Verifica se o arquivo existe
+if (Test-Path -Path $filePath_Moo0) {
+    # Se existir, remove o arquivo
+    Remove-Item -Path $filePath_Moo0 -Force
+    Write-Output "File removed: $filePath_Moo0"
+} else {
+    # Se não existir, exibe uma mensagem informando
+    Write-Output "File not found: $filePath_Moo0"
+}
+# ----/Verificar se o arquivo 'Moo0_SystemMonitor_Portable.zip' existe, se existir, apagar-----
 # Verificar e finalizar o processo "SystemMonitor64" se estiver em execução
 $processName = "SystemMonitor64"
 $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
