@@ -53,6 +53,8 @@
 #   - Ajustes no código, foi comentada a linha que exibe o tamanho do Git e alguns textos em português traduzidos para inglês.
 # v1.4.18 2024-08-20 às 00h10, Marcos Aurélio:
 #   - Resolvido a forma de como baixa e executar o script que era 'irm qw.gti1.com.br/menu.ps1 | iex' e agora é 'irm qw.gti1.com.br | iex'.
+# v1.4.19 2024-08-28 às 00h23, Marcos Aurélio:
+#   - Se o arquivo "SaveData.xml" existir no diretório ".\Temp\Moo0_SystemMonitor_Portable\savedata\", ele deve ser apagado.
 #
 # Licença: GPL.
 
@@ -253,6 +255,13 @@ $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
 
 if ($process) {
     Stop-Process -Name $processName -Force
+    # ------Se o arquivo "SaveData.xml" existir, ele deve ser apagado------
+    $filepath = "$env:temp\Moo0_SystemMonitor_Portable\savedata\SaveData.xml"
+
+    if (Test-Path -Path $filepath) {
+        Remove-Item -Path $filepath -Force
+    }
+    # ------Se o arquivo "SaveData.xml" existir, ele deve ser apagado------
     Write-Host "Process 'SystemMonitor64' terminated."
 } else {
     Write-Host "Process 'SystemMonitor64' is not running."
