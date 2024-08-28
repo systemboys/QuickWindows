@@ -349,7 +349,7 @@ if %ERRORLEVEL% equ 0 (
     echo Finalizando o processo SystemMonitor64...
     taskkill /F /IM SystemMonitor64.exe
     echo Você escolheu Sair.
-    pause
+    @REM pause
     goto :EOF
 )
 
