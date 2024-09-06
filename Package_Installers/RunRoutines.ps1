@@ -128,6 +128,7 @@ Write-Host "        311 = AnyDesk                                               
 Write-Host "        312 = Reset AnyDesk                                               [ ok ]" -ForegroundColor Green
 Write-Host "        313 = RustDesk                                                    [ ok ]" -ForegroundColor Green
 Write-Host "        314 = HopToDesk                                                   [ ok ]" -ForegroundColor Green
+Write-Host "        315 = Criar atalho de PCs remotos com AnyDesk                     [ ok ]" -ForegroundColor Green
 Write-Host "    32 = Navegador Microsoft Edge                                         [ ok ]" -ForegroundColor Green
 Write-Host "    33 = Navegador Google Chrome                                          [ ok ]" -ForegroundColor Green
 Write-Host "    34 = Navegador Google Earth Pro                                       [ ok ]" -ForegroundColor Green
