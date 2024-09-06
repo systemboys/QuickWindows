@@ -46,6 +46,7 @@ set "menu_Session_3_1[1]=AnyDesk"
 set "menu_Session_3_1[2]=Reset AnyDesk"
 set "menu_Session_3_1[3]=RustDesk"
 set "menu_Session_3_1[4]=HopToDesk"
+set "menu_Session_3_1[5]=Criar atalho de PCs remotos com AnyDesk"
 
 set "default=%1"
 
@@ -94,6 +95,16 @@ if %ERRORLEVEL% equ 4 (
     echo Você selecionou a Opção para instalar o HopToDesk.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Install_HopToDesk.ps1""' -Verb RunAs}"
+
+    goto menu_Session_3_1
+)
+
+:: Criar atalho de PCs remotos com AnyDesk
+if %ERRORLEVEL% equ 5 (
+    cls
+    echo Você selecionou a Opção para Criar atalho de PCs remotos com AnyDesk.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\RemoteComputerShortcuts.ps1""' -Verb RunAs}"
 
     goto menu_Session_3_1
 )
