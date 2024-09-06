@@ -56,6 +56,7 @@ $programFiles = "$env:SystemDrive\Program Files (x86)"
 $directory = "$programFiles\AnyDesk"
 
 if (Test-Path $directory) {
+    # ---Script para criar os atalhos dos computadores remotos informados pelo usuário-------
     # Função para criar atalho
     function Create-Shortcut {
         param (
@@ -81,7 +82,8 @@ if (Test-Path $directory) {
         } elseif ($type -eq "n") {
             $iconUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/icons/others/Laptop_icon.ico"  # Ícone para Notebook
         } else {
-            Write-Host "Tipo de dispositivo inválido para $name. O atalho não será criado." -ForegroundColor Red
+            Write-Host "Invalid device type for $name. Shortcut will not be created." -ForegroundColor Red
+            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Tipo de dispositivo inválido para $name. O atalho não será criado."
             return
         }
         
@@ -121,7 +123,8 @@ if (Test-Path $directory) {
 
     # Loop para solicitar IDs até que o usuário forneça algo válido
     do {
-        $input = Read-Host "Enter the ID of one or more machines (e.g., 1694907769,GTi_Server_Cursos,d;638676580,PC1_GTi_Cursos,n;)"
+        $input = Read-Host "Enter the ID of one or more machines (Ex.: 1602937869,PC Sala,d; 1622437764,PC Reception,n;)"
+        $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o ID de uma ou mais máquinas (Ex.: 1602937869,PC Sala,d; 1622437764,PC Recepção,n;)"
         if ([string]::IsNullOrWhiteSpace($input)) {
             Write-Host "Please enter your computer ID and name!" -ForegroundColor Red
         }
@@ -144,7 +147,8 @@ if (Test-Path $directory) {
                 # Criar o atalho
                 Create-Shortcut -id $id -name $name -type $type
             } else {
-                Write-Host "Entrada inválida: $computer" -ForegroundColor Red
+                Write-Host "Invalid input: $computer" -ForegroundColor Red
+                $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Entrada inválida: $computer!"
             }
         }
     }
@@ -152,7 +156,9 @@ if (Test-Path $directory) {
     # Mensagem final
     $dir = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::DesktopDirectory) + "\Remote computers"
     Write-Host "Shortcuts successfully created in $dir directory! Press a key to exit..."
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atalhos criados com sucesso no diretório $dir! Pressione uma tecla para sair..."
     Read-Host
+    # ---/Script para criar os atalhos dos computadores remotos informados pelo usuário-------
 } else {
     Write-Host "AnyDesk is not installed!"
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "AnyDesk não está instalado!"
