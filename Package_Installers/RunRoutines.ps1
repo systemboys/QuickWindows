@@ -44,6 +44,8 @@
 #   - Opção para Download e execução de Moo0 System Monitor Portable em Utilitários para Windows.
 # v1.14.4 2024-08-12 às 20h19, Marcos Aurélio:
 #   - Opção para Acesso ao Setup da BIOS via PowerShell.
+# v1.15.4 2024-09-06 às 17h48, Marcos Aurélio:
+#   - Script de criação de atalhos para computadores remotos na Área de trabalho do Windows na sessão Internet/Acesso Remoto.
 #
 # Licença: GPL.
 
@@ -243,6 +245,7 @@ $Files = @{
             "312" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Reset_AnyDesk.ps1" # Reset AnyDesk
             "313" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_RustDesk.ps1" # RustDesk
             "314" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_HopToDesk.ps1" # HopToDesk
+            "315" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\RemoteComputerShortcuts.ps1" # Criar atalho de PCs remotos com AnyDesk
         "32" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_Microsoft_Edge.ps1" # Navegador Microsoft Edge
         "33" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_Google_Chrome.ps1" # Navegador Google Chrome
         "34" = "$env:TEMP\QuickWindows\Package_Installers\Internet_Session\Install_Google_Earth_Pro.ps1" # Navegador Google Earth Pro

@@ -261,6 +261,8 @@
 ::   - Opção para abrir o README do QuickWindows no Repositório Git na sessão 'Menu QuickWindows'.
 :: v1.69.109 2024-08-28 às 02h29, Marcos Aurélio:
 ::   - Verificar se o arquivo 'Moo0_SystemMonitor_Portable.zip' existe, se existir, apagar.
+:: v1.70.109 2024-09-06 às 14h42, Marcos Aurélio:
+::   - Script de criação de atalhos para computadores remotos na Área de trabalho do Windows na sessão Internet/Acesso Remoto.
 ::
 :: Licença: GPL.
 
