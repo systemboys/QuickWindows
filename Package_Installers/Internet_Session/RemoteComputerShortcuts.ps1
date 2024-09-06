@@ -127,6 +127,7 @@ if (Test-Path $directory) {
         $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o ID de uma ou mais máquinas (Ex.: 1602937869,PC Sala,d; 1622437764,PC Recepção,n;)"
         if ([string]::IsNullOrWhiteSpace($input)) {
             Write-Host "Please enter your computer ID and name!" -ForegroundColor Red
+            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Por favor, insira o ID e o nome do seu computador!"
         }
     } while ([string]::IsNullOrWhiteSpace($input))
 
