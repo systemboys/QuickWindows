@@ -157,7 +157,7 @@ if (Test-Path $directory) {
     # Mensagem final
     $dir = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::DesktopDirectory) + "\Remote computers"
     Write-Host "Shortcuts successfully created in $dir directory! Press a key to exit..."
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atalhos criados com sucesso no diretório $dir! Pressione uma tecla para sair..."
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atalhos criados com sucesso no diretório $dir! IDs and Names [$($name) ID-$($id)]"
     Read-Host
     # ---/Script para criar os atalhos dos computadores remotos informados pelo usuário-------
 } else {
