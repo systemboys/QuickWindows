@@ -101,6 +101,7 @@ if (Test-Path $directory) {
         # Baixar o ícone se não existir
         if (-not (Test-Path $iconPath)) {
             Invoke-WebRequest -Uri $iconUrl -OutFile $iconPath
+            $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "ID and Name [$($name), $($id)]"
         }
         
         # Nome do atalho
@@ -157,7 +158,7 @@ if (Test-Path $directory) {
     # Mensagem final
     $dir = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::DesktopDirectory) + "\Remote computers"
     Write-Host "Shortcuts successfully created in $dir directory! Press a key to exit..."
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atalhos criados com sucesso no diretório $dir! IDs and Names [$($name) ID-$($id)]"
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Atalhos criados com sucesso no diretório $dir!"
     Read-Host
     # ---/Script para criar os atalhos dos computadores remotos informados pelo usuário-------
 } else {
