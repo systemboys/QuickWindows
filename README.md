@@ -341,9 +341,9 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Windows 7, todas as versões
     - [x] Windows 7 Lite
     - [x] Windows 10 Pro 32bits
-    - [x] Windows 10 Pro 64bits
+    - [x] Windows 10 Pro 64bits Versão 21H1 Compilação 19043.1165
     - [x] Windows 10 1909 PRO MSDN LITE Build
-    - [x] Windows 11 Pro
+    - [x] Windows 11 Pro 64bits Versão 21h2 Compilação 22000.2538
     - [x] Windows Server 2022
   - [x] Executar Rotinas
 
@@ -463,9 +463,9 @@ Aqui estão todas as opções em desenvolvimento.
     81 = Windows 7, todas as versões
     82 = Windows 7 Lite
     83 = Windows 10 Pro 32bits
-    84 = Windows 10 Pro 64bits
+    84 = Windows 10 Pro 64bits Versão 21H1 Compilação 19043.1165
     85 = Windows 10 1909 PRO MSDN LITE Build
-    86 = Windows 11 Pro
+    86 = Windows 11 Pro 64bits Versão 21h2 Compilação 22000.2538
     87 = Windows Server 2022
 ```
 
