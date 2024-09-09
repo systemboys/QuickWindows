@@ -203,9 +203,9 @@ Write-Host "8 = Sistemas Operacionais Microsoft...                              
 Write-Host "    81 = Windows 7, todas as versoes                                      [ ok ]" -ForegroundColor Green
 Write-Host "    82 = Windows 7 Lite                                                   [ ok ]" -ForegroundColor Green
 Write-Host "    83 = Windows 10 Pro 32bits                                            [ ok ]" -ForegroundColor Green
-Write-Host "    84 = Windows 10 Pro 64bits Versão 21H1 Compilação 19043.1165          [ ok ]" -ForegroundColor Green
+Write-Host "    84 = Windows 10 Pro 64bits Versao 21H1 Compilacao 19043.1165          [ ok ]" -ForegroundColor Green
 Write-Host "    85 = Windows 10 1909 PRO MSDN LITE Build                              [ ok ]" -ForegroundColor Green
-Write-Host "    86 = Windows 11 Pro 64bits Versão 21h2 Compilação 22000.2538          [ ok ]" -ForegroundColor Green
+Write-Host "    86 = Windows 11 Pro 64bits Versao 21h2 Compilacao 22000.2538          [ ok ]" -ForegroundColor Green
 Write-Host "    87 = Windows Server 2022                                              [ ok ]" -ForegroundColor Green
 Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
 
