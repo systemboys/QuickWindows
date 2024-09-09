@@ -13,6 +13,8 @@
 :: Histórico:
 :: v1.0.0 2023-12-11 às 20h07, Marcos Aurélio:
 ::   - Versão inicial, opções para baixar os Sistemas Operacionais da Microsoft.
+:: v1.0.1 2024-09-09 às 19h41, Marcos Aurélio:
+::   - Correção das descrições das ISOs do Windows 10 e 11 Pro.
 ::
 :: Licença: GPL.
 
