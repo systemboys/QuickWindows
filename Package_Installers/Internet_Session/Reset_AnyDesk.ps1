@@ -15,6 +15,8 @@
 #   - Incrementação de Configurações do arquivo JSON no diretório raiz.
 # v1.2.1 2024-07-28 às 00h18, Marcos Aurélio:
 #   - Registro de logs.
+# v1.2.2 2024-10-30 às 12h04, Marcos Aurélio:
+#   - Ajuste no script que reseta o AnyDesk, agora o script preserva as sessções recentes assim como as miniaturas dos PCs remotos.
 #
 # Licença: GPL.
 
@@ -101,9 +103,9 @@ if (Test-Path $directory) {
     # Copia o arquivo de configuração do usuário para uma pasta temporária
     Copy-Item -Path "$env:APPDATA\AnyDesk\user.conf" -Destination "$env:TEMP\user.conf" -Force
 
-    # Exclui todos os arquivos na pasta AnyDesk
-    Remove-Item -Path "$env:ALLUSERSPROFILE\AnyDesk\*" -Force -ErrorAction SilentlyContinue
-    Remove-Item -Path "$env:APPDATA\AnyDesk\*" -Force -ErrorAction SilentlyContinue
+    # Exclui todos os arquivos na pasta AnyDesk, exceto o arquivo de sessões recentes (user.conf) e o diretório de miniaturas (thumbnails)
+    Get-ChildItem -Path "$env:ALLUSERSPROFILE\AnyDesk\*" | Where-Object { $_.Name -ne "user.conf" } | Remove-Item -Force -ErrorAction SilentlyContinue
+    Get-ChildItem -Path "$env:APPDATA\AnyDesk\*" | Where-Object { $_.Name -notin @("user.conf", "thumbnails") } | Remove-Item -Force -ErrorAction SilentlyContinue
 
     # Inicia o serviço AnyDesk
     Start-AnyDesk
