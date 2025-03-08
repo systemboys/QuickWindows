@@ -55,6 +55,8 @@
 #   - Resolvido a forma de como baixa e executar o script que era 'irm qw.gti1.com.br/menu.ps1 | iex' e agora é 'irm qw.gti1.com.br | iex'.
 # v1.4.19 2024-08-28 às 02h28, Marcos Aurélio:
 #   - Verificar se o arquivo 'Moo0_SystemMonitor_Portable.zip' existe, se existir, apagar.
+# v1.4.20 2025-03-08 às 16h14, Marcos Aurélio:
+#   - Remoção da instalação do Moo0 System Monitor Portable.
 #
 # Licença: GPL.
 
@@ -248,67 +250,7 @@ $shortcut.Save()
 Write-Host "Atalho criado em: $shortcutPath"
 # ------------------ /Ícone na Área de trabalho ---------------------------
 
-# -----------------Executar o Moo0 System Monitor--------------------------
-# -----Verificar se o arquivo 'Moo0_SystemMonitor_Portable.zip' existe, se existir, apagar-----
-# Define o caminho do arquivo
-$filePath_Moo0 = "$env:temp\Moo0_SystemMonitor_Portable.zip"
 
-# Verifica se o arquivo existe
-if (Test-Path -Path $filePath_Moo0) {
-    # Se existir, remove o arquivo
-    Remove-Item -Path $filePath_Moo0 -Force
-    Write-Output "File removed: $filePath_Moo0"
-} else {
-    # Se não existir, exibe uma mensagem informando
-    Write-Output "File not found: $filePath_Moo0"
-}
-# ----/Verificar se o arquivo 'Moo0_SystemMonitor_Portable.zip' existe, se existir, apagar-----
-# Verificar e finalizar o processo "SystemMonitor64" se estiver em execução
-$processName = "SystemMonitor64"
-$process = Get-Process -Name $processName -ErrorAction SilentlyContinue
-
-if ($process) {
-    Stop-Process -Name $processName -Force
-    Write-Host "Process 'SystemMonitor64' terminated."
-} else {
-    Write-Host "Process 'SystemMonitor64' is not running."
-}
-
-$directoryPath = "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
-
-if (Test-Path -Path $directoryPath) {
-    # Executar o Moo0 System Monitor
-    Start-Process -FilePath "$env:temp\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
-} else {
-    # Link do download e o diretório Temp
-    $downloadUrl = "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Moo0_SystemMonitor_Portable.zip"
-    $downloadPath = "$env:temp\Moo0_SystemMonitor_Portable.zip"
-
-    # Faz o download do Moo0 System Monitor
-    Start-BitsTransfer -Source $downloadUrl -Destination $downloadPath
-
-    # Emitir Sequência de Beeps
-    $numeroDeBeeps = $configData.beepsOnDownloads
-    for ($i = 0; $i -lt $numeroDeBeeps; $i++) {
-        [Console]::Beep(500, 300)
-        Start-Sleep -Milliseconds 200  # Aguarda um curto período entre os beeps
-    }
-
-    # Extrair o arquivo compactado (.zip)
-    # Definir o caminho do diretório de destino para a extração
-    $extractPath = $env:temp
-
-    # Extrair o arquivo zip para o diretório de destino
-    Expand-Archive -Path $downloadPath -DestinationPath $extractPath -Force
-
-    # Definir o caminho do arquivo exe dentro do diretório descompactado
-    $exePath = Join-Path -Path $extractPath -ChildPath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
-    # /Extrair o arquivo compactado (.zip)
-
-    # Executar o Moo0 System Monitor
-    Start-Process -FilePath "$extractPath\Moo0_SystemMonitor_Portable\SystemMonitor64.exe"
-}
-# ----------------/Executar o Moo0 System Monitor--------------------------
 
 # Verifica se o Git está instalado no Windows (versões 10 e 11)
 Write-Host "Checking if Git is installed on Windows..."
