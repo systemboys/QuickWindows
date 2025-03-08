@@ -267,6 +267,8 @@
 ::   - Correção das descrições das ISOs do Windows 10 e 11 Pro na sessão 'Sistemas operacionais Microsoft'.
 :: v1.70.111 2024-10-30 às 12h04, Marcos Aurélio:
 ::   - Ajuste no script que reseta o AnyDesk, agora o script preserva as sessções recentes assim como as miniaturas dos PCs remotos.
+:: v1.70.112 2025-03-08 às 15h56, Marcos Aurélio:
+::   - Atualização da URL do arquivo do Google Earth Pro no arquivo 'urls.json'.
 ::
 :: Licença: GPL.
 
