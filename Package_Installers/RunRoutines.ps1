@@ -48,6 +48,8 @@
 #   - Script de criação de atalhos para computadores remotos na Área de trabalho do Windows na sessão Internet/Acesso Remoto.
 # v1.15.5 2024-09-09 às 20h10, Marcos Aurélio:
 #   - Correção das descrições das ISOs do Windows 10 e 11 Pro na sessão Sistemas Operacionais Microsoft.
+# v1.15.6 2025-04-04 às 11h32, Marcos Aurélio:
+#   - Atualização dos links das ISOs de 'Win10 22H2 x32v1', 'Win10 22H2 x64v1' e 'Win11 24H2 x64' na sessão de 'Sistemas Operacionais da Microsoft'.
 #
 # Licença: GPL.
 
@@ -200,13 +202,9 @@ Write-Host "    73 = Microsoft Office 365                                       
 Write-Host "    74 = Criar atalhos para Apps do Office 2021                           [ ok ]" -ForegroundColor Green
 Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "8 = Sistemas Operacionais Microsoft...                                    [null]" -ForegroundColor Red
-Write-Host "    81 = Windows 7, todas as versoes                                      [ ok ]" -ForegroundColor Green
-Write-Host "    82 = Windows 7 Lite                                                   [ ok ]" -ForegroundColor Green
-Write-Host "    83 = Windows 10 Pro 32bits                                            [ ok ]" -ForegroundColor Green
-Write-Host "    84 = Windows 10 Pro 64bits Versao 21H1 Compilacao 19043.1165          [ ok ]" -ForegroundColor Green
-Write-Host "    85 = Windows 10 1909 PRO MSDN LITE Build                              [ ok ]" -ForegroundColor Green
-Write-Host "    86 = Windows 11 Pro 64bits Versao 21h2 Compilacao 22000.2538          [ ok ]" -ForegroundColor Green
-Write-Host "    87 = Windows Server 2022                                              [ ok ]" -ForegroundColor Green
+Write-Host "    81 = Windowns 10 22H2 BrazilianPortuguese x32v1                       [ ok ]" -ForegroundColor Green
+Write-Host "    82 = Windowns 10 22H2 BrazilianPortuguese x64v1                       [ ok ]" -ForegroundColor Green
+Write-Host "    83 = Windowns 11 24H2 BrazilianPortuguese x64                         [ ok ]" -ForegroundColor Green
 Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
 
 # Array associativo que mapeia as rotinas aos arquivos .ps1

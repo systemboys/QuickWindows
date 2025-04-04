@@ -15,6 +15,8 @@
 ::   - Versão inicial, opções para baixar os Sistemas Operacionais da Microsoft.
 :: v1.0.1 2024-09-09 às 19h41, Marcos Aurélio:
 ::   - Correção das descrições das ISOs do Windows 10 e 11 Pro.
+:: v1.0.2 2025-04-04 às 11h32, Marcos Aurélio:
+::   - Atualização dos links das ISOs de 'Win10 22H2 x32v1', 'Win10 22H2 x64v1' e 'Win11 24H2 x64'.
 ::
 :: Licença: GPL.
 
@@ -40,13 +42,9 @@ echo QuickWindows / Sistemas Operacionais Microsoft
 
 :: Opções do Menu
 set "menu_Session_8[0]=Voltar…"
-set "menu_Session_8[1]=Windows 7, todas as versões"
-set "menu_Session_8[2]=Windows 7 Lite"
-set "menu_Session_8[3]=Windows 10 Pro 32bits"
-set "menu_Session_8[4]=Windows 10 Pro 64bits Versão 21H1 Compilação 19043.1165"
-set "menu_Session_8[5]=Windows 10 1909 PRO MSDN LITE Build"
-set "menu_Session_8[6]=Windows 11 Pro 64bits Versão 21h2 Compilação 22000.2538"
-set "menu_Session_8[7]=Windows Server 2022"
+set "menu_Session_8[1]=Win10_22H2_BrazilianPortuguese_x32v1"
+set "menu_Session_8[2]=Win10_22H2_BrazilianPortuguese_x64v1"
+set "menu_Session_8[3]=Win11_24H2_BrazilianPortuguese_x64"
 
 set "default=%1"
 

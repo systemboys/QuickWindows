@@ -338,13 +338,9 @@ Aqui estão todas as opções em desenvolvimento.
     - [x] Criar atalhos para Apps do Office 2021
   - [x] **Sistemas Operacionais Microsoft**
       > ( ! ) No final do download, o arquivo baixado poderá receber o nome do link, no entanto, você pode renomeá-lo e colocando sua extensão que no caso das ISO's, é `.iso`!
-    - [x] Windows 7, todas as versões
-    - [x] Windows 7 Lite
-    - [x] Windows 10 Pro 32bits
-    - [x] Windows 10 Pro 64bits Versão 21H1 Compilação 19043.1165
-    - [x] Windows 10 1909 PRO MSDN LITE Build
-    - [x] Windows 11 Pro 64bits Versão 21h2 Compilação 22000.2538
-    - [x] Windows Server 2022
+    - [x] Win10 22H2 BrazilianPortuguese x32v1
+    - [x] Win10 22H2 BrazilianPortuguese x64v1
+    - [x] Win11 24H2 BrazilianPortuguese x64
   - [x] Executar Rotinas
 
 > ***( ! ) Atenção!*** Esses recursos que estão marcos **[x]** estão concluídos, apenas os desmarcados **[_]** ainda serão incluídos!
@@ -460,13 +456,9 @@ Aqui estão todas as opções em desenvolvimento.
     73 = Microsoft Office 365
     74 = Criar atalhos para Apps do Office 2021
 8 = Sistemas Operacionais Microsoft…
-    81 = Windows 7, todas as versões
-    82 = Windows 7 Lite
-    83 = Windows 10 Pro 32bits
-    84 = Windows 10 Pro 64bits Versão 21H1 Compilação 19043.1165
-    85 = Windows 10 1909 PRO MSDN LITE Build
-    86 = Windows 11 Pro 64bits Versão 21h2 Compilação 22000.2538
-    87 = Windows Server 2022
+    81 = Win10 22H2 BrazilianPortuguese x32v1
+    82 = Win10 22H2 BrazilianPortuguese x64v1
+    83 = Win11 24H2 BrazilianPortuguese x64
 ```
 
 > ### Rotinas para instalações padrão
@@ -475,9 +467,9 @@ Aqui estão todas as opções em desenvolvimento.
 
 ```bash
 # FORMATAÇÃO REMOTA
-266,2694,681,84 # Windows 10 Pro 64bits
-266,2694,681,85 # Windows 10 Pro MSDN 1909
-266,2694,681,86 # Windows 11 Pro 64bits
+266,2694,681,81 # Windows 10 22H2 BrazilianPortuguese x32v1
+266,2694,681,82 # Windows 10 22H2 BrazilianPortuguese x64v1
+266,2694,681,83 # Windows 11 24H2 BrazilianPortuguese x64
 ┬── ┬─── ┬── ┬─
 │   │    │   │
 └───┼────┼───┼──┤ # Gerenciamento de Discos (DiskMgmt.msc)

@@ -24,6 +24,8 @@
 #   - Registro de logs.
 # v1.4.2 2024-07-31 às 01h47, Marcos Aurélio:
 #   - Incrementação de arquivo JSON para URLs, chamada URLs na lista do arquivo JSON.
+# v1.4.3 2025-04-04 às 11h32, Marcos Aurélio:
+#   - Atualização dos links das ISOs de 'Win10 22H2 x32v1', 'Win10 22H2 x64v1' e 'Win11 24H2 x64'. 
 #
 # Licença: GPL.
 
@@ -50,14 +52,9 @@ if (-not (Test-Path $urlsPath)) {
     $urlsPath = "../../urls.json"
 }
 $urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
-$Download_Package_1 = $urlsData.MicrosoftOperatingSystems[0] # Acessa a URL do pacote de instalação do Windows 7, todas as versões
-$Download_Package_2 = $urlsData.MicrosoftOperatingSystems[1] # Acessa a URL do pacote de instalação do Windows 7 Lite
-$Download_Package_3 = $urlsData.MicrosoftOperatingSystems[2] # Acessa a URL do pacote de instalação do Windows 10 Pro 32bits
-$Download_Package_4 = $urlsData.MicrosoftOperatingSystems[3] # Acessa a URL do pacote de instalação do Windows 10 Pro 64bits
-$Download_Package_5 = $urlsData.MicrosoftOperatingSystems[4] # Acessa a URL do pacote de instalação do Windows 10 1909 PRO MSDN LITE Build
-$Download_Package_6 = $urlsData.MicrosoftOperatingSystems[5] # Acessa a URL do pacote de instalação do Windows 11 Pro
-$Download_Package_7 = $urlsData.MicrosoftOperatingSystems[6] # Acessa a URL do pacote de instalação do Windows Server 2022
-
+$Download_Package_1 = $urlsData.MicrosoftOperatingSystems[0] # Acessa a URL do pacote de instalação do Win10_22H2_BrazilianPortuguese_x32v1
+$Download_Package_2 = $urlsData.MicrosoftOperatingSystems[1] # Acessa a URL do pacote de instalação do Win10_22H2_BrazilianPortuguese_x64v1
+$Download_Package_3 = $urlsData.MicrosoftOperatingSystems[2] # Acessa a URL do pacote de instalação do Win11_24H2_BrazilianPortuguese_x64
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
 
@@ -87,44 +84,24 @@ $dirName = "GTiSupport"
 $fullPath = Join-Path -Path $env:USERPROFILE -ChildPath $dirName
 # ------/Importação da função e configuração de endereço e arquivo para Registrar log-----
 
-# [1]=Windows 7, todas as versões
-# [2]=Windows 7 Lite
-# [3]=Windows 10 Pro 32bits
-# [4]=Windows 10 Pro 64bits
-# [5]=Windows 10 1909 PRO MSDN LITE Build
-# [6]=Windows 11 Pro
-# [7]=Windows Server 2022
+# [1]=Win10_22H2_BrazilianPortuguese_x32v1
+# [2]=Win10_22H2_BrazilianPortuguese_x64v1
+# [3]=Win11_24H2_BrazilianPortuguese_x64
 
-# Windows 7, todas as versões
+# Win10_22H2_BrazilianPortuguese_x32v1
 $url1 = $Download_Package_1
 
-# Windows 7 Lite
+# Win10_22H2_BrazilianPortuguese_x64v1
 $url2 = $Download_Package_2
 
-# Windows 10 Pro 32bits
+# Win11_24H2_BrazilianPortuguese_x64
 $url3 = $Download_Package_3
-
-# Windows 10 Pro 64bits
-$url4 = $Download_Package_4
-
-# Windows 10 1909 PRO MSDN LITE Build
-$url5 = $Download_Package_5
-
-# Windows 11 Pro
-$url6 = $Download_Package_6
-
-# Windows Server 2022
-$url7 = $Download_Package_7
 
 # Verificação e download do arquivo com base na escolha
 switch ($numero) {
-    1 { $url = $url1 } # Windows 7, todas as versões
-    2 { $url = $url2 } # Windows 7 Lite
-    3 { $url = $url3 } # Windows 10 Pro 32bits
-    4 { $url = $url4 } # Windows 10 Pro 64bits
-    5 { $url = $url5 } # Windows 10 1909 PRO MSDN LITE Build
-    6 { $url = $url6 } # Windows 11 Pro
-    7 { $url = $url7 } # Windows Server 2022
+    1 { $url = $url1 } # Win10_22H2_BrazilianPortuguese_x32v1
+    2 { $url = $url2 } # Win10_22H2_BrazilianPortuguese_x64v1
+    3 { $url = $url3 } # Win11_24H2_BrazilianPortuguese_x64
     default {
         Write-Host "Invalid option. Please choose a valid option."
         exit
