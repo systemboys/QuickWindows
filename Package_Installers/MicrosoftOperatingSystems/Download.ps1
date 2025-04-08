@@ -109,13 +109,13 @@ switch ($numero) {
 }
 
 # Solicitação do local de destino
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o caminho da pasta onde deseja salvar o arquivo."
-$destinationDirectory = Read-Host "Enter the destination folder path to save the file"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o caminho de destino completo para salvar o arquivo."
+$destination = Read-Host "Enter the full destination path to save the file"
 
 # Verificação se o destino foi fornecido
-if (-not $destinationDirectory) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O destino é obrigatório. Por favor, forneça o caminho da pasta."
-    Write-Host "Destination is mandatory. Please provide the destination folder path."
+if (-not $destination) {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O destino é obrigatório. Por favor, forneça o caminho de destino."
+    Write-Host "Destination is mandatory. Please provide the destination path."
     exit
 }
 
@@ -125,19 +125,6 @@ start taskmgr
 # Iniciando o download em uma nova janela do PowerShell
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o download em uma nova janela..."
 Write-Host "Starting the download in a new window..."
-
-# Modificação feita aqui para garantir que o nome do arquivo seja extraído corretamente
-$fileName = Split-Path -Path $url -Leaf
-$destination = Join-Path -Path $destinationDirectory -ChildPath $fileName
-Write-Host "URL: $url"
-Write-Host "Destino corrigido: $destination"
-
-# Certifica que o diretório exista
-if (!(Test-Path $destinationDirectory)) {
-    New-Item -Path $destinationDirectory -ItemType Directory -Force
-}
-
-# Executa o download corretamente
 Start-BitsTransfer -Source $url -Destination $destination
 
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Transferência concluída!"
