@@ -125,7 +125,16 @@ start taskmgr
 # Iniciando o download em uma nova janela do PowerShell
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o download em uma nova janela..."
 Write-Host "Starting the download in a new window..."
-Start-BitsTransfer -Source $url -Destination $destination
+Write-Host "URL: $url"
+Write-Host "Destino: $destination"
+
+# Certifique-se de criar o diretório, se não existir:
+$directory = Split-Path -Parent $destination
+if (!(Test-Path $directory)) {
+    New-Item -Path $directory -ItemType Directory -Force
+}
+
+Start-BitsTransfer -Source "$url" -Destination "$destination"
 
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Transferência concluída!"
 Write-Host "Download completed!"
