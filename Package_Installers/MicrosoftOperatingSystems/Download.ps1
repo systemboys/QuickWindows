@@ -110,13 +110,24 @@ switch ($numero) {
 
 # Solicitação do local de destino
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o caminho de destino completo para salvar o arquivo."
-$destination = Read-Host "Enter the full destination path to save the file"
+
+# Solicita ao usuário somente o diretório de destino
+$destinationDirectory = Read-Host "Enter the destination folder path to save the file"
 
 # Verificação se o destino foi fornecido
-if (-not $destination) {
+if (-not $destinationDirectory) {
     $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O destino é obrigatório. Por favor, forneça o caminho de destino."
     Write-Host "Destination is mandatory. Please provide the destination path."
     exit
+}
+
+# Extrai o nome do arquivo diretamente da URL
+$fileName = Split-Path -Path $url -Leaf
+$destination = Join-Path -Path $destinationDirectory -ChildPath $fileName
+
+# Certifique-se de criar o diretório, se não existir:
+if (!(Test-Path $destinationDirectory)) {
+    New-Item -Path $destinationDirectory -ItemType Directory -Force
 }
 
 # Executar o gerenciador de tarefas do Windows para monitorar o desempenho do download
@@ -126,7 +137,9 @@ start taskmgr
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o download em uma nova janela..."
 Write-Host "Starting the download in a new window..."
 Write-Host "URL: $url"
-Write-Host "Destino: $destination"
+Write-Host "Destino corrigido: $destination"
+
+Start-BitsTransfer -Source "$url" -Destination "$destination"
 
 # Certifique-se de criar o diretório, se não existir:
 $directory = Split-Path -Parent $destination
