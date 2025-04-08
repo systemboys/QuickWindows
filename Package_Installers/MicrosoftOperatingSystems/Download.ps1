@@ -109,13 +109,13 @@ switch ($numero) {
 }
 
 # Solicitação do local de destino
-$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o caminho de destino completo para salvar o arquivo."
-$destination = Read-Host "Enter the full destination path to save the file"
+$logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Insira o caminho da pasta onde deseja salvar o arquivo."
+$destinationDirectory = Read-Host "Enter the destination folder path to save the file"
 
 # Verificação se o destino foi fornecido
-if (-not $destination) {
-    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O destino é obrigatório. Por favor, forneça o caminho de destino."
-    Write-Host "Destination is mandatory. Please provide the destination path."
+if (-not $destinationDirectory) {
+    $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "O destino é obrigatório. Por favor, forneça o caminho da pasta."
+    Write-Host "Destination is mandatory. Please provide the destination folder path."
     exit
 }
 
@@ -125,7 +125,45 @@ start taskmgr
 # Iniciando o download em uma nova janela do PowerShell
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Iniciando o download em uma nova janela..."
 Write-Host "Starting the download in a new window..."
-Start-BitsTransfer -Source $url -Destination $destination
+
+# Modificação feita aqui para garantir que o nome do arquivo seja extraído corretamente
+$fileName = Split-Path -Path $url -Leaf
+$destination = Join-Path -Path $destinationDirectory -ChildPath $fileName
+Write-Host "URL: $url"
+Write-Host "Destino corrigido: $destination"
+
+# Certifica que o diretório exista
+if (!(Test-Path $destinationDirectory)) {
+    New-Item -Path $destinationDirectory -ItemType Directory -Force
+}
+
+# Executa o download com barra de progresso manual
+Add-Type -AssemblyName System.Net.Http
+
+$client = New-Object System.Net.Http.HttpClient
+$response = $client.GetAsync($url, [System.Net.Http.HttpCompletionOption]::ResponseHeadersRead).Result
+$totalBytes = $response.Content.Headers.ContentLength
+
+$stream = $response.Content.ReadAsStreamAsync().Result
+$fileStream = [System.IO.File]::Create($destination)
+
+$buffer = New-Object byte[] 8192
+$bytesRead = 0
+$totalRead = 0
+
+do {
+    $bytesRead = $stream.Read($buffer, 0, $buffer.Length)
+    if ($bytesRead -gt 0) {
+        $fileStream.Write($buffer, 0, $bytesRead)
+        $totalRead += $bytesRead
+        $percent = [math]::Round(($totalRead / $totalBytes) * 100)
+        Write-Progress -Activity "Downloading file..." -Status "$percent% complete" -PercentComplete $percent
+    }
+} while ($bytesRead -gt 0)
+
+$fileStream.Close()
+$stream.Close()
+$client.Dispose()
 
 $logPath = QWLogFunction -Address $fullPath -FileName "QWLog.txt" -Message "Transferência concluída!"
 Write-Host "Download completed!"
