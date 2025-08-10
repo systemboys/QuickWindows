@@ -497,8 +497,6 @@ Rotina  Descrição
 27      Criar atalhos para 'Desligar e Reiniciar'
 2692    Editar Configurações do Plano
 2695    Configurações do Windows
-698     Windows Update Activation
-5       Execução de Comandos no PowerShell
 32      Navegador Microsoft Edge
 37      Navegador Mozilla Firefox
 33      Navegador Google Chrome
@@ -507,12 +505,14 @@ Rotina  Descrição
 631     Acrobat Reader DC
 73      Microsoft Office 365
 74      Criar atalhos para Apps do Office
+698     Windows Update Activation
+5       Execução de Comandos no PowerShell
 692     Limpar Arquivos Temporários
 -------------------------------------------------
 ```
 Copie as Rotinas a executar no QuickWindows
 ```bash
-27,2692,2695,698,5,32,37,33,621,641,631,73,74,692
+27,2692,2695,32,37,33,621,641,631,73,74,698,5,692
 ```
 
 ---
