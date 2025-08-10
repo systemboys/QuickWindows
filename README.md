@@ -506,7 +506,7 @@ Rotina  Descrição
 641     VLC Media Player
 631     Acrobat Reader DC
 73      Microsoft Office 365
-74      Criar atalhos para Apps do Office 2021
+74      Criar atalhos para Apps do Office
 692     Limpar Arquivos Temporários
 -------------------------------------------------
 ```
