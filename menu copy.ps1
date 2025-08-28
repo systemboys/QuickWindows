@@ -68,7 +68,7 @@ $PowerShellCommand = "irm qw.gti1.com.br | iex"
 # Verifica se o Windows PowerShell está sendo executado como administrador
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Write-Host "This script needs to be run as administrator."
-    Start-Process powershell -Verb RunAs -ArgumentList '-NoProfile','-ExecutionPolicy','Bypass','-Command', $PowerShellCommand
+    Start-Process powershell -Verb RunAs -ArgumentList "-Command $PowerShellCommand"
     exit
 }
 
@@ -77,7 +77,7 @@ $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
 # Ativar a execução de scripts no PowerShell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force -ErrorAction SilentlyContinue
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
 # Define o nome do diretório utilizado pelo QuickWindows
 $dirName = "GTiSupport"
@@ -103,6 +103,12 @@ $filePath = ".\functions.ps1"
 # Verificando se o arquivo já existe
 if (Test-Path $filePath) {
     Write-Host "The file already exists!"
+    try {
+        Import-Module $filePath -ErrorAction Stop
+        Write-Host "File imported successfully."
+    } catch {
+        Write-Host "An error occurred while importing the file: $_"
+    }
 } else {
     # URL do arquivo para download
     $url = "https://raw.githubusercontent.com/systemboys/QuickWindows/main/functions.ps1"
@@ -111,24 +117,12 @@ if (Test-Path $filePath) {
     try {
         Invoke-WebRequest -Uri $url -OutFile $filePath
         Write-Host "File downloaded successfully."
+        Import-Module $filePath -ErrorAction Stop
     } catch {
         Write-Host "An error occurred while downloading the file: $_"
     }
 }
 # ------------------------ /Função que cria logs do sistema ---------------------------
-
-# Carregar funções via dot-sourcing e validar QWLogFunction
-try {
-    . $filePath
-} catch {
-    Write-Host "An error occurred while loading the file: $_"
-    exit 1
-}
-
-if (-not (Get-Command QWLogFunction -ErrorAction SilentlyContinue)) {
-    Write-Host "QWLogFunction not found after loading functions.ps1."
-    exit 1
-}
 
 # Executar função que cria logs do sistema
 $address = $fullPath
@@ -159,7 +153,7 @@ if (Test-Path $directory) {
         $response = [Microsoft.VisualBasic.Interaction]::MsgBox($message, $buttons, $title)
 
         # Verifica se a resposta do usuário foi "Sim"
-        if ($response -eq [Microsoft.VisualBasic.MsgBoxResult]::Yes) {
+        if ($response -eq "Yes") {
             # Executa o AnyDesk
             Start-Process -FilePath "$env:SystemDrive\Program Files (x86)\AnyDesk\AnyDesk.exe"
             # Executar função que cria logs do sistema
@@ -180,7 +174,7 @@ if (Test-Path $directory) {
     $MessageTitle = "AnyDesk Installation"
     $MessageBox = [System.Windows.MessageBox]::Show($MessageBody,$MessageTitle,$ButtonType,$MessageIcon)
 
-    if ($MessageBox -eq [System.Windows.MessageBoxResult]::Yes) {
+    if ($MessageBox -eq 'Yes') {
         Write-Host "AnyDesk is not installed! Starting installation process."
 
         # Link do download e o diretório Temp
@@ -239,12 +233,8 @@ $iconUrl = "https://github.com/systemboys/QuickWindows/raw/main/Images/QuickWind
 # Caminho local para salvar o ícone
 $iconPath = "$env:USERPROFILE\GTiSupport\QuickWindows.ico"
 
-# Baixar o ícone com tratamento de erro
-try {
-    Invoke-WebRequest -Uri $iconUrl -OutFile $iconPath -ErrorAction Stop
-} catch {
-    Write-Host "Icon download failed: $_"
-}
+# Baixar o ícone
+Invoke-WebRequest -Uri $iconUrl -OutFile $iconPath
 
 # Criar um objeto WScript.Shell
 $shell = New-Object -ComObject WScript.Shell
@@ -252,8 +242,8 @@ $shell = New-Object -ComObject WScript.Shell
 # Criar atalho
 $shortcut = $shell.CreateShortcut($shortcutPath)
 $shortcut.TargetPath = "powershell.exe"
-$shortcut.Arguments = "-NoProfile -ExecutionPolicy Bypass -Command $command"
-if (Test-Path $iconPath) { $shortcut.IconLocation = $iconPath }
+$shortcut.Arguments = "-Command `"$command`""
+$shortcut.IconLocation = $iconPath
 $shortcut.Description = "QuickWindows - Facilitate installations with routines"
 $shortcut.Save()
 
