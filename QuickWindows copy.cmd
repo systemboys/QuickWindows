@@ -288,7 +288,8 @@ for /f "tokens=2 delims= " %%a in ('findstr /r /c:":: v[0-9]*\.[0-9]*\.[0-9]*" "
 )
 
 :: Obter o ano atual
-for /f %%Y in ('powershell -NoProfile -Command "(Get-Date).Year"') do set "ano=%%Y"
+for /f "tokens=2 delims==" %%I in ('"wmic os get localdatetime /value"') do set datetime=%%I
+set "ano=%datetime:~0,4%"
 
 :: Subtrair o ano atual por 2008
 set /a resultado=ano-2008
@@ -303,7 +304,7 @@ echo QuickWindows.cmd - Executa o menu com várias linhas de comandos para insta
 echo URL: https://github.com/systemboys/QuickWindows.git
 echo Autor: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
 echo Manutenção: Marcos Aurélio R. da Silva "systemboys@hotmail.com"
-echo Este programa tem a finalidade de agilizar na instalação de softwares para Windows durante a formatação e/ou manutenção de computadores.
+echo Este programa tem a finadade de agilizar na instalação de softwares para Windows durante a formatação e/ou manutenção de computadores.
 echo.
 echo.
 echo  ░██████╗░████████╗██╗
@@ -356,7 +357,7 @@ powershell -noprofile "iex (gc \"%~f0\" | out-string)"
 :: Sair
 if %ERRORLEVEL% equ 0 (
     echo Finalizando o processo SystemMonitor64...
-    taskkill /F /IM SystemMonitor64.exe 2>nul
+    taskkill /F /IM SystemMonitor64.exe
     echo Você escolheu Sair.
     @REM pause
     goto :EOF
@@ -364,30 +365,30 @@ if %ERRORLEVEL% equ 0 (
 
 :: Menu QuickWindows…
 if %ERRORLEVEL% equ 1 (
-    pushd "Package_Installers\Menu_QuickWindows"
+    cd Package_Installers\Menu_QuickWindows
     call Menu_QuickWindows.cmd 0
-    popd
+    cd ..
 )
 
 :: Windows…
 if %ERRORLEVEL% equ 2 (
-    pushd "Package_Installers\Windows_Session"
+    cd Package_Installers\Windows_Session
     call Windows_Session.cmd 0
-    popd
+    cd ..
 )
 
 :: Internet…
 if %ERRORLEVEL% equ 3 (
-    pushd "Package_Installers\Internet_Session"
+    cd Package_Installers\Internet_Session
     call Internet_Session.cmd 0
-    popd
+    cd ..
 )
 
 :: Redes…
 if %ERRORLEVEL% equ 4 (
-    pushd "Package_Installers\Networking_Session"
+    cd Package_Installers\Networking_Session
     call Networking_Session.cmd 0
-    popd
+    cd ..
 )
 
 :: Execução de Comandos no PowerShell
@@ -402,23 +403,23 @@ if %ERRORLEVEL% equ 5 (
 
 :: Utilitários para Windows…
 if %ERRORLEVEL% equ 6 (
-    pushd "Package_Installers\UtilitiesForWindows"
+    cd Package_Installers\UtilitiesForWindows
     call UtilitiesForWindows.cmd 0
-    popd
+    cd ..
 )
 
 :: Office software…
 if %ERRORLEVEL% equ 7 (
-    pushd "Package_Installers\OfficeSoftware"
+    cd Package_Installers\OfficeSoftware
     call OfficeSoftware.cmd 0
-    popd
+    cd ..
 )
 
 :: Sistemas Operacionais Microsoft…
 if %ERRORLEVEL% equ 8 (
-    pushd "Package_Installers\MicrosoftOperatingSystems"
+    cd Package_Installers\MicrosoftOperatingSystems
     call MicrosoftOperatingSystems.cmd 0
-    popd
+    cd ..
 )
 
 :: Executar Rotinas…
