@@ -271,6 +271,8 @@
 ::   - Atualizada a URL do Google Earth Pro no arquivo urls.json e removida a instalação do Moo0 System Monitor Portable do processo de setup.
 :: v1.70.113 2025-04-04 às 11h32, Marcos Aurélio:
 ::   - Atualização dos links das ISOs de 'Win10 22H2 x32v1', 'Win10 22H2 x64v1' e 'Win11 24H2 x64' na sessão de 'Sistemas Operacionais da Microsoft'.
+:: v1.71.113 2025-08-28 às 10h32, Marcos Aurélio:
+::   - Correções de alguns erros no código.
 ::
 :: Licença: GPL.
 
