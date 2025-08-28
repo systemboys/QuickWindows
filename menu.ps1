@@ -78,8 +78,16 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host  # Limpa a tela para aplicar a nova cor
 
-# Ativar a execução de scripts no PowerShell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force -ErrorAction SilentlyContinue
+# Ativar a execução de scripts no PowerShell (somente se não houver política por GPO)
+try {
+    $policies = Get-ExecutionPolicy -List
+    $hasGpoPolicy = ($policies.MachinePolicy -ne 'Undefined') -or ($policies.UserPolicy -ne 'Undefined')
+    if (-not $hasGpoPolicy) {
+        Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force -ErrorAction Stop
+    }
+} catch {
+    # Ignorar erros aqui; o script já executa com -ExecutionPolicy Bypass
+}
 
 # Define o nome do diretório utilizado pelo QuickWindows
 $dirName = "GTiSupport"
