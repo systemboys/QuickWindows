@@ -57,6 +57,8 @@
 #   - Verificar se o arquivo 'Moo0_SystemMonitor_Portable.zip' existe, se existir, apagar.
 # v1.4.20 2025-03-08 às 16h14, Marcos Aurélio:
 #   - Remoção da instalação do Moo0 System Monitor Portable.
+# v1.5.20 2025-08-28 às 10h34, Marcos Aurélio:
+#   - Correções de alguns erros no código.
 #
 # Licença: GPL.
 
