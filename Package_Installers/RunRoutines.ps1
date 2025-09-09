@@ -194,6 +194,8 @@ Write-Host "            6993 = SiberiaProg-CH341A                               
 Write-Host "            6994 = SiberiaProg-CH341A Portable                            [ ok ]" -ForegroundColor Green
 Write-Host "            6995 = Open Hardware Monitor                                  [ ok ]" -ForegroundColor Green
 Write-Host "            6996 = Moo0 System Monitor                                    [ ok ]" -ForegroundColor Green
+Write-Host "            6997 = WizTree                                                [ ok ]" -ForegroundColor Green
+Write-Host "            6998 = WizTree64                                             [ ok ]" -ForegroundColor Green
 Write-Host "--------------------------------------------------------------------------------" -ForegroundColor Green
 Write-Host "7 = Softwares para Escritorio...                                          [null]" -ForegroundColor Red
 Write-Host "    71 = Microsoft Office 2016 a 2019                                     [ ok ]" -ForegroundColor Green
@@ -305,6 +307,8 @@ $Files = @{
                 "6994" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_SiberiaProg-CH341A_Portable.ps1" # SiberiaProg-CH341A Portable
                 "6995" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_OpenHardwareMonitor.ps1" # Open Hardware Monitor
                 "6996" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_Moo0_System_Monitor.ps1" # Moo0 System Monitor
+                "6997" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_WizTree.ps1" # WizTree
+                "6998" = "$env:TEMP\QuickWindows\Package_Installers\UtilitiesForWindows\Run_WizTree64.ps1" # WizTree64
     # "7" = "" # Softwares para Escritório…
         "71" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2016_to_2019.ps1" # Microsoft Office 2016 a 2019
         "72" = "$env:TEMP\QuickWindows\Package_Installers\OfficeSoftware\Install_Microsoft_Office_2019_to_2021.ps1" # Microsoft Office 2019 a 2021
