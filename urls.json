@@ -42,7 +42,9 @@
         "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/RevoUninstallerPortable.zip",
         "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/SiberiaProg-CH341A.zip",
         "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/WindowsUpdateActivation.exe",
-        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Moo0_SystemMonitor_Portable.zip"
+        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/Moo0_SystemMonitor_Portable.zip",
+        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/WizTree.exe",
+        "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/UtilitiesForWindows/WizTree64.exe"
     ],
     "OfficeSoftware": [
         "https://github.com/systemboys/_GTi_Support_/raw/main/Windows/OfficeSoftware/Microsoft_Office_365.exe",

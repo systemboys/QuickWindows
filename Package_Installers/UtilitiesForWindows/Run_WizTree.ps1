@@ -30,7 +30,7 @@ if (-not (Test-Path $urlsPath)) {
     $urlsPath = "../../urls.json"
 }
 $urlsData = Get-Content -Path $urlsPath | ConvertFrom-Json
-$WizTreeUrl = $urlsData.UtilitiesForWindows[14] # Acessa a URL do WizTree (ajuste o índice conforme necessário)
+$WizTreeUrl = $urlsData.UtilitiesForWindows[29] # Acessa a URL do WizTree (ajuste o índice conforme necessário)
 
 # Cria uma nova instância do objeto System.Management.Automation.Host.Size
 $size = New-Object System.Management.Automation.Host.Size($configData.PowerShellTerminalWidth, $configData.PowerShellTerminalHeight)
