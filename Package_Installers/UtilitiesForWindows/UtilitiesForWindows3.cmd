@@ -19,6 +19,8 @@
 ::   - Opção para baixar e executar o Open Hardware Monitor.
 :: v1.3.0 2024-08-06 às 23h51, Marcos Aurélio:
 ::   - Opção para Download e execução de Moo0 System Monitor Portable.
+:: v1.4.0 2025-09-09 às 10h15, Marcos Aurélio:
+::   - Opção para Download e execução de WizTree e WizTree64.
 ::
 :: Licença: GPL.
 
@@ -50,6 +52,8 @@ set "menu_Session_6_p3[3]=SiberiaProg-CH341A"
 set "menu_Session_6_p3[4]=SiberiaProg-CH341A Portable"
 set "menu_Session_6_p3[5]=Open Hardware Monitor"
 set "menu_Session_6_p3[6]=Moo0 System Monitor"
+set "menu_Session_6_p3[7]=WizTree"
+set "menu_Session_6_p3[8]=WizTree64"
 
 set "default=%1%"
 
@@ -118,6 +122,26 @@ if %ERRORLEVEL% equ 6 (
     echo Você selecionou a opção para Moo0 System Monitor.
 
     PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_Moo0_System_Monitor.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_p3
+)
+
+:: WizTree
+if %ERRORLEVEL% equ 7 (
+    cls
+    echo Você selecionou a opção para WizTree.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_WizTree.ps1""' -Verb RunAs}"
+
+    goto menu_Session_6_p3
+)
+
+:: WizTree64
+if %ERRORLEVEL% equ 8 (
+    cls
+    echo Você selecionou a opção para WizTree64.
+
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dp0\Run_WizTree64.ps1""' -Verb RunAs}"
 
     goto menu_Session_6_p3
 )

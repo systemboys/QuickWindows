@@ -273,6 +273,8 @@
 ::   - Atualização dos links das ISOs de 'Win10 22H2 x32v1', 'Win10 22H2 x64v1' e 'Win11 24H2 x64' na sessão de 'Sistemas Operacionais da Microsoft'.
 :: v1.71.113 2025-08-28 às 10h32, Marcos Aurélio:
 ::   - Correções de alguns erros no código.
+:: v1.72.113 2025-09-09 às 15h37, Marcos Aurélio:
+::   - Opção para Download e execução de WizTree e WizTree64.
 ::
 :: Licença: GPL.
 
